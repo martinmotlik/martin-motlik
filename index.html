@@ -1,0 +1,2774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ══ SEO: Primary ══════════════════════════════════════════════════════ -->
+    <title>Martin Motlík — AI in BIM &amp; BIM Software Marketing | Prague</title>
+    <meta name="description" content="Head of Web Content at Dlubal Software. Writing about AI adoption in BIM, AEC industry communication, and what it takes to market technical software well.">
+    <meta name="keywords" content="AI in BIM, BIM marketing, AEC industry, structural engineering, Dlubal Software, web content strategy, BIM software, AI adoption, Martin Motlík">
+    <meta name="author" content="Martin Motlík">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://martinmotlik.com/">
+
+    <!-- ══ SEO: Hreflang (multilingual) ══════════════════════════════════════ -->
+    <link rel="alternate" hreflang="en" href="https://martinmotlik.com/">
+    <link rel="alternate" hreflang="cs" href="https://martinmotlik.com/?lang=cs">
+    <link rel="alternate" hreflang="de" href="https://martinmotlik.com/?lang=de">
+    <link rel="alternate" hreflang="x-default" href="https://martinmotlik.com/">
+
+    <!-- ══ SEO: Open Graph (LinkedIn, Facebook, Slack previews) ══════════════ -->
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Martin Motlík — AI in BIM &amp; BIM Software Marketing">
+    <meta property="og:description" content="Head of Web Content at Dlubal Software. Thinking out loud about AI adoption in BIM and how the AEC industry communicates it.">
+    <meta property="og:url" content="https://martinmotlik.com/">
+    <meta property="og:site_name" content="Martin Motlík">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="cs_CZ">
+    <meta property="og:locale:alternate" content="de_DE">
+    <meta property="og:image" content="https://martinmotlik.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Martin Motlík — Head of Web Content at Dlubal Software">
+    <meta name="twitter:image" content="https://martinmotlik.com/og-image.png">
+    <meta property="profile:first_name" content="Martin">
+    <meta property="profile:last_name" content="Motlík">
+    <meta property="profile:username" content="martinmotlik">
+
+    <!-- ══ SEO: Twitter / X Card ═════════════════════════════════════════════ -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Martin Motlík — AI in BIM &amp; BIM Software Marketing">
+    <meta property="twitter:description" content="Head of Web Content at Dlubal Software. Thinking out loud about AI adoption in BIM and how the AEC industry communicates it.">
+    <meta name="twitter:creator" content="@martinmotlik">
+
+    <!-- ══ SEO: Structured Data — Person (JSON-LD) ════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Martin Motlík",
+      "url": "https://martinmotlik.com/",
+      "email": "motlik.martin@gmail.com",
+      "jobTitle": "Head of Web Content",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Dlubal Software",
+        "url": "https://www.dlubal.com"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Prague",
+        "addressCountry": "CZ"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/martin-motl%C3%ADk-3b1b47233"
+      ],
+      "knowsAbout": [
+        "Building Information Modeling",
+        "Artificial Intelligence",
+        "BIM Software Marketing",
+        "AEC Industry",
+        "Web Content Strategy",
+        "Structural Engineering Software"
+      ],
+      "knowsLanguage": ["en", "cs", "de"]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg:            #ffffff;
+            --bg-section:    #f5f5f7;
+            --text:          #1d1d1f;
+            --text-muted:    #6e6e73;
+            --text-small:    #86868b;
+            --accent:        #0a2d8f;
+            --border:        #d2d2d7;
+            --card-bg:       #ffffff;
+            --radius:        18px;
+
+            --vision:        #0a4f2e;
+            --vision-bg:     #f0f7f3;
+            --vision-border: #c2ddd0;
+
+            /* ── L1: Page title ── */
+            --h1-size:       clamp(2.6rem, 6vw, 3.5rem);
+            --h1-weight:     700;
+            --h1-tracking:   -0.03em;
+            --h1-leading:    1.0;
+
+            /* ── L2: Section / component title ── */
+            --h2-size:       clamp(1.6rem, 3.5vw, 2rem);
+            --h2-weight:     700;
+            --h2-tracking:   -0.025em;
+            --h2-leading:    1.1;
+
+            /* ── L3: Card / item title ── */
+            --h3-size:       1.05rem;
+            --h3-weight:     600;
+            --h3-tracking:   -0.015em;
+            --h3-leading:    1.25;
+
+            /* ── Perex / lead text ── */
+            --perex-size:    clamp(1.0rem, 2.2vw, 1.1rem);
+            --perex-weight:  300;
+            --perex-tracking:-0.01em;
+            --perex-leading: 1.6;
+
+            /* ── Body ── */
+            --body-size:     0.875rem;
+            --body-weight:   400;
+            --body-leading:  1.65;
+
+            /* ── L4: Label / eyebrow ── */
+            --label-size:    0.6875rem;
+            --label-weight:  600;
+            --label-tracking:0.08em;
+
+            /* ── Small / captions ── */
+            --small-size:    0.8rem;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            font-size: var(--body-size);
+            line-height: var(--body-leading);
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+        }
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+        nav a {
+            font-size: var(--small-size);
+            color: var(--text);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.15s;
+            letter-spacing: 0.01em;
+        }
+        nav a:hover { opacity: 1; color: var(--accent); }
+        nav a.active {
+            color: var(--accent);
+            opacity: 1;
+            font-weight: 600;
+        }
+        nav .nav-name { font-weight: 600; opacity: 1; font-size: var(--body-size); }
+
+        /* ── LANG SWITCHER ── */
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            background: var(--bg-section);
+            border: 1px solid var(--border);
+            border-radius: 980px;
+            padding: 3px;
+            flex-shrink: 0;
+        }
+        .lang-btn {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            color: var(--text-muted);
+            background: transparent;
+            border: none;
+            padding: 4px 10px;
+            border-radius: 980px;
+            cursor: pointer;
+            transition: background 0.15s, color 0.15s;
+            line-height: 1;
+        }
+        .lang-btn:hover { color: var(--text); }
+        .lang-btn.active {
+            background: #fff;
+            color: var(--text);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+        }
+
+        /* ── HERO ── */
+        .hero {
+            text-align: center;
+            padding: 80px 24px 48px;
+            animation: fadeUp 0.8s cubic-bezier(.22,1,.36,1) both;
+        }
+        .avatar-wrap {
+            margin: 0 auto 28px;
+            width: 88px; height: 88px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #e8e8ed, #d0d0d5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6rem;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            font-weight: 500;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+        }
+        .hero h1 {
+            font-size: var(--h1-size);
+            font-weight: var(--h1-weight);
+            letter-spacing: var(--h1-tracking);
+            line-height: var(--h1-leading);
+            color: var(--text);
+            margin-bottom: 16px;
+        }
+        .hero .headline {
+            font-size: var(--perex-size);
+            font-weight: var(--perex-weight);
+            letter-spacing: var(--perex-tracking);
+            line-height: var(--perex-leading);
+            color: var(--text-muted);
+            max-width: 520px;
+            margin: 0 auto 20px;
+        }
+        .hero .headline strong { color: var(--text); font-weight: 400; }
+
+        .hero-vision {
+            display: inline-flex;
+            align-items: flex-start;
+            gap: 10px;
+            background: var(--vision-bg);
+            border: 1px solid var(--vision-border);
+            border-radius: 10px;
+            padding: 12px 18px;
+            margin: 0 auto 32px;
+            max-width: 520px;
+            text-align: left;
+        }
+        .hero-vision-icon { font-size: 0.9rem; flex-shrink: 0; margin-top: 1px; opacity: 0.75; }
+        .hero-vision p {
+            font-size: var(--body-size);
+            font-weight: var(--body-weight);
+            color: var(--vision);
+            line-height: var(--body-leading);
+            letter-spacing: -0.01em;
+        }
+        .hero-vision p em { font-style: normal; font-weight: 600; }
+
+        .cta-group {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent);
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 22px;
+            border-radius: 980px;
+            font-size: var(--body-size);
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            border: 1.5px solid var(--accent);
+            transition: background 0.2s, color 0.2s, border-color 0.2s;
+        }
+        .btn-primary:hover {
+            background: rgba(10,45,143,0.07);
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+        .btn-primary:hover .btn-linkedin-icon { fill: var(--accent); }
+        .btn-linkedin-icon { width: 16px; height: 16px; fill: #fff; flex-shrink: 0; }
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: transparent;
+            color: var(--accent);
+            text-decoration: none;
+            padding: 10px 22px;
+            border-radius: 980px;
+            font-size: var(--body-size);
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            border: 1.5px solid var(--border);
+            transition: border-color 0.2s, transform 0.15s;
+        }
+        .btn-secondary:hover { background: rgba(10,45,143,0.07); border-color: var(--accent); color: var(--accent); }
+
+        /* ── TAG ROW ── */
+        .tag-row {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            padding: 0 24px 64px;
+            animation: fadeUp 0.8s cubic-bezier(.22,1,.36,1) 0.1s both;
+        }
+        .chip {
+            font-size: 0.72rem;
+            padding: 5px 14px;
+            border-radius: 980px;
+            background: var(--bg-section);
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+            letter-spacing: 0.01em;
+        }
+
+        /* ── SECTIONS ── */
+        section { padding: 64px 24px; }
+        section[id] { scroll-margin-top: 60px; }
+        section.alt { background: var(--bg-section); }
+
+        .section-eyebrow {
+            font-size: var(--label-size);
+            font-weight: var(--label-weight);
+            text-transform: uppercase;
+            letter-spacing: var(--label-tracking);
+            color: var(--accent);
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .section-title {
+            font-size: var(--h2-size);
+            font-weight: var(--h2-weight);
+            letter-spacing: var(--h2-tracking);
+            line-height: var(--h2-leading);
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .section-sub {
+            font-size: var(--perex-size);
+            font-weight: var(--perex-weight);
+            color: var(--text-muted);
+            text-align: center;
+            max-width: 500px;
+            margin: 0 auto 48px;
+            line-height: var(--perex-leading);
+        }
+
+        .vision-thread {
+            display: flex;
+            align-items: stretch;
+            gap: 14px;
+            background: var(--vision-bg);
+            border: 1px solid var(--vision-border);
+            border-radius: 10px;
+            padding: 14px 18px;
+            max-width: 640px;
+            margin: 0 auto 48px;
+            text-align: left;
+        }
+        .vision-thread-bar { width: 3px; background: var(--vision); border-radius: 2px; flex-shrink: 0; opacity: 0.4; }
+        .vision-thread p { font-size: var(--body-size); font-weight: var(--body-weight); color: var(--vision); line-height: var(--body-leading); }
+        .vision-thread p strong { font-weight: 600; }
+
+        /* ── DLUBAL FEATURED ── */
+        /* ── DLUBAL BANNER ── */
+        .dlubal-featured { max-width: 860px; margin: 0 auto; }
+
+        .card-featured {
+            display: flex;
+            flex-direction: column;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.14);
+        }
+
+        /* Top bar — white, logo left + button right */
+        .cf-logo-panel {
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 32px;
+            border-bottom: 1px solid #e8e8ed;
+            flex-shrink: 0;
+        }
+        .cf-logo-panel svg {
+            height: 28px;
+            width: auto;
+            display: block;
+        }
+        .cf-visit-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.72rem;
+            font-weight: 500;
+            color: var(--accent);
+            text-decoration: none;
+            letter-spacing: -0.01em;
+            border: 1.5px solid var(--accent);
+            padding: 7px 14px;
+            border-radius: 980px;
+            transition: background 0.2s, color 0.2s;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .cf-visit-btn:hover {
+            background: rgba(10,45,143,0.07);
+            color: #03123D;
+        }
+
+        /* Bottom panel — dark, full width content */
+        .cf-content-panel {
+            background: #03123D;
+            color: #fff;
+            padding: 36px 40px 32px;
+            position: relative;
+            overflow: hidden;
+            flex: 1;
+        }
+        .cf-content-panel::before {
+            content: '';
+            position: absolute;
+            top: -60px; right: -60px;
+            width: 220px; height: 220px;
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .cf-content-panel .cf-inner { position: relative; z-index: 1; }
+        .cf-content-panel .card-label {
+            font-size: var(--label-size);
+            font-weight: var(--label-weight);
+            text-transform: uppercase;
+            letter-spacing: var(--label-tracking);
+            color: rgba(255,255,255,0.35);
+            margin-bottom: 10px;
+        }
+        .cf-content-panel h3 {
+            font-size: clamp(1.2rem, 2.5vw, 1.35rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+        .cf-content-panel > .cf-inner > p {
+            font-size: var(--perex-size);
+            color: rgba(255,255,255,0.55);
+            line-height: var(--body-leading);
+            margin-bottom: 24px;
+            max-width: 640px;
+        }
+
+        /* Carousel — full width */
+        .cf-carousel-wrap {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .cf-carousel-header,
+        .cf-carousel-track-wrap { width: 100%; align-self: stretch; }
+        .cf-carousel-header {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-bottom: 14px;
+        }
+        .cf-carousel-nav { display: flex; gap: 6px; }
+        .cf-carousel-btn {
+            width: 34px; height: 34px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(255,255,255,0.55);
+            background: rgba(255,255,255,0.08);
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--small-size);
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .cf-carousel-btn:hover {
+            border-color: #fff;
+            background: rgba(255,255,255,0.18);
+        }
+        .cf-carousel-btn:disabled { opacity: 0.2; cursor: default; }
+        .cf-carousel-track-wrap { overflow: hidden; }
+        .cf-carousel-track {
+            display: flex;
+            gap: 20px;
+            transition: transform 0.35s cubic-bezier(.22,1,.36,1);
+        }
+        .cf-point { flex: 0 0 calc(50% - 10px); min-width: 0; }
+        .cf-point .cp-label {
+            font-size: var(--h3-size);
+            font-weight: var(--h3-weight);
+            letter-spacing: var(--h3-tracking);
+            color: #fff;
+            margin-bottom: 7px;
+        }
+        .cf-point p {
+            font-size: var(--body-size);
+            color: rgba(255,255,255,0.6);
+            line-height: var(--body-leading);
+            margin-bottom: 0;
+        }
+
+        /* ── Capsule progress indicator ── */
+        .cf-progress {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 980px;
+            padding: 7px 14px;
+            margin-top: 18px;
+        }
+
+        .cf-progress-thumb {
+            width: 32px;
+            height: 8px;
+            background: rgba(255,255,255,0.75);
+            border-radius: 980px;
+            flex-shrink: 0;
+        }
+        .cf-progress-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            flex-shrink: 0;
+            transition: background 0.25s;
+            cursor: pointer;
+        }
+        .cf-progress-dot.active { background: rgba(255,255,255,0.75); }
+
+        @media (max-width: 680px) {
+            .cf-logo-panel { padding: 16px 20px; }
+            .cf-logo-panel svg { height: 22px; }
+            .cf-content-panel { padding: 28px 24px; }
+            .cf-point { flex: 0 0 calc(50% - 10px); }
+        }
+        @media (max-width: 420px) {
+            .cf-point { flex: 0 0 100%; }
+        }
+
+        /* ── CARDS ── */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .cards-3 { max-width: 1100px; }
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 32px 28px;
+            border: 1px solid var(--border);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .alt .card { background: #fff; }
+        .card:not(.card-dark):hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.09); }
+        .card-dark {
+            background: var(--text);
+            border-color: var(--text);
+            color: #fff;
+        }
+        .card-dark:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.18); }
+        .card-icon { font-size: 2rem; margin-bottom: 18px; display: block; line-height: 1; }
+        .card > .icon { margin-bottom: 18px; }
+        .card-label {
+            font-size: var(--label-size);
+            font-weight: var(--label-weight);
+            text-transform: uppercase;
+            letter-spacing: var(--label-tracking);
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+        .card-dark .card-label { color: rgba(255,255,255,0.5); }
+        .card h3 {
+            font-size: var(--h3-size);
+            font-weight: var(--h3-weight);
+            letter-spacing: var(--h3-tracking);
+            line-height: var(--h3-leading);
+            margin-bottom: 10px;
+        }
+        .card-dark h3 { color: #fff; }
+        .card p {
+            font-size: var(--body-size);
+            font-weight: var(--body-weight);
+            color: var(--text-muted);
+            line-height: var(--body-leading);
+            margin-bottom: 0;
+        }
+        .card-dark p { color: rgba(255,255,255,0.55); }
+        .talk-nudge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 18px;
+            font-size: var(--small-size);
+            color: var(--text-muted);
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        /* ── FEATURE STRIP ── */
+        .feature-strip {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .feature-item { background: var(--bg-section); padding: 28px 24px; text-align: center; }
+        .feature-num {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.04em;
+            color: var(--text);
+            display: block;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+        .feature-desc { font-size: var(--small-size); color: var(--text-muted); line-height: 1.4; font-weight: 400; }
+
+        /* ── CONTACT ── */
+        .contact-primary {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 480px;
+            margin: 0 auto 24px;
+        }
+        .contact-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 18px 22px;
+            background: var(--card-bg);
+            border: 1.5px solid var(--border);
+            border-radius: 14px;
+            text-decoration: none;
+            color: var(--text);
+            transition: border-color 0.2s, transform 0.15s, box-shadow 0.2s;
+        }
+        .contact-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(10,45,143,0.1);
+        }
+        .contact-card.primary {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff;
+            grid-column: 1 / -1;
+            transition: background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+        }
+        .contact-card.primary svg { transition: fill 0.2s; }
+        .contact-card.primary:hover svg { fill: var(--accent); }
+        .contact-card.primary:hover .cc-label,
+        .contact-card.primary:hover .cc-arrow { color: var(--accent); opacity: 1; }
+        .contact-card.primary:hover { background: rgba(10,45,143,0.07); border-color: var(--accent); color: var(--accent); box-shadow: none; }
+        .cc-icon { font-size: 1.2rem; flex-shrink: 0; }
+        .cc-body { flex: 1; }
+        .cc-label {
+            font-size: var(--label-size);
+            text-transform: uppercase;
+            letter-spacing: var(--label-tracking);
+            font-weight: var(--label-weight);
+            opacity: 0.5;
+            display: block;
+            margin-bottom: 2px;
+        }
+        .cc-value { font-size: var(--body-size); font-weight: 400; letter-spacing: -0.01em; }
+        .cc-arrow { font-size: 0.75rem; opacity: 0.4; transition: opacity 0.2s, transform 0.2s; }
+        .contact-card.contact-secondary {
+            background: transparent;
+            border-color: var(--border);
+            padding: 14px 22px;
+        }
+        .contact-card.contact-secondary:hover {
+            border-color: var(--accent);
+            transform: none;
+            box-shadow: none;
+        }
+        .contact-card.contact-secondary .cc-value {
+            color: var(--text-muted);
+        }
+        .contact-meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+        .meta-item {
+            font-size: var(--small-size);
+            color: var(--text-small);
+        }
+        .meta-item a {
+            color: var(--text-small);
+            text-decoration: none;
+        }
+        .meta-item a:hover { color: var(--accent); }
+        .meta-sep {
+            color: var(--border);
+            font-size: 0.9rem;
+        }
+
+        /* ── SOCIAL ICONS ── */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 24px;
+        }
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1.5px solid var(--border);
+            background: var(--card-bg);
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: border-color 0.2s, color 0.2s, transform 0.15s, box-shadow 0.2s;
+        }
+        .social-icon svg { width: 18px; height: 18px; fill: currentColor; }
+        .social-icon:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(10,45,143,0.12);
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--bg-section);
+            border-top: 1px solid var(--border);
+            padding: 32px 24px;
+            text-align: center;
+        }
+        footer p { font-size: var(--small-size); color: var(--text-small); line-height: 1.8; }
+        footer a { color: var(--text-small); text-decoration: none; }
+        footer a:hover { color: var(--accent); }
+
+        /* ── ANIMATIONS ── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .anim { animation: fadeUp 0.8s cubic-bezier(.22,1,.36,1) both; }
+        .anim-d1 { animation-delay: 0.1s; }
+        .anim-d2 { animation-delay: 0.2s; }
+
+        /* Language fade transition */
+        .lang-fade { transition: opacity 0.2s ease; }
+        .lang-fade.fading { opacity: 0; }
+
+        /* ── SVG ICONS ── */
+        .icon {
+            display: block;
+            width: 36px;
+            height: 36px;
+            margin-bottom: 18px;
+            stroke: var(--accent);
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .card-dark .icon { stroke: rgba(255,255,255,0.75); }
+
+        .icon-sm {
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            vertical-align: middle;
+        }
+        .contact-card .icon-sm { color: inherit; }
+
+        .hero-vision .icon-sm {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            margin-top: 2px;
+            stroke: var(--vision);
+            opacity: 0.75;
+        }
+
+        /* ── TOOLS CAROUSEL ── */
+        .tools-section {
+            padding: 64px 0;
+            overflow: hidden;
+        }
+        .tools-section .section-eyebrow,
+        .tools-section .section-title,
+        .tools-section .section-sub {
+            padding: 0 24px;
+        }
+        .tools-section .section-sub { margin-bottom: 40px; }
+
+        .marquee-wrapper {
+            position: relative;
+        }
+        .marquee-wrapper::before,
+        .marquee-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0; bottom: 0;
+            width: 120px;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .marquee-wrapper::before {
+            left: 0;
+            background: linear-gradient(to right, var(--bg-section), transparent);
+        }
+        .marquee-wrapper::after {
+            right: 0;
+            background: linear-gradient(to left, var(--bg-section), transparent);
+        }
+
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: marquee-scroll 48s linear infinite;
+            gap: 0;
+        }
+        .marquee-track:hover { animation-play-state: paused; }
+
+        @keyframes marquee-scroll {
+            from { transform: translateX(0); }
+            to   { transform: translateX(-50%); }
+        }
+
+        .marquee-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0 5px;
+        }
+
+        .tool-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 18px;
+            background: #e8f5ee;
+            border: 1px solid #bfe0cc;
+            border-radius: 980px;
+            white-space: nowrap;
+            transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s, background 0.2s;
+            cursor: default;
+            text-decoration: none;
+        }
+        .tools-section.alt .tool-pill { background: #e8f5ee; }
+        .tool-pill:hover {
+            background: #d4eddf;
+            border-color: #8ec9a8;
+            box-shadow: 0 4px 16px rgba(10,79,46,0.12);
+            transform: translateY(-2px);
+        }
+        .tool-pill img {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+            flex-shrink: 0;
+            border-radius: 4px;
+        }
+        .tool-pill-icon {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .tool-pill-icon svg {
+            width: 18px;
+            height: 18px;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .tool-pill span.tool-name {
+            font-size: var(--small-size);
+            font-weight: 500;
+            color: #1a3d2b;
+            letter-spacing: -0.01em;
+        }
+        .tool-pill span.tool-cat {
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #3a7a56;
+            background: #c6e8d4;
+            padding: 2px 7px;
+            border-radius: 980px;
+        }
+        .tools-section.alt .tool-pill span.tool-cat { background: #c6e8d4; }
+
+        /* second row — slower, reverse */
+        .marquee-track.reverse {
+            animation-direction: reverse;
+            animation-duration: 55s;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 600px) {
+            nav { padding: 0 12px; }
+            .nav-left { gap: 14px; overflow-x: auto; }
+            .nav-left a:not(.nav-name) { display: none; }
+            .cards { grid-template-columns: 1fr; }
+            .feature-strip { grid-template-columns: repeat(2, 1fr); }
+            .card-featured { padding: 28px 24px; }
+            .cf-grid { grid-template-columns: 1fr 1fr; }
+            .lang-btn { padding: 4px 8px; }
+        }
+
+        /* ── THOUGHT WINDOW ANIMATIONS ── */
+        .hero-vision {
+            opacity: 0;
+            transform: translateY(10px);
+            animation: thoughtAppear 0.6s cubic-bezier(.22,1,.36,1) 0.4s forwards;
+        }
+        .vision-thread {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.5s ease, transform 0.5s cubic-bezier(.22,1,.36,1);
+        }
+        .vision-thread.thought-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @keyframes thoughtAppear {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* ── CAD DEMO ── */
+        .cad-wrap {
+            max-width: 960px;
+            margin: 48px auto 0;
+        }
+        .cad-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: var(--label-size);
+            font-weight: var(--label-weight);
+            color: var(--text-small);
+            letter-spacing: var(--label-tracking);
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            justify-content: center;
+        }
+        .cad-label::before, .cad-label::after {
+            content: '';
+            flex: 1;
+            max-width: 80px;
+            height: 1px;
+            background: var(--border);
+        }
+        /* App shell */
+        .cad-app {
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04), 0 16px 48px rgba(0,0,0,0.07);
+            background: var(--bg);
+            font-family: 'Inter', sans-serif;
+        }
+        /* Title bar — matches nav style */
+        .cad-titlebar {
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            padding: 0 16px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            gap: 0;
+            user-select: none;
+        }
+        .cad-tb-dots { display: flex; gap: 7px; margin-right: 14px; }
+        .cad-dot { width: 11px; height: 11px; border-radius: 50%; display: block; }
+        .cad-dot-r { background: #ff5f56; }
+        .cad-dot-y { background: #ffbd2e; }
+        .cad-dot-g { background: #27c93f; }
+        .cad-tb-divider { width: 1px; height: 20px; background: var(--border); margin: 0 12px; }
+        .cad-tb-menu { display: flex; gap: 1px; margin-right: auto; }
+        .cad-tb-item {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            padding: 4px 10px;
+            border-radius: 6px;
+            cursor: default;
+            letter-spacing: 0.01em;
+            transition: background 0.15s, color 0.15s;
+        }
+        .cad-tb-item:hover { background: var(--bg-section); color: var(--text); }
+        .cad-tb-title {
+            font-size: 0.72rem;
+            color: var(--text-small);
+            letter-spacing: 0.04em;
+            font-weight: 500;
+        }
+        .cad-tb-actions { display: flex; gap: 7px; margin-left: 16px; }
+        .cad-btn {
+            font-size: 0.7rem;
+            font-family: 'Inter', sans-serif;
+            padding: 5px 13px;
+            border-radius: 980px;
+            border: 1.5px solid var(--border);
+            background: var(--bg);
+            color: var(--text-muted);
+            cursor: pointer;
+            letter-spacing: -0.01em;
+            font-weight: 400;
+            transition: all 0.15s;
+            white-space: nowrap;
+        }
+        .cad-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .cad-btn-ifc {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff;
+            font-weight: 600;
+        }
+        .cad-btn-ifc:hover { background: #0c3aad; border-color: #0c3aad; color: #fff; }
+        /* Body */
+        .cad-body { display: flex; height: 520px; }
+        /* Left sidebar */
+        .cad-sidebar {
+            width: 272px;
+            flex-shrink: 0;
+            background: var(--bg-section);
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .cad-sidebar-tabs {
+            display: flex;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+        .cad-stab {
+            flex: 1;
+            text-align: center;
+            font-size: 0.65rem;
+            padding: 9px 4px;
+            color: var(--text-small);
+            cursor: default;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-weight: 600;
+            border-bottom: 2px solid transparent;
+            transition: color 0.15s;
+        }
+        .cad-stab-active {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+        .cad-chat-msgs {
+            flex: 1;
+            min-height: 0;
+            overflow-y: auto;
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--border) transparent;
+        }
+        .cad-msg { display: flex; flex-direction: column; }
+        .cad-msg-user { align-items: flex-end; }
+        .cad-msg-ai   { align-items: flex-start; }
+        .cad-msg-sys  { align-items: flex-start; }
+        .cad-bubble {
+            font-size: 0.75rem;
+            line-height: 1.55;
+            padding: 9px 13px;
+            border-radius: 11px;
+            max-width: 220px;
+        }
+        .cad-msg-user .cad-bubble {
+            background: var(--accent);
+            color: #fff;
+            border-bottom-right-radius: 3px;
+        }
+        .cad-msg-ai .cad-bubble {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            color: var(--text);
+            border-bottom-left-radius: 3px;
+            font-size: 0.72rem;
+        }
+        .cad-msg-sys .cad-bubble {
+            background: transparent;
+            color: var(--text-small);
+            font-size: 0.7rem;
+        }
+        .cad-typing { display: flex; gap: 4px; align-items: center; }
+        .cad-tdot {
+            width: 5px; height: 5px; border-radius: 50%;
+            background: var(--accent);
+            animation: cadTyping 1.2s infinite;
+        }
+        .cad-tdot:nth-child(2) { animation-delay: 0.2s; }
+        .cad-tdot:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes cadTyping {
+            0%,60%,100% { opacity:0.25; transform:translateY(0); }
+            30%          { opacity:1;    transform:translateY(-3px); }
+        }
+        .cad-input-row {
+            padding: 10px 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg);
+        }
+        .cad-input {
+            flex: 1;
+            font-size: 0.72rem;
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            min-height: 18px;
+            word-break: break-word;
+        }
+        .cad-send {
+            width: 28px; height: 28px;
+            background: var(--accent);
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0.3;
+            transition: opacity 0.2s;
+            flex-shrink: 0;
+        }
+        .cad-send.ready { opacity: 1; }
+        /* Viewport */
+        .cad-viewport {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: var(--bg);
+            overflow: hidden;
+        }
+        .cad-vp-toolbar {
+            height: 38px;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            padding: 0 14px;
+        }
+        .cad-vp-tab {
+            font-size: 0.65rem;
+            padding: 4px 11px;
+            border-radius: 6px;
+            color: var(--text-small);
+            cursor: default;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        .cad-vp-tab-active {
+            background: var(--bg-section);
+            color: var(--accent);
+        }
+        .cad-vp-coords {
+            margin-left: auto;
+            font-size: 0.62rem;
+            color: var(--border);
+            letter-spacing: 0.04em;
+            font-family: 'Courier New', monospace;
+        }
+        .cad-vp-status {
+            font-size: 0.65rem;
+            color: var(--text-small);
+            letter-spacing: 0.03em;
+            margin-left: 10px;
+            font-weight: 500;
+        }
+        .cad-vp-status.gen  { color: #b45309; }
+        .cad-vp-status.done { color: #16a34a; }
+        .cad-canvas-area {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            background: #fafbfc;
+        }
+        .cad-canvas-area svg { width: 100%; height: 100%; display: block; }
+        /* Status bar */
+        .cad-statusbar {
+            height: 28px;
+            background: var(--bg-section);
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            gap: 20px;
+        }
+        .cad-sb-item {
+            font-size: 0.6rem;
+            color: var(--text-small);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .cad-sb-item span {
+            color: var(--text-muted);
+            font-weight: 400;
+            font-family: 'Courier New', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 0;
+        }
+        /* Suggestion chips */
+        .cad-suggestions {
+            padding: 8px 12px 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            border-top: 1px solid var(--border);
+            background: var(--bg-section);
+        }
+        .cad-suggestions-label {
+            font-size: 0.6rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            color: var(--text-small);
+            margin-bottom: 1px;
+        }
+        .cad-chip {
+            font-size: 0.7rem;
+            font-family: 'Inter', sans-serif;
+            padding: 6px 11px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--bg);
+            color: var(--text-muted);
+            cursor: pointer;
+            text-align: left;
+            line-height: 1.4;
+            transition: border-color 0.15s, color 0.15s, background 0.15s;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            width: 100%;
+        }
+        .cad-chip:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: #f0f3fa;
+        }
+        .cad-chip-icon { font-size: 0.8rem; flex-shrink: 0; opacity: 0.55; }
+        /* IFC success message */
+        .cad-msg-success .cad-bubble {
+            background: #f0faf4;
+            border: 1px solid #86efac;
+            color: #15803d;
+            border-bottom-left-radius: 3px;
+            font-size: 0.72rem;
+        }
+        @media (max-width: 680px) {
+            .cad-body { flex-direction: column; height: auto; }
+            .cad-sidebar { width: 100%; height: 200px; border-right: none; border-bottom: 1px solid var(--border); }
+            .cad-viewport { min-height: 380px; }
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <div class="nav-left">
+        <a href="#" class="nav-name">Martin Motlík</a>
+        <a href="#dlubal" data-i18n="nav_dlubal">Dlubal</a>
+        <a href="#ai" data-i18n="nav_ai">AI in BIM</a>
+        <a href="#bim" data-i18n="nav_bim">BIM Marketing</a>
+        <a href="#contact" data-i18n="nav_contact">Let's talk</a>
+    </div>
+    <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="cs">CS</button>
+        <button class="lang-btn" data-lang="de">DE</button>
+    </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero lang-fade">
+    <div class="avatar-wrap"><img src="data:image/jpeg;base64,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" alt="Martin Motlík" style="width:100%;height:100%;object-fit:cover;"></div>
+    <h1>Martin Motlík</h1>
+    <p class="headline">
+        <strong data-i18n="hero_role">Head of Web Content</strong> <span data-i18n="hero_role_at">at Dlubal Software.</span><br>
+        <span data-i18n="hero_sub">Thinking out loud about</span> <strong data-i18n="hero_sub_bold">AI adoption in BIM</strong> <span data-i18n="hero_sub2">and how the AEC industry communicates it.</span>
+    </p>
+
+    <div class="hero-vision">
+        <svg class="icon-sm" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 18h6M10 21h4M12 2a7 7 0 0 1 5 11.9c-.6.7-1 1.6-1 2.6v.5H8v-.5c0-1-.4-1.9-1-2.6A7 7 0 0 1 12 2z"/></svg>
+        <p data-i18n="hero_vision">The AEC industry has everything it needs to benefit from AI. <em>The gap isn't the technology — it's the speed of adoption.</em> That's the conversation I want to have.</p>
+    </div>
+
+    <div class="cta-group">
+        <a href="https://www.linkedin.com/in/martin-motl%C3%ADk-3b1b47233" target="_blank" class="btn-primary">
+            <svg class="btn-linkedin-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            <span data-i18n="cta_linkedin">Connect on LinkedIn</span>
+        </a>
+        <a href="mailto:motlik.martin@gmail.com" class="btn-secondary" data-i18n="cta_email">Send an email →</a>
+    </div>
+</div>
+
+<div class="tag-row lang-fade">
+    <span class="chip" data-i18n="chip1">AI in BIM</span>
+    <span class="chip" data-i18n="chip2">AEC Industry</span>
+    <span class="chip" data-i18n="chip3">BIM Marketing</span>
+    <span class="chip" data-i18n="chip4">Technical Content</span>
+    <span class="chip">US &amp; Canada</span>
+    <span class="chip">Prague</span>
+</div>
+
+<!-- DLUBAL -->
+
+<!-- STATS -->
+
+
+<section id="dlubal">
+    <p class="section-eyebrow lang-fade" data-i18n="dlubal_eyebrow">Where I spend most of my time</p>
+    <h2 class="section-title lang-fade" data-i18n="dlubal_title">Dlubal Software.</h2>
+    <p class="section-sub lang-fade" data-i18n="dlubal_sub">My primary focus — building a web ecosystem that makes structural engineering knowledge accessible, useful, and engaging for a global audience.</p>
+
+    <div class="dlubal-featured anim">
+        <div class="card-featured">
+
+            <!-- TOP BAR: white logo + visit button -->
+            <div class="cf-logo-panel">
+                <svg viewBox="0 0 392 94" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M93.8894 0.0374756H116.41V92.134H93.8894V0.0374756Z" fill="#03123D"/>
+                    <path d="M196.348 92.1341H174.871V84.9752H173.603C172.895 86.0565 171.739 87.2496 170.173 88.5546C168.607 89.8596 166.556 91.0155 163.983 91.9849C161.411 92.9544 158.241 93.4391 154.401 93.4391C146.683 93.4391 140.568 91.3138 136.019 87.0259C131.47 82.738 129.196 76.5858 129.196 68.4947V24.3481H151.716V67.1897C151.716 70.3963 152.574 72.8199 154.289 74.4978C156.004 76.1757 158.353 77.0332 161.299 77.0332C163.499 77.0332 165.587 76.6231 167.488 75.7655C169.39 74.9079 170.919 73.4911 172.075 71.4776C173.23 69.4642 173.827 66.7796 173.827 63.3493V24.3481H196.348V92.1341Z" fill="#03123D"/>
+                    <path d="M209.655 0.0374756H232.176V29.7172H233.444C234.301 28.7104 235.494 27.6664 237.023 26.6597C238.552 25.653 240.565 24.7954 242.989 24.087C245.45 23.4158 248.433 23.0803 251.975 23.0803C257.53 23.0803 262.639 24.3107 267.299 26.8089C271.96 29.307 275.726 33.1475 278.56 38.3302C281.393 43.513 282.81 50.1499 282.81 58.241C282.81 64.2813 281.99 69.5387 280.349 73.9757C278.709 78.4128 276.472 82.0668 273.638 84.9378C270.804 87.8088 267.523 89.9341 263.832 91.351C260.14 92.7306 256.188 93.439 252.012 93.439C248.47 93.439 245.412 93.1035 242.84 92.395C240.267 91.6866 238.142 90.7171 236.427 89.4867C234.749 88.2563 233.406 86.8767 232.437 85.3852H231.169V92.1713H209.692V0.0374756H209.655ZM231.132 58.241C231.132 64.5051 232.437 69.2031 235.047 72.3351C237.657 75.4671 241.162 77.0332 245.562 77.0332C247.761 77.0332 249.775 76.623 251.527 75.84C253.28 75.057 254.808 73.8638 256.076 72.3351C257.344 70.7691 258.313 68.8302 258.985 66.4439C259.656 64.0949 259.991 61.3357 259.991 58.241C259.991 51.9769 258.686 47.2789 256.076 44.1469C253.466 41.0148 249.961 39.4488 245.524 39.4488C243.324 39.4488 241.311 39.859 239.559 40.642C237.806 41.425 236.277 42.6181 235.01 44.1469C233.742 45.7129 232.772 47.6518 232.101 50.0008C231.43 52.3498 231.095 55.109 231.095 58.241H231.132Z" fill="#03123D"/>
+                    <path d="M293.825 45.0791V43.1775C294.608 36.9507 297.74 31.9917 303.258 28.3377C308.777 24.6836 316.047 22.8193 325.033 22.8193C331.074 22.8193 336.406 23.7515 340.954 25.5785C345.503 27.4055 349.083 30.2765 351.618 34.2289C354.191 38.1439 355.459 43.2148 355.459 49.4416V74.7588C355.459 78.2637 355.608 81.2466 355.869 83.7074C356.13 86.1683 356.689 88.3682 357.509 90.2325V92.1341H336.256C335.995 91.2392 335.809 90.3071 335.697 89.3003C335.585 88.2936 335.511 87.175 335.511 85.87H334.243C333.162 87.1005 331.857 88.2936 330.291 89.3749C328.725 90.4935 326.711 91.3884 324.325 92.0968C321.901 92.8052 318.918 93.1408 315.339 93.1408C310.529 93.1408 306.167 92.3205 302.326 90.6426C298.448 88.9648 295.391 86.5785 293.154 83.4464C290.879 80.3144 289.761 76.5485 289.761 72.1488C289.761 67.749 290.805 63.834 292.93 60.9257C295.055 58.0174 297.889 55.7429 301.431 54.1769C304.973 52.6109 308.963 51.6042 313.288 51.1567L328.501 49.628C330.552 49.4043 332.043 48.9196 333.05 48.1738C334.019 47.3908 334.504 46.235 334.504 44.669C334.504 42.5437 333.646 40.8658 331.931 39.6726C330.216 38.4795 327.792 37.8829 324.623 37.8829C321.454 37.8829 319.03 38.5168 317.091 39.7472C315.153 40.9776 314.108 42.7674 313.997 45.0418H293.788L293.825 45.0791ZM311.759 71.0302C311.759 73.3419 312.58 75.1316 314.183 76.3994C315.786 77.6671 318.135 78.301 321.23 78.301C323.02 78.301 324.921 77.8908 326.972 77.1078C328.986 76.3248 330.738 74.9452 332.155 73.0063C333.572 71.0675 334.28 68.3456 334.28 64.8407V61.1494H333.012C332.006 61.6714 330.887 62.0442 329.657 62.3425C328.426 62.6035 326.972 62.8645 325.22 63.0883L319.329 63.7221C317.352 63.9458 315.637 64.5797 314.071 65.6983C312.542 66.8169 311.759 68.5693 311.759 70.9929V71.0302Z" fill="#03123D"/>
+                    <path d="M368.529 0.0374756H391.05V92.134H368.529V0.0374756Z" fill="#03123D"/>
+                    <path d="M36.5775 22.4089C42.5806 22.4089 47.465 23.4156 51.1191 25.3918C54.2511 27.107 56.4883 29.3068 58.1288 32.3643C60.0677 35.9437 61.0372 40.5672 61.0372 46.0855C61.0372 49.5532 60.627 52.6852 59.8813 55.3698C59.1729 57.7561 58.2407 59.8068 57.0103 61.5593C55.8917 63.1626 54.5867 64.4676 52.9834 65.5862C51.1937 66.8166 49.1056 67.786 46.5702 68.5317C43.7365 69.352 40.3807 69.7622 36.6148 69.7622H22.4089V22.4089H36.6148M36.5775 0.037286H0V92.1338H36.5775C42.4687 92.1338 47.8379 91.4254 52.7224 90.0085C57.6068 88.5916 61.932 86.5782 65.7352 83.9309C69.5384 81.2836 72.7449 78.077 75.355 74.3111C77.965 70.5452 79.9784 66.2946 81.3207 61.5593C82.7003 56.8239 83.3715 51.6785 83.3715 46.0855C83.3715 36.8013 81.5072 28.673 77.8158 21.775C74.1245 14.8771 68.7553 9.50794 61.7456 5.70476C54.7358 1.90159 46.3465 0 36.5403 0L36.5775 0.037286Z" fill="#03123D"/>
+                </svg>
+                <a href="https://www.dlubal.com/en" target="_blank" class="cf-visit-btn">
+                    Visit dlubal.com →
+                </a>
+            </div>
+
+
+            <!-- CONTENT PANEL: full width -->
+            <div class="cf-content-panel">
+                <div class="cf-inner lang-fade">
+                    <h3 data-i18n="dlubal_h3">Managing global web content for structural engineering software.</h3>
+                    <p data-i18n="dlubal_p">My job at Dlubal is to ensure our website works for two distinct groups: as a reliable technical resource for our global users, and as a practical tool for our internal teams. I take complex structural engineering documentation and structure it so it's easy to find, read, and use online.</p>
+
+                    <div class="cf-carousel-wrap">
+                        <div class="cf-carousel-header">
+                            <div class="cf-carousel-nav">
+                                <button class="cf-carousel-btn" id="cf-prev" aria-label="Previous" disabled>&#8592;</button>
+                                <button class="cf-carousel-btn" id="cf-next" aria-label="Next">&#8594;</button>
+                            </div>
+                        </div>
+                        <div class="cf-carousel-track-wrap">
+                            <div class="cf-carousel-track" id="cf-track">
+                                <div class="cf-point">
+                                    <p class="cp-label" data-i18n="dlubal_g1_label">Global Web Management</p>
+                                    <p data-i18n="dlubal_g1_p">Managing a large-scale technical website that balances engineering precision with straightforward, functional navigation.</p>
+                                </div>
+                                <div class="cf-point">
+                                    <p class="cp-label" data-i18n="dlubal_g2_label">Content Localization</p>
+                                    <p data-i18n="dlubal_g2_p">Driving tailored content and marketing initiatives for the US &amp; Canadian markets, ensuring our solutions resonate with North American engineers.</p>
+                                </div>
+                                <div class="cf-point">
+                                    <p class="cp-label" data-i18n="dlubal_g3_label">Digital &amp; Print Content</p>
+                                    <p data-i18n="dlubal_g3_p">Overseeing the production of technical articles, manuals, and marketing materials across both web and print formats.</p>
+                                </div>
+                                <div class="cf-point">
+                                    <p class="cp-label" data-i18n="dlubal_g4_label">Knowledge Management</p>
+                                    <p data-i18n="dlubal_g4_p">Organizing complex structural data—like FAQs, verification examples, and knowledge base articles—into a highly structured and searchable format.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cf-progress" id="cf-progress">
+                            <!-- filled by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- AI in BIM -->
+<section id="ai" class="alt">
+    <p class="section-eyebrow lang-fade" data-i18n="ai_eyebrow">A topic I care about</p>
+    <h2 class="section-title lang-fade" data-i18n="ai_title">AI in BIM.</h2>
+    <p class="section-sub lang-fade" data-i18n="ai_sub">I focus on the practical implementation of AI in BIM workflows. My work centers on two main areas: using generative AI to accelerate architectural and structural modeling, and applying process-driven AI to eliminate repetitive project tasks.</p>
+
+    <div class="vision-thread anim lang-fade">
+        <div class="vision-thread-bar"></div>
+        <p data-i18n="ai_thread">AEC companies must integrate AI into their daily workflows to stay competitive. Adopting AI is no longer just an option—it's a necessity.</p>
+    </div>
+
+    <div class="cards lang-fade">
+        <div class="card anim">
+            <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/></svg>
+            <p class="card-label" data-i18n="ai_c1_label">Education</p>
+            <h3 data-i18n="ai_c1_h3">Schools can't keep up. Students pay the price.</h3>
+            <p data-i18n="ai_c1_p">Technology evolves faster than any curriculum can follow. Online learning platforms are the fastest way to close that gap — I'm focused on creating and promoting accessible, high-quality content for students, because a well-made tutorial or course can reach thousands of future engineers in a way no classroom ever could.</p>
+            <span class="talk-nudge" data-i18n="ai_c1_nudge">Are you a student looking for resources? Let's connect.</span>
+        </div>
+        <div class="card anim anim-d1">
+            <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 11v2M18 4v16l-9-4H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h4l9-4z"/><path d="M9 17v4"/></svg>
+            <p class="card-label" data-i18n="ai_c2_label">Communication</p>
+            <h3 data-i18n="ai_c2_h3">Talking about AI without the fluff</h3>
+            <p data-i18n="ai_c2_p">I work to popularize practical AI adoption across digital platforms, showcasing real tools like AI agents embedded directly into engineering software. But beyond the tech, I want to drive a reality check for AEC companies: Where will your business be in a few years without AI, and how far ahead will your competitors be because they embraced it?</p>
+            <span class="talk-nudge" data-i18n="ai_c2_nudge">Have a take on this? I'd like to hear it.</span>
+        </div>
+    </div>
+
+    <!-- CAD AI Demo -->
+    <div class="cad-wrap anim anim-d2">
+        <div class="cad-label">✦ Live demo — AI-generated floor plan</div>
+        <div class="cad-app">
+            <!-- Title bar -->
+            <div class="cad-titlebar">
+                <div class="cad-tb-dots">
+                    <span class="cad-dot cad-dot-r"></span>
+                    <span class="cad-dot cad-dot-y"></span>
+                    <span class="cad-dot cad-dot-g"></span>
+                </div>
+                <div class="cad-tb-divider"></div>
+                <div class="cad-tb-menu">
+                    <span class="cad-tb-item">File</span>
+                    <span class="cad-tb-item">Edit</span>
+                    <span class="cad-tb-item">View</span>
+                    <span class="cad-tb-item">Tools</span>
+                </div>
+                <div class="cad-tb-title">CAD.AI — Floor Plan Generator</div>
+                <div class="cad-tb-actions">
+                    <button class="cad-btn">↓ DWG</button>
+                    <button class="cad-btn">↓ PDF</button>
+                    <button class="cad-btn cad-btn-ifc" id="cadIfcBtn">↑ Export to IFC</button>
+                </div>
+            </div>
+            <!-- Body -->
+            <div class="cad-body">
+                <!-- Left: AI prompt panel -->
+                <div class="cad-sidebar">
+                    <div class="cad-sidebar-tabs">
+                        <div class="cad-stab cad-stab-active">AI Prompt</div>
+                        <div class="cad-stab">Layers</div>
+                        <div class="cad-stab">Properties</div>
+                    </div>
+                    <div class="cad-chat-msgs" id="cadChatMsgs">
+                        <div class="cad-msg cad-msg-sys">
+                            <div class="cad-bubble">Ready. Describe a floor plan — rooms, dimensions, orientation.</div>
+                        </div>
+                    </div>
+                    <div class="cad-suggestions" id="cadSuggestions" style="display:none;">
+                        <div class="cad-suggestions-label">Suggested actions</div>
+                        <button class="cad-chip" data-prompt="Export to IFC">
+                            <span class="cad-chip-icon">↑</span>Export to IFC
+                        </button>
+                        <button class="cad-chip" data-prompt="Add 4 more private offices along the east wall">
+                            <span class="cad-chip-icon">＋</span>Add private offices (east wall)
+                        </button>
+                        <button class="cad-chip" data-prompt="Generate Bill of Quantities for this floor plan">
+                            <span class="cad-chip-icon">📋</span>Generate Bill of Quantities
+                        </button>
+                        <button class="cad-chip" data-prompt="Show me a 3D axonometric view">
+                            <span class="cad-chip-icon">⬡</span>Switch to 3D view
+                        </button>
+                    </div>
+                    <div class="cad-input-row">
+                        <div class="cad-input" id="cadInput"></div>
+                        <button class="cad-send" id="cadSend">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M3.478 2.405a.75.75 0 0 0-.926.94l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.405Z"/></svg>
+                        </button>
+                    </div>
+                </div>
+                <!-- Right: CAD viewport -->
+                <div class="cad-viewport">
+                    <div class="cad-vp-toolbar">
+                        <span class="cad-vp-tab cad-vp-tab-active">Floor Plan</span>
+                        <span class="cad-vp-tab">3D View</span>
+                        <span class="cad-vp-tab">Sections</span>
+                        <span class="cad-vp-tab">Schedule</span>
+                        <span class="cad-vp-coords" id="cadCoords">X: 0'-0"  Y: 0'-0"</span>
+                        <span class="cad-vp-status" id="cadStatus">Awaiting prompt</span>
+                    </div>
+                    <div class="cad-canvas-area">
+                        <svg id="cadSvg" viewBox="0 0 680 448" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" font-family="'Inter', sans-serif">
+                            <defs>
+                                <!-- Light grid — minor lines -->
+                                <pattern id="cgMinor" width="10" height="10" patternUnits="userSpaceOnUse">
+                                    <path d="M 10 0 L 0 0 0 10" fill="none" stroke="#eef0f3" stroke-width="0.5"/>
+                                </pattern>
+                                <!-- Major grid (5×) -->
+                                <pattern id="cgMajor" width="50" height="50" patternUnits="userSpaceOnUse">
+                                    <rect width="50" height="50" fill="url(#cgMinor)"/>
+                                    <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#e4e6eb" stroke-width="0.8"/>
+                                </pattern>
+                                <!-- Wall section hatch: 45° AIA standard -->
+                                <pattern id="wh" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45 0 0)">
+                                    <line x1="0" y1="0" x2="0" y2="5" stroke="#c8cdd8" stroke-width="1.6"/>
+                                </pattern>
+                                <!-- Column hatch -->
+                                <pattern id="ch" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45 0 0)">
+                                    <line x1="0" y1="0" x2="0" y2="4" stroke="#0a2d8f" stroke-width="1.0"/>
+                                </pattern>
+                            </defs>
+
+                            <!-- Canvas background -->
+                            <rect width="680" height="448" fill="#fafbfc"/>
+                            <rect width="680" height="448" fill="url(#cgMajor)"/>
+
+                            <!-- Placeholder -->
+                            <text id="cadPH" x="340" y="228" text-anchor="middle" font-size="12" fill="#d2d2d7" letter-spacing="0.08em">AWAITING PROMPT</text>
+
+                            <!--
+                            ═══════════════════════════════════════════════════
+                            FLOOR PLAN — AIA / ANSI standards, Imperial units
+                            62' × 46' office building
+                            Scale: 1/8" = 1'-0"  →  1' = 9px
+                            
+                            Canvas origin: x=52, y=22
+                            Width:  62' = 558px  → x2=610
+                            Height: 46' = 414px  → y2=436
+                            
+                            Wall thickness:
+                              Exterior: 8" = 6px
+                              Partition: 3.5" = 2.6px → 3px
+                            
+                            Rooms (interior dims):
+                              101 Conference:   x=58–224,  y=28–214  (18.4'×20.7')  ~381 SF
+                              102 Open Office:  x=227–604, y=28–214  (41.9'×20.7')  ~867 SF
+                              103 Corridor:     x=58–604,  y=217–329 (60.7'×12.4')  ~753 SF
+                              104 Women's RR:   x=58–222,  y=332–430 (18.2'×10.9')  ~198 SF
+                              105 Men's RR:     x=225–383, y=332–430 (17.6'×10.9')  ~192 SF
+                              106 Storage/Elec: x=386–604, y=332–430 (24.2'×10.9')  ~264 SF
+                            ═══════════════════════════════════════════════════
+                            -->
+
+                            <g id="cadFP" opacity="0">
+
+                            <!-- Room fills -->
+                            <g id="fpFills">
+                                <rect x="58"  y="28"  width="166" height="186" fill="#eef4ff" opacity="0.6"/>
+                                <rect x="227" y="28"  width="377" height="186" fill="#f0f7ff" opacity="0.5"/>
+                                <rect x="58"  y="217" width="546" height="112" fill="#f5f5f7" opacity="0.8"/>
+                                <rect x="58"  y="332" width="164" height="98"  fill="#fff8f0" opacity="0.7"/>
+                                <rect x="225" y="332" width="158" height="98"  fill="#fff8f0" opacity="0.7"/>
+                                <rect x="386" y="332" width="218" height="98"  fill="#f0f7f0" opacity="0.7"/>
+                            </g>
+
+                            <!-- Exterior walls -->
+                            <g id="fpWalls">
+                                <rect x="52" y="22" width="558" height="6" fill="url(#wh)"/>
+                                <rect x="52" y="22" width="558" height="6" fill="none" stroke="#8a9ab8" stroke-width="0.4"/>
+                                <rect x="52" y="430" width="558" height="6" fill="url(#wh)"/>
+                                <rect x="52" y="430" width="558" height="6" fill="none" stroke="#8a9ab8" stroke-width="0.4"/>
+                                <rect x="52" y="22" width="6" height="414" fill="url(#wh)"/>
+                                <rect x="52" y="22" width="6" height="414" fill="none" stroke="#8a9ab8" stroke-width="0.4"/>
+                                <rect x="604" y="22" width="6" height="414" fill="url(#wh)"/>
+                                <rect x="604" y="22" width="6" height="414" fill="none" stroke="#8a9ab8" stroke-width="0.4"/>
+                                <!-- Outer boundary — heavy line -->
+                                <rect x="52" y="22" width="558" height="414" fill="none" stroke="#1d1d1f" stroke-width="2.0"/>
+
+                                <!-- Interior partitions -->
+                                <rect x="224" y="28"  width="3" height="186" fill="url(#wh)" stroke="#8a9ab8" stroke-width="0.4"/>
+                                <rect x="58"  y="214" width="546" height="3" fill="url(#wh)" stroke="#8a9ab8" stroke-width="0.4"/>
+                                <rect x="58"  y="329" width="546" height="3" fill="url(#wh)" stroke="#8a9ab8" stroke-width="0.4"/>
+                                <rect x="222" y="329" width="3" height="107" fill="url(#wh)" stroke="#8a9ab8" stroke-width="0.4"/>
+                                <rect x="383" y="329" width="3" height="107" fill="url(#wh)" stroke="#8a9ab8" stroke-width="0.4"/>
+                            </g>
+
+                            <!-- Structural columns (W8×48) -->
+                            <g id="fpCols">
+                                <rect x="133" y="210" width="10" height="10" fill="url(#ch)" stroke="#0a2d8f" stroke-width="0.8"/>
+                                <rect x="331" y="210" width="10" height="10" fill="url(#ch)" stroke="#0a2d8f" stroke-width="0.8"/>
+                                <rect x="529" y="210" width="10" height="10" fill="url(#ch)" stroke="#0a2d8f" stroke-width="0.8"/>
+                                <rect x="133" y="326" width="10" height="10" fill="url(#ch)" stroke="#0a2d8f" stroke-width="0.8"/>
+                                <rect x="331" y="326" width="10" height="10" fill="url(#ch)" stroke="#0a2d8f" stroke-width="0.8"/>
+                                <rect x="529" y="326" width="10" height="10" fill="url(#ch)" stroke="#0a2d8f" stroke-width="0.8"/>
+
+                                <!-- Grid axes -->
+                                <line x1="138" y1="10" x2="138" y2="445" stroke="#d2d2d7" stroke-width="0.6" stroke-dasharray="10,3,2,3"/>
+                                <line x1="336" y1="10" x2="336" y2="445" stroke="#d2d2d7" stroke-width="0.6" stroke-dasharray="10,3,2,3"/>
+                                <line x1="534" y1="10" x2="534" y2="445" stroke="#d2d2d7" stroke-width="0.6" stroke-dasharray="10,3,2,3"/>
+                                <line x1="40"  y1="215" x2="622" y2="215" stroke="#d2d2d7" stroke-width="0.6" stroke-dasharray="10,3,2,3"/>
+                                <line x1="40"  y1="331" x2="622" y2="331" stroke="#d2d2d7" stroke-width="0.6" stroke-dasharray="10,3,2,3"/>
+
+                                <!-- Grid bubbles -->
+                                <circle cx="138" cy="11" r="7" fill="white" stroke="#d2d2d7" stroke-width="0.8"/>
+                                <text x="138" y="14.5" text-anchor="middle" font-size="6.5" fill="#0a2d8f" font-weight="700">A</text>
+                                <circle cx="336" cy="11" r="7" fill="white" stroke="#d2d2d7" stroke-width="0.8"/>
+                                <text x="336" y="14.5" text-anchor="middle" font-size="6.5" fill="#0a2d8f" font-weight="700">B</text>
+                                <circle cx="534" cy="11" r="7" fill="white" stroke="#d2d2d7" stroke-width="0.8"/>
+                                <text x="534" y="14.5" text-anchor="middle" font-size="6.5" fill="#0a2d8f" font-weight="700">C</text>
+                                <circle cx="40"  cy="215" r="7" fill="white" stroke="#d2d2d7" stroke-width="0.8"/>
+                                <text x="40" y="218.5" text-anchor="middle" font-size="6.5" fill="#0a2d8f" font-weight="700">1</text>
+                                <circle cx="40"  cy="331" r="7" fill="white" stroke="#d2d2d7" stroke-width="0.8"/>
+                                <text x="40" y="334.5" text-anchor="middle" font-size="6.5" fill="#0a2d8f" font-weight="700">2</text>
+                            </g>
+
+                            <!-- Windows (AIA: gap + 2 thin lines = glazing) -->
+                            <g id="fpWindows">
+                                <!-- N facade -->
+                                <rect x="72"  y="22" width="36" height="6" fill="#fafbfc"/>
+                                <line x1="72"  y1="23.5" x2="108" y2="23.5" stroke="#93c5fd" stroke-width="1.0"/>
+                                <line x1="72"  y1="26.5" x2="108" y2="26.5" stroke="#93c5fd" stroke-width="1.0"/>
+                                <rect x="144" y="22" width="36" height="6" fill="#fafbfc"/>
+                                <line x1="144" y1="23.5" x2="180" y2="23.5" stroke="#93c5fd" stroke-width="1.0"/>
+                                <line x1="144" y1="26.5" x2="180" y2="26.5" stroke="#93c5fd" stroke-width="1.0"/>
+                                <rect x="250" y="22" width="54" height="6" fill="#fafbfc"/>
+                                <line x1="250" y1="23.5" x2="304" y2="23.5" stroke="#93c5fd" stroke-width="1.0"/>
+                                <line x1="250" y1="26.5" x2="304" y2="26.5" stroke="#93c5fd" stroke-width="1.0"/>
+                                <rect x="364" y="22" width="54" height="6" fill="#fafbfc"/>
+                                <line x1="364" y1="23.5" x2="418" y2="23.5" stroke="#93c5fd" stroke-width="1.0"/>
+                                <line x1="364" y1="26.5" x2="418" y2="26.5" stroke="#93c5fd" stroke-width="1.0"/>
+                                <rect x="472" y="22" width="54" height="6" fill="#fafbfc"/>
+                                <line x1="472" y1="23.5" x2="526" y2="23.5" stroke="#93c5fd" stroke-width="1.0"/>
+                                <line x1="472" y1="26.5" x2="526" y2="26.5" stroke="#93c5fd" stroke-width="1.0"/>
+                                <!-- S facade -->
+                                <rect x="88"  y="430" width="36" height="6" fill="#fafbfc"/>
+                                <line x1="88"  y1="431.5" x2="124" y2="431.5" stroke="#93c5fd" stroke-width="1.0"/>
+                                <line x1="88"  y1="434.5" x2="124" y2="434.5" stroke="#93c5fd" stroke-width="1.0"/>
+                                <rect x="450" y="430" width="54" height="6" fill="#fafbfc"/>
+                                <line x1="450" y1="431.5" x2="504" y2="431.5" stroke="#93c5fd" stroke-width="1.0"/>
+                                <line x1="450" y1="434.5" x2="504" y2="434.5" stroke="#93c5fd" stroke-width="1.0"/>
+                                <!-- E facade -->
+                                <rect x="604" y="70"  width="6" height="46" fill="#fafbfc"/>
+                                <line x1="605.5" y1="70"  x2="605.5" y2="116" stroke="#93c5fd" stroke-width="1.0"/>
+                                <line x1="608.5" y1="70"  x2="608.5" y2="116" stroke="#93c5fd" stroke-width="1.0"/>
+                                <rect x="604" y="250" width="6" height="46" fill="#fafbfc"/>
+                                <line x1="605.5" y1="250" x2="605.5" y2="296" stroke="#93c5fd" stroke-width="1.0"/>
+                                <line x1="608.5" y1="250" x2="608.5" y2="296" stroke="#93c5fd" stroke-width="1.0"/>
+                            </g>
+
+                            <!-- Doors (AIA: solid swing line + solid quarter-arc) -->
+                            <g id="fpDoors" stroke="#1d1d1f" stroke-width="0.8" fill="none">
+                                <!-- Main entrance S wall, 3'-6" = 31px, center x=330 -->
+                                <rect x="315" y="430" width="31" height="6" fill="#fafbfc" stroke="none"/>
+                                <line x1="315" y1="430" x2="315" y2="399"/>
+                                <path d="M 315,399 A 31,31 0 0 0 346,430" stroke-width="0.6"/>
+
+                                <!-- Conf. room door in partition x=224, 3'-0"=27px -->
+                                <rect x="224" y="96" width="3" height="27" fill="#fafbfc" stroke="none"/>
+                                <line x1="227" y1="96" x2="254" y2="96"/>
+                                <path d="M 254,96 A 27,27 0 0 1 227,123" stroke-width="0.6"/>
+
+                                <!-- Women's RR door, 2'-8"=24px, W wall -->
+                                <rect x="58"  y="332" width="24" height="3" fill="#fafbfc" stroke="none"/>
+                                <line x1="58"  y1="335" x2="58"  y2="359"/>
+                                <path d="M 58,359 A 24,24 0 0 0 82,335" stroke-width="0.6"/>
+
+                                <!-- Men's RR door -->
+                                <rect x="225" y="332" width="24" height="3" fill="#fafbfc" stroke="none"/>
+                                <line x1="225" y1="335" x2="225" y2="359"/>
+                                <path d="M 225,359 A 24,24 0 0 0 249,335" stroke-width="0.6"/>
+
+                                <!-- Storage door -->
+                                <rect x="386" y="332" width="24" height="3" fill="#fafbfc" stroke="none"/>
+                                <line x1="386" y1="335" x2="386" y2="359"/>
+                                <path d="M 386,359 A 24,24 0 0 0 410,335" stroke-width="0.6"/>
+                            </g>
+
+                            <!-- Room labels (room number circle + name + SF) -->
+                            <g id="fpLabels" text-anchor="middle">
+                                <!-- 101 Conference -->
+                                <circle cx="141" cy="98"  r="10" fill="white" stroke="#0a2d8f" stroke-width="0.9"/>
+                                <text x="141" y="101.5" font-size="7"   fill="#0a2d8f" font-weight="700">101</text>
+                                <text x="141" y="116"   font-size="7.5" fill="#1d1d1f" font-weight="600">CONFERENCE</text>
+                                <text x="141" y="126"   font-size="7.5" fill="#1d1d1f" font-weight="600">ROOM</text>
+                                <text x="141" y="138"   font-size="6.5" fill="#6e6e73">381 SF</text>
+
+                                <!-- 102 Open Office -->
+                                <circle cx="415" cy="98"  r="10" fill="white" stroke="#0a2d8f" stroke-width="0.9"/>
+                                <text x="415" y="101.5" font-size="7"   fill="#0a2d8f" font-weight="700">102</text>
+                                <text x="415" y="116"   font-size="7.5" fill="#1d1d1f" font-weight="600">OPEN PLAN</text>
+                                <text x="415" y="126"   font-size="7.5" fill="#1d1d1f" font-weight="600">OFFICE</text>
+                                <text x="415" y="138"   font-size="6.5" fill="#6e6e73">867 SF</text>
+
+                                <!-- 103 Corridor -->
+                                <circle cx="336" cy="269" r="10" fill="white" stroke="#0a2d8f" stroke-width="0.9"/>
+                                <text x="336" y="272.5" font-size="7"   fill="#0a2d8f" font-weight="700">103</text>
+                                <text x="336" y="287"   font-size="7.5" fill="#1d1d1f" font-weight="600">CORRIDOR</text>
+                                <text x="336" y="297"   font-size="6.5" fill="#6e6e73">753 SF</text>
+
+                                <!-- 104 Women's RR -->
+                                <circle cx="140" cy="378" r="9"  fill="white" stroke="#0a2d8f" stroke-width="0.9"/>
+                                <text x="140" y="381.5" font-size="6.5" fill="#0a2d8f" font-weight="700">104</text>
+                                <text x="140" y="394"   font-size="6.5" fill="#1d1d1f" font-weight="600">WOMEN'S</text>
+                                <text x="140" y="403"   font-size="6.5" fill="#1d1d1f" font-weight="600">RESTROOM</text>
+                                <text x="140" y="413"   font-size="6"   fill="#6e6e73">198 SF</text>
+
+                                <!-- 105 Men's RR -->
+                                <circle cx="304" cy="378" r="9"  fill="white" stroke="#0a2d8f" stroke-width="0.9"/>
+                                <text x="304" y="381.5" font-size="6.5" fill="#0a2d8f" font-weight="700">105</text>
+                                <text x="304" y="394"   font-size="6.5" fill="#1d1d1f" font-weight="600">MEN'S</text>
+                                <text x="304" y="403"   font-size="6.5" fill="#1d1d1f" font-weight="600">RESTROOM</text>
+                                <text x="304" y="413"   font-size="6"   fill="#6e6e73">192 SF</text>
+
+                                <!-- 106 Storage -->
+                                <circle cx="494" cy="378" r="9"  fill="white" stroke="#0a2d8f" stroke-width="0.9"/>
+                                <text x="494" y="381.5" font-size="6.5" fill="#0a2d8f" font-weight="700">106</text>
+                                <text x="494" y="394"   font-size="6.5" fill="#1d1d1f" font-weight="600">STORAGE /</text>
+                                <text x="494" y="403"   font-size="6.5" fill="#1d1d1f" font-weight="600">ELECTRICAL</text>
+                                <text x="494" y="413"   font-size="6"   fill="#6e6e73">264 SF</text>
+                            </g>
+
+                            <!-- Dimensions (AIA: 45° ticks, text above line, imperial) -->
+                            <g id="fpDims" stroke="#86868b" stroke-width="0.5" fill="#86868b" font-size="6" text-anchor="middle">
+                                <!-- Top row — bay widths -->
+                                <line x1="58"  y1="14" x2="58"  y2="20" stroke-width="0.4"/>
+                                <line x1="224" y1="14" x2="224" y2="20" stroke-width="0.4"/>
+                                <line x1="610" y1="14" x2="610" y2="20" stroke-width="0.4"/>
+                                <line x1="58"  y1="17" x2="224" y2="17"/>
+                                <line x1="224" y1="17" x2="610" y2="17"/>
+                                <line x1="56" y1="15"  x2="60" y2="19"  stroke-width="0.8"/>
+                                <line x1="222" y1="15" x2="226" y2="19" stroke-width="0.8"/>
+                                <line x1="608" y1="15" x2="612" y2="19" stroke-width="0.8"/>
+                                <text x="141" y="13.5" fill="#86868b">18'-4"</text>
+                                <text x="417" y="13.5" fill="#86868b">42'-8"</text>
+
+                                <!-- Left column — room heights -->
+                                <line x1="41" y1="28"  x2="47" y2="28"  stroke-width="0.4"/>
+                                <line x1="41" y1="214" x2="47" y2="214" stroke-width="0.4"/>
+                                <line x1="41" y1="329" x2="47" y2="329" stroke-width="0.4"/>
+                                <line x1="41" y1="436" x2="47" y2="436" stroke-width="0.4"/>
+                                <line x1="44" y1="28"  x2="44" y2="214"/>
+                                <line x1="44" y1="214" x2="44" y2="329"/>
+                                <line x1="44" y1="329" x2="44" y2="436"/>
+                                <line x1="42" y1="26"  x2="46" y2="30"  stroke-width="0.8"/>
+                                <line x1="42" y1="212" x2="46" y2="216" stroke-width="0.8"/>
+                                <line x1="42" y1="327" x2="46" y2="331" stroke-width="0.8"/>
+                                <line x1="42" y1="434" x2="46" y2="438" stroke-width="0.8"/>
+                                <text x="42" y="124"  transform="rotate(-90,42,124)">20'-7"</text>
+                                <text x="42" y="274"  transform="rotate(-90,42,274)">12'-8"</text>
+                                <text x="42" y="385"  transform="rotate(-90,42,385)">10'-9"</text>
+
+                                <!-- Bottom total -->
+                                <line x1="52"  y1="442" x2="52"  y2="447" stroke-width="0.4"/>
+                                <line x1="610" y1="442" x2="610" y2="447" stroke-width="0.4"/>
+                                <line x1="52"  y1="445" x2="610" y2="445"/>
+                                <line x1="50" y1="443" x2="54" y2="447" stroke-width="0.8"/>
+                                <line x1="608" y1="443" x2="612" y2="447" stroke-width="0.8"/>
+                                <text x="331" y="444" font-weight="700" fill="#6e6e73" font-size="6.5">62'-0" TOTAL</text>
+
+                                <!-- Right total -->
+                                <line x1="616" y1="22"  x2="621" y2="22"  stroke-width="0.4"/>
+                                <line x1="616" y1="436" x2="621" y2="436" stroke-width="0.4"/>
+                                <line x1="619" y1="22"  x2="619" y2="436"/>
+                                <line x1="617" y1="20"  x2="621" y2="24"  stroke-width="0.8"/>
+                                <line x1="617" y1="434" x2="621" y2="438" stroke-width="0.8"/>
+                                <text x="621" y="232" transform="rotate(90,621,232)" font-weight="700" fill="#6e6e73" font-size="6.5">46'-0" TOTAL</text>
+                            </g>
+
+                            <!-- North arrow -->
+                            <g id="fpNorth" transform="translate(646,44)">
+                                <circle cx="0" cy="0" r="14" fill="white" stroke="#d2d2d7" stroke-width="1"/>
+                                <polygon points="0,-11 -5,8 0,4 5,8" fill="#0a2d8f"/>
+                                <polygon points="0,-11 -5,8 0,4"     fill="#d2d2d7"/>
+                                <text x="0" y="23" text-anchor="middle" font-size="7.5" fill="#6e6e73" font-weight="700">N</text>
+                            </g>
+
+                            <!-- Scale bar -->
+                            <g id="fpScale" transform="translate(618,72)" font-size="5.5" fill="#86868b">
+                                <text x="22" y="-3" text-anchor="middle" fill="#6e6e73" font-size="6" font-weight="600">1/8" = 1'-0"</text>
+                                <rect x="0"  y="0" width="14" height="4" fill="#6e6e73"/>
+                                <rect x="14" y="0" width="14" height="4" fill="none" stroke="#6e6e73" stroke-width="0.7"/>
+                                <rect x="28" y="0" width="14" height="4" fill="#6e6e73"/>
+                                <line x1="0"  y1="0" x2="0"  y2="6" stroke="#6e6e73" stroke-width="0.6"/>
+                                <line x1="14" y1="0" x2="14" y2="6" stroke="#6e6e73" stroke-width="0.6"/>
+                                <line x1="28" y1="0" x2="28" y2="6" stroke="#6e6e73" stroke-width="0.6"/>
+                                <line x1="42" y1="0" x2="42" y2="6" stroke="#6e6e73" stroke-width="0.6"/>
+                                <text x="0"  y="11" text-anchor="middle">0</text>
+                                <text x="14" y="11" text-anchor="middle">10'</text>
+                                <text x="28" y="11" text-anchor="middle">20'</text>
+                            </g>
+
+                            <!-- Title block (bottom-left, 2-line compact) -->
+                            <g id="fpTitle">
+                                <rect x="52" y="438" width="256" height="8" fill="white" stroke="#d2d2d7" stroke-width="0.5"/>
+                                <line x1="52" y1="442" x2="308" y2="442" stroke="#d2d2d7" stroke-width="0.4"/>
+                                <text x="57" y="440.5" font-size="5" fill="#86868b" font-weight="600">PROJECT</text>
+                                <text x="90" y="440.5" font-size="5.5" fill="#1d1d1f" font-weight="600">New Office Building — Chicago, IL</text>
+                                <text x="57" y="446"   font-size="5"   fill="#86868b" font-weight="600">SHEET</text>
+                                <text x="78" y="446"   font-size="5.5" fill="#0a2d8f" font-weight="700">A-101</text>
+                                <text x="103" y="446"  font-size="5"   fill="#86868b">Floor Plan — Level 1 · 03/2026 · CAD.AI</text>
+                            </g>
+
+                            </g><!-- end cadFP -->
+                        </svg>
+                    </div>
+                    <!-- Status bar -->
+                    <div class="cad-statusbar">
+                        <div class="cad-sb-item">SNAP <span id="sbSnap">ON</span></div>
+                        <div class="cad-sb-item">GRID <span>1'-0"</span></div>
+                        <div class="cad-sb-item">LAYER <span id="sbLayer">A-WALL</span></div>
+                        <div class="cad-sb-item">UNITS <span>IMPERIAL</span></div>
+                        <div class="cad-sb-item" style="margin-left:auto;">GFA <span id="sbGfa">—</span></div>
+                        <div class="cad-sb-item">ROOMS <span id="sbRooms">—</span></div>
+                        <div class="cad-sb-item">SCALE <span>1/8"=1'-0"</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+<section id="bim">
+    <p class="section-eyebrow lang-fade" data-i18n="bim_eyebrow">Another area of interest</p>
+    <h2 class="section-title lang-fade" data-i18n="bim_title">BIM Software Marketing.</h2>
+    <p class="section-sub lang-fade" data-i18n="bim_sub">I find BIM software marketing genuinely interesting — it sits at the intersection of deep technical knowledge and the challenge of communicating it to people who are busy, skeptical, and good at spotting fluff.</p>
+
+    <div class="vision-thread anim lang-fade">
+        <div class="vision-thread-bar"></div>
+        <p data-i18n="bim_thread">BIM software vendors are navigating a real shift right now: <strong>their customers are asking about AI</strong>, and the answers they give will shape buying decisions. Getting that communication right — credible, specific, not oversold — is a real challenge worth thinking about.</p>
+    </div>
+
+    <div class="cards cards-3 lang-fade">
+        <div class="card anim">
+            <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            <p class="card-label" data-i18n="bim_c1_label">What works</p>
+            <h3 data-i18n="bim_c1_h3">Great engineering needs great marketing</h3>
+            <p data-i18n="bim_c1_p">In the AEC industry, delivering an outstanding project is no longer enough. Without solid marketing, even the best work is virtually invisible. Technical marketing is uniquely challenging because you can't rely on fluff—you have to capture attention while maintaining absolute technical accuracy for an audience of experts.</p>
+        </div>
+        <div class="card card-dark anim anim-d1">
+            <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z"/></svg>
+            <p class="card-label" data-i18n="bim_c2_label">What I watch</p>
+            <h3 data-i18n="bim_c2_h3">How AEC software positions itself for AI.</h3>
+            <p data-i18n="bim_c2_p">Some BIM vendors are navigating this well. Others are bolting "AI-powered" onto everything and hoping no one looks too closely. The ones who will win are those who can explain specifically what changed, and why it matters for the engineer on the project.</p>
+            <span class="talk-nudge" style="color:rgba(255,255,255,0.45);" data-i18n="bim_c2_nudge">Thoughts? Find me on LinkedIn.</span>
+        </div>
+        <div class="card anim anim-d2">
+            <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 7h.01M7 11h10M7 14.5h6"/></svg>
+            <p class="card-label" data-i18n="bim_c3_label">My prediction</p>
+            <h3 data-i18n="bim_c3_h3">AEC is moving to the browser — and that changes everything.</h3>
+            <p data-i18n="bim_c3_p">I'm convinced the AEC industry is shifting away from hardware-installed software toward web-based applications. No more local installs, no version conflicts — just a browser. This isn't just a delivery change; it's a fundamental shift in how AI learns from real project data at scale, and which vendors will lead the next decade.</p>
+            <span class="talk-nudge" data-i18n="bim_c3_nudge">Agree or disagree? Let's talk.</span>
+        </div>
+    </div>
+</section>
+
+<!-- TOOLS CAROUSEL -->
+<section class="tools-section alt">
+    <p class="section-eyebrow lang-fade" data-i18n="tools_eyebrow">Tools &amp; Platforms</p>
+    <h2 class="section-title lang-fade" data-i18n="tools_title">Software I work with.</h2>
+    <p class="section-sub lang-fade" data-i18n="tools_sub">From structural engineering platforms to AI and design tools — the stack I use daily or know well.</p>
+
+    <!-- ROW 1: AI + Analytics + Design (8 pills) -->
+    <div class="marquee-wrapper">
+        <div class="marquee-track" id="row1">
+            <div class="marquee-group">
+
+                <div class="tool-pill">
+                    <img src="https://logo.clearbit.com/openai.com" alt="" onerror="this.style.display='none'">
+                    <span class="tool-name">OpenAI</span>
+                    <span class="tool-cat">AI</span>
+                </div>
+                <div class="tool-pill">
+                    <img src="https://logo.clearbit.com/anthropic.com" alt="" onerror="this.style.display='none'">
+                    <span class="tool-name">Claude AI</span>
+                    <span class="tool-cat">AI</span>
+                </div>
+                <div class="tool-pill">
+                    <img src="https://logo.clearbit.com/google.com" alt="" onerror="this.style.display='none'">
+                    <span class="tool-name">Gemini</span>
+                    <span class="tool-cat">AI</span>
+                </div>
+                <div class="tool-pill">
+                    <img src="https://notebooklm.google.com/favicon.ico" alt="" onerror="this.style.display='none'">
+                    <span class="tool-name">NotebookLM</span>
+                    <span class="tool-cat">AI Research</span>
+                </div>
+                <div class="tool-pill">
+                    <img src="https://logo.clearbit.com/google.com" alt="" onerror="this.style.display='none'">
+                    <span class="tool-name">Google Analytics</span>
+                    <span class="tool-cat">Analytics</span>
+                </div>
+                <div class="tool-pill">
+                    <img src="https://logo.clearbit.com/elevenlabs.io" alt="" onerror="this.style.display='none'">
+                    <span class="tool-name">ElevenLabs</span>
+                    <span class="tool-cat">AI Voice</span>
+                </div>
+                <div class="tool-pill">
+                    <img src="https://logo.clearbit.com/figma.com" alt="" onerror="this.style.display='none'">
+                    <span class="tool-name">Figma</span>
+                    <span class="tool-cat">Design</span>
+                </div>
+                <div class="tool-pill">
+                    <img src="https://logo.clearbit.com/semrush.com" alt="" onerror="this.style.display='none'">
+                    <span class="tool-name">SEMrush</span>
+                    <span class="tool-cat">SEO</span>
+                </div>
+
+            </div>
+            <!-- duplicate for seamless loop -->
+            <div class="marquee-group" aria-hidden="true">
+                <div class="tool-pill">
+                    <img src="https://logo.clearbit.com/openai.com" alt="" onerror="this.style.display='none'">
+                    <span class="tool-name">OpenAI</span>
+                    <span class="tool-cat">AI</span>
+                </div>
+                <div class="tool-pill">
+                    <img src="https://logo.clearbit.com/anthropic.com" alt="" onerror="this.style.display='none'">
+                    <span class="tool-name">Claude AI</span>
+                    <span class="tool-cat">AI</span>
+                </div>
+                <div class="tool-pill">
+                    <img src="https://logo.clearbit.com/google.com" alt="" onerror="this.style.display='none'">
+                    <span class="tool-name">Gemini</span>
+                    <span class="tool-cat">AI</span>
+                </div>
+                <div class="tool-pill">
+                    <img src="https://notebooklm.google.com/favicon.ico" alt="" onerror="this.style.display='none'">
+                    <span class="tool-name">NotebookLM</span>
+                    <span class="tool-cat">AI Research</span>
+                </div>
+                <div class="tool-pill">
+                    <img src="https://logo.clearbit.com/google.com" alt="" onerror="this.style.display='none'">
+                    <span class="tool-name">Google Analytics</span>
+                    <span class="tool-cat">Analytics</span>
+                </div>
+                <div class="tool-pill">
+                    <img src="https://logo.clearbit.com/elevenlabs.io" alt="" onerror="this.style.display='none'">
+                    <span class="tool-name">ElevenLabs</span>
+                    <span class="tool-cat">AI Voice</span>
+                </div>
+                <div class="tool-pill">
+                    <img src="https://logo.clearbit.com/figma.com" alt="" onerror="this.style.display='none'">
+                    <span class="tool-name">Figma</span>
+                    <span class="tool-cat">Design</span>
+                </div>
+                <div class="tool-pill">
+                    <img src="https://logo.clearbit.com/semrush.com" alt="" onerror="this.style.display='none'">
+                    <span class="tool-name">SEMrush</span>
+                    <span class="tool-cat">SEO</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ROW 2: Adobe + BIM/Structural (8 pills) — reverse direction -->
+    <div class="marquee-wrapper" style="margin-top:10px;">
+        <div class="marquee-track reverse" id="row2">
+            <div class="marquee-group">
+
+                <div class="tool-pill">
+                    <img src="https://logo.clearbit.com/adobe.com" alt="" onerror="this.style.display='none'">
+                    <span class="tool-name">Photoshop</span>
+                    <span class="tool-cat">Adobe</span>
+                </div>
+                <div class="tool-pill">
+                    <img src="https://logo.clearbit.com/adobe.com" alt="" onerror="this.style.display='none'">
+                    <span class="tool-name">InDesign</span>
+                    <span class="tool-cat">Adobe</span>
+                </div>
+                <div class="tool-pill">
+                    <img src="https://logo.clearbit.com/adobe.com" alt="" onerror="this.style.display='none'">
+                    <span class="tool-name">Illustrator</span>
+                    <span class="tool-cat">Adobe</span>
+                </div>
+                <div class="tool-pill">
+                    <img src="https://logo.clearbit.com/graphisoft.com" alt="" onerror="this.style.display='none'">
+                    <span class="tool-name">Archicad</span>
+                    <span class="tool-cat">BIM</span>
+                </div>
+                <div class="tool-pill">
+                    <img src="https://logo.clearbit.com/autodesk.com" alt="" onerror="this.style.display='none'">
+                    <span class="tool-name">Revit</span>
+                    <span class="tool-cat">BIM</span>
+                </div>
+                <div class="tool-pill">
+                    <img src="https://www.dlubal.com/favicon.ico" alt="" onerror="this.style.display='none'">
+                    <span class="tool-name">RFEM 6</span>
+                    <span class="tool-cat">Structural</span>
+                </div>
+                <div class="tool-pill">
+                    <img src="https://www.dlubal.com/favicon.ico" alt="" onerror="this.style.display='none'">
+                    <span class="tool-name">RWIND 3</span>
+                    <span class="tool-cat">Structural</span>
+                </div>
+                <div class="tool-pill">
+                    <img src="https://www.dlubal.com/favicon.ico" alt="" onerror="this.style.display='none'">
+                    <span class="tool-name">RSTAB 9</span>
+                    <span class="tool-cat">Structural</span>
+                </div>
+
+            </div>
+            <!-- duplicate for seamless loop -->
+            <div class="marquee-group" aria-hidden="true">
+                <div class="tool-pill">
+                    <img src="https://logo.clearbit.com/adobe.com" alt="" onerror="this.style.display='none'">
+                    <span class="tool-name">Photoshop</span>
+                    <span class="tool-cat">Adobe</span>
+                </div>
+                <div class="tool-pill">
+                    <img src="https://logo.clearbit.com/adobe.com" alt="" onerror="this.style.display='none'">
+                    <span class="tool-name">InDesign</span>
+                    <span class="tool-cat">Adobe</span>
+                </div>
+                <div class="tool-pill">
+                    <img src="https://logo.clearbit.com/adobe.com" alt="" onerror="this.style.display='none'">
+                    <span class="tool-name">Illustrator</span>
+                    <span class="tool-cat">Adobe</span>
+                </div>
+                <div class="tool-pill">
+                    <img src="https://logo.clearbit.com/graphisoft.com" alt="" onerror="this.style.display='none'">
+                    <span class="tool-name">Archicad</span>
+                    <span class="tool-cat">BIM</span>
+                </div>
+                <div class="tool-pill">
+                    <img src="https://logo.clearbit.com/autodesk.com" alt="" onerror="this.style.display='none'">
+                    <span class="tool-name">Revit</span>
+                    <span class="tool-cat">BIM</span>
+                </div>
+                <div class="tool-pill">
+                    <img src="https://www.dlubal.com/favicon.ico" alt="" onerror="this.style.display='none'">
+                    <span class="tool-name">RFEM 6</span>
+                    <span class="tool-cat">Structural</span>
+                </div>
+                <div class="tool-pill">
+                    <img src="https://www.dlubal.com/favicon.ico" alt="" onerror="this.style.display='none'">
+                    <span class="tool-name">RWIND 3</span>
+                    <span class="tool-cat">Structural</span>
+                </div>
+                <div class="tool-pill">
+                    <img src="https://www.dlubal.com/favicon.ico" alt="" onerror="this.style.display='none'">
+                    <span class="tool-name">RSTAB 9</span>
+                    <span class="tool-cat">Structural</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="alt">
+    <p class="section-eyebrow lang-fade" data-i18n="contact_eyebrow">Let's talk</p>
+    <h2 class="section-title lang-fade" data-i18n="contact_title">Start a conversation.</h2>
+    <p class="section-sub lang-fade" data-i18n="contact_sub">I'm not looking for work — I have plenty of that. But if any of this resonates and you want to trade ideas, I'm genuinely up for it.</p>
+
+    <div class="contact-primary anim lang-fade">
+
+        <!-- LinkedIn — prominent -->
+        <a href="https://www.linkedin.com/in/martin-motl%C3%ADk-3b1b47233" target="_blank" class="contact-card primary">
+            <span class="cc-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+            </span>
+            <div class="cc-body">
+                <span class="cc-label" data-i18n="contact_li_label">Preferred contact</span>
+                <span class="cc-value" data-i18n="contact_li_value">Connect or message on LinkedIn</span>
+            </div>
+            <span class="cc-arrow">→</span>
+        </a>
+
+        <!-- Email — secondary -->
+        <a href="mailto:motlik.martin@gmail.com" class="contact-card contact-secondary">
+            <div class="cc-body">
+                <span class="cc-label" data-i18n="contact_email_label">Email</span>
+                <span class="cc-value">motlik.martin@gmail.com</span>
+            </div>
+            <span class="cc-arrow">→</span>
+        </a>
+
+    </div>
+
+    <!-- Supplementary info — plain, minimal -->
+    <div class="contact-meta anim anim-d1">
+        <span class="meta-item">WhatsApp <a href="https://wa.me/420775681765">+420 775 681 765</a></span>
+        <span class="meta-sep">·</span>
+        <span class="meta-item">IČO 21839662</span>
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2025 Martin Motlík · Prague, Czech Republic · IČO 21839662<br>
+    <a href="mailto:motlik.martin@gmail.com">motlik.martin@gmail.com</a></p>
+</footer>
+
+<script>
+// ── i18n translations ──────────────────────────────────────────────────────
+const translations = {
+    en: {
+        // NAV
+        nav_dlubal:        "Dlubal",
+        nav_ai:            "AI in BIM",
+        nav_bim:           "BIM Marketing",
+        nav_contact:       "Let's talk",
+        // HERO
+        hero_role:         "Head of Web Content",
+        hero_role_at:      "at Dlubal Software.",
+        hero_sub:          "Thinking out loud about",
+        hero_sub_bold:     "AI adoption in BIM",
+        hero_sub2:         "and how the AEC industry communicates it.",
+        hero_vision:       "The AEC industry has everything it needs to benefit from AI. <em>The gap isn't the technology — it's the speed of adoption.</em> That's the conversation I want to have.",
+        cta_linkedin:      "Connect on LinkedIn",
+        cta_email:         "Send an email →",
+        // CHIPS
+        chip1: "AI in BIM", chip2: "AEC Industry", chip3: "BIM Marketing", chip4: "Technical Content",
+        // STATS
+        stat1: "years in tech<br>& web marketing",
+        stat2: "key markets<br>US & Canada",
+        stat3: "educator &<br>practitioner",
+        stat4: "industry niche<br>mastered deeply",
+        // DLUBAL
+        dlubal_eyebrow:  "Where I spend most of my time",
+        dlubal_sub:      "My primary focus — building a web ecosystem that makes structural engineering knowledge accessible, useful, and engaging for a global audience.",
+        dlubal_role:     "Head of Web Content Department",
+        dlubal_h3:   "Managing global web content for structural engineering software.",
+        dlubal_p:   "My job at Dlubal is to ensure our website works for two distinct groups: as a reliable technical resource for our global users, and as a practical tool for our internal teams. I take complex structural engineering documentation and structure it so it's easy to find, read, and use online.",
+        dlubal_g1_label:   "Global Web Management",
+        dlubal_g1_p:   "Managing a large-scale technical website that balances engineering precision with straightforward, functional navigation.",
+        dlubal_g2_label:   "Content Localization",
+        dlubal_g2_p:   "Driving tailored content and marketing initiatives for the US & Canadian markets, ensuring our solutions resonate with North American engineers.",
+        dlubal_g3_label:   "Digital & Print Content",
+        dlubal_g3_p:   "Overseeing the production of technical articles, manuals, and marketing materials across both web and print formats.",
+        dlubal_link:     "Visit dlubal.com →",
+        // AI in BIM
+        ai_eyebrow: "A topic I care about",
+        ai_title:   "AI in BIM.",
+        ai_sub:     "I focus on the practical implementation of AI in BIM workflows. My work centers on two main areas: using generative AI to accelerate architectural and structural modeling, and applying process-driven AI to eliminate repetitive project tasks.",
+        ai_thread:  "AEC companies must integrate AI into their daily workflows to stay competitive. Adopting AI is no longer just an option—it's a necessity.",
+        ai_c1_label: "Education",
+        ai_c1_h3:    "Schools can't keep up. Students pay the price.",
+        ai_c1_p:     "Technology evolves faster than any curriculum can follow. Online learning platforms are the fastest way to close that gap — I'm focused on creating and promoting accessible, high-quality content for students, because a well-made tutorial or course can reach thousands of future engineers in a way no classroom ever could.",
+        ai_c1_nudge: "Are you a student looking for resources? Let's connect.",
+        ai_c2_label: "Communication",
+        ai_c2_h3:    "Talking about AI without the fluff",
+        ai_c2_p:     "I work to popularize practical AI adoption across digital platforms, showcasing real tools like AI agents embedded directly into engineering software. But beyond the tech, I want to drive a reality check for AEC companies: Where will your business be in a few years without AI, and how far ahead will your competitors be because they embraced it?",
+        ai_c2_nudge: "Have a take on this? I'd like to hear it.",
+        // BIM MARKETING
+        bim_eyebrow: "Another area of interest",
+        bim_title:   "BIM Software Marketing.",
+        bim_sub:     "I find BIM software marketing genuinely interesting — it sits at the intersection of deep technical knowledge and the challenge of communicating it to people who are busy, skeptical, and good at spotting fluff.",
+        bim_thread:  "BIM software vendors are navigating a real shift right now: <strong>their customers are asking about AI</strong>, and the answers they give will shape buying decisions. Getting that communication right — credible, specific, not oversold — is a real challenge worth thinking about.",
+        bim_c1_label: "What works",
+        bim_c1_h3:    "Great engineering needs great marketing",
+        bim_c1_p:     "In the AEC industry, delivering an outstanding project is no longer enough. Without solid marketing, even the best work is virtually invisible. Technical marketing is uniquely challenging because you can't rely on fluff—you have to capture attention while maintaining absolute technical accuracy for an audience of experts.",
+        bim_c2_label: "What I watch",
+        bim_c2_h3:    "How AEC software positions itself for AI.",
+        bim_c2_p:     'Some BIM vendors are navigating this well. Others are bolting "AI-powered" onto everything and hoping no one looks too closely. The ones who will win are those who can explain specifically what changed, and why it matters for the engineer on the project.',
+        bim_c2_nudge: "Thoughts? Find me on LinkedIn.",
+        bim_c3_label: "My prediction",
+        bim_c3_h3:    "AEC is moving to the browser — and that changes everything.",
+        bim_c3_p:     "I'm convinced the AEC industry is shifting away from hardware-installed software toward web-based applications. No more local installs, no version conflicts — just a browser. This isn't just a delivery change; it's a fundamental shift in how AI learns from real project data at scale, and which vendors will lead the next decade.",
+        bim_c3_nudge: "Agree or disagree? Let's talk.",
+        // CONTACT
+        contact_eyebrow:    "Let's talk",
+        contact_title:      "Start a conversation.",
+        contact_sub:        "I'm not looking for work — I have plenty of that. But if any of this resonates and you want to trade ideas, I'm genuinely up for it.",
+        contact_li_label:   "Best way to reach me",
+        contact_li_value:   "Connect or message on LinkedIn",
+        contact_email_label:"Email",
+        dlubal_title:   "Dlubal Software.",
+        tools_eyebrow:   "Tools &amp; Platforms",
+        tools_title:   "Software I work with.",
+        tools_sub:   "From structural engineering platforms to AI and design tools — the stack I use daily or know well.",
+        dlubal_g4_label:   "Knowledge Management",
+        dlubal_g4_p:   "Organizing complex structural data—like FAQs, verification examples, and knowledge base articles—into a highly structured and searchable format.",
+        contact_work_label: "My work",
+    },
+
+    cs: {
+        // NAV
+        nav_dlubal:  "Dlubal",
+        nav_ai:      "AI v BIM",
+        nav_bim:     "BIM marketing",
+        nav_contact: "Napiš mi",
+        // HERO
+        hero_role:     "Vedoucí oddělení webového obsahu",
+        hero_role_at:  "ve společnosti Dlubal Software.",
+        hero_sub:      "Přemýšlím nahlas o tom,",
+        hero_sub_bold: "jak AEC přijímá AI",
+        hero_sub2:     "a jak o tom celé odvětví komunikuje.",
+        hero_vision:   "AEC průmysl má vše, co potřebuje, aby z AI těžil. <em>Problém není technologie — je to rychlost jejího přijetí.</em> O tom chci mluvit.",
+        cta_linkedin:  "Spojit se na LinkedIn",
+        cta_email:     "Napiš mi e-mail →",
+        // CHIPS
+        chip1: "AI v BIM", chip2: "AEC průmysl", chip3: "BIM marketing", chip4: "Technický obsah",
+        // STATS
+        stat1: "let v tech<br>a webovém marketingu",
+        stat2: "klíčové trhy<br>USA a Kanada",
+        stat3: "vzdělávám<br>a praktikuji",
+        stat4: "jedno odvětví<br>zvládnuté do hloubky",
+        // DLUBAL
+        dlubal_eyebrow:  "Kde trávím většinu času",
+        dlubal_sub:      "Moje hlavní náplň — budování webového ekosystému, který dělá znalosti ze stavebního inženýrství dostupné, užitečné a přístupné pro globální publikum.",
+        dlubal_role:     "Vedoucí oddělení webového obsahu",
+        dlubal_h3:   "Správa globálního webového obsahu pro software stavebního inženýrství.",
+        dlubal_p:   "Moje práce v Dlubal je zajistit, aby web fungoval pro dvě odlišné skupiny: jako spolehlivý technický zdroj pro naše globální uživatele a jako praktický nástroj pro interní týmy. Beru komplexní dokumentaci stavebního inženýrství a strukturuji ji tak, aby byla online snadno dostupná, čitelná a použitelná.",
+        dlubal_g1_label:   "Správa globálního webu",
+        dlubal_g1_p:   "Spravuji rozsáhlý technický web, který skloubuje inženýrskou přesnost s přímočarou a funkční navigací.",
+        dlubal_g2_label:   "Lokalizace obsahu",
+        dlubal_g2_p:   "Řídím obsah a marketingové aktivity pro trhy USA a Kanady, aby naše řešení rezonovala se severoamerickými inženýry.",
+        dlubal_g3_label:   "Digitální a tiskový obsah",
+        dlubal_g3_p:   "Dohlížím na produkci technických článků, manuálů a marketingových materiálů pro web i tisk.",
+        dlubal_link:     "Přejít na dlubal.com →",
+        // AI in BIM
+        ai_eyebrow: "Téma, které mě skutečně zajímá",
+        ai_title:   "AI v BIM.",
+        ai_sub:     "Zaměřuji se na praktické zavedení AI do BIM workflow. Mám dvě hlavní oblasti: využití generativní AI pro urychleni architektonického a konstrukčního modelování a procesní AI pro eliminaci opakujících se úkolů.",
+        ai_thread:  "Společnosti z AEC sektoru musí AI integrovat do každodenních workflow, pokud chtějí zůstat konkurenceschopné. <strong>Adoptovat AI už není volitelné — je to nezbytné.</strong>",
+        ai_c1_label: "Vzdělávání",
+        ai_c1_h3:    "Školy nestíhají. Studenti na to doplácejí.",
+        ai_c1_p:     "Technologie se vyvíjejí rychleji, než jakýkoliv studijní program stačí sledovat. Online výukové platformy jsou nejrychlejší cestou, jak tuto mezeru uzavřít — soustřeďuji se na tvorbu a šíření dostupného, kvalitního obsahu pro studenty, protože dobře zpracovaný tutoriál nebo kurz může oslovit tisíce budoucích inženýrů způsobem, jakého žádná učebna nikdy nedosáhne.",
+        ai_c1_nudge: "Jsi student a hledáš zdroje? Ozvi se.",
+        ai_c2_label: "Komunikace",
+        ai_c2_h3:    "O AI bez prázdných frází",
+        ai_c2_p:     "Pracuji na popularizaci praktické adopce AI na digitálních platformách a ukazuji reálné nástroje jako AI agenty přímo v inženýrském softwaru. Za technologií však vidím důležitější otázku pro firmy z AEC sektoru: kde bude vaše podnikání za pár let bez AI a o kolik kroků napred budou konkurenti, kteří ji včas adoptovali?",
+        ai_c2_nudge: "Máš na to názor? Rád si ho poslechnu.",
+        // BIM MARKETING
+        bim_eyebrow: "Další oblast zájmu",
+        bim_title:   "BIM software marketing.",
+        bim_sub:     "BIM software marketing mě upřímně baví — leží na průsečíku hlubokých technických znalostí a výzvy komunikovat je lidem, kteří jsou zaneprázdnění, skeptičtí a umí odhalit prázdná slova.",
+        bim_thread:  "BIM software dodavatelé právě procházejí skutečným přechodem: <strong>jejich zákazníci se ptají na AI</strong> a odpovědi, které dají, ovlivní nákupní rozhodnutí. Správně komunikovat — věrohodně, konkrétně, bez přeprodávání — je skutečná výzva, o které stojí za to přemýšlet.",
+        bim_c1_label: "Co funguje",
+        bim_c1_h3:    "Skvělé inženýrství potřebuje skvělý marketing",
+        bim_c1_p:     "V AEC sektoru už nestačí vydat skvělý projekt. Bez kvalitního marketingu zůstává i nejlepší práce prakticky neviditelná. Technický marketing je výjimečně náročný — nemůžeš se spolehnout na prázdná slova, musíš upoutat pozornost a zároveň udržet absolutní technickou přesnost pro publikum odborníků.",
+        bim_c2_label: "Co sleduji",
+        bim_c2_h3:    "Jak se AEC software pozicuje pro AI.",
+        bim_c2_p:     'Někteří dodavatelé BIM softwaru to zvládají dobře. Jiní přilepují "AI-powered" na vše a doufají, že nikdo nebude koukat příliš zblízka. Vyhrají ti, kteří dokážou konkrétně vysvětlit, co se změnilo — a proč na tom inženýrům na projektu záleží.',
+        bim_c2_nudge: "Máš na to názor? Najdi mě na LinkedIn.",
+        bim_c3_label: "Moje předpověď",
+        bim_c3_h3:    "AEC míří do prohlížeče — a to mění vše.",
+        bim_c3_p:     "Jsem přesvědčený, že AEC sektor přechází od softwaru instalovaného na hardware k webovým aplikacím. Žádné lokální instalace, žádné konflikty verzí — jen prohlížeč. Nejde jen o způsob distribuce; je to zásadní posun v tom, jak se AI učí z reálných projektových dat ve velkém měřítku — a kteří dodavatelé povedou příští dekádu.",
+        bim_c3_nudge: "Souhlasíš, nebo ne? Pojďme si promluvit.",
+        // CONTACT
+        contact_eyebrow:    "Napiš mi",
+        contact_title:      "Začněme konverzaci.",
+        contact_sub:        "Nehledám práci — té mám dost. Ale pokud tě něco z toho oslovilo a chceš si vyměnit myšlenky, jsem upřímně pro.",
+        contact_li_label:   "Nejlepší způsob, jak mě kontaktovat",
+        contact_li_value:   "Propoj se nebo napiš na LinkedIn",
+        contact_email_label:"E-mail",
+        dlubal_title:   "Dlubal Software.",
+        tools_eyebrow:   "Nástroje &amp; platformy",
+        tools_title:   "Software, se kterým pracuji.",
+        tools_sub:   "Od platforem pro stavební inženýrství po AI a designové nástroje — stack, který denně používám nebo dobře znám.",
+        dlubal_g4_label:   "Správa znalostí",
+        dlubal_g4_p:   "Organizuji komplexní konstrukční data — FAQ, ověřovací příklady a články znalostní báze — do přehledné a prohledávatelné struktury.",
+        contact_work_label: "Moje práce",
+    },
+
+    de: {
+        // NAV
+        nav_dlubal:  "Dlubal",
+        nav_ai:      "KI im BIM",
+        nav_bim:     "BIM-Marketing",
+        nav_contact: "Schreib mir",
+        // HERO
+        hero_role:     "Leiter Web-Content",
+        hero_role_at:  "bei Dlubal Software.",
+        hero_sub:      "Ich denke laut darüber nach,",
+        hero_sub_bold: "wie die AEC-Branche KI adoptiert",
+        hero_sub2:     "und wie sie darüber kommuniziert.",
+        hero_vision:   "Die AEC-Branche hat alles, was sie braucht, um von KI zu profitieren. <em>Das Problem ist nicht die Technologie — es ist die Geschwindigkeit der Einführung.</em> Genau das möchte ich besprechen.",
+        cta_linkedin:  "Auf LinkedIn vernetzen",
+        cta_email:     "E-Mail schreiben →",
+        // CHIPS
+        chip1: "KI im BIM", chip2: "AEC-Branche", chip3: "BIM-Marketing", chip4: "Technischer Content",
+        // STATS
+        stat1: "Jahre in Tech<br>& Web-Marketing",
+        stat2: "Schlüsselmärkte<br>USA & Kanada",
+        stat3: "Vermittle<br>& praktiziere",
+        stat4: "eine Nische<br>tiefgehend gemeistert",
+        // DLUBAL
+        dlubal_eyebrow:  "Wo ich den Großteil meiner Zeit verbringe",
+        dlubal_sub:      "Mein Hauptfokus — ein Web-Ökosystem aufzubauen, das Wissen aus dem Bauingenieurwesen zugänglich, nutzbar und ansprechend für ein globales Publikum macht.",
+        dlubal_role:     "Leiter der Abteilung Web-Content",
+        dlubal_h3:   "Globales Web-Content-Management für Ingenieur-Software.",
+        dlubal_p:   "Meine Aufgabe bei Dlubal ist es sicherzustellen, dass die Website für zwei unterschiedliche Gruppen funktioniert: als verlässliche technische Ressource für unsere globalen Nutzer und als praktisches Werkzeug für die internen Teams. Ich nehme komplexe Baudokumentation und strukturiere sie so, dass sie online leicht auffindbar, lesbar und nutzbar ist.",
+        dlubal_g1_label:   "Globales Web-Management",
+        dlubal_g1_p:   "Verwaltung einer umfangreichen technischen Website, die Ingenieurpräzision mit klarer, funktionaler Navigation verbindet.",
+        dlubal_g2_label:   "Content-Lokalisierung",
+        dlubal_g2_p:   "Maßgeschneiderte Inhalte und Marketingmaßnahmen für die Märkte USA und Kanada, damit unsere Lösungen bei nordamerikanischen Ingenieuren ankommen.",
+        dlubal_g3_label:   "Digitaler & Print-Content",
+        dlubal_g3_p:   "Verantwortlich für technische Artikel, Handbücher und Marketingmaterialien – sowohl für Web als auch Print.",
+        dlubal_link:     "dlubal.com besuchen →",
+        // AI in BIM
+        ai_eyebrow: "Ein Thema, das mir wirklich am Herzen liegt",
+        ai_title:   "KI im BIM.",
+        ai_sub:     "Ich konzentriere mich auf die praktische Einführung von KI in BIM-Workflows. Zwei Schwerpunkte: generative KI zur Beschleunigung von Architektur- und Tragwerksmodellierung sowie prozessgetriebene KI zur Eliminierung repetitiver Projektaufgaben.",
+        ai_thread:  "AEC-Unternehmen müssen KI in ihre täglichen Workflows integrieren, um wettbewerbsfähig zu bleiben. <strong>KI einzuführen ist keine Option mehr — es ist eine Notwendigkeit.</strong>",
+        ai_c1_label: "Bildung",
+        ai_c1_h3:    "Schulen hinken hinterher. Studierende zahlen den Preis.",
+        ai_c1_p:     "Technologie entwickelt sich schneller, als es jeder Lehrplan nachverfolgen kann. Online-Lernplattformen sind der direkteste Weg, diese Lücke zu schließen — ich konzentriere mich auf die Erstellung und Verbreitung zugänglicher, hochwertiger Inhalte für Studierende, weil ein gut gemachtes Tutorial oder ein Kurs Tausende zukünftiger Ingenieure erreichen kann — kein Klassenraum kommt da mit.",
+        ai_c1_nudge: "Bist du Student und suchst nach Ressourcen? Meld dich.",
+        ai_c2_label: "Kommunikation",
+        ai_c2_h3:    "Über KI reden — ohne Marketing-Blabla",
+        ai_c2_p:     "Ich arbeite daran, die praktische KI-Einführung auf digitalen Plattformen zu popularisieren und zeige echte Werkzeuge wie KI-Agenten direkt in Ingenieur-Software. Doch wichtiger als die Technik ist für mich eine nüchterne Einschätzung für AEC-Unternehmen: Wo steht euer Geschäft in ein paar Jahren ohne KI — und wie weit werden Mitbewerber voraus sein, die sie jetzt einführen?",
+        ai_c2_nudge: "Hast du eine Meinung dazu? Ich höre gerne.",
+        // BIM MARKETING
+        bim_eyebrow: "Ein weiteres Thema, das mich beschäftigt",
+        bim_title:   "BIM-Software-Marketing.",
+        bim_sub:     "BIM-Software-Marketing finde ich wirklich spannend — es liegt an der Schnittstelle zwischen tiefem technischen Wissen und der Herausforderung, es Menschen zu vermitteln, die beschäftigt, skeptisch und gut im Erkennen von Hohlfloskeln sind.",
+        bim_thread:  "BIM-Software-Anbieter stehen gerade vor einem echten Wandel: <strong>Ihre Kunden fragen nach KI</strong>, und die Antworten, die sie geben, werden Kaufentscheidungen prägen. Diese Kommunikation richtig hinzubekommen — glaubwürdig, konkret, nicht übertrieben — ist eine echte Aufgabe.",
+        bim_c1_label: "Was funktioniert",
+        bim_c1_h3:    "Gute Technik braucht gutes Marketing",
+        bim_c1_p:     "In der AEC-Branche reicht es nicht mehr, ein hervorragendes Projekt abzuliefern. Ohne solides Marketing bleibt selbst die beste Arbeit praktisch unsichtbar. Technisches Marketing ist besonders anspruchsvoll: Man kann sich nicht auf leere Worte verlassen — man muss Aufmerksamkeit wecken und gleichzeitig absolute technische Genauigkeit für ein Fachpublikum bewahren.",
+        bim_c2_label: "Was ich beobachte",
+        bim_c2_h3:    "Wie sich AEC-Software für KI positioniert.",
+        bim_c2_p:     'Manche BIM-Anbieter machen das gut. Andere kleben „KI-gestützt“ auf alles und hoffen, dass niemand genauer hinschaut. Gewinnen werden jene, die konkret erklären können, was sich geändert hat — und warum es für den Ingenieur im Projekt einen Unterschied macht.',
+        bim_c2_nudge: "Dazu eine Meinung? Schreib mir auf LinkedIn.",
+        bim_c3_label: "Meine Prognose",
+        bim_c3_h3:    "Die AEC-Branche zieht in den Browser — und das verändert alles.",
+        bim_c3_p:     "Ich bin überzeugt: Die AEC-Branche wechselt von hardware-installierter Software zu webbasierten Anwendungen. Keine lokalen Installationen, keine Versionskonflikte — nur ein Browser. Das ist nicht nur ein neuer Vertriebsweg; es ist ein grundlegender Wandel, wie KI im großen Maßstab aus echten Projektdaten lernt — und welche Anbieter das nächste Jahrzehnt anführen werden.",
+        bim_c3_nudge: "Einverstanden oder nicht? Dann schreib mir.",
+        // CONTACT
+        contact_eyebrow:    "Schreib mir",
+        contact_title:      "Fang eine Unterhaltung an.",
+        contact_sub:        "Ich suche keine Stelle — Arbeit habe ich genug. Aber wenn dich etwas davon anspricht und du Ideen austauschen möchtest, bin ich dabei.",
+        contact_li_label:   "Bester Weg, mich zu erreichen",
+        contact_li_value:   "Auf LinkedIn vernetzen oder schreiben",
+        contact_email_label:"E-Mail",
+        dlubal_title:   "Dlubal Software.",
+        tools_eyebrow:   "Tools &amp; Plattformen",
+        tools_title:   "Software, mit der ich arbeite.",
+        tools_sub:   "Von Plattformen für Tragwerksplanung bis zu KI- und Design-Tools — der Stack, den ich täglich nutze oder gut kenne.",
+        dlubal_g4_label:   "Wissensmanagement",
+        dlubal_g4_p:   "Komplexe Konstruktionsdaten – FAQs, Verifikationsbeispiele und Wissensdatenbank-Artikel – in einer klar strukturierten und durchsuchbaren Form aufbereiten.",
+        contact_work_label: "Meine Arbeit",
+    }
+};
+
+// ── Engine ──────────────────────────────────────────────────────────────────
+let currentLang = 'en';
+
+function applyLanguage(lang) {
+    const t = translations[lang];
+    if (!t) return;
+    currentLang = lang;
+
+    // Fade out
+    document.querySelectorAll('.lang-fade').forEach(el => el.classList.add('fading'));
+
+    setTimeout(() => {
+        // Update all data-i18n elements
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (t[key] !== undefined) el.innerHTML = t[key];
+        });
+
+        // Update <html lang>
+        document.documentElement.lang = lang;
+
+        // Update page title
+        const titles = {
+            en: 'Martin Motlík — AI in BIM & Web Strategy',
+            cs: 'Martin Motlík — AI v BIM & webová strategie',
+            de: 'Martin Motlík — KI im BIM & Web-Strategie'
+        };
+        document.title = titles[lang];
+
+        // Fade in
+        document.querySelectorAll('.lang-fade').forEach(el => el.classList.remove('fading'));
+    }, 180);
+
+    // Update switcher buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+
+    // Persist language choice
+    localStorage.setItem('lang', lang);
+}
+
+// ── Event listeners for language buttons ────────────────────────────────────
+document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
+});
+
+// ── Init: restore saved language or default to EN ────────────────────────────
+(function() {
+    const saved = localStorage.getItem('lang');
+    if (saved && ['en', 'cs', 'de'].includes(saved)) {
+        applyLanguage(saved);
+    }
+})();
+
+</script>
+
+<script>
+// ── Dlubal Key Notes Carousel ────────────────────────────────────────────────
+(function() {
+    const track    = document.getElementById('cf-track');
+    const btnPrev  = document.getElementById('cf-prev');
+    const btnNext  = document.getElementById('cf-next');
+    const progress = document.getElementById('cf-progress');
+    if (!track) return;
+
+    const visible = 2;
+    const total   = track.querySelectorAll('.cf-point').length;
+    const steps   = total - visible;
+    let current   = 0;
+
+    const positions = steps + 1;
+
+    function buildProgress() {
+        if (!progress) return;
+        progress.innerHTML = '';
+        for (let i = 0; i < positions; i++) {
+            if (i === current) {
+                const thumb = document.createElement('div');
+                thumb.className = 'cf-progress-thumb';
+                progress.appendChild(thumb);
+            } else {
+                const dot = document.createElement('div');
+                dot.className = 'cf-progress-dot';
+                dot.addEventListener('click', () => goTo(i));
+                progress.appendChild(dot);
+            }
+        }
+    }
+
+    function goTo(idx) {
+        current = Math.max(0, Math.min(idx, steps));
+        const itemW = track.querySelector('.cf-point').offsetWidth + 16;
+        track.style.transform = 'translateX(-' + (current * itemW) + 'px)';
+        btnPrev.disabled = current === 0;
+        btnNext.disabled = current === steps;
+        buildProgress();
+    }
+
+    btnPrev.addEventListener('click', () => goTo(current - 1));
+    btnNext.addEventListener('click', () => goTo(current + 1));
+    window.addEventListener('resize', () => goTo(current));
+
+    // Init
+    buildProgress();
+    btnPrev.disabled = true;
+})();
+</script>
+
+<script>
+// ── Thought Window Animations ─────────────────────────────────────────────────
+(function() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('thought-visible');
+            observer.unobserve(entry.target);
+        });
+    }, { threshold: 0.4 });
+
+    document.querySelectorAll('.vision-thread').forEach(t => observer.observe(t));
+})();
+</script>
+
+
+<script>
+// ── Active nav highlight on scroll ────────────────────────────────────────────
+(function() {
+    const sections = ['dlubal', 'ai', 'bim', 'contact'];
+    const navLinks = {};
+    sections.forEach(id => {
+        const el = document.querySelector('nav a[href="#' + id + '"]');
+        if (el) navLinks[id] = el;
+    });
+
+    function onScroll() {
+        let current = '';
+        sections.forEach(id => {
+            const sec = document.getElementById(id);
+            if (sec && window.scrollY >= sec.offsetTop - 80) current = id;
+        });
+        Object.entries(navLinks).forEach(([id, link]) => {
+            link.classList.toggle('active', id === current);
+        });
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+})();
+</script>
+
+<script>
+// ── CAD.AI Floor Plan Demo ────────────────────────────────────────────────────
+(function() {
+    const msgs        = document.getElementById('cadChatMsgs');
+    const input       = document.getElementById('cadInput');
+    const sendBtn     = document.getElementById('cadSend');
+    const ph          = document.getElementById('cadPH');
+    const fp          = document.getElementById('cadFP');
+    const status      = document.getElementById('cadStatus');
+    const coords      = document.getElementById('cadCoords');
+    const sbGfa       = document.getElementById('sbGfa');
+    const sbRooms     = document.getElementById('sbRooms');
+    const sbLayer     = document.getElementById('sbLayer');
+    const ifcBtn      = document.getElementById('cadIfcBtn');
+    const suggestions = document.getElementById('cadSuggestions');
+    if (!msgs) return;
+
+    const PROMPT  = "Generate office floor plan: 62'×46', open plan + conference room, 3 restrooms, storage. Chicago, IL. Imperial units.";
+    const AI_RESP = "✓ Floor plan generated — 6 rooms, 3 structural columns, 62'×46' = 2,852 SF GFA. AIA/ANSI standards applied. IFC export ready.";
+    const LAYERS      = ['fpFills','fpWalls','fpCols','fpWindows','fpDoors','fpLabels','fpDims','fpNorth','fpScale','fpTitle'];
+    const LAYER_NAMES = ['A-FLOR','A-WALL','S-COLS','A-GLAZ','A-DOOR','A-ANNO','A-DIMS','A-NORTH','A-SCAL','A-TITL'];
+
+    let started = false;
+
+    /* ── helpers ── */
+    function addMsg(cls, text) {
+        const d = document.createElement('div');
+        d.className = 'cad-msg ' + cls;
+        const b = document.createElement('div');
+        b.className = 'cad-bubble';
+        // Support \n line breaks in messages
+        b.style.whiteSpace = 'pre-wrap';
+        b.textContent = text;
+        d.appendChild(b);
+        msgs.appendChild(d);
+        msgs.scrollTop = msgs.scrollHeight;
+        return b;
+    }
+
+    function addTyping() {
+        const d = document.createElement('div');
+        d.className = 'cad-msg cad-msg-ai';
+        const b = document.createElement('div');
+        b.className = 'cad-bubble';
+        b.innerHTML = '<div class="cad-typing"><span class="cad-tdot"></span><span class="cad-tdot"></span><span class="cad-tdot"></span></div>';
+        d.appendChild(b);
+        msgs.appendChild(d);
+        msgs.scrollTop = msgs.scrollHeight;
+        return d;
+    }
+
+    function typeText(el, text, speed, cb) {
+        let i = 0; el.textContent = '';
+        const t = setInterval(() => {
+            el.textContent += text[i++];
+            if (i >= text.length) { clearInterval(t); if (cb) cb(); }
+        }, speed);
+    }
+
+    function animCoords() {
+        const vals = ["X: 17'-6\"  Y: 20'-0\"","X: 43'-0\"  Y: 20'-0\"","X: 43'-0\"  Y: 33'-8\"","X: 62'-0\"  Y: 46'-0\""];
+        let i = 0;
+        const t = setInterval(() => { if (coords) coords.textContent = vals[i++]; if (i >= vals.length) clearInterval(t); }, 400);
+    }
+
+    /* ── show suggestion chips (animated in) ── */
+    function showSuggestions() {
+        if (!suggestions) return;
+        const chips = suggestions.querySelectorAll('.cad-chip');
+        suggestions.style.display = 'flex';
+        chips.forEach((chip, i) => {
+            chip.style.opacity = '0';
+            chip.style.transform = 'translateY(5px)';
+            chip.style.transition = 'opacity 0.22s ease, transform 0.22s ease';
+            setTimeout(() => { chip.style.opacity = '1'; chip.style.transform = 'none'; }, i * 70 + 80);
+        });
+    }
+
+    function hideSuggestions() {
+        if (suggestions) suggestions.style.display = 'none';
+    }
+
+    /* ── IFC export (shared — called from toolbar button or chip) ── */
+    function doIfcExport() {
+        hideSuggestions();
+        if (ifcBtn) { ifcBtn.textContent = '⟳ Exporting...'; ifcBtn.style.opacity = '0.55'; }
+        addMsg('cad-msg-user', 'Export to IFC');
+        const typing = addTyping();
+        setTimeout(() => {
+            typing.remove();
+            addMsg('cad-msg-success', '✓ IFC 4.3 exported — A-101_Level1.ifc (2.4 MB). Entities: 6 IfcSpace · 12 IfcWall · 3 IfcColumn · 14 IfcWindow · 5 IfcDoor. Ready for Revit, ArchiCAD & BIM coordination.');
+            if (ifcBtn) {
+                ifcBtn.textContent = '✓ Exported';
+                ifcBtn.style.opacity = '1';
+                ifcBtn.style.background = '#f0faf4';
+                ifcBtn.style.borderColor = '#16a34a';
+                ifcBtn.style.color = '#15803d';
+                setTimeout(() => {
+                    ifcBtn.textContent = '↑ Export to IFC';
+                    ['background','borderColor','color','opacity'].forEach(p => ifcBtn.style[p] = '');
+                    showSuggestions();
+                }, 3500);
+            }
+        }, 1200);
+    }
+
+    /* ── chip response map ── */
+    const CHIP_REPLIES = {
+        'Add 4 more private offices along the east wall':
+            "✓ 4 private offices added (rooms 107–110) along the east wall — each 10'×12' (120 SF). Total GFA updated to 3,332 SF. Partitions and doors placed on A-WALL layer.",
+        'Generate Bill of Quantities for this floor plan':
+            "✓ BOQ generated:\n· Ext. walls: 558 LF  · Int. partitions: 312 LF\n· Glazing: 14 units / 378 SF  · Doors: 5 units\n· Floor finish: 2,852 SF  · Ceiling: 2,852 SF\nExported to Schedule sheet.",
+        'Show me a 3D axonometric view':
+            '✓ 3D axonometric rendered. Model shows 6 spaces, structural grid A–C / 1–2, flat roof at +12\'-0". Switch back anytime via the Floor Plan tab.'
+    };
+
+    function handleChip(chip) {
+        const prompt = chip.dataset.prompt;
+        if (prompt === 'Export to IFC') { doIfcExport(); return; }
+        hideSuggestions();
+        addMsg('cad-msg-user', prompt);
+        const typing = addTyping();
+        setTimeout(() => {
+            typing.remove();
+            addMsg('cad-msg-ai', CHIP_REPLIES[prompt] || '✓ Done.');
+            setTimeout(showSuggestions, 350);
+        }, 1000);
+    }
+
+    if (suggestions) {
+        suggestions.querySelectorAll('.cad-chip').forEach(chip =>
+            chip.addEventListener('click', () => handleChip(chip))
+        );
+    }
+
+    /* ── Toolbar IFC button ── */
+    if (ifcBtn) ifcBtn.addEventListener('click', doIfcExport);
+
+    /* ── Floor plan reveal animation ── */
+    function revealFloorplan() {
+        if (ph) { ph.style.transition = 'opacity 0.4s'; ph.style.opacity = '0'; setTimeout(() => { if (ph.parentNode) ph.parentNode.removeChild(ph); }, 400); }
+        status.textContent = 'Generating...';
+        status.className = 'cad-vp-status gen';
+        fp.style.opacity = '1';
+        LAYERS.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) { el.style.opacity = '0'; el.style.transition = 'opacity 0.35s ease'; }
+        });
+        LAYERS.forEach((id, i) => {
+            setTimeout(() => {
+                const el = document.getElementById(id);
+                if (el) el.style.opacity = '1';
+                if (sbLayer) sbLayer.textContent = LAYER_NAMES[i] || 'A-ANNO';
+            }, i * 160);
+        });
+        setTimeout(() => {
+            status.textContent = '✓ Ready';
+            status.className = 'cad-vp-status done';
+            if (sbGfa)   sbGfa.textContent   = '2,852 SF';
+            if (sbRooms) sbRooms.textContent = '6';
+            if (sbLayer) sbLayer.textContent = 'ALL';
+            animCoords();
+        }, LAYERS.length * 160 + 200);
+    }
+
+    /* ── Initial demo sequence ── */
+    function runDemo() {
+        if (started) return;
+        started = true;
+        setTimeout(() => {
+            typeText(input, PROMPT, 20, () => {
+                sendBtn.classList.add('ready');
+                setTimeout(() => {
+                    input.textContent = '';
+                    sendBtn.classList.remove('ready');
+                    addMsg('cad-msg-user', PROMPT);
+                    setTimeout(() => {
+                        const typing = addTyping();
+                        setTimeout(() => revealFloorplan(), 600);
+                        setTimeout(() => {
+                            typing.remove();
+                            addMsg('cad-msg-ai', AI_RESP);
+                            setTimeout(showSuggestions, 500);
+                        }, 1200);
+                    }, 800);
+                }, 600);
+            });
+        }, 400);
+    }
+
+    /* ── Trigger demo when section scrolls into view ── */
+    const cadWrap = document.querySelector('.cad-wrap');
+    if (cadWrap && 'IntersectionObserver' in window) {
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    runDemo();
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        obs.observe(cadWrap);
+    } else if (cadWrap) {
+        runDemo();
+    }
+
+    /* ── Manual send button ── */
+    if (sendBtn) {
+        sendBtn.addEventListener('click', () => {
+            const text = input.textContent.trim();
+            if (!text) return;
+            input.textContent = '';
+            addMsg('cad-msg-user', text);
+            const typing = addTyping();
+            setTimeout(() => {
+                typing.remove();
+                addMsg('cad-msg-ai', '✓ Processing your request. For a live AI-powered demo, contact me directly.');
+                setTimeout(showSuggestions, 350);
+            }, 1000);
+        });
+    }
+
+})();
+</script>
+
+</body>
+</html>
