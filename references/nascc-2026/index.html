@@ -28,7 +28,7 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="NASCC 2026 Booth Design — Dlubal Software">
     <meta property="og:description" content="Trade show booth #1008 for Dlubal Software at NASCC 2026, Georgia World Congress Center, Atlanta. AEC exhibit design by Martin Motlík.">
-    <meta property="og:url" content="https://martinmotlik.com/references/nascc-2026">
+    <meta property="og:url" content="https://martinmotlik.com/references/nascc-2026/">
     <meta property="og:site_name" content="Martin Motlík">
     <meta property="og:image" content="https://martinmotlik.com/assets/references/nascc/photo-2.png">
     <meta property="og:image:width" content="1200">
@@ -260,7 +260,7 @@
         .intro {
             max-width: 860px;
             margin: 0 auto;
-            padding: 48px 32px 0;
+            padding: 48px 32px 40px;
         }
         .intro-top {
             display: flex;
@@ -321,18 +321,47 @@
         /* ══════════════════════════════════════
            3. GALLERY STRIP
         ══════════════════════════════════════ */
+        .event-details {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 32px 32px 0;
+            border-top: 1px solid var(--border);
+        }
+        .ed-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text);
+            letter-spacing: -0.01em;
+            margin: 0 0 10px;
+        }
+        .ed-text {
+            font-size: 0.9375rem;
+            line-height: 1.65;
+            color: var(--text-muted);
+            margin: 0 0 14px;
+        }
+        .ed-link {
+            font-size: var(--label-size);
+            font-weight: 500;
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .ed-link:hover { text-decoration: underline; }
         .gallery-strip {
-            padding-bottom: 48px;
+            padding-top: 40px;
+            padding-bottom: 40px;
             position: relative;
         }
         .gallery-nav {
             display: flex;
-            gap: 8px;
-            justify-content: flex-end;
+            align-items: center;
+            justify-content: space-between;
             max-width: 860px;
             margin: 0 auto;
             padding: 20px 32px 16px;
         }
+        .gallery-nav-title { margin: 0; }
+        .gallery-nav-arrows { display: flex; gap: 8px; }
         .nav-arrow {
             width: 38px;
             height: 38px;
@@ -361,6 +390,13 @@
             border-color: var(--text);
         }
         .nav-arrow:disabled { opacity: 0.25; cursor: default; }
+        .gallery-caption {
+            max-width: 860px;
+            margin: 12px auto 0;
+            padding: 0 32px;
+            font-size: var(--label-size);
+            color: var(--text-muted);
+        }
         .gallery-copy {
             max-width: 860px;
             margin: 12px auto 0;
@@ -446,7 +482,7 @@
         ══════════════════════════════════════ */
         .model-section {
             background: linear-gradient(to bottom, #ffffff 0%, #f2f2f4 100%);
-            padding: 48px 32px 56px;
+            padding: 40px 32px 56px;
         }
         model-viewer {
             width: 100%;
@@ -599,7 +635,8 @@
         .event-badge:hover .event-badge-icon { opacity: 1; }
 
         /* ── GLB HEADING ── */
-        .glb-heading { text-align: center; margin-bottom: 16px; }
+        .glb-heading { text-align: center; margin-bottom: 8px; }
+        .glb-desc { text-align: center; font-size: var(--label-size); color: var(--text-muted); margin: 0 auto 16px; max-width: 560px; }
         .glb-title-row { display: inline-flex; align-items: center; gap: 10px; justify-content: center; }
         .glb-title { font-family: 'Inter', sans-serif; font-size: 1.25rem; font-weight: 600; color: #1d1d1f; letter-spacing: -0.02em; }
         .glb-badge-3d { font-family: 'Inter', sans-serif; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.02em; padding: 3px 9px; border-radius: 980px; background: #eff6ff; color: #1447b8; border: 1px solid rgba(26,86,219,0.2); line-height: 1; display: inline-flex; align-items: center; }
@@ -898,27 +935,36 @@
             <p class="meta-value">#1008 · 10' × 20'</p>
         </div>
     </div>
-    <a href="https://www.nascc.aisc.org/"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="event-badge">
-      <svg class="event-badge-icon" width="11" height="11" viewBox="0 0 11 11" fill="none">
-        <path d="M6 1.5H9.5V5M9.5 1.5L4.5 6.5M2 3.5H3.5V9.5H9.5V8"
-          stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      nascc.aisc.org
-    </a>
+</div>
+
+<!-- EVENT DETAILS -->
+<div class="event-details">
+  <h2 class="ed-title" data-i18n="ed_title">About the event</h2>
+  <p class="ed-text" data-i18n="ed_text">NASCC: The Steel Conference is the premier educational and networking event for everyone involved in the design and construction of steel buildings and bridges. The conference offers nearly 300 technical sessions, an exhibition hall showcasing more than 280 products and services, and networking with more than 6,500 colleagues, including leading designers, top fabricators, and researchers at the cutting edge of steel innovation.</p>
+  <a href="https://www.nascc.aisc.org/"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="event-badge">
+    <svg class="event-badge-icon" width="11" height="11" viewBox="0 0 11 11" fill="none">
+      <path d="M6 1.5H9.5V5M9.5 1.5L4.5 6.5M2 3.5H3.5V9.5H9.5V8"
+        stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    nascc.aisc.org
+  </a>
 </div>
 
 <!-- 3. GALLERY STRIP -->
 <div class="gallery-strip">
     <div class="gallery-nav">
-        <button class="nav-arrow" id="strip-prev" aria-label="Previous" disabled>
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-        </button>
-        <button class="nav-arrow" id="strip-next" aria-label="Next">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-        </button>
+        <h2 class="ed-title gallery-nav-title" data-i18n="gallery_title">Event Photos & 3D Renders</h2>
+        <div class="gallery-nav-arrows">
+            <button class="nav-arrow" id="strip-prev" aria-label="Previous" disabled>
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button class="nav-arrow" id="strip-next" aria-label="Next">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+        </div>
     </div>
     <div class="filmstrip-wrapper">
     <div class="filmstrip" id="filmstrip">
@@ -947,6 +993,7 @@
         -->
     </div>
     </div><!-- filmstrip-wrapper -->
+    <p class="gallery-caption" data-i18n="gallery_caption">Photos from NASCC 2026 at the Georgia World Congress Center, Atlanta, GA — April 22–24, 2026.</p>
     <p class="gallery-copy">© Dlubal Software · <a href="https://www.dlubal.com" target="_blank">www.dlubal.com</a></p>
 </div>
 
@@ -959,6 +1006,7 @@
                 <span class="glb-badge-3d">3D</span>
             </div>
         </div>
+        <p class="glb-desc" data-i18n="glb_desc">Interactive 3D model of the Dlubal Software trade show booth designed for NASCC: The Steel Conference 2026 in Atlanta, Georgia.</p>
 
         <model-viewer
             src="/assets/references/nascc/nascc-booth.glb"
@@ -1170,43 +1218,58 @@
     // ── i18n ─────────────────────────────────────────────────
     const i18n = {
         en: {
-            context:    'Dlubal Software USA · Booth Design · 2026',
-            perex:      'Designed and prepared trade show booth #1008 for Dlubal Software Inc. in collaboration with the US team at NASCC: The Steel Conference, held at the Georgia World Congress Center.',
-            meta_event: 'Event',
-            meta_loc:   'Location',
-            meta_date:  'Date',
-            meta_booth: 'Booth',
-            share:      'Share',
-            glb_hint:   'drag to rotate · scroll to zoom',
-            nav_prev:   'Previous project',
-            nav_sub:    'Booth Design · Portland, OR',
-            nav_back:   '← All references',
+            context:         'Dlubal Software USA · Booth Design · 2026',
+            perex:           'Designed and prepared trade show booth #1008 for Dlubal Software Inc. in collaboration with the US team at NASCC: The Steel Conference, held at the Georgia World Congress Center.',
+            meta_event:      'Event',
+            meta_loc:        'Location',
+            meta_date:       'Date',
+            meta_booth:      'Booth',
+            share:           'Share',
+            ed_title:        'About the event',
+            ed_text:         'NASCC: The Steel Conference is the premier educational and networking event for everyone involved in the design and construction of steel buildings and bridges. The conference offers nearly 300 technical sessions, an exhibition hall showcasing more than 280 products and services, and networking with more than 6,500 colleagues, including leading designers, top fabricators, and researchers at the cutting edge of steel innovation.',
+            gallery_title:   'Event Photos & 3D Renders',
+            gallery_caption: 'Photos from NASCC 2026 at the Georgia World Congress Center, Atlanta, GA — April 22–24, 2026.',
+            glb_desc:        'Interactive 3D model of the Dlubal Software trade show booth designed for NASCC: The Steel Conference 2026 in Atlanta, Georgia.',
+            glb_hint:        'drag to rotate · scroll to zoom',
+            nav_prev:        'Previous project',
+            nav_sub:         'Booth Design · Portland, OR',
+            nav_back:        '← All references',
         },
         cs: {
-            context:    'Dlubal Software USA · Výstavní stánek · 2026',
-            perex:      'Návrh a příprava výstavního stánku #1008 pro Dlubal Software Inc. ve spolupráci s americkým týmem na konferenci NASCC: The Steel Conference v Georgia World Congress Center.',
-            meta_event: 'Událost',
-            meta_loc:   'Místo',
-            meta_date:  'Datum',
-            meta_booth: 'Stánek',
-            share:      'Sdílet',
-            glb_hint:   'táhnutím otáčet · kolečkem přibližovat',
-            nav_prev:   'Předchozí projekt',
-            nav_sub:    'Výstavní stánek · Portland, OR',
-            nav_back:   '← Všechny reference',
+            context:         'Dlubal Software USA · Výstavní stánek · 2026',
+            perex:           'Návrh a příprava výstavního stánku #1008 pro Dlubal Software Inc. ve spolupráci s americkým týmem na konferenci NASCC: The Steel Conference v Georgia World Congress Center.',
+            meta_event:      'Událost',
+            meta_loc:        'Místo',
+            meta_date:       'Datum',
+            meta_booth:      'Stánek',
+            share:           'Sdílet',
+            ed_title:        'O akci',
+            ed_text:         'NASCC: The Steel Conference je přední vzdělávací a networkingová akce pro všechny, kdo se podílejí na navrhování a výstavbě ocelových budov a mostů. Konference nabízí téměř 300 odborných přednášek, výstavní halu s více než 280 produkty a službami a networking s více než 6 500 kolegy — předními konstruktéry, zhotoviteli ocelových konstrukcí i výzkumníky na špičce inovací v oboru.',
+            gallery_title:   'Fotografie z akce a 3D vizualizace',
+            gallery_caption: 'Fotografie z NASCC 2026 v Georgia World Congress Center, Atlanta, GA — 22.–24. dubna 2026.',
+            glb_desc:        'Interaktivní 3D model výstavního stánku Dlubal Software navržený pro konferenci NASCC: The Steel Conference 2026 v Atlantě, Georgia.',
+            glb_hint:        'táhnutím otáčet · kolečkem přibližovat',
+            nav_prev:        'Předchozí projekt',
+            nav_sub:         'Výstavní stánek · Portland, OR',
+            nav_back:        '← Všechny reference',
         },
         de: {
-            context:    'Dlubal Software USA · Messestand-Design · 2026',
-            perex:      'Konzeption und Umsetzung von Messestand #1008 für Dlubal Software Inc. in Zusammenarbeit mit dem US-Team auf der NASCC: The Steel Conference im Georgia World Congress Center.',
-            meta_event: 'Veranstaltung',
-            meta_loc:   'Ort',
-            meta_date:  'Datum',
-            meta_booth: 'Stand',
-            share:      'Teilen',
-            glb_hint:   'ziehen zum Drehen · scrollen zum Zoomen',
-            nav_prev:   'Vorheriges Projekt',
-            nav_sub:    'Messestand-Design · Portland, OR',
-            nav_back:   '← Alle Referenzen',
+            context:         'Dlubal Software USA · Messestand-Design · 2026',
+            perex:           'Konzeption und Umsetzung von Messestand #1008 für Dlubal Software Inc. in Zusammenarbeit mit dem US-Team auf der NASCC: The Steel Conference im Georgia World Congress Center.',
+            meta_event:      'Veranstaltung',
+            meta_loc:        'Ort',
+            meta_date:       'Datum',
+            meta_booth:      'Stand',
+            share:           'Teilen',
+            ed_title:        'Über die Veranstaltung',
+            ed_text:         'NASCC: The Steel Conference ist die führende Bildungs- und Netzwerkveranstaltung für alle, die an der Planung und dem Bau von Stahlgebäuden und Brücken beteiligt sind. Die Konferenz bietet rund 300 Fachsitzungen, eine Ausstellungshalle mit mehr als 280 Produkten und Dienstleistungen sowie Networking mit über 6.500 Kollegen — darunter führende Konstrukteure, Stahlbauer und Forscher an der Spitze der Stahlinnovation.',
+            gallery_title:   'Eventfotos & 3D-Visualisierungen',
+            gallery_caption: 'Fotos von der NASCC 2026 im Georgia World Congress Center, Atlanta, GA — 22.–24. April 2026.',
+            glb_desc:        'Interaktives 3D-Modell des Messestands von Dlubal Software, entworfen für die NASCC: The Steel Conference 2026 in Atlanta, Georgia.',
+            glb_hint:        'ziehen zum Drehen · scrollen zum Zoomen',
+            nav_prev:        'Vorheriges Projekt',
+            nav_sub:         'Messestand-Design · Portland, OR',
+            nav_back:        '← Alle Referenzen',
         }
     };
 
