@@ -28,7 +28,7 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="Mass Timber Conference 2026 Booth Design — Dlubal Software">
     <meta property="og:description" content="Trade show booth #908 for Dlubal Software at the International Mass Timber Conference 2026, Oregon Convention Center, Portland. AEC exhibit design by Martin Motlík.">
-    <meta property="og:url" content="https://martinmotlik.com/references/mass-timber-2026">
+    <meta property="og:url" content="https://martinmotlik.com/references/mass-timber-2026/">
     <meta property="og:site_name" content="Martin Motlík">
     <meta property="og:image" content="https://martinmotlik.com/assets/references/mass-timber/render-1.png">
     <meta property="og:image:width" content="1200">
@@ -83,7 +83,7 @@
         "caption": "Dlubal Software booth #908 at Mass Timber Conference 2026, Portland — designed by Martin Motlík"
       },
       "keywords": "AEC marketing, trade show booth design, mass timber, BIM software, Dlubal Software, RFEM 6 Wood, CLT design, Portland, Oregon",
-      "url": "https://martinmotlik.com/references/mass-timber-2026"
+      "url": "https://martinmotlik.com/references/mass-timber-2026/"
     }
     </script>
 
@@ -245,7 +245,7 @@
         .intro {
             max-width: 860px;
             margin: 0 auto;
-            padding: 48px 32px 0;
+            padding: 48px 32px 40px;
         }
         .intro-top {
             display: flex;
@@ -270,7 +270,7 @@
             font-weight: var(--perex-weight);
             color: var(--text-muted);
             line-height: var(--perex-leading);
-            max-width: 640px;
+            max-width: 100%;
             margin-bottom: 28px;
         }
 
@@ -304,15 +304,43 @@
         }
 
         /* ── GALLERY STRIP ── */
-        .gallery-strip { padding-bottom: 48px; position: relative; }
+        .gallery-strip { padding-top: 40px; padding-bottom: 40px; position: relative; }
+        .event-details {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 32px 32px 0;
+            border-top: 1px solid var(--border);
+        }
+        .ed-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text);
+            letter-spacing: -0.01em;
+            margin: 0 0 10px;
+        }
+        .ed-text {
+            font-size: 1rem;
+            line-height: 1.65;
+            color: var(--text-muted);
+            margin: 0 0 14px;
+        }
+        .ed-link {
+            font-size: var(--label-size);
+            font-weight: 500;
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .ed-link:hover { text-decoration: underline; }
         .gallery-nav {
             display: flex;
-            gap: 8px;
-            justify-content: flex-end;
+            align-items: center;
+            justify-content: space-between;
             max-width: 860px;
             margin: 0 auto;
             padding: 20px 32px 16px;
         }
+        .gallery-nav-title { margin: 0; }
+        .gallery-nav-arrows { display: flex; gap: 8px; }
         .nav-arrow {
             width: 38px;
             height: 38px;
@@ -333,6 +361,13 @@
         .nav-arrow:hover:not(:disabled) { background: var(--text); color: #fff; border-color: var(--text); }
         .nav-arrow:disabled { opacity: 0.25; cursor: default; }
 
+        .gallery-caption {
+            max-width: 860px;
+            margin: 12px auto 0;
+            padding: 0 32px;
+            font-size: 1rem;
+            color: var(--text-muted);
+        }
         .gallery-copy {
             max-width: 860px;
             margin: 12px auto 0;
@@ -404,7 +439,7 @@
         /* ── GLB MODEL ── */
         .model-section {
             background: linear-gradient(to bottom, #ffffff 0%, #f2f2f4 100%);
-            padding: 48px 32px 56px;
+            padding: 40px 32px 56px;
         }
         .model-inner { max-width: 860px; margin: 0 auto; }
         model-viewer {
@@ -443,7 +478,8 @@
         .event-badge:hover .event-badge-icon { opacity: 1; }
 
         /* ── GLB HEADING ── */
-        .glb-heading { text-align: center; margin-bottom: 16px; }
+        .glb-heading { text-align: center; margin-bottom: 8px; }
+        .glb-desc { text-align: center; font-size: var(--label-size); color: var(--text-muted); margin: 0 auto 16px; max-width: 560px; }
         .glb-title-row { display: inline-flex; align-items: center; gap: 10px; justify-content: center; }
         .glb-title { font-family: 'Inter', sans-serif; font-size: 1.25rem; font-weight: 600; color: #1d1d1f; letter-spacing: -0.02em; }
         .glb-badge-3d { font-family: 'Inter', sans-serif; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.02em; padding: 3px 9px; border-radius: 980px; background: #eff6ff; color: #1447b8; border: 1px solid rgba(26,86,219,0.2); line-height: 1; display: inline-flex; align-items: center; }
@@ -805,7 +841,7 @@
         </div>
     </div>
     <h1 class="intro-title">International Mass Timber Conference 2026</h1>
-    <p class="intro-perex" data-i18n="perex">Designed and prepared trade show booth #908 for Dlubal Software Inc. in collaboration with the US team at the International Mass Timber Conference, the world's largest mass timber event, held at the Oregon Convention Center in Portland.</p>
+    <p class="intro-perex" data-i18n="perex">Designed and prepared trade show booth #908 for Dlubal Software Inc. in collaboration with the US team at the International Mass Timber Conference, the world's largest gathering of mass timber experts, held at the Oregon Convention Center in Portland. The work covered graphic design of the booth concept, 3D renderings with full equipment layout, and production of print-ready files for the booth manufacturer.</p>
     <div class="intro-meta">
         <div class="intro-meta-cell">
             <p class="meta-label" data-i18n="meta_event">Event</p>
@@ -824,27 +860,36 @@
             <p class="meta-value">#908 · 10' × 20'</p>
         </div>
     </div>
-    <a href="https://masstimberconference.com/"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="event-badge">
-      <svg class="event-badge-icon" width="11" height="11" viewBox="0 0 11 11" fill="none">
-        <path d="M6 1.5H9.5V5M9.5 1.5L4.5 6.5M2 3.5H3.5V9.5H9.5V8"
-          stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      masstimberconference.com
-    </a>
+</div>
+
+<!-- EVENT DETAILS -->
+<div class="event-details">
+  <h2 class="ed-title" data-i18n="ed_title">About the event</h2>
+  <p class="ed-text" data-i18n="ed_text">The International Mass Timber Conference is the world's largest gathering of mass timber experts, covering the entire industry supply chain from design and engineering to manufacturing and construction. The program focuses on cross-laminated timber (CLT), glulam, nail-laminated timber, and other engineered wood products, bringing together architects, structural engineers, developers, and manufacturers from across North America and beyond.</p>
+  <a href="https://masstimberconference.com/"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="event-badge">
+    <svg class="event-badge-icon" width="11" height="11" viewBox="0 0 11 11" fill="none">
+      <path d="M6 1.5H9.5V5M9.5 1.5L4.5 6.5M2 3.5H3.5V9.5H9.5V8"
+        stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    masstimberconference.com
+  </a>
 </div>
 
 <!-- GALLERY STRIP -->
 <div class="gallery-strip">
     <div class="gallery-nav">
+        <h2 class="ed-title gallery-nav-title" data-i18n="gallery_title">Event Photos & 3D Renders</h2>
+        <div class="gallery-nav-arrows">
         <button class="nav-arrow" id="strip-prev" aria-label="Previous" disabled>
             <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
         </button>
         <button class="nav-arrow" id="strip-next" aria-label="Next">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
         </button>
+        </div>
     </div>
     <div class="filmstrip-wrapper">
     <div class="filmstrip" id="filmstrip">
@@ -874,6 +919,7 @@
                 <span class="glb-badge-3d">3D</span>
             </div>
         </div>
+        <p class="glb-desc" data-i18n="glb_desc">Interactive 3D model of the Dlubal Software trade show booth designed for the International Mass Timber Conference 2026 in Portland.</p>
 
         <model-viewer
             src="/assets/references/mass-timber/imtc-booth.glb"
@@ -1078,43 +1124,58 @@
     // ── i18n ─────────────────────────────────────────────────
     const i18n = {
         en: {
-            context:    'Dlubal Software USA · Booth Design · 2026',
-            perex:      "Designed and prepared trade show booth #908 for Dlubal Software Inc. in collaboration with the US team at the International Mass Timber Conference, the world's largest mass timber event, held at the Oregon Convention Center in Portland.",
-            meta_event: 'Event',
-            meta_loc:   'Location',
-            meta_date:  'Date',
-            meta_booth: 'Booth',
-            share:      'Share',
-            glb_hint:   'drag to rotate · scroll to zoom',
-            nav_prev:   'Previous project',
-            nav_sub:    'Booth Design · Atlanta, GA',
-            nav_back:   '← All references',
+            context:       'Dlubal Software USA · Booth Design · 2026',
+            perex:         "Designed and prepared trade show booth #908 for Dlubal Software Inc. in collaboration with the US team at the International Mass Timber Conference, the world's largest gathering of mass timber experts, held at the Oregon Convention Center in Portland. The work covered graphic design of the booth concept, 3D renderings with full equipment layout, and production of print-ready files for the booth manufacturer.",
+            meta_event:    'Event',
+            meta_loc:      'Location',
+            meta_date:     'Date',
+            meta_booth:    'Booth',
+            share:         'Share',
+            ed_title:      'About the event',
+            ed_text:       "The International Mass Timber Conference is the world's largest gathering of mass timber experts, covering the entire industry supply chain from design and engineering to manufacturing and construction. The program focuses on cross-laminated timber (CLT), glulam, nail-laminated timber, and other engineered wood products, bringing together architects, structural engineers, developers, and manufacturers from across North America and beyond.",
+            gallery_title:   'Event Photos & 3D Renders',
+            gallery_caption: 'Photos and 3D renders from the International Mass Timber Conference 2026 at the Oregon Convention Center, Portland, OR, April 2026.',
+            glb_desc:        'Interactive 3D model of the Dlubal Software trade show booth designed for the International Mass Timber Conference 2026 in Portland.',
+            glb_hint:      'drag to rotate · scroll to zoom',
+            nav_prev:      'Previous project',
+            nav_sub:       'Booth Design · Atlanta, GA',
+            nav_back:      '← All references',
         },
         cs: {
-            context:    'Dlubal Software USA · Výstavní stánek · 2026',
-            perex:      'Návrh a příprava výstavního stánku #908 pro Dlubal Software Inc. ve spolupráci s americkým týmem na International Mass Timber Conference — největší světové akci zaměřené na masivní dřevo — v Oregon Convention Center v Portlandu.',
-            meta_event: 'Událost',
-            meta_loc:   'Místo',
-            meta_date:  'Datum',
-            meta_booth: 'Stánek',
-            share:      'Sdílet',
-            glb_hint:   'táhnutím otáčet · kolečkem přibližovat',
-            nav_prev:   'Předchozí projekt',
-            nav_sub:    'Výstavní stánek · Atlanta, GA',
-            nav_back:   '← Všechny reference',
+            context:       'Dlubal Software USA · Výstavní stánek · 2026',
+            perex:         'Návrh a příprava výstavního stánku #908 pro Dlubal Software Inc. ve spolupráci s americkým týmem na International Mass Timber Conference, největším světovém setkání odborníků na masivní dřevo, v Oregon Convention Center v Portlandu. Práce zahrnovala grafický návrh konceptu stánku, 3D vizualizace s kompletním rozvržením vybavení a přípravu tiskově připravených podkladů pro výrobce stánku.',
+            meta_event:    'Událost',
+            meta_loc:      'Místo',
+            meta_date:     'Datum',
+            meta_booth:    'Stánek',
+            share:         'Sdílet',
+            ed_title:      'O akci',
+            ed_text:       'International Mass Timber Conference je největší světové setkání odborníků na masivní dřevo, které pokrývá celý průmyslový dodavatelský řetězec od návrhu a inženýringu po výrobu a výstavbu. Program se zaměřuje na křížem lepené dřevo (CLT), lepené lamelové dřevo, hřebíkované lamelové dřevo a další výrobky z inženýrského dřeva a sdružuje architekty, statiky, developery a výrobce z celé Severní Ameriky a zahraničí.',
+            gallery_title:   'Fotografie z akce a 3D vizualizace',
+            gallery_caption: 'Fotografie a 3D vizualizace z International Mass Timber Conference 2026 v Oregon Convention Center, Portland, OR, duben 2026.',
+            glb_desc:        'Interaktivní 3D model výstavního stánku Dlubal Software navržený pro International Mass Timber Conference 2026 v Portlandu.',
+            glb_hint:      'táhnutím otáčet · kolečkem přibližovat',
+            nav_prev:      'Předchozí projekt',
+            nav_sub:       'Výstavní stánek · Atlanta, GA',
+            nav_back:      '← Všechny reference',
         },
         de: {
-            context:    'Dlubal Software USA · Messestand-Design · 2026',
-            perex:      'Konzeption und Umsetzung von Messestand #908 für Dlubal Software Inc. in Zusammenarbeit mit dem US-Team auf der International Mass Timber Conference — der weltweit größten Fachmesse für Massivholz — im Oregon Convention Center in Portland.',
-            meta_event: 'Veranstaltung',
-            meta_loc:   'Ort',
-            meta_date:  'Datum',
-            meta_booth: 'Stand',
-            share:      'Teilen',
-            glb_hint:   'ziehen zum Drehen · scrollen zum Zoomen',
-            nav_prev:   'Vorheriges Projekt',
-            nav_sub:    'Messestand-Design · Atlanta, GA',
-            nav_back:   '← Alle Referenzen',
+            context:       'Dlubal Software USA · Messestand-Design · 2026',
+            perex:         'Konzeption und Umsetzung von Messestand #908 für Dlubal Software Inc. in Zusammenarbeit mit dem US-Team auf der International Mass Timber Conference, dem weltweit größten Treffen von Massivholzexperten, im Oregon Convention Center in Portland. Die Arbeit umfasste das grafische Design des Standkonzepts, 3D-Visualisierungen mit vollständigem Ausstattungsplan sowie die Erstellung druckfertiger Unterlagen für den Standbauer.',
+            meta_event:    'Veranstaltung',
+            meta_loc:      'Ort',
+            meta_date:     'Datum',
+            meta_booth:    'Stand',
+            share:         'Teilen',
+            ed_title:      'Über die Veranstaltung',
+            ed_text:       'Die International Mass Timber Conference ist das weltweit größte Treffen von Massivholzexperten und deckt die gesamte Branchenwertschöpfungskette ab, von Design und Engineering bis hin zu Fertigung und Bau. Das Programm konzentriert sich auf Brettsperrholz (CLT), Brettschichtholz, Nagelverbundholz und andere Ingenieurholzprodukte und bringt Architekten, Tragwerksplaner, Entwickler und Hersteller aus ganz Nordamerika und darüber hinaus zusammen.',
+            gallery_title:   'Eventfotos & 3D-Visualisierungen',
+            gallery_caption: 'Fotos und 3D-Visualisierungen von der International Mass Timber Conference 2026 im Oregon Convention Center, Portland, OR, April 2026.',
+            glb_desc:        'Interaktives 3D-Modell des Messestands von Dlubal Software, entworfen für die International Mass Timber Conference 2026 in Portland.',
+            glb_hint:      'ziehen zum Drehen · scrollen zum Zoomen',
+            nav_prev:      'Vorheriges Projekt',
+            nav_sub:       'Messestand-Design · Atlanta, GA',
+            nav_back:      '← Alle Referenzen',
         }
     };
 
