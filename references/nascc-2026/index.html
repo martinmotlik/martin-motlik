@@ -104,19 +104,19 @@
             --border:      #e4e4e7;   /* zinc-200 */
 
             /* ── H1 — page title ── */
-            --h1-size:     clamp(2.25rem, 4.5vw, 3rem);
+            --h1-size:     3rem;
             --h1-weight:   700;
             --h1-tracking: -0.04em;
             --h1-leading:  1.0;
 
             /* ── H2 — section headings ── */
-            --h2-size:     1.5rem;
+            --h2-size:     1.25rem;
             --h2-weight:   600;
             --h2-tracking: -0.025em;
             --h2-leading:  1.2;
 
             /* ── H3 — card/item titles ── */
-            --h3-size:     1.0625rem;
+            --h3-size:     1rem;
             --h3-weight:   600;
             --h3-tracking: -0.02em;
             --h3-leading:  1.3;
@@ -127,16 +127,16 @@
             --perex-leading: 1.65;
 
             /* ── Body ── */
-            --body-size:    0.875rem;
+            --body-size:    1rem;
             --body-leading: 1.6;
 
             /* ── Label / eyebrow ── */
-            --label-size:     0.6875rem;
+            --label-size:     0.75rem;
             --label-weight:   500;
             --label-tracking: 0.06em;
 
-            /* ── Small / captions ── */
-            --small-size: 0.8125rem;
+            /* ── Small / captions / copyright ── */
+            --small-size: 0.75rem;
         }
 
         /* legacy aliases */
@@ -285,7 +285,7 @@
             font-weight: var(--perex-weight);
             color: var(--text-muted);
             line-height: var(--perex-leading);
-            max-width: 640px;
+            max-width: 100%;
             margin-bottom: 28px;
         }
 
@@ -312,7 +312,7 @@
             margin-bottom: 4px;
         }
         .meta-value {
-            font-size: var(--small-size);
+            font-size: 1rem;
             font-weight: 600;
             color: var(--text);
             line-height: 1.35;
@@ -328,14 +328,14 @@
             border-top: 1px solid var(--border);
         }
         .ed-title {
-            font-size: 1rem;
+            font-size: 1.25rem;
             font-weight: 600;
             color: var(--text);
             letter-spacing: -0.01em;
             margin: 0 0 10px;
         }
         .ed-text {
-            font-size: 0.9375rem;
+            font-size: 1rem;
             line-height: 1.65;
             color: var(--text-muted);
             margin: 0 0 14px;
@@ -394,7 +394,7 @@
             max-width: 860px;
             margin: 12px auto 0;
             padding: 0 32px;
-            font-size: var(--label-size);
+            font-size: 1rem;
             color: var(--text-muted);
         }
         .gallery-copy {
@@ -916,7 +916,7 @@
         </div>
     </div>
     <h1 class="intro-title">NASCC: The Steel Conference 2026</h1>
-    <p class="intro-perex" data-i18n="perex">Designed and prepared trade show booth #1008 for Dlubal Software Inc. in collaboration with the US team at NASCC: The Steel Conference, held at the Georgia World Congress Center.</p>
+    <p class="intro-perex" data-i18n="perex">Designed and prepared trade show booth #1008 for Dlubal Software Inc. in collaboration with the US team at NASCC: The Steel Conference, held at the Georgia World Congress Center. The work covered graphic design of the booth concept, 3D renderings with full equipment layout, and production of print-ready files for the booth manufacturer.</p>
     <div class="intro-meta">
         <div class="intro-meta-cell">
             <p class="meta-label" data-i18n="meta_event">Event</p>
@@ -1219,7 +1219,7 @@
     const i18n = {
         en: {
             context:         'Dlubal Software USA · Booth Design · 2026',
-            perex:           'Designed and prepared trade show booth #1008 for Dlubal Software Inc. in collaboration with the US team at NASCC: The Steel Conference, held at the Georgia World Congress Center.',
+            perex:           'Designed and prepared trade show booth #1008 for Dlubal Software Inc. in collaboration with the US team at NASCC: The Steel Conference, held at the Georgia World Congress Center. The work covered graphic design of the booth concept, 3D renderings with full equipment layout, and production of print-ready files for the booth manufacturer.',
             meta_event:      'Event',
             meta_loc:        'Location',
             meta_date:       'Date',
@@ -1237,7 +1237,7 @@
         },
         cs: {
             context:         'Dlubal Software USA · Výstavní stánek · 2026',
-            perex:           'Návrh a příprava výstavního stánku #1008 pro Dlubal Software Inc. ve spolupráci s americkým týmem na konferenci NASCC: The Steel Conference v Georgia World Congress Center.',
+            perex:           'Návrh a příprava výstavního stánku #1008 pro Dlubal Software Inc. ve spolupráci s americkým týmem na konferenci NASCC: The Steel Conference v Georgia World Congress Center. Práce zahrnovala grafický návrh konceptu stánku, 3D vizualizace s kompletním rozvržením vybavení a přípravu tiskově připravených podkladů pro výrobce stánku.',
             meta_event:      'Událost',
             meta_loc:        'Místo',
             meta_date:       'Datum',
@@ -1255,7 +1255,7 @@
         },
         de: {
             context:         'Dlubal Software USA · Messestand-Design · 2026',
-            perex:           'Konzeption und Umsetzung von Messestand #1008 für Dlubal Software Inc. in Zusammenarbeit mit dem US-Team auf der NASCC: The Steel Conference im Georgia World Congress Center.',
+            perex:           'Konzeption und Umsetzung von Messestand #1008 für Dlubal Software Inc. in Zusammenarbeit mit dem US-Team auf der NASCC: The Steel Conference im Georgia World Congress Center. Die Arbeit umfasste das grafische Design des Standkonzepts, 3D-Visualisierungen mit vollständigem Ausstattungsplan sowie die Erstellung druckfertiger Unterlagen für den Standbauer.',
             meta_event:      'Veranstaltung',
             meta_loc:        'Ort',
             meta_date:       'Datum',
