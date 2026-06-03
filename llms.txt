@@ -1,0 +1,92 @@
+# Martin Motlík — AEC Digital Strategist & Web Lead
+
+> Independent digital specialist helping AEC companies build powerful web ecosystems and marketing strategies. Based in Czechia, operating globally with a focus on the US and Canadian markets. Head of Web Content at Dlubal Software. I work at the intersection of structural engineering software, AI adoption, and technical marketing — bridging the gap between engineering precision and effective digital communication.
+
+## Core Positioning
+
+Martin Motlík is an AEC digital strategist and freelance consultant specializing in:
+- Web design and development for engineering software companies and AEC product manufacturers
+- Marketing strategy and content localization for the US and Canadian markets
+- AI workflow implementation and adoption consulting for AEC teams
+- Technical brand presentation: trade show booths, product brochures, social media, and digital campaigns
+- Graphic design for technical industries: print, digital, and exhibition materials
+
+His thesis: AEC is moving to the browser. Web-based tools are how AI learns from real project data at scale. The vendors who understand this today will define the industry in the next decade.
+
+## Professional Background
+
+- **Current role:** Head of Web Content, Dlubal Software (structural analysis and design software; HQ Prague, US office Philadelphia)
+- **Freelance focus:** AEC marketing, AI adoption consulting, web development, graphic design
+- **Key markets:** United States, Canada, international English-language markets
+- **Conference presence:** NASCC: The Steel Conference 2026 (Atlanta, GA), International Mass Timber Conference 2026 (Portland, OR)
+
+## Areas of Practice
+
+### AEC Web Ecosystems
+Designing and developing websites specifically for engineering software companies and building product manufacturers. Building structured digital libraries and knowledge hubs — not standard marketing brochures — where engineers can efficiently find data, specs, and documentation.
+
+### Technical Brand Presentation
+From digital strategy to hands-on execution: targeted social media campaigns, technical brochures, trade show booth design, and conference materials for the AEC industry.
+
+### AI Workflow Implementation
+Practical AI integration into daily AEC operations. From automating marketing analytics and API connections to utilizing LLMs for technical content processing — replacing manual bottlenecks with browser-based AI solutions.
+
+### Graphic Design
+Visual communication for technical industries: exhibition booth design, product brochures, print and digital marketing materials.
+
+## Work at Dlubal Software
+
+Dlubal Software develops structural analysis and design software (RFEM, RSTAB, RWIND) used by structural engineers globally.
+
+Martin's responsibilities at Dlubal include:
+- **Global Web Management:** Managing a large-scale technical website that balances engineering precision with straightforward, functional navigation
+- **Content Localization:** Driving tailored content and marketing initiatives for the US and Canadian markets, ensuring solutions resonate with North American structural engineers
+- **Digital & Print Content:** Overseeing production of technical articles, manuals, and marketing materials across web and print formats
+- **Knowledge Management:** Organizing complex structural engineering data — FAQs, verification examples, knowledge base articles — into a highly structured and searchable format
+
+## Selected References & Projects
+
+- **NASCC: The Steel Conference 2026** — Booth design, Atlanta, GA (10' × 20')
+- **International Mass Timber Conference 2026** — Booth design, Portland, OR (10' × 20')
+- **RFEM 6 Product Brochure** — Print marketing, US & Canada
+- **IFC Verify** — Web application development (ifc-verify.app, 2024)
+
+## Tools & Technology
+
+### AI & Research
+Claude AI (Anthropic), ChatGPT (OpenAI), Gemini (Google), NotebookLM, ElevenLabs
+
+### Design & Creative
+Figma, Adobe Photoshop, Adobe Illustrator, Adobe InDesign, Adobe Lightroom
+
+### Structural Engineering Software
+RFEM 6, RSTAB 9, RWIND 3 (Dlubal Software), Archicad, Revit
+
+### Development & Analytics
+VS Code, Make.com, Google Analytics, SEMrush
+
+## AI in AEC — Key Perspectives
+
+Martin actively promotes AI adoption in the architecture, engineering, and construction industry. His positions:
+
+1. **AEC companies must integrate AI into everyday workflows** to remain competitive. Using AI is no longer optional — it is essential for maintaining a competitive edge.
+2. **AEC is moving to the browser, and that changes everything.** Web-based tools are not just more convenient; they are how AI learns from real project data at scale. No local installs, no version conflicts. Just a browser and access to everything your team needs.
+3. **Practical implementation over hype.** Martin works at the intersection of structural engineers and software developers — understanding both sides well enough to bridge them and communicate AI solutions in a language that makes sense to each.
+
+## Contact & Online Presence
+
+- **Website:** https://martinmotlik.com/
+- **LinkedIn:** Primary professional contact — https://linkedin.com/in/martinmotlik
+- **Email:** motlik.martin@gmail.com
+- **App project:** https://ifc-verify.app
+
+## Optional: Full Content Index
+
+- [Homepage — About, Services, AI in AEC](https://martinmotlik.com/)
+- [References & Portfolio](https://martinmotlik.com/#references)
+- [Areas of Practice](https://martinmotlik.com/#bim)
+- [Dlubal Software](https://martinmotlik.com/#dlubal)
+- [AI in AEC](https://martinmotlik.com/#ai-in-bim)
+- [Tech Stack](https://martinmotlik.com/#tools)
+- [Contact](https://martinmotlik.com/#contact)
+- [IFC Verify App](https://ifc-verify.app)
