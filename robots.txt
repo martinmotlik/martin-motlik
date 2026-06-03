@@ -2,3 +2,16 @@ User-agent: *
 Allow: /
 
 Sitemap: https://martinmotlik.com/sitemap.xml
+
+# AI crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# LLMs.txt
+Sitemap: https://martinmotlik.com/llms.txt
