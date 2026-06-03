@@ -13,5 +13,11 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-# LLMs.txt
-Sitemap: https://martinmotlik.com/llms.txt
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
