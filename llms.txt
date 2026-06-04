@@ -86,7 +86,7 @@ Martin actively promotes AI adoption in the architecture, engineering, and const
 - [References & Portfolio](https://martinmotlik.com/#references)
 - [Areas of Practice](https://martinmotlik.com/#bim)
 - [Dlubal Software](https://martinmotlik.com/#dlubal)
-- [AI in AEC](https://martinmotlik.com/#ai-in-bim)
+- [AI in AEC](https://martinmotlik.com/#ai-in-aec)
 - [Tech Stack](https://martinmotlik.com/#tools)
 - [Contact](https://martinmotlik.com/#contact)
 - [IFC Verify App](https://ifc-verify.app)
