@@ -643,63 +643,17 @@
         .share-btn.copied { color: #16a34a; background: #f0fdf4; }
 
         /* ── FOOTER ── */
-        footer {
-            background: #ffffff;
-            border-top: 1px solid #e5e5ea;
-            padding: 16px 32px;
-        }
-        .footer-inner {
-            max-width: 860px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-        .footer-left {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .footer-li {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 24px;
-            height: 24px;
-            border-radius: 5px;
-            border: 1px solid #d0d0d5;
-            color: #98989d;
-            text-decoration: none;
-            flex-shrink: 0;
-            transition: border-color 0.15s, color 0.15s;
-        }
-        .footer-li:hover { border-color: #0a66c2; color: #0a66c2; }
-        .footer-name {
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: #1d1d1f;
-        }
-        .footer-meta {
-            font-size: 0.6875rem;
-            color: #98989d;
-            line-height: 1.5;
-        }
-        .footer-dot {
-            display: inline-block;
-            width: 2px;
-            height: 2px;
-            border-radius: 50%;
-            background: #c8c8cc;
-            vertical-align: middle;
-            margin: 0 5px;
-        }
-        .footer-meta a { color: #98989d; text-decoration: none; transition: color 0.15s; }
-        .footer-meta a:hover { color: #1d1d1f; }
-        @media (max-width: 720px) {
-            footer { padding: 16px 20px; }
-            .footer-inner { flex-direction: column; align-items: flex-start; gap: 6px; }
+        .footer { border-top: 1px solid #e4e4e7; padding: 26px 0; }
+        .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; }
+        .footer-logo { display: flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 700; color: #09090b; text-decoration: none; }
+        .footer-info { font-size: 11.5px; color: #71717a; }
+        .footer-info a { color: inherit; text-decoration: none; }
+        .footer-info a:hover { color: #09090b; }
+        .footer-sep { margin: 0 10px; opacity: 0.4; }
+        @media (max-width: 767px) {
+            .footer-inner { padding: 0 20px; flex-direction: column; align-items: flex-start; gap: 10px; }
+            .footer-info { font-size: 11px; line-height: 1.8; }
+            .footer-sep { display: none; }
         }
 
 
@@ -1128,17 +1082,29 @@ if (navHamburger && navDrawer) {
     applyLang(localStorage.getItem('lang') || 'en');
 </script>
 
-<footer>
+<footer class="footer">
   <div class="footer-inner">
-    <div class="footer-left">
-      <a href="https://www.linkedin.com/in/martin-motl%C3%ADk-3b1b47233" target="_blank" rel="noopener noreferrer" class="footer-li" aria-label="LinkedIn — Martin Motlík">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-        </svg>
-      </a>
-      <span class="footer-name">Martin Motlík</span>
+    <a href="/" class="footer-logo">
+      <svg width="22" height="22" viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="130" height="130" fill="#0A1628" rx="22"/>
+        <path d="M76.3592 57.857C75.4265 57.6937 74.717 57.1169 74.4236 56.2697C74.1135 55.3753 74.4325 54.4439 75.1177 53.76L100.357 28.5696L106.163 22.819C106.749 22.2385 107.518 21.8876 108.351 22.0458C109.412 22.2474 110.272 23.2579 110.273 24.4024L110.284 53.3836C110.036 55.8334 108.092 57.8366 105.589 57.8378L76.3579 57.8557L76.3592 57.857Z" fill="#FEFEFE"/>
+        <path d="M55.7679 56.6561C55.3584 57.3999 54.6387 57.8401 53.8081 57.8401L24.8525 57.8439C22.1667 57.8439 20.0269 55.7208 20.0257 53.021L20.0078 24.8589C20.0078 24.3256 20.0563 23.9033 20.2451 23.4554C20.5322 22.7766 21.1077 22.2714 21.715 22.0991C22.4882 21.8809 23.3494 22.0162 23.9083 22.5725L26.8888 25.5415L37.5364 36.1291L55.389 53.9511C56.0984 54.6592 56.2349 55.8101 55.7679 56.6573V56.6561Z" fill="#FEFEFE"/>
+        <path d="M81.9803 89.5551L77.6052 94.0131L72.5704 99.1296C71.921 99.7905 71.0329 100.038 70.1079 99.6961C69.4317 99.4447 68.7031 98.6702 68.7031 97.7605V68.6849C68.7031 66.6332 70.6731 64.4782 72.7542 64.4795L101.492 64.4973C102.35 64.4973 103.057 65.2718 103.31 65.8728C103.654 66.6919 103.501 67.6514 102.884 68.283L99.6377 71.6055L87.366 84.0776L81.9803 89.5551Z" fill="#FEFEFE"/>
+        <path d="M75.0723 104.606C75.2968 103.972 75.6018 103.617 76.0228 103.191L91.9641 87.0534L97.522 81.4304L106.326 72.5896C106.984 71.9274 107.856 71.6263 108.81 71.9848C109.414 72.2119 110.276 72.9736 110.276 73.8553L110.265 103.667C110.265 105.591 108.492 107.416 106.552 107.416H77.0487C75.6069 107.416 74.641 105.825 75.0723 104.606Z" fill="#FEFEFE"/>
+        <path d="M55.1655 106.234C54.7789 106.922 54.0121 107.436 53.1828 107.435L23.8354 107.424C22.326 107.424 21.0182 106.404 20.4313 105.133C20.2182 104.67 20.0166 104.24 20.0166 103.721L20 74.1515C20 73.2175 20.5461 72.3984 21.2734 72.0603C22.1104 71.6724 23.1222 71.7872 23.792 72.4596L31.4552 80.1687L36.2118 84.9572L46.608 95.4096L54.7522 103.652C55.436 104.344 55.6504 105.368 55.1643 106.233L55.1655 106.234Z" fill="#FEFEFE"/>
+        <path d="M54.5289 95.8494L49.9484 91.2025L37.276 78.3426L28.5462 69.5094C28.0384 68.9952 27.5497 68.5754 27.1605 67.9847C26.7076 67.2969 26.6221 66.4689 27.0202 65.6829C27.3111 65.11 27.958 64.4874 28.7937 64.4874L57.7723 64.4746C59.8942 64.7719 61.5184 66.5288 61.669 68.6737L61.6511 97.7875C61.6511 98.7075 60.8856 99.4832 60.2234 99.7116C59.269 100.041 58.4269 99.7499 57.7736 99.0953L54.5289 95.8481V95.8494Z" fill="#FEFEFE"/>
+      </svg>
+      Martin Motlík
+    </a>
+    <div class="footer-info">
+      &copy; 2026
+      <span class="footer-sep">&middot;</span>
+      I&#268;O: 21839662
+      <span class="footer-sep">&middot;</span>
+      DI&#268;: CZ0103073146
+      <span class="footer-sep">&middot;</span>
+      <a href="mailto:motlik.martin@gmail.com">motlik.martin@gmail.com</a>
     </div>
-    <span class="footer-meta">© 2026 <span class="footer-dot"></span> Business ID (IČO): 21839662 <span class="footer-dot"></span> VAT ID (DIČ): CZ0103073146 <span class="footer-dot"></span> <a href="mailto:motlik.martin@gmail.com">motlik.martin@gmail.com</a></span>
   </div>
 </footer>
 
