@@ -55,33 +55,131 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Martin Motlík",
-    "url": "https://martinmotlik.com/",
-    "email": "motlik.martin@gmail.com",
-    "jobTitle": "AEC Digital Strategist & Web Lead",
-    "description": "Freelance AEC digital strategist helping construction tech and software companies build global web ecosystems, technical marketing, and AI workflows.",
-    "image": {
-      "@type": "ImageObject",
-      "url": "https://martinmotlik.com/assets/images/martin-motlik-portrait.png",
-      "contentUrl": "https://martinmotlik.com/assets/images/martin-motlik-portrait.png",
-      "caption": "Martin Motlík, AEC Digital Strategist and Web Lead based in Prague, Czech Republic",
-      "width": 480,
-      "height": 600
-    },
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Dlubal Software",
-      "url": "https://www.dlubal.com"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Prague",
-      "addressCountry": "CZ"
-    },
-    "sameAs": ["https://www.linkedin.com/in/martin-motl%C3%ADk-3b1b47233"],
-    "knowsAbout": ["Building Information Modeling","Artificial Intelligence","AEC Digital Strategy","AEC Industry","Web Ecosystems","Technical Marketing","AI Workflows","Structural Engineering Software"],
-    "knowsLanguage": ["en","cs","de"]
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://martinmotlik.com/#martin-motlik",
+        "name": "Martin Motlík",
+        "alternateName": "Martin Motlik",
+        "url": "https://martinmotlik.com/",
+        "image": "https://martinmotlik.com/assets/images/martin-motlik-portrait.png",
+        "jobTitle": "AEC Digital Strategist & Web Lead",
+        "description": "Independent digital specialist helping AEC companies build powerful web ecosystems and marketing strategies. Head of Web Content at Dlubal Software. Specializing in AEC industry marketing, AI adoption consulting, web development, and graphic design for the US and Canadian markets.",
+        "knowsAbout": [
+          "AEC industry marketing",
+          "AI adoption in AEC",
+          "Structural engineering software",
+          "Web design for engineering companies",
+          "BIM software marketing",
+          "IFC verification",
+          "Technical content localization",
+          "Trade show booth design",
+          "Digital marketing strategy",
+          "Graphic design for technical industries",
+          "LLM workflow implementation",
+          "Content localization US Canada"
+        ],
+        "knowsLanguage": ["en", "cs", "de"],
+        "nationality": {
+          "@type": "Country",
+          "name": "Czech Republic"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/martin-motl%C3%ADk-3b1b47233",
+          "https://ifc-verify.app"
+        ],
+        "email": "motlik.martin@gmail.com",
+        "worksFor": {
+          "@type": "Organization",
+          "@id": "https://martinmotlik.com/#dlubal-software",
+          "name": "Dlubal Software",
+          "url": "https://www.dlubal.com",
+          "description": "Developer of structural analysis and design software including RFEM, RSTAB, and RWIND, used by structural engineers worldwide.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "CZ"
+          }
+        },
+        "hasOccupation": [
+          {
+            "@type": "Occupation",
+            "name": "AEC Digital Strategist",
+            "occupationLocation": {
+              "@type": "Country",
+              "name": "United States"
+            },
+            "skills": "AEC marketing, web development, AI adoption, graphic design, content strategy"
+          },
+          {
+            "@type": "Occupation",
+            "name": "Head of Web Content",
+            "occupationLocation": {
+              "@type": "Country",
+              "name": "Czech Republic"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://martinmotlik.com/#website",
+        "url": "https://martinmotlik.com/",
+        "name": "Martin Motlík — AEC Digital Strategist & Web Lead",
+        "description": "Professional portfolio and services of Martin Motlík, AEC Digital Strategist and Web Lead specializing in AEC industry marketing, AI adoption, and web development for the US and Canadian markets.",
+        "inLanguage": ["en", "cs", "de"],
+        "author": {
+          "@id": "https://martinmotlik.com/#martin-motlik"
+        },
+        "about": [
+          { "@type": "Thing", "name": "AEC Industry Marketing" },
+          { "@type": "Thing", "name": "AI Adoption in Construction" },
+          { "@type": "Thing", "name": "Structural Engineering Software Marketing" },
+          { "@type": "Thing", "name": "Web Design for Engineering Companies" }
+        ]
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://martinmotlik.com/#services",
+        "name": "Martin Motlík — AEC Marketing & AI Consulting",
+        "url": "https://martinmotlik.com/",
+        "provider": {
+          "@id": "https://martinmotlik.com/#martin-motlik"
+        },
+        "areaServed": ["US", "CA"],
+        "serviceType": [
+          "AEC Web Development",
+          "AEC Marketing Strategy",
+          "AI Workflow Implementation",
+          "Technical Brand Presentation",
+          "Graphic Design for AEC",
+          "Content Localization"
+        ],
+        "description": "Freelance digital services for AEC companies: web ecosystem development, marketing strategy, AI adoption consulting, trade show materials, and graphic design. Focused on the US and Canadian markets.",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "motlik.martin@gmail.com",
+          "contactType": "Business Inquiries",
+          "availableLanguage": ["English", "Czech", "German"]
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://ifc-verify.app/#app",
+        "name": "IFC Verify",
+        "url": "https://ifc-verify.app",
+        "applicationCategory": "Engineering Software",
+        "operatingSystem": "Web",
+        "description": "Web application for IFC file verification, developed by Martin Motlík.",
+        "author": {
+          "@id": "https://martinmotlik.com/#martin-motlik"
+        },
+        "about": {
+          "@type": "Thing",
+          "name": "IFC",
+          "description": "Industry Foundation Classes — open standard for BIM data exchange in the AEC industry"
+        }
+      }
+    ]
   }
   </script>
 
