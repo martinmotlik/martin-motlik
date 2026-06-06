@@ -307,6 +307,9 @@
       padding: 13px 0; border-bottom: 1px solid var(--c-border);
     }
     .nav-drawer a:last-child { border-bottom: none; }
+    .nav-drawer-lang { display: flex; gap: 6px; padding-top: 16px; margin-top: 4px; border-top: 1px solid var(--c-border); }
+    .nav-drawer .lang-btn { color: var(--c-muted); border-radius: 6px; }
+    .nav-drawer .lang-btn.active { background: var(--c-navy); color: white; box-shadow: none; }
 
     /* — HERO — */
     .hero-full {
@@ -357,9 +360,9 @@
       display: inline-flex; align-items: center; gap: 8px;
       font-size: 13.5px; font-weight: 700; padding: 11px 22px;
       border-radius: var(--r-sm); background: white; color: var(--c-navy);
-      text-decoration: none; transition: transform 0.15s, box-shadow 0.15s;
+      text-decoration: none; transition: background 0.15s, color 0.15s;
     }
-    .hero-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.25); }
+    .hero-btn-primary:hover { background: #091628; color: white; }
     .hero-btn-ghost {
       display: inline-flex; align-items: center; gap: 8px;
       font-size: 13.5px; font-weight: 600; padding: 11px 22px;
@@ -368,20 +371,6 @@
       background: rgba(255,255,255,0.05); transition: border-color 0.15s, background 0.15s, transform 0.15s;
     }
     .hero-btn-ghost:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.1); transform: translateY(-2px); }
-    .hero-scroll {
-      position: absolute; bottom: 32px;
-      left: calc(50% - (var(--container) / 2) + 40px);
-      z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 8px;
-      color: rgba(255,255,255,0.35); font-size: 10.5px; font-weight: 600;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      animation: scrollbounce 2.5s ease-in-out infinite;
-    }
-    @keyframes scrollbounce {
-      0%, 100% { transform: translateY(0); opacity: 0.35; }
-      50%       { transform: translateY(5px); opacity: 0.6; }
-    }
-    .hero-scroll-line { width: 1px; height: 36px; background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent); }
-
     /* — ABOUT — */
     .about-section { padding: var(--section-y) 0; }
     .about-grid { display: grid; grid-template-columns: 360px 1fr; gap: 72px; align-items: center; }
@@ -589,13 +578,13 @@
       .nav-inner { padding: 0 20px; }
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
+      .lang-group { display: none; }
       .hero-full { height: 100svh; min-height: 520px; align-items: flex-end; }
       .hero-content { padding: 0 20px 72px; max-width: 100%; }
       .hero-eyebrow-pill { font-size: 10px; padding: 4px 12px; margin-bottom: 12px; }
       .hero-h1 { font-size: clamp(1.9rem, 9vw, 2.6rem); margin-bottom: 12px; line-height: 1.08; }
       .hero-sub { font-size: 14.5px; max-width: 100%; margin-bottom: 22px; }
       .hero-ctas { gap: 8px; }
-      .hero-scroll { display: none; }
       .about-grid { grid-template-columns: 1fr; gap: 0; }
       .about-photo-col { padding-bottom: 60px; }
       .about-photo-frame { aspect-ratio: 4/5; max-width: 240px; margin: 0 auto; }
@@ -860,6 +849,7 @@
     </a>
     <ul class="nav-links">
       <li><a href="/references/" data-i18n="nav_references">References</a></li>
+      <li><a href="services.html">Services</a></li>
       <li><a href="#about" data-i18n="nav_about">About me</a></li>
       <li><a href="#bim" data-i18n="nav_bim">Areas of Practice</a></li>
       <li><a href="#dlubal" data-i18n="nav_dlubal">Dlubal</a></li>
@@ -881,10 +871,16 @@
 <!-- Mobile drawer -->
 <div class="nav-drawer" id="nav-drawer">
   <a href="/references/" data-i18n="nav_references">References</a>
+  <a href="services.html">Services</a>
   <a href="#about" data-i18n="nav_about">About me</a>
   <a href="#bim" data-i18n="nav_bim">Areas of Practice</a>
   <a href="#dlubal" data-i18n="nav_dlubal">Dlubal</a>
   <a href="#ai-in-aec" data-i18n="nav_ai">AI in AEC</a>
+  <div class="nav-drawer-lang">
+    <button class="lang-btn active" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="cs">CS</button>
+    <button class="lang-btn" data-lang="de">DE</button>
+  </div>
 </div>
 
 
@@ -906,10 +902,6 @@
       </a>
       <a href="#contact" class="hero-btn-ghost" data-i18n="nav_contact">Let&#39;s talk</a>
     </div>
-  </div>
-  <div class="hero-scroll">
-    <div class="hero-scroll-line"></div>
-    <span data-i18n="hero_scroll">Scroll</span>
   </div>
 </div>
 
@@ -989,6 +981,9 @@
         <div class="svc-title" data-i18n="svc3_title">AI Workflow Implementation</div>
         <div class="svc-desc" data-i18n="svc3_desc">I don't just talk about AI, I integrate it into daily operations. From automating marketing analytics and API connections to utilizing LLMs for technical content processing, I help AEC companies replace manual bottlenecks with efficient, browser-based AI solutions.</div>
       </div>
+    </div>
+    <div style="text-align:center; margin-top:48px;">
+      <a href="services.html" class="hero-btn-primary" data-i18n="what_cta">Discover All Services &rarr;</a>
     </div>
   </div>
 </section>
@@ -1426,7 +1421,6 @@ const translations = {
         hero_h1:         "AEC Is Moving<br><span>to the Browser</span>",
         hero_sub_text:   "That shift changes how AI learns from project data, how engineering software is marketed, and who leads the next decade. I help AEC companies build the digital presence to get there.",
         hero_btn_primary:"View my work",
-        hero_scroll:     "Scroll",
         // ABOUT
         about_badge_role:"Head of Web Content",
         about_role_text: "AEC Digital Strategist &amp; Web Lead",
@@ -1440,6 +1434,7 @@ const translations = {
         svc2_desc:    "From digital strategy to hands-on execution, my work lives at the crossroads of technical knowledge and effective communication in the AEC industry. I design everything from targeted social media campaigns and technical brochures to complete trade show booths for industry conferences.",
         svc3_title:   "AI Workflow Implementation",
         svc3_desc:    "I don't just talk about AI, I integrate it into daily operations. From automating marketing analytics and API connections to utilizing LLMs for technical content processing, I help AEC companies replace manual bottlenecks with efficient, browser-based AI solutions.",
+        what_cta:     "Discover All Services →",
         // REFERENCES
         ref_cta:      "View all references",
         // AI IN AEC section
@@ -1540,7 +1535,6 @@ const translations = {
         hero_h1:         "AEC míří<br><span>do prohlížeče</span>",
         hero_sub_text:   "Tento posun mění to, jak se AI učí z projektových dat, jak se marketing inženýrského softwaru dělá a kdo povede odvětví v příštím desetiletí. Pomáhám AEC firmám budovat digitální přítomnost, která na to připravuje.",
         hero_btn_primary:"Moje práce",
-        hero_scroll:     "Roluj",
         // ABOUT
         about_badge_role:"Vedoucí webového obsahu",
         about_role_text: "AEC Digitální stratég &amp; Web Lead",
@@ -1554,6 +1548,7 @@ const translations = {
         svc2_desc:    "Od digitální strategie po přímou realizaci leží moje práce na průsečíku technických znalostí a efektivní komunikace v AEC průmyslu. Navrhuji vše od cílených kampaní na sociálních sítích a technických brožur až po kompletní výstavní stánky na oborových konferencích.",
         svc3_title:   "Implementace AI do workflow",
         svc3_desc:    "O AI nejen mluvím, ale integruju ji do každodenních provozů. Od automatizace marketingové analytiky a API propojení až po využití LLM pro zpracování technického obsahu pomáhám AEC firmám nahradit ruční úzká místa efektivními, browserovými AI řešeními.",
+        what_cta:     "Zobrazit všechny služby →",
         // REFERENCES
         ref_cta:      "Zobrazit všechny reference",
         // AI IN AEC section
@@ -1654,7 +1649,6 @@ const translations = {
         hero_h1:         "AEC wechselt<br><span>in den Browser</span>",
         hero_sub_text:   "Dieser Wandel verändert, wie KI aus Projektdaten lernt, wie Ingenieur-Software vermarktet wird und wer die nächste Dekade anführt. Ich helfe AEC-Unternehmen, die digitale Präsenz aufzubauen, die sie dafür brauchen.",
         hero_btn_primary:"Meine Arbeit",
-        hero_scroll:     "Scrollen",
         // ABOUT
         about_badge_role:"Leiter Web-Content",
         about_role_text: "AEC Digital-Stratege &amp; Web Lead",
@@ -1668,6 +1662,7 @@ const translations = {
         svc2_desc:    "Von der digitalen Strategie bis zur direkten Umsetzung lebt meine Arbeit an der Schnittstelle von technischem Wissen und effektiver Kommunikation in der AEC-Branche. Ich gestalte alles von gezielten Social-Media-Kampagnen und technischen Broschüren bis hin zu vollständigen Messeständen für Branchenkonferenzen.",
         svc3_title:   "KI-Workflow-Implementierung",
         svc3_desc:    "Ich rede nicht nur über KI, ich integriere sie in den täglichen Betrieb. Von der Automatisierung von Marketing-Analytics und API-Verbindungen bis zur Nutzung von LLMs für technische Inhalte helfe ich AEC-Unternehmen, manuelle Engpässe durch effiziente, browserbasierte KI-Lösungen zu ersetzen.",
+        what_cta:     "Alle Leistungen entdecken →",
         // REFERENCES
         ref_cta:      "Alle Referenzen anzeigen",
         // AI IN AEC section

@@ -22,17 +22,22 @@ His thesis: AEC is moving to the browser. Web-based tools are how AI learns from
 
 ## Areas of Practice
 
-### AEC Web Ecosystems
-Designing and developing websites specifically for engineering software companies and building product manufacturers. Building structured digital libraries and knowledge hubs — not standard marketing brochures — where engineers can efficiently find data, specs, and documentation.
+### Web Platforms
+Designing and developing web platforms specifically engineered for AEC software companies and building product manufacturers. Deliverables include Figma UI/UX design, fully coded and deployed websites, and interface strategy consulting. The focus is on structured digital platforms where engineers can efficiently find data, specifications, and documentation — not standard marketing brochures.
 
-### Technical Brand Presentation
-From digital strategy to hands-on execution: targeted social media campaigns, technical brochures, trade show booth design, and conference materials for the AEC industry.
+### Trade Shows & Print Presentation
+Complete visual production for industry conferences and physical marketing. Deliverables include full spatial design of trade show booths with 3D CAD models and photorealistic visualizations, press-ready PDFs for brochures, posters, flyers, and business cards, and technical brand alignment ensuring all materials accurately reflect the client's engineering specialization. Selected references: NASCC: The Steel Conference 2026 (Atlanta, GA), International Mass Timber Conference 2026 (Portland, OR).
+
+### Online Marketing
+Targeted digital marketing for AEC B2B audiences. Deliverables include mass email campaigns designed and coded for platforms such as Mailgun and Mailchimp, dedicated campaign landing pages delivered as high-fidelity mockups or fully functional coded pages, and social media and event assets for LinkedIn, Instagram, and Facebook tailored to product launches and industry conferences.
 
 ### AI Workflow Implementation
-Practical AI integration into daily AEC operations. From automating marketing analytics and API connections to utilizing LLMs for technical content processing — replacing manual bottlenecks with browser-based AI solutions.
+Practical AI integration for AEC marketing and operations teams. Deliverables include custom internal web applications such as live dashboards and analytics tools, daily process automation connecting existing platforms to streamline repetitive tasks, and secure AI consulting providing concrete implementation strategies for technical teams.
 
-### Graphic Design
-Visual communication for technical industries: exhibition booth design, product brochures, print and digital marketing materials.
+## Services Page
+
+Martin Motlík's services are documented in detail at:
+https://martinmotlik.com/services/
 
 ## Work at Dlubal Software
 
@@ -90,3 +95,14 @@ Martin actively promotes AI adoption in the architecture, engineering, and const
 - [Tech Stack](https://martinmotlik.com/#tools)
 - [Contact](https://martinmotlik.com/#contact)
 - [IFC Verify App](https://ifc-verify.app)
+
+## Site Structure
+
+- Homepage: https://martinmotlik.com/
+- Services: https://martinmotlik.com/services/
+- References: https://martinmotlik.com/references/
+- NASCC 2026 reference: https://martinmotlik.com/references/nascc-2026/
+- Mass Timber 2026 reference: https://martinmotlik.com/references/mass-timber-2026/
+- RFEM 6 Brochure reference: https://martinmotlik.com/references/rfem6-brochure/
+- IFC Verify app: https://ifc-verify.app/
+- llms.txt: https://martinmotlik.com/llms.txt
