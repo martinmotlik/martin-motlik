@@ -516,6 +516,21 @@
       .hero-h1 { font-size: 3rem; }
     }
 
+    .hero-eyebrow-pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      color: rgba(255,255,255,0.65); border: 1px solid rgba(255,255,255,0.2);
+      border-radius: var(--r-pill); padding: 5px 14px; margin-bottom: 18px;
+      backdrop-filter: blur(8px); background: rgba(255,255,255,0.06);
+    }
+    .hero-eyebrow-pill .dot {
+      width: 6px; height: 6px; border-radius: 50%; background: #4ADE80;
+      animation: greenping 2.5s ease-in-out infinite;
+    }
+    @keyframes greenping {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(74,222,128,0.4); }
+      50%       { box-shadow: 0 0 0 7px rgba(74,222,128,0); }
+    }
     .lang-fade { transition: opacity 0.2s ease; }
     .lang-fade.fading { opacity: 0; }
 
@@ -681,6 +696,7 @@
   <div class="container">
     <div class="hero-inner">
 
+      <div class="hero-eyebrow-pill"><span class="dot"></span><span class="lang-fade" data-i18n="hero_eyebrow">AEC Digital Strategist &amp; Web Lead</span></div>
       <h1 class="hero-h1 lang-fade" data-i18n="hero_h1">Services</h1>
 
       <p class="hero-sub lang-fade" data-i18n="hero_sub">
@@ -910,6 +926,7 @@ const translations = {
     nav_bim:        "Areas of Practice",
     nav_dlubal:     "Dlubal",
     nav_ai:         "AI in AEC",
+    hero_eyebrow:   "AEC Digital Strategist &amp; Web Lead",
     hero_h1:        "Services",
     hero_sub:       "I bridge the gap between complex engineering and clear digital execution. Specialized web development, digital strategy, and AI implementation for the AEC sector.",
     hero_btn_view:  "View services",
@@ -963,6 +980,7 @@ const translations = {
     nav_bim:        "Oblast praxe",
     nav_dlubal:     "Dlubal",
     nav_ai:         "AI v AEC",
+    hero_eyebrow:   "AEC digitální stratég &amp; Web Lead",
     hero_h1:        "Služby",
     hero_sub:       "Překlenuju propast mezi složitým inženýrstvím a jasnou digitální realizací. Specializovaný webový vývoj, digitální strategie a implementace AI pro sektor AEC.",
     hero_btn_view:  "Zobrazit služby",
@@ -1016,6 +1034,7 @@ const translations = {
     nav_bim:        "Leistungen",
     nav_dlubal:     "Dlubal",
     nav_ai:         "KI im AEC",
+    hero_eyebrow:   "AEC Digital-Stratege &amp; Web Lead",
     hero_h1:        "Leistungen",
     hero_sub:       "Ich schließe die Lücke zwischen komplexem Ingenieurwesen und klarer digitaler Umsetzung. Spezialisierte Webentwicklung, digitale Strategie und KI-Implementierung für die AEC-Branche.",
     hero_btn_view:  "Leistungen ansehen",
