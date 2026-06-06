@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — Martin Motlík | AEC Digital Strategist</title>
+  <meta name="description" content="Web platforms, digital marketing, trade show design, and AI workflow implementation for AEC software companies. Based in Czechia, serving US and Canadian markets.">
+  <meta name="keywords" content="AEC web development, structural engineering marketing, trade show booth design, AI workflow AEC, digital marketing engineering software, Figma UX design AEC">
+  <meta name="author" content="Martin Motlík">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://martinmotlik.com/services/">
+
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="en" href="https://martinmotlik.com/services/">
+  <link rel="alternate" hreflang="cs" href="https://martinmotlik.com/services/?lang=cs">
+  <link rel="alternate" hreflang="de" href="https://martinmotlik.com/services/?lang=de">
+  <link rel="alternate" hreflang="x-default" href="https://martinmotlik.com/services/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://martinmotlik.com/services/">
+  <meta property="og:title" content="Services — Martin Motlík | AEC Digital Strategist">
+  <meta property="og:description" content="Web platforms, digital marketing, trade show design, and AI workflow implementation for AEC software companies. Serving US and Canadian markets.">
+  <meta property="og:image" content="https://martinmotlik.com/sources/services-hero.jpg">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Martin Motlík">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Services — Martin Motlík | AEC Digital Strategist">
+  <meta name="twitter:description" content="Web platforms, digital marketing, trade show design, and AI workflow implementation for AEC software companies.">
+  <meta name="twitter:image" content="https://martinmotlik.com/sources/services-hero.jpg">
+
+  <!-- llms.txt discovery -->
+  <link rel="alternate" type="text/plain" href="https://martinmotlik.com/llms.txt">
+
+  <meta name="theme-color" content="#0A1628">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900;1,14..32,400&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <style>
+/* ═══════════════════════════════════════════════════════════
+       DESIGN TOKENS — exact copy from landing page V2
+       ═══════════════════════════════════════════════════════════ */
+    :root {
+      --c-navy:       #0A1628;
+      --c-navy-mid:   #1A2E52;
+      --c-navy-light: #243960;
+      --c-blue:       #1A56DB;
+      --c-blue-bg:    #EBF0FF;
+      --c-white:      #FFFFFF;
+      --c-off-white:  #F7F6F3;
+      --c-surface:    #EFEEEB;
+      --c-border:     #E6E5E1;
+      --c-text:       #111111;
+      --c-muted:      #717171;
+      --c-green:      #1B6B4A;
+      --c-green-bg:   #ECFDF5;
+
+      --font:       'Inter', system-ui, -apple-system, sans-serif;
+      --section-y:  96px;
+      --container:  1080px;
+      --nav-h:      60px;
+      --r-sm:  8px;
+      --r-md:  14px;
+      --r-lg:  20px;
+      --r-pill: 100px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--c-text);
+      background: var(--c-white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── LAYOUT ──────────────────────────────────────────────── */
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* ─── NAVIGATION ──────────────────────────────────────────── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      height: var(--nav-h);
+      transition: background 0.3s, border-color 0.3s, backdrop-filter 0.3s;
+      background: rgba(10,22,40,0);
+      border-bottom: 1px solid rgba(255,255,255,0);
+    }
+    .nav.scrolled {
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(16px) saturate(180%);
+      border-bottom-color: var(--c-border);
+    }
+    .nav-inner {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 40px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 9px;
+      font-size: 14px; font-weight: 700;
+      color: white; text-decoration: none;
+      letter-spacing: -0.01em; transition: color 0.3s;
+    }
+    .nav.scrolled .nav-logo { color: var(--c-text); }
+    .nav-logo-mark {
+      width: 28px; height: 28px; flex-shrink: 0; display: block;
+      filter: drop-shadow(0 1px 3px rgba(0,0,0,0.3));
+    }
+    .nav-links {
+      display: flex; align-items: center;
+      gap: 28px; list-style: none;
+    }
+    .nav-links a {
+      font-size: 13.5px; font-weight: 500;
+      color: rgba(255,255,255,0.75);
+      text-decoration: none; transition: color 0.15s;
+    }
+    .nav-links a:hover { color: white; }
+    .nav-links a.active { color: white; }
+    .nav.scrolled .nav-links a { color: var(--c-muted); }
+    .nav.scrolled .nav-links a:hover,
+    .nav.scrolled .nav-links a.active { color: var(--c-text); }
+    .lang-group {
+      display: flex; gap: 2px;
+      background: rgba(255,255,255,0.1);
+      border-radius: var(--r-sm); padding: 3px;
+      transition: background 0.3s;
+    }
+    .nav.scrolled .lang-group { background: var(--c-surface); }
+    .lang-btn {
+      font-size: 11.5px; font-weight: 600;
+      padding: 4px 9px; border-radius: 5px;
+      border: none; background: transparent;
+      color: rgba(255,255,255,0.55); cursor: pointer;
+      letter-spacing: 0.03em;
+      transition: background 0.12s, color 0.12s;
+    }
+    .lang-btn.active { background: rgba(255,255,255,0.15); color: white; }
+    .nav.scrolled .lang-btn { color: var(--c-muted); }
+    .nav.scrolled .lang-btn.active { background: white; color: var(--c-text); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+
+    /* Hamburger */
+    .nav-hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 6px;
+    }
+    .nav-hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: white; border-radius: 2px; transition: background 0.3s;
+    }
+    .nav.scrolled .nav-hamburger span { background: var(--c-text); }
+    .nav-drawer {
+      display: none; position: fixed;
+      top: var(--nav-h); left: 0; right: 0;
+      background: white; border-bottom: 1px solid var(--c-border);
+      padding: 16px 24px 24px; z-index: 99;
+      flex-direction: column; gap: 0;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    }
+    .nav-drawer.open { display: flex; }
+    .nav-drawer a {
+      font-size: 16px; font-weight: 500; color: var(--c-text);
+      text-decoration: none; padding: 13px 0;
+      border-bottom: 1px solid var(--c-border);
+    }
+    .nav-drawer a:last-child { border-bottom: none; }
+    .nav-drawer-lang { display: flex; gap: 6px; padding-top: 16px; margin-top: 4px; border-top: 1px solid var(--c-border); }
+    .nav-drawer .lang-btn { color: var(--c-muted); border-radius: 6px; }
+    .nav-drawer .lang-btn.active { background: var(--c-navy); color: white; box-shadow: none; }
+
+    /* ═══════════════════════════════════════════════════════════
+       1. HERO — booth background, dark overlay
+       ═══════════════════════════════════════════════════════════ */
+    .hero {
+      background: var(--c-navy);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 0 0 0 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Background image layer */
+    .hero-bg-img {
+      position: absolute;
+      inset: 0;
+      background-image: url('Sources/services-hero.png');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+
+    /*
+      OVERLAY STRATEGY — dark exhibition hall photo:
+      ─────────────────────────────────────────────────────────────
+      Layer 1 (vertical): darkens top and bottom, preserves
+        the mid-zone where the booth is visible.
+
+      Layer 2 (horizontal): stronger dark on LEFT third
+        where headline text sits, fades to lighter on right
+        so the booth detail shows through.
+
+      Net result: left text area is reliably readable,
+      right booth area shows ambient hall lighting and
+      booth detail — not crushed to black.
+    */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to right,
+          rgba(10,22,40,0.82) 0%,
+          rgba(10,22,40,0.55) 38%,
+          rgba(10,22,40,0.20) 65%,
+          rgba(10,22,40,0.08) 100%
+        ),
+        linear-gradient(
+          to bottom,
+          rgba(10,22,40,0.70) 0%,
+          rgba(10,22,40,0.25) 25%,
+          rgba(10,22,40,0.18) 55%,
+          rgba(10,22,40,0.55) 80%,
+          rgba(10,22,40,0.94) 100%
+        );
+    }
+
+    /* Container inside hero must fill full width of the flex parent */
+    .hero > .container {
+      width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-inner {
+      position: relative; z-index: 1;
+      width: 100%;
+      max-width: 560px;
+      margin-left: 0;
+      margin-right: auto;
+      /* Offset nav height so block feels visually centered */
+      padding-top: 60px;
+    }
+
+    .hero-h1 {
+      font-size: 57px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.0;
+      color: white;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 16px rgba(0,0,0,0.45);
+    }
+
+    .hero-sub {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.72;
+      color: rgba(255,255,255,0.90);
+      margin-bottom: 32px;
+      text-shadow:
+        0 1px 3px rgba(0,0,0,0.55),
+        0 2px 12px rgba(0,0,0,0.40);
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .hero-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13.5px;
+      font-weight: 700;
+      padding: 11px 22px;
+      border-radius: var(--r-sm);
+      background: white;
+      color: var(--c-navy);
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .hero-btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .hero-btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13.5px;
+      font-weight: 600;
+      padding: 11px 22px;
+      border-radius: var(--r-sm);
+      border: 1.5px solid rgba(255,255,255,0.30);
+      color: white;
+      text-decoration: none;
+      backdrop-filter: blur(8px);
+      background: rgba(255,255,255,0.06);
+      transition: border-color 0.15s, background 0.15s, transform 0.15s;
+    }
+
+    .hero-btn-ghost:hover {
+      border-color: rgba(255,255,255,0.55);
+      background: rgba(255,255,255,0.12);
+      transform: translateY(-2px);
+    }
+
+
+    /* ═══════════════════════════════════════════════════════════
+       2. PAIN POINT — 50/50 split, white bg
+       ═══════════════════════════════════════════════════════════ */
+    .pain-section {
+      background: var(--c-white);
+      padding: var(--section-y) 0;
+      border-bottom: 1px solid var(--c-border);
+    }
+
+    .pain-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .pain-left {
+      font-size: clamp(1.75rem, 2.8vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: var(--c-navy);
+    }
+
+    .pain-right {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.78;
+      color: #3a3a3a;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       3. SERVICES — editorial rows, no cards
+       ═══════════════════════════════════════════════════════════ */
+    .services-section {
+      background: #F4F4F5;
+      padding: var(--section-y) 0;
+    }
+
+    .services-section-header {
+      margin-bottom: 64px;
+    }
+
+    .section-title {
+      font-size: clamp(1.9rem, 3vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: var(--c-navy);
+    }
+
+    /* Row layout */
+    .svc-row {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 64px;
+      padding: 44px 0;
+      border-top: 1px solid var(--c-border);
+      align-items: start;
+      transition: background 0.2s;
+    }
+
+    /* Last row also gets a bottom border */
+    .svc-row:last-child {
+      border-bottom: 1px solid var(--c-border);
+    }
+
+    .svc-row-title {
+      font-size: clamp(1.3rem, 2vw, 1.75rem);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      color: var(--c-navy);
+    }
+
+    /* Row number — subtle editorial detail */
+    .svc-row-num {
+      display: block;
+      font-size: 11px; font-weight: 500;
+      color: rgba(10,22,40,0.18);
+      letter-spacing: 0.06em;
+      margin-bottom: 20px;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       4. CTA — dark, same as landing
+       ═══════════════════════════════════════════════════════════ */
+    .cta-section {
+      background: var(--c-navy);
+      text-align: center;
+      padding: var(--section-y) 0;
+    }
+
+    .cta-title {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 800; letter-spacing: -0.03em;
+      color: white; margin-bottom: 14px;
+    }
+
+    .cta-desc {
+      font-size: 15.5px; color: rgba(255,255,255,0.55);
+      max-width: 480px; margin: 0 auto 48px; line-height: 1.72;
+    }
+
+    .cta-contacts {
+      display: flex; flex-direction: column;
+      gap: 10px; max-width: 420px; margin: 0 auto;
+    }
+
+    .cta-card {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 17px 22px; border-radius: var(--r-md);
+      text-decoration: none; transition: transform 0.15s;
+    }
+
+    .cta-card:hover { transform: translateY(-2px); }
+    .cta-card-li    { background: var(--c-blue); }
+    .cta-card-email { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); }
+
+    .cta-card-inner { display: flex; align-items: center; gap: 13px; }
+
+    .cta-card-icon {
+      width: 34px; height: 34px; border-radius: 7px;
+      background: rgba(255,255,255,0.15);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+
+    .cta-card-text  { text-align: left; }
+
+    .cta-card-label {
+      display: block; font-size: 9.5px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: rgba(255,255,255,0.45); margin-bottom: 2px;
+    }
+
+    .cta-card-value { font-size: 14px; font-weight: 600; color: white; }
+    .cta-arrow      { color: rgba(255,255,255,0.4); font-size: 18px; }
+
+    /* ─── FOOTER ──────────────────────────────────────────────── */
+    .footer { border-top: 1px solid var(--c-border); padding: 26px 0; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; }
+    .footer-logo {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 13.5px; font-weight: 700;
+      color: var(--c-text); text-decoration: none;
+    }
+    .footer-info { font-size: 11.5px; color: var(--c-muted); }
+    .footer-info a { color: inherit; text-decoration: none; }
+    .footer-info a:hover { color: var(--c-text); }
+    .footer-sep { margin: 0 10px; opacity: 0.4; }
+
+    /* ═══════════════════════════════════════════════════════════
+       RESPONSIVE
+       ═══════════════════════════════════════════════════════════ */
+    @media (max-width: 1023px) {
+      :root { --section-y: 72px; }
+      .container { padding: 0 32px; }
+      .nav-inner  { padding: 0 32px; }
+      .nav-links  { display: none; }
+      .nav-hamburger { display: flex; }
+      .lang-group { display: none; }
+
+      .hero-ctas { flex-direction: column; }
+      .hero-btn-primary, .hero-btn-ghost { justify-content: center; }
+
+      .pain-grid { grid-template-columns: 1fr; gap: 32px; }
+      .pain-left { font-size: 1.75rem; }
+
+      .svc-row { grid-template-columns: 1fr; gap: 24px; padding: 40px 0; }
+      .bullet-term { min-width: 0; width: 100%; padding-right: 0; margin-bottom: 2px; }
+      .svc-row-bullets li { grid-template-columns: 1fr; gap: 4px; }
+      .bullet-term { margin-bottom: 2px; }
+
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 10px; }
+      .footer-info { font-size: 11px; line-height: 1.8; }
+      .footer-sep { display: none; }
+    }
+
+    @media (max-width: 767px) {
+      .container { padding: 0 20px; }
+      .nav-inner  { padding: 0 20px; }
+      .hero-h1 { letter-spacing: -0.03em; }
+      .services-section-header { margin-bottom: 40px; }
+      .cta-contacts { max-width: 100%; }
+    }
+
+    @media (max-width: 389px) {
+      .hero-h1 { font-size: 3rem; }
+    }
+
+    .lang-fade { transition: opacity 0.2s ease; }
+    .lang-fade.fading { opacity: 0; }
+
+    .d-refs {
+      display: flex; flex-direction: column; gap: 6px; margin-top: 12px;
+    }
+    .d-refs-label {
+      font-size: 11px; font-weight: 600;
+      letter-spacing: .06em; text-transform: uppercase;
+      color: var(--c-muted);
+    }
+    .d-ref {
+      font-size: 13px; font-weight: 500;
+      color: var(--c-blue); text-decoration: none;
+      transition: opacity .15s;
+    }
+    .d-ref:hover { opacity: .7; }
+
+    /* ══ Stepper nav ══════════════════════════════════════════ */
+    .stepper-nav {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      margin-bottom: 64px;
+    }
+    .step-btn {
+      display: flex; flex-direction: column; align-items: center; gap: 10px;
+      background: none; border: none; cursor: pointer;
+      padding: 0 52px; position: relative;
+    }
+    .stepper-nav {
+      position: relative;
+    }
+    .stepper-nav::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: calc(12.5%);
+      right: calc(12.5%);
+      height: 1px;
+      background: var(--c-border);
+      z-index: 0;
+    }
+    .step-btn:not(:last-child)::after { display: none; }
+    .step-circle {
+      width: 56px; height: 56px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font);
+      font-size: 15px; font-weight: 700; letter-spacing: .03em;
+      border: 1.5px solid var(--c-border);
+      background: var(--c-white); color: var(--c-muted);
+      position: relative; z-index: 1;
+      transition: background .2s, color .2s, border-color .2s;
+    }
+    .step-label {
+      font-size: 13px; font-weight: 500; letter-spacing: .01em;
+      color: var(--c-muted); white-space: nowrap;
+      transition: color .2s;
+    }
+    .step-btn.active .step-circle {
+      background: var(--c-navy);
+      border-color: var(--c-navy);
+      color: var(--c-white);
+    }
+    .step-btn.active .step-label { color: var(--c-navy); }
+    .step-btn:not(.active):hover .step-circle { border-color: var(--c-navy-mid); color: var(--c-navy); }
+    .step-btn:not(.active):hover .step-label { color: var(--c-navy); }
+
+    /* ══ Panel ═════════════════════════════════════════════════ */
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    .panel-title {
+      font-size: 28px; font-weight: 800;
+      color: var(--c-navy); letter-spacing: -0.03em;
+      margin-bottom: 32px;
+    }
+
+    .deliverable {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 0 40px;
+      padding: 18px 0;
+      border-top: 1px solid var(--c-border);
+      align-items: baseline;
+    }
+    .deliverable:last-child { border-bottom: 1px solid var(--c-border); }
+    .d-term {
+      font-size: 14px; font-weight: 600;
+      color: var(--c-navy); letter-spacing: -0.01em;
+    }
+    .d-desc {
+      font-size: 14px; color: var(--c-muted); line-height: 1.68;
+    }
+
+    @media (max-width: 1023px) {
+      .step-btn { padding: 0 24px; }
+    }
+    @media (max-width: 767px) {
+      .step-btn { padding: 0 14px; }
+      .step-label { display: none; }
+      .deliverable { grid-template-columns: 1fr; gap: 5px; }
+      .panel-title { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="main-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <svg class="nav-logo-mark" viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="130" height="130" fill="#0A1628" rx="22"/>
+        <path d="M76.3592 57.857C75.4265 57.6937 74.717 57.1169 74.4236 56.2697C74.1135 55.3753 74.4325 54.4439 75.1177 53.76L100.357 28.5696L106.163 22.819C106.749 22.2385 107.518 21.8876 108.351 22.0458C109.412 22.2474 110.272 23.2579 110.273 24.4024L110.284 53.3836C110.036 55.8334 108.092 57.8366 105.589 57.8378L76.3579 57.8557L76.3592 57.857Z" fill="#FEFEFE"/>
+        <path d="M55.7679 56.6561C55.3584 57.3999 54.6387 57.8401 53.8081 57.8401L24.8525 57.8439C22.1667 57.8439 20.0269 55.7208 20.0257 53.021L20.0078 24.8589C20.0078 24.3256 20.0563 23.9033 20.2451 23.4554C20.5322 22.7766 21.1077 22.2714 21.715 22.0991C22.4882 21.8809 23.3494 22.0162 23.9083 22.5725L26.8888 25.5415L37.5364 36.1291L55.389 53.9511C56.0984 54.6592 56.2349 55.8101 55.7679 56.6573V56.6561Z" fill="#FEFEFE"/>
+        <path d="M81.9803 89.5551L77.6052 94.0131L72.5704 99.1296C71.921 99.7905 71.0329 100.038 70.1079 99.6961C69.4317 99.4447 68.7031 98.6702 68.7031 97.7605V68.6849C68.7031 66.6332 70.6731 64.4782 72.7542 64.4795L101.492 64.4973C102.35 64.4973 103.057 65.2718 103.31 65.8728C103.654 66.6919 103.501 67.6514 102.884 68.283L99.6377 71.6055L87.366 84.0776L81.9803 89.5551Z" fill="#FEFEFE"/>
+        <path d="M75.0723 104.606C75.2968 103.972 75.6018 103.617 76.0228 103.191L91.9641 87.0534L97.522 81.4304L106.326 72.5896C106.984 71.9274 107.856 71.6263 108.81 71.9848C109.414 72.2119 110.276 72.9736 110.276 73.8553L110.265 103.667C110.265 105.591 108.492 107.416 106.552 107.416H77.0487C75.6069 107.416 74.641 105.825 75.0723 104.606Z" fill="#FEFEFE"/>
+        <path d="M55.1655 106.234C54.7789 106.922 54.0121 107.436 53.1828 107.435L23.8354 107.424C22.326 107.424 21.0182 106.404 20.4313 105.133C20.2182 104.67 20.0166 104.24 20.0166 103.721L20 74.1515C20 73.2175 20.5461 72.3984 21.2734 72.0603C22.1104 71.6724 23.1222 71.7872 23.792 72.4596L31.4552 80.1687L36.2118 84.9572L46.608 95.4096L54.7522 103.652C55.436 104.344 55.6504 105.368 55.1643 106.233L55.1655 106.234Z" fill="#FEFEFE"/>
+        <path d="M54.5289 95.8494L49.9484 91.2025L37.276 78.3426L28.5462 69.5094C28.0384 68.9952 27.5497 68.5754 27.1605 67.9847C26.7076 67.2969 26.6221 66.4689 27.0202 65.6829C27.3111 65.11 27.958 64.4874 28.7937 64.4874L57.7723 64.4746C59.8942 64.7719 61.5184 66.5288 61.669 68.6737L61.6511 97.7875C61.6511 98.7075 60.8856 99.4832 60.2234 99.7116C59.269 100.041 58.4269 99.7499 57.7736 99.0953L54.5289 95.8481V95.8494Z" fill="#FEFEFE"/>
+      </svg>
+      Martin Motlík
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="/references/" data-i18n="nav_references">References</a></li>
+      <li><a href="services.html" class="active" data-i18n="nav_services">Services</a></li>
+      <li><a href="/#about" data-i18n="nav_about">About me</a></li>
+      <li><a href="/#bim" data-i18n="nav_bim">Areas of Practice</a></li>
+      <li><a href="/#dlubal" data-i18n="nav_dlubal">Dlubal</a></li>
+      <li><a href="/#ai-in-aec" data-i18n="nav_ai">AI in AEC</a></li>
+    </ul>
+
+    <div style="display:flex;align-items:center;gap:12px;">
+      <div class="lang-group">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="cs">CS</button>
+        <button class="lang-btn" data-lang="de">DE</button>
+      </div>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="nav-drawer" id="nav-drawer">
+  <a href="/references/" data-i18n="nav_references">References</a>
+  <a href="services.html" class="active" data-i18n="nav_services">Services</a>
+  <a href="/#about" data-i18n="nav_about">About me</a>
+  <a href="/#bim" data-i18n="nav_bim">Areas of Practice</a>
+  <a href="/#dlubal" data-i18n="nav_dlubal">Dlubal</a>
+  <a href="/#ai-in-aec" data-i18n="nav_ai">AI in AEC</a>
+  <div class="nav-drawer-lang">
+    <button class="lang-btn active" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="cs">CS</button>
+    <button class="lang-btn" data-lang="de">DE</button>
+  </div>
+</div>
+
+<section class="hero" id="hero">
+  <div class="hero-bg-img"></div>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-inner">
+
+      <h1 class="hero-h1 lang-fade" data-i18n="hero_h1">Services</h1>
+
+      <p class="hero-sub lang-fade" data-i18n="hero_sub">
+        I bridge the gap between complex engineering and clear digital execution. Specialized web development, digital strategy, and AI implementation for the AEC sector.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#services" class="hero-btn-primary">
+          <span data-i18n="hero_btn_view" class="lang-fade">View services</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact" class="hero-btn-ghost lang-fade" data-i18n="hero_btn_talk">Let's talk</a>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<section class="pain-section">
+  <div class="container">
+    <div class="pain-grid">
+      <p class="pain-left lang-fade" data-i18n="pain_headline">Stop explaining your industry to generalist agencies</p>
+      <p class="pain-right lang-fade" data-i18n="pain_body">When you hire typical graphic designers or web developers, you spend hours explaining basic structural concepts just to get a usable result. I come from a technical background. I understand the AEC community, software workflows, and engineering terminology from the inside. When we work together, we skip the learning curve and focus directly on executing accurate, high-end digital solutions.</p>
+    </div>
+  </div>
+</section>
+
+<section class="services-section" id="services">
+  <div class="container">
+
+    <div class="services-section-header" style="text-align: center;">
+      <h2 class="section-title lang-fade" data-i18n="svc_section_title">What I deliver</h2>
+    </div>
+
+    <div class="stepper-nav">
+      <button class="step-btn active" onclick="switchStep(this,'t1')">
+        <span class="step-circle">01</span>
+        <span class="step-label lang-fade" data-i18n="step1_label">Web Platforms</span>
+      </button>
+      <button class="step-btn" onclick="switchStep(this,'t2')">
+        <span class="step-circle">02</span>
+        <span class="step-label lang-fade" data-i18n="step2_label">Online Marketing</span>
+      </button>
+      <button class="step-btn" onclick="switchStep(this,'t3')">
+        <span class="step-circle">03</span>
+        <span class="step-label lang-fade" data-i18n="step3_label">Trade Shows &amp; Print</span>
+      </button>
+      <button class="step-btn" onclick="switchStep(this,'t4')">
+        <span class="step-circle">04</span>
+        <span class="step-label lang-fade" data-i18n="step4_label">AI Workflows</span>
+      </button>
+    </div>
+
+    <div id="t1" class="tab-panel active lang-fade">
+      <h3 class="panel-title" data-i18n="t1_title">Web Platforms</h3>
+      <div class="deliverable">
+        <span class="d-term" data-i18n="t1_d1_term">Figma UI &amp; UX Design</span>
+        <span class="d-desc" data-i18n="t1_d1_desc">Designing clean, user-centric web interfaces using Figma. I create precise layouts that organize complex engineering data, product specifications, and software features into intuitive navigation paths specifically for technical professionals.</span>
+      </div>
+      <div class="deliverable">
+        <span class="d-term" data-i18n="t1_d2_term">Flexible Project Delivery</span>
+        <span class="d-desc" data-i18n="t1_d2_desc">You receive either high-fidelity PDF design mockups ready for your in-house developers or a fully functional, coded website prepared for immediate deployment to your production server.</span>
+      </div>
+      <div class="deliverable">
+        <span class="d-term" data-i18n="t1_d3_term">Interface &amp; Strategy Consulting</span>
+        <span class="d-desc" data-i18n="t1_d3_desc">Delivering expert web strategy and targeted interface consulting. I analyze your current digital presence and provide concrete UI proposals designed to solve navigation bottlenecks and effectively communicate your technical solutions.</span>
+      </div>
+    </div>
+
+    <div id="t2" class="tab-panel lang-fade">
+      <h3 class="panel-title" data-i18n="t2_title">Digital Marketing &amp; Localization</h3>
+      <div class="deliverable">
+        <span class="d-term" data-i18n="t2_d1_term">Mass Email Campaigns</span>
+        <span class="d-desc" data-i18n="t2_d1_desc">Designing and executing targeted email campaigns via Mailgun and Mailchimp — from visual PDF concepts to fully coded, responsive HTML templates ready for dispatch.</span>
+      </div>
+      <div class="deliverable">
+        <span class="d-term" data-i18n="t2_d2_term">Campaign Landing Pages</span>
+        <span class="d-desc" data-i18n="t2_d2_desc">Developing dedicated landing pages to drive conversions. High-fidelity mockups or fully functional, coded pages ready for immediate deployment on your production server.</span>
+      </div>
+      <div class="deliverable">
+        <span class="d-term" data-i18n="t2_d3_term">Social Media &amp; Event Assets</span>
+        <span class="d-desc" data-i18n="t2_d3_desc">Professional visual content for LinkedIn, Instagram, and Facebook — promotional graphics for product launches, events, and conference invitations.</span>
+      </div>
+    </div>
+
+    <div id="t3" class="tab-panel lang-fade">
+      <h3 class="panel-title" data-i18n="t3_title">Trade Show &amp; Print Presentation</h3>
+      <div class="deliverable">
+        <span class="d-term" data-i18n="t3_d1_term">Exhibition Booth Design &amp; 3D Modeling</span>
+        <span class="d-desc" data-i18n="t3_d1_desc">Precise 3D CAD models, photorealistic visualizations, and finalized print-ready PDFs. You know exactly how your booth looks before construction begins, and your manufacturer receives files ready for immediate production.<span class="d-refs"><span class="d-refs-label">See it in practice</span><a href="https://martinmotlik.com/references/nascc-2026/" class="d-ref" target="_blank" rel="noopener">NASCC: The Steel Conference 2026 →</a><a href="https://martinmotlik.com/references/mass-timber-2026/" class="d-ref" target="_blank" rel="noopener">International Mass Timber Conference 2026 →</a></span></span>
+      </div>
+      <div class="deliverable">
+        <span class="d-term" data-i18n="t3_d2_term">Print-Ready Marketing Assets</span>
+        <span class="d-desc" data-i18n="t3_d2_desc">Brochures, posters, flyers, and business cards. I handle the entire prepress process and deliver finalized, press-ready PDFs with realistic print mockups.</span>
+      </div>
+      <div class="deliverable">
+        <span class="d-term" data-i18n="t3_d3_term">Technical Brand Alignment</span>
+        <span class="d-desc" data-i18n="t3_d3_desc">Every physical asset clearly communicates your engineering specialization — reflecting your core business without losing a premium aesthetic.</span>
+      </div>
+    </div>
+
+    <div id="t4" class="tab-panel lang-fade">
+      <h3 class="panel-title" data-i18n="t4_title">AI Workflows</h3>
+      <div class="deliverable">
+        <span class="d-term" data-i18n="t4_d1_term">Custom Internal Web Apps</span>
+        <span class="d-desc" data-i18n="t4_d1_desc">Developing functional, browser-based mini-applications for your internal use, such as live data dashboards and traffic analytics. I deliver fully coded, ready-to-deploy tools designed to perfectly match your corporate brand identity.</span>
+      </div>
+      <div class="deliverable">
+        <span class="d-term" data-i18n="t4_d2_term">Daily Process Automation</span>
+        <span class="d-desc" data-i18n="t4_d2_desc">Integrating proven AI tools directly into your company's daily operations. I help you connect your existing platforms to streamline repetitive tasks, process data faster, and optimize your entire technical workflow.</span>
+      </div>
+      <div class="deliverable">
+        <span class="d-term" data-i18n="t4_d3_term">Secure AI Consulting</span>
+        <span class="d-desc" data-i18n="t4_d3_desc">Providing expert guidance on the secure implementation of artificial intelligence. I analyze your current business operations and help you build practical AI strategies that actually make sense for your technical team.</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+function switchStep(btn, id) {
+  document.querySelectorAll('.step-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(id).classList.add('active');
+}
+</script>
+
+<section class="cta-section" id="contact">
+  <div class="container">
+    <h2 class="cta-title lang-fade" data-i18n="cta_title">Let's talk specifics.</h2>
+    <p class="cta-desc lang-fade" data-i18n="cta_desc">Have a specific project in mind? Reach out to discuss your exact technical requirements. I will gladly share relevant examples of my past work.</p>
+
+    <div class="cta-contacts">
+      <a href="https://www.linkedin.com/in/martin-motl%C3%ADk-3b1b47233" target="_blank" rel="noopener" class="cta-card cta-card-li">
+        <div class="cta-card-inner">
+          <div class="cta-card-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="white">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+            </svg>
+          </div>
+          <div class="cta-card-text">
+            <span class="cta-card-label lang-fade" data-i18n="cta_li_label">Best way to reach me</span>
+            <span class="cta-card-value lang-fade" data-i18n="cta_li_value">Connect or message on LinkedIn</span>
+          </div>
+        </div>
+        <span class="cta-arrow">→</span>
+      </a>
+
+      <a href="mailto:motlik.martin@gmail.com" class="cta-card cta-card-email">
+        <div class="cta-card-inner">
+          <div class="cta-card-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="M2 8l10 7 10-7"/>
+            </svg>
+          </div>
+          <div class="cta-card-text">
+            <span class="cta-card-label lang-fade" data-i18n="cta_email_label">Email</span>
+            <span class="cta-card-value">motlik.martin@gmail.com</span>
+          </div>
+        </div>
+        <span class="cta-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <a href="/" class="footer-logo">
+        <svg width="22" height="22" viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="130" height="130" fill="#0A1628" rx="22"/>
+          <path d="M76.3592 57.857C75.4265 57.6937 74.717 57.1169 74.4236 56.2697C74.1135 55.3753 74.4325 54.4439 75.1177 53.76L100.357 28.5696L106.163 22.819C106.749 22.2385 107.518 21.8876 108.351 22.0458C109.412 22.2474 110.272 23.2579 110.273 24.4024L110.284 53.3836C110.036 55.8334 108.092 57.8366 105.589 57.8378L76.3579 57.8557L76.3592 57.857Z" fill="#FEFEFE"/>
+          <path d="M55.7679 56.6561C55.3584 57.3999 54.6387 57.8401 53.8081 57.8401L24.8525 57.8439C22.1667 57.8439 20.0269 55.7208 20.0257 53.021L20.0078 24.8589C20.0078 24.3256 20.0563 23.9033 20.2451 23.4554C20.5322 22.7766 21.1077 22.2714 21.715 22.0991C22.4882 21.8809 23.3494 22.0162 23.9083 22.5725L26.8888 25.5415L37.5364 36.1291L55.389 53.9511C56.0984 54.6592 56.2349 55.8101 55.7679 56.6573V56.6561Z" fill="#FEFEFE"/>
+          <path d="M81.9803 89.5551L77.6052 94.0131L72.5704 99.1296C71.921 99.7905 71.0329 100.038 70.1079 99.6961C69.4317 99.4447 68.7031 98.6702 68.7031 97.7605V68.6849C68.7031 66.6332 70.6731 64.4782 72.7542 64.4795L101.492 64.4973C102.35 64.4973 103.057 65.2718 103.31 65.8728C103.654 66.6919 103.501 67.6514 102.884 68.283L99.6377 71.6055L87.366 84.0776L81.9803 89.5551Z" fill="#FEFEFE"/>
+          <path d="M75.0723 104.606C75.2968 103.972 75.6018 103.617 76.0228 103.191L91.9641 87.0534L97.522 81.4304L106.326 72.5896C106.984 71.9274 107.856 71.6263 108.81 71.9848C109.414 72.2119 110.276 72.9736 110.276 73.8553L110.265 103.667C110.265 105.591 108.492 107.416 106.552 107.416H77.0487C75.6069 107.416 74.641 105.825 75.0723 104.606Z" fill="#FEFEFE"/>
+          <path d="M55.1655 106.234C54.7789 106.922 54.0121 107.436 53.1828 107.435L23.8354 107.424C22.326 107.424 21.0182 106.404 20.4313 105.133C20.2182 104.67 20.0166 104.24 20.0166 103.721L20 74.1515C20 73.2175 20.5461 72.3984 21.2734 72.0603C22.1104 71.6724 23.1222 71.7872 23.792 72.4596L31.4552 80.1687L36.2118 84.9572L46.608 95.4096L54.7522 103.652C55.436 104.344 55.6504 105.368 55.1643 106.233L55.1655 106.234Z" fill="#FEFEFE"/>
+          <path d="M54.5289 95.8494L49.9484 91.2025L37.276 78.3426L28.5462 69.5094C28.0384 68.9952 27.5497 68.5754 27.1605 67.9847C26.7076 67.2969 26.6221 66.4689 27.0202 65.6829C27.3111 65.11 27.958 64.4874 28.7937 64.4874L57.7723 64.4746C59.8942 64.7719 61.5184 66.5288 61.669 68.6737L61.6511 97.7875C61.6511 98.7075 60.8856 99.4832 60.2234 99.7116C59.269 100.041 58.4269 99.7499 57.7736 99.0953L54.5289 95.8481V95.8494Z" fill="#FEFEFE"/>
+        </svg>
+        Martin Motlík
+      </a>
+      <div class="footer-info">
+        © 2026
+        <span class="footer-sep">·</span>
+        IČO: 21839662
+        <span class="footer-sep">·</span>
+        DIČ: CZ0103073146
+        <span class="footer-sep">·</span>
+        <a href="mailto:motlik.martin@gmail.com">motlik.martin@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  // Hamburger
+  const hamburger = document.getElementById('nav-hamburger');
+  const drawer    = document.getElementById('nav-drawer');
+  hamburger.addEventListener('click', () => drawer.classList.toggle('open'));
+  drawer.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => drawer.classList.remove('open'));
+  });
+  document.addEventListener('click', e => {
+    if (!nav.contains(e.target) && !drawer.contains(e.target)) {
+      drawer.classList.remove('open');
+    }
+  });
+</script>
+
+<script>
+// ── i18n translations ───────────────────────────────────────────────────────
+const translations = {
+  en: {
+    nav_references: "References",
+    nav_services:   "Services",
+    nav_about:      "About me",
+    nav_bim:        "Areas of Practice",
+    nav_dlubal:     "Dlubal",
+    nav_ai:         "AI in AEC",
+    hero_h1:        "Services",
+    hero_sub:       "I bridge the gap between complex engineering and clear digital execution. Specialized web development, digital strategy, and AI implementation for the AEC sector.",
+    hero_btn_view:  "View services",
+    hero_btn_talk:  "Let's talk",
+    pain_headline:  "Stop explaining your industry to generalist agencies",
+    pain_body:      "When you hire typical graphic designers or web developers, you spend hours explaining basic structural concepts just to get a usable result. I come from a technical background. I understand the AEC community, software workflows, and engineering terminology from the inside. When we work together, we skip the learning curve and focus directly on executing accurate, high-end digital solutions.",
+    svc_section_title: "What I deliver",
+    step1_label: "Web Platforms",
+    step2_label: "Online Marketing",
+    step3_label: "Trade Shows &amp; Print",
+    step4_label: "AI Workflows",
+    t1_title:    "Web Platforms",
+    t1_d1_term:  "Figma UI &amp; UX Design",
+    t1_d1_desc:  "Designing clean, user-centric web interfaces using Figma. I create precise layouts that organize complex engineering data, product specifications, and software features into intuitive navigation paths specifically for technical professionals.",
+    t1_d2_term:  "Flexible Project Delivery",
+    t1_d2_desc:  "You receive either high-fidelity PDF design mockups ready for your in-house developers or a fully functional, coded website prepared for immediate deployment to your production server.",
+    t1_d3_term:  "Interface &amp; Strategy Consulting",
+    t1_d3_desc:  "Delivering expert web strategy and targeted interface consulting. I analyze your current digital presence and provide concrete UI proposals designed to solve navigation bottlenecks and effectively communicate your technical solutions.",
+    t2_title:    "Digital Marketing &amp; Localization",
+    t2_d1_term:  "Mass Email Campaigns",
+    t2_d1_desc:  "Designing and executing targeted email campaigns via Mailgun and Mailchimp — from visual PDF concepts to fully coded, responsive HTML templates ready for dispatch.",
+    t2_d2_term:  "Campaign Landing Pages",
+    t2_d2_desc:  "Developing dedicated landing pages to drive conversions. High-fidelity mockups or fully functional, coded pages ready for immediate deployment on your production server.",
+    t2_d3_term:  "Social Media &amp; Event Assets",
+    t2_d3_desc:  "Professional visual content for LinkedIn, Instagram, and Facebook — promotional graphics for product launches, events, and conference invitations.",
+    t3_title:    "Trade Show &amp; Print Presentation",
+    t3_d1_term:  "Exhibition Booth Design &amp; 3D Modeling",
+    t3_d1_desc:  'Precise 3D CAD models, photorealistic visualizations, and finalized print-ready PDFs. You know exactly how your booth looks before construction begins, and your manufacturer receives files ready for immediate production.<span class="d-refs"><span class="d-refs-label">See it in practice</span><a href="https://martinmotlik.com/references/nascc-2026/" class="d-ref" target="_blank" rel="noopener">NASCC: The Steel Conference 2026 →</a><a href="https://martinmotlik.com/references/mass-timber-2026/" class="d-ref" target="_blank" rel="noopener">International Mass Timber Conference 2026 →</a></span>',
+    t3_d2_term:  "Print-Ready Marketing Assets",
+    t3_d2_desc:  "Brochures, posters, flyers, and business cards. I handle the entire prepress process and deliver finalized, press-ready PDFs with realistic print mockups.",
+    t3_d3_term:  "Technical Brand Alignment",
+    t3_d3_desc:  "Every physical asset clearly communicates your engineering specialization — reflecting your core business without losing a premium aesthetic.",
+    t4_title:    "AI Workflows",
+    t4_d1_term:  "Custom Internal Web Apps",
+    t4_d1_desc:  "Developing functional, browser-based mini-applications for your internal use, such as live data dashboards and traffic analytics. I deliver fully coded, ready-to-deploy tools designed to perfectly match your corporate brand identity.",
+    t4_d2_term:  "Daily Process Automation",
+    t4_d2_desc:  "Integrating proven AI tools directly into your company's daily operations. I help you connect your existing platforms to streamline repetitive tasks, process data faster, and optimize your entire technical workflow.",
+    t4_d3_term:  "Secure AI Consulting",
+    t4_d3_desc:  "Providing expert guidance on the secure implementation of artificial intelligence. I analyze your current business operations and help you build practical AI strategies that actually make sense for your technical team.",
+    cta_title:      "Let's talk specifics.",
+    cta_desc:       "Have a specific project in mind? Reach out to discuss your exact technical requirements. I will gladly share relevant examples of my past work.",
+    cta_li_label:   "Best way to reach me",
+    cta_li_value:   "Connect or message on LinkedIn",
+    cta_email_label: "Email",
+  },
+
+  cs: {
+    nav_references: "Reference",
+    nav_services:   "Služby",
+    nav_about:      "O mně",
+    nav_bim:        "Oblast praxe",
+    nav_dlubal:     "Dlubal",
+    nav_ai:         "AI v AEC",
+    hero_h1:        "Služby",
+    hero_sub:       "Překlenuju propast mezi složitým inženýrstvím a jasnou digitální realizací. Specializovaný webový vývoj, digitální strategie a implementace AI pro sektor AEC.",
+    hero_btn_view:  "Zobrazit služby",
+    hero_btn_talk:  "Napišme si",
+    pain_headline:  "Přestaňte vysvětlovat svůj obor nespecializovaným tvůrcům",
+    pain_body:      "Když spolupracujete s typickými grafiky nebo webovými vývojáři, strávíte hodiny vysvětlováním základních stavebních konceptů jen proto, abyste dostali použitelný výsledek. Já přicházím z technického prostředí. Znám komunitu AEC, pracovní postupy v softwaru a inženýrskou terminologii zevnitř. Když spolupracujeme, přeskočíme křivku učení a soustředíme se přímo na realizaci přesných, vysoce kvalitních digitálních řešení.",
+    svc_section_title: "Co dodávám",
+    step1_label: "Webové platformy",
+    step2_label: "Online marketing",
+    step3_label: "Veletrhy &amp; tisk",
+    step4_label: "AI workflow",
+    t1_title:    "Webové platformy",
+    t1_d1_term:  "Návrh UI &amp; UX ve Figmě",
+    t1_d1_desc:  "Navrhuji čistá, uživatelsky zaměřená webová rozhraní pomocí Figmy. Vytvářím přesná rozložení, která organizují komplexní inženýrská data, specifikace produktů a softwarové funkce do intuitivních navigačních cest specificky pro technické odborníky.",
+    t1_d2_term:  "Flexibilní způsob dodání",
+    t1_d2_desc:  "Obdržíte buď high-fidelity PDF designové návrhy připravené pro vaše interní vývojáře, nebo plně funkční, nakódovaný web připravený k okamžitému nasazení na váš produkční server.",
+    t1_d3_term:  "Konzultace rozhraní &amp; strategie",
+    t1_d3_desc:  "Dodávám expertní webovou strategii a cílenou konzultaci rozhraní. Analyzuji vaši aktuální digitální přítomnost a poskytnu konkrétní návrhy UI navržené k vyřešení navigačních úzkých míst a efektivní komunikaci vašich technických řešení.",
+    t2_title:    "Digitální marketing &amp; lokalizace",
+    t2_d1_term:  "Hromadné e-mailové kampaně",
+    t2_d1_desc:  "Navrhuji a realizuji cílené e-mailové kampaně prostřednictvím Mailgunu a Mailchimpu — od vizuálních PDF konceptů po plně nakódované, responzivní HTML šablony připravené k odeslání.",
+    t2_d2_term:  "Kampaňové landing pages",
+    t2_d2_desc:  "Vytvářím dedikované landing pages pro zvýšení konverzí. High-fidelity návrhy nebo plně funkční, nakódované stránky připravené k okamžitému nasazení na váš produkční server.",
+    t2_d3_term:  "Podklady pro sociální sítě &amp; události",
+    t2_d3_desc:  "Profesionální vizuální obsah pro LinkedIn, Instagram a Facebook — propagační grafika pro produktové launche, události a pozvánky na konference.",
+    t3_title:    "Prezentace na veletrhu &amp; tisk",
+    t3_d1_term:  "Návrh výstavního stánku &amp; 3D modelování",
+    t3_d1_desc:  'Přesné 3D CAD modely, fotorealistické vizualizace a finalizovaná tisková PDF. Přesně víte, jak váš stánek vypadá ještě před zahájením stavby, a váš výrobce dostane soubory připravené k okamžité výrobě.<span class="d-refs"><span class="d-refs-label">Viz v praxi</span><a href="https://martinmotlik.com/references/nascc-2026/" class="d-ref" target="_blank" rel="noopener">NASCC: The Steel Conference 2026 →</a><a href="https://martinmotlik.com/references/mass-timber-2026/" class="d-ref" target="_blank" rel="noopener">International Mass Timber Conference 2026 →</a></span>',
+    t3_d2_term:  "Tiskové marketingové podklady",
+    t3_d2_desc:  "Brožury, plakáty, letáky a vizitky. Zajišťuji celý prepressový proces a dodávám finalizovaná, tisková PDF s realistickými tiskovými náhledy.",
+    t3_d3_term:  "Technické sladění značky",
+    t3_d3_desc:  "Každý fyzický podklad jasně komunikuje vaši inženýrskou specializaci — odráží vaše klíčové podnikání bez ztráty prémiové estetiky.",
+    t4_title:    "AI workflow",
+    t4_d1_term:  "Vlastní interní webové aplikace",
+    t4_d1_desc:  "Vyvíjím funkční, prohlížečové mini-aplikace pro interní potřebu, jako jsou živé datové dashboardy a analytika návštěvnosti. Dodávám plně nakódované nástroje připravené k nasazení, navržené tak, aby dokonale odpovídaly vaší firemní vizuální identitě.",
+    t4_d2_term:  "Automatizace každodenních procesů",
+    t4_d2_desc:  "Integruji prověřené AI nástroje přímo do každodenního provozu vaší společnosti. Pomáhám vám propojit stávající platformy, zefektivnit opakující se úkoly, zpracovávat data rychleji a optimalizovat celý technický workflow.",
+    t4_d3_term:  "Bezpečné AI poradenství",
+    t4_d3_desc:  "Poskytuji expertní poradenství v oblasti bezpečné implementace umělé inteligence. Analyzuji vaše stávající obchodní procesy a pomáhám vám vytvářet praktické AI strategie, které skutečně dávají smysl pro váš technický tým.",
+    cta_title:      "Pojďme si promluvit.",
+    cta_desc:       "Máte konkrétní projekt na mysli? Ozvěte se a prodiskutujeme vaše přesné technické požadavky. Rád vám ukážu relevantní příklady ze své dosavadní práce.",
+    cta_li_label:   "Nejlepší způsob, jak mě kontaktovat",
+    cta_li_value:   "Propojte se nebo napište na LinkedIn",
+    cta_email_label: "E-mail",
+  },
+
+  de: {
+    nav_references: "Referenzen",
+    nav_services:   "Services",
+    nav_about:      "Über mich",
+    nav_bim:        "Leistungen",
+    nav_dlubal:     "Dlubal",
+    nav_ai:         "KI im AEC",
+    hero_h1:        "Leistungen",
+    hero_sub:       "Ich schließe die Lücke zwischen komplexem Ingenieurwesen und klarer digitaler Umsetzung. Spezialisierte Webentwicklung, digitale Strategie und KI-Implementierung für die AEC-Branche.",
+    hero_btn_view:  "Leistungen ansehen",
+    hero_btn_talk:  "Schreib mir",
+    pain_headline:  "Erklären Sie Ihre Branche keinen Branchenfremden mehr",
+    pain_body:      "Wenn Sie typische Grafikdesigner oder Webentwickler beauftragen, verbringen Sie Stunden damit, grundlegende Bauingenieurkonzepte zu erklären, um ein brauchbares Ergebnis zu erhalten. Ich bringe einen technischen Hintergrund mit. Ich kenne die AEC-Community, Software-Workflows und die Fachterminologie von innen. Wenn wir zusammenarbeiten, überspringen wir die Einarbeitungsphase und konzentrieren uns direkt auf die Umsetzung präziser, hochwertiger digitaler Lösungen.",
+    svc_section_title: "Was ich liefere",
+    step1_label: "Web-Plattformen",
+    step2_label: "Online-Marketing",
+    step3_label: "Messen &amp; Druck",
+    step4_label: "KI-Workflows",
+    t1_title:    "Web-Plattformen",
+    t1_d1_term:  "Figma UI- &amp; UX-Design",
+    t1_d1_desc:  "Ich entwerfe übersichtliche, nutzerzentrierte Weboberflächen in Figma. Ich erstelle präzise Layouts, die komplexe Ingenieursdaten, Produktspezifikationen und Softwarefunktionen in intuitive Navigationspfade speziell für Fachleute strukturieren.",
+    t1_d2_term:  "Flexible Projektabwicklung",
+    t1_d2_desc:  "Sie erhalten entweder hochauflösende PDF-Designmockups für Ihre internen Entwickler oder eine vollständig funktionierende, fertig programmierte Website, die sofort auf Ihrem Produktionsserver bereitgestellt werden kann.",
+    t1_d3_term:  "Interface- &amp; Strategieberatung",
+    t1_d3_desc:  "Ich liefere fundierte Web-Strategie und gezielte Interface-Beratung. Ich analysiere Ihren aktuellen digitalen Auftritt und erstelle konkrete UI-Vorschläge, die Navigationsengpässe beseitigen und Ihre technischen Lösungen klar kommunizieren.",
+    t2_title:    "Digitales Marketing &amp; Lokalisierung",
+    t2_d1_term:  "Massen-E-Mail-Kampagnen",
+    t2_d1_desc:  "Gestaltung und Durchführung gezielter E-Mail-Kampagnen über Mailgun und Mailchimp — von visuellen PDF-Konzepten bis zu vollständig programmierten, responsiven HTML-Vorlagen, versandfertig.",
+    t2_d2_term:  "Kampagnen-Landingpages",
+    t2_d2_desc:  "Entwicklung dedizierter Landingpages zur Konversionssteigerung. Hochauflösende Mockups oder vollständig funktionierende, fertig programmierte Seiten, sofort bereit für Ihren Produktionsserver.",
+    t2_d3_term:  "Social-Media- &amp; Event-Assets",
+    t2_d3_desc:  "Professionelle visuelle Inhalte für LinkedIn, Instagram und Facebook — Werbegrafiken für Produktlaunches, Veranstaltungen und Konferenzeinladungen.",
+    t3_title:    "Messe- &amp; Druckpräsentation",
+    t3_d1_term:  "Messestand-Design &amp; 3D-Modellierung",
+    t3_d1_desc:  'Präzise 3D-CAD-Modelle, fotorealistische Visualisierungen und finalisierte druckfertige PDFs. Sie wissen genau, wie Ihr Stand aussieht, noch bevor der Bau beginnt, und Ihr Hersteller erhält sofort produktionsbereite Dateien.<span class="d-refs"><span class="d-refs-label">In der Praxis ansehen</span><a href="https://martinmotlik.com/references/nascc-2026/" class="d-ref" target="_blank" rel="noopener">NASCC: The Steel Conference 2026 →</a><a href="https://martinmotlik.com/references/mass-timber-2026/" class="d-ref" target="_blank" rel="noopener">International Mass Timber Conference 2026 →</a></span>',
+    t3_d2_term:  "Druckfertige Marketingmaterialien",
+    t3_d2_desc:  "Broschüren, Poster, Flyer und Visitenkarten. Ich übernehme den gesamten Druckvorstufen-Prozess und liefere finalisierte, druckfertige PDFs mit realistischen Druckmockups.",
+    t3_d3_term:  "Technische Markenausrichtung",
+    t3_d3_desc:  "Jedes Printmaterial kommuniziert klar Ihre ingenieurtechnische Spezialisierung — spiegelt Ihr Kerngeschäft wider, ohne an Premium-Ästhetik einzubüßen.",
+    t4_title:    "KI-Workflows",
+    t4_d1_term:  "Individuelle interne Web-Apps",
+    t4_d1_desc:  "Entwicklung funktionaler, browserbasierter Mini-Anwendungen für den internen Einsatz, wie Live-Daten-Dashboards und Traffic-Analysen. Ich liefere vollständig programmierte, sofort einsatzfähige Tools, die perfekt zur Corporate Identity Ihres Unternehmens passen.",
+    t4_d2_term:  "Automatisierung täglicher Prozesse",
+    t4_d2_desc:  "Integration bewährter KI-Tools direkt in den Tagesbetrieb Ihres Unternehmens. Ich helfe Ihnen, Ihre bestehenden Plattformen zu verknüpfen, Routineaufgaben zu rationalisieren, Daten schneller zu verarbeiten und Ihren gesamten technischen Workflow zu optimieren.",
+    t4_d3_term:  "Sichere KI-Beratung",
+    t4_d3_desc:  "Ich biete fundierte Beratung zur sicheren Implementierung von Künstlicher Intelligenz. Ich analysiere Ihre aktuellen Geschäftsprozesse und helfe Ihnen, praxistaugliche KI-Strategien zu entwickeln, die wirklich zu Ihrem technischen Team passen.",
+    cta_title:      "Lassen Sie uns konkret werden.",
+    cta_desc:       "Haben Sie ein konkretes Projekt? Melden Sie sich, um Ihre genauen technischen Anforderungen zu besprechen. Ich zeige Ihnen gerne relevante Beispiele meiner bisherigen Arbeit.",
+    cta_li_label:   "Bester Weg, mich zu erreichen",
+    cta_li_value:   "Auf LinkedIn vernetzen oder schreiben",
+    cta_email_label: "E-Mail",
+  }
+};
+
+// ── Engine ───────────────────────────────────────────────────────────────────
+let currentLang = 'en';
+
+function applyLanguage(lang) {
+  const t = translations[lang];
+  if (!t) return;
+  currentLang = lang;
+
+  document.querySelectorAll('.lang-fade').forEach(el => el.classList.add('fading'));
+
+  setTimeout(() => {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (t[key] !== undefined) el.innerHTML = t[key];
+    });
+
+    document.documentElement.lang = lang;
+
+    const titles = {
+      en: 'Services — Martin Motlík | AEC Digital Strategist',
+      cs: 'Služby — Martin Motlík | AEC digitální stratég',
+      de: 'Leistungen — Martin Motlík | AEC Digital-Stratege'
+    };
+    document.title = titles[lang];
+
+    document.querySelectorAll('.lang-fade').forEach(el => el.classList.remove('fading'));
+  }, 180);
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+
+  localStorage.setItem('lang', lang);
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
+});
+
+(function () {
+  const saved = localStorage.getItem('lang');
+  if (saved && ['en', 'cs', 'de'].includes(saved)) applyLanguage(saved);
+})();
+</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://martinmotlik.com/services/",
+        "url": "https://martinmotlik.com/services/",
+        "name": "Services — Martin Motlík",
+        "description": "Web platforms, digital marketing, trade show design, and AI workflow implementation for AEC software companies.",
+        "isPartOf": { "@id": "https://martinmotlik.com/#website" },
+        "about": { "@id": "https://martinmotlik.com/#person" },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://martinmotlik.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Services",
+              "item": "https://martinmotlik.com/services/"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Service",
+        "name": "AEC Digital Strategy & Web Development",
+        "provider": {
+          "@type": "Person",
+          "name": "Martin Motlík",
+          "url": "https://martinmotlik.com"
+        },
+        "areaServed": ["United States", "Canada"],
+        "serviceType": [
+          "Web Platform Design & Development",
+          "Trade Show & Print Presentation",
+          "Digital Marketing & Localization",
+          "AI Workflow Implementation"
+        ],
+        "description": "Specialized web development, digital marketing, trade show booth design, and AI workflow implementation exclusively for AEC software companies and building product manufacturers.",
+        "url": "https://martinmotlik.com/services/"
+      }
+    ]
+  }
+  </script>
+
+</body>
+</html>
