@@ -30,9 +30,9 @@
     <meta property="og:description" content="Trade show booth #908 for Dlubal Software at the International Mass Timber Conference 2026, Oregon Convention Center, Portland. AEC exhibit design by Martin Motlík.">
     <meta property="og:url" content="https://martinmotlik.com/references/mass-timber-2026/">
     <meta property="og:site_name" content="Martin Motlík">
-    <meta property="og:image" content="https://martinmotlik.com/assets/references/mass-timber/render-1.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="800">
+    <meta property="og:image" content="https://martinmotlik.com/assets/img/mass-timber-render-1-1272.jpg">
+    <meta property="og:image:width" content="1272">
+    <meta property="og:image:height" content="832">
     <meta property="og:image:alt" content="Dlubal Software booth #908 at International Mass Timber Conference 2026, Oregon Convention Center, Portland">
     <meta property="og:locale" content="en_US">
     <meta property="article:published_time" content="2026-04-01">
@@ -43,7 +43,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Mass Timber Conference 2026 Booth Design — Dlubal Software">
     <meta name="twitter:description" content="Trade show booth #908 for Dlubal Software at the International Mass Timber Conference 2026, Oregon Convention Center, Portland. AEC exhibit design by Martin Motlík.">
-    <meta name="twitter:image" content="https://martinmotlik.com/assets/references/mass-timber/render-1.png">
+    <meta name="twitter:image" content="https://martinmotlik.com/assets/img/mass-timber-render-1-1272.jpg">
     <meta name="twitter:image:alt" content="Dlubal Software booth #908 at Mass Timber Conference 2026, Portland">
 
     <!-- ── Schema.org JSON-LD ── -->
@@ -79,7 +79,7 @@
       },
       "image": {
         "@type": "ImageObject",
-        "url": "https://martinmotlik.com/assets/references/mass-timber/render-1.png",
+        "url": "https://martinmotlik.com/assets/img/mass-timber-render-1-1272.jpg",
         "caption": "Dlubal Software booth #908 at Mass Timber Conference 2026, Portland — designed by Martin Motlík"
       },
       "keywords": "AEC marketing, trade show booth design, mass timber, BIM software, Dlubal Software, RFEM 6 Wood, CLT design, Portland, Oregon",
@@ -146,6 +146,11 @@
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
+    /* <picture> is only a format switch, not a layout box. Taking it out of
+       the box tree keeps every existing `.parent img { height: 100% }` rule
+       working; without this the images collapse to zero height and
+       loading="lazy" then never fetches them. */
+    picture { display: contents; }
         html { scroll-behavior: smooth; }
         body {
             font-family: 'Inter', sans-serif;
@@ -800,16 +805,80 @@
     <div class="filmstrip-wrapper">
     <div class="filmstrip" id="filmstrip">
         <div class="strip-item" onclick="openLightbox(0)">
-            <img src="/assets/references/mass-timber/render-1.png" alt="Dlubal Software booth #908 — 3D render, International Mass Timber Conference 2026, Portland, Oregon">
+            <picture>
+              <source type="image/avif" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
+                      srcset="/assets/img/mass-timber-render-1-400.avif 400w,
+                              /assets/img/mass-timber-render-1-600.avif 600w,
+                              /assets/img/mass-timber-render-1-900.avif 900w,
+                              /assets/img/mass-timber-render-1-1272.avif 1272w">
+              <img src="/assets/img/mass-timber-render-1-800.jpg" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
+                   srcset="/assets/img/mass-timber-render-1-400.jpg 400w,
+                           /assets/img/mass-timber-render-1-600.jpg 600w,
+                           /assets/img/mass-timber-render-1-900.jpg 900w,
+                           /assets/img/mass-timber-render-1-1272.jpg 1272w"
+                   alt="Dlubal Software booth #908 — 3D render, International Mass Timber Conference 2026, Portland, Oregon"
+                   width="800" height="523" loading="lazy" decoding="async">
+            </picture>
         </div>
         <div class="strip-item" onclick="openLightbox(1)">
-            <img src="/assets/references/mass-timber/photo-1.jpg" alt="Dlubal Software exhibit at International Mass Timber Conference 2026, Oregon Convention Center, Portland">
+            <picture>
+              <source type="image/avif" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
+                      srcset="/assets/img/mass-timber-photo-1-400.avif 400w,
+                              /assets/img/mass-timber-photo-1-600.avif 600w,
+                              /assets/img/mass-timber-photo-1-900.avif 900w,
+                              /assets/img/mass-timber-photo-1-1280.avif 1280w,
+                              /assets/img/mass-timber-photo-1-1920.avif 1920w,
+                              /assets/img/mass-timber-photo-1-1989.avif 1989w">
+              <img src="/assets/img/mass-timber-photo-1-1280.jpg" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
+                   srcset="/assets/img/mass-timber-photo-1-400.jpg 400w,
+                           /assets/img/mass-timber-photo-1-600.jpg 600w,
+                           /assets/img/mass-timber-photo-1-900.jpg 900w,
+                           /assets/img/mass-timber-photo-1-1280.jpg 1280w,
+                           /assets/img/mass-timber-photo-1-1920.jpg 1920w,
+                           /assets/img/mass-timber-photo-1-1989.jpg 1989w"
+                   alt="Dlubal Software exhibit at International Mass Timber Conference 2026, Oregon Convention Center, Portland"
+                   width="1280" height="960" loading="lazy" decoding="async">
+            </picture>
         </div>
         <div class="strip-item" onclick="openLightbox(2)">
-            <img src="/assets/references/mass-timber/render-2.png" alt="Dlubal Software booth #908 — 3D render view 2, International Mass Timber Conference 2026, Portland">
+            <picture>
+              <source type="image/avif" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
+                      srcset="/assets/img/mass-timber-render-2-400.avif 400w,
+                              /assets/img/mass-timber-render-2-600.avif 600w,
+                              /assets/img/mass-timber-render-2-900.avif 900w,
+                              /assets/img/mass-timber-render-2-1280.avif 1280w,
+                              /assets/img/mass-timber-render-2-1920.avif 1920w,
+                              /assets/img/mass-timber-render-2-2532.avif 2532w">
+              <img src="/assets/img/mass-timber-render-2-1280.jpg" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
+                   srcset="/assets/img/mass-timber-render-2-400.jpg 400w,
+                           /assets/img/mass-timber-render-2-600.jpg 600w,
+                           /assets/img/mass-timber-render-2-900.jpg 900w,
+                           /assets/img/mass-timber-render-2-1280.jpg 1280w,
+                           /assets/img/mass-timber-render-2-1920.jpg 1920w,
+                           /assets/img/mass-timber-render-2-2532.jpg 2532w"
+                   alt="Dlubal Software booth #908 — 3D render view 2, International Mass Timber Conference 2026, Portland"
+                   width="1280" height="841" loading="lazy" decoding="async">
+            </picture>
         </div>
         <div class="strip-item" onclick="openLightbox(3)">
-            <img src="/assets/references/mass-timber/photo-2.jpg" alt="Dlubal Software exhibit at International Mass Timber Conference 2026, Oregon Convention Center, Portland — photo 2">
+            <picture>
+              <source type="image/avif" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
+                      srcset="/assets/img/mass-timber-photo-2-400.avif 400w,
+                              /assets/img/mass-timber-photo-2-600.avif 600w,
+                              /assets/img/mass-timber-photo-2-900.avif 900w,
+                              /assets/img/mass-timber-photo-2-1280.avif 1280w,
+                              /assets/img/mass-timber-photo-2-1920.avif 1920w,
+                              /assets/img/mass-timber-photo-2-2560.avif 2560w">
+              <img src="/assets/img/mass-timber-photo-2-1280.jpg" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
+                   srcset="/assets/img/mass-timber-photo-2-400.jpg 400w,
+                           /assets/img/mass-timber-photo-2-600.jpg 600w,
+                           /assets/img/mass-timber-photo-2-900.jpg 900w,
+                           /assets/img/mass-timber-photo-2-1280.jpg 1280w,
+                           /assets/img/mass-timber-photo-2-1920.jpg 1920w,
+                           /assets/img/mass-timber-photo-2-2560.jpg 2560w"
+                   alt="Dlubal Software exhibit at International Mass Timber Conference 2026, Oregon Convention Center, Portland — photo 2"
+                   width="1280" height="853" loading="lazy" decoding="async">
+            </picture>
         </div>
     </div>
     </div><!-- filmstrip-wrapper -->
@@ -861,7 +930,14 @@
     <div class="project-nav-inner">
         <a href="/references/nascc-2026/" class="next-link">
             <div class="next-thumb">
-                <img src="/assets/references/nascc/photo-2.png" alt="NASCC: The Steel Conference 2026 — Dlubal Software booth, Atlanta">
+                <picture>
+                  <source type="image/avif" sizes="100px"
+                          srcset="/assets/img/nascc-photo-2-400.avif 400w">
+                  <img src="/assets/img/nascc-photo-2-400.jpg" sizes="100px"
+                       srcset="/assets/img/nascc-photo-2-400.jpg 400w"
+                       alt="NASCC: The Steel Conference 2026 — Dlubal Software booth, Atlanta"
+                       width="400" height="259" loading="lazy" decoding="async">
+                </picture>
             </div>
             <div>
                 <p class="next-label" data-i18n="nav_prev">Previous project</p>
@@ -877,7 +953,10 @@
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
     <button class="lightbox-close" onclick="event.stopPropagation(); closeLightbox()" aria-label="Close">✕</button>
     <button class="lb-arrow lb-prev" onclick="event.stopPropagation(); prevPhoto()" aria-label="Previous">‹</button>
-    <img class="lightbox-img" id="lightbox-img" src="" alt="Full size photo">
+    <picture>
+        <source id="lightbox-avif" type="image/avif" sizes="92vw" srcset="">
+        <img class="lightbox-img" id="lightbox-img" src="" alt="Full size photo" sizes="92vw" decoding="async">
+    </picture>
     <button class="lb-arrow lb-next" onclick="event.stopPropagation(); nextPhoto()" aria-label="Next">›</button>
 </div>
 
@@ -895,18 +974,30 @@ if (navHamburger && navDrawer) {
 }
 
 
+    // Each entry is a slug plus the widths build-images.mjs produced for it;
+    // setLightboxImage() turns that into a srcset so the lightbox loads a
+    // rendition that fits the screen instead of the full-resolution original.
     const allImages = [
-        '/assets/references/mass-timber/render-1.png',
-        '/assets/references/mass-timber/photo-1.jpg',
-        '/assets/references/mass-timber/render-2.png',
-        '/assets/references/mass-timber/photo-2.jpg',
+        { slug: 'mass-timber-render-1', w: [400, 600, 900, 1272] },
+        { slug: 'mass-timber-photo-1', w: [400, 600, 900, 1280, 1920, 1989] },
+        { slug: 'mass-timber-render-2', w: [400, 600, 900, 1280, 1920, 2532] },
+        { slug: 'mass-timber-photo-2', w: [400, 600, 900, 1280, 1920, 2560] },
     ];
+
+    function setLightboxImage(i) {
+        const im = allImages[i];
+        const build = (ext) => im.w.map(w => `/assets/img/${im.slug}-${w}.${ext} ${w}w`).join(', ');
+        document.getElementById('lightbox-avif').srcset = build('avif');
+        const img = document.getElementById('lightbox-img');
+        img.srcset = build('jpg');
+        img.src = `/assets/img/${im.slug}-${im.w[im.w.length - 1]}.jpg`;
+    }
     let currentIndex = 0;
 
     function openLightbox(idx) {
         if (!allImages[idx]) return;
         currentIndex = idx;
-        document.getElementById('lightbox-img').src = allImages[idx];
+        setLightboxImage(idx);
         document.getElementById('lightbox').classList.add('open');
         document.body.style.overflow = 'hidden';
     }
@@ -918,12 +1009,12 @@ if (navHamburger && navDrawer) {
 
     function prevPhoto() {
         currentIndex = (currentIndex - 1 + allImages.length) % allImages.length;
-        document.getElementById('lightbox-img').src = allImages[currentIndex];
+        setLightboxImage(currentIndex);
     }
 
     function nextPhoto() {
         currentIndex = (currentIndex + 1) % allImages.length;
-        document.getElementById('lightbox-img').src = allImages[currentIndex];
+        setLightboxImage(currentIndex);
     }
 
     document.getElementById('lightbox-img').addEventListener('click', e => e.stopPropagation());

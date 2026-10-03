@@ -21,7 +21,7 @@
   <meta property="og:url" content="https://martinmotlik.com/services/">
   <meta property="og:title" content="Services — Martin Motlík | AEC Digital Strategist">
   <meta property="og:description" content="Web platforms, digital marketing, trade show design, and AI workflow implementation for AEC software companies. Serving US and Canadian markets.">
-  <meta property="og:image" content="https://martinmotlik.com/assets/images/services-hero.png">
+  <meta property="og:image" content="https://martinmotlik.com/assets/img/services-hero-1280.jpg">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="Martin Motlík">
 
@@ -29,17 +29,34 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Services — Martin Motlík | AEC Digital Strategist">
   <meta name="twitter:description" content="Web platforms, digital marketing, trade show design, and AI workflow implementation for AEC software companies.">
-  <meta name="twitter:image" content="https://martinmotlik.com/assets/images/services-hero.png">
+  <meta name="twitter:image" content="https://martinmotlik.com/assets/img/services-hero-1280.jpg">
 
   <!-- llms.txt discovery -->
   <link rel="alternate" type="text/plain" href="https://martinmotlik.com/llms.txt">
 
   <meta name="theme-color" content="#0A1628">
+  <!-- Preload the LCP image. AVIF only: `type` filters formats the browser
+       cannot decode, it is not a preference, so a second JPEG link would
+       make modern browsers fetch both. -->
+  <link rel="preload" as="image" type="image/avif" fetchpriority="high"
+        imagesizes="100vw"
+        imagesrcset="/assets/img/services-hero-320.avif 320w,
+                     /assets/img/services-hero-480.avif 480w,
+                     /assets/img/services-hero-640.avif 640w,
+                     /assets/img/services-hero-960.avif 960w,
+                     /assets/img/services-hero-1280.avif 1280w,
+                     /assets/img/services-hero-1672.avif 1672w">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900;1,14..32,400&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <style>
+    /* <picture> is only a format switch, not a layout box. Taking it out of
+       the box tree keeps every existing `.parent img { height: 100% }` rule
+       working; without this the images collapse to zero height and
+       loading="lazy" then never fetches them. */
+    picture { display: contents; }
+
 /* ═══════════════════════════════════════════════════════════
        DESIGN TOKENS — exact copy from landing page V2
        ═══════════════════════════════════════════════════════════ */
@@ -199,10 +216,13 @@
     .hero-bg-img {
       position: absolute;
       inset: 0;
-      background-image: url('/assets/images/services-hero.png');
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
+    }
+    /* Real <img> rather than a CSS background, so the browser can pick a
+       width from srcset and treat it as the LCP candidate. */
+    .hero-bg-img img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center center;
+      display: block;
     }
 
     /*
@@ -691,7 +711,25 @@
 </div>
 
 <section class="hero" id="hero">
-  <div class="hero-bg-img"></div>
+  <div class="hero-bg-img">
+    <picture>
+      <source type="image/avif" sizes="100vw"
+              srcset="/assets/img/services-hero-320.avif 320w,
+                      /assets/img/services-hero-480.avif 480w,
+                      /assets/img/services-hero-640.avif 640w,
+                      /assets/img/services-hero-960.avif 960w,
+                      /assets/img/services-hero-1280.avif 1280w,
+                      /assets/img/services-hero-1672.avif 1672w">
+      <img src="/assets/img/services-hero-1280.jpg" sizes="100vw"
+           srcset="/assets/img/services-hero-320.jpg 320w,
+                      /assets/img/services-hero-480.jpg 480w,
+                      /assets/img/services-hero-640.jpg 640w,
+                      /assets/img/services-hero-960.jpg 960w,
+                      /assets/img/services-hero-1280.jpg 1280w,
+                      /assets/img/services-hero-1672.jpg 1672w"
+           alt="" width="1672" height="941" fetchpriority="high" decoding="async">
+    </picture>
+  </div>
   <div class="hero-overlay"></div>
   <div class="container">
     <div class="hero-inner">

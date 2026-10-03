@@ -26,9 +26,9 @@
     <meta property="og:description" content="Booth design and print projects for Dlubal Software USA. Selected work in AEC marketing and structural engineering software.">
     <meta property="og:url" content="https://martinmotlik.com/references">
     <meta property="og:site_name" content="Martin Motlík">
-    <meta property="og:image" content="https://martinmotlik.com/assets/references/nascc/photo-2.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="800">
+    <meta property="og:image" content="https://martinmotlik.com/assets/img/nascc-photo-2-1280.jpg">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="830">
     <meta property="og:image:alt" content="Dlubal Software exhibit at NASCC 2026, Atlanta — AEC marketing portfolio by Martin Motlík">
     <meta property="og:locale" content="en_US">
 
@@ -36,7 +36,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="AEC Marketing Portfolio — Martin Motlík">
     <meta name="twitter:description" content="Booth design and print projects for Dlubal Software USA. Selected work in AEC marketing and structural engineering software.">
-    <meta name="twitter:image" content="https://martinmotlik.com/assets/references/nascc/photo-2.png">
+    <meta name="twitter:image" content="https://martinmotlik.com/assets/img/nascc-photo-2-1280.jpg">
     <meta name="twitter:image:alt" content="Dlubal Software exhibit at NASCC 2026, Atlanta — AEC marketing by Martin Motlík">
 
     <!-- ── Schema.org JSON-LD ── -->
@@ -84,6 +84,11 @@
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
+    /* <picture> is only a format switch, not a layout box. Taking it out of
+       the box tree keeps every existing `.parent img { height: 100% }` rule
+       working; without this the images collapse to zero height and
+       loading="lazy" then never fetches them. */
+    picture { display: contents; }
         html { scroll-behavior: smooth; }
         body {
             font-family: 'Inter', sans-serif;
@@ -627,8 +632,20 @@
         <!-- Featured: NASCC 2026 -->
         <a href="/references/nascc-2026/" class="feat-card" data-type="booth">
             <div class="feat-img">
-                <img src="/assets/references/nascc/photo-2.png"
-                    alt="Dlubal Software booth #1008 at NASCC 2026, Georgia World Congress Center, Atlanta">
+                <picture>
+                  <source type="image/avif" sizes="(max-width: 767px) 92vw, 500px"
+                          srcset="/assets/img/nascc-photo-2-400.avif 400w,
+                                  /assets/img/nascc-photo-2-600.avif 600w,
+                                  /assets/img/nascc-photo-2-900.avif 900w,
+                                  /assets/img/nascc-photo-2-1280.avif 1280w">
+                  <img src="/assets/img/nascc-photo-2-800.jpg" sizes="(max-width: 767px) 92vw, 500px"
+                       srcset="/assets/img/nascc-photo-2-400.jpg 400w,
+                               /assets/img/nascc-photo-2-600.jpg 600w,
+                               /assets/img/nascc-photo-2-900.jpg 900w,
+                               /assets/img/nascc-photo-2-1280.jpg 1280w"
+                       alt="Dlubal Software booth #1008 at NASCC 2026, Georgia World Congress Center, Atlanta"
+                       width="800" height="519" loading="lazy" decoding="async">
+                </picture>
                 <model-viewer
                     src="/assets/references/nascc/nascc-booth.glb"
                     camera-controls auto-rotate auto-rotate-delay="1000"
@@ -659,8 +676,20 @@
 
             <a href="/references/mass-timber-2026/" class="ref-card" data-type="booth">
                 <div class="card-img" style="background: #0e1a10;">
-                    <img src="/assets/references/mass-timber/render-1.png"
-                        alt="Dlubal Software booth #908 at International Mass Timber Conference 2026, Portland, Oregon">
+                    <picture>
+                      <source type="image/avif" sizes="(max-width: 767px) 92vw, 500px"
+                              srcset="/assets/img/mass-timber-render-1-400.avif 400w,
+                                      /assets/img/mass-timber-render-1-600.avif 600w,
+                                      /assets/img/mass-timber-render-1-900.avif 900w,
+                                      /assets/img/mass-timber-render-1-1272.avif 1272w">
+                      <img src="/assets/img/mass-timber-render-1-800.jpg" sizes="(max-width: 767px) 92vw, 500px"
+                           srcset="/assets/img/mass-timber-render-1-400.jpg 400w,
+                                   /assets/img/mass-timber-render-1-600.jpg 600w,
+                                   /assets/img/mass-timber-render-1-900.jpg 900w,
+                                   /assets/img/mass-timber-render-1-1272.jpg 1272w"
+                           alt="Dlubal Software booth #908 at International Mass Timber Conference 2026, Portland, Oregon"
+                           width="800" height="523" loading="lazy" decoding="async">
+                    </picture>
                     <model-viewer
                         src="/assets/references/mass-timber/imtc-booth.glb"
                         camera-controls auto-rotate auto-rotate-delay="1000"
@@ -687,8 +716,20 @@
 
             <a href="/references/rfem6-brochure/" class="ref-card" data-type="print">
                 <div class="card-img" style="background: #f0ece8;">
-                    <img src="/assets/references/rfem6-brochure/brochure-4.png"
-                        alt="RFEM 6 product brochure cover — designed by Martin Motlík for Dlubal Software">
+                    <picture>
+                      <source type="image/avif" sizes="(max-width: 767px) 92vw, 500px"
+                              srcset="/assets/img/rfem6-brochure-brochure-4-400.avif 400w,
+                                      /assets/img/rfem6-brochure-brochure-4-600.avif 600w,
+                                      /assets/img/rfem6-brochure-brochure-4-900.avif 900w,
+                                      /assets/img/rfem6-brochure-brochure-4-1280.avif 1280w">
+                      <img src="/assets/img/rfem6-brochure-brochure-4-800.jpg" sizes="(max-width: 767px) 92vw, 500px"
+                           srcset="/assets/img/rfem6-brochure-brochure-4-400.jpg 400w,
+                                   /assets/img/rfem6-brochure-brochure-4-600.jpg 600w,
+                                   /assets/img/rfem6-brochure-brochure-4-900.jpg 900w,
+                                   /assets/img/rfem6-brochure-brochure-4-1280.jpg 1280w"
+                           alt="RFEM 6 product brochure cover — designed by Martin Motlík for Dlubal Software"
+                           width="800" height="450" loading="lazy" decoding="async">
+                    </picture>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">RFEM 6 Product Brochure</h3>
@@ -715,8 +756,28 @@
         <!-- Featured: IFC Verify -->
         <a href="https://www.ifc-verify.app/" target="_blank" rel="noopener noreferrer" class="feat-card" data-type="web-apps">
             <div class="feat-img">
-                <img src="/assets/references/ifc-verify/cover.png"
-                    alt="IFC Verify — online IFC file validator web app">
+                <picture>
+                  <source type="image/avif" sizes="(max-width: 767px) 92vw, 500px"
+                          srcset="/assets/img/ifc-verify-cover-320.avif 320w,
+                                  /assets/img/ifc-verify-cover-400.avif 400w,
+                                  /assets/img/ifc-verify-cover-480.avif 480w,
+                                  /assets/img/ifc-verify-cover-600.avif 600w,
+                                  /assets/img/ifc-verify-cover-640.avif 640w,
+                                  /assets/img/ifc-verify-cover-900.avif 900w,
+                                  /assets/img/ifc-verify-cover-960.avif 960w,
+                                  /assets/img/ifc-verify-cover-1280.avif 1280w">
+                  <img src="/assets/img/ifc-verify-cover-640.jpg" sizes="(max-width: 767px) 92vw, 500px"
+                       srcset="/assets/img/ifc-verify-cover-320.jpg 320w,
+                               /assets/img/ifc-verify-cover-400.jpg 400w,
+                               /assets/img/ifc-verify-cover-480.jpg 480w,
+                               /assets/img/ifc-verify-cover-600.jpg 600w,
+                               /assets/img/ifc-verify-cover-640.jpg 640w,
+                               /assets/img/ifc-verify-cover-900.jpg 900w,
+                               /assets/img/ifc-verify-cover-960.jpg 960w,
+                               /assets/img/ifc-verify-cover-1280.jpg 1280w"
+                       alt="IFC Verify — online IFC file validator web app"
+                       width="640" height="366" loading="lazy" decoding="async">
+                </picture>
             </div>
             <div class="feat-content">
                 <h2 class="feat-title">IFC Verify</h2>
