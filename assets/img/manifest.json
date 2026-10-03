@@ -1,0 +1,1022 @@
+{
+  "hero-bg": {
+    "slug": "hero-bg",
+    "source": "images/hero-bg.png",
+    "sourceWidth": 1672,
+    "sourceHeight": 941,
+    "aspect": 1.776833,
+    "roles": [
+      "hero"
+    ],
+    "widths": [
+      {
+        "w": 640,
+        "h": 360,
+        "jpg": 42635,
+        "avif": 25255,
+        "bpp": 1.48
+      },
+      {
+        "w": 960,
+        "h": 540,
+        "jpg": 92609,
+        "avif": 54508,
+        "bpp": 1.43
+      },
+      {
+        "w": 1280,
+        "h": 720,
+        "jpg": 153947,
+        "avif": 86007,
+        "bpp": 1.34
+      },
+      {
+        "w": 1672,
+        "h": 941,
+        "jpg": 239960,
+        "avif": 126821,
+        "bpp": 1.22
+      }
+    ]
+  },
+  "ai-bg": {
+    "slug": "ai-bg",
+    "source": "images/ai-bg.jpg",
+    "sourceWidth": 2752,
+    "sourceHeight": 1536,
+    "aspect": 1.791667,
+    "roles": [
+      "hero"
+    ],
+    "widths": [
+      {
+        "w": 640,
+        "h": 357,
+        "jpg": 110117,
+        "avif": 71942,
+        "bpp": 3.86
+      },
+      {
+        "w": 960,
+        "h": 536,
+        "jpg": 176511,
+        "avif": 115205,
+        "bpp": 2.74
+      },
+      {
+        "w": 1280,
+        "h": 714,
+        "jpg": 264026,
+        "avif": 171125,
+        "bpp": 2.31
+      },
+      {
+        "w": 1920,
+        "h": 1072,
+        "jpg": 507758,
+        "avif": 327646,
+        "bpp": 1.97
+      },
+      {
+        "w": 2560,
+        "h": 1429,
+        "jpg": 827073,
+        "avif": 519540,
+        "bpp": 1.81
+      }
+    ]
+  },
+  "services-hero": {
+    "slug": "services-hero",
+    "source": "images/services-hero.png",
+    "sourceWidth": 1672,
+    "sourceHeight": 941,
+    "aspect": 1.776833,
+    "roles": [
+      "hero",
+      "card"
+    ],
+    "widths": [
+      {
+        "w": 320,
+        "h": 180,
+        "jpg": 18102,
+        "avif": 13709,
+        "bpp": 2.51
+      },
+      {
+        "w": 480,
+        "h": 270,
+        "jpg": 28414,
+        "avif": 20185,
+        "bpp": 1.75
+      },
+      {
+        "w": 640,
+        "h": 360,
+        "jpg": 42315,
+        "avif": 27818,
+        "bpp": 1.47
+      },
+      {
+        "w": 960,
+        "h": 540,
+        "jpg": 81953,
+        "avif": 51800,
+        "bpp": 1.26
+      },
+      {
+        "w": 1280,
+        "h": 720,
+        "jpg": 132761,
+        "avif": 79836,
+        "bpp": 1.15
+      },
+      {
+        "w": 1672,
+        "h": 941,
+        "jpg": 205545,
+        "avif": 119523,
+        "bpp": 1.05
+      }
+    ]
+  },
+  "martin-motlik-portrait": {
+    "slug": "martin-motlik-portrait",
+    "source": "images/martin-motlik-portrait.png",
+    "sourceWidth": 2389,
+    "sourceHeight": 2390,
+    "aspect": 0.999582,
+    "roles": [
+      "portrait"
+    ],
+    "widths": [
+      {
+        "w": 360,
+        "h": 360,
+        "jpg": 12724,
+        "avif": 8121,
+        "bpp": 0.79
+      },
+      {
+        "w": 540,
+        "h": 540,
+        "jpg": 24812,
+        "avif": 15233,
+        "bpp": 0.68
+      },
+      {
+        "w": 720,
+        "h": 720,
+        "jpg": 40803,
+        "avif": 25232,
+        "bpp": 0.63
+      },
+      {
+        "w": 1080,
+        "h": 1080,
+        "jpg": 81860,
+        "avif": 48453,
+        "bpp": 0.56
+      }
+    ]
+  },
+  "imtc": {
+    "slug": "imtc",
+    "source": "images/imtc.jpg",
+    "sourceWidth": 1672,
+    "sourceHeight": 941,
+    "aspect": 1.776833,
+    "roles": [
+      "card"
+    ],
+    "widths": [
+      {
+        "w": 320,
+        "h": 180,
+        "jpg": 56562,
+        "avif": 35829,
+        "bpp": 7.86
+      },
+      {
+        "w": 480,
+        "h": 270,
+        "jpg": 71260,
+        "avif": 44618,
+        "bpp": 4.4
+      },
+      {
+        "w": 640,
+        "h": 360,
+        "jpg": 91376,
+        "avif": 56287,
+        "bpp": 3.17
+      },
+      {
+        "w": 960,
+        "h": 540,
+        "jpg": 143351,
+        "avif": 87030,
+        "bpp": 2.21
+      }
+    ]
+  },
+  "ifc-verify-cover": {
+    "slug": "ifc-verify-cover",
+    "source": "references/ifc-verify/cover.png",
+    "sourceWidth": 2688,
+    "sourceHeight": 1536,
+    "aspect": 1.75,
+    "roles": [
+      "card",
+      "gallery"
+    ],
+    "widths": [
+      {
+        "w": 320,
+        "h": 183,
+        "jpg": 9224,
+        "avif": 5491,
+        "bpp": 1.26
+      },
+      {
+        "w": 400,
+        "h": 229,
+        "jpg": 12506,
+        "avif": 7174,
+        "bpp": 1.09
+      },
+      {
+        "w": 480,
+        "h": 274,
+        "jpg": 16237,
+        "avif": 8706,
+        "bpp": 0.99
+      },
+      {
+        "w": 600,
+        "h": 343,
+        "jpg": 22149,
+        "avif": 11292,
+        "bpp": 0.86
+      },
+      {
+        "w": 640,
+        "h": 366,
+        "jpg": 24127,
+        "avif": 11866,
+        "bpp": 0.82
+      },
+      {
+        "w": 900,
+        "h": 514,
+        "jpg": 39383,
+        "avif": 17596,
+        "bpp": 0.68
+      },
+      {
+        "w": 960,
+        "h": 549,
+        "jpg": 42897,
+        "avif": 19566,
+        "bpp": 0.65
+      },
+      {
+        "w": 1280,
+        "h": 731,
+        "jpg": 63483,
+        "avif": 27264,
+        "bpp": 0.54
+      },
+      {
+        "w": 1920,
+        "h": 1097,
+        "jpg": 110386,
+        "avif": 44660,
+        "bpp": 0.42
+      },
+      {
+        "w": 2560,
+        "h": 1463,
+        "jpg": 162945,
+        "avif": 66517,
+        "bpp": 0.35
+      }
+    ]
+  },
+  "nascc-card-vizualizace1": {
+    "slug": "nascc-card-vizualizace1",
+    "source": "references/nascc-card/vizualizace1.png",
+    "sourceWidth": 2528,
+    "sourceHeight": 1696,
+    "aspect": 1.490566,
+    "roles": [
+      "card"
+    ],
+    "widths": [
+      {
+        "w": 320,
+        "h": 215,
+        "jpg": 24115,
+        "avif": 17943,
+        "bpp": 2.8
+      },
+      {
+        "w": 480,
+        "h": 322,
+        "jpg": 36735,
+        "avif": 24876,
+        "bpp": 1.9
+      },
+      {
+        "w": 640,
+        "h": 429,
+        "jpg": 52859,
+        "avif": 33255,
+        "bpp": 1.54
+      },
+      {
+        "w": 960,
+        "h": 644,
+        "jpg": 93385,
+        "avif": 54074,
+        "bpp": 1.21
+      }
+    ]
+  },
+  "mass-timber-card-render-card": {
+    "slug": "mass-timber-card-render-card",
+    "source": "references/mass-timber-card/render-card.png",
+    "sourceWidth": 1272,
+    "sourceHeight": 832,
+    "aspect": 1.528846,
+    "roles": [
+      "card"
+    ],
+    "widths": [
+      {
+        "w": 320,
+        "h": 209,
+        "jpg": 24388,
+        "avif": 18211,
+        "bpp": 2.92
+      },
+      {
+        "w": 480,
+        "h": 314,
+        "jpg": 38102,
+        "avif": 25952,
+        "bpp": 2.02
+      },
+      {
+        "w": 640,
+        "h": 419,
+        "jpg": 54944,
+        "avif": 35680,
+        "bpp": 1.64
+      },
+      {
+        "w": 960,
+        "h": 628,
+        "jpg": 98629,
+        "avif": 58501,
+        "bpp": 1.31
+      }
+    ]
+  },
+  "nascc-render-1": {
+    "slug": "nascc-render-1",
+    "source": "references/nascc/render-1.png",
+    "sourceWidth": 2528,
+    "sourceHeight": 1696,
+    "aspect": 1.490566,
+    "roles": [
+      "gallery"
+    ],
+    "widths": [
+      {
+        "w": 400,
+        "h": 268,
+        "jpg": 29691,
+        "avif": 21319,
+        "bpp": 2.22
+      },
+      {
+        "w": 600,
+        "h": 403,
+        "jpg": 48222,
+        "avif": 30901,
+        "bpp": 1.6
+      },
+      {
+        "w": 900,
+        "h": 604,
+        "jpg": 84829,
+        "avif": 50011,
+        "bpp": 1.25
+      },
+      {
+        "w": 1280,
+        "h": 859,
+        "jpg": 143047,
+        "avif": 78399,
+        "bpp": 1.04
+      },
+      {
+        "w": 1920,
+        "h": 1288,
+        "jpg": 266233,
+        "avif": 139955,
+        "bpp": 0.86
+      },
+      {
+        "w": 2528,
+        "h": 1696,
+        "jpg": 421467,
+        "avif": 232420,
+        "bpp": 0.79
+      }
+    ]
+  },
+  "nascc-photo-1": {
+    "slug": "nascc-photo-1",
+    "source": "references/nascc/photo-1.png",
+    "sourceWidth": 5563,
+    "sourceHeight": 4172,
+    "aspect": 1.333413,
+    "roles": [
+      "gallery"
+    ],
+    "widths": [
+      {
+        "w": 400,
+        "h": 300,
+        "jpg": 34180,
+        "avif": 23968,
+        "bpp": 2.28
+      },
+      {
+        "w": 600,
+        "h": 450,
+        "jpg": 63120,
+        "avif": 41205,
+        "bpp": 1.87
+      },
+      {
+        "w": 900,
+        "h": 675,
+        "jpg": 123992,
+        "avif": 77144,
+        "bpp": 1.63
+      },
+      {
+        "w": 1280,
+        "h": 960,
+        "jpg": 227496,
+        "avif": 139129,
+        "bpp": 1.48
+      },
+      {
+        "w": 1920,
+        "h": 1440,
+        "jpg": 465420,
+        "avif": 275962,
+        "bpp": 1.35
+      },
+      {
+        "w": 2560,
+        "h": 1920,
+        "jpg": 753435,
+        "avif": 433085,
+        "bpp": 1.23
+      }
+    ]
+  },
+  "nascc-photo-2": {
+    "slug": "nascc-photo-2",
+    "source": "references/nascc/photo-2.png",
+    "sourceWidth": 5699,
+    "sourceHeight": 3697,
+    "aspect": 1.54152,
+    "roles": [
+      "gallery"
+    ],
+    "widths": [
+      {
+        "w": 400,
+        "h": 259,
+        "jpg": 30846,
+        "avif": 21590,
+        "bpp": 2.38
+      },
+      {
+        "w": 600,
+        "h": 389,
+        "jpg": 55710,
+        "avif": 36628,
+        "bpp": 1.91
+      },
+      {
+        "w": 900,
+        "h": 584,
+        "jpg": 108972,
+        "avif": 68269,
+        "bpp": 1.66
+      },
+      {
+        "w": 1280,
+        "h": 830,
+        "jpg": 205205,
+        "avif": 127122,
+        "bpp": 1.55
+      },
+      {
+        "w": 1920,
+        "h": 1246,
+        "jpg": 424906,
+        "avif": 251594,
+        "bpp": 1.42
+      },
+      {
+        "w": 2560,
+        "h": 1661,
+        "jpg": 688236,
+        "avif": 394038,
+        "bpp": 1.29
+      }
+    ]
+  },
+  "nascc-photo-3": {
+    "slug": "nascc-photo-3",
+    "source": "references/nascc/photo-3.png",
+    "sourceWidth": 2912,
+    "sourceHeight": 1472,
+    "aspect": 1.978261,
+    "roles": [
+      "gallery"
+    ],
+    "widths": [
+      {
+        "w": 400,
+        "h": 202,
+        "jpg": 19437,
+        "avif": 11860,
+        "bpp": 1.92
+      },
+      {
+        "w": 600,
+        "h": 303,
+        "jpg": 36795,
+        "avif": 21023,
+        "bpp": 1.62
+      },
+      {
+        "w": 900,
+        "h": 455,
+        "jpg": 72342,
+        "avif": 39570,
+        "bpp": 1.41
+      },
+      {
+        "w": 1280,
+        "h": 647,
+        "jpg": 128076,
+        "avif": 68919,
+        "bpp": 1.24
+      },
+      {
+        "w": 1920,
+        "h": 971,
+        "jpg": 247909,
+        "avif": 132821,
+        "bpp": 1.06
+      },
+      {
+        "w": 2560,
+        "h": 1294,
+        "jpg": 402473,
+        "avif": 222689,
+        "bpp": 0.97
+      }
+    ]
+  },
+  "mass-timber-render-1": {
+    "slug": "mass-timber-render-1",
+    "source": "references/mass-timber/render-1.png",
+    "sourceWidth": 1272,
+    "sourceHeight": 832,
+    "aspect": 1.528846,
+    "roles": [
+      "gallery"
+    ],
+    "widths": [
+      {
+        "w": 400,
+        "h": 262,
+        "jpg": 30602,
+        "avif": 21629,
+        "bpp": 2.34
+      },
+      {
+        "w": 600,
+        "h": 392,
+        "jpg": 50479,
+        "avif": 32612,
+        "bpp": 1.72
+      },
+      {
+        "w": 900,
+        "h": 589,
+        "jpg": 88999,
+        "avif": 53282,
+        "bpp": 1.34
+      },
+      {
+        "w": 1272,
+        "h": 832,
+        "jpg": 149602,
+        "avif": 84506,
+        "bpp": 1.13
+      }
+    ]
+  },
+  "mass-timber-render-2": {
+    "slug": "mass-timber-render-2",
+    "source": "references/mass-timber/render-2.png",
+    "sourceWidth": 2532,
+    "sourceHeight": 1664,
+    "aspect": 1.521635,
+    "roles": [
+      "gallery"
+    ],
+    "widths": [
+      {
+        "w": 400,
+        "h": 263,
+        "jpg": 29290,
+        "avif": 20849,
+        "bpp": 2.23
+      },
+      {
+        "w": 600,
+        "h": 394,
+        "jpg": 46572,
+        "avif": 29693,
+        "bpp": 1.58
+      },
+      {
+        "w": 900,
+        "h": 591,
+        "jpg": 81873,
+        "avif": 47986,
+        "bpp": 1.23
+      },
+      {
+        "w": 1280,
+        "h": 841,
+        "jpg": 138429,
+        "avif": 76192,
+        "bpp": 1.03
+      },
+      {
+        "w": 1920,
+        "h": 1262,
+        "jpg": 263082,
+        "avif": 137685,
+        "bpp": 0.87
+      },
+      {
+        "w": 2532,
+        "h": 1664,
+        "jpg": 419238,
+        "avif": 218913,
+        "bpp": 0.8
+      }
+    ]
+  },
+  "mass-timber-photo-1": {
+    "slug": "mass-timber-photo-1",
+    "source": "references/mass-timber/photo-1.jpg",
+    "sourceWidth": 1989,
+    "sourceHeight": 1491,
+    "aspect": 1.334004,
+    "roles": [
+      "gallery"
+    ],
+    "widths": [
+      {
+        "w": 400,
+        "h": 300,
+        "jpg": 25906,
+        "avif": 15640,
+        "bpp": 1.73
+      },
+      {
+        "w": 600,
+        "h": 450,
+        "jpg": 51535,
+        "avif": 30396,
+        "bpp": 1.53
+      },
+      {
+        "w": 900,
+        "h": 675,
+        "jpg": 108893,
+        "avif": 66608,
+        "bpp": 1.43
+      },
+      {
+        "w": 1280,
+        "h": 960,
+        "jpg": 204277,
+        "avif": 117795,
+        "bpp": 1.33
+      },
+      {
+        "w": 1920,
+        "h": 1439,
+        "jpg": 379149,
+        "avif": 206057,
+        "bpp": 1.1
+      },
+      {
+        "w": 1989,
+        "h": 1491,
+        "jpg": 400223,
+        "avif": 218704,
+        "bpp": 1.08
+      }
+    ]
+  },
+  "mass-timber-photo-2": {
+    "slug": "mass-timber-photo-2",
+    "source": "references/mass-timber/photo-2.jpg",
+    "sourceWidth": 7774,
+    "sourceHeight": 5183,
+    "aspect": 1.499904,
+    "roles": [
+      "gallery"
+    ],
+    "widths": [
+      {
+        "w": 400,
+        "h": 267,
+        "jpg": 72213,
+        "avif": 46678,
+        "bpp": 5.41
+      },
+      {
+        "w": 600,
+        "h": 400,
+        "jpg": 95032,
+        "avif": 60200,
+        "bpp": 3.17
+      },
+      {
+        "w": 900,
+        "h": 600,
+        "jpg": 145417,
+        "avif": 89140,
+        "bpp": 2.15
+      },
+      {
+        "w": 1280,
+        "h": 853,
+        "jpg": 225343,
+        "avif": 133623,
+        "bpp": 1.65
+      },
+      {
+        "w": 1920,
+        "h": 1280,
+        "jpg": 405494,
+        "avif": 234724,
+        "bpp": 1.32
+      },
+      {
+        "w": 2560,
+        "h": 1707,
+        "jpg": 622523,
+        "avif": 358456,
+        "bpp": 1.14
+      }
+    ]
+  },
+  "rfem6-brochure-brochure-1": {
+    "slug": "rfem6-brochure-brochure-1",
+    "source": "references/rfem6-brochure/brochure-1.png",
+    "sourceWidth": 1920,
+    "sourceHeight": 1080,
+    "aspect": 1.777778,
+    "roles": [
+      "gallery"
+    ],
+    "widths": [
+      {
+        "w": 400,
+        "h": 225,
+        "jpg": 7971,
+        "avif": 5070,
+        "bpp": 0.71
+      },
+      {
+        "w": 600,
+        "h": 338,
+        "jpg": 14056,
+        "avif": 8077,
+        "bpp": 0.55
+      },
+      {
+        "w": 900,
+        "h": 506,
+        "jpg": 24873,
+        "avif": 13675,
+        "bpp": 0.44
+      },
+      {
+        "w": 1280,
+        "h": 720,
+        "jpg": 42359,
+        "avif": 22071,
+        "bpp": 0.37
+      },
+      {
+        "w": 1920,
+        "h": 1080,
+        "jpg": 77124,
+        "avif": 37921,
+        "bpp": 0.3
+      }
+    ]
+  },
+  "rfem6-brochure-brochure-2": {
+    "slug": "rfem6-brochure-brochure-2",
+    "source": "references/rfem6-brochure/brochure-2.png",
+    "sourceWidth": 1920,
+    "sourceHeight": 1080,
+    "aspect": 1.777778,
+    "roles": [
+      "gallery",
+      "card"
+    ],
+    "widths": [
+      {
+        "w": 320,
+        "h": 180,
+        "jpg": 6059,
+        "avif": 4237,
+        "bpp": 0.84
+      },
+      {
+        "w": 400,
+        "h": 225,
+        "jpg": 8430,
+        "avif": 5067,
+        "bpp": 0.75
+      },
+      {
+        "w": 480,
+        "h": 270,
+        "jpg": 10813,
+        "avif": 6471,
+        "bpp": 0.67
+      },
+      {
+        "w": 600,
+        "h": 338,
+        "jpg": 15304,
+        "avif": 8367,
+        "bpp": 0.6
+      },
+      {
+        "w": 640,
+        "h": 360,
+        "jpg": 16816,
+        "avif": 9319,
+        "bpp": 0.58
+      },
+      {
+        "w": 900,
+        "h": 506,
+        "jpg": 28306,
+        "avif": 14814,
+        "bpp": 0.5
+      },
+      {
+        "w": 960,
+        "h": 540,
+        "jpg": 30909,
+        "avif": 16028,
+        "bpp": 0.48
+      },
+      {
+        "w": 1280,
+        "h": 720,
+        "jpg": 48154,
+        "avif": 25254,
+        "bpp": 0.42
+      },
+      {
+        "w": 1920,
+        "h": 1080,
+        "jpg": 89480,
+        "avif": 46191,
+        "bpp": 0.35
+      }
+    ]
+  },
+  "rfem6-brochure-brochure-3": {
+    "slug": "rfem6-brochure-brochure-3",
+    "source": "references/rfem6-brochure/brochure-3.png",
+    "sourceWidth": 1920,
+    "sourceHeight": 1080,
+    "aspect": 1.777778,
+    "roles": [
+      "gallery"
+    ],
+    "widths": [
+      {
+        "w": 400,
+        "h": 225,
+        "jpg": 12441,
+        "avif": 7356,
+        "bpp": 1.11
+      },
+      {
+        "w": 600,
+        "h": 338,
+        "jpg": 23734,
+        "avif": 13129,
+        "bpp": 0.94
+      },
+      {
+        "w": 900,
+        "h": 506,
+        "jpg": 45518,
+        "avif": 25046,
+        "bpp": 0.8
+      },
+      {
+        "w": 1280,
+        "h": 720,
+        "jpg": 81444,
+        "avif": 43972,
+        "bpp": 0.71
+      },
+      {
+        "w": 1920,
+        "h": 1080,
+        "jpg": 149220,
+        "avif": 78174,
+        "bpp": 0.58
+      }
+    ]
+  },
+  "rfem6-brochure-brochure-4": {
+    "slug": "rfem6-brochure-brochure-4",
+    "source": "references/rfem6-brochure/brochure-4.png",
+    "sourceWidth": 1920,
+    "sourceHeight": 1080,
+    "aspect": 1.777778,
+    "roles": [
+      "gallery"
+    ],
+    "widths": [
+      {
+        "w": 400,
+        "h": 225,
+        "jpg": 9590,
+        "avif": 5414,
+        "bpp": 0.85
+      },
+      {
+        "w": 600,
+        "h": 338,
+        "jpg": 16223,
+        "avif": 8624,
+        "bpp": 0.64
+      },
+      {
+        "w": 900,
+        "h": 506,
+        "jpg": 28170,
+        "avif": 14076,
+        "bpp": 0.49
+      },
+      {
+        "w": 1280,
+        "h": 720,
+        "jpg": 45739,
+        "avif": 21655,
+        "bpp": 0.4
+      },
+      {
+        "w": 1920,
+        "h": 1080,
+        "jpg": 78479,
+        "avif": 34433,
+        "bpp": 0.3
+      }
+    ]
+  }
+}

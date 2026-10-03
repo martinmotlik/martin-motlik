@@ -1,0 +1,24 @@
+{
+  "name": "martin-motlik-site",
+  "version": "1.0.0",
+  "description": "Build tooling for martinmotlik.com (responsive image pipeline).",
+  "scripts": {
+    "images": "node tools/build-images.mjs",
+    "images:force": "node tools/build-images.mjs --force",
+    "images:sync": "python3 tools/sync-srcsets.py",
+    "serve": "python3 -m http.server 4173"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martinmotlik/martin-motlik.git"
+  },
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/martinmotlik/martin-motlik/issues"
+  },
+  "homepage": "https://github.com/martinmotlik/martin-motlik#readme",
+  "devDependencies": {
+    "sharp": "^0.35.5"
+  },
+  "private": true
+}
