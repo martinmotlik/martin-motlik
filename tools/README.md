@@ -81,6 +81,13 @@ means the browser is inventing pixels and the image needs a crop, not a bigger
   scripts match `<picture>` in the HTML; prose containing that tag inside a
   comment swallowed the first real element on each page and silently skipped
   it. The regexes now require a `<source>` right after the tag.
+- **A `>` combinator targeting the image stops matching.** Wrapping the image
+  in `<picture>` makes it a grandchild, so `.parent > img` silently stops
+  applying. `display: contents` removes the picture's *box*, not its DOM node,
+  and selectors match against the DOM. This is what left the photo showing
+  behind the 3D model on the references page. Use a descendant selector.
+- **Sibling JS breaks the same way.** `img.nextElementSibling` now resolves
+  inside the `<picture>`; reach past it with `img.closest('picture')`.
 - **`picture { display: contents; }`** is load-bearing. `<picture>` is an inline
   wrapper, so without it any `.parent img { height: 100% }` rule stops
   resolving, the image collapses to zero height, and `loading="lazy"` then

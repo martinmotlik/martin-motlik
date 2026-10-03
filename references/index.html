@@ -345,7 +345,10 @@
             --progress-mask: transparent;
         }
         .feat-img.view-3d model-viewer { display: block; }
-        .feat-img.view-3d > img { display: none; }
+        /* Descendant, not child: the photo sits inside a <picture>, so a `>`
+           combinator stops matching and the photo stays visible behind the
+           model. display:contents removes the picture's box, not its DOM node. */
+        .feat-img.view-3d img { display: none; }
         .feat-img.view-3d { background: linear-gradient(to bottom, #f8f8f8 0%, #f2f2f4 100%); }
 
 
@@ -360,7 +363,10 @@
             --progress-mask: transparent;
         }
         .card-img.view-3d model-viewer { display: block; }
-        .card-img.view-3d > img { display: none; }
+        /* Descendant, not child: the photo sits inside a <picture>, so a `>`
+           combinator stops matching and the photo stays visible behind the
+           model. display:contents removes the picture's box, not its DOM node. */
+        .card-img.view-3d img { display: none; }
         .card-img.view-3d { background: linear-gradient(to bottom, #f8f8f8 0%, #f2f2f4 100%); }
 
         .feat-content {
