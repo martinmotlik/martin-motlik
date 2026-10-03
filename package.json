@@ -6,7 +6,8 @@
     "images": "node tools/build-images.mjs",
     "images:force": "node tools/build-images.mjs --force",
     "images:sync": "python3 tools/sync-srcsets.py",
-    "serve": "python3 -m http.server 4173"
+    "serve": "python3 -m http.server 4173",
+    "images:thumbs": "python3 tools/use-thumb-crops.py"
   },
   "repository": {
     "type": "git",

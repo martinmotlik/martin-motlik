@@ -84,7 +84,7 @@
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-    /* <picture> is only a format switch, not a layout box. Taking it out of
+    /* The picture element is only a format switch, not a layout box. Taking it out of
        the box tree keeps every existing `.parent img { height: 100% }` rule
        working; without this the images collapse to zero height and
        loading="lazy" then never fetches them. */

@@ -117,7 +117,7 @@
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-    /* <picture> is only a format switch, not a layout box. Taking it out of
+    /* The picture element is only a format switch, not a layout box. Taking it out of
        the box tree keeps every existing `.parent img { height: 100% }` rule
        working; without this the images collapse to zero height and
        loading="lazy" then never fetches them. */
@@ -640,81 +640,81 @@
         <div class="strip-item" onclick="openLightbox(0)">
             <picture>
               <source type="image/avif" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
-                      srcset="/assets/img/rfem6-brochure-brochure-1-400.avif 400w,
-                              /assets/img/rfem6-brochure-brochure-1-600.avif 600w,
-                              /assets/img/rfem6-brochure-brochure-1-900.avif 900w,
-                              /assets/img/rfem6-brochure-brochure-1-1280.avif 1280w,
-                              /assets/img/rfem6-brochure-brochure-1-1920.avif 1920w">
-              <img src="/assets/img/rfem6-brochure-brochure-1-1280.jpg" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
-                   srcset="/assets/img/rfem6-brochure-brochure-1-400.jpg 400w,
-                           /assets/img/rfem6-brochure-brochure-1-600.jpg 600w,
-                           /assets/img/rfem6-brochure-brochure-1-900.jpg 900w,
-                           /assets/img/rfem6-brochure-brochure-1-1280.jpg 1280w,
-                           /assets/img/rfem6-brochure-brochure-1-1920.jpg 1920w"
+                      srcset="/assets/img/rfem6-brochure-brochure-1-thumb-300.avif 300w,
+                              /assets/img/rfem6-brochure-brochure-1-thumb-420.avif 420w,
+                              /assets/img/rfem6-brochure-brochure-1-thumb-560.avif 560w,
+                              /assets/img/rfem6-brochure-brochure-1-thumb-700.avif 700w,
+                              /assets/img/rfem6-brochure-brochure-1-thumb-840.avif 840w,
+                              /assets/img/rfem6-brochure-brochure-1-thumb-1000.avif 1000w">
+              <img src="/assets/img/rfem6-brochure-brochure-1-thumb-700.jpg" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
+                   srcset="/assets/img/rfem6-brochure-brochure-1-thumb-300.jpg 300w,
+                           /assets/img/rfem6-brochure-brochure-1-thumb-420.jpg 420w,
+                           /assets/img/rfem6-brochure-brochure-1-thumb-560.jpg 560w,
+                           /assets/img/rfem6-brochure-brochure-1-thumb-700.jpg 700w,
+                           /assets/img/rfem6-brochure-brochure-1-thumb-840.jpg 840w,
+                           /assets/img/rfem6-brochure-brochure-1-thumb-1000.jpg 1000w"
                    alt="RFEM 6 product brochure page spread 1 — designed by Martin Motlík for Dlubal Software US market"
-                   width="1280" height="720" loading="lazy" decoding="async">
+                   width="700" height="467" loading="lazy" decoding="async">
             </picture>
         </div>
         <div class="strip-item" onclick="openLightbox(1)">
             <picture>
               <source type="image/avif" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
-                      srcset="/assets/img/rfem6-brochure-brochure-2-320.avif 320w,
-                              /assets/img/rfem6-brochure-brochure-2-400.avif 400w,
-                              /assets/img/rfem6-brochure-brochure-2-480.avif 480w,
-                              /assets/img/rfem6-brochure-brochure-2-600.avif 600w,
-                              /assets/img/rfem6-brochure-brochure-2-640.avif 640w,
-                              /assets/img/rfem6-brochure-brochure-2-900.avif 900w,
-                              /assets/img/rfem6-brochure-brochure-2-960.avif 960w,
-                              /assets/img/rfem6-brochure-brochure-2-1280.avif 1280w,
-                              /assets/img/rfem6-brochure-brochure-2-1920.avif 1920w">
-              <img src="/assets/img/rfem6-brochure-brochure-2-800.jpg" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
-                   srcset="/assets/img/rfem6-brochure-brochure-2-320.jpg 320w,
-                           /assets/img/rfem6-brochure-brochure-2-400.jpg 400w,
-                           /assets/img/rfem6-brochure-brochure-2-480.jpg 480w,
-                           /assets/img/rfem6-brochure-brochure-2-600.jpg 600w,
-                           /assets/img/rfem6-brochure-brochure-2-640.jpg 640w,
-                           /assets/img/rfem6-brochure-brochure-2-900.jpg 900w,
-                           /assets/img/rfem6-brochure-brochure-2-960.jpg 960w,
-                           /assets/img/rfem6-brochure-brochure-2-1280.jpg 1280w,
-                           /assets/img/rfem6-brochure-brochure-2-1920.jpg 1920w"
+                      srcset="/assets/img/rfem6-brochure-brochure-2-thumb-300.avif 300w,
+                              /assets/img/rfem6-brochure-brochure-2-thumb-420.avif 420w,
+                              /assets/img/rfem6-brochure-brochure-2-thumb-560.avif 560w,
+                              /assets/img/rfem6-brochure-brochure-2-thumb-700.avif 700w,
+                              /assets/img/rfem6-brochure-brochure-2-thumb-840.avif 840w,
+                              /assets/img/rfem6-brochure-brochure-2-thumb-1000.avif 1000w">
+              <img src="/assets/img/rfem6-brochure-brochure-2-thumb-700.jpg" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
+                   srcset="/assets/img/rfem6-brochure-brochure-2-thumb-300.jpg 300w,
+                           /assets/img/rfem6-brochure-brochure-2-thumb-420.jpg 420w,
+                           /assets/img/rfem6-brochure-brochure-2-thumb-560.jpg 560w,
+                           /assets/img/rfem6-brochure-brochure-2-thumb-700.jpg 700w,
+                           /assets/img/rfem6-brochure-brochure-2-thumb-840.jpg 840w,
+                           /assets/img/rfem6-brochure-brochure-2-thumb-1000.jpg 1000w"
                    alt="RFEM 6 product brochure page spread 2 — designed by Martin Motlík for Dlubal Software US market"
-                   width="800" height="450" loading="lazy" decoding="async">
+                   width="700" height="467" loading="lazy" decoding="async">
             </picture>
         </div>
         <div class="strip-item" onclick="openLightbox(2)">
             <picture>
               <source type="image/avif" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
-                      srcset="/assets/img/rfem6-brochure-brochure-3-400.avif 400w,
-                              /assets/img/rfem6-brochure-brochure-3-600.avif 600w,
-                              /assets/img/rfem6-brochure-brochure-3-900.avif 900w,
-                              /assets/img/rfem6-brochure-brochure-3-1280.avif 1280w,
-                              /assets/img/rfem6-brochure-brochure-3-1920.avif 1920w">
-              <img src="/assets/img/rfem6-brochure-brochure-3-1280.jpg" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
-                   srcset="/assets/img/rfem6-brochure-brochure-3-400.jpg 400w,
-                           /assets/img/rfem6-brochure-brochure-3-600.jpg 600w,
-                           /assets/img/rfem6-brochure-brochure-3-900.jpg 900w,
-                           /assets/img/rfem6-brochure-brochure-3-1280.jpg 1280w,
-                           /assets/img/rfem6-brochure-brochure-3-1920.jpg 1920w"
+                      srcset="/assets/img/rfem6-brochure-brochure-3-thumb-300.avif 300w,
+                              /assets/img/rfem6-brochure-brochure-3-thumb-420.avif 420w,
+                              /assets/img/rfem6-brochure-brochure-3-thumb-560.avif 560w,
+                              /assets/img/rfem6-brochure-brochure-3-thumb-700.avif 700w,
+                              /assets/img/rfem6-brochure-brochure-3-thumb-840.avif 840w,
+                              /assets/img/rfem6-brochure-brochure-3-thumb-1000.avif 1000w">
+              <img src="/assets/img/rfem6-brochure-brochure-3-thumb-700.jpg" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
+                   srcset="/assets/img/rfem6-brochure-brochure-3-thumb-300.jpg 300w,
+                           /assets/img/rfem6-brochure-brochure-3-thumb-420.jpg 420w,
+                           /assets/img/rfem6-brochure-brochure-3-thumb-560.jpg 560w,
+                           /assets/img/rfem6-brochure-brochure-3-thumb-700.jpg 700w,
+                           /assets/img/rfem6-brochure-brochure-3-thumb-840.jpg 840w,
+                           /assets/img/rfem6-brochure-brochure-3-thumb-1000.jpg 1000w"
                    alt="RFEM 6 product brochure page spread 3 — designed by Martin Motlík for Dlubal Software US market"
-                   width="1280" height="720" loading="lazy" decoding="async">
+                   width="700" height="467" loading="lazy" decoding="async">
             </picture>
         </div>
         <div class="strip-item" onclick="openLightbox(3)">
             <picture>
               <source type="image/avif" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
-                      srcset="/assets/img/rfem6-brochure-brochure-4-400.avif 400w,
-                              /assets/img/rfem6-brochure-brochure-4-600.avif 600w,
-                              /assets/img/rfem6-brochure-brochure-4-900.avif 900w,
-                              /assets/img/rfem6-brochure-brochure-4-1280.avif 1280w,
-                              /assets/img/rfem6-brochure-brochure-4-1920.avif 1920w">
-              <img src="/assets/img/rfem6-brochure-brochure-4-1280.jpg" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
-                   srcset="/assets/img/rfem6-brochure-brochure-4-400.jpg 400w,
-                           /assets/img/rfem6-brochure-brochure-4-600.jpg 600w,
-                           /assets/img/rfem6-brochure-brochure-4-900.jpg 900w,
-                           /assets/img/rfem6-brochure-brochure-4-1280.jpg 1280w,
-                           /assets/img/rfem6-brochure-brochure-4-1920.jpg 1920w"
+                      srcset="/assets/img/rfem6-brochure-brochure-4-thumb-300.avif 300w,
+                              /assets/img/rfem6-brochure-brochure-4-thumb-420.avif 420w,
+                              /assets/img/rfem6-brochure-brochure-4-thumb-560.avif 560w,
+                              /assets/img/rfem6-brochure-brochure-4-thumb-700.avif 700w,
+                              /assets/img/rfem6-brochure-brochure-4-thumb-840.avif 840w,
+                              /assets/img/rfem6-brochure-brochure-4-thumb-1000.avif 1000w">
+              <img src="/assets/img/rfem6-brochure-brochure-4-thumb-700.jpg" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
+                   srcset="/assets/img/rfem6-brochure-brochure-4-thumb-300.jpg 300w,
+                           /assets/img/rfem6-brochure-brochure-4-thumb-420.jpg 420w,
+                           /assets/img/rfem6-brochure-brochure-4-thumb-560.jpg 560w,
+                           /assets/img/rfem6-brochure-brochure-4-thumb-700.jpg 700w,
+                           /assets/img/rfem6-brochure-brochure-4-thumb-840.jpg 840w,
+                           /assets/img/rfem6-brochure-brochure-4-thumb-1000.jpg 1000w"
                    alt="RFEM 6 product brochure cover — designed by Martin Motlík for Dlubal Software US market"
-                   width="1280" height="720" loading="lazy" decoding="async">
+                   width="700" height="467" loading="lazy" decoding="async">
             </picture>
         </div>
     </div>
@@ -744,12 +744,22 @@
         <a href="/references/mass-timber-2026/" class="next-link">
             <div class="next-thumb">
                 <picture>
-                  <source type="image/avif" sizes="100px"
-                          srcset="/assets/img/mass-timber-render-1-400.avif 400w">
-                  <img src="/assets/img/mass-timber-render-1-400.jpg" sizes="100px"
-                       srcset="/assets/img/mass-timber-render-1-400.jpg 400w"
+                  <source type="image/avif" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
+                          srcset="/assets/img/mass-timber-render-1-thumb-300.avif 300w,
+                                  /assets/img/mass-timber-render-1-thumb-420.avif 420w,
+                                  /assets/img/mass-timber-render-1-thumb-560.avif 560w,
+                                  /assets/img/mass-timber-render-1-thumb-700.avif 700w,
+                                  /assets/img/mass-timber-render-1-thumb-840.avif 840w,
+                                  /assets/img/mass-timber-render-1-thumb-1000.avif 1000w">
+                  <img src="/assets/img/mass-timber-render-1-thumb-700.jpg" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
+                       srcset="/assets/img/mass-timber-render-1-thumb-300.jpg 300w,
+                               /assets/img/mass-timber-render-1-thumb-420.jpg 420w,
+                               /assets/img/mass-timber-render-1-thumb-560.jpg 560w,
+                               /assets/img/mass-timber-render-1-thumb-700.jpg 700w,
+                               /assets/img/mass-timber-render-1-thumb-840.jpg 840w,
+                               /assets/img/mass-timber-render-1-thumb-1000.jpg 1000w"
                        alt="International Mass Timber Conference 2026 — Dlubal Software booth, Portland"
-                       width="400" height="262" loading="lazy" decoding="async">
+                       width="700" height="467" loading="lazy" decoding="async">
                 </picture>
             </div>
             <div>

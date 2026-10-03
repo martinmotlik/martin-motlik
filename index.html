@@ -243,7 +243,7 @@
       -webkit-font-smoothing: antialiased;
     }
     img { display: block; max-width: 100%; }
-    /* <picture> is only a format switch, not a layout box. Taking it out of
+    /* The picture element is only a format switch, not a layout box. Taking it out of
        the box tree keeps every existing `.parent img { height: 100% }` rule
        working; without this the images collapse to zero height and
        loading="lazy" then never fetches them. */
@@ -955,19 +955,23 @@
         <div class="about-photo-frame">
           <picture>
             <source type="image/avif" sizes="(max-width: 767px) 240px, (max-width: 1023px) 280px, 360px"
-                    srcset="/assets/img/martin-motlik-portrait-360.avif 360w,
-                            /assets/img/martin-motlik-portrait-540.avif 540w,
-                            /assets/img/martin-motlik-portrait-720.avif 720w,
-                            /assets/img/martin-motlik-portrait-1080.avif 1080w">
-            <img src="/assets/img/martin-motlik-portrait-720.jpg"
+                    srcset="/assets/img/portrait-card-270.avif 270w,
+                            /assets/img/portrait-card-360.avif 360w,
+                            /assets/img/portrait-card-480.avif 480w,
+                            /assets/img/portrait-card-540.avif 540w,
+                            /assets/img/portrait-card-720.avif 720w,
+                            /assets/img/portrait-card-900.avif 900w">
+            <img src="/assets/img/portrait-card-720.jpg"
                  sizes="(max-width: 767px) 240px, (max-width: 1023px) 280px, 360px"
-                 srcset="/assets/img/martin-motlik-portrait-360.jpg 360w,
-                         /assets/img/martin-motlik-portrait-540.jpg 540w,
-                         /assets/img/martin-motlik-portrait-720.jpg 720w,
-                         /assets/img/martin-motlik-portrait-1080.jpg 1080w"
+                 srcset="/assets/img/portrait-card-270.jpg 270w,
+                         /assets/img/portrait-card-360.jpg 360w,
+                         /assets/img/portrait-card-480.jpg 480w,
+                         /assets/img/portrait-card-540.jpg 540w,
+                         /assets/img/portrait-card-720.jpg 720w,
+                         /assets/img/portrait-card-900.jpg 900w"
                  alt="Martin Motlík, AEC Digital Strategist and Web Lead based in Prague, Czech Republic"
                  title="Martin Motlík — AEC Digital Strategist &amp; Web Lead"
-                 width="480" height="600" loading="lazy" decoding="async"></picture>
+                 width="720" height="960" loading="lazy" decoding="async"></picture>
         </div>
         <div class="about-badge">
           <div class="about-badge-icon">
@@ -1102,19 +1106,24 @@
       <a href="/references/nascc-2026/" class="ref-card">
         <picture>
           <source type="image/avif" sizes="(max-width: 767px) 47vw, (max-width: 1023px) 46vw, 238px"
-                  srcset="/assets/img/services-hero-320.avif 320w,
-                          /assets/img/services-hero-480.avif 480w,
-                          /assets/img/services-hero-640.avif 640w,
-                          /assets/img/services-hero-960.avif 960w">
-          <img class="ref-card-img" src="/assets/img/services-hero-480.jpg"
+                  srcset="/assets/img/services-hero-card-240.avif 240w,
+                          /assets/img/services-hero-card-360.avif 360w,
+                          /assets/img/services-hero-card-480.avif 480w,
+                          /assets/img/services-hero-card-640.avif 640w,
+                          /assets/img/services-hero-card-800.avif 800w,
+                          /assets/img/services-hero-card-1000.avif 1000w">
+          <img class="ref-card-img" src="/assets/img/services-hero-card-640.jpg"
                sizes="(max-width: 767px) 47vw, (max-width: 1023px) 46vw, 238px"
-               srcset="/assets/img/services-hero-320.jpg 320w,
-                       /assets/img/services-hero-480.jpg 480w,
-                       /assets/img/services-hero-640.jpg 640w,
-                       /assets/img/services-hero-960.jpg 960w"
+               srcset="/assets/img/services-hero-card-240.jpg 240w,
+                       /assets/img/services-hero-card-360.jpg 360w,
+                       /assets/img/services-hero-card-480.jpg 480w,
+                       /assets/img/services-hero-card-640.jpg 640w,
+                       /assets/img/services-hero-card-800.jpg 800w,
+                       /assets/img/services-hero-card-1000.jpg 1000w"
                alt="Dlubal Software trade show booth at NASCC 2026, Georgia World Congress Center, Atlanta — 10x20 ft exhibit design by Martin Motlík"
                title="NASCC: The Steel Conference 2026 — Dlubal Software Booth Design"
-               width="480" height="270" loading="lazy" decoding="async"></picture>
+               width="640" height="1067" loading="lazy" decoding="async">
+        </picture>
         <div class="ref-card-overlay"></div>
         <span class="ref-card-tag">Booth Design</span>
         <div class="ref-card-bottom">
@@ -1129,19 +1138,24 @@
       <a href="/references/mass-timber-2026/" class="ref-card">
         <picture>
           <source type="image/avif" sizes="(max-width: 767px) 47vw, (max-width: 1023px) 46vw, 238px"
-                  srcset="/assets/img/imtc-320.avif 320w,
-                          /assets/img/imtc-480.avif 480w,
-                          /assets/img/imtc-640.avif 640w,
-                          /assets/img/imtc-960.avif 960w">
-          <img class="ref-card-img" src="/assets/img/imtc-480.jpg"
+                  srcset="/assets/img/imtc-card-240.avif 240w,
+                          /assets/img/imtc-card-360.avif 360w,
+                          /assets/img/imtc-card-480.avif 480w,
+                          /assets/img/imtc-card-640.avif 640w,
+                          /assets/img/imtc-card-800.avif 800w,
+                          /assets/img/imtc-card-1000.avif 1000w">
+          <img class="ref-card-img" src="/assets/img/imtc-card-640.jpg"
                sizes="(max-width: 767px) 47vw, (max-width: 1023px) 46vw, 238px"
-               srcset="/assets/img/imtc-320.jpg 320w,
-                       /assets/img/imtc-480.jpg 480w,
-                       /assets/img/imtc-640.jpg 640w,
-                       /assets/img/imtc-960.jpg 960w"
+               srcset="/assets/img/imtc-card-240.jpg 240w,
+                       /assets/img/imtc-card-360.jpg 360w,
+                       /assets/img/imtc-card-480.jpg 480w,
+                       /assets/img/imtc-card-640.jpg 640w,
+                       /assets/img/imtc-card-800.jpg 800w,
+                       /assets/img/imtc-card-1000.jpg 1000w"
                alt="Dlubal Software trade show booth at International Mass Timber Conference 2026, Oregon Convention Center, Portland — 10x20 ft exhibit design by Martin Motlík"
                title="International Mass Timber Conference 2026 — Dlubal Software Booth Design"
-               width="480" height="270" loading="lazy" decoding="async"></picture>
+               width="640" height="1067" loading="lazy" decoding="async">
+        </picture>
         <div class="ref-card-overlay"></div>
         <span class="ref-card-tag">Booth Design</span>
         <div class="ref-card-bottom">
@@ -1156,25 +1170,24 @@
       <a href="/references/rfem6-brochure/" class="ref-card">
         <picture>
           <source type="image/avif" sizes="(max-width: 767px) 47vw, (max-width: 1023px) 46vw, 238px"
-                  srcset="/assets/img/rfem6-brochure-brochure-2-320.avif 320w,
-                          /assets/img/rfem6-brochure-brochure-2-400.avif 400w,
-                          /assets/img/rfem6-brochure-brochure-2-480.avif 480w,
-                          /assets/img/rfem6-brochure-brochure-2-600.avif 600w,
-                          /assets/img/rfem6-brochure-brochure-2-640.avif 640w,
-                          /assets/img/rfem6-brochure-brochure-2-900.avif 900w,
-                          /assets/img/rfem6-brochure-brochure-2-960.avif 960w">
-          <img class="ref-card-img" src="/assets/img/rfem6-brochure-brochure-2-480.jpg"
+                  srcset="/assets/img/rfem6-brochure-2-card-240.avif 240w,
+                          /assets/img/rfem6-brochure-2-card-360.avif 360w,
+                          /assets/img/rfem6-brochure-2-card-480.avif 480w,
+                          /assets/img/rfem6-brochure-2-card-640.avif 640w,
+                          /assets/img/rfem6-brochure-2-card-800.avif 800w,
+                          /assets/img/rfem6-brochure-2-card-1000.avif 1000w">
+          <img class="ref-card-img" src="/assets/img/rfem6-brochure-2-card-640.jpg"
                sizes="(max-width: 767px) 47vw, (max-width: 1023px) 46vw, 238px"
-               srcset="/assets/img/rfem6-brochure-brochure-2-320.jpg 320w,
-                       /assets/img/rfem6-brochure-brochure-2-400.jpg 400w,
-                       /assets/img/rfem6-brochure-brochure-2-480.jpg 480w,
-                       /assets/img/rfem6-brochure-brochure-2-600.jpg 600w,
-                       /assets/img/rfem6-brochure-brochure-2-640.jpg 640w,
-                       /assets/img/rfem6-brochure-brochure-2-900.jpg 900w,
-                       /assets/img/rfem6-brochure-brochure-2-960.jpg 960w"
+               srcset="/assets/img/rfem6-brochure-2-card-240.jpg 240w,
+                       /assets/img/rfem6-brochure-2-card-360.jpg 360w,
+                       /assets/img/rfem6-brochure-2-card-480.jpg 480w,
+                       /assets/img/rfem6-brochure-2-card-640.jpg 640w,
+                       /assets/img/rfem6-brochure-2-card-800.jpg 800w,
+                       /assets/img/rfem6-brochure-2-card-1000.jpg 1000w"
                alt="RFEM 6 structural analysis software product brochure for US and Canadian markets, designed by Martin Motlík for Dlubal Software"
                title="RFEM 6 Product Brochure — US &amp; Canada, Dlubal Software"
-               width="480" height="270" loading="lazy" decoding="async"></picture>
+               width="640" height="1067" loading="lazy" decoding="async">
+        </picture>
         <div class="ref-card-overlay"></div>
         <span class="ref-card-tag">Print</span>
         <div class="ref-card-bottom">
@@ -1189,26 +1202,25 @@
       <a href="https://www.ifc-verify.app/" class="ref-card" target="_blank" rel="noopener">
         <picture>
           <source type="image/avif" sizes="(max-width: 767px) 47vw, (max-width: 1023px) 46vw, 238px"
-                  srcset="/assets/img/ifc-verify-cover-320.avif 320w,
-                          /assets/img/ifc-verify-cover-400.avif 400w,
-                          /assets/img/ifc-verify-cover-480.avif 480w,
-                          /assets/img/ifc-verify-cover-600.avif 600w,
-                          /assets/img/ifc-verify-cover-640.avif 640w,
-                          /assets/img/ifc-verify-cover-900.avif 900w,
-                          /assets/img/ifc-verify-cover-960.avif 960w">
-          <img class="ref-card-img" src="/assets/img/ifc-verify-cover-480.jpg"
+                  srcset="/assets/img/ifc-verify-cover-card-240.avif 240w,
+                          /assets/img/ifc-verify-cover-card-360.avif 360w,
+                          /assets/img/ifc-verify-cover-card-480.avif 480w,
+                          /assets/img/ifc-verify-cover-card-640.avif 640w,
+                          /assets/img/ifc-verify-cover-card-800.avif 800w,
+                          /assets/img/ifc-verify-cover-card-1000.avif 1000w">
+          <img class="ref-card-img" src="/assets/img/ifc-verify-cover-card-640.jpg"
                sizes="(max-width: 767px) 47vw, (max-width: 1023px) 46vw, 238px"
-               srcset="/assets/img/ifc-verify-cover-320.jpg 320w,
-                       /assets/img/ifc-verify-cover-400.jpg 400w,
-                       /assets/img/ifc-verify-cover-480.jpg 480w,
-                       /assets/img/ifc-verify-cover-600.jpg 600w,
-                       /assets/img/ifc-verify-cover-640.jpg 640w,
-                       /assets/img/ifc-verify-cover-900.jpg 900w,
-                       /assets/img/ifc-verify-cover-960.jpg 960w"
+               srcset="/assets/img/ifc-verify-cover-card-240.jpg 240w,
+                       /assets/img/ifc-verify-cover-card-360.jpg 360w,
+                       /assets/img/ifc-verify-cover-card-480.jpg 480w,
+                       /assets/img/ifc-verify-cover-card-640.jpg 640w,
+                       /assets/img/ifc-verify-cover-card-800.jpg 800w,
+                       /assets/img/ifc-verify-cover-card-1000.jpg 1000w"
                alt="IFC Verify web app — browser-based BIM model validator for IFC files, built by Martin Motlík"
                title="IFC Verify — Online BIM IFC File Validator"
-               width="480" height="274" loading="lazy" decoding="async"
-               onerror="this.closest('picture').style.display='none';this.closest('picture').nextElementSibling.style.display='flex';"></picture>
+               width="640" height="1067" loading="lazy" decoding="async"
+               onerror="this.closest('picture').style.display='none';this.closest('picture').nextElementSibling.style.display='flex';">
+        </picture>
         <div class="ref-card-placeholder" style="display:none;"><div style="color:rgba(255,255,255,0.15);text-align:center;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div></div>
         <div class="ref-card-overlay"></div>
         <span class="ref-card-tag">Web App</span>
@@ -1241,13 +1253,15 @@
                       /assets/img/ai-bg-960.avif 960w,
                       /assets/img/ai-bg-1280.avif 1280w,
                       /assets/img/ai-bg-1920.avif 1920w,
-                      /assets/img/ai-bg-2560.avif 2560w">
+                      /assets/img/ai-bg-2560.avif 2560w,
+                          /assets/img/ai-bg-2752.avif 2752w">
       <img src="/assets/img/ai-bg-1280.jpg" sizes="100vw"
            srcset="/assets/img/ai-bg-640.jpg 640w,
                    /assets/img/ai-bg-960.jpg 960w,
                    /assets/img/ai-bg-1280.jpg 1280w,
                    /assets/img/ai-bg-1920.jpg 1920w,
-                   /assets/img/ai-bg-2560.jpg 2560w"
+                   /assets/img/ai-bg-2560.jpg 2560w,
+                   /assets/img/ai-bg-2752.jpg 2752w"
            alt="" width="2752" height="1536" loading="lazy" decoding="async">
     </picture>
   </div>

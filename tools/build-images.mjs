@@ -35,7 +35,10 @@ const FORCE = process.argv.includes('--force');
  *            at up to 92vw, so the ladder runs to 2560
  */
 const ROLES = {
-  hero:     [640, 960, 1280, 1920, 2560],
+  // 2880 is above every source here, which lets the native-width rule below
+  // emit each hero at full resolution. The AI section is tall enough that its
+  // height, not its width, is what limits sharpness.
+  hero:     [640, 960, 1280, 1920, 2560, 2880],
   card:     [320, 480, 640, 960],
   portrait: [360, 540, 720, 1080],
   // 900 sits just above the 806px a 403px thumbnail needs on a 2x screen;
@@ -158,6 +161,89 @@ async function buildOne(rel, roles) {
 }
 
 /**
+ * Reference cards on the home page are 3:5 portrait boxes with
+ * `object-fit: cover`, but every source here is 16:9 landscape. Feeding the
+ * landscape file to that box makes the browser crop the sides and scale the
+ * remaining strip up ~2.8x beyond its own pixels - visibly soft.
+ *
+ * `sizes` cannot express this: it describes the box width, while a landscape
+ * source cover-cropped into a portrait box is limited by height. So instead of
+ * shipping a much wider file and wasting most of it, crop to 3:5 at build time.
+ * The centre crop is exactly what `object-fit: cover; object-position: center`
+ * already displayed, so the visible image does not change.
+ */
+const CROPS = {
+  // Home-page reference cards: 3:5 portrait boxes.
+  // Widest case is the 2-column tablet layout, ~472 CSS px at 2x.
+  'images/services-hero.png': { slug: 'services-hero-card', ratio: 3 / 5, widths: [240, 360, 480, 640, 800, 1000] },
+  'images/imtc.jpg': { slug: 'imtc-card', ratio: 3 / 5, widths: [240, 360, 480, 640, 800, 1000] },
+  'references/rfem6-brochure/brochure-2.png': { slug: 'rfem6-brochure-2-card', ratio: 3 / 5, widths: [240, 360, 480, 640, 800, 1000] },
+  'references/ifc-verify/cover.png': { slug: 'ifc-verify-cover-card', ratio: 3 / 5, widths: [240, 360, 480, 640, 800, 1000] },
+  // About photo: a square source in a 3:4 frame, so the uncropped file was
+  // being stretched 1.33x vertically. 720x960 matches the 360px box at 2x.
+  'images/martin-motlik-portrait.png': { slug: 'portrait-card', ratio: 3 / 4, widths: [270, 360, 480, 540, 720, 900] },
+};
+
+// Reference-page filmstrip thumbnails sit in 3:2 boxes, but the sources are
+// 16:9 or wider, so the uncropped files were stretched 1.13-1.27x. The strip
+// is width: clamp(260px, 28vw, 420px), so 840px covers the widest case at 2x.
+// The lightbox keeps using the uncropped images - it shows the whole frame.
+const THUMB_RATIO = 3 / 2;
+const THUMB_WIDTHS = [300, 420, 560, 700, 840, 1000];
+for (const rel of [
+  'references/nascc/render-1.png',
+  'references/nascc/photo-1.png',
+  'references/nascc/photo-2.png',
+  'references/nascc/photo-3.png',
+  'references/mass-timber/render-1.png',
+  'references/mass-timber/render-2.png',
+  'references/mass-timber/photo-1.jpg',
+  'references/mass-timber/photo-2.jpg',
+  'references/rfem6-brochure/brochure-1.png',
+  'references/rfem6-brochure/brochure-2.png',
+  'references/rfem6-brochure/brochure-3.png',
+  'references/rfem6-brochure/brochure-4.png',
+]) {
+  CROPS[rel] = { slug: `${slugFor(rel)}-thumb`, ratio: THUMB_RATIO, widths: THUMB_WIDTHS };
+}
+
+async function buildCrops(manifest) {
+  for (const [rel, cfg] of Object.entries(CROPS)) {
+    const { slug, ratio, widths: cropWidths } = cfg;
+    const abs = path.join(SRC, rel);
+    if (!existsSync(abs)) {
+      console.warn(`  ! chybí originál pro výřez: ${rel}`);
+      continue;
+    }
+    const entry = { slug, source: rel, roles: ['crop'], aspect: ratio, widths: [] };
+
+    for (const w of cropWidths) {
+      const h = Math.round(w / ratio);
+      const pipeline = sharp(abs, { limitInputPixels: 500e6 })
+        .rotate()
+        .resize(w, h, { fit: 'cover', position: 'centre', kernel: 'lanczos3' })
+        .sharpen({ sigma: 0.5 })
+        .withMetadata({ icc: 'srgb' });
+
+      const jpgPath = path.join(OUT, `${slug}-${w}.jpg`);
+      const avifPath = path.join(OUT, `${slug}-${w}.avif`);
+      if (FORCE || !existsSync(jpgPath)) await pipeline.clone().jpeg(JPEG).toFile(jpgPath);
+      if (FORCE || !existsSync(avifPath)) await pipeline.clone().avif(AVIF).toFile(avifPath);
+
+      const [js, as] = await Promise.all([stat(jpgPath), stat(avifPath)]);
+      entry.widths.push({ w, h, jpg: js.size, avif: as.size, bpp: +((js.size * 8) / (w * h)).toFixed(2) });
+    }
+
+    manifest[slug] = entry;
+    const largest = entry.widths.at(-1);
+    console.log(
+      `${rel} (výřez) … ${entry.widths.length} variant, největší ${largest.w}x${largest.h}: ` +
+        `${bytes(largest.jpg)} jpg / ${bytes(largest.avif)} avif`
+    );
+  }
+}
+
+/**
  * Social preview card. Scrapers want one fixed 1200x630 JPEG at a URL that
  * never changes, and many of them give up on anything large, so this is built
  * separately from the responsive ladder.
@@ -209,6 +295,7 @@ async function main() {
     );
   }
 
+  await buildCrops(manifest);
   await buildOgImage();
   await writeFile(MANIFEST, JSON.stringify(manifest, null, 2) + '\n');
 

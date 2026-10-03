@@ -147,7 +147,7 @@
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-    /* <picture> is only a format switch, not a layout box. Taking it out of
+    /* The picture element is only a format switch, not a layout box. Taking it out of
        the box tree keeps every existing `.parent img { height: 100% }` rule
        working; without this the images collapse to zero height and
        loading="lazy" then never fetches them. */
@@ -872,21 +872,21 @@
         <div class="strip-item" onclick="openLightbox(0)">
             <picture>
               <source type="image/avif" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
-                      srcset="/assets/img/nascc-render-1-400.avif 400w,
-                              /assets/img/nascc-render-1-600.avif 600w,
-                              /assets/img/nascc-render-1-900.avif 900w,
-                              /assets/img/nascc-render-1-1280.avif 1280w,
-                              /assets/img/nascc-render-1-1920.avif 1920w,
-                              /assets/img/nascc-render-1-2528.avif 2528w">
-              <img src="/assets/img/nascc-render-1-1280.jpg" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
-                   srcset="/assets/img/nascc-render-1-400.jpg 400w,
-                           /assets/img/nascc-render-1-600.jpg 600w,
-                           /assets/img/nascc-render-1-900.jpg 900w,
-                           /assets/img/nascc-render-1-1280.jpg 1280w,
-                           /assets/img/nascc-render-1-1920.jpg 1920w,
-                           /assets/img/nascc-render-1-2528.jpg 2528w"
+                      srcset="/assets/img/nascc-render-1-thumb-300.avif 300w,
+                              /assets/img/nascc-render-1-thumb-420.avif 420w,
+                              /assets/img/nascc-render-1-thumb-560.avif 560w,
+                              /assets/img/nascc-render-1-thumb-700.avif 700w,
+                              /assets/img/nascc-render-1-thumb-840.avif 840w,
+                              /assets/img/nascc-render-1-thumb-1000.avif 1000w">
+              <img src="/assets/img/nascc-render-1-thumb-700.jpg" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
+                   srcset="/assets/img/nascc-render-1-thumb-300.jpg 300w,
+                           /assets/img/nascc-render-1-thumb-420.jpg 420w,
+                           /assets/img/nascc-render-1-thumb-560.jpg 560w,
+                           /assets/img/nascc-render-1-thumb-700.jpg 700w,
+                           /assets/img/nascc-render-1-thumb-840.jpg 840w,
+                           /assets/img/nascc-render-1-thumb-1000.jpg 1000w"
                    alt="Dlubal Software booth #1008 — 3D render, NASCC 2026, Georgia World Congress Center, Atlanta"
-                   width="1280" height="859" loading="lazy" decoding="async">
+                   width="700" height="467" loading="lazy" decoding="async">
             </picture>
         </div>
 
@@ -894,61 +894,61 @@
         <div class="strip-item" onclick="openLightbox(1)">
             <picture>
               <source type="image/avif" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
-                      srcset="/assets/img/nascc-photo-1-400.avif 400w,
-                              /assets/img/nascc-photo-1-600.avif 600w,
-                              /assets/img/nascc-photo-1-900.avif 900w,
-                              /assets/img/nascc-photo-1-1280.avif 1280w,
-                              /assets/img/nascc-photo-1-1920.avif 1920w,
-                              /assets/img/nascc-photo-1-2560.avif 2560w">
-              <img src="/assets/img/nascc-photo-1-1280.jpg" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
-                   srcset="/assets/img/nascc-photo-1-400.jpg 400w,
-                           /assets/img/nascc-photo-1-600.jpg 600w,
-                           /assets/img/nascc-photo-1-900.jpg 900w,
-                           /assets/img/nascc-photo-1-1280.jpg 1280w,
-                           /assets/img/nascc-photo-1-1920.jpg 1920w,
-                           /assets/img/nascc-photo-1-2560.jpg 2560w"
+                      srcset="/assets/img/nascc-photo-1-thumb-300.avif 300w,
+                              /assets/img/nascc-photo-1-thumb-420.avif 420w,
+                              /assets/img/nascc-photo-1-thumb-560.avif 560w,
+                              /assets/img/nascc-photo-1-thumb-700.avif 700w,
+                              /assets/img/nascc-photo-1-thumb-840.avif 840w,
+                              /assets/img/nascc-photo-1-thumb-1000.avif 1000w">
+              <img src="/assets/img/nascc-photo-1-thumb-700.jpg" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
+                   srcset="/assets/img/nascc-photo-1-thumb-300.jpg 300w,
+                           /assets/img/nascc-photo-1-thumb-420.jpg 420w,
+                           /assets/img/nascc-photo-1-thumb-560.jpg 560w,
+                           /assets/img/nascc-photo-1-thumb-700.jpg 700w,
+                           /assets/img/nascc-photo-1-thumb-840.jpg 840w,
+                           /assets/img/nascc-photo-1-thumb-1000.jpg 1000w"
                    alt="Dlubal Software exhibit at NASCC 2026, Georgia World Congress Center, Atlanta — photo 1"
-                   width="1280" height="960" loading="lazy" decoding="async">
+                   width="700" height="467" loading="lazy" decoding="async">
             </picture>
         </div>
         <div class="strip-item" onclick="openLightbox(2)">
             <picture>
               <source type="image/avif" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
-                      srcset="/assets/img/nascc-photo-2-400.avif 400w,
-                              /assets/img/nascc-photo-2-600.avif 600w,
-                              /assets/img/nascc-photo-2-900.avif 900w,
-                              /assets/img/nascc-photo-2-1280.avif 1280w,
-                              /assets/img/nascc-photo-2-1920.avif 1920w,
-                              /assets/img/nascc-photo-2-2560.avif 2560w">
-              <img src="/assets/img/nascc-photo-2-1280.jpg" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
-                   srcset="/assets/img/nascc-photo-2-400.jpg 400w,
-                           /assets/img/nascc-photo-2-600.jpg 600w,
-                           /assets/img/nascc-photo-2-900.jpg 900w,
-                           /assets/img/nascc-photo-2-1280.jpg 1280w,
-                           /assets/img/nascc-photo-2-1920.jpg 1920w,
-                           /assets/img/nascc-photo-2-2560.jpg 2560w"
+                      srcset="/assets/img/nascc-photo-2-thumb-300.avif 300w,
+                              /assets/img/nascc-photo-2-thumb-420.avif 420w,
+                              /assets/img/nascc-photo-2-thumb-560.avif 560w,
+                              /assets/img/nascc-photo-2-thumb-700.avif 700w,
+                              /assets/img/nascc-photo-2-thumb-840.avif 840w,
+                              /assets/img/nascc-photo-2-thumb-1000.avif 1000w">
+              <img src="/assets/img/nascc-photo-2-thumb-700.jpg" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
+                   srcset="/assets/img/nascc-photo-2-thumb-300.jpg 300w,
+                           /assets/img/nascc-photo-2-thumb-420.jpg 420w,
+                           /assets/img/nascc-photo-2-thumb-560.jpg 560w,
+                           /assets/img/nascc-photo-2-thumb-700.jpg 700w,
+                           /assets/img/nascc-photo-2-thumb-840.jpg 840w,
+                           /assets/img/nascc-photo-2-thumb-1000.jpg 1000w"
                    alt="Dlubal Software exhibit at NASCC 2026, Georgia World Congress Center, Atlanta — photo 2"
-                   width="1280" height="830" loading="lazy" decoding="async">
+                   width="700" height="467" loading="lazy" decoding="async">
             </picture>
         </div>
         <div class="strip-item" onclick="openLightbox(3)">
             <picture>
               <source type="image/avif" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
-                      srcset="/assets/img/nascc-photo-3-400.avif 400w,
-                              /assets/img/nascc-photo-3-600.avif 600w,
-                              /assets/img/nascc-photo-3-900.avif 900w,
-                              /assets/img/nascc-photo-3-1280.avif 1280w,
-                              /assets/img/nascc-photo-3-1920.avif 1920w,
-                              /assets/img/nascc-photo-3-2560.avif 2560w">
-              <img src="/assets/img/nascc-photo-3-1280.jpg" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
-                   srcset="/assets/img/nascc-photo-3-400.jpg 400w,
-                           /assets/img/nascc-photo-3-600.jpg 600w,
-                           /assets/img/nascc-photo-3-900.jpg 900w,
-                           /assets/img/nascc-photo-3-1280.jpg 1280w,
-                           /assets/img/nascc-photo-3-1920.jpg 1920w,
-                           /assets/img/nascc-photo-3-2560.jpg 2560w"
+                      srcset="/assets/img/nascc-photo-3-thumb-300.avif 300w,
+                              /assets/img/nascc-photo-3-thumb-420.avif 420w,
+                              /assets/img/nascc-photo-3-thumb-560.avif 560w,
+                              /assets/img/nascc-photo-3-thumb-700.avif 700w,
+                              /assets/img/nascc-photo-3-thumb-840.avif 840w,
+                              /assets/img/nascc-photo-3-thumb-1000.avif 1000w">
+              <img src="/assets/img/nascc-photo-3-thumb-700.jpg" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
+                   srcset="/assets/img/nascc-photo-3-thumb-300.jpg 300w,
+                           /assets/img/nascc-photo-3-thumb-420.jpg 420w,
+                           /assets/img/nascc-photo-3-thumb-560.jpg 560w,
+                           /assets/img/nascc-photo-3-thumb-700.jpg 700w,
+                           /assets/img/nascc-photo-3-thumb-840.jpg 840w,
+                           /assets/img/nascc-photo-3-thumb-1000.jpg 1000w"
                    alt="Dlubal Software exhibit at NASCC 2026, Georgia World Congress Center, Atlanta — photo 3"
-                   width="1280" height="647" loading="lazy" decoding="async">
+                   width="700" height="467" loading="lazy" decoding="async">
             </picture>
         </div>
     </div>
@@ -1007,12 +1007,22 @@
         <a href="/references/mass-timber-2026/" class="next-link">
             <div class="next-thumb">
                 <picture>
-                  <source type="image/avif" sizes="100px"
-                          srcset="/assets/img/mass-timber-render-1-400.avif 400w">
-                  <img src="/assets/img/mass-timber-render-1-400.jpg" sizes="100px"
-                       srcset="/assets/img/mass-timber-render-1-400.jpg 400w"
+                  <source type="image/avif" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
+                          srcset="/assets/img/mass-timber-render-1-thumb-300.avif 300w,
+                                  /assets/img/mass-timber-render-1-thumb-420.avif 420w,
+                                  /assets/img/mass-timber-render-1-thumb-560.avif 560w,
+                                  /assets/img/mass-timber-render-1-thumb-700.avif 700w,
+                                  /assets/img/mass-timber-render-1-thumb-840.avif 840w,
+                                  /assets/img/mass-timber-render-1-thumb-1000.avif 1000w">
+                  <img src="/assets/img/mass-timber-render-1-thumb-700.jpg" sizes="(max-width: 928px) 260px, (max-width: 1500px) 28vw, 420px"
+                       srcset="/assets/img/mass-timber-render-1-thumb-300.jpg 300w,
+                               /assets/img/mass-timber-render-1-thumb-420.jpg 420w,
+                               /assets/img/mass-timber-render-1-thumb-560.jpg 560w,
+                               /assets/img/mass-timber-render-1-thumb-700.jpg 700w,
+                               /assets/img/mass-timber-render-1-thumb-840.jpg 840w,
+                               /assets/img/mass-timber-render-1-thumb-1000.jpg 1000w"
                        alt="International Mass Timber Conference 2026 — Dlubal Software booth, Portland"
-                       width="400" height="262" loading="lazy" decoding="async">
+                       width="700" height="467" loading="lazy" decoding="async">
                 </picture>
             </div>
             <div>

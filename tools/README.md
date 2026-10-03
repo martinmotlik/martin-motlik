@@ -45,8 +45,42 @@ npm run images && npm run images:sync
 encodes how large the image is ever displayed on that page — and gains or loses
 only the intermediate steps.
 
+## Crops: when `sizes` is not enough
+
+`sizes` describes the **width** of the image's box. With `object-fit: cover`,
+if the image's aspect ratio does not match the box's, the browser scales to
+cover the box and the *other* axis becomes the binding constraint — and `sizes`
+cannot express that. Feeding a 16:9 photo to a 3:5 portrait card meant the
+browser cropped the sides and blew the rest up 2.8x beyond the file's pixels.
+Visibly soft, and no amount of `sizes` tuning fixes it.
+
+The answer is `CROPS` in `build-images.mjs`: render the image at the aspect
+ratio the box actually has. A centre crop is exactly what `object-fit: cover;
+object-position: center` already displayed, so nothing moves visually, and no
+pixels are shipped only to be cropped away.
+
+Current crops, each matching its box:
+
+| slug suffix | ratio | box |
+|---|---|---|
+| `-card` | 3:5 | home-page reference cards |
+| `portrait-card` | 3:4 | about photo |
+| `-thumb` | 3:2 | reference-page filmstrip |
+
+The lightbox deliberately keeps the **uncropped** images — it shows the whole
+frame, not the card's crop.
+
+**Check for this whenever you add an image**: load the page and compare the
+file's real pixel size against `box × devicePixelRatio`. Anything above ~1.0
+means the browser is inventing pixels and the image needs a crop, not a bigger
+`sizes`.
+
 ## Things that will bite you
 
+- **Never write the literal picture tag in a CSS comment.** The rewrite
+  scripts match `<picture>` in the HTML; prose containing that tag inside a
+  comment swallowed the first real element on each page and silently skipped
+  it. The regexes now require a `<source>` right after the tag.
 - **`picture { display: contents; }`** is load-bearing. `<picture>` is an inline
   wrapper, so without it any `.parent img { height: 100% }` rule stops
   resolving, the image collapses to zero height, and `loading="lazy"` then
