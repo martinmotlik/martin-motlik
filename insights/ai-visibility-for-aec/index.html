@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LL09W3RK8L"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LL09W3RK8L');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>Be the Source: Getting AEC Data Ready for AI Search | Martin Motlík</title>
+    <meta name="description" content="How AEC companies can make product data easy for AI search to find, read and verify: lessons from localization, a load path for facts and practical checks.">
+    <meta name="author" content="Martin Motlík">
+    <link rel="canonical" href="https://martinmotlik.com/insights/ai-visibility-for-aec/">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Martin Motlík">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Be the source: getting AEC data ready for AI search">
+    <meta property="og:description" content="How AEC companies can make product data easy for AI search to find, read and verify: lessons from localization, a load path for facts and practical checks.">
+    <meta property="og:url" content="https://martinmotlik.com/insights/ai-visibility-for-aec/">
+    <meta property="og:image" content="https://martinmotlik.com/assets/img/ai-search-hero-og-1200.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:alt" content="Martin Motlík working on a laptop, surrounded by the icons of AI assistants">
+    <meta property="article:published_time" content="2026-10-06">
+    <meta property="article:modified_time" content="2026-10-06">
+    <meta property="article:author" content="https://martinmotlik.com/#person">
+    <meta property="article:section" content="AI in AEC">
+    <meta property="article:tag" content="AI search">
+    <meta property="article:tag" content="Generative engine optimization">
+    <meta property="article:tag" content="Technical SEO">
+    <meta property="article:tag" content="AEC marketing">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@martinmotlik">
+    <meta name="twitter:creator" content="@martinmotlik">
+    <meta name="twitter:title" content="Be the source: getting AEC data ready for AI search">
+    <meta name="twitter:description" content="How AEC companies can make product data easy for AI search to find, read and verify: lessons from localization, a load path for facts and practical checks.">
+    <meta name="twitter:image" content="https://martinmotlik.com/assets/img/ai-search-hero-og-1200.jpg">
+    <meta name="twitter:image:alt" content="Martin Motlík working on a laptop, surrounded by the icons of AI assistants">
+
+    <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Preload only AVIF: `type` filters out formats the browser cannot decode, so a
+         second JPEG link would make modern browsers fetch both copies of the LCP image. -->
+    <link rel="preload" as="image" type="image/avif"
+          href="/assets/img/ai-search-hero-1280.avif"
+          imagesrcset="/assets/img/ai-search-hero-900.avif 900w, /assets/img/ai-search-hero-1280.avif 1280w, /assets/img/ai-search-hero-1672.avif 1672w"
+          imagesizes="(min-width: 1128px) 1032px, calc(100vw - 48px)">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechArticle",
+          "@id": "https://martinmotlik.com/insights/ai-visibility-for-aec/#article",
+          "headline": "Be the source: getting AEC data ready for AI search",
+          "description": "How AEC companies can make product data easy for AI search to find, read and verify: lessons from localization, a load path for facts and practical checks.",
+          "inLanguage": "en-US",
+          "datePublished": "2026-10-06",
+          "dateModified": "2026-10-06",
+          "author": {
+            "@id": "https://martinmotlik.com/#person"
+          },
+          "publisher": {
+            "@id": "https://martinmotlik.com/#person"
+          },
+          "mainEntityOfPage": "https://martinmotlik.com/insights/ai-visibility-for-aec/",
+          "image": [
+            "https://martinmotlik.com/assets/img/ai-search-hero-1672.jpg",
+            "https://martinmotlik.com/assets/img/ai-search-hero-og-1200.jpg"
+          ],
+          "isPartOf": {
+            "@id": "https://martinmotlik.com/insights/#blog"
+          },
+          "articleSection": "AI in AEC",
+          "keywords": [
+            "generative engine optimization",
+            "GEO",
+            "AI search",
+            "AEC marketing",
+            "engineering software",
+            "technical SEO",
+            "llms.txt",
+            "structured data"
+          ],
+          "about": [
+            {
+              "@type": "Thing",
+              "name": "Generative engine optimization"
+            },
+            {
+              "@type": "Thing",
+              "name": "Architecture, engineering and construction industry"
+            }
+          ],
+          "wordCount": 1928,
+          "audio": {
+            "@type": "AudioObject",
+            "name": "Be the source — narrated by Martin Motlík",
+            "contentUrl": "https://martinmotlik.com/assets/audio/ai-visibility-for-aec.m4a",
+            "encodingFormat": "audio/mp4",
+            "duration": "PT8M53S",
+            "inLanguage": "en-US"
+          },
+          "citation": [
+            {
+              "@type": "CreativeWork",
+              "name": "AI Overviews and AI Mode usage",
+              "description": "Google I/O, May 2026",
+              "publisher": {
+                "@type": "Organization",
+                "name": "Google"
+              }
+            },
+            {
+              "@type": "CreativeWork",
+              "name": "The rise of the AI crawler",
+              "url": "https://vercel.com/blog/the-rise-of-the-ai-crawler",
+              "publisher": {
+                "@type": "Organization",
+                "name": "Vercel"
+              },
+              "description": "Crawl data from Vercel and MERJ"
+            },
+            {
+              "@type": "CreativeWork",
+              "name": "How Google crawls locale-adaptive pages",
+              "url": "https://developers.google.com/search/docs/specialty/international/locale-adaptive-pages",
+              "publisher": {
+                "@type": "Organization",
+                "name": "Google Search Central"
+              }
+            }
+          ]
+        },
+        {
+          "@type": "Person",
+          "@id": "https://martinmotlik.com/#person",
+          "name": "Martin Motlík",
+          "url": "https://martinmotlik.com/",
+          "jobTitle": "AEC Digital Strategist & Web Lead",
+          "sameAs": [
+            "https://www.linkedin.com/in/martin-motl%C3%ADk-3b1b47233",
+            "https://x.com/martinmotlik"
+          ],
+          "image": "https://martinmotlik.com/assets/img/portrait-card-720.jpg",
+          "description": "Independent AEC digital strategist and Head of Web Content at Dlubal Software, writing about AI, BIM and engineering-software marketing.",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Dlubal Software",
+            "url": "https://www.dlubal.com"
+          },
+          "knowsAbout": [
+            "AEC marketing",
+            "Engineering software",
+            "Structural engineering software",
+            "Content localization",
+            "Technical SEO",
+            "Generative engine optimization",
+            "BIM",
+            "AI adoption in AEC"
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://martinmotlik.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Insights",
+              "item": "https://martinmotlik.com/insights/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Be the source"
+            }
+          ]
+        }
+      ]
+    }
+  </script>
+
+    <style>
+        :root {
+            --bg:        #ffffff;
+            --bg-alt:    #f5f5f7;
+            --text:      #1d1d1f;
+            --muted:     #6e6e73;
+            --faint:     #98989d;
+            --accent:    #1a56db;
+            --border:    #e5e5ea;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            padding-top: var(--nav-h);
+            font-size: 0.875rem;
+            line-height: 1.65;
+        }
+        @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .progress div { transition: none; } }
+
+        /* ── NAV ── */
+        :root { --nav-h: 60px; --container: 1200px; --r-sm: 6px; --r-md: 10px; --r-lg: 16px; --r-pill: 999px; }
+        .nav {
+          position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+          height: var(--nav-h);
+          background: rgba(255,255,255,0.92);
+          border-bottom: 1px solid rgba(0,0,0,0.08);
+          backdrop-filter: blur(16px) saturate(180%);
+          -webkit-backdrop-filter: blur(16px) saturate(180%);
+        }
+        .nav-inner {
+          max-width: 1060px; margin: 0 auto; padding: 0 24px;
+          height: 100%; display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-logo {
+          display: flex; align-items: center; gap: 9px;
+          font-size: 14px; font-weight: 700; color: var(--text, #09090b);
+          text-decoration: none; letter-spacing: -0.01em;
+        }
+        .nav-logo-mark { width: 28px; height: 28px; flex-shrink: 0; display: block; }
+        .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; margin: 0; padding: 0; }
+        .nav-links a {
+          font-size: 13.5px; font-weight: 500; color: var(--muted, #71717a);
+          text-decoration: none; transition: color 0.15s;
+        }
+        .nav-links a:hover { color: var(--text, #09090b); }
+        .nav-links a.active { color: var(--accent, #1A56DB); font-weight: 600; }
+        .lang-group {
+          display: flex; gap: 2px;
+          background: var(--bg-alt, #f4f4f5); border-radius: 6px; padding: 3px;
+        }
+        .lang-btn {
+          font-size: 11.5px; font-weight: 600; padding: 4px 9px; border-radius: 5px;
+          border: none; background: transparent; color: var(--muted, #71717a);
+          cursor: pointer; letter-spacing: 0.03em; transition: background 0.12s, color 0.12s;
+          font-family: inherit;
+        }
+        .lang-btn.active { background: white; color: var(--text, #09090b); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .nav-hamburger {
+          display: none; flex-direction: column; gap: 5px;
+          background: none; border: none; cursor: pointer; padding: 6px;
+        }
+        .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--text, #09090b); border-radius: 2px; }
+        .nav-drawer {
+          display: none; position: fixed; top: var(--nav-h); left: 0; right: 0;
+          background: white; border-bottom: 1px solid var(--border, #e4e4e7);
+          padding: 16px 24px 24px; z-index: 99; flex-direction: column;
+          box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+        .nav-drawer.open { display: flex; }
+        .nav-drawer a {
+          font-size: 16px; font-weight: 500; color: var(--text, #09090b); text-decoration: none;
+          padding: 13px 0; border-bottom: 1px solid var(--border, #e4e4e7);
+        }
+        .nav-drawer a:last-child { border-bottom: none; }
+        .nav-drawer a.active { color: var(--accent, #1A56DB); }
+        .nav-drawer-lang { display: flex; gap: 6px; padding-top: 16px; margin-top: 4px; border-top: 1px solid var(--border, #E6E5E1); }
+        .nav-drawer .lang-btn { font-size: 11.5px; font-weight: 600; padding: 4px 9px; border-radius: 5px; border: none; background: transparent; color: #717171; cursor: pointer; letter-spacing: 0.03em; }
+        .nav-drawer .lang-btn.active { background: #0A1628; color: white; }
+        @media (max-width: 767px) {
+          .nav-inner { padding: 0 20px; }
+          .nav-links { display: none; }
+          .lang-group { display: none; }
+          .nav-hamburger { display: flex; }
+        }
+        .footer { border-top: 1px solid #e4e4e7; padding: 26px 0; }
+        .footer-inner { max-width: 1060px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+        .footer-logo { display: flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 700; color: #09090b; text-decoration: none; }
+        .footer-info { font-size: 11.5px; color: #71717a; }
+        .footer-info a { color: inherit; text-decoration: none; }
+        .footer-info a:hover { color: #09090b; }
+        .footer-sep { margin: 0 10px; opacity: 0.4; }
+        @media (max-width: 767px) {
+            .footer-inner { padding: 0 20px; flex-direction: column; align-items: flex-start; gap: 10px; }
+            .footer-info { font-size: 11px; line-height: 1.8; }
+            .footer-sep { display: none; }
+        }
+        /* ── INSIGHTS (light) ─────────────────────────────────────────────────────
+   Palette from the Insights Light design. The nav and footer above/below keep
+   the site's own tokens so they stay identical to every other page. */
+:root{
+  --ink:#1C2B33; --body-ink:#27272A;
+  --m1:#4B5563; --m2:#65676B; --m3:#71717A;
+  /* Same blue as the rest of the site; the two tints below are derived from it. */
+  --blue:var(--accent); --blue-hi:#356FEF; --blue-bg:#E6EDFD;
+  --s1:#F4F6F9; --s2:#F0F2F5; --s3:#E9EEF5;
+  --hair:rgba(28,43,51,.06);
+  --lift:0 1px 2px rgba(28,43,51,.06),0 24px 60px -24px rgba(28,43,51,.18);
+  --lift-hi:0 1px 2px rgba(28,43,51,.06),0 36px 80px -28px rgba(28,43,51,.26);
+  --card:0 1px 2px rgba(28,43,51,.06);
+  --card-hi:0 30px 60px -28px rgba(28,43,51,.25);
+  --ease:cubic-bezier(.32,.72,0,1);
+}
+/* The picture element is only a format switch, not a layout box — tools/README.md. */
+picture{display:contents}
+img{display:block;max-width:100%}
+.ins{color:var(--ink);font-size:14px;line-height:1.65}
+.ins a{color:var(--blue);text-decoration:none}
+.ins a:hover{color:var(--ink)}
+/* Whole-card links are surfaces, not inline links: their text keeps the ink colour. */
+.ins a.featured,.ins a.card,.ins a.featured:hover,.ins a.card:hover{color:var(--ink)}
+.ins :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+/* Soft colour wash behind the white hero. */
+.glow{position:absolute;inset:0;pointer-events:none;background:
+  radial-gradient(55% 50% at 88% 8%,rgba(26,86,219,.13),transparent 70%),
+  radial-gradient(45% 45% at 8% 25%,rgba(168,85,247,.09),transparent 70%),
+  radial-gradient(50% 40% at 55% 100%,rgba(16,185,129,.07),transparent 70%)}
+        /* ── READING PROGRESS ── */
+.progress{position:fixed;top:var(--nav-h);left:0;right:0;height:3px;z-index:101;pointer-events:none}
+.progress div{height:100%;width:0;background:var(--blue);transition:width .1s linear}
+
+/* ── HERO ── */
+.hero{position:relative;background:#fff;overflow:hidden;padding:56px 0 0}
+.hero-in{position:relative}
+.crumbs{display:flex;gap:8px;font-size:13px;color:var(--m2);flex-wrap:wrap}
+.crumbs a{color:var(--m2)}.crumbs a:hover{color:var(--ink)}
+.head{max-width:820px}
+.cat{margin-top:28px;display:inline-flex;white-space:nowrap;padding:5px 11px;border-radius:999px;background:var(--blue-bg);color:var(--blue);font-weight:600;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.hero h1{margin:18px 0 0;font-size:clamp(36px,5.2vw,58px);line-height:1.04;letter-spacing:-.035em;font-weight:700;color:var(--ink);text-wrap:balance}
+.hero .dek{margin:20px 0 0;font-size:19px;line-height:1.55;color:var(--m1);text-wrap:pretty}
+.byline{margin-top:32px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--m2)}
+.avatar{width:40px;height:40px;border-radius:50%;overflow:hidden;flex:none;background:var(--s3)}
+.avatar img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.byline .who{color:var(--ink);font-weight:600;font-size:14px}
+.cover{margin-top:48px;aspect-ratio:16/9;border-radius:28px;overflow:hidden;background:var(--s3)}
+.cover img{width:100%;height:100%;object-fit:cover}
+
+/* ── VOICE-OVER ─────────────────────────────────────────────────────────────
+   The whole block stays hidden until the audio file reports its duration, so a
+   visitor never sees a control that cannot play anything. */
+.vo-root[hidden]{display:none}
+.listen{font:inherit;font-size:13px;font-weight:700;height:40px;padding:0 18px 0 6px;border-radius:999px;cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:10px;border:0;background:var(--blue);color:#fff;box-shadow:0 0 0 0 rgba(26,86,219,.22),0 10px 24px -10px rgba(26,86,219,.7);transition:transform .5s var(--ease),box-shadow .6s var(--ease),background .3s ease}
+.listen:hover{transform:translateY(-1px) scale(1.02);background:var(--blue-hi)}
+.listen:active{transform:scale(.96)}
+.listen.on{box-shadow:0 0 0 6px rgba(26,86,219,.22),0 10px 24px -10px rgba(26,86,219,.7)}
+
+.vo{margin-top:20px;max-width:600px;padding:8px 16px 8px 8px;border-radius:999px;background:#fff;box-shadow:0 1px 2px rgba(28,43,51,.06),0 14px 36px -16px rgba(28,43,51,.22);display:flex;align-items:center;gap:14px}
+.vo-play{width:40px;height:40px;flex:none;border-radius:50%;border:0;cursor:pointer;background:var(--blue);display:grid;place-items:center;transition:background .3s ease,transform .4s var(--ease)}
+.vo-play:hover{background:var(--blue-hi);transform:scale(1.05)}
+.vo-play:active{transform:scale(.94)}
+.ic-play{width:0;height:0;border-left:11px solid #fff;border-top:7px solid transparent;border-bottom:7px solid transparent;margin-left:3px}
+.ic-pause{display:flex;gap:3px}
+.ic-pause i{width:3px;height:13px;border-radius:2px;background:#fff}
+.wave{flex:1 1 120px;min-width:60px;height:22px;display:flex;align-items:center;gap:2px;cursor:pointer;border:0;background:none;padding:0}
+.wave i{flex:1;min-width:1px;border-radius:1px;background:rgba(28,43,51,.12);transition:height .35s var(--ease),background .4s ease}
+.wave i.done{background:var(--blue)}
+.wave i.at{background:#7DA2F5}
+.vo-time{flex:none;min-width:40px;text-align:right;white-space:nowrap;font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:11px;color:var(--m2)}
+.vo-rate{flex:none;font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:11px;height:26px;padding:0 8px;border-radius:999px;border:0;background:transparent;color:var(--m2);cursor:pointer}
+.vo-rate:hover{background:var(--s2);color:var(--ink)}
+.vo-x{flex:none;font:inherit;width:26px;height:26px;border-radius:50%;border:0;background:transparent;color:var(--m2);cursor:pointer;font-size:15px;line-height:1}
+.vo-x:hover{color:var(--ink)}
+
+.mini{position:fixed;left:50%;bottom:20px;transform:translate(-50%,140%) scale(.96);opacity:0;pointer-events:none;transition:transform .7s var(--ease),opacity .45s var(--ease);z-index:102;width:min(560px,calc(100% - 32px));padding:10px 12px 10px 10px;border-radius:999px;background:rgba(255,255,255,.82);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border:1px solid rgba(28,43,51,.06);box-shadow:0 24px 60px -20px rgba(28,43,51,.35);color:var(--ink);display:flex;align-items:center;gap:12px;overflow:hidden}
+.mini.show{transform:translate(-50%,0) scale(1);opacity:1;pointer-events:auto}
+.mini .vo-play{width:44px;height:44px}
+.mini .txt{flex:1;min-width:0}
+.mini .st{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mini .ti{margin-top:2px;font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mini .vo-rate{background:var(--s2);color:var(--ink);height:30px;padding:0 10px}
+.mini .vo-time{font-size:11px}
+.mini .bar{position:absolute;left:0;right:0;bottom:0;height:2px;background:rgba(28,43,51,.08)}
+.mini .bar div{height:100%;width:0;background:var(--blue)}
+@media (prefers-reduced-motion:reduce){
+  .listen,.mini,.vo-play,.wave i{transition:none}
+}
+
+/* ── BODY ── */
+.body{max-width:1080px;margin:0 auto;padding:64px 24px 40px;display:flex;flex-wrap:wrap;gap:56px;align-items:flex-start}
+.toc{position:sticky;top:96px;flex:0 0 200px}
+.toc .lbl{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--m3)}
+.toc nav{margin-top:14px;display:flex;flex-direction:column;border-left:1px solid #E4E4E7}
+.toc nav a{padding:7px 0 7px 14px;margin-left:-1px;font-size:13px;line-height:1.4;border-left:2px solid transparent;color:var(--m3)}
+.toc nav a.on{border-left-color:var(--blue);color:var(--blue);font-weight:600}
+.share-grid{margin-top:12px;display:grid;grid-template-columns:repeat(4,40px);gap:8px}
+.sbtn{width:40px;height:40px;border-radius:50%;border:0;cursor:pointer;background:var(--s2);color:var(--ink);display:grid;place-items:center;transition:background .3s ease,color .3s ease,transform .4s var(--ease)}
+.sbtn:hover{background:var(--ink);color:#fff;transform:translateY(-2px)}
+.sbtn:active{transform:scale(.92)}
+/* They are links now: keep them out of the inline-link colour and underline. */
+.ins a.sbtn,article a.sbtn{color:var(--ink);text-decoration:none}
+.ins a.sbtn:hover{color:#fff}
+.sbtn:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.pbtn[hidden]{display:none}
+.share-acts{margin-top:10px;display:flex;flex-direction:column;gap:8px;max-width:184px}
+.pbtn{font:inherit;font-size:12px;font-weight:600;height:36px;padding:0 14px;white-space:nowrap;border-radius:999px;border:0;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:background .3s,color .3s}
+.pbtn-soft{background:var(--s2);color:var(--ink)}
+.pbtn-soft.done{background:#E7F8EE;color:#15803D}
+.pbtn.fail{background:#FEECEC;color:#B91C1C}
+.pbtn-blue{background:var(--blue);color:#fff}
+.pbtn-blue:hover{background:var(--blue-hi)}
+@media (max-width:860px){.toc{position:static;flex-basis:100%}}
+
+article{flex:1 1 520px;min-width:0;max-width:700px;font-size:18px;line-height:1.75;color:var(--body-ink)}
+article p{text-wrap:pretty}
+article .lead{margin:0;font-size:21px;line-height:1.6;color:var(--ink);font-weight:500}
+article h2{margin:56px 0 0;font-size:30px;line-height:1.2;letter-spacing:-.025em;color:var(--ink);font-weight:700}
+article h3{margin:40px 0 0;font-size:21px;line-height:1.3;letter-spacing:-.015em;color:var(--ink);font-weight:700}
+article strong{color:var(--ink)}
+article a{text-decoration:underline;text-decoration-color:rgba(26,86,219,.35);text-underline-offset:3px}
+article ol,article ul{padding-left:22px;margin:20px 0 0;display:flex;flex-direction:column;gap:12px}
+article li{padding-left:6px}
+article code{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:.86em;background:var(--s1);padding:2px 6px;border-radius:6px;color:var(--ink)}
+pre{margin:16px 0 0;padding:18px 20px;border-radius:16px;background:var(--ink);color:#E4E4E7;overflow-x:auto;font:14px/1.6 ui-monospace,"SF Mono",Menlo,Consolas,monospace}
+pre code{background:none;padding:0;color:inherit;font-size:inherit}
+pre .c{color:#86EFAC}
+
+.quote{margin:44px 0;padding:0;border:0}
+.quote p{margin:0;font-size:28px;line-height:1.3;letter-spacing:-.02em;font-weight:700;color:var(--ink);text-wrap:balance}
+.quote span{display:block;margin-top:14px;width:40px;height:3px;background:var(--blue)}
+
+
+.takeaway{margin:44px 0;padding:28px 28px 26px;border-radius:24px;background:var(--blue-bg);color:var(--ink)}
+.takeaway .t{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.takeaway .t .dot{width:6px;height:6px;border-radius:50%;background:var(--blue);display:inline-block;flex:none}
+.takeaway p{margin:12px 0 0;font-size:17px;line-height:1.6;color:var(--ink)}
+
+
+.tags{margin-top:48px;padding-top:28px;border-top:1px solid #E4E4E7;display:flex;gap:8px;flex-wrap:wrap}
+.tags span{font-size:12px;font-weight:500;padding:6px 12px;border-radius:999px;background:var(--s1)}
+.author{margin-top:32px;padding:24px;border-radius:24px;background:var(--s1);display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.author .ph{width:64px;height:64px;border-radius:50%;flex:none;overflow:hidden;background:var(--s3)}
+.author .ph img{width:100%;height:100%;object-fit:cover;object-position:center 20%;filter:grayscale(1)}
+.author .n{font-size:16px;font-weight:700;color:var(--ink)}
+.author .d{font-size:14px;line-height:1.55;color:#52525B;margin-top:4px}
+
+/* ── KEEP READING ── */
+.more{background:var(--s1);padding:56px 0 64px;margin-top:24px}
+.more .in{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;gap:16px 24px;flex-wrap:wrap}
+.more h2{margin:0;font-size:30px;letter-spacing:-.03em;font-weight:700;color:var(--ink)}
+.more p{margin:8px 0 0;font-size:15px;line-height:1.6;color:#52525B;max-width:520px}
+.more a.all{font-size:14px;font-weight:600;padding:12px 20px;border-radius:999px;background:var(--blue);color:#fff;white-space:nowrap}
+.more a.all:hover{background:var(--blue-hi);color:#fff}
+/* When the second article ships, drop a `.grid` of cards from /insights/ in here. */
+@media (max-width:620px){.hero h1{font-size:clamp(30px,8vw,40px)}.body{padding:40px 24px 24px;gap:36px}}
+/* ── ARTICLE KIT v2 ─────────────────────────────────────────────────────────
+   From "Insights Article Kit": text rhythm, the components the first real
+   article needed, and the Listen button that turns into the player.
+   Kit blues are mapped to the site accent (--blue); the new tints below are
+   derived from it the same way as --blue-hi / --blue-bg. */
+:root{--code-ink:#16409E;--on-dark-blue:#7DA2F5;--on-dark-label:#9AB7F7;--rule:#E6E9EE;--art:#33414A}
+
+/* H1 subtitle: the topic in the heading itself, set smaller under the title */
+.hero h1 .h1-sub{display:block;margin-top:10px;font-size:clamp(20px,2.6vw,28px);line-height:1.2;letter-spacing:-.02em;font-weight:600;color:var(--m1)}
+.hero h1 .h1-sub::first-letter{text-transform:uppercase}
+.sr{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* 01 · Text rhythm. The site-wide reset (* { margin:0 }) had stripped every
+   paragraph margin, so paragraphs ran together and H2s sat on the text. */
+article{color:var(--art)}
+article p{margin:0 0 1.1em}
+article .lead{margin:0 0 1.1em}
+article h2{margin:64px 0 16px}
+article h3{margin:40px 0 10px}
+article a{text-decoration-thickness:1.5px}
+.ins article a:not([class]):hover{color:var(--blue);text-decoration-color:var(--blue)}
+article code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.84em;padding:2px 7px;border-radius:6px;background:var(--blue-bg);color:var(--code-ink)}
+
+/* 05 · Numbered list with a bold lead-in on its own line */
+article ol.steps{list-style:none;padding:0;margin:8px 0 1.4em;display:flex;flex-direction:column;gap:20px;counter-reset:step}
+article ol.steps>li{counter-increment:step;position:relative;padding:0 0 0 44px;font-size:17px;line-height:1.65}
+article ol.steps>li::before{content:counter(step);position:absolute;left:0;top:2px;width:28px;height:28px;border-radius:50%;background:var(--blue-bg);color:var(--blue);font-size:13px;font-weight:700;display:grid;place-items:center;font-variant-numeric:tabular-nums}
+article ol.steps .lead-in{display:block;font-weight:700;color:var(--ink)}
+
+/* 03 · Terminal command. "$ " is drawn by CSS, so copying or crawling the
+   command never picks it up. */
+.term{margin-top:16px;border-radius:16px;background:var(--ink);overflow:hidden}
+.term-row{display:flex;align-items:center;gap:12px;padding:6px 6px 6px 16px}
+article code.term-cmd{flex:1;min-width:0;overflow-x:auto;white-space:pre;font:13.5px/2.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#fff;background:none;padding:0;border-radius:0}
+.term-cmd::before{content:"$ ";color:var(--on-dark-blue)}
+.term-cmd .s{color:#FDE68A}
+.term-out{display:flex;align-items:center;gap:10px;padding:10px 16px;background:rgba(255,255,255,.04);border-top:1px solid rgba(255,255,255,.06);font-size:12.5px;line-height:1.5;color:rgba(255,255,255,.65)}
+.term-out i{width:6px;height:6px;border-radius:50%;background:#F59E0B;flex:none}
+
+/* 02 · Code block with file name. Line numbers come from a CSS counter, so
+   they are neither selectable nor part of the text crawlers read. */
+.cb-copy{flex:none;font-family:Inter,system-ui,sans-serif;font-size:12px;font-weight:600;height:32px;padding:0 12px;border-radius:999px;border:0;cursor:pointer;white-space:nowrap;background:rgba(255,255,255,.1);color:#fff;transition:background .3s,color .3s}
+.cb-copy:hover{background:rgba(255,255,255,.18)}
+.cb-copy.done{background:#16A34A}
+.cb-copy.fail{background:#B91C1C}
+.codeblock{max-width:740px;margin:24px clamp(-20px,-2vw,0px) 1.4em;border-radius:20px;overflow:hidden;background:var(--ink);box-shadow:0 24px 50px -30px rgba(28,43,51,.6)}
+.cb-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 10px 10px 18px;border-bottom:1px solid rgba(255,255,255,.08)}
+.cb-meta{display:flex;align-items:center;gap:10px;min-width:0}
+.cb-name{font-size:13px;color:#fff;white-space:nowrap}
+.cb-sub{font-size:11px;color:rgba(255,255,255,.5);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+pre.cb-body{margin:0;padding:16px 0;border-radius:0;background:none;overflow-x:auto;font:14px/1.75 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#fff;white-space:pre-wrap;word-break:break-word;counter-reset:ln}
+pre.cb-body code{display:block;background:none;padding:0;border-radius:0;color:inherit;font-size:inherit}
+.cb-body .l{display:block;position:relative;min-height:1.75em;padding:0 24px 0 48px;counter-increment:ln}
+.cb-body .l::before{content:counter(ln);position:absolute;left:0;width:32px;text-align:right;color:rgba(255,255,255,.25);user-select:none}
+.cb-body .c{color:rgba(255,255,255,.42)}
+.cb-body .k{color:var(--on-dark-blue)}
+.cb-body .u{color:#A7F3D0}
+
+/* 04 · Load path as a vertical structural member */
+.lp{margin:24px 0 1.4em}
+.lp-end{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;color:var(--ink)}
+.lp-ico{width:32px;height:32px;border-radius:10px;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:11px;flex:none}
+.lp-ico.ai{background:var(--blue);font-size:14px}
+article ol.lp-list{list-style:none;margin:0 0 0 15px;padding:6px 0;border-left:2px solid var(--rule);display:block}
+article ol.lp-list>li{position:relative;padding:14px 0 14px 32px}
+.lp-list>li::before{content:"";position:absolute;z-index:1;left:-9px;top:18px;width:16px;height:16px;box-sizing:border-box;border-radius:50%;background:#fff;border:2px solid var(--blue)}
+.lp-list>li::after{content:"";position:absolute;left:-2px;top:0;bottom:0;width:2px;background:var(--blue)}
+.lp-list>li.weak::before{border-color:#F59E0B}
+.lp-list>li.weak::after{background:#F59E0B}
+.lp-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px}
+.lp-n{font-size:12px;color:var(--m2);font-variant-numeric:tabular-nums}
+.lp-t{font-size:18px;font-weight:700;letter-spacing:-.015em;color:var(--ink)}
+.lp-flag{font-size:11px;font-weight:600;white-space:nowrap;padding:3px 9px;border-radius:999px;background:#FFF1E6;color:#B45309}
+article p.lp-d{margin:4px 0 0;font-size:15px;line-height:1.6;color:var(--m1);max-width:520px}
+
+
+article a.author-link{color:inherit;text-decoration:none}
+.ins article a.author-link:hover{color:var(--blue)}
+
+/* 07 · Sources and citation markers */
+article a.cite{font-size:.62em;font-weight:700;line-height:0;vertical-align:super;margin-left:2px;padding:1px 6px;border-radius:999px;background:var(--blue-bg);color:var(--blue);text-decoration:none}
+.ins article a.cite:hover{background:var(--blue);color:#fff}
+.sources{margin:48px 0 0;padding-top:20px;border-top:1px solid var(--rule)}
+article h2.src-h{margin:0;font-size:11px;line-height:1.4;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--m2)}
+article ol.src-list{list-style:none;padding:0;margin:12px 0 0;display:flex;flex-direction:column;gap:4px}
+article ol.src-list>li{padding:0;margin:0 -12px;border-radius:12px;font-size:14px;line-height:1.5}
+.src-row,article .src-list a{display:flex;gap:14px;align-items:baseline;padding:10px 12px;border-radius:12px;color:var(--art);text-decoration:none;transition:background .4s}
+.ins article .src-list a:hover{background:var(--s1);color:var(--ink)}
+.src-n{flex:none;font-size:12px;color:var(--blue);font-variant-numeric:tabular-nums}
+.src-t{flex:1}
+.src-t strong{font-weight:600}
+.src-arr{flex:none;color:var(--m2)}
+.src-list>li:target{animation:srcflash 1.8s ease-out}
+@keyframes srcflash{0%,45%{background:var(--blue-bg)}100%{background:transparent}}
+
+/* 08 · Closing call to action */
+.closing{position:relative;overflow:hidden;margin:48px 0 0;padding:36px;border-radius:24px;background:var(--ink);color:#fff}
+.cl-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 80% at 100% 0%,rgba(26,86,219,.45),transparent 70%),radial-gradient(40% 60% at 0% 100%,rgba(168,85,247,.22),transparent 70%)}
+.cl-in{position:relative}
+.cl-k{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--on-dark-label)}
+article p.cl-t{margin:10px 0 0;font-weight:700;font-size:28px;line-height:1.15;letter-spacing:-.025em;max-width:480px;color:#fff;text-wrap:balance}
+article p.cl-d{margin:12px 0 0;font-size:15px;line-height:1.6;color:rgba(255,255,255,.78);max-width:480px}
+.cl-acts{margin-top:24px;display:flex;flex-wrap:wrap;gap:10px}
+article a.cl-btn,article a.cl-btn2{height:44px;display:inline-flex;align-items:center;border-radius:999px;font-size:14px;font-weight:600;white-space:nowrap;text-decoration:none}
+article a.cl-btn{padding:0 20px;background:#fff;color:var(--ink);transition:transform .4s var(--ease)}
+.ins article a.cl-btn:hover{transform:translateY(-1px);color:var(--ink)}
+article a.cl-btn2{padding:0 18px;background:rgba(255,255,255,.12);color:#fff}
+.ins article a.cl-btn2:hover{background:rgba(255,255,255,.2);color:#fff}
+@media (max-width:620px){.closing{padding:28px 22px}article p.cl-t{font-size:24px}}
+
+/* 09 · Listen button turns into the player; one control, not two */
+.listen .pl{width:28px;height:28px;flex:none;border-radius:50%;background:#fff;display:grid;place-items:center}
+.listen .pl i{width:0;height:0;border-left:9px solid var(--blue);border-top:6px solid transparent;border-bottom:6px solid transparent;margin-left:2px}
+.vo-root{display:contents}
+.byline .vo{flex:1 1 320px;min-width:0;height:48px;margin:0;max-width:none;padding:0 14px 0 6px;border-radius:999px;background:#fff;box-shadow:0 1px 2px rgba(28,43,51,.06),0 14px 36px -16px rgba(28,43,51,.25);display:flex;align-items:center;gap:12px}
+.byline [hidden]{display:none}
+.byline .vo .vo-play{width:36px;height:36px}
+.byline .wave{flex:1;min-width:40px;height:20px}
+.vo-time{font-family:inherit;font-variant-numeric:tabular-nums}
+.byline .vo-rate{font-family:inherit;font-variant-numeric:tabular-nums;height:auto;padding:3px 8px;background:var(--s2);color:var(--ink)}
+.mini .vo-rate{font-family:inherit;font-variant-numeric:tabular-nums}
+/* Share row for narrow screens: there the sidebar moves above the article,
+   so the end of the article repeats the same links (hidden on desktop). */
+.share-row{display:none}
+@media (max-width:860px){
+  .share-row{display:block;margin-top:40px}
+  .share-row .lbl{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--m3)}
+  .share-row .icons{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px}
+}
+.sbtn.done{background:#E7F8EE;color:#15803D}
+.sbtn.fail{background:#FEECEC;color:#B91C1C}
+body.vo-active{padding-bottom:96px}       /* room for the mini player above the footer */
+.byline .wave i{transform-origin:50% 50%}
+    </style>
+</head>
+<body>
+
+<nav class="nav" id="main-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <svg class="nav-logo-mark" viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="130" height="130" fill="#0A1628" rx="22"/><path d="M76.3592 57.857C75.4265 57.6937 74.717 57.1169 74.4236 56.2697C74.1135 55.3753 74.4325 54.4439 75.1177 53.76L100.357 28.5696L106.163 22.819C106.749 22.2385 107.518 21.8876 108.351 22.0458C109.412 22.2474 110.272 23.2579 110.273 24.4024L110.284 53.3836C110.036 55.8334 108.092 57.8366 105.589 57.8378L76.3579 57.8557L76.3592 57.857Z" fill="#FEFEFE"/><path d="M55.7679 56.6561C55.3584 57.3999 54.6387 57.8401 53.8081 57.8401L24.8525 57.8439C22.1667 57.8439 20.0269 55.7208 20.0257 53.021L20.0078 24.8589C20.0078 24.3256 20.0563 23.9033 20.2451 23.4554C20.5322 22.7766 21.1077 22.2714 21.715 22.0991C22.4882 21.8809 23.3494 22.0162 23.9083 22.5725L26.8888 25.5415L37.5364 36.1291L55.389 53.9511C56.0984 54.6592 56.2349 55.8101 55.7679 56.6573V56.6561Z" fill="#FEFEFE"/><path d="M81.9803 89.5551L77.6052 94.0131L72.5704 99.1296C71.921 99.7905 71.0329 100.038 70.1079 99.6961C69.4317 99.4447 68.7031 98.6702 68.7031 97.7605V68.6849C68.7031 66.6332 70.6731 64.4782 72.7542 64.4795L101.492 64.4973C102.35 64.4973 103.057 65.2718 103.31 65.8728C103.654 66.6919 103.501 67.6514 102.884 68.283L99.6377 71.6055L87.366 84.0776L81.9803 89.5551Z" fill="#FEFEFE"/><path d="M75.0723 104.606C75.2968 103.972 75.6018 103.617 76.0228 103.191L91.9641 87.0534L97.522 81.4304L106.326 72.5896C106.984 71.9274 107.856 71.6263 108.81 71.9848C109.414 72.2119 110.276 72.9736 110.276 73.8553L110.265 103.667C110.265 105.591 108.492 107.416 106.552 107.416H77.0487C75.6069 107.416 74.641 105.825 75.0723 104.606Z" fill="#FEFEFE"/><path d="M55.1655 106.234C54.7789 106.922 54.0121 107.436 53.1828 107.435L23.8354 107.424C22.326 107.424 21.0182 106.404 20.4313 105.133C20.2182 104.67 20.0166 104.24 20.0166 103.721L20 74.1515C20 73.2175 20.5461 72.3984 21.2734 72.0603C22.1104 71.6724 23.1222 71.7872 23.792 72.4596L31.4552 80.1687L36.2118 84.9572L46.608 95.4096L54.7522 103.652C55.436 104.344 55.6504 105.368 55.1643 106.233L55.1655 106.234Z" fill="#FEFEFE"/><path d="M54.5289 95.8494L49.9484 91.2005L37.276 78.3426L28.5462 69.5094C28.0384 68.9952 27.5497 68.5754 27.1605 67.9847C26.7076 67.2969 26.6221 66.4689 27.0202 65.6829C27.3111 65.11 27.958 64.4874 28.7937 64.4874L57.7723 64.4746C59.8942 64.7719 61.5184 66.5288 61.669 68.6737L61.6511 97.7875C61.6511 98.7075 60.8856 99.4832 60.2234 99.7116C59.269 100.041 58.4269 99.7499 57.7736 99.0953L54.5289 95.8481V95.8494Z" fill="#FEFEFE"/></svg>
+      Martin Motlík
+    </a>
+    <ul class="nav-links">
+      <li><a href="/references/">References</a></li>
+      <li><a href="/services/">Services</a></li>
+      <li><a href="/insights/" class="active" data-i18n="nav_insights">Insights</a></li>
+      <li><a href="/#about">About me</a></li>
+      <li><a href="/#bim">Areas of Practice</a></li>
+      <li><a href="/#dlubal">Dlubal</a></li>
+      <li><a href="/#ai-in-aec">AI in AEC</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <div class="lang-group">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="cs">CS</button>
+        <button class="lang-btn" data-lang="de">DE</button>
+      </div>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="nav-drawer" id="nav-drawer">
+  <a href="/references/">References</a>
+  <a href="/services/">Services</a>
+  <a href="/insights/" class="active" data-i18n="nav_insights">Insights</a>
+  <a href="/#about">About me</a>
+  <a href="/#bim">Areas of Practice</a>
+  <a href="/#dlubal">Dlubal</a>
+  <a href="/#ai-in-aec">AI in AEC</a>
+  <div class="nav-drawer-lang">
+    <button class="lang-btn active" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="cs">CS</button>
+    <button class="lang-btn" data-lang="de">DE</button>
+  </div>
+</div>
+
+<div class="progress" aria-hidden="true"><div id="bar"></div></div>
+
+<main class="ins">
+  <section class="hero">
+    <div class="glow" aria-hidden="true"></div>
+    <div class="wrap hero-in">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/insights/" data-i18n="nav_insights">Insights</a><span>/</span><span>AI in AEC</span></nav>
+      <div class="head">
+        <div class="cat">AI in AEC</div>
+        <h1>Be the source<span class="h1-sub"><span class="sr">: </span>getting AEC data ready for AI search</span></h1>
+        <p class="dek">Working on engineering-software websites across different markets has shaped how I approach AI visibility. This article brings together lessons from localization and the practical checks I use to make technical content easier to find, interpret and verify.</p>
+
+        <div class="byline" id="byline">
+          <span class="avatar">
+            <picture>
+              <source type="image/avif" sizes="40px" srcset="/assets/img/portrait-card-270.avif 270w, /assets/img/portrait-card-360.avif 360w">
+              <img src="/assets/img/portrait-card-270.jpg" sizes="40px" srcset="/assets/img/portrait-card-270.jpg 270w, /assets/img/portrait-card-360.jpg 360w" alt="Martin Motl&iacute;k" width="270" height="360" decoding="async">
+            </picture>
+          </span>
+          <div><div class="who">Martin Motl&iacute;k</div><div id="vo-role">AEC Digital Strategist &amp; Web Lead</div></div>
+
+          <!-- Voice-over. Hidden until the audio at data-src reports a duration.
+               The Listen button and the player occupy the same slot: opening the
+               player replaces the button. -->
+          <div class="vo-root" id="vo" data-src="/assets/audio/ai-visibility-for-aec.m4a" hidden>
+            <button class="listen" id="vo-listen" type="button">
+              <span class="pl" aria-hidden="true"><i></i></span>
+              <span id="vo-listen-label">Listen</span>
+            </button>
+            <div class="vo" id="vo-player" role="group" aria-label="Voice-over player" hidden>
+              <button class="vo-play" id="vo-play" type="button" aria-label="Pause"><span class="ic-play"></span></button>
+              <button class="wave" id="vo-wave" type="button" aria-label="Seek within the voice-over"></button>
+              <span class="vo-time" id="vo-time">0:00</span>
+              <button class="vo-rate" id="vo-rate" type="button" aria-label="Playback speed">1&times;</button>
+            </div>
+          </div>
+
+          <span id="vo-meta"><time datetime="2026-10-06">Oct 6, 2026</time> &middot; <span data-i18n="read_8">8 min read</span></span>
+        </div>
+      </div>
+
+      <div class="cover">
+        <picture>
+          <source type="image/avif" sizes="(min-width: 1128px) 1032px, calc(100vw - 48px)"
+                  srcset="/assets/img/ai-search-hero-600.avif 600w,
+                          /assets/img/ai-search-hero-900.avif 900w,
+                          /assets/img/ai-search-hero-1280.avif 1280w,
+                          /assets/img/ai-search-hero-1672.avif 1672w">
+          <img src="/assets/img/ai-search-hero-1280.jpg" sizes="(min-width: 1128px) 1032px, calc(100vw - 48px)"
+               srcset="/assets/img/ai-search-hero-600.jpg 600w,
+                       /assets/img/ai-search-hero-900.jpg 900w,
+                       /assets/img/ai-search-hero-1280.jpg 1280w,
+                       /assets/img/ai-search-hero-1672.jpg 1672w"
+               width="1672" height="941"
+               alt="Martin Motl&iacute;k working on a laptop outdoors, surrounded by the icons of AI assistants and search engines"
+               fetchpriority="high" decoding="async">
+        </picture>
+      </div>
+    </div>
+  </section>
+
+  <div class="body">
+    <aside class="toc">
+      <div class="lbl" data-i18n="toc_label">On this page</div>
+      <nav id="toc" aria-label="On this page">
+        <a href="#ai-search">Google is already AI search</a>
+        <a href="#localization">What localization taught me</a>
+        <a href="#load-path">How a fact reaches an answer</a>
+        <a href="#rules">My rules for AI-ready data</a>
+        <a href="#try">Try it this week</a>
+        <a href="#kit">Copy-paste kit</a>
+        <a href="#start">Where I would start</a>
+      </nav>
+      <div class="lbl" style="margin-top:28px" data-i18n="share_label">Share</div>
+      <div class="share-grid" data-share>
+        <a class="sbtn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F" data-net="LinkedIn" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="Share on LinkedIn (opens in a new window)"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"></path></svg></a>
+        <a class="sbtn" href="https://x.com/intent/tweet?url=https%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F&amp;text=Be%20the%20source%3A%20getting%20AEC%20data%20ready%20for%20AI%20search&amp;via=martinmotlik" data-net="X" target="_blank" rel="noopener noreferrer" title="X" aria-label="Share on X (opens in a new window)"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.67l7.73-8.84L1.25 2.25h6.83l4.71 6.23 5.45-6.23zm-1.16 17.52h1.83L7.08 4.13H5.12z"></path></svg></a>
+        <a class="sbtn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F" data-net="Facebook" target="_blank" rel="noopener noreferrer" title="Facebook" aria-label="Share on Facebook (opens in a new window)"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"></path></svg></a>
+        <a class="sbtn" href="https://wa.me/?text=Be%20the%20source%3A%20getting%20AEC%20data%20ready%20for%20AI%20search%20https%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F" data-net="WhatsApp" target="_blank" rel="noopener noreferrer" title="WhatsApp" aria-label="Share on WhatsApp (opens in a new window)"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.05 21.8a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88zM20.46 3.49A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.42z"></path></svg></a>
+        <a class="sbtn" href="https://www.reddit.com/submit?url=https%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F&amp;title=Be%20the%20source%3A%20getting%20AEC%20data%20ready%20for%20AI%20search" data-net="Reddit" target="_blank" rel="noopener noreferrer" title="Reddit" aria-label="Share on Reddit (opens in a new window)"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 11.78a2.65 2.65 0 0 0-4.5-1.9 13 13 0 0 0-7.04-2.22l1.2-5.62 3.9.83a1.88 1.88 0 1 0 .2-.92l-4.37-.93a.47.47 0 0 0-.56.36l-1.34 6.28a13.05 13.05 0 0 0-7.13 2.22 2.65 2.65 0 1 0-2.92 4.33 5.2 5.2 0 0 0 0 .8c0 4.04 4.7 7.32 10.5 7.32s10.5-3.28 10.5-7.32a5.2 5.2 0 0 0 0-.8A2.65 2.65 0 0 0 24 11.78zM6 13.66a1.88 1.88 0 1 1 1.88 1.88A1.88 1.88 0 0 1 6 13.66zm10.48 4.96c-1.28 1.28-3.73 1.38-4.45 1.38s-3.18-.1-4.46-1.38a.49.49 0 0 1 .69-.69c.81.81 2.53 1.1 3.77 1.1s2.96-.29 3.77-1.1a.49.49 0 0 1 .68.69zm-.34-3.08a1.88 1.88 0 1 1 1.88-1.88 1.88 1.88 0 0 1-1.88 1.88z"></path></svg></a>
+        <a class="sbtn" href="mailto:?subject=Be%20the%20source%3A%20getting%20AEC%20data%20ready%20for%20AI%20search&amp;body=I%20thought%20this%20was%20worth%20your%20time%3A%0A%0ABe%20the%20source%3A%20getting%20AEC%20data%20ready%20for%20AI%20search%0Ahttps%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F" data-net="Email" title="Email" aria-label="Share on Email (opens your email app)"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1 3.2V17h16V8.2l-8 5.3-8-5.3zM5.6 7l6.4 4.24L18.4 7H5.6z"></path></svg></a>
+      </div>
+      <div class="share-acts">
+        <button class="pbtn pbtn-soft" data-copy type="button"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10.59 13.41a1 1 0 0 1 0-1.41l3-3a1 1 0 1 1 1.41 1.41l-3 3a1 1 0 0 1-1.41 0zM7.05 19.78a4 4 0 0 1-2.83-6.83l2.12-2.12a1 1 0 1 1 1.42 1.41l-2.13 2.13a2 2 0 0 0 2.83 2.83l2.12-2.13a1 1 0 0 1 1.42 1.42l-2.13 2.12a3.98 3.98 0 0 1-2.83 1.17zm9.19-6.19a1 1 0 0 1-.71-1.71l2.13-2.12a2 2 0 0 0-2.83-2.83l-2.12 2.12a1 1 0 0 1-1.42-1.41l2.13-2.13a4 4 0 0 1 5.66 5.66l-2.13 2.12a1 1 0 0 1-.71.3z"></path></svg><span data-i18n="copy_link">Copy link</span></button>
+        <button class="pbtn pbtn-blue" data-native type="button" data-i18n="share_more" hidden>Share…</button>
+      </div>
+    </aside>
+
+    <article>
+
+      <p class="lead">Open Google today and type a real engineering question, the long kind with a design code and a material in it. Before you see a single link, Google has already written you an answer, with a handful of sources underneath. That short list is the new first page of search results. For an AEC company, it is worth checking which sources appear for the questions its customers ask.</p>
+
+      <h2 id="ai-search">Google is already an AI search engine</h2>
+      <p>When people hear “AI search,” they think of ChatGPT. That misses the bigger shift. At Google I/O in May 2026, Google reported that AI Overviews had passed 2.5 billion monthly users and its conversational AI Mode more than one billion, and announced that the two are merging into a single AI search experience.<a class="cite" id="cite-1" href="#src-1" aria-label="Source 1">1</a> Your customers don’t need to switch to a chatbot. The search engine they have used for twenty years has become one.</p>
+      <p>Engineering questions are exactly the kind of search that now gets an answer instead of a list: long, specific and full of constraints. Which software can design a CLT floor to NDS? Which anchor is approved for cracked concrete? The engineer reads the answer, and perhaps one of its sources. Add ChatGPT, Claude, Gemini and Perplexity, and the pattern is the same everywhere.</p>
+      <p>For twenty years, a good product page with sharp photos was the finish line. Today it is raw material. Whether an engineer ever sees it depends on whether an AI system can read it, trust it and quote it. Alongside search rankings, I now pay attention to whether a page is cited as a source in AI answers.</p>
+
+      <blockquote class="quote">
+        <p>“A product page should make it clear what the product supports, where it applies and what its limits are.”</p>
+        <span></span>
+      </blockquote>
+
+      <h2 id="localization">What localization taught me about AI visibility</h2>
+      <p>Since 2021 I have worked on websites and content for engineering software, adapting it for engineers in the United States, Canada and Europe. A large part of that work is localization, and it taught me the lesson that matters most for AI search long before AI search existed.</p>
+      <p>Translating a page is easy. Localizing it means asking how an engineer in another market looks for the same thing: which design code they work with, which terms they use, which spelling they expect. A translated page can be perfectly correct and still invisible to the people it was written for, because it answers a question they never ask.</p>
+
+      <h3>Example: a timber page for North America</h3>
+      <p>The project that made this click for me was a timber design solution page I optimized for structural engineers in the United States and Canada, on behalf of an engineering software vendor. The original content came from a European product context. It was accurate and thorough, and it spoke the language of Eurocode. But a timber engineer in Portland or Vancouver doesn’t think in Eurocode. They design to NDS in the U.S. and CSA O86 in Canada, and that is how they phrase their questions, whether they type them into Google or ask an assistant.</p>
+      <p>So I reworked the page around the engineer’s question rather than around the product. The North American design codes are named explicitly in the text, where an engineer would look for them. The language follows U.S. English and U.S. terminology, with “design standards” as the umbrella term instead of “Eurocode.” Nothing on the page depends on the reader, or the machine, translating from one standards world to the other.</p>
+      <p>The same applied to the images. A screenshot is part of the message: an engineer who sees a model checked to Eurocode, with European labels throughout the interface, reads it as a product made for someone else. So I localized the screenshots too. They show the North American design standards and U.S. English in the software’s interface, so engineers recognize their own working environment at a glance. And because search and AI systems still rely mainly on the text around an image, every image also gets localized text: a title, alt text, a description and a caption that name the design standard shown. The screenshot convinces the engineer. The text around it is what a machine can quote.</p>
+      <p>The lesson goes well beyond timber. I name the relevant standards explicitly so readers and search systems do not have to infer which ones the product supports. If your pages only mention Eurocode, you won’t be named when someone asks about AISC 360, whatever your software actually supports. Localization used to be for people. Now it is for machines as well.</p>
+
+      <h3>One page, several regions</h3>
+      <p>Localization by IP address is part of my daily work. One page, one URL, and visitors from France, Italy, Germany or the United States each see content adapted to their market, for example local contacts, language or the design standards they work with. For people it works very well. For machines it needs care, because a crawler sees only the variant served to its own IP address. By default, Googlebot crawls <a href="https://developers.google.com/search/docs/specialty/international/locale-adaptive-pages" target="_blank" rel="noopener">from U.S. addresses</a>, and AI crawlers largely operate from the U.S. as well.<a class="cite" id="cite-3" href="#src-3" aria-label="Source 3">3</a> Unless you plan for it, the French, Italian and German versions of your content may never reach an AI answer at all. The fix is to let IP localization shape the experience, while every regional version of an important fact also has its own URL, linked with hreflang. Visitors get the right variant automatically, and crawlers can still find all of them.</p>
+
+      <h2 id="load-path">How a fact travels into an AI answer</h2>
+      <p>Localization also changed how I measure content. An AI system doesn’t browse your site the way a person does. It extracts facts and decides which statements it trusts enough to repeat. A hundred vague pages lose to one page that states precisely which design codes you support, in which units, for which markets. So when I review a website, I don’t count pages. I follow single facts, such as a supported design code, a load capacity or an office location, and check whether each one survives the trip from the server into an AI answer. I think of it as a load path. Every member along the way has to carry the fact:</p>
+      <div class="lp">
+        <div class="lp-end"><span class="lp-ico" aria-hidden="true">&lt;/&gt;</span>Your page</div>
+        <ol class="lp-list">
+          <li class="weak"><div class="lp-head"><span class="lp-n">01</span><span class="lp-t">Reachable</span><span class="lp-flag">Fails most often</span></div><p class="lp-d">robots.txt and firewall rules let AI crawlers in.</p></li>
+          <li class="weak"><div class="lp-head"><span class="lp-n">02</span><span class="lp-t">Readable</span><span class="lp-flag">Fails most often</span></div><p class="lp-d">The fact is in the HTML, not rendered by a script or locked in a PDF or an image.</p></li>
+          <li><div class="lp-head"><span class="lp-n">03</span><span class="lp-t">Understood</span></div><p class="lp-d">The page says plainly what it is about: product, design code, units, market.</p></li>
+          <li><div class="lp-head"><span class="lp-n">04</span><span class="lp-t">Consistent</span></div><p class="lp-d">Every page, file and listing states the fact the same way.</p></li>
+          <li><div class="lp-head"><span class="lp-n">05</span><span class="lp-t">Corroborated</span></div><p class="lp-d">Others confirm it: customers, partners, publications, conference talks.</p></li>
+        </ol>
+        <div class="lp-end"><span class="lp-ico ai" aria-hidden="true">✦</span>AI answer that names you</div>
+      </div>
+      <p>Like any load path, it fails at its weakest member, and the first two fail more often than people expect. According to crawl data from <a href="https://vercel.com/blog/the-rise-of-the-ai-crawler" target="_blank" rel="noopener">Vercel and MERJ</a>, the major AI crawlers don’t execute JavaScript at all.<a class="cite" id="cite-2" href="#src-2" aria-label="Source 2">2</a> Google does, which is why a page can rank in Google and show up in AI Overviews, yet be empty to ChatGPT, Claude and Perplexity. Content that appears only after a script runs, in a configurator, a web app or an interactive table, simply isn’t there for them. Text inside PDFs and images reaches them unreliably at best.</p>
+
+      <h2 id="rules">My rules for AI-ready data</h2>
+      <ol class="steps">
+        <li><span class="lead-in">HTML is the source of truth.</span> PDFs, images and videos are copies of it, never the only place a fact lives.</li>
+        <li><span class="lead-in">One fact, one canonical page.</span> State it there clearly and identically everywhere else.</li>
+        <li><span class="lead-in">Markup never says more than the page.</span> I don’t put a fact into structured data unless the visible page states it. Markup that contradicts the page doesn’t fix confusion; it automates it.</li>
+        <li><span class="lead-in">Write in the language of the question.</span> The design code, the units and the spelling of the market you want to reach, in your text and in your images.</li>
+        <li><span class="lead-in">Answer first.</span> Lead with the answer and make every passage stand on its own. AI systems quote passages, not whole pages.</li>
+        <li><span class="lead-in">Don’t start with llms.txt.</span> It belongs on documentation and API sites, where coding assistants actually read it. On a marketing site it is a cheap experiment at best, and Google says its Search ignores it. Fix crawlability first.</li>
+      </ol>
+
+      <h2 id="try">Try it this week</h2>
+      <p>You don’t need an agency to see where you stand. Three checks take less than half an hour:</p>
+      <ol class="steps">
+        <li><span class="lead-in">Fetch a key page the way a crawler does.</span> No browser, no JavaScript. Search for a sentence that matters, such as a product name or a supported design code:
+          <div class="term">
+            <div class="term-row">
+              <code class="term-cmd">curl -sL -A <span class="s">"GPTBot"</span> https://example.com/product | grep -i <span class="s">"AISC 360"</span></code>
+              <button class="cb-copy" type="button" data-copy-code=".term-cmd" aria-label="Copy command">Copy</button>
+            </div>
+            <div class="term-out"><i aria-hidden="true"></i>No output = AI crawlers can’t see this sentence</div>
+          </div></li>
+        <li><span class="lead-in">Read every robots.txt you own,</span> including app, docs and support subdomains, and ask whoever runs your CDN or firewall whether AI bots are being blocked.</li>
+        <li><span class="lead-in">Ask the questions your customers ask.</span> Put ten real ones into Google’s AI Mode, ChatGPT, Claude and Perplexity. Note whether you are named, how you are described and whom the answers cite instead.</li>
+      </ol>
+
+      <h2 id="kit">Copy-paste kit: a robots.txt that lets AI in</h2>
+      <p>If the second check left you unsure, start here. This is the baseline I use for a typical company website. Replace the domain and the private paths with your own:</p>
+<figure class="codeblock">
+        <figcaption class="cb-bar"><span class="cb-meta"><span class="cb-name">robots.txt</span><span class="cb-sub">Copy-paste kit · baseline</span></span><button class="cb-copy" type="button" data-copy-code=".cb-body code" aria-label="Copy robots.txt">Copy</button></figcaption>
+<pre class="cb-body"><code><span class="l"><span class="c"># robots.txt for https://example.com</span>
+</span><span class="l"><span class="c"># Default: all crawlers, including AI search and AI assistants,</span>
+</span><span class="l"><span class="c"># may read everything except private areas</span>
+</span><span class="l"><span class="k">User-agent:</span> *
+</span><span class="l"><span class="k">Disallow:</span> /admin/
+</span><span class="l"><span class="k">Disallow:</span> /cart/
+</span><span class="l"><span class="k">Disallow:</span> /account/
+</span><span class="l">
+</span><span class="l"><span class="c"># Optional: opt out of AI model training only.</span>
+</span><span class="l"><span class="c"># ChatGPT search (OAI-SearchBot) and Claude search</span>
+</span><span class="l"><span class="c"># (Claude-SearchBot) are separate bots and stay allowed.</span>
+</span><span class="l"><span class="k">User-agent:</span> GPTBot
+</span><span class="l"><span class="k">User-agent:</span> ClaudeBot
+</span><span class="l"><span class="k">Disallow:</span> /
+</span><span class="l">
+</span><span class="l"><span class="k">Sitemap:</span><span class="u"> https://example.com/sitemap.xml</span></span></code></pre>
+      </figure>
+      <p>Two things I check every time: <code>Disallow: /</code> under <code>User-agent: *</code> belongs only on staging, never on a live site, because it closes the door to every crawler at once. And every subdomain needs its own file; <code>docs.example.com</code> doesn’t inherit the rules of your main domain, and a CDN or firewall rule can block AI bots no matter what robots.txt says.</p>
+
+
+      <h2 id="start">Where I would start</h2>
+      <p>Start with one product or service page that matters to your business. Check whether it clearly states what you offer, which standards or approvals apply, and which markets it serves. Then check whether those facts are accessible in the page’s HTML and consistent with your documentation. That gives you a concrete starting point for improving the rest of the site.</p>
+      <p>Most AEC companies already own the material: product pages, datasheets, project references, documentation. Software vendors need a readable page for every capability and supported code. Manufacturers need their load values, fire ratings and approvals in text, not only in PDFs. Engineering firms need project pages that state system, material, code and role instead of a photo gallery. None of it is new content. It is the content you have, made readable.</p>
+
+      <div class="takeaway">
+        <div class="t"><span class="dot"></span>Key takeaway</div>
+        <p>Make the technical facts your customers need easy to find, understand and verify. For an AEC website, that means being explicit about capabilities, standards, markets and limitations.</p>
+      </div>
+
+      <section class="sources" aria-labelledby="sources-h">
+        <h2 class="src-h" id="sources-h">Sources</h2>
+        <ol class="src-list">
+          <li id="src-1"><div class="src-row"><span class="src-n">[1]</span><span class="src-t"><strong>AI Overviews and AI Mode usage</strong> · Google I/O, May 2026</span></div></li>
+          <li id="src-2"><a href="https://vercel.com/blog/the-rise-of-the-ai-crawler" target="_blank" rel="noopener"><span class="src-n">[2]</span><span class="src-t"><strong>The rise of the AI crawler</strong> · Vercel &amp; MERJ</span><span class="src-arr" aria-hidden="true">↗</span></a></li>
+          <li id="src-3"><a href="https://developers.google.com/search/docs/specialty/international/locale-adaptive-pages" target="_blank" rel="noopener"><span class="src-n">[3]</span><span class="src-t"><strong>How Google crawls locale-adaptive pages</strong> · Google Search Central</span><span class="src-arr" aria-hidden="true">↗</span></a></li>
+        </ol>
+      </section>
+
+      <section class="closing" aria-labelledby="closing-h">
+        <div class="cl-glow" aria-hidden="true"></div>
+        <div class="cl-in">
+          <div class="cl-k">Next step</div>
+          <p class="cl-t" id="closing-h">Working on a similar challenge?</p>
+          <p class="cl-d">If you’re working on an AEC website and dealing with regional content, technical documentation or AI visibility, I’d be happy to compare notes.</p>
+          <div class="cl-acts">
+            <a class="cl-btn" href="https://www.linkedin.com/in/martin-motl%C3%ADk-3b1b47233" target="_blank" rel="noopener">Message me on LinkedIn →</a>
+          </div>
+        </div>
+      </section>
+
+
+      <div class="share-row">
+        <div class="lbl" data-i18n="share_label">Share</div>
+        <div class="icons">
+          <a class="sbtn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F" data-net="LinkedIn" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="Share on LinkedIn (opens in a new window)"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"></path></svg></a>
+          <a class="sbtn" href="https://x.com/intent/tweet?url=https%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F&amp;text=Be%20the%20source%3A%20getting%20AEC%20data%20ready%20for%20AI%20search&amp;via=martinmotlik" data-net="X" target="_blank" rel="noopener noreferrer" title="X" aria-label="Share on X (opens in a new window)"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.67l7.73-8.84L1.25 2.25h6.83l4.71 6.23 5.45-6.23zm-1.16 17.52h1.83L7.08 4.13H5.12z"></path></svg></a>
+          <a class="sbtn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F" data-net="Facebook" target="_blank" rel="noopener noreferrer" title="Facebook" aria-label="Share on Facebook (opens in a new window)"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"></path></svg></a>
+          <a class="sbtn" href="https://wa.me/?text=Be%20the%20source%3A%20getting%20AEC%20data%20ready%20for%20AI%20search%20https%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F" data-net="WhatsApp" target="_blank" rel="noopener noreferrer" title="WhatsApp" aria-label="Share on WhatsApp (opens in a new window)"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.05 21.8a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88zM20.46 3.49A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.42z"></path></svg></a>
+          <a class="sbtn" href="https://www.reddit.com/submit?url=https%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F&amp;title=Be%20the%20source%3A%20getting%20AEC%20data%20ready%20for%20AI%20search" data-net="Reddit" target="_blank" rel="noopener noreferrer" title="Reddit" aria-label="Share on Reddit (opens in a new window)"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 11.78a2.65 2.65 0 0 0-4.5-1.9 13 13 0 0 0-7.04-2.22l1.2-5.62 3.9.83a1.88 1.88 0 1 0 .2-.92l-4.37-.93a.47.47 0 0 0-.56.36l-1.34 6.28a13.05 13.05 0 0 0-7.13 2.22 2.65 2.65 0 1 0-2.92 4.33 5.2 5.2 0 0 0 0 .8c0 4.04 4.7 7.32 10.5 7.32s10.5-3.28 10.5-7.32a5.2 5.2 0 0 0 0-.8A2.65 2.65 0 0 0 24 11.78zM6 13.66a1.88 1.88 0 1 1 1.88 1.88A1.88 1.88 0 0 1 6 13.66zm10.48 4.96c-1.28 1.28-3.73 1.38-4.45 1.38s-3.18-.1-4.46-1.38a.49.49 0 0 1 .69-.69c.81.81 2.53 1.1 3.77 1.1s2.96-.29 3.77-1.1a.49.49 0 0 1 .68.69zm-.34-3.08a1.88 1.88 0 1 1 1.88-1.88 1.88 1.88 0 0 1-1.88 1.88z"></path></svg></a>
+          <a class="sbtn" href="mailto:?subject=Be%20the%20source%3A%20getting%20AEC%20data%20ready%20for%20AI%20search&amp;body=I%20thought%20this%20was%20worth%20your%20time%3A%0A%0ABe%20the%20source%3A%20getting%20AEC%20data%20ready%20for%20AI%20search%0Ahttps%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F" data-net="Email" title="Email" aria-label="Share on Email (opens your email app)"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1 3.2V17h16V8.2l-8 5.3-8-5.3zM5.6 7l6.4 4.24L18.4 7H5.6z"></path></svg></a>
+          
+          <button class="sbtn" type="button" data-copy-icon title="Copy link" aria-label="Copy link"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10.59 13.41a1 1 0 0 1 0-1.41l3-3a1 1 0 1 1 1.41 1.41l-3 3a1 1 0 0 1-1.41 0zM7.05 19.78a4 4 0 0 1-2.83-6.83l2.12-2.12a1 1 0 1 1 1.42 1.41l-2.13 2.13a2 2 0 0 0 2.83 2.83l2.12-2.13a1 1 0 0 1 1.42 1.42l-2.13 2.12a3.98 3.98 0 0 1-2.83 1.17zm9.19-6.19a1 1 0 0 1-.71-1.71l2.13-2.12a2 2 0 0 0-2.83-2.83l-2.12 2.12a1 1 0 0 1-1.42-1.41l2.13-2.13a4 4 0 0 1 5.66 5.66l-2.13 2.12a1 1 0 0 1-.71.3z"></path></svg></button>
+        </div>
+      </div>
+
+      <div class="tags">
+        <span>AI search</span>
+        <span>Generative engine optimization</span>
+        <span>Technical SEO</span>
+        <span>AEC marketing</span>
+      </div>
+
+      <div class="author">
+        <span class="ph">
+          <picture>
+            <source type="image/avif" sizes="64px" srcset="/assets/img/portrait-card-270.avif 270w, /assets/img/portrait-card-360.avif 360w">
+            <img src="/assets/img/portrait-card-270.jpg" sizes="64px" srcset="/assets/img/portrait-card-270.jpg 270w, /assets/img/portrait-card-360.jpg 360w" alt="Martin Motlík" width="270" height="360" loading="lazy" decoding="async">
+          </picture>
+        </span>
+        <div style="flex:1;min-width:220px">
+          <div class="n"><a class="author-link" href="/#about" rel="author">Martin Motlík</a></div>
+          <div class="d">Independent AEC digital strategist and Head of Web Content at Dlubal Software. Writing about AI, BIM and engineering-software marketing.</div>
+        </div>
+      </div>
+    
+    </article>
+  </div>
+
+  <section class="more">
+    <div class="in">
+      <div>
+        <h2 data-i18n="more_title">Keep reading</h2>
+        <p data-i18n="more_text">This is the first piece in Insights. More on AI in AEC, engineering-software marketing and web ecosystems is on the way.</p>
+      </div>
+      <a class="all" href="/insights/" data-i18n="more_all">All insights →</a>
+    </div>
+  </section>
+</main>
+
+<div class="mini" id="mini">
+  <button class="vo-play" id="mini-play" type="button" aria-label="Play or pause the voice-over"><span class="ic-play"></span></button>
+  <div class="txt">
+    <div class="st" id="mini-state">Listen · Narrated by Martin</div>
+    <div class="ti">Be the source: getting AEC data ready for AI search</div>
+  </div>
+  <button class="vo-rate" id="mini-rate" type="button" aria-label="Playback speed">1&times;</button>
+  <span class="vo-time" id="mini-time">0:00 / 0:00</span>
+  <button class="vo-x" id="mini-close" type="button" aria-label="Close the player">&times;</button>
+  <div class="bar" aria-hidden="true"><div id="mini-bar"></div></div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <a href="/" class="footer-logo">
+      <svg width="22" height="22" viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="130" height="130" fill="#0A1628" rx="22"/>
+        <path d="M76.3592 57.857C75.4265 57.6937 74.717 57.1169 74.4236 56.2697C74.1135 55.3753 74.4325 54.4439 75.1177 53.76L100.357 28.5696L106.163 22.819C106.749 22.2385 107.518 21.8876 108.351 22.0458C109.412 22.2474 110.272 23.2579 110.273 24.4024L110.284 53.3836C110.036 55.8334 108.092 57.8366 105.589 57.8378L76.3579 57.8557L76.3592 57.857Z" fill="#FEFEFE"/>
+        <path d="M55.7679 56.6561C55.3584 57.3999 54.6387 57.8401 53.8081 57.8401L24.8525 57.8439C22.1667 57.8439 20.0269 55.7208 20.0257 53.021L20.0078 24.8589C20.0078 24.3256 20.0563 23.9033 20.2451 23.4554C20.5322 22.7766 21.1077 22.2714 21.715 22.0991C22.4882 21.8809 23.3494 22.0162 23.9083 22.5725L26.8888 25.5415L37.5364 36.1291L55.389 53.9511C56.0984 54.6592 56.2349 55.8101 55.7679 56.6573V56.6561Z" fill="#FEFEFE"/>
+        <path d="M81.9803 89.5551L77.6052 94.0131L72.5704 99.1296C71.921 99.7905 71.0329 100.038 70.1079 99.6961C69.4317 99.4447 68.7031 98.6702 68.7031 97.7605V68.6849C68.7031 66.6332 70.6731 64.4782 72.7542 64.4795L101.492 64.4973C102.35 64.4973 103.057 65.2718 103.31 65.8728C103.654 66.6919 103.501 67.6514 102.884 68.283L99.6377 71.6055L87.366 84.0776L81.9803 89.5551Z" fill="#FEFEFE"/>
+        <path d="M75.0723 104.606C75.2968 103.972 75.6018 103.617 76.0228 103.191L91.9641 87.0534L97.522 81.4304L106.326 72.5896C106.984 71.9274 107.856 71.6263 108.81 71.9848C109.414 72.2119 110.276 72.9736 110.276 73.8553L110.265 103.667C110.265 105.591 108.492 107.416 106.552 107.416H77.0487C75.6069 107.416 74.641 105.825 75.0723 104.606Z" fill="#FEFEFE"/>
+        <path d="M55.1655 106.234C54.7789 106.922 54.0121 107.436 53.1828 107.435L23.8354 107.424C22.326 107.424 21.0182 106.404 20.4313 105.133C20.2182 104.67 20.0166 104.24 20.0166 103.721L20 74.1515C20 73.2175 20.5461 72.3984 21.2734 72.0603C22.1104 71.6724 23.1222 71.7872 23.792 72.4596L31.4552 80.1687L36.2118 84.9572L46.608 95.4096L54.7522 103.652C55.436 104.344 55.6504 105.368 55.1643 106.233L55.1655 106.234Z" fill="#FEFEFE"/>
+        <path d="M54.5289 95.8494L49.9484 91.2025L37.276 78.3426L28.5462 69.5094C28.0384 68.9952 27.5497 68.5754 27.1605 67.9847C26.7076 67.2969 26.6221 66.4689 27.0202 65.6829C27.3111 65.11 27.958 64.4874 28.7937 64.4874L57.7723 64.4746C59.8942 64.7719 61.5184 66.5288 61.669 68.6737L61.6511 97.7875C61.6511 98.7075 60.8856 99.4832 60.2234 99.7116C59.269 100.041 58.4269 99.7499 57.7736 99.0953L54.5289 95.8481V95.8494Z" fill="#FEFEFE"/>
+      </svg>
+      Martin Motlík
+    </a>
+    <div class="footer-info">
+      &copy; 2026
+      <span class="footer-sep">&middot;</span>
+      I&#268;O: 21839662
+      <span class="footer-sep">&middot;</span>
+      DI&#268;: CZ0103073146
+      <span class="footer-sep">&middot;</span>
+      <a href="mailto:motlik.martin@gmail.com">motlik.martin@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// — Nav hamburger —
+const navHamburger = document.getElementById('nav-hamburger');
+const navDrawer    = document.getElementById('nav-drawer');
+if (navHamburger && navDrawer) {
+  navHamburger.addEventListener('click', () => navDrawer.classList.toggle('open'));
+  document.addEventListener('click', e => {
+    if (!navHamburger.contains(e.target) && !navDrawer.contains(e.target)) navDrawer.classList.remove('open');
+  });
+}
+
+// — Reading progress + active heading in the table of contents —
+(function(){
+  var bar = document.getElementById('bar');
+  var links = [].slice.call(document.querySelectorAll('#toc a'));
+  var heads = links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  function onScroll(){
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (h > 0 ? Math.min(1, window.scrollY / h) * 100 : 0) + '%';
+    var active = 0;
+    heads.forEach(function(el, i){ if (el && el.getBoundingClientRect().top < 160) active = i; });
+    links.forEach(function(a, i){ a.classList.toggle('on', i === active); });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  links.forEach(function(a){
+    a.addEventListener('click', function(e){
+      var el = document.querySelector(a.getAttribute('href'));
+      if (!el) return;
+      e.preventDefault();
+      window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 80, behavior: reduce ? 'auto' : 'smooth' });
+      history.replaceState(null, '', a.getAttribute('href'));
+    });
+  });
+})();
+
+// — Share. The links are real <a> elements in the HTML, so they work with
+//   scripting off and can be middle-clicked. This only upgrades them. —
+(function(){
+  var canon = document.querySelector('link[rel="canonical"]');
+  var url = canon ? canon.href : location.href.split('#')[0];
+  var og = document.querySelector('meta[property="og:title"]');
+  var title = og ? og.content : document.title;
+  var slug = url.replace(/\/+$/, '').split('/').pop();
+  var touch = window.matchMedia('(pointer: coarse)').matches;
+
+  function track(method){
+    // GA4 recommended event; harmless if gtag is blocked.
+    if (typeof gtag === 'function') gtag('event', 'share', { method: method, content_type: 'article', item_id: slug });
+  }
+
+  document.querySelectorAll('a[data-net]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var net = a.dataset.net;
+      track(net);
+      // Email and touch devices: let the link do its job (mail app / native app).
+      if (net === 'Email' || touch || e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+      var w = 600, h = 640;
+      var left = Math.max(0, (window.screenX || 0) + (window.outerWidth - w) / 2);
+      var top  = Math.max(0, (window.screenY || 0) + (window.outerHeight - h) / 2);
+      var win = window.open(a.href, 'share-' + net, 'width=' + w + ',height=' + h + ',left=' + left + ',top=' + top + ',resizable=yes,scrollbars=yes');
+      if (win) { try { win.opener = null; } catch(err) {} e.preventDefault(); }
+      // If the pop-up was blocked, the normal link opens in a new tab instead.
+    });
+  });
+
+  function copyText(text){
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+    return new Promise(function(resolve, reject){
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      var ok = false; try { ok = document.execCommand('copy'); } catch(err) {}
+      document.body.removeChild(ta);
+      ok ? resolve() : reject();
+    });
+  }
+  function flash(btn, text, cls){
+    var span = btn.querySelector('span') || btn;
+    if (!btn.dataset.label) btn.dataset.label = span.textContent;
+    btn.classList.add(cls); span.textContent = text;
+    clearTimeout(btn._t);
+    btn._t = setTimeout(function(){ btn.classList.remove(cls); span.textContent = btn.dataset.label; delete btn.dataset.label; }, 1600);
+  }
+  document.querySelectorAll('[data-copy]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      copyText(url).then(function(){ flash(btn, 'Link copied ✓', 'done'); track('Copy link'); },
+                         function(){ flash(btn, 'Copy failed', 'fail'); });
+    });
+  });
+
+  // Icon-only copy button (mobile share row): a tick instead of a label.
+  var TICK = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>';
+  document.querySelectorAll('[data-copy-icon]').forEach(function(btn){
+    var icon = btn.innerHTML;
+    btn.addEventListener('click', function(){
+      copyText(url).then(function(){ show('done', TICK, 'Link copied'); track('Copy link'); },
+                         function(){ show('fail', icon, 'Copy failed'); });
+    });
+    function show(cls, html, label){
+      btn.classList.remove('done', 'fail'); btn.classList.add(cls); btn.innerHTML = html; btn.setAttribute('aria-label', label);
+      clearTimeout(btn._t);
+      btn._t = setTimeout(function(){ btn.classList.remove(cls); btn.innerHTML = icon; btn.setAttribute('aria-label', 'Copy link'); }, 1600);
+    }
+  });
+
+  // The system share sheet exists on phones, Safari and Edge; elsewhere the
+  // button would only duplicate "Copy link", so it stays hidden.
+  if (navigator.share) {
+    document.querySelectorAll('[data-native]').forEach(function(btn){
+      btn.hidden = false;
+      btn.addEventListener('click', function(){
+        navigator.share({ title: title, url: url }).then(function(){ track('Native share'); }).catch(function(){});
+      });
+    });
+  }
+})();
+
+// — Voice-over player ───────────────────────────────────────────────────────
+//   Hidden until the file at data-src reports a duration, so a visitor is never
+//   offered a player with nothing behind it. The Listen button and the player
+//   share one slot in the byline: opening the player replaces the button.
+(function(){
+  var root = document.getElementById('vo');
+  if (!root || !root.dataset.src) return;
+
+  var audio = new Audio();
+  audio.preload = 'metadata';
+
+  var $ = function(id){ return document.getElementById(id); };
+  var listen = $('vo-listen'), lLabel = $('vo-listen-label'), player = $('vo-player');
+  var play = $('vo-play'), wave = $('vo-wave'), time = $('vo-time'), rateB = $('vo-rate');
+  var role = $('vo-role'), meta = $('vo-meta');
+  var mini = $('mini'), mPlay = $('mini-play'), mState = $('mini-state'), mTime = $('mini-time'),
+      mRate = $('mini-rate'), mClose = $('mini-close'), mBar = $('mini-bar');
+  var roleText = role.textContent;
+
+  var N = 48, RATES = [1, 1.25, 1.5, 2, 0.75];
+  var started = false, rateIdx = 0, bars = [];
+
+  function fmt(s){ s = isFinite(s) ? s : 0; return Math.floor(s/60) + ':' + String(Math.floor(s%60)).padStart(2,'0'); }
+
+  for (var i = 0; i < N; i++){
+    var h = 0.3 + 0.7 * Math.abs(Math.sin(i*1.7)*0.6 + Math.sin(i*0.43)*0.4);
+    var el = document.createElement('i');
+    el.style.height = Math.round(h * 100) + '%';
+    wave.appendChild(el); bars.push(el);
+  }
+  wave.addEventListener('click', function(e){
+    var r = wave.getBoundingClientRect();
+    if (audio.duration) audio.currentTime = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)) * audio.duration;
+    started = true; render();
+  });
+
+  function swap(){ listen.hidden = true; meta.hidden = true; player.hidden = false; role.textContent = 'Narrating'; }
+  function close(){ player.hidden = true; listen.hidden = false; meta.hidden = false; role.textContent = roleText; }
+
+  // Opening: the blue Listen pill turns into the white player in one move.
+  // 1. the date and the pill's label fade out (140 ms)
+  // 2. the player surface starts as an exact copy of the pill (same box, same
+  //    blue) and expands to its full width while turning white; on narrow
+  //    screens, where the player wraps below the author, it also travels there
+  // 3. the controls sharpen and slide in one after another, the waveform bars
+  //    rise from the centre line, and the shadow settles in last
+  // Everything is transform / opacity / clip-path, so nothing reflows mid-move.
+  var EASE = 'cubic-bezier(.32,.72,0,1)', opening = false;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  function open(){
+    if (opening || !player.hidden) return;
+    if (reduce.matches || !player.animate) {
+      swap();
+      if (player.animate) player.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 200, easing: 'ease-out' });
+      return;
+    }
+    opening = true;
+    var out = { duration: 140, easing: 'ease-in', fill: 'forwards' };
+    var a1 = meta.animate([{ opacity: 1 }, { opacity: 0 }], out);
+    lLabel.animate([{ opacity: 1 }, { opacity: 0 }], out);
+    a1.onfinish = function(){
+      var from = listen.getBoundingClientRect();
+      swap();
+      lLabel.getAnimations().forEach(function(a){ a.cancel(); });
+      meta.getAnimations().forEach(function(a){ a.cancel(); });
+      var to = player.getBoundingClientRect();
+      var W = to.width, H = to.height, w = from.width, h = from.height;
+      var t0 = (H - h) / 2;
+      var dx = from.left - to.left, dy = from.top - (to.top + t0);
+      var blue = getComputedStyle(listen).backgroundColor, white = getComputedStyle(player).backgroundColor;
+      var shadow = getComputedStyle(player).boxShadow;
+
+      var morph = player.animate([
+        { transform: 'translate(' + dx + 'px,' + dy + 'px)',
+          clipPath: 'inset(' + t0 + 'px ' + (W - w) + 'px ' + (H - h - t0) + 'px 0 round 999px)',
+          backgroundColor: blue, boxShadow: 'none' },
+        { transform: 'translate(0,0)', clipPath: 'inset(0 0 0 0 round 999px)',
+          backgroundColor: white, boxShadow: 'none' }
+      ], { duration: 620, easing: EASE });
+      morph.onfinish = function(){
+        player.animate([{ boxShadow: '0 0 0 0 rgba(28,43,51,0)' }, { boxShadow: shadow }], { duration: 320, easing: 'ease-out' });
+        opening = false;
+      };
+
+      [play, wave, time, rateB].forEach(function(el, i){
+        el.animate([
+          { opacity: 0, transform: 'translateX(-8px) scale(.94)', filter: 'blur(4px)' },
+          { opacity: 1, transform: 'none', filter: 'blur(0)' }
+        ], { duration: 460, delay: 140 + i*55, easing: EASE, fill: 'backwards' });
+      });
+      bars.forEach(function(el, i){
+        el.animate([{ transform: 'scaleY(.12)' }, { transform: 'scaleY(1)' }],
+                   { duration: 480, delay: 200 + i*6, easing: EASE, fill: 'backwards' });
+      });
+      role.animate([{ opacity: 0, transform: 'translateY(3px)' }, { opacity: 1, transform: 'none' }],
+                   { duration: 360, delay: 120, easing: EASE, fill: 'backwards' });
+    };
+  }
+
+  function render(){
+    var d = audio.duration || 0, t = audio.currentTime || 0;
+    var playing = !audio.paused && !audio.ended;
+    var idx = d ? Math.floor((t/d) * N) : -1;
+    bars.forEach(function(el, i){
+      el.classList.toggle('done', i < idx);
+      el.classList.toggle('at', started && i === idx);
+    });
+    lLabel.textContent = 'Listen · ' + fmt(d);
+    time.textContent   = started ? '-' + fmt(d - t) : fmt(d);
+    mState.textContent = (playing ? 'Now playing' : started ? 'Paused' : 'Listen') + ' · Narrated by Martin';
+    mTime.textContent  = fmt(t) + ' / ' + fmt(d);
+    mBar.style.width   = (d ? (t/d)*100 : 0) + '%';
+    var icon = playing ? '<span class="ic-pause"><i></i><i></i></span>' : '<span class="ic-play"></span>';
+    play.innerHTML = icon; mPlay.innerHTML = icon;
+    var lbl = playing ? 'Pause' : 'Play';
+    play.setAttribute('aria-label', lbl); mPlay.setAttribute('aria-label', lbl);
+    document.body.classList.toggle('vo-active', started);
+    mini.classList.toggle('show', started && window.scrollY > 520);
+  }
+
+  function toggle(){
+    if (!audio.paused) { audio.pause(); return; }
+    started = true;
+    audio.playbackRate = RATES[rateIdx];
+    audio.play().catch(function(){ render(); });
+  }
+  function cycleRate(){
+    rateIdx = (rateIdx + 1) % RATES.length;
+    audio.playbackRate = RATES[rateIdx];
+    rateB.textContent = mRate.textContent = RATES[rateIdx] + '×';
+  }
+
+  listen.addEventListener('click', function(){
+    if (opening || !player.hidden) return;      // a quick double-click must not start and then pause
+    toggle(); open(); setTimeout(function(){ play.focus({ preventScroll: true }); }, 160);
+  });
+  play.addEventListener('click', toggle);
+  mPlay.addEventListener('click', toggle);
+  rateB.addEventListener('click', cycleRate);
+  mRate.addEventListener('click', cycleRate);
+  mClose.addEventListener('click', function(){
+    audio.pause(); audio.currentTime = 0; started = false; close(); render(); listen.focus({ preventScroll: true });
+  });
+
+  ['play','pause','ended','timeupdate','ratechange'].forEach(function(ev){ audio.addEventListener(ev, render); });
+  window.addEventListener('scroll', function(){ mini.classList.toggle('show', started && window.scrollY > 520); }, { passive: true });
+
+  audio.addEventListener('loadedmetadata', function(){ root.hidden = false; render(); });
+  audio.addEventListener('error', function(){ root.hidden = true; });
+  audio.src = root.dataset.src;
+})();
+
+// — Copy buttons on code blocks and terminal commands. They copy the code's own
+//   text: line numbers and the "$ " prompt are CSS, so they never come along. —
+(function(){
+  function copyText(text){
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+    return new Promise(function(resolve, reject){
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      var ok = false; try { ok = document.execCommand('copy'); } catch(e) {}
+      document.body.removeChild(ta); ok ? resolve() : reject();
+    });
+  }
+  document.querySelectorAll('[data-copy-code]').forEach(function(btn){
+    var host = btn.closest('.codeblock, .term');
+    btn.addEventListener('click', function(){
+      var code = host.querySelector(btn.dataset.copyCode);
+      copyText(code.textContent).then(function(){ done(btn, 'Copied ✓', 'done'); }, function(){ done(btn, 'Copy failed', 'fail'); });
+    });
+  });
+  function done(btn, text, cls){
+    btn.classList.remove('done', 'fail'); btn.classList.add(cls); btn.textContent = text;
+    clearTimeout(btn._t); btn._t = setTimeout(function(){ btn.classList.remove(cls); btn.textContent = 'Copy'; }, 1600);
+  }
+})();
+
+// — Language (page chrome only; the article itself stays in English) —
+(function(){
+  var i18n = {
+    cs: { nav_insights:'Insights', toc_label:'Na této stránce', share_label:'Sdílet', copy_link:'Kopírovat odkaz',
+          share_more:'Sdílet…', read_8:'8 min čtení',
+          more_title:'Čtěte dál', more_text:'Tohle je první článek v sekci Insights. Další o AI v AEC, marketingu inženýrského softwaru a webových ekosystémech se chystají.', more_all:'Všechny články →' },
+    de: { nav_insights:'Insights', toc_label:'Auf dieser Seite', share_label:'Teilen', copy_link:'Link kopieren',
+          share_more:'Teilen…', read_8:'8 Min. Lesezeit',
+          more_title:'Weiterlesen', more_text:'Dies ist der erste Beitrag in Insights. Mehr zu KI im AEC, Marketing für Ingenieursoftware und Web-Ökosystemen folgt.', more_all:'Alle Beiträge →' }
+  };
+  var EN = {};
+  document.querySelectorAll('[data-i18n]').forEach(function(el){ EN[el.dataset.i18n] = el.textContent; });
+  function applyLang(lang){
+    var dict = lang === 'en' ? EN : (i18n[lang] || EN);
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var k = el.dataset.i18n;
+      el.textContent = dict[k] || EN[k] || el.textContent;
+    });
+    document.querySelectorAll('.lang-btn').forEach(function(b){ b.classList.toggle('active', b.dataset.lang === lang); });
+    try { localStorage.setItem('lang', lang); } catch(e) {}
+  }
+  document.querySelectorAll('.lang-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){ applyLang(btn.dataset.lang); });
+  });
+  var saved = 'en';
+  try { saved = localStorage.getItem('lang') || 'en'; } catch(e) {}
+  if (saved !== 'en') applyLang(saved);
+})();
+</script>
+
+</body>
+</html>

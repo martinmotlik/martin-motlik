@@ -53,6 +53,9 @@ const IMAGES = {
   'images/services-hero.png':                  'hero',
   'images/martin-motlik-portrait.png':         'portrait',
   'images/imtc.jpg':                           'card',
+  // Insights: article cover, shown full-width on the article page and as a
+  // 16:10 card on the list page, so it needs the gallery ladder's range.
+  'images/ai-search-hero.jpg':                 'gallery',
   'references/ifc-verify/cover.png':           'card',
   'references/nascc-card/vizualizace1.png':    'card',
   'references/mass-timber-card/render-card.png': 'card',
@@ -182,6 +185,9 @@ const CROPS = {
   // About photo: a square source in a 3:4 frame, so the uncropped file was
   // being stretched 1.33x vertically. 720x960 matches the 360px box at 2x.
   'images/martin-motlik-portrait.png': { slug: 'portrait-card', ratio: 3 / 4, widths: [270, 360, 480, 540, 720, 900] },
+  // Open Graph / Twitter card: the 1.91:1 frame LinkedIn and X crop to anyway,
+  // declared as 1200x630 in the article's meta tags.
+  'images/ai-search-hero.jpg': { slug: 'ai-search-hero-og', ratio: 1200 / 630, widths: [1200] },
 };
 
 // Reference-page filmstrip thumbnails sit in 3:2 boxes, but the sources are

@@ -34,6 +34,11 @@ Targeted digital marketing for AEC B2B audiences. Deliverables include mass emai
 ### AI Workflow Implementation
 Practical AI integration for AEC marketing and operations teams. Deliverables include custom internal web applications such as live dashboards and analytics tools, daily process automation connecting existing platforms to streamline repetitive tasks, and secure AI consulting providing concrete implementation strategies for technical teams.
 
+## Insights
+
+- [Insights](https://martinmotlik.com/insights/): Martin Motlík's articles on AI in AEC, engineering-software marketing and web ecosystems.
+- [Be the source: getting AEC data ready for AI search](https://martinmotlik.com/insights/ai-visibility-for-aec/): Published 2026-10-06. Google has become an AI search engine whose AI Overviews and AI Mode answer the question and cite a handful of sources, so alongside search rankings it is worth checking whether a page is cited as one of those sources. Drawing on localization work for structural-engineering software in the US and Canadian markets, the article argues that a product page should make it clear what the product supports, where it applies and what its limits are. Key points: name the design codes of the market you target (NDS, CSA O86, AISC 360 — not only Eurocode), in the text and in localized screenshots and the text around them; IP-based localization needs a separate URL plus hreflang per region, because crawlers see only the variant served to their own address; a fact reaches an AI answer only if it is reachable, readable in the HTML, understood, consistent and corroborated — a "load path" that fails at its weakest member; major AI crawlers do not execute JavaScript, so script-rendered content and text locked in PDFs or images is invisible to them. Includes three checks that take under half an hour, a baseline robots.txt that lets AI search in while optionally opting out of model training, and a practical starting point: one product or service page whose offer, standards, approvals and markets are stated in the HTML and match the documentation. Topics: generative engine optimization (GEO), AI search, technical SEO, llms.txt, structured data, robots.txt, content localization, AEC marketing.
+
 ## Services Page
 
 Martin Motlík's services are documented in detail at:
@@ -92,6 +97,8 @@ Martin actively promotes AI adoption in the architecture, engineering, and const
 - [Areas of Practice](https://martinmotlik.com/#bim)
 - [Dlubal Software](https://martinmotlik.com/#dlubal)
 - [AI in AEC](https://martinmotlik.com/#ai-in-aec)
+- [Insights — articles](https://martinmotlik.com/insights/)
+- [Be the source: getting AEC data ready for AI search](https://martinmotlik.com/insights/ai-visibility-for-aec/)
 - [Tech Stack](https://martinmotlik.com/#tools)
 - [Contact](https://martinmotlik.com/#contact)
 - [IFC Verify App](https://ifc-verify.app)

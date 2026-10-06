@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LL09W3RK8L"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LL09W3RK8L');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <!-- ── Title & Description ── -->
+    <title>Insights — Martin Motlík | AI, BIM and AEC Web Ecosystems</title>
+    <meta name="description" content="Practical writing on AI adoption, engineering-software marketing and building web ecosystems engineers actually use. Field notes from AEC's move to the browser.">
+    <meta name="author" content="Martin Motlík">
+
+    <!-- ── Canonical ── -->
+    <link rel="canonical" href="https://martinmotlik.com/insights/">
+
+    <!-- ── Open Graph ── -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Martin Motlík">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Insights — Martin Motlík">
+    <meta property="og:description" content="Practical writing on AI adoption, engineering-software marketing and building web ecosystems engineers actually use. No hype, just implementation.">
+    <meta property="og:url" content="https://martinmotlik.com/insights/">
+    <meta property="og:image" content="https://martinmotlik.com/assets/img/ai-search-hero-og-1200.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Martin Motlík working on a laptop, surrounded by the icons of AI assistants and search engines">
+
+    <!-- ── Twitter Card ── -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@martinmotlik">
+    <meta name="twitter:creator" content="@martinmotlik">
+    <meta name="twitter:title" content="Insights — Martin Motlík">
+    <meta name="twitter:description" content="Practical writing on AI adoption, engineering-software marketing and building web ecosystems engineers actually use.">
+    <meta name="twitter:image" content="https://martinmotlik.com/assets/img/ai-search-hero-og-1200.jpg">
+    <meta name="twitter:image:alt" content="Martin Motlík working on a laptop, surrounded by the icons of AI assistants and search engines">
+
+    <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- ── Schema.org JSON-LD ── -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Blog",
+          "@id": "https://martinmotlik.com/insights/#blog",
+          "name": "Insights — Martin Motlík",
+          "description": "Practical writing on AI adoption, engineering-software marketing and building web ecosystems engineers actually use.",
+          "url": "https://martinmotlik.com/insights/",
+          "inLanguage": "en-US",
+          "author": {
+            "@id": "https://martinmotlik.com/#person"
+          },
+          "publisher": {
+            "@id": "https://martinmotlik.com/#person"
+          },
+          "blogPost": [
+            {
+              "@type": "BlogPosting",
+              "@id": "https://martinmotlik.com/insights/ai-visibility-for-aec/#article",
+              "headline": "Be the source: getting AEC data ready for AI search",
+              "description": "How AEC companies can make product data easy for AI search to find, read and verify: lessons from localization, a load path for facts and practical checks.",
+              "url": "https://martinmotlik.com/insights/ai-visibility-for-aec/",
+              "datePublished": "2026-10-06",
+              "articleSection": "AI in AEC",
+              "image": "https://martinmotlik.com/assets/img/ai-search-hero-og-1200.jpg",
+              "author": {
+                "@id": "https://martinmotlik.com/#person"
+              },
+              "dateModified": "2026-10-06"
+            }
+          ]
+        },
+        {
+          "@type": "Person",
+          "@id": "https://martinmotlik.com/#person",
+          "name": "Martin Motlík",
+          "url": "https://martinmotlik.com/",
+          "jobTitle": "AEC Digital Strategist & Web Lead",
+          "sameAs": [
+            "https://www.linkedin.com/in/martin-motl%C3%ADk-3b1b47233",
+            "https://x.com/martinmotlik"
+          ],
+          "image": "https://martinmotlik.com/assets/img/portrait-card-720.jpg",
+          "description": "Independent AEC digital strategist and Head of Web Content at Dlubal Software, writing about AI, BIM and engineering-software marketing.",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Dlubal Software",
+            "url": "https://www.dlubal.com"
+          },
+          "knowsAbout": [
+            "AEC marketing",
+            "Engineering software",
+            "Structural engineering software",
+            "Content localization",
+            "Technical SEO",
+            "Generative engine optimization",
+            "BIM",
+            "AI adoption in AEC"
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://martinmotlik.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Insights"
+            }
+          ]
+        }
+      ]
+    }
+  </script>
+
+    <style>
+        :root {
+            --bg:        #ffffff;
+            --bg-alt:    #f5f5f7;
+            --text:      #1d1d1f;
+            --muted:     #6e6e73;
+            --faint:     #98989d;
+            --accent:    #1a56db;
+            --border:    #e5e5ea;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            padding-top: var(--nav-h);
+            font-size: 0.875rem;
+            line-height: 1.65;
+        }
+
+        /* ── NAV ── */
+        :root { --nav-h: 60px; --container: 1200px; --r-sm: 6px; --r-md: 10px; --r-lg: 16px; --r-pill: 999px; }
+        .nav {
+          position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+          height: var(--nav-h);
+          background: rgba(255,255,255,0.92);
+          border-bottom: 1px solid rgba(0,0,0,0.08);
+          backdrop-filter: blur(16px) saturate(180%);
+          -webkit-backdrop-filter: blur(16px) saturate(180%);
+        }
+        .nav-inner {
+          max-width: 1060px; margin: 0 auto; padding: 0 24px;
+          height: 100%; display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-logo {
+          display: flex; align-items: center; gap: 9px;
+          font-size: 14px; font-weight: 700; color: var(--text, #09090b);
+          text-decoration: none; letter-spacing: -0.01em;
+        }
+        .nav-logo-mark { width: 28px; height: 28px; flex-shrink: 0; display: block; }
+        .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; margin: 0; padding: 0; }
+        .nav-links a {
+          font-size: 13.5px; font-weight: 500; color: var(--muted, #71717a);
+          text-decoration: none; transition: color 0.15s;
+        }
+        .nav-links a:hover { color: var(--text, #09090b); }
+        .nav-links a.active { color: var(--accent, #1A56DB); font-weight: 600; }
+        .lang-group {
+          display: flex; gap: 2px;
+          background: var(--bg-alt, #f4f4f5); border-radius: 6px; padding: 3px;
+        }
+        .lang-btn {
+          font-size: 11.5px; font-weight: 600; padding: 4px 9px; border-radius: 5px;
+          border: none; background: transparent; color: var(--muted, #71717a);
+          cursor: pointer; letter-spacing: 0.03em; transition: background 0.12s, color 0.12s;
+          font-family: inherit;
+        }
+        .lang-btn.active { background: white; color: var(--text, #09090b); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .nav-hamburger {
+          display: none; flex-direction: column; gap: 5px;
+          background: none; border: none; cursor: pointer; padding: 6px;
+        }
+        .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--text, #09090b); border-radius: 2px; }
+        .nav-drawer {
+          display: none; position: fixed; top: var(--nav-h); left: 0; right: 0;
+          background: white; border-bottom: 1px solid var(--border, #e4e4e7);
+          padding: 16px 24px 24px; z-index: 99; flex-direction: column;
+          box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+        .nav-drawer.open { display: flex; }
+        .nav-drawer a {
+          font-size: 16px; font-weight: 500; color: var(--text, #09090b); text-decoration: none;
+          padding: 13px 0; border-bottom: 1px solid var(--border, #e4e4e7);
+        }
+        .nav-drawer a:last-child { border-bottom: none; }
+        .nav-drawer a.active { color: var(--accent, #1A56DB); }
+        .nav-drawer-lang { display: flex; gap: 6px; padding-top: 16px; margin-top: 4px; border-top: 1px solid var(--border, #E6E5E1); }
+        .nav-drawer .lang-btn { font-size: 11.5px; font-weight: 600; padding: 4px 9px; border-radius: 5px; border: none; background: transparent; color: #717171; cursor: pointer; letter-spacing: 0.03em; }
+        .nav-drawer .lang-btn.active { background: #0A1628; color: white; }
+        @media (max-width: 767px) {
+          .nav-inner { padding: 0 20px; }
+          .nav-links { display: none; }
+          .lang-group { display: none; }
+          .nav-hamburger { display: flex; }
+        }
+        .footer { border-top: 1px solid #e4e4e7; padding: 26px 0; }
+        .footer-inner { max-width: 1060px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+        .footer-logo { display: flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 700; color: #09090b; text-decoration: none; }
+        .footer-info { font-size: 11.5px; color: #71717a; }
+        .footer-info a { color: inherit; text-decoration: none; }
+        .footer-info a:hover { color: #09090b; }
+        .footer-sep { margin: 0 10px; opacity: 0.4; }
+        @media (max-width: 767px) {
+            .footer-inner { padding: 0 20px; flex-direction: column; align-items: flex-start; gap: 10px; }
+            .footer-info { font-size: 11px; line-height: 1.8; }
+            .footer-sep { display: none; }
+        }
+        /* ── INSIGHTS (light) ─────────────────────────────────────────────────────
+   Palette from the Insights Light design. The nav and footer above/below keep
+   the site's own tokens so they stay identical to every other page. */
+:root{
+  --ink:#1C2B33; --body-ink:#27272A;
+  --m1:#4B5563; --m2:#65676B; --m3:#71717A;
+  /* Same blue as the rest of the site; the two tints below are derived from it. */
+  --blue:var(--accent); --blue-hi:#356FEF; --blue-bg:#E6EDFD;
+  --s1:#F4F6F9; --s2:#F0F2F5; --s3:#E9EEF5;
+  --hair:rgba(28,43,51,.06);
+  --lift:0 1px 2px rgba(28,43,51,.06),0 24px 60px -24px rgba(28,43,51,.18);
+  --lift-hi:0 1px 2px rgba(28,43,51,.06),0 36px 80px -28px rgba(28,43,51,.26);
+  --card:0 1px 2px rgba(28,43,51,.06);
+  --card-hi:0 30px 60px -28px rgba(28,43,51,.25);
+  --ease:cubic-bezier(.32,.72,0,1);
+}
+/* The picture element is only a format switch, not a layout box — tools/README.md. */
+picture{display:contents}
+img{display:block;max-width:100%}
+.ins{color:var(--ink);font-size:14px;line-height:1.65}
+.ins a{color:var(--blue);text-decoration:none}
+.ins a:hover{color:var(--ink)}
+/* Whole-card links are surfaces, not inline links: their text keeps the ink colour. */
+.ins a.featured,.ins a.card,.ins a.featured:hover,.ins a.card:hover{color:var(--ink)}
+.ins :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+/* Soft colour wash behind the white hero. */
+.glow{position:absolute;inset:0;pointer-events:none;background:
+  radial-gradient(55% 50% at 88% 8%,rgba(26,86,219,.13),transparent 70%),
+  radial-gradient(45% 45% at 8% 25%,rgba(168,85,247,.09),transparent 70%),
+  radial-gradient(50% 40% at 55% 100%,rgba(16,185,129,.07),transparent 70%)}
+        /* ── HERO ── */
+.hero{position:relative;background:#fff;overflow:hidden}
+.hero-in{position:relative;padding-top:88px;padding-bottom:56px}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-bg)}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--blue);display:inline-block;flex:none}
+.hero h1{margin:22px 0 0;font-size:clamp(40px,6vw,68px);line-height:1.02;letter-spacing:-.035em;font-weight:700;max-width:780px;text-wrap:balance;color:var(--ink)}
+.hero .dek{margin:20px 0 0;max-width:560px;font-size:17px;line-height:1.6;color:var(--m1);text-wrap:pretty}
+
+/* ── FEATURED ── */
+.featured{margin-top:56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));border-radius:28px;overflow:hidden;background:#fff;box-shadow:var(--lift);color:var(--ink);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.featured:hover{transform:translateY(-4px);box-shadow:var(--lift-hi);color:var(--ink)}
+.featured .shot{position:relative;min-height:320px;background:var(--s3)}
+.featured .shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.featured .flag{position:absolute;top:16px;left:16px;padding:5px 10px;border-radius:999px;background:#fff;color:var(--ink);font-size:11px;font-weight:600;box-shadow:var(--card)}
+.featured .txt{padding:36px;display:flex;flex-direction:column;justify-content:space-between;gap:28px}
+.meta-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:12px;color:var(--m2)}
+.cat{white-space:nowrap;flex:none;padding:3px 9px;border-radius:999px;background:var(--blue-bg);color:var(--blue);font-weight:600;font-size:10px;letter-spacing:.06em;text-transform:uppercase}
+.featured h2{margin:16px 0 0;font-size:30px;line-height:1.12;letter-spacing:-.025em;font-weight:700;text-wrap:balance}
+.featured .ex{margin:14px 0 0;font-size:15px;line-height:1.6;color:var(--m1);text-wrap:pretty}
+.featured .foot{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.featured .by{display:flex;align-items:center;gap:10px;font-size:13px}
+.featured .by img{width:32px;height:32px;border-radius:50%;object-fit:cover;object-position:center 20%}
+.featured .go{width:36px;height:36px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:700;flex:none}
+@media (max-width:620px){.featured .shot{min-height:220px}.featured .txt{padding:26px 22px}.featured h2{font-size:24px}}
+
+/* ── LIST ── */
+.list{background:var(--s1);padding:72px 0 96px}
+.list-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}
+.list-head h2{margin:0;font-size:36px;letter-spacing:-.03em;font-weight:700;color:var(--ink)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip-btn{font:inherit;font-size:13px;font-weight:500;padding:8px 14px;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;border-radius:999px;cursor:pointer;border:1px solid #fff;background:#fff;color:#3F3F46;box-shadow:var(--card);transition:background .3s,color .3s,border-color .3s}
+.chip-btn .c{opacity:.5}
+.chip-btn[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+.grid{margin-top:36px;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:20px}
+.card{display:flex;flex-direction:column;background:#fff;border-radius:24px;overflow:hidden;box-shadow:var(--card);color:var(--ink);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.card:hover{transform:translateY(-4px);box-shadow:var(--card-hi);color:var(--ink)}
+.card .shot{aspect-ratio:16/10;position:relative;background:var(--s3)}
+.card .shot img{width:100%;height:100%;object-fit:cover}
+.card .cat-pill{position:absolute;top:12px;left:12px;white-space:nowrap;padding:4px 10px;border-radius:999px;background:#fff;font-size:11px;font-weight:600;color:var(--ink)}
+.card .txt{padding:22px 22px 20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card h3{margin:0;font-size:18px;line-height:1.3;letter-spacing:-.015em;font-weight:700;text-wrap:balance}
+.card p{margin:0;font-size:14px;line-height:1.6;color:#52525B;text-wrap:pretty}
+.card .foot{margin-top:auto;padding-top:12px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:12px;color:var(--m3)}
+.card .foot b{color:var(--ink);font-weight:600}
+
+/* ── CTA ── */
+.cta{padding:88px 24px;text-align:center}
+.cta h2{margin:0;font-size:36px;letter-spacing:-.03em;font-weight:700;color:var(--ink);text-wrap:balance}
+.cta p{margin:14px auto 0;max-width:480px;font-size:15px;line-height:1.6;color:#52525B}
+.cta .btns{margin:28px auto 0;display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.btn{font-size:14px;font-weight:600;padding:13px 22px;border-radius:999px;display:inline-block;transition:background .3s,color .3s}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-blue:hover{background:var(--blue-hi);color:#fff}
+.btn-soft{background:var(--s2);color:var(--ink)}
+.btn-soft:hover{background:#E4E8ED;color:var(--ink)}
+@media (max-width:620px){
+  .hero-in{padding-top:48px}
+  .hero h1{font-size:clamp(32px,9vw,44px)}
+  .list{padding:56px 0 72px}
+  .list-head h2,.cta h2{font-size:28px}
+  .cta{padding:64px 24px}
+}
+@media (prefers-reduced-motion:reduce){.card,.featured,.chip-btn,.btn{transition:none}}
+    </style>
+</head>
+<body>
+
+<nav class="nav" id="main-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <svg class="nav-logo-mark" viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="130" height="130" fill="#0A1628" rx="22"/><path d="M76.3592 57.857C75.4265 57.6937 74.717 57.1169 74.4236 56.2697C74.1135 55.3753 74.4325 54.4439 75.1177 53.76L100.357 28.5696L106.163 22.819C106.749 22.2385 107.518 21.8876 108.351 22.0458C109.412 22.2474 110.272 23.2579 110.273 24.4024L110.284 53.3836C110.036 55.8334 108.092 57.8366 105.589 57.8378L76.3579 57.8557L76.3592 57.857Z" fill="#FEFEFE"/><path d="M55.7679 56.6561C55.3584 57.3999 54.6387 57.8401 53.8081 57.8401L24.8525 57.8439C22.1667 57.8439 20.0269 55.7208 20.0257 53.021L20.0078 24.8589C20.0078 24.3256 20.0563 23.9033 20.2451 23.4554C20.5322 22.7766 21.1077 22.2714 21.715 22.0991C22.4882 21.8809 23.3494 22.0162 23.9083 22.5725L26.8888 25.5415L37.5364 36.1291L55.389 53.9511C56.0984 54.6592 56.2349 55.8101 55.7679 56.6573V56.6561Z" fill="#FEFEFE"/><path d="M81.9803 89.5551L77.6052 94.0131L72.5704 99.1296C71.921 99.7905 71.0329 100.038 70.1079 99.6961C69.4317 99.4447 68.7031 98.6702 68.7031 97.7605V68.6849C68.7031 66.6332 70.6731 64.4782 72.7542 64.4795L101.492 64.4973C102.35 64.4973 103.057 65.2718 103.31 65.8728C103.654 66.6919 103.501 67.6514 102.884 68.283L99.6377 71.6055L87.366 84.0776L81.9803 89.5551Z" fill="#FEFEFE"/><path d="M75.0723 104.606C75.2968 103.972 75.6018 103.617 76.0228 103.191L91.9641 87.0534L97.522 81.4304L106.326 72.5896C106.984 71.9274 107.856 71.6263 108.81 71.9848C109.414 72.2119 110.276 72.9736 110.276 73.8553L110.265 103.667C110.265 105.591 108.492 107.416 106.552 107.416H77.0487C75.6069 107.416 74.641 105.825 75.0723 104.606Z" fill="#FEFEFE"/><path d="M55.1655 106.234C54.7789 106.922 54.0121 107.436 53.1828 107.435L23.8354 107.424C22.326 107.424 21.0182 106.404 20.4313 105.133C20.2182 104.67 20.0166 104.24 20.0166 103.721L20 74.1515C20 73.2175 20.5461 72.3984 21.2734 72.0603C22.1104 71.6724 23.1222 71.7872 23.792 72.4596L31.4552 80.1687L36.2118 84.9572L46.608 95.4096L54.7522 103.652C55.436 104.344 55.6504 105.368 55.1643 106.233L55.1655 106.234Z" fill="#FEFEFE"/><path d="M54.5289 95.8494L49.9484 91.2005L37.276 78.3426L28.5462 69.5094C28.0384 68.9952 27.5497 68.5754 27.1605 67.9847C26.7076 67.2969 26.6221 66.4689 27.0202 65.6829C27.3111 65.11 27.958 64.4874 28.7937 64.4874L57.7723 64.4746C59.8942 64.7719 61.5184 66.5288 61.669 68.6737L61.6511 97.7875C61.6511 98.7075 60.8856 99.4832 60.2234 99.7116C59.269 100.041 58.4269 99.7499 57.7736 99.0953L54.5289 95.8481V95.8494Z" fill="#FEFEFE"/></svg>
+      Martin Motlík
+    </a>
+    <ul class="nav-links">
+      <li><a href="/references/">References</a></li>
+      <li><a href="/services/">Services</a></li>
+      <li><a href="/insights/" class="active" aria-current="page" data-i18n="nav_insights">Insights</a></li>
+      <li><a href="/#about">About me</a></li>
+      <li><a href="/#bim">Areas of Practice</a></li>
+      <li><a href="/#dlubal">Dlubal</a></li>
+      <li><a href="/#ai-in-aec">AI in AEC</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <div class="lang-group">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="cs">CS</button>
+        <button class="lang-btn" data-lang="de">DE</button>
+      </div>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="nav-drawer" id="nav-drawer">
+  <a href="/references/">References</a>
+  <a href="/services/">Services</a>
+  <a href="/insights/" class="active" aria-current="page" data-i18n="nav_insights">Insights</a>
+  <a href="/#about">About me</a>
+  <a href="/#bim">Areas of Practice</a>
+  <a href="/#dlubal">Dlubal</a>
+  <a href="/#ai-in-aec">AI in AEC</a>
+  <div class="nav-drawer-lang">
+    <button class="lang-btn active" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="cs">CS</button>
+    <button class="lang-btn" data-lang="de">DE</button>
+  </div>
+</div>
+
+<main class="ins">
+  <section class="hero">
+    <div class="glow" aria-hidden="true"></div>
+    <div class="wrap hero-in">
+      <div class="badge"><span class="dot"></span><span data-i18n="hero_badge">Insights</span></div>
+      <h1 data-i18n="hero_title">Field notes from AEC&rsquo;s move to the browser</h1>
+      <p class="dek" data-i18n="hero_dek">Practical writing on AI adoption, engineering-software marketing and building web ecosystems engineers actually use. No hype, just implementation.</p>
+
+      <a class="featured" href="/insights/ai-visibility-for-aec/">
+        <div class="shot">
+          <picture>
+            <source type="image/avif" sizes="(min-width: 1128px) 516px, (min-width: 800px) 50vw, calc(100vw - 48px)"
+                    srcset="/assets/img/ai-search-hero-400.avif 400w,
+                            /assets/img/ai-search-hero-600.avif 600w,
+                            /assets/img/ai-search-hero-900.avif 900w,
+                            /assets/img/ai-search-hero-1280.avif 1280w">
+            <img src="/assets/img/ai-search-hero-900.jpg" sizes="(min-width: 1128px) 516px, (min-width: 800px) 50vw, calc(100vw - 48px)"
+                 srcset="/assets/img/ai-search-hero-400.jpg 400w,
+                         /assets/img/ai-search-hero-600.jpg 600w,
+                         /assets/img/ai-search-hero-900.jpg 900w,
+                         /assets/img/ai-search-hero-1280.jpg 1280w"
+                 alt="Martin Motl&iacute;k working on a laptop outdoors, surrounded by the icons of AI assistants and search engines"
+                 width="1672" height="941" fetchpriority="high" decoding="async">
+          </picture>
+          <span class="flag" data-i18n="flag_featured">Featured</span>
+        </div>
+        <div class="txt">
+          <div>
+            <div class="meta-row">
+              <span class="cat">AI in AEC</span>
+              <span><time datetime="2026-10-06">Oct 6, 2026</time> &middot; <span data-i18n="read_8">8 min read</span></span>
+            </div>
+            <h2>Be the source: getting AEC data ready for AI search</h2>
+            <p class="ex">Working on engineering-software websites across different markets has shaped how I approach AI visibility. This article brings together lessons from localization and the practical checks I use to make technical content easier to find, interpret and verify.</p>
+          </div>
+          <div class="foot">
+            <span class="by">
+              <picture>
+                <source type="image/avif" sizes="32px" srcset="/assets/img/portrait-card-270.avif 270w, /assets/img/portrait-card-360.avif 360w">
+                <img src="/assets/img/portrait-card-270.jpg" sizes="32px" srcset="/assets/img/portrait-card-270.jpg 270w, /assets/img/portrait-card-360.jpg 360w" alt="" width="270" height="360" loading="lazy" decoding="async">
+              </picture>
+              Martin Motl&iacute;k
+            </span>
+            <span class="go" aria-hidden="true">&rarr;</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="list">
+    <div class="wrap">
+      <div class="list-head">
+        <h2 data-i18n="list_title">All articles</h2>
+        <div class="chips" id="chips" role="group" aria-label="Filter by category">
+          <button class="chip-btn" type="button" data-filter="all" aria-pressed="true"><span data-i18n="filter_all">All</span> <span class="c">1</span></button>
+          <button class="chip-btn" type="button" data-filter="ai-in-aec" aria-pressed="false">AI in AEC <span class="c">1</span></button>
+        </div>
+      </div>
+
+      <div class="grid" id="grid">
+        <a class="card" href="/insights/ai-visibility-for-aec/" data-cat="ai-in-aec">
+          <div class="shot">
+            <picture>
+              <source type="image/avif" sizes="(min-width: 1128px) 331px, (min-width: 700px) 33vw, calc(100vw - 48px)"
+                      srcset="/assets/img/ai-search-hero-400.avif 400w,
+                              /assets/img/ai-search-hero-600.avif 600w,
+                              /assets/img/ai-search-hero-900.avif 900w">
+              <img src="/assets/img/ai-search-hero-600.jpg" sizes="(min-width: 1128px) 331px, (min-width: 700px) 33vw, calc(100vw - 48px)"
+                   srcset="/assets/img/ai-search-hero-400.jpg 400w,
+                           /assets/img/ai-search-hero-600.jpg 600w,
+                           /assets/img/ai-search-hero-900.jpg 900w"
+                   alt="Martin Motl&iacute;k working on a laptop, surrounded by the icons of AI assistants"
+                   width="1672" height="941" loading="lazy" decoding="async">
+            </picture>
+            <span class="cat-pill">AI in AEC</span>
+          </div>
+          <div class="txt">
+            <h3>Be the source: getting AEC data ready for AI search</h3>
+            <p>Working on engineering-software websites across different markets has shaped how I approach AI visibility. This article brings together lessons from localization and the practical checks I use to make technical content easier to find, interpret and verify.</p>
+            <div class="foot">
+              <span><time datetime="2026-10-06">Oct 6, 2026</time> &middot; <span data-i18n="read_8">8 min read</span></span>
+              <b data-i18n="read_more">Read &rarr;</b>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2 data-i18n="cta_title">Get new insights first.</h2>
+    <p data-i18n="cta_text">I publish roughly twice a month on AI in AEC, engineering-software marketing and web ecosystems. New pieces go out on LinkedIn first.</p>
+    <div class="btns">
+      <a class="btn btn-blue" href="https://www.linkedin.com/in/martin-motl%C3%ADk-3b1b47233" target="_blank" rel="noopener" data-i18n="cta_linkedin">Follow on LinkedIn</a>
+      <a class="btn btn-soft" href="mailto:motlik.martin@gmail.com?subject=Insights" data-i18n="cta_email">Send me an email</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <a href="/" class="footer-logo">
+      <svg width="22" height="22" viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="130" height="130" fill="#0A1628" rx="22"/>
+        <path d="M76.3592 57.857C75.4265 57.6937 74.717 57.1169 74.4236 56.2697C74.1135 55.3753 74.4325 54.4439 75.1177 53.76L100.357 28.5696L106.163 22.819C106.749 22.2385 107.518 21.8876 108.351 22.0458C109.412 22.2474 110.272 23.2579 110.273 24.4024L110.284 53.3836C110.036 55.8334 108.092 57.8366 105.589 57.8378L76.3579 57.8557L76.3592 57.857Z" fill="#FEFEFE"/>
+        <path d="M55.7679 56.6561C55.3584 57.3999 54.6387 57.8401 53.8081 57.8401L24.8525 57.8439C22.1667 57.8439 20.0269 55.7208 20.0257 53.021L20.0078 24.8589C20.0078 24.3256 20.0563 23.9033 20.2451 23.4554C20.5322 22.7766 21.1077 22.2714 21.715 22.0991C22.4882 21.8809 23.3494 22.0162 23.9083 22.5725L26.8888 25.5415L37.5364 36.1291L55.389 53.9511C56.0984 54.6592 56.2349 55.8101 55.7679 56.6573V56.6561Z" fill="#FEFEFE"/>
+        <path d="M81.9803 89.5551L77.6052 94.0131L72.5704 99.1296C71.921 99.7905 71.0329 100.038 70.1079 99.6961C69.4317 99.4447 68.7031 98.6702 68.7031 97.7605V68.6849C68.7031 66.6332 70.6731 64.4782 72.7542 64.4795L101.492 64.4973C102.35 64.4973 103.057 65.2718 103.31 65.8728C103.654 66.6919 103.501 67.6514 102.884 68.283L99.6377 71.6055L87.366 84.0776L81.9803 89.5551Z" fill="#FEFEFE"/>
+        <path d="M75.0723 104.606C75.2968 103.972 75.6018 103.617 76.0228 103.191L91.9641 87.0534L97.522 81.4304L106.326 72.5896C106.984 71.9274 107.856 71.6263 108.81 71.9848C109.414 72.2119 110.276 72.9736 110.276 73.8553L110.265 103.667C110.265 105.591 108.492 107.416 106.552 107.416H77.0487C75.6069 107.416 74.641 105.825 75.0723 104.606Z" fill="#FEFEFE"/>
+        <path d="M55.1655 106.234C54.7789 106.922 54.0121 107.436 53.1828 107.435L23.8354 107.424C22.326 107.424 21.0182 106.404 20.4313 105.133C20.2182 104.67 20.0166 104.24 20.0166 103.721L20 74.1515C20 73.2175 20.5461 72.3984 21.2734 72.0603C22.1104 71.6724 23.1222 71.7872 23.792 72.4596L31.4552 80.1687L36.2118 84.9572L46.608 95.4096L54.7522 103.652C55.436 104.344 55.6504 105.368 55.1643 106.233L55.1655 106.234Z" fill="#FEFEFE"/>
+        <path d="M54.5289 95.8494L49.9484 91.2025L37.276 78.3426L28.5462 69.5094C28.0384 68.9952 27.5497 68.5754 27.1605 67.9847C26.7076 67.2969 26.6221 66.4689 27.0202 65.6829C27.3111 65.11 27.958 64.4874 28.7937 64.4874L57.7723 64.4746C59.8942 64.7719 61.5184 66.5288 61.669 68.6737L61.6511 97.7875C61.6511 98.7075 60.8856 99.4832 60.2234 99.7116C59.269 100.041 58.4269 99.7499 57.7736 99.0953L54.5289 95.8481V95.8494Z" fill="#FEFEFE"/>
+      </svg>
+      Martin Motlík
+    </a>
+    <div class="footer-info">
+      &copy; 2026
+      <span class="footer-sep">&middot;</span>
+      I&#268;O: 21839662
+      <span class="footer-sep">&middot;</span>
+      DI&#268;: CZ0103073146
+      <span class="footer-sep">&middot;</span>
+      <a href="mailto:motlik.martin@gmail.com">motlik.martin@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// — Nav hamburger —
+const navHamburger = document.getElementById('nav-hamburger');
+const navDrawer    = document.getElementById('nav-drawer');
+if (navHamburger && navDrawer) {
+  navHamburger.addEventListener('click', () => navDrawer.classList.toggle('open'));
+  document.addEventListener('click', e => {
+    if (!navHamburger.contains(e.target) && !navDrawer.contains(e.target)) navDrawer.classList.remove('open');
+  });
+}
+
+// — Category filter. The cards are already in the HTML; this only hides them,
+//   so the full list stays readable to crawlers that do not run scripts. —
+(function(){
+  var chips = [].slice.call(document.querySelectorAll('#chips .chip-btn'));
+  var cards = [].slice.call(document.querySelectorAll('#grid .card'));
+  chips.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var f = btn.dataset.filter;
+      chips.forEach(function(b){ b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+      cards.forEach(function(c){ c.hidden = !(f === 'all' || c.dataset.cat === f); });
+    });
+  });
+})();
+
+// — Language (page chrome only) —
+(function(){
+  var i18n = {
+    cs: {
+      nav_insights:'Insights',
+      hero_badge:'Insights',
+      hero_title:'Poznámky z přesunu AEC do prohlížeče',
+      hero_dek:'Praktické psaní o zavádění AI, marketingu inženýrského softwaru a budování webových ekosystémů, které inženýři skutečně používají. Žádný hype, jen implementace.',
+      flag_featured:'Vybráno', read_8:'8 min čtení', read_more:'Číst →',
+      list_title:'Všechny články', filter_all:'Vše',
+      cta_title:'Nové články jako první.',
+      cta_text:'Publikuji zhruba dvakrát měsíčně o AI v AEC, marketingu inženýrského softwaru a webových ekosystémech. Nové texty vycházejí nejdřív na LinkedInu.',
+      cta_linkedin:'Sledovat na LinkedIn', cta_email:'Napsat e-mail'
+    },
+    de: {
+      nav_insights:'Insights',
+      hero_badge:'Insights',
+      hero_title:'Notizen zum Umzug der AEC-Branche in den Browser',
+      hero_dek:'Praxisnahe Texte über KI-Einführung, Marketing für Ingenieursoftware und den Aufbau von Web-Ökosystemen, die Ingenieure wirklich nutzen. Kein Hype, nur Umsetzung.',
+      flag_featured:'Empfohlen', read_8:'8 Min. Lesezeit', read_more:'Lesen →',
+      list_title:'Alle Artikel', filter_all:'Alle',
+      cta_title:'Neue Beiträge zuerst.',
+      cta_text:'Ich veröffentliche etwa zweimal im Monat über KI im AEC, Marketing für Ingenieursoftware und Web-Ökosysteme. Neue Texte erscheinen zuerst auf LinkedIn.',
+      cta_linkedin:'Auf LinkedIn folgen', cta_email:'E-Mail schreiben'
+    }
+  };
+  var EN = {};
+  document.querySelectorAll('[data-i18n]').forEach(function(el){ EN[el.dataset.i18n] = el.textContent; });
+  function applyLang(lang){
+    var dict = lang === 'en' ? EN : (i18n[lang] || EN);
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var k = el.dataset.i18n;
+      el.textContent = dict[k] || EN[k] || el.textContent;
+    });
+    document.querySelectorAll('.lang-btn').forEach(function(b){ b.classList.toggle('active', b.dataset.lang === lang); });
+    document.documentElement.lang = lang;
+    try { localStorage.setItem('lang', lang); } catch(e) {}
+  }
+  document.querySelectorAll('.lang-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){ applyLang(btn.dataset.lang); });
+  });
+  var saved = 'en';
+  try { saved = localStorage.getItem('lang') || 'en'; } catch(e) {}
+  if (saved !== 'en') applyLang(saved);
+})();
+</script>
+
+</body>
+</html>

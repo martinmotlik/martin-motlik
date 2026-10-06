@@ -228,6 +228,53 @@
       }
     ]
   },
+  "ai-search-hero": {
+    "slug": "ai-search-hero",
+    "source": "images/ai-search-hero.jpg",
+    "sourceWidth": 1672,
+    "sourceHeight": 941,
+    "aspect": 1.776833,
+    "roles": [
+      "gallery"
+    ],
+    "widths": [
+      {
+        "w": 400,
+        "h": 225,
+        "jpg": 18512,
+        "avif": 9977,
+        "bpp": 1.65
+      },
+      {
+        "w": 600,
+        "h": 338,
+        "jpg": 31919,
+        "avif": 16130,
+        "bpp": 1.26
+      },
+      {
+        "w": 900,
+        "h": 507,
+        "jpg": 54951,
+        "avif": 25470,
+        "bpp": 0.96
+      },
+      {
+        "w": 1280,
+        "h": 720,
+        "jpg": 86956,
+        "avif": 38532,
+        "bpp": 0.75
+      },
+      {
+        "w": 1672,
+        "h": 941,
+        "jpg": 126312,
+        "avif": 54766,
+        "bpp": 0.64
+      }
+    ]
+  },
   "ifc-verify-cover": {
     "slug": "ifc-verify-cover",
     "source": "references/ifc-verify/cover.png",
@@ -1283,6 +1330,23 @@
         "jpg": 88271,
         "avif": 53724,
         "bpp": 0.65
+      }
+    ]
+  },
+  "ai-search-hero-og": {
+    "slug": "ai-search-hero-og",
+    "source": "images/ai-search-hero.jpg",
+    "roles": [
+      "crop"
+    ],
+    "aspect": 1.9047619047619047,
+    "widths": [
+      {
+        "w": 1200,
+        "h": 630,
+        "jpg": 76448,
+        "avif": 34400,
+        "bpp": 0.81
       }
     ]
   },
