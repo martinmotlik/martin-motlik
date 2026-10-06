@@ -342,13 +342,13 @@ img{display:block;max-width:100%}
       Martin Motlík
     </a>
     <ul class="nav-links">
-      <li><a href="/references/">References</a></li>
-      <li><a href="/services/">Services</a></li>
+      <li><a href="/references/" data-i18n="nav_references">References</a></li>
+      <li><a href="/services/" data-i18n="nav_services">Services</a></li>
       <li><a href="/insights/" class="active" aria-current="page" data-i18n="nav_insights">Insights</a></li>
-      <li><a href="/#about">About me</a></li>
-      <li><a href="/#bim">Areas of Practice</a></li>
-      <li><a href="/#dlubal">Dlubal</a></li>
-      <li><a href="/#ai-in-aec">AI in AEC</a></li>
+      <li><a href="/#about" data-i18n="nav_about">About me</a></li>
+      <li><a href="/#bim" data-i18n="nav_bim">Areas of Practice</a></li>
+      <li><a href="/#dlubal" data-i18n="nav_dlubal">Dlubal</a></li>
+      <li><a href="/#ai-in-aec" data-i18n="nav_ai">AI in AEC</a></li>
     </ul>
     <div style="display:flex;align-items:center;gap:12px;">
       <div class="lang-group">
@@ -356,20 +356,20 @@ img{display:block;max-width:100%}
         <button class="lang-btn" data-lang="cs">CS</button>
         <button class="lang-btn" data-lang="de">DE</button>
       </div>
-      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" data-i18n-attr="aria-label:menu_aria">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
 </nav>
 <div class="nav-drawer" id="nav-drawer">
-  <a href="/references/">References</a>
-  <a href="/services/">Services</a>
+  <a href="/references/" data-i18n="nav_references">References</a>
+  <a href="/services/" data-i18n="nav_services">Services</a>
   <a href="/insights/" class="active" aria-current="page" data-i18n="nav_insights">Insights</a>
-  <a href="/#about">About me</a>
-  <a href="/#bim">Areas of Practice</a>
-  <a href="/#dlubal">Dlubal</a>
-  <a href="/#ai-in-aec">AI in AEC</a>
+  <a href="/#about" data-i18n="nav_about">About me</a>
+  <a href="/#bim" data-i18n="nav_bim">Areas of Practice</a>
+  <a href="/#dlubal" data-i18n="nav_dlubal">Dlubal</a>
+  <a href="/#ai-in-aec" data-i18n="nav_ai">AI in AEC</a>
   <div class="nav-drawer-lang">
     <button class="lang-btn active" data-lang="en">EN</button>
     <button class="lang-btn" data-lang="cs">CS</button>
@@ -398,7 +398,7 @@ img{display:block;max-width:100%}
                          /assets/img/ai-search-hero-600.jpg 600w,
                          /assets/img/ai-search-hero-900.jpg 900w,
                          /assets/img/ai-search-hero-1280.jpg 1280w"
-                 alt="Martin Motl&iacute;k working on a laptop outdoors, surrounded by the icons of AI assistants and search engines"
+                 alt="Martin Motl&iacute;k working on a laptop outdoors, surrounded by the icons of AI assistants and search engines" data-i18n-attr="alt:a1_alt"
                  width="1672" height="941" fetchpriority="high" decoding="async">
           </picture>
           <span class="flag" data-i18n="flag_featured">Featured</span>
@@ -406,11 +406,11 @@ img{display:block;max-width:100%}
         <div class="txt">
           <div>
             <div class="meta-row">
-              <span class="cat">AI in AEC</span>
-              <span><time datetime="2026-10-06">Oct 6, 2026</time> &middot; <span data-i18n="read_8">8 min read</span></span>
+              <span class="cat" data-i18n="cat_ai">AI in AEC</span>
+              <span><time datetime="2026-10-06" data-i18n="date_a1">Oct 6, 2026</time> &middot; <span data-i18n="read_8">8 min read</span></span>
             </div>
-            <h2>Be the source: getting AEC data ready for AI search</h2>
-            <p class="ex">Working on engineering-software websites across different markets has shaped how I approach AI visibility. This article brings together lessons from localization and the practical checks I use to make technical content easier to find, interpret and verify.</p>
+            <h2 data-i18n="a1_title">Be the source: getting AEC data ready for AI search</h2>
+            <p class="ex" data-i18n="a1_ex">Working on engineering-software websites across different markets has shaped how I approach AI visibility. This article brings together lessons from localization and the practical checks I use to make technical content easier to find, interpret and verify.</p>
           </div>
           <div class="foot">
             <span class="by">
@@ -431,9 +431,9 @@ img{display:block;max-width:100%}
     <div class="wrap">
       <div class="list-head">
         <h2 data-i18n="list_title">All articles</h2>
-        <div class="chips" id="chips" role="group" aria-label="Filter by category">
+        <div class="chips" id="chips" role="group" aria-label="Filter by category" data-i18n-attr="aria-label:chips_aria">
           <button class="chip-btn" type="button" data-filter="all" aria-pressed="true"><span data-i18n="filter_all">All</span> <span class="c">1</span></button>
-          <button class="chip-btn" type="button" data-filter="ai-in-aec" aria-pressed="false">AI in AEC <span class="c">1</span></button>
+          <button class="chip-btn" type="button" data-filter="ai-in-aec" aria-pressed="false"><span data-i18n="cat_ai">AI in AEC</span> <span class="c">1</span></button>
         </div>
       </div>
 
@@ -449,16 +449,16 @@ img{display:block;max-width:100%}
                    srcset="/assets/img/ai-search-hero-400.jpg 400w,
                            /assets/img/ai-search-hero-600.jpg 600w,
                            /assets/img/ai-search-hero-900.jpg 900w"
-                   alt="Martin Motl&iacute;k working on a laptop, surrounded by the icons of AI assistants"
+                   alt="Martin Motl&iacute;k working on a laptop, surrounded by the icons of AI assistants" data-i18n-attr="alt:a1_alt_short"
                    width="1672" height="941" loading="lazy" decoding="async">
             </picture>
-            <span class="cat-pill">AI in AEC</span>
+            <span class="cat-pill" data-i18n="cat_ai">AI in AEC</span>
           </div>
           <div class="txt">
-            <h3>Be the source: getting AEC data ready for AI search</h3>
-            <p>Working on engineering-software websites across different markets has shaped how I approach AI visibility. This article brings together lessons from localization and the practical checks I use to make technical content easier to find, interpret and verify.</p>
+            <h3 data-i18n="a1_title">Be the source: getting AEC data ready for AI search</h3>
+            <p data-i18n="a1_ex">Working on engineering-software websites across different markets has shaped how I approach AI visibility. This article brings together lessons from localization and the practical checks I use to make technical content easier to find, interpret and verify.</p>
             <div class="foot">
-              <span><time datetime="2026-10-06">Oct 6, 2026</time> &middot; <span data-i18n="read_8">8 min read</span></span>
+              <span><time datetime="2026-10-06" data-i18n="date_a1">Oct 6, 2026</time> &middot; <span data-i18n="read_8">8 min read</span></span>
               <b data-i18n="read_more">Read &rarr;</b>
             </div>
           </div>
@@ -528,40 +528,66 @@ if (navHamburger && navDrawer) {
   });
 })();
 
-// — Language (page chrome only) —
+// — Language. English is the HTML; this swaps text ([data-i18n]) and
+//   attributes (data-i18n-attr="attr:key;…") for CS and DE. —
 (function(){
   var i18n = {
     cs: {
-      nav_insights:'Insights',
+      title:'Insights – Martin Motlík | AI, BIM a webové ekosystémy v AEC',
+      nav_references:'Reference', nav_services:'Služby', nav_insights:'Insights', nav_about:'O mně',
+      nav_bim:'Oblast praxe', nav_dlubal:'Dlubal', nav_ai:'AI v AEC', menu_aria:'Otevřít menu',
       hero_badge:'Insights',
-      hero_title:'Poznámky z přesunu AEC do prohlížeče',
-      hero_dek:'Praktické psaní o zavádění AI, marketingu inženýrského softwaru a budování webových ekosystémů, které inženýři skutečně používají. Žádný hype, jen implementace.',
-      flag_featured:'Vybráno', read_8:'8 min čtení', read_more:'Číst →',
-      list_title:'Všechny články', filter_all:'Vše',
-      cta_title:'Nové články jako první.',
-      cta_text:'Publikuji zhruba dvakrát měsíčně o AI v AEC, marketingu inženýrského softwaru a webových ekosystémech. Nové texty vycházejí nejdřív na LinkedInu.',
-      cta_linkedin:'Sledovat na LinkedIn', cta_email:'Napsat e-mail'
+      hero_title:'Poznatky z praxe: AEC se stěhuje do prohlížeče',
+      hero_dek:'Praktické texty o zavádění AI, marketingu inženýrského softwaru a budování webových ekosystémů, které inženýři opravdu používají. Žádný hype, jen implementace.',
+      flag_featured:'Doporučujeme', cat_ai:'AI v AEC', date_a1:'6. října 2026', read_8:'8 min čtení', read_more:'Číst →',
+      a1_title:'Buďte zdrojem: jak připravit data AEC firem pro vyhledávání s AI',
+      a1_ex:'Práce na webech inženýrského softwaru pro různé trhy formovala můj přístup k viditelnosti v AI. Tento článek shrnuje poznatky z lokalizace a praktické kontroly, se kterými dělám technický obsah snáze dohledatelný, srozumitelný a ověřitelný.',
+      a1_alt:'Martin Motlík pracuje venku na notebooku, obklopený ikonami asistentů AI a vyhledávačů',
+      a1_alt_short:'Martin Motlík pracuje na notebooku, obklopený ikonami asistentů AI',
+      list_title:'Všechny články', filter_all:'Vše', chips_aria:'Filtrovat podle kategorie',
+      cta_title:'Čtěte nové články jako první.',
+      cta_text:'Zhruba dvakrát měsíčně publikuji o AI v AEC, marketingu inženýrského softwaru a webových ekosystémech. Nové texty vycházejí nejdříve na LinkedInu.',
+      cta_linkedin:'Sledovat na LinkedInu', cta_email:'Napsat e-mail'
     },
     de: {
-      nav_insights:'Insights',
+      title:'Insights – Martin Motlík | KI, BIM und Web-Ökosysteme im AEC',
+      nav_references:'Referenzen', nav_services:'Services', nav_insights:'Insights', nav_about:'Über mich',
+      nav_bim:'Leistungen', nav_dlubal:'Dlubal', nav_ai:'KI im AEC', menu_aria:'Menü öffnen',
       hero_badge:'Insights',
-      hero_title:'Notizen zum Umzug der AEC-Branche in den Browser',
+      hero_title:'Notizen aus der Praxis: AEC zieht in den Browser',
       hero_dek:'Praxisnahe Texte über KI-Einführung, Marketing für Ingenieursoftware und den Aufbau von Web-Ökosystemen, die Ingenieure wirklich nutzen. Kein Hype, nur Umsetzung.',
-      flag_featured:'Empfohlen', read_8:'8 Min. Lesezeit', read_more:'Lesen →',
-      list_title:'Alle Artikel', filter_all:'Alle',
-      cta_title:'Neue Beiträge zuerst.',
-      cta_text:'Ich veröffentliche etwa zweimal im Monat über KI im AEC, Marketing für Ingenieursoftware und Web-Ökosysteme. Neue Texte erscheinen zuerst auf LinkedIn.',
+      flag_featured:'Empfohlen', cat_ai:'KI im AEC', date_a1:'6. Oktober 2026', read_8:'8 Min. Lesezeit', read_more:'Lesen →',
+      a1_title:'Werden Sie zur Quelle: AEC-Daten fit für die KI-Suche machen',
+      a1_ex:'Die Arbeit an Websites für Ingenieursoftware in verschiedenen Märkten hat geprägt, wie ich an KI-Sichtbarkeit herangehe. Dieser Beitrag bündelt Erfahrungen aus der Lokalisierung und die praktischen Prüfungen, mit denen ich technische Inhalte leichter auffindbar, verständlich und überprüfbar mache.',
+      a1_alt:'Martin Motlík arbeitet im Freien am Laptop, umgeben von den Symbolen von KI-Assistenten und Suchmaschinen',
+      a1_alt_short:'Martin Motlík arbeitet am Laptop, umgeben von den Symbolen von KI-Assistenten',
+      list_title:'Alle Beiträge', filter_all:'Alle', chips_aria:'Nach Kategorie filtern',
+      cta_title:'Neue Beiträge als Erste lesen.',
+      cta_text:'Ich veröffentliche etwa zweimal im Monat zu KI im AEC, Marketing für Ingenieursoftware und Web-Ökosystemen. Neue Texte erscheinen zuerst auf LinkedIn.',
       cta_linkedin:'Auf LinkedIn folgen', cta_email:'E-Mail schreiben'
     }
   };
-  var EN = {};
+  var EN = { title: document.title }, EN_ATTR = new Map();
   document.querySelectorAll('[data-i18n]').forEach(function(el){ EN[el.dataset.i18n] = el.textContent; });
+  document.querySelectorAll('[data-i18n-attr]').forEach(function(el){
+    var orig = {};
+    el.dataset.i18nAttr.split(';').forEach(function(b){ var a = b.split(':')[0]; orig[a] = el.getAttribute(a); });
+    EN_ATTR.set(el, orig);
+  });
   function applyLang(lang){
-    var dict = lang === 'en' ? EN : (i18n[lang] || EN);
+    var dict = i18n[lang] || null;
+    if (!dict) lang = 'en';
     document.querySelectorAll('[data-i18n]').forEach(function(el){
       var k = el.dataset.i18n;
-      el.textContent = dict[k] || EN[k] || el.textContent;
+      el.textContent = (dict && dict[k]) || EN[k] || el.textContent;
     });
+    EN_ATTR.forEach(function(orig, el){
+      el.dataset.i18nAttr.split(';').forEach(function(b){
+        var p = b.split(':');
+        el.setAttribute(p[0], (dict && dict[p[1]]) || orig[p[0]]);
+      });
+    });
+    document.title = (dict && dict.title) || EN.title;
     document.querySelectorAll('.lang-btn').forEach(function(b){ b.classList.toggle('active', b.dataset.lang === lang); });
     document.documentElement.lang = lang;
     try { localStorage.setItem('lang', lang); } catch(e) {}
