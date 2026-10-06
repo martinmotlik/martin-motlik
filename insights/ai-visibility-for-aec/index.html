@@ -589,6 +589,14 @@ article a.cl-btn2{padding:0 18px;background:rgba(255,255,255,.12);color:#fff}
 .sbtn.fail{background:#FEECEC;color:#B91C1C}
 body.vo-active{padding-bottom:96px}       /* room for the mini player above the footer */
 .byline .wave i{transform-origin:50% 50%}
+        /* With eight menu items, the full menu no longer fits next to the logo and
+           the language switch below ~960 px, so tablets in portrait get the mobile
+           menu as well. */
+        @media (max-width: 979px) {
+          .nav-links { display: none; }
+          .lang-group { display: none; }
+          .nav-hamburger { display: flex; }
+        }
     </style>
 </head>
 <body>

@@ -854,6 +854,14 @@
     .acc-bim-c.open .acc-bim-toggle { background: rgba(124,58,237,0.2); border-color: rgba(167,139,250,0.35); }
     .acc-bim-c.open .acc-bim-toggle-icon::before,
     .acc-bim-c.open .acc-bim-toggle-icon::after { background: #A78BFA; }
+        /* With eight menu items, the full menu no longer fits next to the logo and
+           the language switch below ~960 px, so tablets in portrait get the mobile
+           menu as well. */
+        @media (max-width: 979px) {
+          .nav-links { display: none; }
+          .lang-group { display: none; }
+          .nav-hamburger { display: flex; }
+        }
   </style>
   <link rel="alternate" type="text/plain" href="https://martinmotlik.com/llms.txt" title="LLMs.txt">
 </head>

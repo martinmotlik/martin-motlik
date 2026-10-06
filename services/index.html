@@ -655,6 +655,14 @@
       .deliverable { grid-template-columns: 1fr; gap: 5px; }
       .panel-title { font-size: 22px; }
     }
+        /* With eight menu items, the full menu no longer fits next to the logo and
+           the language switch below ~960 px, so tablets in portrait get the mobile
+           menu as well. */
+        @media (max-width: 979px) {
+          .nav-links { display: none; }
+          .lang-group { display: none; }
+          .nav-hamburger { display: flex; }
+        }
   </style>
 </head>
 <body>

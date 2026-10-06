@@ -323,6 +323,14 @@ img{display:block;max-width:100%}
   .cta{padding:64px 24px}
 }
 @media (prefers-reduced-motion:reduce){.card,.featured,.chip-btn,.btn{transition:none}}
+        /* With eight menu items, the full menu no longer fits next to the logo and
+           the language switch below ~960 px, so tablets in portrait get the mobile
+           menu as well. */
+        @media (max-width: 979px) {
+          .nav-links { display: none; }
+          .lang-group { display: none; }
+          .nav-hamburger { display: flex; }
+        }
     </style>
 </head>
 <body>
