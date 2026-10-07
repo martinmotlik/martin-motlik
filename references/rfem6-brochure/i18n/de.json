@@ -1,0 +1,88 @@
+{
+ "lang": "de",
+ "ui": {
+  "title": "Martin Motlík | Broschürendesign RFEM 6 | Dlubal Software"
+ },
+ "chrome": {
+  "nav_insights": "Insights",
+  "share": "Teilen",
+  "nav_back": "← Alle Referenzen",
+  "nav_prev": "Vorheriges Projekt",
+  "nav_next": "Nächstes Projekt",
+  "context": "Dlubal Software USA · Printdesign · 2026",
+  "perex": "Gestaltung einer 12-seitigen Broschüre für den US-Markt von Dlubal Software – vom ersten Konzept bis zur druckfertigen Vorlage – in Zusammenarbeit mit dem Designteam und dem CEO der US-Niederlassung. Das Konzept wurde später zu einer internationalen Ausgabe für die europäischen Niederlassungen von Dlubal weiterentwickelt.",
+  "meta_type": "Art",
+  "meta_market": "Markt",
+  "meta_pages": "Umfang",
+  "meta_year": "Jahr",
+  "val_type": "Printbroschüre",
+  "val_pages": "12 Seiten",
+  "btn_pdf": "PDF herunterladen",
+  "nav_sub": "Messestand-Design · Portland, OR"
+ },
+ "text": {
+  "References": "Referenzen",
+  "Services": "Leistungen",
+  "About me": "Über mich",
+  "Areas of Practice": "Tätigkeitsfelder",
+  "AI in AEC": "KI im AEC",
+  "US & Canada": "USA und Kanada",
+  "RFEM 6 Product Brochure": "RFEM 6 Produktbroschüre"
+ },
+ "attrs": {
+  "Open menu": "Menü öffnen",
+  "Share on LinkedIn": "Auf LinkedIn teilen",
+  "Share on X": "Auf X teilen",
+  "Share on Facebook": "Auf Facebook teilen",
+  "Copy link": "Link kopieren",
+  "Previous": "Zurück",
+  "Next": "Weiter",
+  "Close": "Schließen",
+  "Pause rotation": "Rotation anhalten",
+  "RFEM 6 product brochure cover — designed by Martin Motlík for Dlubal Software US market": "Titelseite der RFEM 6 Produktbroschüre – gestaltet von Martin Motlík für den US-Markt von Dlubal Software",
+  "RFEM 6 product brochure page spread 1 — designed by Martin Motlík for Dlubal Software US market": "Doppelseite 1 der RFEM 6 Produktbroschüre – gestaltet von Martin Motlík für den US-Markt von Dlubal Software",
+  "RFEM 6 product brochure page spread 2 — designed by Martin Motlík for Dlubal Software US market": "Doppelseite 2 der RFEM 6 Produktbroschüre – gestaltet von Martin Motlík für den US-Markt von Dlubal Software",
+  "RFEM 6 product brochure page spread 3 — designed by Martin Motlík for Dlubal Software US market": "Doppelseite 3 der RFEM 6 Produktbroschüre – gestaltet von Martin Motlík für den US-Markt von Dlubal Software",
+  "International Mass Timber Conference 2026 — Dlubal Software booth, Portland": "International Mass Timber Conference 2026 – Messestand von Dlubal Software, Portland",
+  "Full size brochure spread": "Broschüren-Doppelseite in voller Größe"
+ },
+ "keep": [
+  "DIČ: CZ0103073146",
+  "motlik.martin@gmail.com",
+  "www.dlubal.com",
+  "dlubal.com",
+  "© Dlubal Software ·",
+  "NASCC: The Steel Conference 2026",
+  "International Mass Timber Conference 2026",
+  "Mass Timber Conference 2026",
+  "NASCC 2026",
+  "IMTC 2026",
+  "Georgia World Congress Center",
+  "Oregon Convention Center",
+  "Atlanta, GA, USA",
+  "Portland, OR, USA",
+  "Atlanta, GA · 10' × 20'",
+  "Portland, OR · 10' × 20'",
+  "Dlubal Software USA",
+  "IFC Verify",
+  "ifc-verify.app · 2024",
+  "RFEM 6"
+ ],
+ "meta": {
+  "description": "12-seitige Produktbroschüre zu RFEM 6 für den US-Markt von Dlubal Software, gestaltet von Martin Motlík – vom Konzept bis zur Druckvorlage. Später international adaptiert.",
+  "og_title": "Broschürendesign RFEM 6 – Dlubal Software",
+  "og_description": "12-seitige Produktbroschüre zu RFEM 6 für den US-Markt von Dlubal Software, gestaltet von Martin Motlík – vom Konzept bis zur Druckvorlage. Später international adaptiert.",
+  "twitter_title": "Broschürendesign RFEM 6 – Dlubal Software",
+  "twitter_description": "12-seitige Produktbroschüre zu RFEM 6 für den US-Markt von Dlubal Software, gestaltet von Martin Motlík – vom Konzept bis zur Druckvorlage.",
+  "image_alt": "RFEM 6 Produktbroschüre – AEC-Printdesign von Martin Motlík für den US-Markt von Dlubal Software",
+  "twitter_image_alt": "Titelseite der RFEM 6 Produktbroschüre – gestaltet von Martin Motlík für Dlubal Software",
+  "in_language": "de-DE"
+ },
+ "ld": {
+  "name": "RFEM 6 Produktbroschüre – US-Ausgabe",
+  "description": "Gestaltung einer 12-seitigen Broschüre für den US-Markt von Dlubal Software vom ersten Konzept bis zur Druckvorlage, in Zusammenarbeit mit dem Designteam und dem CEO der US-Niederlassung. Das Konzept wurde später zu einer internationalen Ausgabe für die europäischen Niederlassungen von Dlubal weiterentwickelt.",
+  "creator.jobTitle": "AEC-Marketingberater",
+  "image.caption": "RFEM 6 Produktbroschüre – AEC-Printdesign von Martin Motlík für den US-Markt von Dlubal Software",
+  "keywords": "AEC-Marketing, Printdesign, Produktbroschüre, RFEM 6, Dlubal Software, BIM-Software, Tragwerksplanung, FEM-Software"
+ }
+}

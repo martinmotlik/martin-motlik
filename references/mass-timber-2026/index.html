@@ -19,6 +19,11 @@
 
     <!-- ── Canonical ── -->
     <link rel="canonical" href="https://martinmotlik.com/references/mass-timber-2026/">
+    <!-- Language versions (tools/build-i18n.py). Every version lists all of them. -->
+    <link rel="alternate" hreflang="en" href="https://martinmotlik.com/references/mass-timber-2026/">
+    <link rel="alternate" hreflang="cs" href="https://martinmotlik.com/cs/reference/mass-timber-2026/">
+    <link rel="alternate" hreflang="de" href="https://martinmotlik.com/de/referenzen/mass-timber-2026/">
+    <link rel="alternate" hreflang="x-default" href="https://martinmotlik.com/references/mass-timber-2026/">
 
     <!-- ── Geo ── -->
     <meta name="geo.region" content="US-OR">
@@ -35,6 +40,8 @@
     <meta property="og:image:height" content="832">
     <meta property="og:image:alt" content="Dlubal Software booth #908 at International Mass Timber Conference 2026, Oregon Convention Center, Portland">
     <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="cs_CZ">
+    <meta property="og:locale:alternate" content="de_DE">
     <meta property="article:published_time" content="2026-04-01">
     <meta property="article:modified_time" content="2026-05-01">
     <meta property="article:author" content="https://martinmotlik.com">
@@ -201,6 +208,7 @@
           cursor: pointer; letter-spacing: 0.03em; transition: background 0.12s, color 0.12s;
           font-family: inherit;
         }
+        a.lang-btn { display: inline-block; text-decoration: none; }  /* language versions are links */
         .lang-btn.active { background: white; color: var(--text, #09090b); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
         .nav-hamburger {
           display: none; flex-direction: column; gap: 5px;
@@ -715,9 +723,9 @@
     </ul>
     <div style="display:flex;align-items:center;gap:12px;">
       <div class="lang-group">
-        <button class="lang-btn active" data-lang="en">EN</button>
-        <button class="lang-btn" data-lang="cs">CS</button>
-        <button class="lang-btn" data-lang="de">DE</button>
+        <a class="lang-btn active" href="/references/mass-timber-2026/" hreflang="en" lang="en" data-lang="en" aria-label="English" aria-current="page">EN</a>
+        <a class="lang-btn" href="/cs/reference/mass-timber-2026/" hreflang="cs" lang="cs" data-lang="cs" aria-label="Čeština">CS</a>
+        <a class="lang-btn" href="/de/referenzen/mass-timber-2026/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch">DE</a>
       </div>
       <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
@@ -734,9 +742,9 @@
   <a href="/#dlubal">Dlubal</a>
   <a href="/#ai-in-aec">AI in AEC</a>
   <div class="nav-drawer-lang">
-    <button class="lang-btn active" data-lang="en">EN</button>
-    <button class="lang-btn" data-lang="cs">CS</button>
-    <button class="lang-btn" data-lang="de">DE</button>
+    <a class="lang-btn active" href="/references/mass-timber-2026/" hreflang="en" lang="en" data-lang="en" aria-label="English" aria-current="page">EN</a>
+    <a class="lang-btn" href="/cs/reference/mass-timber-2026/" hreflang="cs" lang="cs" data-lang="cs" aria-label="Čeština">CS</a>
+    <a class="lang-btn" href="/de/referenzen/mass-timber-2026/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch">DE</a>
   </div>
 </div>
 
@@ -1058,11 +1066,11 @@ if (navHamburger && navDrawer) {
             if (mv.hasAttribute('auto-rotate')) {
                 mv.removeAttribute('auto-rotate');
                 rotBtn.classList.add('paused');
-                rotBtn.setAttribute('aria-label', 'Resume rotation');
+                rotBtn.setAttribute('aria-label', T('resume_rotation', 'Resume rotation'));
             } else {
                 mv.setAttribute('auto-rotate', '');
                 rotBtn.classList.remove('paused');
-                rotBtn.setAttribute('aria-label', 'Pause rotation');
+                rotBtn.setAttribute('aria-label', T('pause_rotation', 'Pause rotation'));
             }
         });
     }
@@ -1130,84 +1138,12 @@ if (navHamburger && navDrawer) {
         });
     }
 
-    // ── i18n ─────────────────────────────────────────────────
-    const i18n = {
-        en: {
-            context:       'Dlubal Software USA · Booth Design · 2026',
-            perex:         "Designed and prepared trade show booth #908 for Dlubal Software Inc. in collaboration with the US team at the International Mass Timber Conference, the world's largest gathering of mass timber experts, held at the Oregon Convention Center in Portland. The work covered graphic design of the booth concept, 3D renderings with full equipment layout, and production of print-ready files for the booth manufacturer.",
-            meta_event:    'Event',
-            meta_loc:      'Location',
-            meta_date:     'Date',
-            meta_booth:    'Booth',
-            share:         'Share',
-            ed_title:      'About the event',
-            ed_text:       "The International Mass Timber Conference is the world's largest gathering of mass timber experts, covering the entire industry supply chain from design and engineering to manufacturing and construction. The program focuses on cross-laminated timber (CLT), glulam, nail-laminated timber, and other engineered wood products, bringing together architects, structural engineers, developers, and manufacturers from across North America and beyond.",
-            gallery_title:   'Event Photos & 3D Renders',
-            gallery_caption: 'Photos and 3D renders from the International Mass Timber Conference 2026 at the Oregon Convention Center, Portland, OR, April 2026.',
-            glb_desc:        'Interactive 3D model of the Dlubal Software trade show booth designed for the International Mass Timber Conference 2026 in Portland.',
-            glb_hint:      'drag to rotate · scroll to zoom',
-            nav_prev:      'Previous project',
-            nav_sub:       'Booth Design · Atlanta, GA',
-            nav_back:      '← All references',
-        },
-        cs: {
-            context:       'Dlubal Software USA · Výstavní stánek · 2026',
-            perex:         'Návrh a příprava výstavního stánku #908 pro Dlubal Software Inc. ve spolupráci s americkým týmem na International Mass Timber Conference, největším světovém setkání odborníků na masivní dřevo, v Oregon Convention Center v Portlandu. Práce zahrnovala grafický návrh konceptu stánku, 3D vizualizace s kompletním rozvržením vybavení a přípravu tiskově připravených podkladů pro výrobce stánku.',
-            meta_event:    'Událost',
-            meta_loc:      'Místo',
-            meta_date:     'Datum',
-            meta_booth:    'Stánek',
-            share:         'Sdílet',
-            ed_title:      'O akci',
-            ed_text:       'International Mass Timber Conference je největší světové setkání odborníků na masivní dřevo, které pokrývá celý průmyslový dodavatelský řetězec od návrhu a inženýringu po výrobu a výstavbu. Program se zaměřuje na křížem lepené dřevo (CLT), lepené lamelové dřevo, hřebíkované lamelové dřevo a další výrobky z inženýrského dřeva a sdružuje architekty, statiky, developery a výrobce z celé Severní Ameriky a zahraničí.',
-            gallery_title:   'Fotografie z akce a 3D vizualizace',
-            gallery_caption: 'Fotografie a 3D vizualizace z International Mass Timber Conference 2026 v Oregon Convention Center, Portland, OR, duben 2026.',
-            glb_desc:        'Interaktivní 3D model výstavního stánku Dlubal Software navržený pro International Mass Timber Conference 2026 v Portlandu.',
-            glb_hint:      'táhnutím otáčet · kolečkem přibližovat',
-            nav_prev:      'Předchozí projekt',
-            nav_sub:       'Výstavní stánek · Atlanta, GA',
-            nav_back:      '← Všechny reference',
-        },
-        de: {
-            context:       'Dlubal Software USA · Messestand-Design · 2026',
-            perex:         'Konzeption und Umsetzung von Messestand #908 für Dlubal Software Inc. in Zusammenarbeit mit dem US-Team auf der International Mass Timber Conference, dem weltweit größten Treffen von Massivholzexperten, im Oregon Convention Center in Portland. Die Arbeit umfasste das grafische Design des Standkonzepts, 3D-Visualisierungen mit vollständigem Ausstattungsplan sowie die Erstellung druckfertiger Unterlagen für den Standbauer.',
-            meta_event:    'Veranstaltung',
-            meta_loc:      'Ort',
-            meta_date:     'Datum',
-            meta_booth:    'Stand',
-            share:         'Teilen',
-            ed_title:      'Über die Veranstaltung',
-            ed_text:       'Die International Mass Timber Conference ist das weltweit größte Treffen von Massivholzexperten und deckt die gesamte Branchenwertschöpfungskette ab, von Design und Engineering bis hin zu Fertigung und Bau. Das Programm konzentriert sich auf Brettsperrholz (CLT), Brettschichtholz, Nagelverbundholz und andere Ingenieurholzprodukte und bringt Architekten, Tragwerksplaner, Entwickler und Hersteller aus ganz Nordamerika und darüber hinaus zusammen.',
-            gallery_title:   'Eventfotos & 3D-Visualisierungen',
-            gallery_caption: 'Fotos und 3D-Visualisierungen von der International Mass Timber Conference 2026 im Oregon Convention Center, Portland, OR, April 2026.',
-            glb_desc:        'Interaktives 3D-Modell des Messestands von Dlubal Software, entworfen für die International Mass Timber Conference 2026 in Portland.',
-            glb_hint:      'ziehen zum Drehen · scrollen zum Zoomen',
-            nav_prev:      'Vorheriges Projekt',
-            nav_sub:       'Messestand-Design · Atlanta, GA',
-            nav_back:      '← Alle Referenzen',
-        }
-    };
-
-    function applyLang(lang) {
-        document.querySelectorAll('[data-i18n]').forEach(el => {
-            const key = el.dataset.i18n;
-            if (i18n[lang] && i18n[lang][key]) el.textContent = i18n[lang][key];
-        });
-        document.querySelectorAll('[data-i18n-html]').forEach(el => {
-            const key = el.dataset.i18nHtml;
-            if (i18n[lang] && i18n[lang][key]) el.innerHTML = i18n[lang][key];
-        });
-        document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
-        localStorage.setItem('lang', lang);
-        // Insights has its own URL per language (/cs/insights/, /de/insights/).
-        document.querySelectorAll('a[data-i18n="nav_insights"]').forEach(a => { a.href = lang === 'en' ? '/insights/' : '/' + lang + '/insights/'; });
-    }
-
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.addEventListener('click', () => applyLang(btn.dataset.lang));
-    });
-
-    applyLang(localStorage.getItem('lang') || 'en');
+    // ── Language ──────────────────────────────────────────────
+    // Each language has its own URL (tools/build-i18n.py), so the text is in
+    // the HTML. The few strings scripts write later come from #i18n-ui on the
+    // Czech and German pages; English is the fallback.
+    const UI = (() => { try { return JSON.parse(document.getElementById('i18n-ui').textContent); } catch (e) { return {}; } })();
+    const T = (key, en) => UI[key] || en;
 </script>
 
 <footer class="footer">

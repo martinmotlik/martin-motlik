@@ -109,47 +109,67 @@ means the browser is inventing pixels and the image needs a crop, not a bigger
 `rewrite-reference-pages.py` performed the original conversion of the three
 reference pages. It is kept for reference and is a no-op once converted.
 
-## Language versions of Insights (`build-i18n.py`)
+## Language versions (`build-i18n.py`)
 
-Every Insights page exists in English, Czech and German, each at its own URL
-with the translated text in the HTML (search engines and AI crawlers do not run
-JavaScript, so a switch in the browser would leave the translations invisible):
+Every page exists in English, Czech and German, each at its own URL with the
+translated text in the HTML (search engines and AI crawlers do not run
+JavaScript, so a switch in the browser would leave the translations invisible).
+English is the hand-edited source; Czech and German are generated from it and
+`<page>/i18n/cs.json` / `de.json` (the home page's are in `/i18n/`).
 
-| Version | URL | Source |
-|---|---|---|
-| English | `/insights/…` | the page itself, edited by hand |
-| Czech | `/cs/insights/…` | generated: English page + `<page>/i18n/cs.json` |
-| German | `/de/insights/…` | generated: English page + `<page>/i18n/de.json` |
+| Page | English | Czech | German |
+|---|---|---|---|
+| Home | `/` | `/cs/` | `/de/` |
+| Services | `/services/` | `/cs/sluzby/` | `/de/leistungen/` |
+| References | `/references/…` | `/cs/reference/…` | `/de/referenzen/…` |
+| Insights | `/insights/…` | `/cs/insights/…` | `/de/insights/…` |
 
-Articles have translated slugs, e.g. `/insights/ai-visibility-for-aec/` →
-`/cs/insights/data-aec-pro-vyhledavani-s-ai/` and
-`/de/insights/aec-daten-fuer-ki-suche/`. They are set in one place, `URLS` in
-the script; the build checks that the English page's `hreflang` links match it.
-Plain ASCII, ü → ue. **Decide a slug before the page is first published and
-never change it afterwards:** GitHub Pages cannot send 301 redirects.
+Slugs are translated where they are words (`rfem6-brochure` →
+`rfem6-brozura` / `rfem6-broschuere`, the article slugs) and kept where they
+are names (`nascc-2026`, `insights`). They are set in one place, `URLS` in the
+script. Plain ASCII, ü → ue. **Decide a slug before the page is first
+published and never change it afterwards:** GitHub Pages cannot send 301
+redirects.
 
-After changing an English Insights page or its translations:
+After changing an English page or a translation:
 
 ```bash
 python3 tools/build-i18n.py
 ```
 
-Then commit the regenerated `cs/` and `de/` files with the change.
+Then commit the regenerated `cs/`, `de/` and `sitemap.xml` with the change.
 `python3 tools/build-i18n.py --check` exits with an error when they are out of
-date. The build refuses to write if a translated block's markup differs from
-the English one, a label is missing, or English text is left on a page.
+date.
+
+### What a translation file holds
+
+| Key | Replaces |
+|---|---|
+| `chrome` | the content of `[data-i18n="…"]`; markup (`<br>`, `<em>`, links) must match the English element |
+| `k` | article blocks, `[data-k="…"]` (Insights) |
+| `text` | any other text node whose whole text equals the English key (nav links, pills, dates) |
+| `attrs` | `alt`, `aria-label` and `title` values equal to the English key |
+| `ui` | `<title>`, `data-i18n-attr` bindings and strings page scripts write later (read from `#i18n-ui`) |
+| `meta` | description, Open Graph and Twitter texts, `in_language` |
+| `ld` | JSON-LD values by path, e.g. `"@graph.0.description"` |
+| `keep` | text that stays the same in this language (names, venues, codes) |
+
+The build refuses to write when a translated block's markup differs from
+English, a key is missing, a JSON-LD path does not exist, or **any visible
+English text or alt / aria-label / title is left on a translated page** that is
+not in `keep`. That last check is what keeps new English text from slipping
+into the Czech and German pages unnoticed: add the translation, or, for a
+name, add it to `keep`.
 
 Each version has its own canonical, `hreflang` links to all three (plus
-`x-default` → English), localized title, description, Open Graph and JSON-LD
-(`inLanguage`, `translationOfWork` / `workTranslation`), and is listed with its
-alternates in `sitemap.xml`. Never point a translation's canonical at the
-English page: Google would drop the translation.
+`x-default` → English), localized title, description, Open Graph and JSON-LD.
+Page URLs in JSON-LD point to the version; people, organisations and the
+website keep one identity (`#person`, `#website`…). `sitemap.xml` is generated
+from the same table. Never point a translation's canonical at the English
+page: Google would drop the translation.
 
-Adding an article: give its blocks `data-k` keys, add `i18n/cs.json` and
-`i18n/de.json` next to it (copy the structure of an existing article), add it
-to `PAGES` and its translated slugs to `URLS` in the script, put the matching
-`hreflang` links in its `<head>`, and add all three URLs to `sitemap.xml` and
-`llms.txt`.
-
-The rest of the site (home, services, references) still switches language in
-the browser; their nav's Insights link follows the chosen language.
+Adding a page: add it to `PAGES`, `URLS` (if its slug is translated) and
+`SITEMAP` in the script, put the matching `hreflang` block and the
+`og:locale:alternate` lines in its `<head>`, make its language switcher links
+like the other pages, add `i18n/cs.json` and `de.json`, run the build until it
+passes, and list the URLs in `llms.txt`.

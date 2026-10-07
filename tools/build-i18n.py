@@ -32,15 +32,27 @@ LOCALES = {'en': 'en_US', 'cs': 'cs_CZ', 'de': 'de_DE'}
 
 ARTICLE = '/insights/ai-visibility-for-aec/'
 PAGES = [
+    {'path': '/', 'kind': 'page'},
+    {'path': '/services/', 'kind': 'page'},
+    {'path': '/references/', 'kind': 'page'},
+    {'path': '/references/nascc-2026/', 'kind': 'page'},
+    {'path': '/references/mass-timber-2026/', 'kind': 'page'},
+    {'path': '/references/rfem6-brochure/', 'kind': 'page'},
     {'path': '/insights/', 'kind': 'list'},
     {'path': ARTICLE, 'kind': 'article'},
 ]
 
-# Translated slugs: an article's URL is in the language of the reader. The
-# /insights/ segment stays (it is the section's name in every language).
+# Translated slugs: a URL is in the language of the reader. /insights/ stays
+# (the section's name in every language), as do event names (nascc-2026).
 # Plain ASCII, ü → ue. Once a URL is published, do not change it: GitHub Pages
-# has no 301 redirects.
+# has no 301 redirects. Pages not listed get /cs/ or /de/ + the English path.
 URLS = {
+    '/': {'cs': '/cs/', 'de': '/de/'},
+    '/services/': {'cs': '/cs/sluzby/', 'de': '/de/leistungen/'},
+    '/references/': {'cs': '/cs/reference/', 'de': '/de/referenzen/'},
+    '/references/nascc-2026/': {'cs': '/cs/reference/nascc-2026/', 'de': '/de/referenzen/nascc-2026/'},
+    '/references/mass-timber-2026/': {'cs': '/cs/reference/mass-timber-2026/', 'de': '/de/referenzen/mass-timber-2026/'},
+    '/references/rfem6-brochure/': {'cs': '/cs/reference/rfem6-brozura/', 'de': '/de/referenzen/rfem6-broschuere/'},
     ARTICLE: {'cs': '/cs/insights/data-aec-pro-vyhledavani-s-ai/',
               'de': '/de/insights/aec-daten-fuer-ki-suche/'},
 }
@@ -123,12 +135,18 @@ def translate_body(s, data, lang, path):
         assert skeleton(s[a:b]) == skeleton(inner), f'{path} {lang}: markup of "{key}" differs from English'
         s = set_inner(s, 'data-k', key, inner)
 
-    # 2 · Short labels
+    # 2 · Labels and short texts. Plain values are escaped; a value with markup
+    #     must have the same tags as the English element (e.g. <br>, <em>).
     for key in sorted(set(re.findall(r'data-i18n="([^"]+)"', s))):
         assert key in chrome, f'{path} {lang}: chrome "{key}" missing'
+        value = chrome[key]
         for a, b in element_spans(s, 'data-i18n', key):
-            assert '<' not in s[a:b], f'{path}: data-i18n="{key}" is not a text-only element'
-        s = set_inner(s, 'data-i18n', key, esc(chrome[key]))
+            if '<' in s[a:b] or '<' in value:
+                assert skeleton(s[a:b]) == skeleton(value), f'{path} {lang}: markup of chrome "{key}" differs from English'
+        s = set_inner(s, 'data-i18n', key, value if '<' in value else esc(value))
+
+    # 2b · Untagged text and attributes, matched by their exact English text
+    s = translate_by_text(s, data.get('text', {}), data.get('attrs', {}))
 
     # 3 · Text written from ui strings
     for key in sorted(set(re.findall(r'data-ui="([^"]+)"', s))):
@@ -148,10 +166,8 @@ def translate_body(s, data, lang, path):
         return tag
     s = re.sub(r'<[^>]*\bdata-i18n-attr="([^"]+)"[^>]*>', attrs, s)
 
-    # 5 · Links inside Insights stay in the language; the rest of the site has one URL
-    for p in sorted(URLS, key=len, reverse=True):
-        s = s.replace(f'href="{p}"', f'href="{url(p, lang)}"')
-    s = s.replace('href="/insights/"', f'href="{url("/insights/", lang)}"')
+    # 5 · Links to other pages of the site stay in the language
+    s = localize_links(s, lang)
 
     # 6 · Language switcher: same links, this version marked current
     def switch(m):
@@ -178,8 +194,11 @@ def translate_head(s, data, lang, path, extra):
     others = [LOCALES[l] for l in ('en',) + LANGS if l != lang]
     s = sub_once(s, r'(<meta property="og:locale:alternate" content=")[^"]*(">)\n(\s*<meta property="og:locale:alternate" content=")[^"]*(">)',
                  lambda m: m.group(1) + others[0] + m.group(2) + '\n' + m.group(3) + others[1] + m.group(4))
-    s = set_meta(s, 'property', 'og:image:alt', meta['image_alt'])
-    s = set_meta(s, 'name', 'twitter:image:alt', meta['image_alt'])
+    for attr, name in (('property', 'og:image:alt'), ('name', 'twitter:image:alt')):
+        key = 'twitter_image_alt' if name.startswith('twitter') and 'twitter_image_alt' in meta else 'image_alt'
+        if f'<meta {attr}="{name}"' in s:
+            assert key in meta, f'{path} {lang}: meta "{key}" missing'
+            s = set_meta(s, attr, name, meta[key])
     for name, value in extra.items():
         attr = 'name' if name.startswith('twitter:') else 'property'
         s = set_meta(s, attr, name, value)
@@ -200,6 +219,147 @@ def word_count(data):
     text = re.sub(r'<code[^>]*>.*?</code>', ' ', text, flags=re.S)
     text = html.unescape(re.sub(r'<[^>]+>', ' ', text))
     return len(re.findall(r'\w[\w\-’\']*', text))
+
+
+# ── Site-wide helpers ────────────────────────────────────────────────────────
+
+PAGE_PATHS = {p['path'] for p in PAGES}
+SKIP = re.compile(r'<(script|style|svg)\b.*?</\1>', re.S)
+
+
+def body_parts(s):
+    """Split the body into (is_markup_to_skip, chunk) so script/style/svg stay untouched."""
+    i = s.index('<body')
+    parts, last = [(True, s[:i])], i
+    for m in SKIP.finditer(s, i):
+        parts.append((False, s[last:m.start()]))
+        parts.append((True, m.group(0)))
+        last = m.end()
+    parts.append((False, s[last:]))
+    return parts
+
+
+def localize_links(s, lang):
+    """Every <a href> to a page of this site points to its version in `lang`."""
+    def fix(m):
+        absolute, path, rest = m.group(2) or '', m.group(3), m.group(4) or ''
+        if path not in PAGE_PATHS:
+            return m.group(0)
+        return m.group(1) + absolute + url(path, lang) + rest + '"'
+    pat = re.compile(r'(<a\b[^>]*?\shref=")(%s)?(/[^"#?]*)([#?][^"]*)?"' % re.escape(SITE))
+    out = []
+    for skip, chunk in body_parts(s):
+        out.append(chunk if skip else pat.sub(fix, chunk))
+    return ''.join(out)
+
+
+TRANSLATABLE_ATTRS = ('alt', 'aria-label', 'title')
+
+
+def translate_by_text(s, text, attrs):
+    """Replace text nodes and alt / aria-label / title values that equal an
+    English string in the map (whole value, surrounding whitespace kept)."""
+    if not text and not attrs:
+        return s
+    def node(m):
+        raw = m.group(1)
+        key = ' '.join(html.unescape(raw).split())
+        if key in text:
+            lead, trail = raw[:len(raw) - len(raw.lstrip())], raw[len(raw.rstrip()):]
+            return '>' + lead + esc(text[key]) + trail + '<'
+        return m.group(0)
+    def attr(m):
+        key = html.unescape(m.group(3))
+        return m.group(1) + m.group(2) + '="' + esc(attrs[key]) + '"' if key in attrs else m.group(0)
+    apat = re.compile(r'(\s)(%s)="([^"]*)"' % '|'.join(TRANSLATABLE_ATTRS))
+    out = []
+    for skip, chunk in body_parts(s):
+        if not skip:
+            chunk = re.sub(r'>([^<>]+)<', node, chunk)
+            chunk = re.sub(r'<[a-zA-Z][^>]*>', lambda t: apat.sub(attr, t.group(0)), chunk)
+        out.append(chunk)
+    return ''.join(out)
+
+
+def english_runs(s):
+    """Visible text runs and translatable attribute values of a page body."""
+    runs = set()
+    for skip, chunk in body_parts(s):
+        if skip:
+            continue
+        for t in re.findall(r'>([^<>]+)<', chunk):
+            t = ' '.join(html.unescape(t).split())
+            if re.search(r'[A-Za-z]{2}', t):
+                runs.add(t)
+        for t in re.findall(r'\s(?:%s)="([^"]+)"' % '|'.join(TRANSLATABLE_ATTRS), chunk):
+            runs.add(' '.join(html.unescape(t).split()))
+    return runs
+
+
+# Names and codes that are the same in every language.
+KEEP_EVERYWHERE = {
+    'EN', 'CS', 'DE', 'English', 'Čeština', 'Deutsch', 'Martin Motlík', 'Insights', 'Dlubal', 'Dlubal Software',
+    'LinkedIn', 'X', 'Facebook', 'AI', 'BIM', 'SEO', 'SaaS', 'Design', 'Adobe', 'Dev',
+}
+
+
+def check_untranslated(src, out, data, path, lang):
+    left = english_runs(src) & english_runs(out)
+    left -= KEEP_EVERYWHERE | set(data.get('keep', []))
+    assert not left, f'{path} {lang}: English left on the page (translate it or add it to "keep"):\n  ' + '\n  '.join(sorted(left))
+
+
+def localize_ld(node, lang, data):
+    """Page URLs in JSON-LD point to this version; people and organisations
+    keep their single identity (#person, #website…)."""
+    if isinstance(node, list):
+        for n in node:
+            localize_ld(n, lang, data)
+        return
+    if not isinstance(node, dict):
+        return
+    entity = node.get('@type') in ('Person', 'Organization', 'WebSite')
+    touched = False
+    for k, v in list(node.items()):
+        if isinstance(v, str) and k in ('url', 'item', 'mainEntityOfPage', '@id') and not entity and '#' not in v:
+            p = v[len(SITE):] if v.startswith(SITE) else None
+            if p is not None and (p in PAGE_PATHS or p + '/' in PAGE_PATHS):
+                node[k] = SITE + url(p if p in PAGE_PATHS else p + '/', lang)
+                touched = True
+        else:
+            localize_ld(v, lang, data)
+    if touched and ('inLanguage' in node or node.get('@type') in ('WebPage', 'CollectionPage', 'CreativeWork', 'Service')):
+        node['inLanguage'] = data['meta']['in_language']
+
+
+def apply_ld_overrides(ld, overrides, path, lang):
+    """"@graph.0.description": "…" sets one value; the path must exist."""
+    for dotted, value in overrides.items():
+        node, keys = ld, dotted.split('.')
+        for k in keys[:-1]:
+            node = node[int(k)] if isinstance(node, list) else node[k]
+        last = int(keys[-1]) if isinstance(node, list) else keys[-1]
+        assert isinstance(node, list) or last in node, f'{path} {lang}: JSON-LD path "{dotted}" not found'
+        node[last] = value
+
+
+def build_page(path, lang):
+    src = open(src_file(path), encoding='utf-8').read()
+    data = load_json(path, lang)
+    meta = data['meta']
+    extra = {k: meta[f] for k, f in (('og:title', 'og_title'), ('og:description', 'og_description'),
+                                     ('twitter:title', 'twitter_title'), ('twitter:description', 'twitter_description'))
+             if f in meta}
+    s = translate_head(src, data, lang, path, extra)
+    def ld(g):
+        localize_ld(g, lang, data)
+        apply_ld_overrides(g, data.get('ld', {}), path, lang)
+    s = rewrite_ld(s, ld)
+    s = translate_body(s, data, lang, path)
+    blob = json.dumps(data.get('ui', {}), ensure_ascii=False).replace('</', '<\\/')
+    s = sub_once(s, r'(<body[^>]*>)', lambda m: m.group(1) + f'\n<script type="application/json" id="i18n-ui">{blob}</script>')
+    check_untranslated(src, s, data, path, lang)
+    return s
 
 
 def build_article(lang):
@@ -314,7 +474,7 @@ def build():
     for p in PAGES:
         check_hreflang(p['path'])
         for lang in LANGS:
-            s = build_article(lang) if p['kind'] == 'article' else build_list(lang)
+            s = {'article': build_article, 'list': build_list}[p['kind']](lang) if p['kind'] != 'page' else build_page(p['path'], lang)
             s = sub_once(s, r'<!DOCTYPE html>', generated_notice(p['path'], lang))
             leftovers = [t for t in ENGLISH_MARKERS if t in visible_text(s)]
             assert not leftovers, f'{p["path"]} {lang}: English left in the page: {leftovers}'
@@ -322,8 +482,40 @@ def build():
     return out
 
 
+# sitemap.xml: every page in every language, each with all its alternates.
+SITEMAP = {  # path: (lastmod, changefreq, priority)
+    '/': ('2026-10-07', 'monthly', '1.0'),
+    '/services/': ('2026-10-07', 'monthly', '0.9'),
+    '/references/': ('2026-10-07', 'monthly', '0.9'),
+    '/references/nascc-2026/': ('2026-10-07', 'monthly', '0.8'),
+    '/references/mass-timber-2026/': ('2026-10-07', 'monthly', '0.8'),
+    '/references/rfem6-brochure/': ('2026-10-07', 'monthly', '0.8'),
+    '/insights/': ('2026-10-07', 'weekly', '0.9'),
+    ARTICLE: ('2026-10-07', 'monthly', '0.8'),
+}
+
+
+def sitemap():
+    assert set(SITEMAP) == PAGE_PATHS, 'SITEMAP and PAGES list different pages'
+    out = ['<?xml version="1.0" encoding="UTF-8"?>',
+           '<!-- Generated by tools/build-i18n.py. Do not edit: change SITEMAP there and rerun. -->',
+           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
+           '        xmlns:xhtml="http://www.w3.org/1999/xhtml">', '']
+    for p in PAGES:
+        lastmod, freq, prio = SITEMAP[p['path']]
+        alts = [(l, SITE + url(p['path'], l)) for l in ('en',) + LANGS] + [('x-default', SITE + p['path'])]
+        for lang in ('en',) + LANGS:
+            out += ['  <url>', f'    <loc>{SITE + url(p["path"], lang)}</loc>', f'    <lastmod>{lastmod}</lastmod>',
+                    f'    <changefreq>{freq}</changefreq>', f'    <priority>{prio}</priority>']
+            out += [f'    <xhtml:link rel="alternate" hreflang="{l}" href="{u}"/>' for l, u in alts]
+            out += ['  </url>', '']
+    out.append('</urlset>')
+    return '\n'.join(out) + '\n'
+
+
 def main():
     files = build()
+    files[os.path.join(ROOT, 'sitemap.xml')] = sitemap()
     if '--check' in sys.argv:
         stale = [f for f, s in files.items() if not os.path.exists(f) or open(f, encoding='utf-8').read() != s]
         for f in stale:

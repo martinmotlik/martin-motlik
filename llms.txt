@@ -38,7 +38,7 @@ Practical AI integration for AEC marketing and operations teams. Deliverables in
 
 - [Insights](https://martinmotlik.com/insights/): Martin Motlík's articles on AI in AEC, engineering-software marketing and web ecosystems.
 - [Be the source: getting AEC data ready for AI search](https://martinmotlik.com/insights/ai-visibility-for-aec/): Published 2026-10-06. Google has become an AI search engine whose AI Overviews and AI Mode answer the question and cite a handful of sources, so alongside search rankings it is worth checking whether a page is cited as one of those sources. Drawing on localization work for structural-engineering software in the US and Canadian markets, the article argues that a product page should make it clear what the product supports, where it applies and what its limits are. Key points: name the design codes of the market you target (NDS, CSA O86, AISC 360 — not only Eurocode), in the text and in localized screenshots and the text around them; IP-based localization needs a separate URL plus hreflang per region, because crawlers see only the variant served to their own address; a fact reaches an AI answer only if it is reachable, readable in the HTML, understood, consistent and corroborated — a "load path" that fails at its weakest member; major AI crawlers do not execute JavaScript, so script-rendered content and text locked in PDFs or images is invisible to them. Includes three checks that take under half an hour, a baseline robots.txt that lets AI search in while optionally opting out of model training, and a practical starting point: one product or service page whose offer, standards, approvals and markets are stated in the HTML and match the documentation. Topics: generative engine optimization (GEO), AI search, technical SEO, llms.txt, structured data, robots.txt, content localization, AEC marketing.
-- [Insights in Czech](https://martinmotlik.com/cs/insights/) and [in German](https://martinmotlik.com/de/insights/): the same articles, professionally translated, each at its own URL (linked with hreflang).
+- [Insights in Czech](https://martinmotlik.com/cs/insights/) and [in German](https://martinmotlik.com/de/insights/): the same articles, professionally translated, each at its own URL (linked with hreflang). The whole site is available in Czech and German; see "Language versions" below.
 - [Buďte zdrojem: jak připravit data AEC firem pro vyhledávání s AI](https://martinmotlik.com/cs/insights/data-aec-pro-vyhledavani-s-ai/): Czech version of "Be the source".
 - [Werden Sie zur Quelle: AEC-Daten fit für die KI-Suche machen](https://martinmotlik.com/de/insights/aec-daten-fuer-ki-suche/): German version of "Be the source".
 
@@ -118,3 +118,19 @@ Martin actively promotes AI adoption in the architecture, engineering, and const
 - RFEM 6 Brochure reference: https://martinmotlik.com/references/rfem6-brochure/
 - IFC Verify app: https://ifc-verify.app/
 - llms.txt: https://martinmotlik.com/llms.txt
+
+## Language versions
+
+Every page exists in English, Czech and German, each at its own URL with the
+text in the HTML and hreflang links between them. English is the default.
+
+| Page | English | Czech | German |
+|---|---|---|---|
+| Home | https://martinmotlik.com/ | https://martinmotlik.com/cs/ | https://martinmotlik.com/de/ |
+| Services | https://martinmotlik.com/services/ | https://martinmotlik.com/cs/sluzby/ | https://martinmotlik.com/de/leistungen/ |
+| References | https://martinmotlik.com/references/ | https://martinmotlik.com/cs/reference/ | https://martinmotlik.com/de/referenzen/ |
+| NASCC 2026 | https://martinmotlik.com/references/nascc-2026/ | https://martinmotlik.com/cs/reference/nascc-2026/ | https://martinmotlik.com/de/referenzen/nascc-2026/ |
+| Mass Timber 2026 | https://martinmotlik.com/references/mass-timber-2026/ | https://martinmotlik.com/cs/reference/mass-timber-2026/ | https://martinmotlik.com/de/referenzen/mass-timber-2026/ |
+| RFEM 6 Brochure | https://martinmotlik.com/references/rfem6-brochure/ | https://martinmotlik.com/cs/reference/rfem6-brozura/ | https://martinmotlik.com/de/referenzen/rfem6-broschuere/ |
+| Insights | https://martinmotlik.com/insights/ | https://martinmotlik.com/cs/insights/ | https://martinmotlik.com/de/insights/ |
+| Be the source | https://martinmotlik.com/insights/ai-visibility-for-aec/ | https://martinmotlik.com/cs/insights/data-aec-pro-vyhledavani-s-ai/ | https://martinmotlik.com/de/insights/aec-daten-fuer-ki-suche/ |

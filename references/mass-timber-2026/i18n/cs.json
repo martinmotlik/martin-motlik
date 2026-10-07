@@ -1,0 +1,93 @@
+{
+ "lang": "cs",
+ "ui": {
+  "title": "Martin Motlík | Mass Timber Conference 2026 | Portland",
+  "resume_rotation": "Spustit otáčení",
+  "pause_rotation": "Pozastavit otáčení"
+ },
+ "chrome": {
+  "nav_insights": "Insights",
+  "share": "Sdílet",
+  "nav_back": "← Všechny reference",
+  "nav_prev": "Předchozí projekt",
+  "nav_next": "Další projekt",
+  "meta_event": "Akce",
+  "meta_loc": "Místo",
+  "meta_date": "Termín",
+  "meta_booth": "Stánek",
+  "ed_title": "O akci",
+  "gallery_title": "Fotografie z akce a 3D vizualizace",
+  "glb_hint": "Tažením otáčejte · kolečkem přibližujte",
+  "context": "Dlubal Software USA · Výstavní stánek · 2026",
+  "perex": "Návrh a příprava výstavního stánku #908 pro Dlubal Software Inc. ve spolupráci s americkým týmem na International Mass Timber Conference, největším světovém setkání odborníků na masivní dřevo, v Oregon Convention Center v Portlandu. Práce zahrnovala grafický návrh konceptu stánku, 3D vizualizace s kompletním rozmístěním vybavení a přípravu tiskových podkladů pro výrobce stánku.",
+  "ed_text": "International Mass Timber Conference je největší světové setkání odborníků na masivní dřevo a pokrývá celý dodavatelský řetězec oboru – od návrhu a inženýringu po výrobu a výstavbu. Program se zaměřuje na křížem lepené dřevo (CLT), lepené lamelové dřevo, hřebíkované lamelové dřevo a další konstrukční výrobky ze dřeva a sdružuje architekty, statiky, developery a výrobce ze Severní Ameriky i odjinud.",
+  "gallery_caption": "Fotografie a 3D vizualizace z International Mass Timber Conference 2026 v Oregon Convention Center, Portland, OR, duben 2026.",
+  "glb_desc": "Interaktivní 3D model výstavního stánku Dlubal Software navrženého pro International Mass Timber Conference 2026 v Portlandu.",
+  "nav_sub": "Výstavní stánek · Atlanta, GA"
+ },
+ "text": {
+  "References": "Reference",
+  "Services": "Služby",
+  "About me": "O mně",
+  "Areas of Practice": "Oblasti činnosti",
+  "AI in AEC": "AI v AEC",
+  "April 2026": "duben 2026",
+  "IMTC 2026 Booth": "Stánek IMTC 2026"
+ },
+ "attrs": {
+  "Open menu": "Otevřít menu",
+  "Share on LinkedIn": "Sdílet na LinkedInu",
+  "Share on X": "Sdílet na X",
+  "Share on Facebook": "Sdílet na Facebooku",
+  "Copy link": "Kopírovat odkaz",
+  "Previous": "Předchozí",
+  "Next": "Další",
+  "Close": "Zavřít",
+  "Pause rotation": "Pozastavit otáčení",
+  "Dlubal Software booth #908 — 3D render, International Mass Timber Conference 2026, Portland, Oregon": "Stánek Dlubal Software #908 – 3D vizualizace, International Mass Timber Conference 2026, Portland, Oregon",
+  "Dlubal Software booth #908 — 3D render view 2, International Mass Timber Conference 2026, Portland": "Stánek Dlubal Software #908 – 3D vizualizace, pohled 2, International Mass Timber Conference 2026, Portland",
+  "Dlubal Software exhibit at International Mass Timber Conference 2026, Oregon Convention Center, Portland": "Expozice Dlubal Software na International Mass Timber Conference 2026, Oregon Convention Center, Portland",
+  "Dlubal Software exhibit at International Mass Timber Conference 2026, Oregon Convention Center, Portland — photo 2": "Expozice Dlubal Software na International Mass Timber Conference 2026, Oregon Convention Center, Portland – fotografie 2",
+  "NASCC: The Steel Conference 2026 — Dlubal Software booth, Atlanta": "NASCC: The Steel Conference 2026 – stánek Dlubal Software, Atlanta",
+  "Full size photo": "Fotografie v plné velikosti"
+ },
+ "keep": [
+  "DIČ: CZ0103073146",
+  "motlik.martin@gmail.com",
+  "www.dlubal.com",
+  "dlubal.com",
+  "© Dlubal Software ·",
+  "NASCC: The Steel Conference 2026",
+  "International Mass Timber Conference 2026",
+  "Mass Timber Conference 2026",
+  "NASCC 2026",
+  "IMTC 2026",
+  "Georgia World Congress Center",
+  "Oregon Convention Center",
+  "Atlanta, GA, USA",
+  "Portland, OR, USA",
+  "Atlanta, GA · 10' × 20'",
+  "Portland, OR · 10' × 20'",
+  "Dlubal Software USA",
+  "IFC Verify",
+  "ifc-verify.app · 2024",
+  "RFEM 6"
+ ],
+ "meta": {
+  "description": "Výstavní stánek #908 pro Dlubal Software na International Mass Timber Conference 2026, Oregon Convention Center, Portland. Návrh expozice: Martin Motlík.",
+  "og_title": "Návrh stánku Mass Timber Conference 2026 – Dlubal Software",
+  "og_description": "Výstavní stánek #908 pro Dlubal Software na International Mass Timber Conference 2026, Oregon Convention Center, Portland. Návrh expozice: Martin Motlík.",
+  "twitter_title": "Návrh stánku Mass Timber Conference 2026 – Dlubal Software",
+  "twitter_description": "Výstavní stánek #908 pro Dlubal Software na International Mass Timber Conference 2026, Oregon Convention Center, Portland. Návrh expozice: Martin Motlík.",
+  "image_alt": "Stánek Dlubal Software #908 na International Mass Timber Conference 2026, Oregon Convention Center, Portland",
+  "twitter_image_alt": "Stánek Dlubal Software #908 na Mass Timber Conference 2026, Portland",
+  "in_language": "cs-CZ"
+ },
+ "ld": {
+  "name": "International Mass Timber Conference 2026 – návrh výstavního stánku pro Dlubal Software",
+  "description": "Výstavní stánek #908 navržený pro Dlubal Software Inc. ve spolupráci s americkým týmem na International Mass Timber Conference v Oregon Convention Center v Portlandu.",
+  "creator.jobTitle": "Konzultant pro AEC marketing",
+  "image.caption": "Stánek Dlubal Software #908 na Mass Timber Conference 2026, Portland – návrh Martin Motlík",
+  "keywords": "AEC marketing, návrh výstavního stánku, masivní dřevo, BIM software, Dlubal Software, RFEM 6 Dřevo, návrh CLT, Portland, Oregon"
+ }
+}

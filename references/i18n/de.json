@@ -1,0 +1,85 @@
+{
+ "lang": "de",
+ "ui": {
+  "title": "Martin Motlík | AEC-Marketing-Portfolio | Referenzen",
+  "photo": "Foto"
+ },
+ "chrome": {
+  "nav_insights": "Insights",
+  "page_sub": "Ausgewählte Projekte.",
+  "filter_all": "Alle",
+  "filter_booth": "Messestände",
+  "filter_print": "Print",
+  "filter_web": "Web-Apps",
+  "dlubal_count": "3 Projekte",
+  "ifc_count": "1 Projekt",
+  "cta_view": "Zum Projekt →",
+  "cta_visit": "Website besuchen →",
+  "ifc_subtitle": "Online-Validator für IFC-Dateien",
+  "pill_booth": "Messestand-Design",
+  "pill_print": "Print"
+ },
+ "text": {
+  "References": "Referenzen",
+  "Services": "Leistungen",
+  "About me": "Über mich",
+  "Areas of Practice": "Tätigkeitsfelder",
+  "AI in AEC": "KI im AEC",
+  "Web app": "Web-App",
+  "RFEM 6 Product Brochure": "RFEM 6 Produktbroschüre",
+  "US & Canada": "USA und Kanada"
+ },
+ "attrs": {
+  "Open menu": "Menü öffnen",
+  "Share on LinkedIn": "Auf LinkedIn teilen",
+  "Share on X": "Auf X teilen",
+  "Share on Facebook": "Auf Facebook teilen",
+  "Copy link": "Link kopieren",
+  "Previous": "Zurück",
+  "Next": "Weiter",
+  "Close": "Schließen",
+  "Pause rotation": "Rotation anhalten",
+  "Dlubal Software booth #1008 at NASCC 2026, Georgia World Congress Center, Atlanta": "Messestand #1008 von Dlubal Software auf der NASCC 2026, Georgia World Congress Center, Atlanta",
+  "Dlubal Software booth #908 at International Mass Timber Conference 2026, Portland, Oregon": "Messestand #908 von Dlubal Software auf der International Mass Timber Conference 2026, Portland, Oregon",
+  "RFEM 6 product brochure cover — designed by Martin Motlík for Dlubal Software": "Titelseite der RFEM 6 Produktbroschüre – gestaltet von Martin Motlík für Dlubal Software",
+  "IFC Verify — online IFC file validator web app": "IFC Verify – Web-App zur Validierung von IFC-Dateien"
+ },
+ "keep": [
+  "DIČ: CZ0103073146",
+  "motlik.martin@gmail.com",
+  "www.dlubal.com",
+  "dlubal.com",
+  "© Dlubal Software ·",
+  "NASCC: The Steel Conference 2026",
+  "International Mass Timber Conference 2026",
+  "Mass Timber Conference 2026",
+  "NASCC 2026",
+  "IMTC 2026",
+  "Georgia World Congress Center",
+  "Oregon Convention Center",
+  "Atlanta, GA, USA",
+  "Portland, OR, USA",
+  "Atlanta, GA · 10' × 20'",
+  "Portland, OR · 10' × 20'",
+  "Dlubal Software USA",
+  "IFC Verify",
+  "ifc-verify.app · 2024",
+  "RFEM 6",
+  "Print"
+ ],
+ "meta": {
+  "description": "AEC-Marketing-Portfolio von Martin Motlík – Messestand- und Printprojekte für Dlubal Software USA. Ausgewählte Arbeiten im Marketing für Statiksoftware.",
+  "og_title": "AEC-Marketing-Portfolio – Martin Motlík",
+  "og_description": "Messestand- und Printprojekte für Dlubal Software USA. Ausgewählte Arbeiten aus AEC-Marketing und Statiksoftware.",
+  "twitter_title": "AEC-Marketing-Portfolio – Martin Motlík",
+  "twitter_description": "Messestand- und Printprojekte für Dlubal Software USA. Ausgewählte Arbeiten aus AEC-Marketing und Statiksoftware.",
+  "image_alt": "Messeauftritt von Dlubal Software auf der NASCC 2026, Atlanta – AEC-Marketing-Portfolio von Martin Motlík",
+  "twitter_image_alt": "Messeauftritt von Dlubal Software auf der NASCC 2026, Atlanta – AEC-Marketing von Martin Motlík",
+  "in_language": "de-DE"
+ },
+ "ld": {
+  "name": "AEC-Marketing-Portfolio – Martin Motlík",
+  "description": "AEC-Marketing-Portfolio von Martin Motlík – Messestand- und Printprojekte für Dlubal Software USA. Ausgewählte Arbeiten im Marketing für Statiksoftware.",
+  "author.jobTitle": "AEC-Marketingberater"
+ }
+}

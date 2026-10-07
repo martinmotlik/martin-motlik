@@ -1057,8 +1057,6 @@ article p.all-link a{text-decoration:none}
 //   built by tools/build-i18n.py, so the text is already in the HTML. This only
 //   supplies the strings scripts write later (player state, copy feedback):
 //   English below, CS/DE from the #i18n-ui block the build adds to their pages.
-//   The language being read is remembered for the pages that still switch in
-//   the browser (home, services, references).
 var I18N = (function(){
   var EN = {
     narrating: 'Narrating', listen: 'Listen',
@@ -1076,7 +1074,6 @@ var I18N = (function(){
     return arg ? s.replace('{net}', arg) : s;
   }
   var lang = document.documentElement.lang || 'en';
-  try { localStorage.setItem('lang', lang); } catch(e) {}
   return { t: t, lang: function(){ return lang; } };
 })();
 

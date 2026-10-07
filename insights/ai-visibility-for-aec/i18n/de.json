@@ -36,10 +36,10 @@
  },
  "chrome": {
   "nav_references": "Referenzen",
-  "nav_services": "Services",
+  "nav_services": "Leistungen",
   "nav_insights": "Insights",
   "nav_about": "Über mich",
-  "nav_bim": "Leistungen",
+  "nav_bim": "Tätigkeitsfelder",
   "nav_dlubal": "Dlubal",
   "nav_ai": "KI im AEC",
   "toc_label": "Auf dieser Seite",
