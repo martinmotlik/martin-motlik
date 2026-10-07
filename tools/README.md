@@ -164,7 +164,7 @@ name, add it to `keep`.
 Each version has its own canonical, `hreflang` links to all three (plus
 `x-default` → English), localized title, description, Open Graph and JSON-LD.
 Page URLs in JSON-LD point to the version; people, organisations and the
-website keep one identity (`#person`, `#website`…). `sitemap.xml` is generated
+website keep one identity (`#martin-motlik`, `#website`…). `sitemap.xml` is generated
 from the same table. Never point a translation's canonical at the English
 page: Google would drop the translation.
 

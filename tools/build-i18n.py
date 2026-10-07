@@ -311,7 +311,7 @@ def check_untranslated(src, out, data, path, lang):
 
 def localize_ld(node, lang, data):
     """Page URLs in JSON-LD point to this version; people and organisations
-    keep their single identity (#person, #website…)."""
+    keep their single identity (#martin-motlik, #website…)."""
     if isinstance(node, list):
         for n in node:
             localize_ld(n, lang, data)
