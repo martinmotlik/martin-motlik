@@ -121,6 +121,13 @@ JavaScript, so a switch in the browser would leave the translations invisible):
 | Czech | `/cs/insights/…` | generated: English page + `<page>/i18n/cs.json` |
 | German | `/de/insights/…` | generated: English page + `<page>/i18n/de.json` |
 
+Articles have translated slugs, e.g. `/insights/ai-visibility-for-aec/` →
+`/cs/insights/data-aec-pro-vyhledavani-s-ai/` and
+`/de/insights/aec-daten-fuer-ki-suche/`. They are set in one place, `URLS` in
+the script; the build checks that the English page's `hreflang` links match it.
+Plain ASCII, ü → ue. **Decide a slug before the page is first published and
+never change it afterwards:** GitHub Pages cannot send 301 redirects.
+
 After changing an English Insights page or its translations:
 
 ```bash
@@ -140,7 +147,9 @@ English page: Google would drop the translation.
 
 Adding an article: give its blocks `data-k` keys, add `i18n/cs.json` and
 `i18n/de.json` next to it (copy the structure of an existing article), add it
-to `PAGES` in the script, to `sitemap.xml` and to `llms.txt`.
+to `PAGES` and its translated slugs to `URLS` in the script, put the matching
+`hreflang` links in its `<head>`, and add all three URLs to `sitemap.xml` and
+`llms.txt`.
 
 The rest of the site (home, services, references) still switches language in
 the browser; their nav's Insights link follows the chosen language.

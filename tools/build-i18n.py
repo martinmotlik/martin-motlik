@@ -36,9 +36,20 @@ PAGES = [
     {'path': ARTICLE, 'kind': 'article'},
 ]
 
+# Translated slugs: an article's URL is in the language of the reader. The
+# /insights/ segment stays (it is the section's name in every language).
+# Plain ASCII, ü → ue. Once a URL is published, do not change it: GitHub Pages
+# has no 301 redirects.
+URLS = {
+    ARTICLE: {'cs': '/cs/insights/data-aec-pro-vyhledavani-s-ai/',
+              'de': '/de/insights/aec-daten-fuer-ki-suche/'},
+}
+
 
 def url(path, lang):
-    return path if lang == 'en' else '/' + lang + path
+    if lang == 'en':
+        return path
+    return URLS.get(path, {}).get(lang, '/' + lang + path)
 
 
 def src_file(path):
@@ -138,20 +149,20 @@ def translate_body(s, data, lang, path):
     s = re.sub(r'<[^>]*\bdata-i18n-attr="([^"]+)"[^>]*>', attrs, s)
 
     # 5 · Links inside Insights stay in the language; the rest of the site has one URL
-    s = s.replace('href="/insights/', f'href="/{lang}/insights/')
+    for p in sorted(URLS, key=len, reverse=True):
+        s = s.replace(f'href="{p}"', f'href="{url(p, lang)}"')
+    s = s.replace('href="/insights/"', f'href="{url("/insights/", lang)}"')
 
     # 6 · Language switcher: same links, this version marked current
     def switch(m):
         tag = m.group(0)
         l = re.search(r'data-lang="(\w+)"', tag).group(1)
         tag = tag.replace(' aria-current="page"', '').replace('class="lang-btn active"', 'class="lang-btn"')
-        tag = tag.replace(f'href="/{lang}/insights/', 'href="/insights/') if l == 'en' else tag
+        tag = re.sub(r'href="[^"]*"', f'href="{url(path, l)}"', tag, count=1)
         if l == lang:
             tag = tag.replace('class="lang-btn"', 'class="lang-btn active"').replace('>', ' aria-current="page">', 1)
         return tag
     s = re.sub(r'<a class="lang-btn[^"]*"[^>]*>', switch, s)
-    # The English link was rewritten by step 5; give it back its English URL.
-    s = re.sub(r'(<a class="lang-btn[^"]*" href=")/%s(/insights/[^"]*" hreflang="en")' % lang, r'\1\2', s)
     return s
 
 
@@ -290,15 +301,24 @@ def generated_notice(path, lang):
             f'{path.strip("/")}/i18n/{lang}.json. Do not edit: change those and rerun. -->')
 
 
+def check_hreflang(path):
+    s = open(src_file(path), encoding='utf-8').read()
+    found = dict(re.findall(r'<link rel="alternate" hreflang="([^"]+)" href="([^"]+)"', s))
+    want = {l: SITE + url(path, l) for l in ('en',) + LANGS}
+    want['x-default'] = SITE + path
+    assert found == want, f'{path}: hreflang links in the English page do not match URLS:\n  found {found}\n  want  {want}'
+
+
 def build():
     out = {}
     for p in PAGES:
+        check_hreflang(p['path'])
         for lang in LANGS:
             s = build_article(lang) if p['kind'] == 'article' else build_list(lang)
             s = sub_once(s, r'<!DOCTYPE html>', generated_notice(p['path'], lang))
             leftovers = [t for t in ENGLISH_MARKERS if t in visible_text(s)]
             assert not leftovers, f'{p["path"]} {lang}: English left in the page: {leftovers}'
-            out[os.path.join(ROOT, lang, p['path'].strip('/'), 'index.html')] = s
+            out[os.path.join(ROOT, url(p['path'], lang).strip('/'), 'index.html')] = s
     return out
 
 
