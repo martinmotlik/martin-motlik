@@ -226,7 +226,7 @@
             --border:    #e5e5ea;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+        html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 24px); }
         body {
             font-family: 'Inter', sans-serif;
             background: var(--bg);
@@ -331,17 +331,20 @@
   --card:0 1px 2px rgba(28,43,51,.06);
   --card-hi:0 30px 60px -28px rgba(28,43,51,.25);
   --ease:cubic-bezier(.32,.72,0,1);
+  /* Article template: 4-8-12-16-24-32-48-64 spacing, 16 px panels. */
+  --sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:24px;--sp-6:32px;--sp-7:48px;--sp-8:64px;
+  --r-panel:16px;--line:#D9DEE5;--gutter:24px;
 }
 /* The picture element is only a format switch, not a layout box — tools/README.md. */
 picture{display:contents}
 img{display:block;max-width:100%}
-.ins{color:var(--ink);font-size:14px;line-height:1.65}
+.ins{color:var(--ink);font-size:14px;line-height:1.65;overflow-wrap:break-word}  /* a single long word (German compounds at 200 % text) breaks instead of overflowing */
 .ins a{color:var(--blue);text-decoration:none}
 .ins a:hover{color:var(--ink)}
 /* Whole-card links are surfaces, not inline links: their text keeps the ink colour. */
 .ins a.featured,.ins a.card,.ins a.featured:hover,.ins a.card:hover{color:var(--ink)}
 .ins :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:6px}
-.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gutter)}
 /* Soft colour wash behind the white hero. */
 .glow{position:absolute;inset:0;pointer-events:none;background:
   radial-gradient(55% 50% at 88% 8%,rgba(26,86,219,.13),transparent 70%),
@@ -357,9 +360,9 @@ img{display:block;max-width:100%}
 .crumbs{display:flex;gap:8px;font-size:13px;color:var(--m2);flex-wrap:wrap}
 .crumbs a{color:var(--m2)}.crumbs a:hover{color:var(--ink)}
 .head{max-width:820px}
-.cat{margin-top:28px;display:inline-flex;white-space:nowrap;padding:5px 11px;border-radius:999px;background:var(--blue-bg);color:var(--blue);font-weight:600;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
-.hero h1{margin:18px 0 0;font-size:clamp(36px,5.2vw,58px);line-height:1.04;letter-spacing:-.035em;font-weight:700;color:var(--ink);text-wrap:balance}
-.hero .dek{margin:20px 0 0;font-size:19px;line-height:1.55;color:var(--m1);text-wrap:pretty}
+.cat{margin-top:var(--sp-5);display:inline-flex;white-space:nowrap;padding:5px 11px;border-radius:999px;background:var(--blue-bg);color:var(--blue);font-weight:600;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.hero h1{margin:var(--sp-4) 0 0;max-width:820px;font-size:clamp(1.875rem,1.5rem + 1.5vw,3rem);line-height:1.15;letter-spacing:-.025em;font-weight:700;color:var(--ink);text-wrap:balance}
+.hero .dek{margin:1.25rem 0 0;font-size:1.1875rem;line-height:1.55;color:var(--m1);text-wrap:pretty}
 .byline{margin-top:32px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--m2)}
 .avatar{width:40px;height:40px;border-radius:50%;overflow:hidden;flex:none;background:var(--s3)}
 .avatar img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
@@ -371,10 +374,9 @@ img{display:block;max-width:100%}
    The whole block stays hidden until the audio file reports its duration, so a
    visitor never sees a control that cannot play anything. */
 .vo-root[hidden]{display:none}
-.listen{font:inherit;font-size:13px;font-weight:700;height:40px;padding:0 18px 0 6px;border-radius:999px;cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:10px;border:0;background:var(--blue);color:#fff;box-shadow:0 0 0 0 rgba(26,86,219,.22),0 10px 24px -10px rgba(26,86,219,.7);transition:transform .5s var(--ease),box-shadow .6s var(--ease),background .3s ease}
-.listen:hover{transform:translateY(-1px) scale(1.02);background:var(--blue-hi)}
-.listen:active{transform:scale(.96)}
-.listen.on{box-shadow:0 0 0 6px rgba(26,86,219,.22),0 10px 24px -10px rgba(26,86,219,.7)}
+.listen{font:inherit;font-size:13px;font-weight:700;height:44px;padding:0 18px 0 8px;border-radius:999px;cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:10px;border:0;background:var(--blue);color:#fff;box-shadow:none;transition:background .2s ease}
+.listen:hover{background:#1646B8}
+.listen:active{background:#123A99}
 
 .vo{margin-top:20px;max-width:600px;padding:8px 16px 8px 8px;border-radius:999px;background:#fff;box-shadow:0 1px 2px rgba(28,43,51,.06),0 14px 36px -16px rgba(28,43,51,.22);display:flex;align-items:center;gap:14px}
 .vo-play{width:40px;height:40px;flex:none;border-radius:50%;border:0;cursor:pointer;background:var(--blue);display:grid;place-items:center;transition:background .3s ease,transform .4s var(--ease)}
@@ -393,7 +395,7 @@ img{display:block;max-width:100%}
 .vo-x{flex:none;font:inherit;width:26px;height:26px;border-radius:50%;border:0;background:transparent;color:var(--m2);cursor:pointer;font-size:15px;line-height:1}
 .vo-x:hover{color:var(--ink)}
 
-.mini{position:fixed;left:50%;bottom:20px;transform:translate(-50%,140%) scale(.96);opacity:0;pointer-events:none;transition:transform .7s var(--ease),opacity .45s var(--ease);z-index:102;width:min(560px,calc(100% - 32px));padding:10px 12px 10px 10px;border-radius:999px;background:rgba(255,255,255,.82);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border:1px solid rgba(28,43,51,.06);box-shadow:0 24px 60px -20px rgba(28,43,51,.35);color:var(--ink);display:flex;align-items:center;gap:12px;overflow:hidden}
+.mini{position:fixed;left:50%;bottom:20px;transform:translate(-50%,140%) scale(.96);opacity:0;pointer-events:none;transition:transform .7s var(--ease),opacity .45s var(--ease);z-index:102;width:min(560px,calc(100% - 32px));padding:10px 12px 10px 10px;border-radius:999px;background:rgba(255,255,255,.82);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border:1px solid rgba(28,43,51,.06);box-shadow:0 8px 28px -12px rgba(28,43,51,.28);color:var(--ink);display:flex;align-items:center;gap:12px;overflow:hidden}
 .mini.show{transform:translate(-50%,0) scale(1);opacity:1;pointer-events:auto}
 .mini .vo-play{width:44px;height:44px}
 .mini .txt{flex:1;min-width:0}
@@ -410,33 +412,16 @@ img{display:block;max-width:100%}
 /* ── BODY ── */
 .body{max-width:1080px;margin:0 auto;padding:64px 24px 40px;display:flex;flex-wrap:wrap;gap:56px;align-items:flex-start}
 .toc{position:sticky;top:96px;flex:0 0 200px}
-.toc .lbl{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--m3)}
+.ins .lbl{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--m2)}
 .toc nav{margin-top:14px;display:flex;flex-direction:column;border-left:1px solid #E4E4E7}
 .toc nav a{padding:7px 0 7px 14px;margin-left:-1px;font-size:13px;line-height:1.4;border-left:2px solid transparent;color:var(--m3)}
 .toc nav a.on{border-left-color:var(--blue);color:var(--blue);font-weight:600}
-.share-grid{margin-top:12px;display:grid;grid-template-columns:repeat(4,40px);gap:8px}
-.sbtn{width:40px;height:40px;border-radius:50%;border:0;cursor:pointer;background:var(--s2);color:var(--ink);display:grid;place-items:center;transition:background .3s ease,color .3s ease,transform .4s var(--ease)}
-.sbtn:hover{background:var(--ink);color:#fff;transform:translateY(-2px)}
-.sbtn:active{transform:scale(.92)}
-/* They are links now: keep them out of the inline-link colour and underline. */
-.ins a.sbtn,article a.sbtn{color:var(--ink);text-decoration:none}
-.ins a.sbtn:hover{color:#fff}
-.sbtn:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
-.pbtn[hidden]{display:none}
-.share-acts{margin-top:10px;display:flex;flex-direction:column;gap:8px;max-width:184px}
-.pbtn{font:inherit;font-size:12px;font-weight:600;height:36px;padding:0 14px;white-space:nowrap;border-radius:999px;border:0;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:background .3s,color .3s}
-.pbtn-soft{background:var(--s2);color:var(--ink)}
-.pbtn-soft.done{background:#E7F8EE;color:#15803D}
-.pbtn.fail{background:#FEECEC;color:#B91C1C}
-.pbtn-blue{background:var(--blue);color:#fff}
-.pbtn-blue:hover{background:var(--blue-hi)}
-@media (max-width:860px){.toc{position:static;flex-basis:100%}}
 
-article{flex:1 1 520px;min-width:0;max-width:700px;font-size:18px;line-height:1.75;color:var(--body-ink)}
+article{flex:1 1 520px;min-width:0;max-width:700px;font-size:1.125rem;line-height:1.7;color:var(--body-ink)}
 article p{text-wrap:pretty}
-article .lead{margin:0;font-size:21px;line-height:1.6;color:var(--ink);font-weight:500}
-article h2{margin:56px 0 0;font-size:30px;line-height:1.2;letter-spacing:-.025em;color:var(--ink);font-weight:700}
-article h3{margin:40px 0 0;font-size:21px;line-height:1.3;letter-spacing:-.015em;color:var(--ink);font-weight:700}
+article .lead{margin:0;font-size:1.3125rem;line-height:1.6;color:var(--ink);font-weight:500}
+article h2{margin:56px 0 0;font-size:1.875rem;line-height:1.22;letter-spacing:-.025em;color:var(--ink);font-weight:700}
+article h3{margin:40px 0 0;font-size:1.3125rem;line-height:1.3;letter-spacing:-.015em;color:var(--ink);font-weight:700}
 article strong{color:var(--ink)}
 article a{text-decoration:underline;text-decoration-color:rgba(26,86,219,.35);text-underline-offset:3px}
 article ol,article ul{padding-left:22px;margin:20px 0 0;display:flex;flex-direction:column;gap:12px}
@@ -446,34 +431,27 @@ pre{margin:16px 0 0;padding:18px 20px;border-radius:16px;background:var(--ink);c
 pre code{background:none;padding:0;color:inherit;font-size:inherit}
 pre .c{color:#86EFAC}
 
-.quote{margin:44px 0;padding:0;border:0}
+.quote{margin:var(--sp-7) 0;padding:0;border:0}
 .quote p{margin:0;font-size:28px;line-height:1.3;letter-spacing:-.02em;font-weight:700;color:var(--ink);text-wrap:balance}
 .quote span{display:block;margin-top:14px;width:40px;height:3px;background:var(--blue)}
 
 
-.takeaway{margin:44px 0;padding:28px 28px 26px;border-radius:24px;background:var(--blue-bg);color:var(--ink)}
+.takeaway{margin:var(--sp-7) 0;padding:var(--sp-5);border-radius:var(--r-panel);background:var(--blue-bg);color:var(--ink)}
 .takeaway .t{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
 .takeaway .t .dot{width:6px;height:6px;border-radius:50%;background:var(--blue);display:inline-block;flex:none}
-.takeaway p{margin:12px 0 0;font-size:17px;line-height:1.6;color:var(--ink)}
+.takeaway p{margin:var(--sp-3) 0 0;font-size:1.0625rem;line-height:1.6;color:var(--ink)}
 
 
-.tags{margin-top:48px;padding-top:28px;border-top:1px solid #E4E4E7;display:flex;gap:8px;flex-wrap:wrap}
+.tags{margin-top:var(--sp-7);padding-top:var(--sp-5);border-top:1px solid #E4E4E7;display:flex;gap:8px;flex-wrap:wrap}
 .tags span{font-size:12px;font-weight:500;padding:6px 12px;border-radius:999px;background:var(--s1)}
-.author{margin-top:32px;padding:24px;border-radius:24px;background:var(--s1);display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.author{margin-top:var(--sp-6);padding:var(--sp-5);border-radius:var(--r-panel);background:var(--s1);display:flex;gap:18px;align-items:center;flex-wrap:wrap}
 .author .ph{width:64px;height:64px;border-radius:50%;flex:none;overflow:hidden;background:var(--s3)}
 .author .ph img{width:100%;height:100%;object-fit:cover;object-position:center 20%;filter:grayscale(1)}
 .author .n{font-size:16px;font-weight:700;color:var(--ink)}
 .author .d{font-size:14px;line-height:1.55;color:#52525B;margin-top:4px}
 
-/* ── KEEP READING ── */
-.more{background:var(--s1);padding:56px 0 64px;margin-top:24px}
-.more .in{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;gap:16px 24px;flex-wrap:wrap}
-.more h2{margin:0;font-size:30px;letter-spacing:-.03em;font-weight:700;color:var(--ink)}
-.more p{margin:8px 0 0;font-size:15px;line-height:1.6;color:#52525B;max-width:520px}
-.more a.all{font-size:14px;font-weight:600;padding:12px 20px;border-radius:999px;background:var(--blue);color:#fff;white-space:nowrap}
-.more a.all:hover{background:var(--blue-hi);color:#fff}
-/* When the second article ships, drop a `.grid` of cards from /insights/ in here. */
-@media (max-width:620px){.hero h1{font-size:clamp(30px,8vw,40px)}.body{padding:40px 24px 24px;gap:36px}}
+@media (max-width:620px){:root{--gutter:20px}.hero{padding-top:40px}.body{padding:40px var(--gutter) 24px;gap:36px}}
+@media (max-width:360px){:root{--gutter:16px}}
 /* ── ARTICLE KIT v2 ─────────────────────────────────────────────────────────
    From "Insights Article Kit": text rhythm, the components the first real
    article needed, and the Listen button that turns into the player.
@@ -481,54 +459,60 @@ pre .c{color:#86EFAC}
    derived from it the same way as --blue-hi / --blue-bg. */
 :root{--code-ink:#16409E;--on-dark-blue:#7DA2F5;--on-dark-label:#9AB7F7;--rule:#E6E9EE;--art:#33414A}
 
-/* H1 subtitle: the topic in the heading itself, set smaller under the title */
-.hero h1 .h1-sub{display:block;margin-top:10px;font-size:clamp(20px,2.6vw,28px);line-height:1.2;letter-spacing:-.02em;font-weight:600;color:var(--m1)}
-.hero h1 .h1-sub::first-letter{text-transform:uppercase}
 .sr{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 
 /* 01 · Text rhythm. The site-wide reset (* { margin:0 }) had stripped every
    paragraph margin, so paragraphs ran together and H2s sat on the text. */
 article{color:var(--art)}
-article p{margin:0 0 1.1em}
-article .lead{margin:0 0 1.1em}
-article h2{margin:64px 0 16px}
-article h3{margin:40px 0 10px}
+article p{margin:0 0 1.375rem}
+article .lead{margin:0 0 1.375rem}
+article h2{margin:3.5rem 0 1rem}
+article h3{margin:2rem 0 .5rem}
+@media (max-width:620px){article h2{margin-top:2.5rem;font-size:1.6875rem}}
+/* Headings focused by the contents links: the jump itself is the cue. */
+article [tabindex="-1"]:focus{outline:none}
 article a{text-decoration-thickness:1.5px}
 .ins article a:not([class]):hover{color:var(--blue);text-decoration-color:var(--blue)}
 article code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.84em;padding:2px 7px;border-radius:6px;background:var(--blue-bg);color:var(--code-ink)}
+/* Short inline code ("Disallow: /") stays on one line. */
+article p code{white-space:nowrap}
 
 /* 05 · Numbered list with a bold lead-in on its own line */
 article ol.steps{list-style:none;padding:0;margin:8px 0 1.4em;display:flex;flex-direction:column;gap:20px;counter-reset:step}
-article ol.steps>li{counter-increment:step;position:relative;padding:0 0 0 44px;font-size:17px;line-height:1.65}
+article ol.steps>li{counter-increment:step;position:relative;padding:0 0 0 44px;font-size:1.0625rem;line-height:1.65}
 article ol.steps>li::before{content:counter(step);position:absolute;left:0;top:2px;width:28px;height:28px;border-radius:50%;background:var(--blue-bg);color:var(--blue);font-size:13px;font-weight:700;display:grid;place-items:center;font-variant-numeric:tabular-nums}
 article ol.steps .lead-in{display:block;font-weight:700;color:var(--ink)}
 
 /* 03 · Terminal command. "$ " is drawn by CSS, so copying or crawling the
    command never picks it up. */
-.term{margin-top:16px;border-radius:16px;background:var(--ink);overflow:hidden}
-.term-row{display:flex;align-items:center;gap:12px;padding:6px 6px 6px 16px}
-article code.term-cmd{flex:1;min-width:0;overflow-x:auto;white-space:pre;font:13.5px/2.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#fff;background:none;padding:0;border-radius:0}
+.term{margin-top:var(--sp-4);border-radius:var(--r-panel);background:var(--ink);overflow:hidden}
+.term-bar{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-3);padding:var(--sp-1) var(--sp-1) var(--sp-1) var(--sp-4);border-bottom:1px solid rgba(255,255,255,.08)}
+.term-name{font-size:12px;color:rgba(255,255,255,.72)}
+article code.term-cmd{display:block;overflow-x:auto;white-space:pre;padding:var(--sp-3) var(--sp-4);font:.875rem/1.7 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#fff;background:none;border-radius:0}
 .term-cmd::before{content:"$ ";color:var(--on-dark-blue)}
 .term-cmd .s{color:#FDE68A}
-.term-out{display:flex;align-items:center;gap:10px;padding:10px 16px;background:rgba(255,255,255,.04);border-top:1px solid rgba(255,255,255,.06);font-size:12.5px;line-height:1.5;color:rgba(255,255,255,.65)}
+.term-out{display:flex;align-items:center;gap:10px;padding:10px 16px;background:rgba(255,255,255,.04);border-top:1px solid rgba(255,255,255,.06);font-size:12.5px;line-height:1.5;color:rgba(255,255,255,.75)}
 .term-out i{width:6px;height:6px;border-radius:50%;background:#F59E0B;flex:none}
 
 /* 02 · Code block with file name. Line numbers come from a CSS counter, so
    they are neither selectable nor part of the text crawlers read. */
-.cb-copy{flex:none;font-family:Inter,system-ui,sans-serif;font-size:12px;font-weight:600;height:32px;padding:0 12px;border-radius:999px;border:0;cursor:pointer;white-space:nowrap;background:rgba(255,255,255,.1);color:#fff;transition:background .3s,color .3s}
+.cb-copy{position:relative;flex:none;font-family:Inter,system-ui,sans-serif;font-size:12px;font-weight:600;height:36px;padding:0 14px;border-radius:999px;border:0;cursor:pointer;white-space:nowrap;background:rgba(255,255,255,.1);color:#fff;transition:background .2s,color .2s}
 .cb-copy:hover{background:rgba(255,255,255,.18)}
-.cb-copy.done{background:#16A34A}
+.cb-copy:active{background:rgba(255,255,255,.26)}
+.cb-copy.done{background:#15803D}
 .cb-copy.fail{background:#B91C1C}
-.codeblock{max-width:740px;margin:24px clamp(-20px,-2vw,0px) 1.4em;border-radius:20px;overflow:hidden;background:var(--ink);box-shadow:0 24px 50px -30px rgba(28,43,51,.6)}
-.cb-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 10px 10px 18px;border-bottom:1px solid rgba(255,255,255,.08)}
+.codeblock{margin:var(--sp-5) 0 1.4em;border-radius:var(--r-panel);overflow:hidden;background:var(--ink)}
+.cb-bar{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-3);padding:var(--sp-1) var(--sp-1) var(--sp-1) var(--sp-4);border-bottom:1px solid rgba(255,255,255,.08)}
 .cb-meta{display:flex;align-items:center;gap:10px;min-width:0}
 .cb-name{font-size:13px;color:#fff;white-space:nowrap}
-.cb-sub{font-size:11px;color:rgba(255,255,255,.5);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-pre.cb-body{margin:0;padding:16px 0;border-radius:0;background:none;overflow-x:auto;font:14px/1.75 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#fff;white-space:pre-wrap;word-break:break-word;counter-reset:ln}
-pre.cb-body code{display:block;background:none;padding:0;border-radius:0;color:inherit;font-size:inherit}
-.cb-body .l{display:block;position:relative;min-height:1.75em;padding:0 24px 0 48px;counter-increment:ln}
-.cb-body .l::before{content:counter(ln);position:absolute;left:0;width:32px;text-align:right;color:rgba(255,255,255,.25);user-select:none}
-.cb-body .c{color:rgba(255,255,255,.42)}
+.cb-sub{font-size:11px;color:rgba(255,255,255,.72);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* No wrapping: a wrapped directive would read as two lines. Long lines scroll
+   inside the block, the numbers stay put (sticky) and a fade shows there is more. */
+pre.cb-body{margin:0;padding:var(--sp-4) 0;border-radius:0;background:none;overflow-x:auto;font:.875rem/1.75 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#fff;white-space:pre;counter-reset:ln}
+pre.cb-body code{display:block;width:max-content;min-width:100%;background:none;padding:0;border-radius:0;color:inherit;font-size:inherit}
+.cb-body .l{display:block;min-height:1.75em;padding-right:var(--sp-5);counter-increment:ln}
+.cb-body .l::before{content:counter(ln);position:sticky;left:0;display:inline-block;width:48px;padding-right:var(--sp-4);text-align:right;background:var(--ink);color:rgba(255,255,255,.5);user-select:none}
+.cb-body .c{color:rgba(255,255,255,.72)}
 .cb-body .k{color:var(--on-dark-blue)}
 .cb-body .u{color:#A7F3D0}
 
@@ -570,7 +554,7 @@ article ol.src-list>li{padding:0;margin:0 -12px;border-radius:12px;font-size:14p
 @keyframes srcflash{0%,45%{background:var(--blue-bg)}100%{background:transparent}}
 
 /* 08 · Closing call to action */
-.closing{position:relative;overflow:hidden;margin:48px 0 0;padding:36px;border-radius:24px;background:var(--ink);color:#fff}
+.closing{position:relative;overflow:hidden;margin:var(--sp-7) 0 0;padding:var(--sp-6);border-radius:var(--r-panel);background:var(--ink);color:#fff}
 .cl-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 80% at 100% 0%,rgba(26,86,219,.45),transparent 70%),radial-gradient(40% 60% at 0% 100%,rgba(168,85,247,.22),transparent 70%)}
 .cl-in{position:relative}
 .cl-k{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--on-dark-label)}
@@ -582,31 +566,96 @@ article a.cl-btn{padding:0 20px;background:#fff;color:var(--ink);transition:tran
 .ins article a.cl-btn:hover{transform:translateY(-1px);color:var(--ink)}
 article a.cl-btn2{padding:0 18px;background:rgba(255,255,255,.12);color:#fff}
 .ins article a.cl-btn2:hover{background:rgba(255,255,255,.2);color:#fff}
-@media (max-width:620px){.closing{padding:28px 22px}article p.cl-t{font-size:24px}}
+@media (max-width:620px){.closing{padding:var(--sp-5)}article p.cl-t{font-size:24px}}
 
 /* 09 · Listen button turns into the player; one control, not two */
 .listen .pl{width:28px;height:28px;flex:none;border-radius:50%;background:#fff;display:grid;place-items:center}
 .listen .pl i{width:0;height:0;border-left:9px solid var(--blue);border-top:6px solid transparent;border-bottom:6px solid transparent;margin-left:2px}
 .vo-root{display:contents}
-.byline .vo{flex:1 1 320px;min-width:0;height:48px;margin:0;max-width:none;padding:0 14px 0 6px;border-radius:999px;background:#fff;box-shadow:0 1px 2px rgba(28,43,51,.06),0 14px 36px -16px rgba(28,43,51,.25);display:flex;align-items:center;gap:12px}
+.byline .vo{flex:1 1 320px;min-width:0;height:48px;margin:0;max-width:none;padding:0 14px 0 5px;border-radius:999px;background:#fff;border:1px solid var(--line);box-shadow:0 1px 2px rgba(28,43,51,.04);display:flex;align-items:center;gap:12px}
 .byline [hidden]{display:none}
 .byline .vo .vo-play{width:36px;height:36px}
-.byline .wave{flex:1;min-width:40px;height:20px}
+.byline .wave{flex:1;min-width:40px;height:44px;padding:12px 0}
 .vo-time{font-family:inherit;font-variant-numeric:tabular-nums}
 .byline .vo-rate{font-family:inherit;font-variant-numeric:tabular-nums;height:auto;padding:3px 8px;background:var(--s2);color:var(--ink)}
 .mini .vo-rate{font-family:inherit;font-variant-numeric:tabular-nums}
-/* Share row for narrow screens: there the sidebar moves above the article,
-   so the end of the article repeats the same links (hidden on desktop). */
-.share-row{display:none}
-@media (max-width:860px){
-  .share-row{display:block;margin-top:40px}
-  .share-row .lbl{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--m3)}
-  .share-row .icons{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px}
-}
-.sbtn.done{background:#E7F8EE;color:#15803D}
-.sbtn.fail{background:#FEECEC;color:#B91C1C}
 body.vo-active{padding-bottom:96px}       /* room for the mini player above the footer */
 .byline .wave i{transform-origin:50% 50%}
+
+/* ── 10 · ARTICLE TEMPLATE ─────────────────────────────────────────────────
+   Contents that fold up on one-column layouts, the share panel, scrolling
+   code and touch targets. */
+
+/* Contents: sticky sidebar on desktop, a closed <details> above the text when
+   the layout is one column. Both lists use the same links (.toc-links). */
+.toc{max-height:calc(100vh - var(--nav-h) - 48px);overflow-y:auto;overscroll-behavior:contain;padding:var(--sp-1);margin:calc(var(--sp-1) * -1);scrollbar-width:none}
+.toc::-webkit-scrollbar{display:none}
+.toc-m{display:none}
+.toc-m summary,.sh-more summary{list-style:none}
+.toc-m summary::-webkit-details-marker,.sh-more summary::-webkit-details-marker{display:none}
+.chev{flex:none;transition:transform .2s ease}
+details[open]>summary .chev{transform:rotate(180deg)}
+@media (max-width:860px){
+  .toc{display:none}
+  .toc-m{display:block;margin:0 0 var(--sp-6);border:1px solid var(--line);border-radius:var(--r-panel);background:#fff}
+  .toc-m summary{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-3);min-height:52px;padding:0 var(--sp-4);border-radius:var(--r-panel);font-size:1rem;font-weight:600;line-height:1.3;color:var(--ink);cursor:pointer}
+  .toc-m summary:hover{background:var(--s1)}
+  .toc-m[open] summary{border-radius:var(--r-panel) var(--r-panel) 0 0;border-bottom:1px solid var(--rule)}
+  .toc-m nav{display:flex;flex-direction:column;padding:var(--sp-2) 0}
+  article .toc-m nav a{display:flex;align-items:center;min-height:44px;padding:var(--sp-2) var(--sp-4);font-size:1rem;line-height:1.4;color:var(--art);text-decoration:none}
+  .ins article .toc-m nav a:hover{background:var(--s1);color:var(--ink)}
+}
+
+/* Share: LinkedIn, Copy link and "More options" (a native <details>) */
+.share{margin-top:var(--sp-6)}
+.share-main{margin-top:var(--sp-3);display:flex;flex-direction:column;gap:var(--sp-2)}
+.sh-btn{display:flex;align-items:center;gap:10px;min-height:44px;padding:0 14px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--ink);font:inherit;font-size:13px;font-weight:600;line-height:1.2;white-space:nowrap;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+.ins a.sh-btn,.ins article a.sh-btn{color:var(--ink);text-decoration:none}
+.sh-btn svg{flex:none;color:var(--m1)}
+.sh-btn:hover,.ins a.sh-btn:hover{background:var(--s1);border-color:#C3CAD3;color:var(--ink)}
+.sh-btn:active{background:var(--s2)}
+.sh-btn.done{background:#EFFAF3;border-color:#9BD3B0;color:#166534}
+.sh-btn.done svg{color:#166534}
+.sh-btn.fail{background:#FEF2F2;border-color:#F3B1B1;color:#B91C1C}
+.sh-more summary .chev{margin-left:auto;color:var(--m2)}
+.sh-more[open] summary{background:var(--s1)}
+.sh-list{margin-top:var(--sp-2);padding:var(--sp-1);border:1px solid var(--line);border-radius:var(--r-panel);background:#fff;display:flex;flex-direction:column;gap:2px}
+.sh-item{display:flex;align-items:center;gap:10px;min-height:44px;padding:0 var(--sp-3);border:0;border-radius:12px;background:none;color:var(--ink);font:inherit;font-size:13px;font-weight:500;text-align:left;cursor:pointer;transition:background .2s}
+.ins a.sh-item,.ins article a.sh-item{color:var(--ink);text-decoration:none}
+.sh-item svg{flex:none;color:var(--m1)}
+.sh-item:hover,.ins a.sh-item:hover{background:var(--s1);color:var(--ink)}
+.sh-item:active{background:var(--s2)}
+.sh-item[hidden]{display:none}
+.share-row{display:none}
+@media (max-width:860px){
+  .share-row{display:block;margin-top:var(--sp-6)}
+  .share-row .share{margin:0}
+  /* Two columns where they fit (≥ 2 × 10 rem), one column on the smallest phones. */
+  .share-row .share-main,.share-row .sh-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(10rem,1fr))}
+  .share-row .sh-more{grid-column:1/-1}
+  .share-row .sh-btn{justify-content:center}
+  .share-row .sh-more summary .chev{margin-left:0}
+}
+
+/* Quiet link back to the list (replaces "Keep reading" while there is one article) */
+article p.all-link{margin:var(--sp-6) 0 0;font-size:.9375rem;font-weight:600}
+article p.all-link a{text-decoration:none}
+
+/* Horizontal scrolling only inside code; a fade marks hidden content. The mask
+   would also clip an outside focus ring, so scrollers draw theirs inside. */
+.scroll-x.more-r{-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 40px),transparent);mask-image:linear-gradient(to right,#000 calc(100% - 40px),transparent)}
+.ins .scroll-x:focus-visible{outline:2px solid var(--on-dark-label);outline-offset:-3px;border-radius:var(--sp-2)}
+/* Focus on dark surfaces: the light blue keeps the ring visible. */
+.ins .term :focus-visible,.ins .codeblock :focus-visible,.ins .closing :focus-visible{outline-color:var(--on-dark-label)}
+
+/* Touch targets: small controls get a 44 × 44 px hit area around them. */
+.vo-rate,.vo-x,.byline .vo-play{position:relative}
+.vo-rate::after,.vo-x::after,.byline .vo-play::after,.cb-copy::after{content:"";position:absolute;left:50%;top:50%;width:44px;height:44px;min-width:100%;transform:translate(-50%,-50%)}
+.mini .vo-x{width:36px;height:36px}
+
+@media (prefers-reduced-motion:reduce){
+  .chev,.sh-btn,.sh-item,.cb-copy,.listen{transition:none}
+}
         /* With eight menu items, the full menu no longer fits next to the logo and
            the language switch below ~960 px, so tablets in portrait get the mobile
            menu as well. */
@@ -670,7 +719,7 @@ body.vo-active{padding-bottom:96px}       /* room for the mini player above the 
       <nav class="crumbs" aria-label="Breadcrumb" data-i18n-attr="aria-label:crumbs_aria"><a href="/insights/" data-i18n="nav_insights">Insights</a><span>/</span><span data-k="hero.span1">AI in AEC</span></nav>
       <div class="head">
         <div data-k="hero.div2" class="cat">AI in AEC</div>
-        <h1 data-k="hero.h13">Be the source<span class="h1-sub"><span class="sr">: </span>getting AEC data ready for AI search</span></h1>
+        <h1 data-k="hero.h13">Be the source: getting AEC data ready for AI search</h1>
         <p data-k="hero.p4" class="dek">Working on engineering-software websites across different markets has shaped how I approach AI visibility. This article brings together lessons from localization and the practical checks I use to make technical content easier to find, interpret and verify.</p>
 
         <div class="byline" id="byline">
@@ -725,7 +774,7 @@ body.vo-active{padding-bottom:96px}       /* room for the mini player above the 
   <div class="body">
     <aside class="toc">
       <div class="lbl" data-i18n="toc_label">On this page</div>
-      <nav id="toc" aria-label="On this page" data-i18n-attr="aria-label:toc_aria">
+      <nav id="toc" class="toc-links" aria-label="On this page" data-i18n-attr="aria-label:toc_aria">
         <a data-k="toc.a1" href="#ai-search">Google is already AI search</a>
         <a data-k="toc.a2" href="#localization">What localization taught me</a>
         <a data-k="toc.a3" href="#load-path">How a fact reaches an answer</a>
@@ -734,22 +783,41 @@ body.vo-active{padding-bottom:96px}       /* room for the mini player above the 
         <a data-k="toc.a6" href="#kit">Copy-paste kit</a>
         <a data-k="toc.a7" href="#start">Where I would start</a>
       </nav>
-      <div class="lbl" style="margin-top:28px" data-i18n="share_label">Share</div>
-      <div class="share-grid" data-share>
-        <a class="sbtn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F" data-net="LinkedIn" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="Share on LinkedIn (opens in a new window)" data-i18n-attr="aria-label:share_on:LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"></path></svg></a>
-        <a class="sbtn" href="https://x.com/intent/tweet?url=https%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F&amp;text=Be%20the%20source%3A%20getting%20AEC%20data%20ready%20for%20AI%20search&amp;via=martinmotlik" data-net="X" target="_blank" rel="noopener noreferrer" title="X" aria-label="Share on X (opens in a new window)" data-i18n-attr="aria-label:share_on:X"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.67l7.73-8.84L1.25 2.25h6.83l4.71 6.23 5.45-6.23zm-1.16 17.52h1.83L7.08 4.13H5.12z"></path></svg></a>
-        <a class="sbtn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F" data-net="Facebook" target="_blank" rel="noopener noreferrer" title="Facebook" aria-label="Share on Facebook (opens in a new window)" data-i18n-attr="aria-label:share_on:Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"></path></svg></a>
-        <a class="sbtn" href="https://wa.me/?text=Be%20the%20source%3A%20getting%20AEC%20data%20ready%20for%20AI%20search%20https%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F" data-net="WhatsApp" target="_blank" rel="noopener noreferrer" title="WhatsApp" aria-label="Share on WhatsApp (opens in a new window)" data-i18n-attr="aria-label:share_on:WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.05 21.8a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88zM20.46 3.49A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.42z"></path></svg></a>
-        <a class="sbtn" href="https://www.reddit.com/submit?url=https%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F&amp;title=Be%20the%20source%3A%20getting%20AEC%20data%20ready%20for%20AI%20search" data-net="Reddit" target="_blank" rel="noopener noreferrer" title="Reddit" aria-label="Share on Reddit (opens in a new window)" data-i18n-attr="aria-label:share_on:Reddit"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 11.78a2.65 2.65 0 0 0-4.5-1.9 13 13 0 0 0-7.04-2.22l1.2-5.62 3.9.83a1.88 1.88 0 1 0 .2-.92l-4.37-.93a.47.47 0 0 0-.56.36l-1.34 6.28a13.05 13.05 0 0 0-7.13 2.22 2.65 2.65 0 1 0-2.92 4.33 5.2 5.2 0 0 0 0 .8c0 4.04 4.7 7.32 10.5 7.32s10.5-3.28 10.5-7.32a5.2 5.2 0 0 0 0-.8A2.65 2.65 0 0 0 24 11.78zM6 13.66a1.88 1.88 0 1 1 1.88 1.88A1.88 1.88 0 0 1 6 13.66zm10.48 4.96c-1.28 1.28-3.73 1.38-4.45 1.38s-3.18-.1-4.46-1.38a.49.49 0 0 1 .69-.69c.81.81 2.53 1.1 3.77 1.1s2.96-.29 3.77-1.1a.49.49 0 0 1 .68.69zm-.34-3.08a1.88 1.88 0 1 1 1.88-1.88 1.88 1.88 0 0 1-1.88 1.88z"></path></svg></a>
-        <a class="sbtn" href="mailto:?subject=Be%20the%20source%3A%20getting%20AEC%20data%20ready%20for%20AI%20search&amp;body=I%20thought%20this%20was%20worth%20your%20time%3A%0A%0ABe%20the%20source%3A%20getting%20AEC%20data%20ready%20for%20AI%20search%0Ahttps%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F" data-net="Email" title="Email" aria-label="Share on Email (opens your email app)" data-i18n-attr="aria-label:share_email"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1 3.2V17h16V8.2l-8 5.3-8-5.3zM5.6 7l6.4 4.24L18.4 7H5.6z"></path></svg></a>
-      </div>
-      <div class="share-acts">
-        <button class="pbtn pbtn-soft" data-copy type="button"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10.59 13.41a1 1 0 0 1 0-1.41l3-3a1 1 0 1 1 1.41 1.41l-3 3a1 1 0 0 1-1.41 0zM7.05 19.78a4 4 0 0 1-2.83-6.83l2.12-2.12a1 1 0 1 1 1.42 1.41l-2.13 2.13a2 2 0 0 0 2.83 2.83l2.12-2.13a1 1 0 0 1 1.42 1.42l-2.13 2.12a3.98 3.98 0 0 1-2.83 1.17zm9.19-6.19a1 1 0 0 1-.71-1.71l2.13-2.12a2 2 0 0 0-2.83-2.83l-2.12 2.12a1 1 0 0 1-1.42-1.41l2.13-2.13a4 4 0 0 1 5.66 5.66l-2.13 2.12a1 1 0 0 1-.71.3z"></path></svg><span data-i18n="copy_link">Copy link</span></button>
-        <button class="pbtn pbtn-blue" data-native type="button" data-i18n="share_more" hidden>Share…</button>
+      <div class="share" role="group" aria-labelledby="share-h-side">
+        <div class="lbl" id="share-h-side" data-i18n="share_label">Share</div>
+        <div class="share-main">
+          <a class="sh-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F" data-net="LinkedIn" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn (opens in a new window)" data-i18n-attr="aria-label:share_on:LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"></path></svg><span>LinkedIn</span></a>
+          <button class="sh-btn" type="button" data-copy><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10.59 13.41a1 1 0 0 1 0-1.41l3-3a1 1 0 1 1 1.41 1.41l-3 3a1 1 0 0 1-1.41 0zM7.05 19.78a4 4 0 0 1-2.83-6.83l2.12-2.12a1 1 0 1 1 1.42 1.41l-2.13 2.13a2 2 0 0 0 2.83 2.83l2.12-2.13a1 1 0 0 1 1.42 1.42l-2.13 2.12a3.98 3.98 0 0 1-2.83 1.17zm9.19-6.19a1 1 0 0 1-.71-1.71l2.13-2.12a2 2 0 0 0-2.83-2.83l-2.12 2.12a1 1 0 0 1-1.42-1.41l2.13-2.13a4 4 0 0 1 5.66 5.66l-2.13 2.12a1 1 0 0 1-.71.3z"></path></svg><span data-i18n="copy_link">Copy link</span></button>
+          <details class="sh-more">
+            <summary class="sh-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="19" cy="12" r="2"></circle></svg><span data-i18n="share_more_opts">More options</span><svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary>
+            <div class="sh-list">
+              <a class="sh-item" href="https://x.com/intent/tweet?url=https%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F&amp;text=Be%20the%20source%3A%20getting%20AEC%20data%20ready%20for%20AI%20search&amp;via=martinmotlik" data-net="X" target="_blank" rel="noopener noreferrer" aria-label="Share on X (opens in a new window)" data-i18n-attr="aria-label:share_on:X"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.67l7.73-8.84L1.25 2.25h6.83l4.71 6.23 5.45-6.23zm-1.16 17.52h1.83L7.08 4.13H5.12z"></path></svg><span>X</span></a>
+              <a class="sh-item" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F" data-net="Facebook" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook (opens in a new window)" data-i18n-attr="aria-label:share_on:Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"></path></svg><span>Facebook</span></a>
+              <a class="sh-item" href="https://wa.me/?text=Be%20the%20source%3A%20getting%20AEC%20data%20ready%20for%20AI%20search%20https%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F" data-net="WhatsApp" target="_blank" rel="noopener noreferrer" aria-label="Share on WhatsApp (opens in a new window)" data-i18n-attr="aria-label:share_on:WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.05 21.8a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88zM20.46 3.49A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.42z"></path></svg><span>WhatsApp</span></a>
+              <a class="sh-item" href="https://www.reddit.com/submit?url=https%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F&amp;title=Be%20the%20source%3A%20getting%20AEC%20data%20ready%20for%20AI%20search" data-net="Reddit" target="_blank" rel="noopener noreferrer" aria-label="Share on Reddit (opens in a new window)" data-i18n-attr="aria-label:share_on:Reddit"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 11.78a2.65 2.65 0 0 0-4.5-1.9 13 13 0 0 0-7.04-2.22l1.2-5.62 3.9.83a1.88 1.88 0 1 0 .2-.92l-4.37-.93a.47.47 0 0 0-.56.36l-1.34 6.28a13.05 13.05 0 0 0-7.13 2.22 2.65 2.65 0 1 0-2.92 4.33 5.2 5.2 0 0 0 0 .8c0 4.04 4.7 7.32 10.5 7.32s10.5-3.28 10.5-7.32a5.2 5.2 0 0 0 0-.8A2.65 2.65 0 0 0 24 11.78zM6 13.66a1.88 1.88 0 1 1 1.88 1.88A1.88 1.88 0 0 1 6 13.66zm10.48 4.96c-1.28 1.28-3.73 1.38-4.45 1.38s-3.18-.1-4.46-1.38a.49.49 0 0 1 .69-.69c.81.81 2.53 1.1 3.77 1.1s2.96-.29 3.77-1.1a.49.49 0 0 1 .68.69zm-.34-3.08a1.88 1.88 0 1 1 1.88-1.88 1.88 1.88 0 0 1-1.88 1.88z"></path></svg><span>Reddit</span></a>
+              <a class="sh-item" href="mailto:?subject=Be%20the%20source%3A%20getting%20AEC%20data%20ready%20for%20AI%20search&amp;body=I%20thought%20this%20was%20worth%20your%20time%3A%0A%0ABe%20the%20source%3A%20getting%20AEC%20data%20ready%20for%20AI%20search%0Ahttps%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F" data-net="Email" aria-label="Share on Email (opens your email app)" data-i18n-attr="aria-label:share_email"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1 3.2V17h16V8.2l-8 5.3-8-5.3zM5.6 7l6.4 4.24L18.4 7H5.6z"></path></svg><span data-i18n="share_email_lbl">Email</span></a>
+              <button class="sh-item" type="button" data-native hidden><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="M7 8l5-5 5 5"></path><path d="M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"></path></svg><span data-i18n="share_native">Other apps…</span></button>
+            </div>
+          </details>
+        </div>
       </div>
     </aside>
 
     <article>
+
+      <!-- One-column layouts: the sidebar is hidden and the contents fold up here. -->
+      <details class="toc-m" id="toc-m">
+        <summary><span id="toc-m-h" data-i18n="toc_mobile">In this article</span><svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary>
+        <nav class="toc-links" aria-labelledby="toc-m-h">
+          <a data-k="toc.a1" href="#ai-search">Google is already AI search</a>
+          <a data-k="toc.a2" href="#localization">What localization taught me</a>
+          <a data-k="toc.a3" href="#load-path">How a fact reaches an answer</a>
+          <a data-k="toc.a4" href="#rules">My rules for AI-ready data</a>
+          <a data-k="toc.a5" href="#try">Try it this week</a>
+          <a data-k="toc.a6" href="#kit">Copy-paste kit</a>
+          <a data-k="toc.a7" href="#start">Where I would start</a>
+        </nav>
+      </details>
 
       <p data-k="intro.p1" class="lead">Open Google today and type a real engineering question, the long kind with a design code and a material in it. Before you see a single link, Google has already written you an answer, with a handful of sources underneath. That short list is the new first page of search results. For an AEC company, it is worth checking which sources appear for the questions its customers ask.</p>
 
@@ -806,10 +874,11 @@ body.vo-active{padding-bottom:96px}       /* room for the mini player above the 
       <ol class="steps">
         <li data-k="try.li3"><span class="lead-in">Fetch a key page the way a crawler does.</span> No browser, no JavaScript. Search for a sentence that matters, such as a product name or a supported design code:
           <div class="term">
-            <div class="term-row">
-              <code class="term-cmd">curl -sL -A <span class="s">"GPTBot"</span> https://example.com/product | grep -i <span class="s">"AISC 360"</span></code>
+            <div class="term-bar">
+              <span class="term-name">Terminal</span>
               <button class="cb-copy" type="button" data-copy-code=".term-cmd" aria-label="Copy command">Copy</button>
             </div>
+            <code class="term-cmd scroll-x" tabindex="0">curl -sL -A <span class="s">"GPTBot"</span> https://example.com/product | grep -i <span class="s">"AISC 360"</span></code>
             <div class="term-out"><i aria-hidden="true"></i>No output = AI crawlers can’t see this sentence</div>
           </div></li>
         <li data-k="try.li4"><span class="lead-in">Read every robots.txt you own,</span> including app, docs and support subdomains, and ask whoever runs your CDN or firewall whether AI bots are being blocked.</li>
@@ -820,7 +889,7 @@ body.vo-active{padding-bottom:96px}       /* room for the mini player above the 
       <p data-k="kit.p2">If the second check left you unsure, start here. This is the baseline I use for a typical company website. Replace the domain and the private paths with your own:</p>
 <figure class="codeblock">
         <figcaption class="cb-bar"><span class="cb-meta"><span class="cb-name">robots.txt</span><span data-k="kit.span3" class="cb-sub">Copy-paste kit · baseline</span></span><button class="cb-copy" type="button" data-copy-code=".cb-body code" aria-label="Copy robots.txt" data-i18n-attr="aria-label:copy_robots" data-ui="copy">Copy</button></figcaption>
-<pre class="cb-body"><code><span class="l"><span data-k="kit.span4" class="c"># robots.txt for https://example.com</span>
+<pre class="cb-body scroll-x" tabindex="0"><code><span class="l"><span data-k="kit.span4" class="c"># robots.txt for https://example.com</span>
 </span><span class="l"><span data-k="kit.span5" class="c"># Default: all crawlers, including AI search and AI assistants,</span>
 </span><span class="l"><span data-k="kit.span6" class="c"># may read everything except private areas</span>
 </span><span class="l"><span class="k">User-agent:</span> *
@@ -872,16 +941,23 @@ body.vo-active{padding-bottom:96px}       /* room for the mini player above the 
 
 
       <div class="share-row">
-        <div class="lbl" data-i18n="share_label">Share</div>
-        <div class="icons">
-          <a class="sbtn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F" data-net="LinkedIn" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="Share on LinkedIn (opens in a new window)" data-i18n-attr="aria-label:share_on:LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"></path></svg></a>
-          <a class="sbtn" href="https://x.com/intent/tweet?url=https%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F&amp;text=Be%20the%20source%3A%20getting%20AEC%20data%20ready%20for%20AI%20search&amp;via=martinmotlik" data-net="X" target="_blank" rel="noopener noreferrer" title="X" aria-label="Share on X (opens in a new window)" data-i18n-attr="aria-label:share_on:X"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.67l7.73-8.84L1.25 2.25h6.83l4.71 6.23 5.45-6.23zm-1.16 17.52h1.83L7.08 4.13H5.12z"></path></svg></a>
-          <a class="sbtn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F" data-net="Facebook" target="_blank" rel="noopener noreferrer" title="Facebook" aria-label="Share on Facebook (opens in a new window)" data-i18n-attr="aria-label:share_on:Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"></path></svg></a>
-          <a class="sbtn" href="https://wa.me/?text=Be%20the%20source%3A%20getting%20AEC%20data%20ready%20for%20AI%20search%20https%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F" data-net="WhatsApp" target="_blank" rel="noopener noreferrer" title="WhatsApp" aria-label="Share on WhatsApp (opens in a new window)" data-i18n-attr="aria-label:share_on:WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.05 21.8a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88zM20.46 3.49A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.42z"></path></svg></a>
-          <a class="sbtn" href="https://www.reddit.com/submit?url=https%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F&amp;title=Be%20the%20source%3A%20getting%20AEC%20data%20ready%20for%20AI%20search" data-net="Reddit" target="_blank" rel="noopener noreferrer" title="Reddit" aria-label="Share on Reddit (opens in a new window)" data-i18n-attr="aria-label:share_on:Reddit"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 11.78a2.65 2.65 0 0 0-4.5-1.9 13 13 0 0 0-7.04-2.22l1.2-5.62 3.9.83a1.88 1.88 0 1 0 .2-.92l-4.37-.93a.47.47 0 0 0-.56.36l-1.34 6.28a13.05 13.05 0 0 0-7.13 2.22 2.65 2.65 0 1 0-2.92 4.33 5.2 5.2 0 0 0 0 .8c0 4.04 4.7 7.32 10.5 7.32s10.5-3.28 10.5-7.32a5.2 5.2 0 0 0 0-.8A2.65 2.65 0 0 0 24 11.78zM6 13.66a1.88 1.88 0 1 1 1.88 1.88A1.88 1.88 0 0 1 6 13.66zm10.48 4.96c-1.28 1.28-3.73 1.38-4.45 1.38s-3.18-.1-4.46-1.38a.49.49 0 0 1 .69-.69c.81.81 2.53 1.1 3.77 1.1s2.96-.29 3.77-1.1a.49.49 0 0 1 .68.69zm-.34-3.08a1.88 1.88 0 1 1 1.88-1.88 1.88 1.88 0 0 1-1.88 1.88z"></path></svg></a>
-          <a class="sbtn" href="mailto:?subject=Be%20the%20source%3A%20getting%20AEC%20data%20ready%20for%20AI%20search&amp;body=I%20thought%20this%20was%20worth%20your%20time%3A%0A%0ABe%20the%20source%3A%20getting%20AEC%20data%20ready%20for%20AI%20search%0Ahttps%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F" data-net="Email" title="Email" aria-label="Share on Email (opens your email app)" data-i18n-attr="aria-label:share_email"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1 3.2V17h16V8.2l-8 5.3-8-5.3zM5.6 7l6.4 4.24L18.4 7H5.6z"></path></svg></a>
-          
-          <button class="sbtn" type="button" data-copy-icon title="Copy link" aria-label="Copy link" data-i18n-attr="title:copy_link;aria-label:copy_link"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10.59 13.41a1 1 0 0 1 0-1.41l3-3a1 1 0 1 1 1.41 1.41l-3 3a1 1 0 0 1-1.41 0zM7.05 19.78a4 4 0 0 1-2.83-6.83l2.12-2.12a1 1 0 1 1 1.42 1.41l-2.13 2.13a2 2 0 0 0 2.83 2.83l2.12-2.13a1 1 0 0 1 1.42 1.42l-2.13 2.12a3.98 3.98 0 0 1-2.83 1.17zm9.19-6.19a1 1 0 0 1-.71-1.71l2.13-2.12a2 2 0 0 0-2.83-2.83l-2.12 2.12a1 1 0 0 1-1.42-1.41l2.13-2.13a4 4 0 0 1 5.66 5.66l-2.13 2.12a1 1 0 0 1-.71.3z"></path></svg></button>
+        <div class="share" role="group" aria-labelledby="share-h-end">
+          <div class="lbl" id="share-h-end" data-i18n="share_label">Share</div>
+          <div class="share-main">
+            <a class="sh-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F" data-net="LinkedIn" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn (opens in a new window)" data-i18n-attr="aria-label:share_on:LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"></path></svg><span>LinkedIn</span></a>
+            <button class="sh-btn" type="button" data-copy><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10.59 13.41a1 1 0 0 1 0-1.41l3-3a1 1 0 1 1 1.41 1.41l-3 3a1 1 0 0 1-1.41 0zM7.05 19.78a4 4 0 0 1-2.83-6.83l2.12-2.12a1 1 0 1 1 1.42 1.41l-2.13 2.13a2 2 0 0 0 2.83 2.83l2.12-2.13a1 1 0 0 1 1.42 1.42l-2.13 2.12a3.98 3.98 0 0 1-2.83 1.17zm9.19-6.19a1 1 0 0 1-.71-1.71l2.13-2.12a2 2 0 0 0-2.83-2.83l-2.12 2.12a1 1 0 0 1-1.42-1.41l2.13-2.13a4 4 0 0 1 5.66 5.66l-2.13 2.12a1 1 0 0 1-.71.3z"></path></svg><span data-i18n="copy_link">Copy link</span></button>
+            <details class="sh-more">
+              <summary class="sh-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="19" cy="12" r="2"></circle></svg><span data-i18n="share_more_opts">More options</span><svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary>
+              <div class="sh-list">
+                <a class="sh-item" href="https://x.com/intent/tweet?url=https%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F&amp;text=Be%20the%20source%3A%20getting%20AEC%20data%20ready%20for%20AI%20search&amp;via=martinmotlik" data-net="X" target="_blank" rel="noopener noreferrer" aria-label="Share on X (opens in a new window)" data-i18n-attr="aria-label:share_on:X"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.67l7.73-8.84L1.25 2.25h6.83l4.71 6.23 5.45-6.23zm-1.16 17.52h1.83L7.08 4.13H5.12z"></path></svg><span>X</span></a>
+                <a class="sh-item" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F" data-net="Facebook" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook (opens in a new window)" data-i18n-attr="aria-label:share_on:Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"></path></svg><span>Facebook</span></a>
+                <a class="sh-item" href="https://wa.me/?text=Be%20the%20source%3A%20getting%20AEC%20data%20ready%20for%20AI%20search%20https%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F" data-net="WhatsApp" target="_blank" rel="noopener noreferrer" aria-label="Share on WhatsApp (opens in a new window)" data-i18n-attr="aria-label:share_on:WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.05 21.8a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88zM20.46 3.49A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.42z"></path></svg><span>WhatsApp</span></a>
+                <a class="sh-item" href="https://www.reddit.com/submit?url=https%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F&amp;title=Be%20the%20source%3A%20getting%20AEC%20data%20ready%20for%20AI%20search" data-net="Reddit" target="_blank" rel="noopener noreferrer" aria-label="Share on Reddit (opens in a new window)" data-i18n-attr="aria-label:share_on:Reddit"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 11.78a2.65 2.65 0 0 0-4.5-1.9 13 13 0 0 0-7.04-2.22l1.2-5.62 3.9.83a1.88 1.88 0 1 0 .2-.92l-4.37-.93a.47.47 0 0 0-.56.36l-1.34 6.28a13.05 13.05 0 0 0-7.13 2.22 2.65 2.65 0 1 0-2.92 4.33 5.2 5.2 0 0 0 0 .8c0 4.04 4.7 7.32 10.5 7.32s10.5-3.28 10.5-7.32a5.2 5.2 0 0 0 0-.8A2.65 2.65 0 0 0 24 11.78zM6 13.66a1.88 1.88 0 1 1 1.88 1.88A1.88 1.88 0 0 1 6 13.66zm10.48 4.96c-1.28 1.28-3.73 1.38-4.45 1.38s-3.18-.1-4.46-1.38a.49.49 0 0 1 .69-.69c.81.81 2.53 1.1 3.77 1.1s2.96-.29 3.77-1.1a.49.49 0 0 1 .68.69zm-.34-3.08a1.88 1.88 0 1 1 1.88-1.88 1.88 1.88 0 0 1-1.88 1.88z"></path></svg><span>Reddit</span></a>
+                <a class="sh-item" href="mailto:?subject=Be%20the%20source%3A%20getting%20AEC%20data%20ready%20for%20AI%20search&amp;body=I%20thought%20this%20was%20worth%20your%20time%3A%0A%0ABe%20the%20source%3A%20getting%20AEC%20data%20ready%20for%20AI%20search%0Ahttps%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F" data-net="Email" aria-label="Share on Email (opens your email app)" data-i18n-attr="aria-label:share_email"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1 3.2V17h16V8.2l-8 5.3-8-5.3zM5.6 7l6.4 4.24L18.4 7H5.6z"></path></svg><span data-i18n="share_email_lbl">Email</span></a>
+                <button class="sh-item" type="button" data-native hidden><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="M7 8l5-5 5 5"></path><path d="M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"></path></svg><span data-i18n="share_native">Other apps…</span></button>
+              </div>
+            </details>
+          </div>
         </div>
       </div>
 
@@ -904,20 +980,16 @@ body.vo-active{padding-bottom:96px}       /* room for the mini player above the 
           <div data-k="author.div1" class="d">Independent AEC digital strategist and Head of Web Content at Dlubal Software. Writing about AI, BIM and engineering-software marketing.</div>
         </div>
       </div>
-    
+
+      <!-- "Keep reading" with real article cards returns once a second article
+           is published. Until then, only a quiet link back to the list. -->
+      <p class="all-link"><a href="/insights/" data-i18n="more_all">All insights →</a></p>
     </article>
   </div>
 
-  <section class="more">
-    <div class="in">
-      <div>
-        <h2 data-i18n="more_title">Keep reading</h2>
-        <p data-i18n="more_text">This is the first piece in Insights. More on AI in AEC, engineering-software marketing and web ecosystems is on the way.</p>
-      </div>
-      <a class="all" href="/insights/" data-i18n="more_all">All insights →</a>
-    </div>
-  </section>
 </main>
+
+<p class="sr" id="sr-live" role="status" aria-live="polite"></p>
 
 <div class="mini" id="mini">
   <button class="vo-play" id="mini-play" type="button" aria-label="Play or pause the voice-over"><span class="ic-play"></span></button>
@@ -972,7 +1044,7 @@ var I18N = (function(){
     state_playing: 'Now playing', state_paused: 'Paused', state_listen: 'Listen', narrated: 'Narrated by Martin',
     play: 'Play', pause: 'Pause',
     copy: 'Copy', copied: 'Copied ✓', copy_failed: 'Copy failed',
-    link_copied: 'Link copied ✓', link_copied_aria: 'Link copied', copy_link: 'Copy link'
+    link_copied: 'Link copied ✓', link_copied_aria: 'Link copied', copy_link: 'Copy link', code_copied: 'Code copied'
   };
   var role = document.getElementById('vo-role');
   EN_UI.role = role ? role.textContent : '';
@@ -1057,7 +1129,34 @@ if (navHamburger && navDrawer) {
   });
 }
 
-// — Reading progress + active heading in the table of contents —
+// — Screen-reader announcements (copy feedback). Cleared first, so the same
+//   message is read again on a second copy. —
+function announce(msg){
+  var live = document.getElementById('sr-live');
+  if (!live) return;
+  live.textContent = '';
+  setTimeout(function(){ live.textContent = msg; }, 60);
+}
+
+// — Copy to the clipboard. Some browsers and embedded web views refuse the
+//   Clipboard API (permission denied); the older execCommand route still works
+//   there, so it is the fallback rather than only the no-API case. —
+function copyText(text){
+  function legacy(){
+    return new Promise(function(resolve, reject){
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      var ok = false; try { ok = document.execCommand('copy'); } catch(e) {}
+      document.body.removeChild(ta);
+      ok ? resolve() : reject();
+    });
+  }
+  if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text).catch(legacy);
+  return legacy();
+}
+
+// — Reading progress, active heading in the sidebar, and the contents links —
 (function(){
   var bar = document.getElementById('bar');
   var links = [].slice.call(document.querySelectorAll('#toc a'));
@@ -1071,20 +1170,58 @@ if (navHamburger && navDrawer) {
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  links.forEach(function(a){
+
+  // Both lists (sidebar and the folded mobile one). The heading lands below the
+  // fixed nav via scroll-padding-top; focus moves to it, so keyboard and screen
+  // reader users continue reading from there. The mobile list closes first.
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var tocM = document.getElementById('toc-m');
+  document.querySelectorAll('.toc-links a').forEach(function(a){
     a.addEventListener('click', function(e){
-      var el = document.querySelector(a.getAttribute('href'));
+      var el = document.getElementById(a.hash.slice(1));
       if (!el) return;
       e.preventDefault();
-      window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 80, behavior: reduce ? 'auto' : 'smooth' });
-      history.replaceState(null, '', a.getAttribute('href'));
+      if (tocM) tocM.open = false;
+      if (!el.hasAttribute('tabindex')) el.setAttribute('tabindex', '-1');
+      el.focus({ preventScroll: true });
+      el.scrollIntoView({ behavior: reduce.matches ? 'auto' : 'smooth', block: 'start' });
+      history.replaceState(null, '', a.hash);
     });
   });
+
+  // A shared link with #hash. The browser jumps once, early; then things above
+  // the target still settle (a stored CS/DE translation, the web font, the
+  // Listen button appearing once the audio reports its length) and push the
+  // heading away. Keep it in place until the page settles (4 s) or the reader
+  // scrolls, clicks or types, whichever comes first.
+  var target = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+  if (target) {
+    var root = document.documentElement, settled = false, ro = null;
+    var stopOn = ['wheel', 'touchstart', 'mousedown', 'keydown'];
+    var place = function(){
+      if (settled) return;
+      var prev = root.style.scrollBehavior;
+      root.style.scrollBehavior = 'auto';          // no smooth animation for a correction
+      target.scrollIntoView({ block: 'start' });
+      root.style.scrollBehavior = prev;
+    };
+    var stop = function(){
+      settled = true;
+      if (ro) ro.disconnect();
+      stopOn.forEach(function(ev){ window.removeEventListener(ev, stop); });
+    };
+    stopOn.forEach(function(ev){ window.addEventListener(ev, stop, { passive: true }); });
+    if ('ResizeObserver' in window) { ro = new ResizeObserver(place); ro.observe(document.querySelector('main')); }
+    document.addEventListener('langchange', place);
+    window.addEventListener('load', place);
+    setTimeout(stop, 4000);
+    place();
+  }
 })();
 
-// — Share. The links are real <a> elements in the HTML, so they work with
-//   scripting off and can be middle-clicked. This only upgrades them. —
+// — Share. LinkedIn, Copy link and "More options" (a native <details> with
+//   the other networks). The links are real <a> elements, so they work with
+//   scripting off and can be middle-clicked; this only upgrades them. —
 (function(){
   var canon = document.querySelector('link[rel="canonical"]');
   var url = canon ? canon.href : location.href.split('#')[0];
@@ -1097,11 +1234,15 @@ if (navHamburger && navDrawer) {
     // GA4 recommended event; harmless if gtag is blocked.
     if (typeof gtag === 'function') gtag('event', 'share', { method: method, content_type: 'article', item_id: slug });
   }
+  function closeMenus(except){
+    document.querySelectorAll('.sh-more[open]').forEach(function(d){ if (d !== except) d.open = false; });
+  }
 
   document.querySelectorAll('a[data-net]').forEach(function(a){
     a.addEventListener('click', function(e){
       var net = a.dataset.net;
       track(net);
+      closeMenus();
       // Email and touch devices: let the link do its job (mail app / native app).
       if (net === 'Email' || touch || e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
       var w = 600, h = 640;
@@ -1113,52 +1254,39 @@ if (navHamburger && navDrawer) {
     });
   });
 
-  function copyText(text){
-    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
-    return new Promise(function(resolve, reject){
-      var ta = document.createElement('textarea');
-      ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
-      document.body.appendChild(ta); ta.select();
-      var ok = false; try { ok = document.execCommand('copy'); } catch(err) {}
-      document.body.removeChild(ta);
-      ok ? resolve() : reject();
-    });
-  }
-  function flash(btn, text, cls){
-    var span = btn.querySelector('span') || btn;
-    if (!btn.dataset.label) btn.dataset.label = span.textContent;
-    btn.classList.add(cls); span.textContent = text;
-    clearTimeout(btn._t);
-    btn._t = setTimeout(function(){ btn.classList.remove(cls); span.textContent = btn.dataset.label; delete btn.dataset.label; }, 1600);
-  }
+
+  // The label shows "Copied" for a moment; the live region says it as well.
   document.querySelectorAll('[data-copy]').forEach(function(btn){
+    var label = btn.querySelector('span');
+    function show(cls, text){
+      btn.classList.remove('done', 'fail'); btn.classList.add(cls); label.textContent = text;
+      clearTimeout(btn._t);
+      btn._t = setTimeout(function(){ btn.classList.remove(cls); label.textContent = I18N.t('copy_link'); }, 1800);
+    }
     btn.addEventListener('click', function(){
-      copyText(url).then(function(){ flash(btn, I18N.t('link_copied'), 'done'); track('Copy link'); },
-                         function(){ flash(btn, I18N.t('copy_failed'), 'fail'); });
+      copyText(url).then(function(){ show('done', I18N.t('copied')); announce(I18N.t('link_copied_aria')); track('Copy link'); },
+                         function(){ show('fail', I18N.t('copy_failed')); announce(I18N.t('copy_failed')); });
     });
   });
 
-  // Icon-only copy button (mobile share row): a tick instead of a label.
-  var TICK = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>';
-  document.querySelectorAll('[data-copy-icon]').forEach(function(btn){
-    var icon = btn.innerHTML;
-    btn.addEventListener('click', function(){
-      copyText(url).then(function(){ show('done', TICK, I18N.t('link_copied_aria')); track('Copy link'); },
-                         function(){ show('fail', icon, I18N.t('copy_failed')); });
+  // "More options": one open at a time; Escape or a click elsewhere closes it.
+  document.querySelectorAll('.sh-more').forEach(function(d){
+    d.addEventListener('toggle', function(){ if (d.open) closeMenus(d); });
+    d.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && d.open) { d.open = false; d.querySelector('summary').focus(); }
     });
-    function show(cls, html, label){
-      btn.classList.remove('done', 'fail'); btn.classList.add(cls); btn.innerHTML = html; btn.setAttribute('aria-label', label);
-      clearTimeout(btn._t);
-      btn._t = setTimeout(function(){ btn.classList.remove(cls); btn.innerHTML = icon; btn.setAttribute('aria-label', I18N.t('copy_link')); }, 1600);
-    }
+  });
+  document.addEventListener('click', function(e){
+    if (!e.target.closest('.sh-more')) closeMenus();
   });
 
   // The system share sheet exists on phones, Safari and Edge; elsewhere the
-  // button would only duplicate "Copy link", so it stays hidden.
+  // item would only duplicate the links above it, so it stays hidden.
   if (navigator.share) {
     document.querySelectorAll('[data-native]').forEach(function(btn){
       btn.hidden = false;
       btn.addEventListener('click', function(){
+        closeMenus();
         navigator.share({ title: title, url: url }).then(function(){ track('Native share'); }).catch(function(){});
       });
     });
@@ -1323,22 +1451,14 @@ if (navHamburger && navDrawer) {
 // — Copy buttons on code blocks and terminal commands. They copy the code's own
 //   text: line numbers and the "$ " prompt are CSS, so they never come along. —
 (function(){
-  function copyText(text){
-    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
-    return new Promise(function(resolve, reject){
-      var ta = document.createElement('textarea');
-      ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
-      document.body.appendChild(ta); ta.select();
-      var ok = false; try { ok = document.execCommand('copy'); } catch(e) {}
-      document.body.removeChild(ta); ok ? resolve() : reject();
-    });
-  }
+
   // Delegated: the terminal block is re-rendered when the language changes.
   document.addEventListener('click', function(e){
     var btn = e.target.closest('[data-copy-code]');
     if (!btn) return;
     var code = btn.closest('.codeblock, .term').querySelector(btn.dataset.copyCode);
-    copyText(code.textContent).then(function(){ done(btn, I18N.t('copied'), 'done'); }, function(){ done(btn, I18N.t('copy_failed'), 'fail'); });
+    copyText(code.textContent).then(function(){ done(btn, I18N.t('copied'), 'done'); announce(I18N.t('code_copied')); },
+                                     function(){ done(btn, I18N.t('copy_failed'), 'fail'); announce(I18N.t('copy_failed')); });
   });
   function done(btn, text, cls){
     btn.classList.remove('done', 'fail'); btn.classList.add(cls); btn.textContent = text;
@@ -1346,6 +1466,23 @@ if (navHamburger && navDrawer) {
   }
 })();
 
+// — Code that does not fit scrolls inside its block; .more-r fades the right
+//   edge while there is more to see. Scroll events do not bubble, so one
+//   capturing listener covers blocks re-rendered by a language switch. —
+(function(){
+  function update(el){
+    var max = el.scrollWidth - el.clientWidth;
+    el.classList.toggle('more-r', max > 1 && el.scrollLeft < max - 1);
+  }
+  function all(){ document.querySelectorAll('.scroll-x').forEach(update); }
+  document.addEventListener('scroll', function(e){
+    if (e.target.classList && e.target.classList.contains('scroll-x')) update(e.target);
+  }, true);
+  window.addEventListener('resize', all);
+  document.addEventListener('langchange', all);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(all);
+  all();
+})();
 </script>
 
 </body>

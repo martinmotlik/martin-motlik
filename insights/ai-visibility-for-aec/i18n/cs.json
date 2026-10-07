@@ -30,7 +30,8 @@
   "toc_aria": "Na této stránce",
   "crumbs_aria": "Drobečková navigace",
   "menu_aria": "Otevřít menu",
-  "cover_alt": "Martin Motlík pracuje venku na notebooku, obklopený ikonami asistentů AI a vyhledávačů"
+  "cover_alt": "Martin Motlík pracuje venku na notebooku, obklopený ikonami asistentů AI a vyhledávačů",
+  "code_copied": "Kód zkopírován"
  },
  "chrome": {
   "nav_references": "Reference",
@@ -47,12 +48,16 @@
   "read_8": "8 min čtení",
   "more_title": "Čtěte dál",
   "more_text": "Toto je první článek v sekci Insights. Další texty o AI v AEC, marketingu inženýrského softwaru a webových ekosystémech připravuji.",
-  "more_all": "Všechny články →"
+  "more_all": "Všechny články →",
+  "toc_mobile": "Obsah článku",
+  "share_more_opts": "Další možnosti",
+  "share_email_lbl": "E-mail",
+  "share_native": "Jiné aplikace…"
  },
  "k": {
   "hero.span1": "AI v AEC",
   "hero.div2": "AI v AEC",
-  "hero.h13": "Buďte zdrojem<span class=\"h1-sub\"><span class=\"sr\">: </span>jak připravit data AEC firem pro vyhledávání s AI</span>",
+  "hero.h13": "Buďte zdrojem: jak připravit data AEC firem pro vyhledávání s AI",
   "hero.p4": "Práce na webech inženýrského softwaru pro různé trhy formovala můj přístup k viditelnosti v AI. Tento článek shrnuje poznatky z lokalizace a praktické kontroly, se kterými dělám technický obsah snáze dohledatelný, srozumitelný a ověřitelný.",
   "hero.span5": "<time datetime=\"2026-10-06\">6. října 2026</time> &middot; <span data-i18n=\"read_8\">8 min čtení</span>",
   "toc.a1": "Google už je vyhledávač s AI",
@@ -97,7 +102,7 @@
   "rules.li7": "<span class=\"lead-in\">Nezačínejte souborem llms.txt.</span> Patří na weby s dokumentací a API, kde ho asistenti pro programování skutečně čtou. Na marketingovém webu je to v nejlepším případě levný experiment a podle Googlu ho jeho vyhledávání ignoruje. Nejdřív zajistěte, aby web šlo procházet.",
   "try.h21": "Vyzkoušejte ještě tento týden",
   "try.p2": "Abyste zjistili, kde stojíte, nepotřebujete agenturu. Tři kontroly vám zaberou méně než půl hodiny:",
-  "try.li3": "<span class=\"lead-in\">Stáhněte si klíčovou stránku tak, jak to dělá crawler.</span> Bez prohlížeče, bez JavaScriptu. Vyhledejte větu, na které záleží, například název produktu nebo podporovanou návrhovou normu:\n          <div class=\"term\">\n            <div class=\"term-row\">\n              <code class=\"term-cmd\">curl -sL -A <span class=\"s\">\"GPTBot\"</span> https://example.com/product | grep -i <span class=\"s\">\"AISC 360\"</span></code>\n              <button class=\"cb-copy\" type=\"button\" data-copy-code=\".term-cmd\" aria-label=\"Kopírovat příkaz\">Kopírovat</button>\n            </div>\n            <div class=\"term-out\"><i aria-hidden=\"true\"></i>Žádný výstup = crawlery AI tuto větu nevidí</div>\n          </div>",
+  "try.li3": "<span class=\"lead-in\">Stáhněte si klíčovou stránku tak, jak to dělá crawler.</span> Bez prohlížeče, bez JavaScriptu. Vyhledejte větu, na které záleží, například název produktu nebo podporovanou návrhovou normu:\n          <div class=\"term\">\n            <div class=\"term-bar\">\n              <span class=\"term-name\">Terminál</span>\n              <button class=\"cb-copy\" type=\"button\" data-copy-code=\".term-cmd\" aria-label=\"Kopírovat příkaz\">Kopírovat</button>\n            </div>\n            <code class=\"term-cmd scroll-x\" tabindex=\"0\">curl -sL -A <span class=\"s\">\"GPTBot\"</span> https://example.com/product | grep -i <span class=\"s\">\"AISC 360\"</span></code>\n            <div class=\"term-out\"><i aria-hidden=\"true\"></i>Žádný výstup = crawlery AI tuto větu nevidí</div>\n          </div>",
   "try.li4": "<span class=\"lead-in\">Projděte každý svůj soubor robots.txt,</span> včetně subdomén aplikace, dokumentace a podpory, a zeptejte se toho, kdo spravuje vaše CDN nebo firewall, zda neblokuje roboty AI.",
   "try.li5": "<span class=\"lead-in\">Položte otázky, které kladou vaši zákazníci.</span> Zadejte deset skutečných dotazů do Režimu AI od Googlu, do ChatGPT, Claude a Perplexity. Zaznamenejte si, zda vás odpovědi jmenují, jak vás popisují a koho citují místo vás.",
   "kit.h21": "Šablona ke zkopírování: robots.txt, který pustí AI dovnitř",

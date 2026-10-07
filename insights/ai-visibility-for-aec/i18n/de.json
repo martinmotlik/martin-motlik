@@ -30,7 +30,8 @@
   "toc_aria": "Auf dieser Seite",
   "crumbs_aria": "Brotkrümelnavigation",
   "menu_aria": "Menü öffnen",
-  "cover_alt": "Martin Motlík arbeitet im Freien am Laptop, umgeben von den Symbolen von KI-Assistenten und Suchmaschinen"
+  "cover_alt": "Martin Motlík arbeitet im Freien am Laptop, umgeben von den Symbolen von KI-Assistenten und Suchmaschinen",
+  "code_copied": "Code kopiert"
  },
  "chrome": {
   "nav_references": "Referenzen",
@@ -47,12 +48,16 @@
   "read_8": "8 Min. Lesezeit",
   "more_title": "Weiterlesen",
   "more_text": "Dies ist der erste Beitrag in Insights. Weitere Texte zu KI im AEC, Marketing für Ingenieursoftware und Web-Ökosystemen sind in Arbeit.",
-  "more_all": "Alle Beiträge →"
+  "more_all": "Alle Beiträge →",
+  "toc_mobile": "Inhalt des Beitrags",
+  "share_more_opts": "Weitere Optionen",
+  "share_email_lbl": "E-Mail",
+  "share_native": "Andere Apps…"
  },
  "k": {
   "hero.span1": "KI im AEC",
   "hero.div2": "KI im AEC",
-  "hero.h13": "Werden Sie zur Quelle<span class=\"h1-sub\"><span class=\"sr\">: </span>AEC-Daten fit für die KI-Suche machen</span>",
+  "hero.h13": "Werden Sie zur Quelle: AEC-Daten fit für die KI-Suche machen",
   "hero.p4": "Die Arbeit an Websites für Ingenieursoftware in verschiedenen Märkten hat geprägt, wie ich an KI-Sichtbarkeit herangehe. Dieser Beitrag bündelt Erfahrungen aus der Lokalisierung und die praktischen Prüfungen, mit denen ich technische Inhalte leichter auffindbar, verständlich und überprüfbar mache.",
   "hero.span5": "<time datetime=\"2026-10-06\">6. Oktober 2026</time> &middot; <span data-i18n=\"read_8\">8 Min. Lesezeit</span>",
   "toc.a1": "Google ist schon KI-Suche",
@@ -97,7 +102,7 @@
   "rules.li7": "<span class=\"lead-in\">Fangen Sie nicht mit llms.txt an.</span> Die Datei gehört auf Dokumentations- und API-Websites, wo Coding-Assistenten sie tatsächlich lesen. Auf einer Marketing-Website ist sie bestenfalls ein günstiges Experiment, und laut Google ignoriert die Google-Suche sie. Sorgen Sie zuerst für Crawlbarkeit.",
   "try.h21": "Testen Sie es noch diese Woche",
   "try.p2": "Um zu sehen, wo Sie stehen, brauchen Sie keine Agentur. Drei Prüfungen dauern weniger als eine halbe Stunde:",
-  "try.li3": "<span class=\"lead-in\">Rufen Sie eine wichtige Seite so ab wie ein Crawler.</span> Kein Browser, kein JavaScript. Suchen Sie nach einem Satz, auf den es ankommt, etwa einem Produktnamen oder einer unterstützten Bemessungsnorm:\n          <div class=\"term\">\n            <div class=\"term-row\">\n              <code class=\"term-cmd\">curl -sL -A <span class=\"s\">\"GPTBot\"</span> https://example.com/product | grep -i <span class=\"s\">\"AISC 360\"</span></code>\n              <button class=\"cb-copy\" type=\"button\" data-copy-code=\".term-cmd\" aria-label=\"Befehl kopieren\">Kopieren</button>\n            </div>\n            <div class=\"term-out\"><i aria-hidden=\"true\"></i>Keine Ausgabe = KI-Crawler sehen diesen Satz nicht</div>\n          </div>",
+  "try.li3": "<span class=\"lead-in\">Rufen Sie eine wichtige Seite so ab wie ein Crawler.</span> Kein Browser, kein JavaScript. Suchen Sie nach einem Satz, auf den es ankommt, etwa einem Produktnamen oder einer unterstützten Bemessungsnorm:\n          <div class=\"term\">\n            <div class=\"term-bar\">\n              <span class=\"term-name\">Terminal</span>\n              <button class=\"cb-copy\" type=\"button\" data-copy-code=\".term-cmd\" aria-label=\"Befehl kopieren\">Kopieren</button>\n            </div>\n            <code class=\"term-cmd scroll-x\" tabindex=\"0\">curl -sL -A <span class=\"s\">\"GPTBot\"</span> https://example.com/product | grep -i <span class=\"s\">\"AISC 360\"</span></code>\n            <div class=\"term-out\"><i aria-hidden=\"true\"></i>Keine Ausgabe = KI-Crawler sehen diesen Satz nicht</div>\n          </div>",
   "try.li4": "<span class=\"lead-in\">Lesen Sie jede robots.txt, die Sie betreiben,</span> auch auf App-, Docs- und Support-Subdomains, und fragen Sie die Verantwortlichen für Ihr CDN oder Ihre Firewall, ob KI-Bots blockiert werden.",
   "try.li5": "<span class=\"lead-in\">Stellen Sie die Fragen Ihrer Kunden.</span> Geben Sie zehn echte Fragen in den KI-Modus von Google, in ChatGPT, Claude und Perplexity ein. Notieren Sie, ob Sie genannt werden, wie Sie beschrieben werden und wen die Antworten stattdessen zitieren.",
   "kit.h21": "Vorlage zum Kopieren: eine robots.txt, die KI hereinlässt",
