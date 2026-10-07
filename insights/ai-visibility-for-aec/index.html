@@ -414,7 +414,7 @@ img{display:block;max-width:100%}
 .toc{position:sticky;top:96px;flex:0 0 200px}
 .ins .lbl{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--m2)}
 .toc nav{margin-top:14px;display:flex;flex-direction:column;border-left:1px solid #E4E4E7}
-.toc nav a{padding:7px 0 7px 14px;margin-left:-1px;font-size:13px;line-height:1.4;border-left:2px solid transparent;color:var(--m3)}
+.toc nav a{padding:7px 0 7px 14px;margin-left:-1px;font-size:.875rem;line-height:1.45;border-left:2px solid transparent;color:var(--m3)}
 .toc nav a.on{border-left-color:var(--blue);color:var(--blue);font-weight:600}
 
 article{flex:1 1 520px;min-width:0;max-width:700px;font-size:1.125rem;line-height:1.7;color:var(--body-ink)}
@@ -647,6 +647,29 @@ article p.all-link a{text-decoration:none}
 .ins .scroll-x:focus-visible{outline:2px solid var(--on-dark-label);outline-offset:-3px;border-radius:var(--sp-2)}
 /* Focus on dark surfaces: the light blue keeps the ring visible. */
 .ins .term :focus-visible,.ins .codeblock :focus-visible,.ins .closing :focus-visible{outline-color:var(--on-dark-label)}
+
+/* Phones: a shorter intro and a tighter author block.
+   · The breadcrumb already names the category, so the pill is hidden.
+   · Byline as a grid: portrait | name, role, date (one unit), then Listen
+     below it. The Listen button and the player are grid items because
+     .vo-root is display:contents; the player spans the full width.
+   · Author card: portrait and name on one row, the bio below at full width. */
+@media (max-width:620px){
+  .hero .cat{display:none}
+  .byline{display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:var(--sp-3);row-gap:2px;align-items:center}
+  .byline .avatar{grid-row:1 / 3;align-self:center}
+  .byline .avatar + div{grid-column:2;grid-row:1}
+  .byline #vo-meta{grid-column:2;grid-row:2}
+  .byline .listen,.byline .vo{grid-column:1 / -1;grid-row:3;margin-top:var(--sp-4)}
+  .byline .listen{justify-self:start}
+  .byline .vo{justify-self:stretch}
+  .cover{margin-top:var(--sp-6)}
+  .author{display:grid;grid-template-columns:56px minmax(0,1fr);gap:var(--sp-3) var(--sp-4);align-items:center}
+  .author .ph{width:56px;height:56px}
+  .author .ph + div{display:contents}
+  .author .n{grid-column:2}
+  .author .d{grid-column:1 / -1;margin-top:0}
+}
 
 /* Touch targets: small controls get a 44 × 44 px hit area around them. */
 .vo-rate,.vo-x,.byline .vo-play{position:relative}
