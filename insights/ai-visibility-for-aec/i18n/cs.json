@@ -31,7 +31,8 @@
   "crumbs_aria": "Drobečková navigace",
   "menu_aria": "Otevřít menu",
   "cover_alt": "Martin Motlík pracuje venku na notebooku, obklopený ikonami asistentů AI a vyhledávačů",
-  "code_copied": "Kód zkopírován"
+  "code_copied": "Kód zkopírován",
+  "mini_state": "Poslech · anglicky, namluvil Martin"
  },
  "chrome": {
   "nav_references": "Reference",
@@ -131,5 +132,40 @@
   "tags.span3": "Technické SEO",
   "tags.span4": "Marketing v AEC",
   "author.div1": "Nezávislý digitální stratég pro AEC a vedoucí oddělení webového obsahu ve společnosti Dlubal Software. Píše o AI, BIM a marketingu inženýrského softwaru."
+ },
+ "meta": {
+  "description": "Jak připravit produktová data AEC firem, aby je vyhledávání s AI našlo, přečetlo a ověřilo: poznatky z lokalizace, cesta faktu do odpovědi a praktické kontroly.",
+  "image_alt": "Martin Motlík pracuje na notebooku, obklopený ikonami asistentů AI",
+  "section": "AI v AEC",
+  "locale": "cs_CZ",
+  "in_language": "cs-CZ",
+  "tags": [
+   "Vyhledávání s AI",
+   "Optimalizace pro AI vyhledávače (GEO)",
+   "Technické SEO",
+   "Marketing v AEC"
+  ],
+  "keywords": [
+   "optimalizace pro AI vyhledávače",
+   "GEO",
+   "vyhledávání s AI",
+   "marketing v AEC",
+   "inženýrský software",
+   "technické SEO",
+   "llms.txt",
+   "strukturovaná data"
+  ],
+  "about": [
+   "Optimalizace pro AI vyhledávače",
+   "Architektura, inženýring a stavebnictví (AEC)"
+  ],
+  "audio_name": "Buďte zdrojem – namluvil Martin Motlík (anglicky)",
+  "citation1": [
+   "Využívání Přehledů od AI a Režimu AI",
+   "Google I/O, květen 2026"
+  ],
+  "crumb_home": "Domů",
+  "crumb_article": "Buďte zdrojem",
+  "share_intro": "Tohle by vás mohlo zajímat:"
  }
 }

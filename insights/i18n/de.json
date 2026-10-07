@@ -1,0 +1,43 @@
+{
+ "lang": "de",
+ "ui": {
+  "title": "Insights – Martin Motlík | KI, BIM und Web-Ökosysteme im AEC",
+  "menu_aria": "Menü öffnen",
+  "a1_alt": "Martin Motlík arbeitet im Freien am Laptop, umgeben von den Symbolen von KI-Assistenten und Suchmaschinen",
+  "a1_alt_short": "Martin Motlík arbeitet am Laptop, umgeben von den Symbolen von KI-Assistenten",
+  "chips_aria": "Nach Kategorie filtern"
+ },
+ "chrome": {
+  "nav_references": "Referenzen",
+  "nav_services": "Services",
+  "nav_insights": "Insights",
+  "nav_about": "Über mich",
+  "nav_bim": "Leistungen",
+  "nav_dlubal": "Dlubal",
+  "nav_ai": "KI im AEC",
+  "hero_badge": "Insights",
+  "hero_title": "Notizen aus der Praxis: AEC zieht in den Browser",
+  "hero_dek": "Praxisnahe Texte über KI-Einführung, Marketing für Ingenieursoftware und den Aufbau von Web-Ökosystemen, die Ingenieure wirklich nutzen. Kein Hype, nur Umsetzung.",
+  "flag_featured": "Empfohlen",
+  "cat_ai": "KI im AEC",
+  "date_a1": "6. Oktober 2026",
+  "read_8": "8 Min. Lesezeit",
+  "read_more": "Lesen →",
+  "a1_title": "Werden Sie zur Quelle: AEC-Daten fit für die KI-Suche machen",
+  "a1_ex": "Die Arbeit an Websites für Ingenieursoftware in verschiedenen Märkten hat geprägt, wie ich an KI-Sichtbarkeit herangehe. Dieser Beitrag bündelt Erfahrungen aus der Lokalisierung und die praktischen Prüfungen, mit denen ich technische Inhalte leichter auffindbar, verständlich und überprüfbar mache.",
+  "list_title": "Alle Beiträge",
+  "filter_all": "Alle",
+  "cta_title": "Neue Beiträge als Erste lesen.",
+  "cta_text": "Ich veröffentliche etwa zweimal im Monat zu KI im AEC, Marketing für Ingenieursoftware und Web-Ökosystemen. Neue Texte erscheinen zuerst auf LinkedIn.",
+  "cta_linkedin": "Auf LinkedIn folgen",
+  "cta_email": "E-Mail schreiben"
+ },
+ "meta": {
+  "description": "Praxisnahe Texte über KI-Einführung, Marketing für Ingenieursoftware und Web-Ökosysteme, die Ingenieure wirklich nutzen. Notizen vom Umzug des AEC in den Browser.",
+  "twitter_description": "Praxisnahe Texte über KI-Einführung, Marketing für Ingenieursoftware und Web-Ökosysteme, die Ingenieure wirklich nutzen.",
+  "image_alt": "Martin Motlík arbeitet im Freien am Laptop, umgeben von den Symbolen von KI-Assistenten und Suchmaschinen",
+  "locale": "de_DE",
+  "in_language": "de-DE",
+  "crumb_home": "Startseite"
+ }
+}

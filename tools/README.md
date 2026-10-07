@@ -108,3 +108,39 @@ means the browser is inventing pixels and the image needs a crop, not a bigger
 
 `rewrite-reference-pages.py` performed the original conversion of the three
 reference pages. It is kept for reference and is a no-op once converted.
+
+## Language versions of Insights (`build-i18n.py`)
+
+Every Insights page exists in English, Czech and German, each at its own URL
+with the translated text in the HTML (search engines and AI crawlers do not run
+JavaScript, so a switch in the browser would leave the translations invisible):
+
+| Version | URL | Source |
+|---|---|---|
+| English | `/insights/…` | the page itself, edited by hand |
+| Czech | `/cs/insights/…` | generated: English page + `<page>/i18n/cs.json` |
+| German | `/de/insights/…` | generated: English page + `<page>/i18n/de.json` |
+
+After changing an English Insights page or its translations:
+
+```bash
+python3 tools/build-i18n.py
+```
+
+Then commit the regenerated `cs/` and `de/` files with the change.
+`python3 tools/build-i18n.py --check` exits with an error when they are out of
+date. The build refuses to write if a translated block's markup differs from
+the English one, a label is missing, or English text is left on a page.
+
+Each version has its own canonical, `hreflang` links to all three (plus
+`x-default` → English), localized title, description, Open Graph and JSON-LD
+(`inLanguage`, `translationOfWork` / `workTranslation`), and is listed with its
+alternates in `sitemap.xml`. Never point a translation's canonical at the
+English page: Google would drop the translation.
+
+Adding an article: give its blocks `data-k` keys, add `i18n/cs.json` and
+`i18n/de.json` next to it (copy the structure of an existing article), add it
+to `PAGES` in the script, to `sitemap.xml` and to `llms.txt`.
+
+The rest of the site (home, services, references) still switches language in
+the browser; their nav's Insights link follows the chosen language.

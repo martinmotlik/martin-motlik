@@ -31,7 +31,8 @@
   "crumbs_aria": "Brotkrümelnavigation",
   "menu_aria": "Menü öffnen",
   "cover_alt": "Martin Motlík arbeitet im Freien am Laptop, umgeben von den Symbolen von KI-Assistenten und Suchmaschinen",
-  "code_copied": "Code kopiert"
+  "code_copied": "Code kopiert",
+  "mini_state": "Anhören · auf Englisch, gesprochen von Martin"
  },
  "chrome": {
   "nav_references": "Referenzen",
@@ -131,5 +132,40 @@
   "tags.span3": "Technisches SEO",
   "tags.span4": "AEC-Marketing",
   "author.div1": "Unabhängiger AEC-Digitalstratege und Leiter Web-Content bei Dlubal Software. Schreibt über KI, BIM und Marketing für Ingenieursoftware."
+ },
+ "meta": {
+  "description": "Wie AEC-Unternehmen Produktdaten für die KI-Suche auffindbar, lesbar und prüfbar machen: Erfahrungen aus der Lokalisierung, ein Lastpfad für Fakten, Praxis-Checks.",
+  "image_alt": "Martin Motlík arbeitet am Laptop, umgeben von den Symbolen von KI-Assistenten",
+  "section": "KI im AEC",
+  "locale": "de_DE",
+  "in_language": "de-DE",
+  "tags": [
+   "KI-Suche",
+   "Generative Engine Optimization",
+   "Technisches SEO",
+   "AEC-Marketing"
+  ],
+  "keywords": [
+   "Generative Engine Optimization",
+   "GEO",
+   "KI-Suche",
+   "AEC-Marketing",
+   "Ingenieursoftware",
+   "technisches SEO",
+   "llms.txt",
+   "strukturierte Daten"
+  ],
+  "about": [
+   "Generative Engine Optimization",
+   "Architektur, Ingenieurwesen und Bauwesen (AEC)"
+  ],
+  "audio_name": "Werden Sie zur Quelle – gesprochen von Martin Motlík (auf Englisch)",
+  "citation1": [
+   "Nutzung von Übersicht mit KI und KI-Modus",
+   "Google I/O, Mai 2026"
+  ],
+  "crumb_home": "Startseite",
+  "crumb_article": "Werden Sie zur Quelle",
+  "share_intro": "Das könnte Sie interessieren:"
  }
 }

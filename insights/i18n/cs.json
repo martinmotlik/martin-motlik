@@ -1,0 +1,43 @@
+{
+ "lang": "cs",
+ "ui": {
+  "title": "Insights – Martin Motlík | AI, BIM a webové ekosystémy v AEC",
+  "menu_aria": "Otevřít menu",
+  "a1_alt": "Martin Motlík pracuje venku na notebooku, obklopený ikonami asistentů AI a vyhledávačů",
+  "a1_alt_short": "Martin Motlík pracuje na notebooku, obklopený ikonami asistentů AI",
+  "chips_aria": "Filtrovat podle kategorie"
+ },
+ "chrome": {
+  "nav_references": "Reference",
+  "nav_services": "Služby",
+  "nav_insights": "Insights",
+  "nav_about": "O mně",
+  "nav_bim": "Oblast praxe",
+  "nav_dlubal": "Dlubal",
+  "nav_ai": "AI v AEC",
+  "hero_badge": "Insights",
+  "hero_title": "Poznatky z praxe: AEC se stěhuje do prohlížeče",
+  "hero_dek": "Praktické texty o zavádění AI, marketingu inženýrského softwaru a budování webových ekosystémů, které inženýři opravdu používají. Žádný hype, jen implementace.",
+  "flag_featured": "Doporučujeme",
+  "cat_ai": "AI v AEC",
+  "date_a1": "6. října 2026",
+  "read_8": "8 min čtení",
+  "read_more": "Číst →",
+  "a1_title": "Buďte zdrojem: jak připravit data AEC firem pro vyhledávání s AI",
+  "a1_ex": "Práce na webech inženýrského softwaru pro různé trhy formovala můj přístup k viditelnosti v AI. Tento článek shrnuje poznatky z lokalizace a praktické kontroly, se kterými dělám technický obsah snáze dohledatelný, srozumitelný a ověřitelný.",
+  "list_title": "Všechny články",
+  "filter_all": "Vše",
+  "cta_title": "Čtěte nové články jako první.",
+  "cta_text": "Zhruba dvakrát měsíčně publikuji o AI v AEC, marketingu inženýrského softwaru a webových ekosystémech. Nové texty vycházejí nejdříve na LinkedInu.",
+  "cta_linkedin": "Sledovat na LinkedInu",
+  "cta_email": "Napsat e-mail"
+ },
+ "meta": {
+  "description": "Praktické texty o zavádění AI, marketingu inženýrského softwaru a webových ekosystémech, které inženýři opravdu používají. Poznatky z přesunu AEC do prohlížeče.",
+  "twitter_description": "Praktické texty o zavádění AI, marketingu inženýrského softwaru a webových ekosystémech, které inženýři opravdu používají.",
+  "image_alt": "Martin Motlík pracuje venku na notebooku, obklopený ikonami asistentů AI a vyhledávačů",
+  "locale": "cs_CZ",
+  "in_language": "cs-CZ",
+  "crumb_home": "Domů"
+ }
+}

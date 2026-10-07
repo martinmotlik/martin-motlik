@@ -1163,6 +1163,8 @@ function applyLanguage(lang) {
   });
 
   localStorage.setItem('lang', lang);
+  // Insights has its own URL per language (/cs/insights/, /de/insights/).
+  document.querySelectorAll('a[data-i18n="nav_insights"]').forEach(a => { a.href = lang === 'en' ? '/insights/' : '/' + lang + '/insights/'; });
 }
 
 document.querySelectorAll('.lang-btn').forEach(btn => {
