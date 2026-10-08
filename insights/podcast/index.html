@@ -16,6 +16,7 @@
     <title>Insights with Martin Motlík — Podcast on AI in AEC</title>
     <meta name="description" content="Podcast by Martin Motlík on AI in AEC, engineering-software marketing and web ecosystems. Each episode works through one Insights article with a practical case.">
     <meta name="author" content="Martin Motlík">
+    <meta name="robots" content="index, follow, max-image-preview:large">
 
     <!-- ── Canonical ── -->
     <link rel="canonical" href="https://martinmotlik.com/insights/podcast/">
@@ -69,7 +70,47 @@
           "inLanguage": "en-US",
           "author": {
             "@id": "https://martinmotlik.com/#martin-motlik"
-          }
+          },
+          "publisher": {
+            "@id": "https://martinmotlik.com/#martin-motlik"
+          },
+          "about": [
+            {
+              "@type": "Thing",
+              "name": "AI in AEC"
+            },
+            {
+              "@type": "Thing",
+              "name": "AI search"
+            },
+            {
+              "@type": "Thing",
+              "name": "Generative engine optimization"
+            },
+            {
+              "@type": "Thing",
+              "name": "Engineering software marketing"
+            },
+            {
+              "@type": "Thing",
+              "name": "AEC marketing"
+            },
+            {
+              "@type": "Thing",
+              "name": "Technical SEO"
+            },
+            {
+              "@type": "Thing",
+              "name": "Content localization"
+            }
+          ],
+          "keywords": "AI in AEC, AI search, Generative engine optimization, Engineering software marketing, AEC marketing, Technical SEO, Content localization",
+          "isAccessibleForFree": true,
+          "hasPart": [
+            {
+              "@id": "https://martinmotlik.com/insights/ai-visibility-for-aec/#episode"
+            }
+          ]
         },
         {
           "@type": "BreadcrumbList",
@@ -95,6 +136,32 @@
           ]
         },
         {
+          "@type": "CollectionPage",
+          "@id": "https://martinmotlik.com/insights/podcast/",
+          "url": "https://martinmotlik.com/insights/podcast/",
+          "name": "Insights with Martin Motlík — Podcast on AI in AEC",
+          "description": "Podcast by Martin Motlík on AI in AEC, engineering-software marketing and web ecosystems. Each episode works through one Insights article with a practical case.",
+          "inLanguage": "en-US",
+          "isPartOf": {
+            "@id": "https://martinmotlik.com/#website"
+          },
+          "about": {
+            "@id": "https://martinmotlik.com/insights/podcast/#series"
+          },
+          "mainEntity": {
+            "@id": "https://martinmotlik.com/insights/podcast/#series"
+          },
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://martinmotlik.com/assets/podcast/cover-1200.jpg",
+            "width": 1200,
+            "height": 1200
+          },
+          "author": {
+            "@id": "https://martinmotlik.com/#martin-motlik"
+          }
+        },
+        {
           "@type": "PodcastEpisode",
           "@id": "https://martinmotlik.com/insights/ai-visibility-for-aec/#episode",
           "url": "https://martinmotlik.com/insights/ai-visibility-for-aec/#episode",
@@ -104,13 +171,21 @@
           "description": "Sarah runs marketing at a structural engineering firm in Portland. Her firm ranks on page one, yet when she asked ChatGPT which local firms have real mass-timber experience, it named five others. Martin takes her situation apart: why page one is no longer the finish line, how project galleries and PDFs hide the facts engineers search for, what localizing a timber page for U.S. and Canadian design codes taught him, and how a fact travels the “load path” into an AI answer. Martin's voice is an AI clone of his own voice; Sarah is a fictional co-host voiced by AI. Produced with ElevenLabs.",
           "inLanguage": "en-US",
           "image": "https://martinmotlik.com/assets/podcast/cover-ep01-3000.jpg",
+          "isAccessibleForFree": true,
           "associatedMedia": {
             "@type": "AudioObject",
             "name": "Insights with Martin Motlík — Episode 1: Be the source: getting AEC data ready for AI search",
             "contentUrl": "https://martinmotlik.com/assets/podcast/ep001-be-the-source.mp3",
             "encodingFormat": "audio/mpeg",
             "duration": "PT14M8S",
-            "inLanguage": "en-US"
+            "uploadDate": "2026-10-08T09:00:00+02:00",
+            "inLanguage": "en-US",
+            "caption": {
+              "@type": "MediaObject",
+              "contentUrl": "https://martinmotlik.com/assets/podcast/ep001-be-the-source.vtt",
+              "encodingFormat": "text/vtt",
+              "inLanguage": "en-US"
+            }
           },
           "partOfSeries": {
             "@type": "PodcastSeries",
@@ -327,6 +402,8 @@ img{display:block;max-width:100%}
 .latest-txt{flex:1 1 400px;min-width:0;padding:32px;display:flex;flex-direction:column;gap:14px}
 .latest-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:13px;color:var(--t2)}
 .latest h3{margin:0;font-size:26px;line-height:1.15;letter-spacing:-.025em;font-weight:700;color:var(--ink);text-wrap:balance}
+.ins .latest h3 a,.ins .more-ep h3 a{color:inherit}
+.ins .latest h3 a:hover,.ins .more-ep h3 a:hover{color:var(--blue)}
 .latest-txt p{margin:0;font-size:14px;line-height:1.6;color:var(--t2);text-wrap:pretty}
 .latest-player{margin-top:4px;display:flex;align-items:center;gap:14px}
 .latest-player .pod-wave{height:46px}
@@ -452,7 +529,7 @@ img{display:block;max-width:100%}
         <nav class="crumbs" aria-label="Breadcrumb" data-i18n-attr="aria-label:crumbs_aria"><a href="/insights/" data-i18n="nav_insights">Insights</a><span>/</span><span data-i18n="crumb_podcast">Podcast</span></nav>
         <div class="badge"><span class="dot"></span><span data-i18n="badge">Podcast</span></div>
         <h1>Insights with Martin Motlík</h1>
-        <p class="dek" data-i18n="dek">Conversations about AI in AEC, engineering-software marketing and building web ecosystems engineers actually use. Each episode takes one Insights article and works through it with a practical case.</p>
+        <p class="dek" data-i18n="dek">A podcast about AI in AEC, engineering-software marketing and building web ecosystems engineers actually use. Each episode takes one Insights article and works through it with a practical case.</p>
         <p class="lang-note" data-i18n="lang_note">Episodes are in English.</p>
         <div class="acts">
           <button class="pod-btn" type="button" data-pod-toggle="latest"><span class="pod-btn-ic"><span class="i-play" aria-hidden="true"></span><span class="i-pause" aria-hidden="true"><i></i><i></i></span></span><span data-pod-label data-i18n="play_latest">Play latest episode</span></button>
@@ -496,7 +573,7 @@ img{display:block;max-width:100%}
         </div>
         <div class="latest-txt">
           <div class="latest-meta"><span class="cat">AI in AEC</span><time datetime="2026-10-08">Oct 8, 2026</time><span>·</span><span>14 <span data-i18n="ep_min">min</span></span></div>
-          <h3 id="latest-h" lang="en">Be the source: getting AEC data ready for AI search</h3>
+          <h3 id="latest-h" lang="en"><a href="/insights/ai-visibility-for-aec/#episode">Be the source: getting AEC data ready for AI search</a></h3>
           <p>Sarah runs marketing at a structural engineering firm in Portland. Her firm ranks on page one, yet ChatGPT named five others. Martin takes her situation apart, from project galleries and PDFs to the load path of a fact.</p>
           <div class="latest-player">
             <button class="pod-round is-lg" type="button" data-pod-toggle aria-label="Play episode" data-i18n-attr="aria-label:play_episode"><span class="i-play" aria-hidden="true"></span><span class="i-pause" aria-hidden="true"><i></i><i></i></span></button>

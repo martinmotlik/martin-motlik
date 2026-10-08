@@ -354,6 +354,10 @@ def build_page(path, lang):
     s = translate_head(src, data, lang, path, extra)
     def ld(g):
         localize_ld(g, lang, data)
+        # The page node (WebPage / CollectionPage) is named like the page itself.
+        for n in g.get('@graph', []):
+            if n.get('@type') in ('WebPage', 'CollectionPage') and 'title' in data.get('ui', {}):
+                n['name'], n['description'] = data['ui']['title'], meta['description']
         apply_ld_overrides(g, data.get('ld', {}), path, lang)
     s = rewrite_ld(s, ld)
     s = translate_body(s, data, lang, path)

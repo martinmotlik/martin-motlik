@@ -10,6 +10,16 @@
    "email": "motlik.martin@gmail.com"
   },
   "description": "Conversations about AI in AEC, engineering-software marketing and building web ecosystems engineers actually use. Each episode takes one Insights article from martinmotlik.com and works through it with a practical case. No hype, just implementation.",
+  "_topics": "What the show is about: JSON-LD \"about\" and \"keywords\" on the podcast page.",
+  "topics": [
+   "AI in AEC",
+   "AI search",
+   "Generative engine optimization",
+   "Engineering software marketing",
+   "AEC marketing",
+   "Technical SEO",
+   "Content localization"
+  ],
   "language": "en-us",
   "categories": [
    [

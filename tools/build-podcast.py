@@ -278,7 +278,8 @@ def rewrite_ld(s, fn):
 def audio_object(ep):
     return {'@type': 'AudioObject', 'name': f'{SHOW["title"]} — Episode {ep["number"]}: {ep["title"]}',
             'contentUrl': SITE + ep['audio'], 'encodingFormat': 'audio/mpeg',
-            'duration': iso_duration(ep['duration']), 'inLanguage': 'en-US'}
+            'duration': iso_duration(ep['duration']), 'uploadDate': ep['published'], 'inLanguage': 'en-US',
+            'caption': {'@type': 'MediaObject', 'contentUrl': SITE + ep['captions'], 'encodingFormat': 'text/vtt', 'inLanguage': 'en-US'}}
 
 
 def series_ref():
@@ -293,7 +294,8 @@ def episode_node(ep):
     return {'@type': 'PodcastEpisode', '@id': url + '#episode', 'url': url + '#episode', 'name': ep['title'],
             'episodeNumber': ep['number'], 'datePublished': ep['published'][:10],
             'description': ep['summary'] + ' ' + ep['disclosure'], 'inLanguage': 'en-US',
-            'image': f'{SITE}{ep["cover"]}-3000.jpg', 'associatedMedia': audio_object(ep), 'partOfSeries': series_ref(),
+            'image': f'{SITE}{ep["cover"]}-3000.jpg', 'isAccessibleForFree': True,
+            'associatedMedia': audio_object(ep), 'partOfSeries': series_ref(),
             'author': {'@id': SITE + '/#martin-motlik'}, 'about': {'@id': url + '#article'}}
 
 
@@ -340,7 +342,7 @@ def latest_card(ep, chapters):
         </div>
         <div class="latest-txt">
           <div class="latest-meta"><span class="cat">{esc(ep["category"])}</span><time datetime="{d.date()}">{d.strftime("%b")} {d.day}, {d.year}</time><span>·</span><span>{round(ep["duration"] / 60)} <span data-i18n="ep_min">min</span></span></div>
-          <h3 id="latest-h" lang="en">{esc(ep["title"])}</h3>
+          <h3 id="latest-h" lang="en"><a href="{ep["article"]}#episode">{esc(ep["title"])}</a></h3>
           <p>{esc(ep["teaser"])}</p>
           <div class="latest-player">
             <button class="pod-round is-lg" type="button" data-pod-toggle aria-label="Play episode" data-i18n-attr="aria-label:play_episode">{ICON}</button>
@@ -359,7 +361,7 @@ def more_row(ep):
           {picture(ep["cover"], 72, 144, "me-cover")}
           <div class="me-txt">
             <div class="me-meta"><b>{ep_tag(ep)}</b><span class="cat">{esc(ep["category"])}</span><span><time datetime="{d.date()}">{d.strftime("%b")} {d.day}, {d.year}</time> · {round(ep["duration"] / 60)} <span data-i18n="ep_min">min</span></span></div>
-            <h3 lang="en">{esc(ep["title"])}</h3>
+            <h3 lang="en"><a href="{ep["article"]}#episode">{esc(ep["title"])}</a></h3>
           </div>
           <a href="{ep["article"]}#episode" data-i18n="read_article">Read the article →</a>
           <a class="pod-round is-soft" href="{ep["article"]}#episode" tabindex="-1" aria-hidden="true"><span class="i-play"></span></a>
@@ -415,16 +417,33 @@ def build_show_page(eps, current):
     s = replace_between(s, 'pod-data', pod_data(latest[0], latest[2]), path)
     s = rss_autodiscovery(s)
 
+    title = html.unescape(re.search(r'<title>(.*?)</title>', s).group(1))
+    description = html.unescape(re.search(r'<meta name="description" content="([^"]*)"', s).group(1))
+    page = SITE + SHOW['page']
+
     def ld(g):
         graph = g['@graph']
         series = next(n for n in graph if n.get('@type') == 'PodcastSeries')
-        series.update({'@id': SITE + SHOW['page'] + '#series', 'name': SHOW['title'], 'description': SHOW['description'],
-                       'url': SITE + SHOW['page'], 'image': SITE + SHOW['cover'],
-                       'inLanguage': 'en-US', 'author': {'@id': SITE + '/#martin-motlik'}})
-        series.pop('webFeed', None)
+        series.clear()
+        series.update({
+            '@type': 'PodcastSeries', '@id': page + '#series', 'name': SHOW['title'], 'description': SHOW['description'],
+            'url': page, 'image': SITE + SHOW['cover'], 'inLanguage': 'en-US',
+            'author': {'@id': SITE + '/#martin-motlik'}, 'publisher': {'@id': SITE + '/#martin-motlik'},
+            'about': [{'@type': 'Thing', 'name': t} for t in SHOW['topics']], 'keywords': ', '.join(SHOW['topics']),
+            'isAccessibleForFree': True,
+            'hasPart': [{'@id': SITE + ep['article'] + '#episode'} for ep, _, _ in sorted(eps, key=lambda e: e[0]['number'])],
+        })
         if PUBLIC:
             series['webFeed'] = SITE + SHOW['feed']
-        graph[:] = [n for n in graph if n.get('@type') != 'PodcastEpisode'] + [episode_node(ep) for ep, _, _ in eps]
+        # The page itself; tools/build-i18n.py gives the language versions their
+        # own URL, inLanguage, name and description.
+        webpage = {'@type': 'CollectionPage', '@id': page, 'url': page, 'name': title, 'description': description,
+                   'inLanguage': 'en-US', 'isPartOf': {'@id': SITE + '/#website'},
+                   'about': {'@id': page + '#series'}, 'mainEntity': {'@id': page + '#series'},
+                   'primaryImageOfPage': {'@type': 'ImageObject', 'url': SITE + '/assets/podcast/cover-1200.jpg', 'width': 1200, 'height': 1200},
+                   'author': {'@id': SITE + '/#martin-motlik'}}
+        keep = [n for n in graph if n.get('@type') not in ('PodcastEpisode', 'CollectionPage')]
+        graph[:] = keep + [webpage] + [episode_node(ep) for ep, _, _ in eps]
     return path, rewrite_ld(s, ld)
 
 
