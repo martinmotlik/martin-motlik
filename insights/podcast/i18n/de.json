@@ -15,11 +15,11 @@
   "mini_aria": "Podcast-Player",
   "title": "Insights with Martin Motlík – Podcast über KI im AEC",
   "play_latest": "Neueste Folge abspielen",
-  "resume_latest": "Weiter mit Folge",
   "notify_ok": "Angemeldet ✓",
   "notify_sending": "Wird gesendet…",
   "notify_invalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
-  "notify_failed": "Das hat nicht geklappt. Bitte versuchen Sie es erneut."
+  "notify_failed": "Das hat nicht geklappt. Bitte versuchen Sie es erneut.",
+  "seek": "Im Podcast springen"
  },
  "chrome": {
   "nav_references": "Referenzen",
@@ -41,8 +41,6 @@
   "ep_count_one": "Folge",
   "ep_count_many": "Folgen",
   "read_article": "Artikel lesen →",
-  "chapters_word": "Kapitel",
-  "transcript_word": "Transkript",
   "how_title": "So funktioniert der Podcast",
   "how1_t": "Zuerst der Artikel",
   "how1_d": "Jede Folge beginnt mit einem veröffentlichten Insights-Artikel.",
@@ -57,7 +55,9 @@
   "get_new": "Neue Folgen per E-Mail",
   "email_label": "E-Mail-Adresse",
   "notify_me": "Benachrichtigen",
-  "notify_help": "Eine E-Mail pro neuer Folge. Kein Newsletter, jederzeit abbestellbar."
+  "notify_help": "Eine E-Mail pro neuer Folge. Kein Newsletter, jederzeit abbestellbar.",
+  "pod_chapters": "Kapitel",
+  "pod_transcript": "Transkript"
  },
  "text": {
   "Oct 8, 2026": "8. Oktober 2026",

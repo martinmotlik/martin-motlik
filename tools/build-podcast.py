@@ -191,9 +191,9 @@ def mini(ep):
 <div class="pod-mini" id="pod-mini" role="region" aria-label="Podcast player" data-i18n-attr="aria-label:mini_aria" aria-hidden="true">
   {picture(ep["cover"], 40, 96, "pm-cover")}
   <div class="pm-txt"><div class="pm-st" data-pod-status></div><div class="pm-ti" data-pod-chapter-title lang="en"></div></div>
-  <span class="pm-time" data-pod-time>0:00</span>
-  <button class="pm-rate" type="button" data-pod-rate aria-label="Playback speed" data-i18n-attr="aria-label:speed">1×</button>
-  <button class="pm-play" type="button" data-pod-toggle aria-label="Play episode" data-i18n-attr="aria-label:play_episode">{ICON}</button>
+  <span class="pod-time" data-pod-time>0:00</span>
+  <button class="pod-rate" type="button" data-pod-rate aria-label="Playback speed" data-i18n-attr="aria-label:speed">1×</button>
+  <button class="pod-round" type="button" data-pod-toggle aria-label="Play episode" data-i18n-attr="aria-label:play_episode">{ICON}</button>
   <button class="pm-x" type="button" data-pod-close aria-label="Close the player" data-i18n-attr="aria-label:close">×</button>
   <div class="pm-bar" aria-hidden="true"><div data-pod-progress></div></div>
 </div>
@@ -214,22 +214,22 @@ def episode_card(ep, chapters):
         <div class="ep-top">
           {picture(ep["cover"], 132, 264, "ep-cover")}
           <div class="ep-intro">
-            <div class="ep-k"><span data-i18n="pod_kicker">Insights Podcast</span> · <span data-i18n="pod_episode">Episode</span> {ep["number"]} · {clock(ep["duration"])}</div>
+            <div class="ep-k"><span data-i18n="pod_kicker">Insights Podcast</span> · {ep_tag(ep)} · {clock(ep["duration"])}</div>
             <h2 class="ep-t" id="episode-h" data-i18n="pod_title">Listen to the conversation</h2>
             <p class="ep-d" data-i18n="pod_desc">Martin and his co-host Sarah work through this article with a practical case, in English.</p>
             <div class="ep-acts">
-              <button class="ep-play" type="button" data-pod-toggle="card"><span class="ep-ic">{ICON}</span><span data-pod-label data-i18n="pod_play">Play episode</span></button>
-              <a class="ep-all" href="{SHOW["page"]}" data-i18n="pod_all">All episodes →</a>
+              <button class="pod-btn" type="button" data-pod-toggle="card"><span class="pod-btn-ic">{ICON}</span><span data-pod-label data-i18n="pod_play">Play episode</span></button>
+              <a class="pod-btn2" href="{SHOW["page"]}" data-i18n="pod_all">All episodes →</a>
             </div>
           </div>
         </div>
         <div class="ep-bar" aria-hidden="true"><div data-pod-progress></div></div>
-        <div class="ep-chs">
+        <div class="ep-chs" id="chapters">
           <h3 class="ep-h" data-i18n="pod_chapters">Chapters</h3>
           <ol class="ep-ch" lang="en">{chap}
           </ol>
         </div>
-        <div class="ep-tr">
+        <div class="ep-tr" id="transcript">
           <button class="ep-tr-h" type="button" aria-expanded="false" aria-controls="ep-tr-body" data-pod-transcript><span data-i18n="pod_transcript">Transcript</span><span class="ep-tr-s"><span data-i18n="pod_synced">Synced with audio</span>{CHEV}</span></button>
           <div class="ep-tr-body" id="ep-tr-body"><div class="ep-tr-in" lang="en">{rows}
           </div></div>
@@ -249,13 +249,13 @@ def toc_card(ep):
 
 
 def chips(s, ep, path):
-    """Wrap each mapped H2 in .h2-row with its chapter chip (idempotent)."""
+    """Put "Listen from m:ss" under each mapped H2, in .h2-row (idempotent)."""
     s = re.sub(r'<div class="h2-row">(<h2\b[^>]*>.*?</h2>)<button class="ch-chip".*?</button></div>', r'\1', s, flags=re.S)
     for h2, t in ep.get('h2', {}).items():
         m = re.search(r'<h2\b[^>]*\bid="%s"[^>]*>.*?</h2>' % re.escape(h2), s, re.S)
         assert m, f'{path}: no <h2 id="{h2}">'
         chip = (f'<button class="ch-chip" type="button" data-pod-seek="{t}" data-pod-chip>'
-                f'<span class="cc-ic" aria-hidden="true"></span><span><span class="cc-l" data-i18n="chip_at">Discussed at</span> <span class="cc-t">{clock(t)}</span></span></button>')
+                f'<span class="i-play" aria-hidden="true"></span><span><span data-i18n="chip_at">Listen from</span> <span class="cc-t">{clock(t)}</span></span></button>')
         s = s[:m.start()] + '<div class="h2-row">' + m.group(0) + chip + '</div>' + s[m.end():]
     return s
 
@@ -343,12 +343,12 @@ def latest_card(ep, chapters):
           <h3 id="latest-h" lang="en">{esc(ep["title"])}</h3>
           <p>{esc(ep["teaser"])}</p>
           <div class="latest-player">
-            <button class="lp-play" type="button" data-pod-toggle aria-label="Play episode" data-i18n-attr="aria-label:play_episode">{ICON}</button>
-            <div class="wave" data-pod-wave aria-hidden="true"></div>
-            <span class="lp-time"><span data-pod-time>0:00</span> / {clock(ep["duration"])}</span>
+            <button class="pod-round is-lg" type="button" data-pod-toggle aria-label="Play episode" data-i18n-attr="aria-label:play_episode">{ICON}</button>
+            <div class="pod-wave" data-pod-wave aria-label="Seek within the episode" data-i18n-attr="aria-label:seek"></div>
+            <span class="pod-time"><span data-pod-time>0:00</span> / {clock(ep["duration"])}</span>
           </div>
           <div class="latest-ch" data-pod-chapter-line lang="en"></div>
-          <div class="latest-foot"><a href="{ep["article"]}#episode" data-i18n="read_article">Read the article →</a><span>{len(chapters)} <span data-i18n="chapters_word">chapters</span> · <span data-i18n="transcript_word">Transcript</span></span></div>
+          <div class="latest-foot"><a class="pod-btn2" href="{ep["article"]}" data-i18n="read_article">Read the article →</a><a href="{ep["article"]}#chapters" data-i18n="pod_chapters">Chapters</a><a href="{ep["article"]}#transcript" data-i18n="pod_transcript">Transcript</a></div>
         </div>
       </article>'''
 
@@ -362,7 +362,7 @@ def more_row(ep):
             <h3 lang="en">{esc(ep["title"])}</h3>
           </div>
           <a href="{ep["article"]}#episode" data-i18n="read_article">Read the article →</a>
-          <a class="me-play" href="{ep["article"]}#episode" tabindex="-1" aria-hidden="true"><span class="i-play"></span></a>
+          <a class="pod-round is-soft" href="{ep["article"]}#episode" tabindex="-1" aria-hidden="true"><span class="i-play"></span></a>
         </li>'''
 
 
@@ -383,7 +383,7 @@ BELL = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="curr
 
 
 def notify_button():
-    body = (f'          <button class="btn-out" type="button" data-notify-toggle aria-expanded="false" aria-controls="notify">{BELL}<span data-i18n="get_new">Get new episodes</span></button>\n'
+    body = (f'          <button class="pod-btn2" type="button" data-notify-toggle aria-expanded="false" aria-controls="notify">{BELL}<span data-i18n="get_new">Get new episodes</span></button>\n'
             if ENDPOINT else '')
     return '<!-- notify-btn:start · generated by tools/build-podcast.py (show.subscribe_endpoint) -->\n' + body + '<!-- notify-btn:end -->'
 

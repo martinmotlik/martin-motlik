@@ -401,29 +401,10 @@ img{display:block;max-width:100%}
    The whole block stays hidden until the audio file reports its duration, so a
    visitor never sees a control that cannot play anything. */
 .vo-root[hidden]{display:none}
-.listen{font:inherit;font-size:13px;font-weight:700;height:44px;padding:0 18px 0 8px;border-radius:999px;cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:10px;border:0;background:var(--blue);color:#fff;box-shadow:none;transition:background .2s ease}
-.listen:hover{background:#1646B8}
-.listen:active{background:#123A99}
-
 .vo{margin-top:20px;max-width:600px;padding:8px 16px 8px 8px;border-radius:999px;background:#fff;box-shadow:0 1px 2px rgba(28,43,51,.06),0 14px 36px -16px rgba(28,43,51,.22);display:flex;align-items:center;gap:14px}
-.vo-play{width:40px;height:40px;flex:none;border-radius:50%;border:0;cursor:pointer;background:var(--blue);display:grid;place-items:center;transition:background .3s ease,transform .4s var(--ease)}
-.vo-play:hover{background:var(--blue-hi);transform:scale(1.05)}
-.vo-play:active{transform:scale(.94)}
-.vo-play{color:#fff}
-.vo-play .i-play{border-width:7px 0 7px 11px}
-.vo-play .i-pause i{height:13px;border-radius:2px}
-.wave{flex:1 1 120px;min-width:60px;height:22px;display:flex;align-items:center;gap:2px;cursor:pointer;border:0;background:none;padding:0}
-.wave i{flex:1;min-width:1px;border-radius:1px;background:rgba(28,43,51,.12);transition:height .35s var(--ease),background .4s ease}
-.wave i.done{background:var(--blue)}
-.wave i.at{background:#7DA2F5}
-.vo-time{flex:none;min-width:40px;text-align:right;white-space:nowrap;font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:11px;color:var(--m2)}
-.vo-rate{flex:none;font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:11px;height:26px;padding:0 8px;border-radius:999px;border:0;background:transparent;color:var(--m2);cursor:pointer}
-.vo-rate:hover{background:var(--s2);color:var(--ink)}
-.vo-x{flex:none;font:inherit;width:26px;height:26px;border-radius:50%;border:0;background:transparent;color:var(--m2);cursor:pointer;font-size:15px;line-height:1}
-.vo-x:hover{color:var(--ink)}
 
 @media (prefers-reduced-motion:reduce){
-  .listen,.vo-play,.wave i{transition:none}
+  .listen{transition:none}
 }
 
 /* ── BODY ── */
@@ -586,16 +567,12 @@ article a.cl-btn2{padding:0 18px;background:rgba(255,255,255,.12);color:#fff}
 @media (max-width:620px){.closing{padding:var(--sp-5)}article p.cl-t{font-size:24px}}
 
 /* 09 · Listen button turns into the player; one control, not two */
-.listen .pl{width:28px;height:28px;flex:none;border-radius:50%;background:#fff;display:grid;place-items:center}
-.listen .pl i{width:0;height:0;border-left:9px solid var(--blue);border-top:6px solid transparent;border-bottom:6px solid transparent;margin-left:2px}
 .vo-root{display:contents}
 .byline .vo{flex:1 1 320px;min-width:0;height:48px;margin:0;max-width:none;padding:0 14px 0 5px;border-radius:999px;background:#fff;border:1px solid var(--line);box-shadow:0 1px 2px rgba(28,43,51,.04);display:flex;align-items:center;gap:12px}
 .byline [hidden]{display:none}
-.byline .vo .vo-play{width:36px;height:36px}
-.byline .wave{flex:1;min-width:40px;height:44px;padding:12px 0}
-.vo-time{font-family:inherit;font-variant-numeric:tabular-nums}
-.byline .vo-rate{font-family:inherit;font-variant-numeric:tabular-nums;height:auto;padding:3px 8px;background:var(--s2);color:var(--ink)}
-.byline .wave i{transform-origin:50% 50%}
+.byline .vo .pod-round{width:36px;height:36px}
+.byline .pod-wave{min-width:40px;padding:12px 0}
+.byline .pod-time{min-width:44px;text-align:right}
 
 /* ── 10 · ARTICLE TEMPLATE ─────────────────────────────────────────────────
    Contents that fold up on one-column layouts, the share panel, scrolling
@@ -687,8 +664,7 @@ article p.all-link a{text-decoration:none}
 }
 
 /* Touch targets: small controls get a 44 × 44 px hit area around them. */
-.vo-rate,.vo-x,.byline .vo-play{position:relative}
-.vo-rate::after,.vo-x::after,.byline .vo-play::after,.cb-copy::after{content:"";position:absolute;left:50%;top:50%;width:44px;height:44px;min-width:100%;transform:translate(-50%,-50%)}
+.byline .pod-round::after,.cb-copy::after{content:"";position:absolute;left:50%;top:50%;width:44px;height:44px;min-width:100%;transform:translate(-50%,-50%)}
 
 @media (prefers-reduced-motion:reduce){
   .chev,.sh-btn,.sh-item,.cb-copy,.listen{transition:none}
@@ -708,7 +684,7 @@ article p.all-link a{text-decoration:none}
     </style>
 </head>
 <body>
-<script type="application/json" id="i18n-ui">{"title": "Werden Sie zur Quelle: AEC-Daten fit für die KI-Suche machen | Martin Motlík", "article_title": "Werden Sie zur Quelle: AEC-Daten fit für die KI-Suche machen", "role": "AEC-Digitalstratege & Web Lead", "narrating": "Insights-Podcast (EN)", "listen": "Podcast (EN)", "pause": "Pausieren", "seek": "Im Podcast springen", "speed": "Wiedergabegeschwindigkeit", "close": "Player schließen", "player": "Podcast-Player", "copy": "Kopieren", "copied": "Kopiert ✓", "copy_failed": "Kopieren fehlgeschlagen", "copy_robots": "robots.txt kopieren", "link_copied": "Link kopiert ✓", "link_copied_aria": "Link kopiert", "copy_link": "Link kopieren", "share_on": "Auf {net} teilen (öffnet ein neues Fenster)", "share_email": "Per E-Mail teilen (öffnet Ihre E-Mail-App)", "toc_aria": "Auf dieser Seite", "crumbs_aria": "Brotkrümelnavigation", "menu_aria": "Menü öffnen", "cover_alt": "Martin Motlík arbeitet im Freien am Laptop, umgeben von den Symbolen von KI-Assistenten und Suchmaschinen", "code_copied": "Code kopiert", "play_episode": "Folge abspielen", "resume": "Fortsetzen", "chip_at": "Im Podcast", "chip_playing": "Läuft", "now_playing": "Läuft gerade", "paused": "Pausiert", "chapter_of": "Kapitel {n} von {total}", "mini_aria": "Podcast-Player"}</script>
+<script type="application/json" id="i18n-ui">{"title": "Werden Sie zur Quelle: AEC-Daten fit für die KI-Suche machen | Martin Motlík", "article_title": "Werden Sie zur Quelle: AEC-Daten fit für die KI-Suche machen", "role": "AEC-Digitalstratege & Web Lead", "narrating": "Insights-Podcast (EN)", "listen": "Podcast (EN)", "pause": "Pausieren", "seek": "Im Podcast springen", "speed": "Wiedergabegeschwindigkeit", "close": "Player schließen", "player": "Podcast-Player", "copy": "Kopieren", "copied": "Kopiert ✓", "copy_failed": "Kopieren fehlgeschlagen", "copy_robots": "robots.txt kopieren", "link_copied": "Link kopiert ✓", "link_copied_aria": "Link kopiert", "copy_link": "Link kopieren", "share_on": "Auf {net} teilen (öffnet ein neues Fenster)", "share_email": "Per E-Mail teilen (öffnet Ihre E-Mail-App)", "toc_aria": "Auf dieser Seite", "crumbs_aria": "Brotkrümelnavigation", "menu_aria": "Menü öffnen", "cover_alt": "Martin Motlík arbeitet im Freien am Laptop, umgeben von den Symbolen von KI-Assistenten und Suchmaschinen", "code_copied": "Code kopiert", "play_episode": "Folge abspielen", "resume": "Fortsetzen", "now_playing": "Läuft gerade", "paused": "Pausiert", "chapter_of": "Kapitel {n} von {total}", "mini_aria": "Podcast-Player"}</script>
 
 <nav class="nav" id="main-nav">
   <div class="nav-inner">
@@ -777,15 +753,15 @@ article p.all-link a{text-decoration:none}
                reports a duration. The Listen button and the player occupy the same
                slot: opening the player replaces the button. -->
           <div class="vo-root" id="vo" hidden>
-            <button class="listen" id="vo-listen" type="button">
-              <span class="pl" aria-hidden="true"><i></i></span>
+            <button class="listen pod-btn" id="vo-listen" type="button">
+              <span class="pod-btn-ic" aria-hidden="true"><span class="i-play"></span></span>
               <span id="vo-listen-label" data-ui="listen">Podcast (EN)</span>
             </button>
             <div class="vo" id="vo-player" role="group" aria-label="Podcast-Player" data-i18n-attr="aria-label:player" hidden>
-              <button class="vo-play" id="vo-play" type="button" data-pod-toggle aria-label="Folge abspielen" data-i18n-attr="aria-label:play_episode"><span class="i-play" aria-hidden="true"></span><span class="i-pause" aria-hidden="true"><i></i><i></i></span></button>
-              <button class="wave" id="vo-wave" type="button" aria-label="Im Podcast springen" data-i18n-attr="aria-label:seek" data-pod-wave="48"></button>
-              <span class="vo-time" id="vo-time">0:00</span>
-              <button class="vo-rate" id="vo-rate" type="button" aria-label="Wiedergabegeschwindigkeit" data-i18n-attr="aria-label:speed" data-pod-rate>1&times;</button>
+              <button class="pod-round" id="vo-play" type="button" data-pod-toggle aria-label="Folge abspielen" data-i18n-attr="aria-label:play_episode"><span class="i-play" aria-hidden="true"></span><span class="i-pause" aria-hidden="true"><i></i><i></i></span></button>
+              <div class="pod-wave" id="vo-wave" aria-label="Im Podcast springen" data-i18n-attr="aria-label:seek" data-pod-wave="48"></div>
+              <span class="pod-time" id="vo-time">0:00</span>
+              <button class="pod-rate" id="vo-rate" type="button" aria-label="Wiedergabegeschwindigkeit" data-i18n-attr="aria-label:speed" data-pod-rate>1&times;</button>
             </div>
           </div>
 
@@ -869,7 +845,7 @@ article p.all-link a{text-decoration:none}
 
       <p data-k="intro.p1" class="lead">Öffnen Sie heute Google und geben Sie eine echte Ingenieursfrage ein – eine dieser langen, mit Bemessungsnorm und Werkstoff. Noch bevor Sie einen einzigen Link sehen, hat Google Ihnen bereits eine Antwort geschrieben, mit einer Handvoll Quellen darunter. Diese kurze Liste ist die neue erste Seite der Suchergebnisse. Für ein AEC-Unternehmen lohnt es sich zu prüfen, welche Quellen bei den Fragen seiner Kunden erscheinen.</p>
 
-      <div class="h2-row"><h2 data-k="ai-search.h21" id="ai-search">Google ist bereits eine KI-Suchmaschine</h2><button class="ch-chip" type="button" data-pod-seek="66" data-pod-chip><span class="cc-ic" aria-hidden="true"></span><span><span class="cc-l" data-i18n="chip_at">Im Podcast</span> <span class="cc-t">1:06</span></span></button></div>
+      <div class="h2-row"><h2 data-k="ai-search.h21" id="ai-search">Google ist bereits eine KI-Suchmaschine</h2><button class="ch-chip" type="button" data-pod-seek="66" data-pod-chip><span class="i-play" aria-hidden="true"></span><span><span data-i18n="chip_at">Anhören ab</span> <span class="cc-t">1:06</span></span></button></div>
       <p data-k="ai-search.p2">Bei „KI-Suche“ denken die meisten an ChatGPT. Damit übersehen sie die größere Verschiebung. Auf der Google I/O im Mai 2026 meldete Google, dass die Übersicht mit KI (AI Overviews) mehr als 2,5 Milliarden monatliche Nutzer erreicht hat und der dialogorientierte KI-Modus (AI Mode) mehr als eine Milliarde, und kündigte an, beide zu einer einzigen KI-Sucherfahrung zusammenzuführen.<a class="cite" id="cite-1" href="#src-1" aria-label="Quelle 1">1</a> Ihre Kunden müssen nicht zu einem Chatbot wechseln. Die Suchmaschine, die sie seit zwanzig Jahren nutzen, ist selbst einer geworden.</p>
       <p data-k="ai-search.p3">Ingenieursfragen sind genau die Art von Suche, die heute eine Antwort statt einer Trefferliste bekommt: lang, konkret und voller Randbedingungen. Welche Software kann eine BSP-Decke nach NDS bemessen? Welcher Dübel ist für gerissenen Beton zugelassen? Der Ingenieur liest die Antwort und vielleicht eine ihrer Quellen. Nehmen Sie ChatGPT, Claude, Gemini und Perplexity hinzu – das Muster ist überall dasselbe.</p>
       <p data-k="ai-search.p4">Zwanzig Jahre lang war eine gute Produktseite mit gestochen scharfen Fotos das Ziel. Heute ist sie Rohmaterial. Ob ein Ingenieur sie je zu sehen bekommt, hängt davon ab, ob ein KI-System sie lesen, ihr vertrauen und sie zitieren kann. Neben den Suchrankings achte ich heute auch darauf, ob eine Seite in KI-Antworten als Quelle zitiert wird.</p>
@@ -879,7 +855,7 @@ article p.all-link a{text-decoration:none}
         <span></span>
       </blockquote>
 
-      <div class="h2-row"><h2 data-k="localization.h21" id="localization">Was mich Lokalisierung über KI-Sichtbarkeit gelehrt hat</h2><button class="ch-chip" type="button" data-pod-seek="249" data-pod-chip><span class="cc-ic" aria-hidden="true"></span><span><span class="cc-l" data-i18n="chip_at">Im Podcast</span> <span class="cc-t">4:09</span></span></button></div>
+      <div class="h2-row"><h2 data-k="localization.h21" id="localization">Was mich Lokalisierung über KI-Sichtbarkeit gelehrt hat</h2><button class="ch-chip" type="button" data-pod-seek="249" data-pod-chip><span class="i-play" aria-hidden="true"></span><span><span data-i18n="chip_at">Anhören ab</span> <span class="cc-t">4:09</span></span></button></div>
       <p data-k="localization.p2">Seit 2021 arbeite ich an Websites und Inhalten für Ingenieursoftware und passe sie für Ingenieure in den USA, in Kanada und in Europa an. Ein großer Teil dieser Arbeit ist Lokalisierung – und sie hat mich die wichtigste Lektion für die KI-Suche gelehrt, lange bevor es KI-Suche überhaupt gab.</p>
       <p data-k="localization.p3">Eine Seite zu übersetzen ist einfach. Sie zu lokalisieren heißt zu fragen, wie ein Ingenieur in einem anderen Markt nach derselben Sache sucht: mit welcher Bemessungsnorm er arbeitet, welche Begriffe er verwendet, welche Schreibweise er erwartet. Eine übersetzte Seite kann völlig korrekt sein und trotzdem für die Menschen unsichtbar bleiben, für die sie geschrieben wurde – weil sie eine Frage beantwortet, die diese nie stellen.</p>
 
@@ -892,7 +868,7 @@ article p.all-link a{text-decoration:none}
       <h3 data-k="localization.h39">Eine Seite, mehrere Regionen</h3>
       <p data-k="localization.p10">Lokalisierung nach IP-Adresse gehört zu meinem Arbeitsalltag. Eine Seite, eine URL – und Besucher aus Frankreich, Italien, Deutschland oder den USA sehen jeweils Inhalte, die auf ihren Markt zugeschnitten sind, etwa lokale Ansprechpartner, die Sprache oder die Bemessungsnormen, mit denen sie arbeiten. Für Menschen funktioniert das sehr gut. Bei Maschinen ist Sorgfalt gefragt, denn ein Crawler sieht nur die Variante, die an seine eigene IP-Adresse ausgeliefert wird. Standardmäßig crawlt der Googlebot <a href="https://developers.google.com/search/docs/specialty/international/locale-adaptive-pages" target="_blank" rel="noopener">von US-Adressen aus</a>, und auch KI-Crawler arbeiten größtenteils aus den USA.<a class="cite" id="cite-3" href="#src-3" aria-label="Quelle 3">3</a> Wenn Sie das nicht einplanen, erreichen die französische, italienische und deutsche Version Ihrer Inhalte womöglich nie eine KI-Antwort. Die Lösung: Die IP-Lokalisierung gestaltet das Nutzererlebnis, und zugleich hat jede regionale Version eines wichtigen Fakts eine eigene URL, verknüpft per hreflang. Besucher bekommen automatisch die richtige Variante, und Crawler finden trotzdem alle.</p>
 
-      <div class="h2-row"><h2 data-k="load-path.h21" id="load-path">Wie ein Fakt in eine KI-Antwort gelangt</h2><button class="ch-chip" type="button" data-pod-seek="429" data-pod-chip><span class="cc-ic" aria-hidden="true"></span><span><span class="cc-l" data-i18n="chip_at">Im Podcast</span> <span class="cc-t">7:09</span></span></button></div>
+      <div class="h2-row"><h2 data-k="load-path.h21" id="load-path">Wie ein Fakt in eine KI-Antwort gelangt</h2><button class="ch-chip" type="button" data-pod-seek="429" data-pod-chip><span class="i-play" aria-hidden="true"></span><span><span data-i18n="chip_at">Anhören ab</span> <span class="cc-t">7:09</span></span></button></div>
       <p data-k="load-path.p2">Die Lokalisierung hat auch verändert, wie ich Inhalte bewerte. Ein KI-System durchstöbert Ihre Website nicht wie ein Mensch. Es extrahiert Fakten und entscheidet, welchen Aussagen es genug vertraut, um sie zu wiederholen. Hundert vage Seiten verlieren gegen eine einzige, die genau sagt, welche Bemessungsnormen Sie unterstützen, in welchen Einheiten und für welche Märkte. Wenn ich eine Website prüfe, zähle ich deshalb keine Seiten. Ich verfolge einzelne Fakten – etwa eine unterstützte Bemessungsnorm, eine Tragfähigkeit oder einen Bürostandort – und prüfe, ob jeder davon den Weg vom Server bis in eine KI-Antwort übersteht. Ich stelle mir das als Lastpfad vor. Jedes Bauteil auf dem Weg muss den Fakt tragen:</p>
       <div class="lp">
         <div data-k="load-path.div3" class="lp-end"><span class="lp-ico" aria-hidden="true">&lt;/&gt;</span>Ihre Seite</div>
@@ -907,7 +883,7 @@ article p.all-link a{text-decoration:none}
       </div>
       <p data-k="load-path.p10">Wie jeder Lastpfad versagt er am schwächsten Bauteil, und die ersten beiden versagen häufiger, als man erwartet. Laut Crawl-Daten von <a href="https://vercel.com/blog/the-rise-of-the-ai-crawler" target="_blank" rel="noopener">Vercel und MERJ</a> führen die großen KI-Crawler überhaupt kein JavaScript aus.<a class="cite" id="cite-2" href="#src-2" aria-label="Quelle 2">2</a> Google schon – deshalb kann eine Seite bei Google ranken und in der Übersicht mit KI erscheinen und für ChatGPT, Claude und Perplexity trotzdem leer sein. Inhalte, die erst erscheinen, nachdem ein Skript gelaufen ist – in einem Konfigurator, einer Web-App oder einer interaktiven Tabelle –, existieren für sie schlicht nicht. Text in PDFs und Bildern erreicht sie bestenfalls unzuverlässig.</p>
 
-      <div class="h2-row"><h2 data-k="rules.h21" id="rules">Meine Regeln für KI-taugliche Daten</h2><button class="ch-chip" type="button" data-pod-seek="500" data-pod-chip><span class="cc-ic" aria-hidden="true"></span><span><span class="cc-l" data-i18n="chip_at">Im Podcast</span> <span class="cc-t">8:20</span></span></button></div>
+      <div class="h2-row"><h2 data-k="rules.h21" id="rules">Meine Regeln für KI-taugliche Daten</h2><button class="ch-chip" type="button" data-pod-seek="500" data-pod-chip><span class="i-play" aria-hidden="true"></span><span><span data-i18n="chip_at">Anhören ab</span> <span class="cc-t">8:20</span></span></button></div>
       <ol class="steps">
         <li data-k="rules.li2"><span class="lead-in">HTML ist die maßgebliche Quelle.</span> PDFs, Bilder und Videos sind Kopien davon, nie der einzige Ort, an dem ein Fakt steht.</li>
         <li data-k="rules.li3"><span class="lead-in">Ein Fakt, eine kanonische Seite.</span> Dort klar formuliert, überall sonst identisch.</li>
@@ -917,7 +893,7 @@ article p.all-link a{text-decoration:none}
         <li data-k="rules.li7"><span class="lead-in">Fangen Sie nicht mit llms.txt an.</span> Die Datei gehört auf Dokumentations- und API-Websites, wo Coding-Assistenten sie tatsächlich lesen. Auf einer Marketing-Website ist sie bestenfalls ein günstiges Experiment, und laut Google ignoriert die Google-Suche sie. Sorgen Sie zuerst für Crawlbarkeit.</li>
       </ol>
 
-      <div class="h2-row"><h2 data-k="try.h21" id="try">Testen Sie es noch diese Woche</h2><button class="ch-chip" type="button" data-pod-seek="681" data-pod-chip><span class="cc-ic" aria-hidden="true"></span><span><span class="cc-l" data-i18n="chip_at">Im Podcast</span> <span class="cc-t">11:21</span></span></button></div>
+      <div class="h2-row"><h2 data-k="try.h21" id="try">Testen Sie es noch diese Woche</h2><button class="ch-chip" type="button" data-pod-seek="681" data-pod-chip><span class="i-play" aria-hidden="true"></span><span><span data-i18n="chip_at">Anhören ab</span> <span class="cc-t">11:21</span></span></button></div>
       <p data-k="try.p2">Um zu sehen, wo Sie stehen, brauchen Sie keine Agentur. Drei Prüfungen dauern weniger als eine halbe Stunde:</p>
       <ol class="steps">
         <li data-k="try.li3"><span class="lead-in">Rufen Sie eine wichtige Seite so ab wie ein Crawler.</span> Kein Browser, kein JavaScript. Suchen Sie nach einem Satz, auf den es ankommt, etwa einem Produktnamen oder einer unterstützten Bemessungsnorm:
@@ -957,7 +933,7 @@ article p.all-link a{text-decoration:none}
       <p data-k="kit.p10">Zwei Dinge prüfe ich jedes Mal: <code>Disallow: /</code> unter <code>User-agent: *</code> gehört nur auf eine Staging-Umgebung, nie auf eine Live-Website, denn es sperrt alle Crawler auf einmal aus. Und jede Subdomain braucht ihre eigene Datei: <code>docs.example.com</code> übernimmt die Regeln Ihrer Hauptdomain nicht, und eine CDN- oder Firewall-Regel kann KI-Bots blockieren, ganz gleich, was in der robots.txt steht.</p>
 
 
-      <div class="h2-row"><h2 data-k="start.h21" id="start">Wo ich anfangen würde</h2><button class="ch-chip" type="button" data-pod-seek="754" data-pod-chip><span class="cc-ic" aria-hidden="true"></span><span><span class="cc-l" data-i18n="chip_at">Im Podcast</span> <span class="cc-t">12:34</span></span></button></div>
+      <div class="h2-row"><h2 data-k="start.h21" id="start">Wo ich anfangen würde</h2><button class="ch-chip" type="button" data-pod-seek="754" data-pod-chip><span class="i-play" aria-hidden="true"></span><span><span data-i18n="chip_at">Anhören ab</span> <span class="cc-t">12:34</span></span></button></div>
       <p data-k="start.p2">Beginnen Sie mit einer Produkt- oder Leistungsseite, die für Ihr Geschäft wichtig ist. Prüfen Sie, ob sie klar sagt, was Sie anbieten, welche Normen oder Zulassungen gelten und welche Märkte Sie bedienen. Prüfen Sie dann, ob diese Fakten im HTML der Seite zugänglich sind und mit Ihrer Dokumentation übereinstimmen. Damit haben Sie einen konkreten Ausgangspunkt, um den Rest der Website zu verbessern.</p>
       <p data-k="start.p3">Die meisten AEC-Unternehmen haben das Material längst: Produktseiten, Datenblätter, Projektreferenzen, Dokumentation. Softwarehersteller brauchen eine lesbare Seite für jede Funktion und jede unterstützte Norm. Bauproduktehersteller brauchen ihre Tragfähigkeiten, Feuerwiderstandsklassen und Zulassungen als Text, nicht nur in PDFs. Ingenieurbüros brauchen Projektseiten, die Tragsystem, Werkstoff, Norm und ihre eigene Rolle nennen, statt nur eine Fotogalerie zu zeigen. Nichts davon ist neuer Inhalt. Es ist der Inhalt, den Sie schon haben – nur lesbar gemacht.</p>
 
@@ -971,17 +947,17 @@ article p.all-link a{text-decoration:none}
         <div class="ep-top">
           <picture><source type="image/avif" srcset="/assets/podcast/cover-ep01-264.avif"><img class="ep-cover" src="/assets/podcast/cover-ep01-264.jpg" width="132" height="132" alt="" loading="lazy" decoding="async"></picture>
           <div class="ep-intro">
-            <div class="ep-k"><span data-i18n="pod_kicker">Insights-Podcast</span> · <span data-i18n="pod_episode">Folge</span> 1 · 14:08</div>
+            <div class="ep-k"><span data-i18n="pod_kicker">Insights-Podcast</span> · EP 01 · 14:08</div>
             <h2 class="ep-t" id="episode-h" data-i18n="pod_title">Hören Sie das Gespräch</h2>
             <p class="ep-d" data-i18n="pod_desc">Martin und Co-Moderatorin Sarah gehen diesen Artikel an einem Praxisfall durch, auf Englisch.</p>
             <div class="ep-acts">
-              <button class="ep-play" type="button" data-pod-toggle="card"><span class="ep-ic"><span class="i-play" aria-hidden="true"></span><span class="i-pause" aria-hidden="true"><i></i><i></i></span></span><span data-pod-label data-i18n="pod_play">Folge abspielen</span></button>
-              <a class="ep-all" href="/de/insights/podcast/" data-i18n="pod_all">Alle Folgen →</a>
+              <button class="pod-btn" type="button" data-pod-toggle="card"><span class="pod-btn-ic"><span class="i-play" aria-hidden="true"></span><span class="i-pause" aria-hidden="true"><i></i><i></i></span></span><span data-pod-label data-i18n="pod_play">Folge abspielen</span></button>
+              <a class="pod-btn2" href="/de/insights/podcast/" data-i18n="pod_all">Alle Folgen →</a>
             </div>
           </div>
         </div>
         <div class="ep-bar" aria-hidden="true"><div data-pod-progress></div></div>
-        <div class="ep-chs">
+        <div class="ep-chs" id="chapters">
           <h3 class="ep-h" data-i18n="pod_chapters">Kapitel</h3>
           <ol class="ep-ch" lang="en">
             <li><button type="button" data-pod-seek="0" data-pod-chapter="0"><span class="ts">0:00</span><span class="ct">Cold open: Sarah&#x27;s story</span><span class="dot" aria-hidden="true"></span></button></li>
@@ -996,8 +972,8 @@ article p.all-link a{text-decoration:none}
             <li><button type="button" data-pod-seek="754" data-pod-chapter="9"><span class="ts">12:34</span><span class="ct">Close</span><span class="dot" aria-hidden="true"></span></button></li>
           </ol>
         </div>
-        <div class="ep-tr">
-          <button class="ep-tr-h" type="button" aria-expanded="false" aria-controls="ep-tr-body" data-pod-transcript><span data-i18n="pod_transcript">Transkript (Englisch)</span><span class="ep-tr-s"><span data-i18n="pod_synced">Synchron zum Audio</span><svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span></button>
+        <div class="ep-tr" id="transcript">
+          <button class="ep-tr-h" type="button" aria-expanded="false" aria-controls="ep-tr-body" data-pod-transcript><span data-i18n="pod_transcript">Transkript</span><span class="ep-tr-s"><span data-i18n="pod_synced">Synchron zum Audio</span><svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span></button>
           <div class="ep-tr-body" id="ep-tr-body"><div class="ep-tr-in" lang="en">
               <button type="button" class="ep-line" data-pod-seek="0" data-pod-line="0"><span class="who who-guest">Sarah</span><span class="tx">So, a confession. A few weeks ago I opened ChatGPT and typed: &quot;Which structural engineering firms in Portland have real experience with mass timber?&quot;</span><span class="ts">0:00</span></button>
               <button type="button" class="ep-line" data-pod-seek="10" data-pod-line="1"><span class="who who-host">Martin</span><span class="tx">And?</span><span class="ts">0:10</span></button>
@@ -1174,9 +1150,9 @@ article p.all-link a{text-decoration:none}
 <div class="pod-mini" id="pod-mini" role="region" aria-label="Podcast-Player" data-i18n-attr="aria-label:mini_aria" aria-hidden="true">
   <picture><source type="image/avif" srcset="/assets/podcast/cover-ep01-96.avif"><img class="pm-cover" src="/assets/podcast/cover-ep01-96.jpg" width="40" height="40" alt="" loading="lazy" decoding="async"></picture>
   <div class="pm-txt"><div class="pm-st" data-pod-status></div><div class="pm-ti" data-pod-chapter-title lang="en"></div></div>
-  <span class="pm-time" data-pod-time>0:00</span>
-  <button class="pm-rate" type="button" data-pod-rate aria-label="Wiedergabegeschwindigkeit" data-i18n-attr="aria-label:speed">1×</button>
-  <button class="pm-play" type="button" data-pod-toggle aria-label="Folge abspielen" data-i18n-attr="aria-label:play_episode"><span class="i-play" aria-hidden="true"></span><span class="i-pause" aria-hidden="true"><i></i><i></i></span></button>
+  <span class="pod-time" data-pod-time>0:00</span>
+  <button class="pod-rate" type="button" data-pod-rate aria-label="Wiedergabegeschwindigkeit" data-i18n-attr="aria-label:speed">1×</button>
+  <button class="pod-round" type="button" data-pod-toggle aria-label="Folge abspielen" data-i18n-attr="aria-label:play_episode"><span class="i-play" aria-hidden="true"></span><span class="i-pause" aria-hidden="true"><i></i><i></i></span></button>
   <button class="pm-x" type="button" data-pod-close aria-label="Player schließen" data-i18n-attr="aria-label:close">×</button>
   <div class="pm-bar" aria-hidden="true"><div data-pod-progress></div></div>
 </div>

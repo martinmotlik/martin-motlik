@@ -15,11 +15,11 @@
   "mini_aria": "Přehrávač podcastu",
   "title": "Insights with Martin Motlík – podcast o AI v AEC",
   "play_latest": "Přehrát nejnovější díl",
-  "resume_latest": "Pokračovat v dílu",
   "notify_ok": "Přihlášeno ✓",
   "notify_sending": "Odesílám…",
   "notify_invalid": "Zadejte platnou e-mailovou adresu.",
-  "notify_failed": "Odeslání se nepovedlo. Zkuste to prosím znovu."
+  "notify_failed": "Odeslání se nepovedlo. Zkuste to prosím znovu.",
+  "seek": "Přetočit v podcastu"
  },
  "chrome": {
   "nav_references": "Reference",
@@ -41,8 +41,6 @@
   "ep_count_one": "díl",
   "ep_count_many": "dílů",
   "read_article": "Přečíst článek →",
-  "chapters_word": "kapitol",
-  "transcript_word": "Přepis",
   "how_title": "Jak podcast funguje",
   "how1_t": "Nejdřív článek",
   "how1_d": "Každý díl vychází z publikovaného článku Insights.",
@@ -57,7 +55,9 @@
   "get_new": "Nové díly e-mailem",
   "email_label": "E-mailová adresa",
   "notify_me": "Upozornit mě",
-  "notify_help": "Jeden e-mail ke každému novému dílu. Žádný newsletter, odhlásit se můžete kdykoli."
+  "notify_help": "Jeden e-mail ke každému novému dílu. Žádný newsletter, odhlásit se můžete kdykoli.",
+  "pod_chapters": "Kapitoly",
+  "pod_transcript": "Přepis"
  },
  "text": {
   "Oct 8, 2026": "8. října 2026",

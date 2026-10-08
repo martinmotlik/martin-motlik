@@ -262,12 +262,6 @@ img{display:block;max-width:100%}
 .dek{margin:18px 0 0;max-width:520px;font-size:17px;line-height:1.6;color:var(--t2);text-wrap:pretty}
 .lang-note{margin:10px 0 0;font-size:13px;color:var(--t3)}
 .acts{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-.btn-play{font:inherit;height:46px;padding:0 20px 0 6px;border-radius:999px;border:0;cursor:pointer;display:flex;align-items:center;gap:10px;background:var(--blue);color:#fff;font-size:14px;font-weight:600;white-space:nowrap;box-shadow:0 12px 28px -14px rgba(26,86,219,.85);transition:background .3s,transform .4s var(--ease)}
-.btn-play:hover{background:var(--blue-hi)}
-.btn-play:active{transform:scale(.97)}
-.bp-ic{width:34px;height:34px;flex:none;border-radius:50%;background:#fff;color:var(--blue);display:flex;align-items:center;justify-content:center}
-.btn-out{font:inherit;height:46px;padding:0 18px;display:flex;align-items:center;gap:8px;border-radius:999px;border:0;cursor:pointer;background:#fff;color:var(--ink);font-size:13px;font-weight:600;white-space:nowrap;box-shadow:0 1px 2px rgba(28,42,51,.08),inset 0 0 0 1px var(--border);transition:background .3s,color .3s}
-.btn-out:hover,.btn-out[aria-expanded="true"]{background:var(--tint);color:var(--blue)}
 /* E-mail opt-in, unfolded by "Get new episodes" */
 .notify{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .6s var(--ease),opacity .4s ease}
 .notify.is-open{grid-template-rows:1fr;opacity:1}
@@ -285,7 +279,7 @@ img{display:block;max-width:100%}
 /* ── Animated cover "O · Ripple" (InsightsLight), drawn on a 360 artboard and scaled by --k.
       Hover (fine pointers): tilt, pulses, rings, disc + portrait together, text parallax, tag. */
 .hero-art{flex:0 1 340px;display:flex;justify-content:center}
-.cv{--k:.9444;--mx:0;--my:0;position:relative;flex:none;width:calc(360px * var(--k));height:calc(360px * var(--k));padding:0;border:0;border-radius:20px;overflow:hidden;background:#E6EBFC;cursor:pointer;box-shadow:0 27px 54px -27px rgba(28,43,51,.45);transform:perspective(900px) rotateX(calc(var(--my) * -7deg)) rotateY(calc(var(--mx) * 9deg));transition:transform .6s var(--ease),box-shadow .6s var(--ease);will-change:transform;-webkit-tap-highlight-color:transparent}
+.cv{--k:.9444;--mx:0;--my:0;position:relative;flex:none;width:calc(360px * var(--k));height:calc(360px * var(--k));padding:0;border:0;border-radius:20px;overflow:hidden;background:#E6EBFC;cursor:pointer;box-shadow:0 1px 2px rgba(28,42,51,.06),0 8px 20px -12px rgba(28,42,51,.22);transform:perspective(900px) rotateX(calc(var(--my) * -7deg)) rotateY(calc(var(--mx) * 9deg));transition:transform .6s var(--ease),box-shadow .6s var(--ease);will-change:transform;-webkit-tap-highlight-color:transparent}
 .cv.on{transform:perspective(900px) rotateX(calc(var(--my) * -7deg)) rotateY(calc(var(--mx) * 9deg)) scale(1.025)}
 .cv-art{position:absolute;left:0;top:0;width:360px;height:360px;transform:scale(var(--k));transform-origin:0 0;text-align:left;font-family:Inter,system-ui,sans-serif;pointer-events:none}
 .cv-art>*{position:absolute}
@@ -326,32 +320,24 @@ img{display:block;max-width:100%}
 .eps-count{font-size:13px;color:var(--t3)}
 .cat{white-space:nowrap;padding:3px 9px;border-radius:999px;background:var(--tint);color:var(--blue);font-weight:600}
 /* Latest episode: image | text with its own player */
-.latest{margin-top:24px;border-radius:24px;background:#fff;overflow:hidden;display:flex;flex-wrap:wrap;transition:box-shadow .5s var(--ease)}
-.latest.is-started{box-shadow:0 0 0 2px var(--blue)}
+.latest{margin-top:24px;border:1px solid var(--border);border-radius:24px;background:#fff;overflow:hidden;display:flex;flex-wrap:wrap;transition:box-shadow .5s var(--ease)}
+.latest.is-started{border-color:var(--blue);box-shadow:0 0 0 1px var(--blue)}
 .latest-img{position:relative;flex:1 1 380px;min-height:280px;background:var(--tint)}
 .latest-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%}
 .latest-flag{position:absolute;left:16px;top:16px;padding:5px 11px;border-radius:999px;background:#fff;color:var(--blue);font-size:11px;line-height:1.4;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
 .latest-txt{flex:1 1 400px;min-width:0;padding:32px;display:flex;flex-direction:column;gap:14px}
-.latest-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:12px;color:var(--t3)}
+.latest-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:13px;color:var(--t2)}
 .latest h3{margin:0;font-size:26px;line-height:1.15;letter-spacing:-.025em;font-weight:700;color:var(--ink);text-wrap:balance}
 .latest-txt p{margin:0;font-size:14px;line-height:1.6;color:var(--t2);text-wrap:pretty}
 .latest-player{margin-top:4px;display:flex;align-items:center;gap:14px}
-.lp-play{flex:none;width:48px;height:48px;border-radius:50%;border:0;cursor:pointer;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;transition:background .3s,transform .4s var(--ease)}
-.lp-play:hover{background:var(--blue-hi);transform:scale(1.05)}
-.lp-play:active{transform:scale(.94)}
-.lp-play .i-play{border-width:8px 0 8px 13px;margin-left:4px}
-.lp-play .i-pause i{width:4px;height:15px;border-radius:2px}
-.wave{flex:1;min-width:0;height:30px;display:flex;align-items:center;gap:2px;cursor:pointer}
-.wave i{flex:1;min-width:1px;border-radius:1px;background:rgba(28,42,51,.13);transition:height .35s var(--ease),background .4s,transform .35s var(--ease)}
-.wave i.done{background:var(--blue)}
-.wave i.at{background:var(--blue-soft)}
-.lp-time{flex:none;font-size:12px;color:var(--t3);font-variant-numeric:tabular-nums;white-space:nowrap}
-.latest-ch{min-height:18px;font-size:12px;line-height:1.5;color:var(--t3)}
-.latest-foot{margin-top:auto;padding-top:8px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;font-size:13px;color:var(--t3)}
+.latest-player .pod-wave{height:46px}
+.latest-ch{min-height:20px;font-size:13px;line-height:1.5;color:var(--t2)}
+.latest-foot{margin-top:auto;padding-top:8px;display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;font-size:14px}
 .latest-foot a{font-weight:600}
+.latest-foot a.pod-btn2{margin-right:4px}
 /* Older episodes */
 .more-eps{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
-.more-ep{padding:16px;border-radius:20px;background:#fff;display:flex;flex-wrap:wrap;gap:20px;align-items:center;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.more-ep{padding:16px;border:1px solid var(--border);border-radius:16px;background:#fff;display:flex;flex-wrap:wrap;gap:20px;align-items:center;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
 .more-ep:hover{transform:translateY(-2px);box-shadow:0 20px 40px -26px rgba(28,42,51,.3)}
 .me-cover{width:72px;height:72px;flex:none;border-radius:6px}
 .me-txt{flex:1 1 300px;min-width:0}
@@ -359,12 +345,9 @@ img{display:block;max-width:100%}
 .me-meta b{color:var(--ink)}
 .more-ep h3{margin:6px 0 0;font-size:18px;line-height:1.25;letter-spacing:-.015em;font-weight:700;color:var(--ink)}
 .more-ep>a{font-size:13px;font-weight:600;white-space:nowrap}
-.ins a.me-play{flex:none;width:44px;height:44px;border-radius:50%;background:var(--surface);color:var(--ink);display:grid;place-items:center;transition:background .3s}
-.ins a.me-play:hover{background:var(--tint)}
-.me-play .i-play{border-width:7px 0 7px 12px}
 /* How it works */
 .how{list-style:none;margin:48px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px}
-.how li{padding:20px 22px;border-radius:18px;background:#fff;display:flex;gap:14px}
+.how li{padding:20px 22px;border:1px solid var(--border);border-radius:16px;background:#fff;display:flex;gap:14px}
 .how .n{flex:none;font-size:26px;line-height:1;font-weight:300;letter-spacing:-.04em;color:var(--blue)}
 .how h3{margin:0;font-size:15px;line-height:1.4;font-weight:700;color:var(--ink)}
 .how p{margin:4px 0 0;font-size:13px;line-height:1.55;color:var(--t2)}
@@ -394,8 +377,8 @@ img{display:block;max-width:100%}
   .latest-txt{padding:24px 20px}
   .latest h3{font-size:22px}
   .latest-player{gap:12px}
-  .wave{gap:1.5px}
-  .wave i:nth-child(2n){display:none}       /* 36 bars where 72 cannot fit */
+  .latest .pod-wave{gap:1.5px}
+  .latest .pod-wave i:nth-child(2n){display:none}   /* 36 bars where 72 cannot fit */
   .next{padding-top:48px;padding-bottom:64px}
   .cta-dark{padding:28px 24px}
   .cd-who{align-items:flex-start}
@@ -405,8 +388,8 @@ img{display:block;max-width:100%}
   /* The cover keeps only the tag change; nothing moves. */
   .cv,.cv.on,.cv.on .cv-g,.cv.on .cv-txt,.cv.on .cv-r1,.cv.on .cv-r2,.cv.on .cv-r3,.cv.on .cv-tag{transform:none}
   .cv.on .cv-pulse{animation:none}
-  .notify,.btn-play,.lp-play,.more-ep,.latest,.wave i{transition:none}
-  .btn-play:active,.lp-play:hover,.lp-play:active,.more-ep:hover{transform:none}
+  .notify,.more-ep,.latest{transition:none}
+  .more-ep:hover{transform:none}
 }
         /* With eight menu items, the full menu no longer fits next to the logo and
            the language switch below ~960 px, so tablets in portrait get the mobile
@@ -419,7 +402,7 @@ img{display:block;max-width:100%}
     </style>
 </head>
 <body>
-<script type="application/json" id="i18n-ui">{"menu_aria": "Menü öffnen", "crumbs_aria": "Brotkrümelnavigation", "play_episode": "Folge abspielen", "pause": "Pausieren", "resume": "Fortsetzen", "now_playing": "Läuft gerade", "paused": "Pausiert", "chapter_of": "Kapitel {n} von {total}", "starts_with": "{total} Kapitel · Beginnt mit: {title}", "speed": "Wiedergabegeschwindigkeit", "close": "Player schließen", "mini_aria": "Podcast-Player", "title": "Insights with Martin Motlík – Podcast über KI im AEC", "play_latest": "Neueste Folge abspielen", "resume_latest": "Weiter mit Folge", "notify_ok": "Angemeldet ✓", "notify_sending": "Wird gesendet…", "notify_invalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein.", "notify_failed": "Das hat nicht geklappt. Bitte versuchen Sie es erneut."}</script>
+<script type="application/json" id="i18n-ui">{"menu_aria": "Menü öffnen", "crumbs_aria": "Brotkrümelnavigation", "play_episode": "Folge abspielen", "pause": "Pausieren", "resume": "Fortsetzen", "now_playing": "Läuft gerade", "paused": "Pausiert", "chapter_of": "Kapitel {n} von {total}", "starts_with": "{total} Kapitel · Beginnt mit: {title}", "speed": "Wiedergabegeschwindigkeit", "close": "Player schließen", "mini_aria": "Podcast-Player", "title": "Insights with Martin Motlík – Podcast über KI im AEC", "play_latest": "Neueste Folge abspielen", "notify_ok": "Angemeldet ✓", "notify_sending": "Wird gesendet…", "notify_invalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein.", "notify_failed": "Das hat nicht geklappt. Bitte versuchen Sie es erneut.", "seek": "Im Podcast springen"}</script>
 
 <nav class="nav" id="main-nav">
   <div class="nav-inner">
@@ -474,7 +457,7 @@ img{display:block;max-width:100%}
         <p class="dek" data-i18n="dek">Gespräche über KI im AEC, Marketing für Ingenieursoftware und den Aufbau von Web-Ökosystemen, die Ingenieure wirklich nutzen. Jede Folge nimmt sich einen Insights-Artikel vor und geht ihn an einem Praxisfall durch.</p>
         <p class="lang-note" data-i18n="lang_note">Die Folgen sind auf Englisch.</p>
         <div class="acts">
-          <button class="btn-play" type="button" data-pod-toggle="latest"><span class="bp-ic"><span class="i-play" aria-hidden="true"></span><span class="i-pause" aria-hidden="true"><i></i><i></i></span></span><span data-pod-label data-i18n="play_latest">Neueste Folge abspielen</span></button>
+          <button class="pod-btn" type="button" data-pod-toggle="latest"><span class="pod-btn-ic"><span class="i-play" aria-hidden="true"></span><span class="i-pause" aria-hidden="true"><i></i><i></i></span></span><span data-pod-label data-i18n="play_latest">Neueste Folge abspielen</span></button>
 <!-- notify-btn:start · generated by tools/build-podcast.py (show.subscribe_endpoint) -->
 <!-- notify-btn:end -->
         </div>
@@ -518,12 +501,12 @@ img{display:block;max-width:100%}
           <h3 id="latest-h" lang="en">Be the source: getting AEC data ready for AI search</h3>
           <p>Sarah leitet das Marketing eines Tragwerksplanungsbüros in Portland. Ihr Büro steht bei Google auf Seite eins, doch ChatGPT nannte fünf andere. Martin nimmt ihre Situation auseinander, von Projektgalerien und PDFs bis zum Lastpfad eines Fakts.</p>
           <div class="latest-player">
-            <button class="lp-play" type="button" data-pod-toggle aria-label="Folge abspielen" data-i18n-attr="aria-label:play_episode"><span class="i-play" aria-hidden="true"></span><span class="i-pause" aria-hidden="true"><i></i><i></i></span></button>
-            <div class="wave" data-pod-wave aria-hidden="true"></div>
-            <span class="lp-time"><span data-pod-time>0:00</span> / 14:08</span>
+            <button class="pod-round is-lg" type="button" data-pod-toggle aria-label="Folge abspielen" data-i18n-attr="aria-label:play_episode"><span class="i-play" aria-hidden="true"></span><span class="i-pause" aria-hidden="true"><i></i><i></i></span></button>
+            <div class="pod-wave" data-pod-wave aria-label="Im Podcast springen" data-i18n-attr="aria-label:seek"></div>
+            <span class="pod-time"><span data-pod-time>0:00</span> / 14:08</span>
           </div>
           <div class="latest-ch" data-pod-chapter-line lang="en"></div>
-          <div class="latest-foot"><a href="/de/insights/aec-daten-fuer-ki-suche/#episode" data-i18n="read_article">Artikel lesen →</a><span>10 <span data-i18n="chapters_word">Kapitel</span> · <span data-i18n="transcript_word">Transkript</span></span></div>
+          <div class="latest-foot"><a class="pod-btn2" href="/de/insights/aec-daten-fuer-ki-suche/" data-i18n="read_article">Artikel lesen →</a><a href="/de/insights/aec-daten-fuer-ki-suche/#chapters" data-i18n="pod_chapters">Kapitel</a><a href="/de/insights/aec-daten-fuer-ki-suche/#transcript" data-i18n="pod_transcript">Transkript</a></div>
         </div>
       </article>
 <!-- episodes:end -->
@@ -551,9 +534,9 @@ img{display:block;max-width:100%}
 <div class="pod-mini" id="pod-mini" role="region" aria-label="Podcast-Player" data-i18n-attr="aria-label:mini_aria" aria-hidden="true">
   <picture><source type="image/avif" srcset="/assets/podcast/cover-ep01-96.avif"><img class="pm-cover" src="/assets/podcast/cover-ep01-96.jpg" width="40" height="40" alt="" loading="lazy" decoding="async"></picture>
   <div class="pm-txt"><div class="pm-st" data-pod-status></div><div class="pm-ti" data-pod-chapter-title lang="en"></div></div>
-  <span class="pm-time" data-pod-time>0:00</span>
-  <button class="pm-rate" type="button" data-pod-rate aria-label="Wiedergabegeschwindigkeit" data-i18n-attr="aria-label:speed">1×</button>
-  <button class="pm-play" type="button" data-pod-toggle aria-label="Folge abspielen" data-i18n-attr="aria-label:play_episode"><span class="i-play" aria-hidden="true"></span><span class="i-pause" aria-hidden="true"><i></i><i></i></span></button>
+  <span class="pod-time" data-pod-time>0:00</span>
+  <button class="pod-rate" type="button" data-pod-rate aria-label="Wiedergabegeschwindigkeit" data-i18n-attr="aria-label:speed">1×</button>
+  <button class="pod-round" type="button" data-pod-toggle aria-label="Folge abspielen" data-i18n-attr="aria-label:play_episode"><span class="i-play" aria-hidden="true"></span><span class="i-pause" aria-hidden="true"><i></i><i></i></span></button>
   <button class="pm-x" type="button" data-pod-close aria-label="Player schließen" data-i18n-attr="aria-label:close">×</button>
   <div class="pm-bar" aria-hidden="true"><div data-pod-progress></div></div>
 </div>

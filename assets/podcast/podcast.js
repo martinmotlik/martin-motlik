@@ -7,14 +7,14 @@
  *
  *   [data-pod-toggle]          play / pause; [data-pod-label] inside gets the state label
  *   [data-pod-seek="s"]        play from s seconds (chapters, chips, transcript lines)
- *   [data-pod-chip]            chapter chip next to an H2 (active while its chapter plays)
+ *   [data-pod-chip]            "Listen from m:ss" under an H2 (active while its chapter plays)
  *   [data-pod-chapter="i"]     chapter row (active / past)
  *   [data-pod-line="i"]        transcript line (active by playback time)
- *   [data-pod-wave="n"]        waveform of n bars (default 72), click to seek
+ *   [data-pod-wave="n"]        waveform of n bars (default 72): a slider, click or arrow keys
  *   [data-pod-time]            m:ss now        [data-pod-progress]  width = progress
  *   [data-pod-chapter-title]   current chapter [data-pod-chapter-line] "Chapter n of N · …"
  *   [data-pod-rate]            speed 1× → 1.25× → 1.5× → 2× → 0.75×
- *   [data-pod-transcript]      transcript accordion button
+ *   [data-pod-transcript]      transcript accordion button (opened by a link to #transcript)
  *   #pod-mini                  floating mini player
  *
  * The position is kept per episode in localStorage, so "Resume" works across
@@ -26,7 +26,6 @@
   var EP = JSON.parse(dataEl.textContent);
   var EN = {
     play_episode: 'Play episode', pause: 'Pause', resume: 'Resume', play_latest: 'Play latest episode',
-    resume_latest: 'Resume episode', chip_at: 'Discussed at', chip_playing: 'Playing',
     now_playing: 'Now playing', paused: 'Paused', chapter_of: 'Chapter {n} of {total}',
     starts_with: '{total} chapters · Starts with: {title}', rate: 'Playback speed'
   };
@@ -52,7 +51,9 @@
   try { saved = +localStorage.getItem(KEY) || 0; } catch (e) {}
   if (saved > 5 && saved < DUR - 5) { pending = saved; started = true; dismissed = true; }
   function remember() {
-    try { audio.currentTime > 5 && audio.currentTime < DUR - 5 ? localStorage.setItem(KEY, audio.currentTime.toFixed(1)) : localStorage.removeItem(KEY); } catch (e) {}
+    if (!started) return;                         // stop() clears it; nothing to keep before a play
+    var at = now();                               // a restored position waits in `pending` until played
+    try { at > 5 && at < DUR - 5 ? localStorage.setItem(KEY, at.toFixed(1)) : localStorage.removeItem(KEY); } catch (e) {}
   }
 
   function now() { return pending != null ? pending : (audio.currentTime || 0); }
@@ -90,9 +91,21 @@
       b.style.height = Math.round((0.28 + 0.72 * Math.abs(Math.sin(i * 1.7) * 0.6 + Math.sin(i * 0.43) * 0.4)) * 100) + '%';
       w.appendChild(b);
     }
+    w.setAttribute('role', 'slider');
+    w.tabIndex = 0;
+    w.setAttribute('aria-valuemin', 0);
+    w.setAttribute('aria-valuemax', DUR);
     w.addEventListener('click', function (e) {
       var r = w.getBoundingClientRect();
       seek(Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)) * DUR);
+    });
+    w.addEventListener('keydown', function (e) {
+      var step = { ArrowRight: 15, ArrowUp: 15, ArrowLeft: -15, ArrowDown: -15, PageUp: 60, PageDown: -60 }[e.key];
+      if (step) seek(now() + step, playing());
+      else if (e.key === 'Home') seek(0, playing());
+      else if (e.key === 'End') seek(DUR - 1, playing());
+      else return;
+      e.preventDefault();
     });
   });
 
@@ -105,7 +118,7 @@
       var l = b.querySelector('[data-pod-label]');
       if (l) {
         var latest = b.dataset.podToggle === 'latest';
-        l.textContent = on ? t('pause') : started && time > 0 ? (latest ? t('resume_latest') + ' ' + EP.number : resumeLabel) : (latest ? t('play_latest') : t('play_episode'));
+        l.textContent = on ? t('pause') : started && time > 0 ? resumeLabel : (latest ? t('play_latest') : t('play_episode'));
       }
       if (!l) b.setAttribute('aria-label', on ? t('pause') : t('play_episode'));
     });
@@ -122,16 +135,17 @@
       b.classList.toggle('is-past', started && i < ci);
     });
     $$('[data-pod-chip]').forEach(function (b) {
-      var s = +b.dataset.podSeek, active = started && EP.chapters[ci][0] === s;
-      b.classList.toggle('is-on', active);
-      var l = b.querySelector('.cc-l');
-      if (l) l.textContent = active && on ? t('chip_playing') + ' ·' : t('chip_at');
+      b.classList.toggle('is-on', started && EP.chapters[ci][0] === +b.dataset.podSeek);
     });
     var li = -1;
     if (started) EP.lines.forEach(function (s, k) { if (time >= s) li = k; });
     $$('[data-pod-line]').forEach(function (b) { b.classList.toggle('is-on', +b.dataset.podLine === li); });
     $$('[data-pod-wave]').forEach(function (w) {
       var pi = Math.floor(pct * w.children.length);
+      w.style.setProperty('--p', pct.toFixed(4));
+      w.classList.toggle('is-started', started);
+      w.setAttribute('aria-valuenow', Math.floor(time));
+      w.setAttribute('aria-valuetext', fmt(time) + ' / ' + fmt(DUR));
       [].forEach.call(w.children, function (b, i) {
         b.className = i < pi ? 'done' : (i === pi && started ? 'at' : '');
         b.style.transform = on && Math.abs(i - pi) < 3 ? 'scaleY(1.25)' : '';
@@ -165,12 +179,19 @@
       rateIdx = (rateIdx + 1) % RATES.length; audio.playbackRate = RATES[rateIdx]; render(); return;
     }
     if ((el = e.target.closest('[data-pod-close]'))) { stop(); return; }
-    if ((el = e.target.closest('[data-pod-transcript]'))) {
-      var body = document.getElementById(el.getAttribute('aria-controls')), open = el.getAttribute('aria-expanded') !== 'true';
-      el.setAttribute('aria-expanded', open); body.classList.toggle('is-open', open);
-      if ('inert' in body) body.inert = !open;
-    }
+    if ((el = e.target.closest('[data-pod-transcript]'))) transcript(el, el.getAttribute('aria-expanded') !== 'true');
   });
+  function transcript(btn, open) {
+    var body = document.getElementById(btn.getAttribute('aria-controls'));
+    btn.setAttribute('aria-expanded', open); body.classList.toggle('is-open', open);
+    if ('inert' in body) body.inert = !open;
+  }
+  // "Transcript" links from the podcast page land on #transcript: open it there.
+  function fromHash() {
+    var btn = location.hash === '#transcript' && document.querySelector('#transcript [data-pod-transcript]');
+    if (btn) transcript(btn, true);
+  }
+  window.addEventListener('hashchange', fromHash);
   $$('[data-pod-transcript]').forEach(function (b) {
     var body = document.getElementById(b.getAttribute('aria-controls'));
     if (body && 'inert' in body) body.inert = true;           // folded lines are not in the tab order
@@ -185,6 +206,8 @@
   var lastSave = 0;
   audio.addEventListener('timeupdate', function () { if (Date.now() - lastSave > 3000) { lastSave = Date.now(); remember(); } });
   window.addEventListener('pagehide', remember);
+
+  fromHash();
 
   window.Podcast = {
     audio: audio, episode: EP, toggle: toggle, play: play, pause: pause, seek: seek, stop: stop,

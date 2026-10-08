@@ -401,29 +401,10 @@ img{display:block;max-width:100%}
    The whole block stays hidden until the audio file reports its duration, so a
    visitor never sees a control that cannot play anything. */
 .vo-root[hidden]{display:none}
-.listen{font:inherit;font-size:13px;font-weight:700;height:44px;padding:0 18px 0 8px;border-radius:999px;cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:10px;border:0;background:var(--blue);color:#fff;box-shadow:none;transition:background .2s ease}
-.listen:hover{background:#1646B8}
-.listen:active{background:#123A99}
-
 .vo{margin-top:20px;max-width:600px;padding:8px 16px 8px 8px;border-radius:999px;background:#fff;box-shadow:0 1px 2px rgba(28,43,51,.06),0 14px 36px -16px rgba(28,43,51,.22);display:flex;align-items:center;gap:14px}
-.vo-play{width:40px;height:40px;flex:none;border-radius:50%;border:0;cursor:pointer;background:var(--blue);display:grid;place-items:center;transition:background .3s ease,transform .4s var(--ease)}
-.vo-play:hover{background:var(--blue-hi);transform:scale(1.05)}
-.vo-play:active{transform:scale(.94)}
-.vo-play{color:#fff}
-.vo-play .i-play{border-width:7px 0 7px 11px}
-.vo-play .i-pause i{height:13px;border-radius:2px}
-.wave{flex:1 1 120px;min-width:60px;height:22px;display:flex;align-items:center;gap:2px;cursor:pointer;border:0;background:none;padding:0}
-.wave i{flex:1;min-width:1px;border-radius:1px;background:rgba(28,43,51,.12);transition:height .35s var(--ease),background .4s ease}
-.wave i.done{background:var(--blue)}
-.wave i.at{background:#7DA2F5}
-.vo-time{flex:none;min-width:40px;text-align:right;white-space:nowrap;font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:11px;color:var(--m2)}
-.vo-rate{flex:none;font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:11px;height:26px;padding:0 8px;border-radius:999px;border:0;background:transparent;color:var(--m2);cursor:pointer}
-.vo-rate:hover{background:var(--s2);color:var(--ink)}
-.vo-x{flex:none;font:inherit;width:26px;height:26px;border-radius:50%;border:0;background:transparent;color:var(--m2);cursor:pointer;font-size:15px;line-height:1}
-.vo-x:hover{color:var(--ink)}
 
 @media (prefers-reduced-motion:reduce){
-  .listen,.vo-play,.wave i{transition:none}
+  .listen{transition:none}
 }
 
 /* ── BODY ── */
@@ -586,16 +567,12 @@ article a.cl-btn2{padding:0 18px;background:rgba(255,255,255,.12);color:#fff}
 @media (max-width:620px){.closing{padding:var(--sp-5)}article p.cl-t{font-size:24px}}
 
 /* 09 · Listen button turns into the player; one control, not two */
-.listen .pl{width:28px;height:28px;flex:none;border-radius:50%;background:#fff;display:grid;place-items:center}
-.listen .pl i{width:0;height:0;border-left:9px solid var(--blue);border-top:6px solid transparent;border-bottom:6px solid transparent;margin-left:2px}
 .vo-root{display:contents}
 .byline .vo{flex:1 1 320px;min-width:0;height:48px;margin:0;max-width:none;padding:0 14px 0 5px;border-radius:999px;background:#fff;border:1px solid var(--line);box-shadow:0 1px 2px rgba(28,43,51,.04);display:flex;align-items:center;gap:12px}
 .byline [hidden]{display:none}
-.byline .vo .vo-play{width:36px;height:36px}
-.byline .wave{flex:1;min-width:40px;height:44px;padding:12px 0}
-.vo-time{font-family:inherit;font-variant-numeric:tabular-nums}
-.byline .vo-rate{font-family:inherit;font-variant-numeric:tabular-nums;height:auto;padding:3px 8px;background:var(--s2);color:var(--ink)}
-.byline .wave i{transform-origin:50% 50%}
+.byline .vo .pod-round{width:36px;height:36px}
+.byline .pod-wave{min-width:40px;padding:12px 0}
+.byline .pod-time{min-width:44px;text-align:right}
 
 /* ── 10 · ARTICLE TEMPLATE ─────────────────────────────────────────────────
    Contents that fold up on one-column layouts, the share panel, scrolling
@@ -687,8 +664,7 @@ article p.all-link a{text-decoration:none}
 }
 
 /* Touch targets: small controls get a 44 × 44 px hit area around them. */
-.vo-rate,.vo-x,.byline .vo-play{position:relative}
-.vo-rate::after,.vo-x::after,.byline .vo-play::after,.cb-copy::after{content:"";position:absolute;left:50%;top:50%;width:44px;height:44px;min-width:100%;transform:translate(-50%,-50%)}
+.byline .pod-round::after,.cb-copy::after{content:"";position:absolute;left:50%;top:50%;width:44px;height:44px;min-width:100%;transform:translate(-50%,-50%)}
 
 @media (prefers-reduced-motion:reduce){
   .chev,.sh-btn,.sh-item,.cb-copy,.listen{transition:none}
@@ -708,7 +684,7 @@ article p.all-link a{text-decoration:none}
     </style>
 </head>
 <body>
-<script type="application/json" id="i18n-ui">{"title": "Buďte zdrojem: jak připravit data AEC firem pro vyhledávání s AI | Martin Motlík", "article_title": "Buďte zdrojem: jak připravit data AEC firem pro vyhledávání s AI", "role": "Digitální stratég pro AEC & Web Lead", "narrating": "Podcast Insights (EN)", "listen": "Podcast (EN)", "pause": "Pozastavit", "seek": "Přetočit v podcastu", "speed": "Rychlost přehrávání", "close": "Zavřít přehrávač", "player": "Přehrávač podcastu", "copy": "Kopírovat", "copied": "Zkopírováno ✓", "copy_failed": "Kopírování selhalo", "copy_robots": "Kopírovat robots.txt", "link_copied": "Odkaz zkopírován ✓", "link_copied_aria": "Odkaz zkopírován", "copy_link": "Kopírovat odkaz", "share_on": "Sdílet na síti {net} (otevře se v novém okně)", "share_email": "Sdílet e-mailem (otevře se e-mailová aplikace)", "toc_aria": "Na této stránce", "crumbs_aria": "Drobečková navigace", "menu_aria": "Otevřít menu", "cover_alt": "Martin Motlík pracuje venku na notebooku, obklopený ikonami asistentů AI a vyhledávačů", "code_copied": "Kód zkopírován", "play_episode": "Přehrát díl", "resume": "Pokračovat", "chip_at": "V podcastu", "chip_playing": "Hraje", "now_playing": "Přehrává se", "paused": "Pozastaveno", "chapter_of": "Kapitola {n} z {total}", "mini_aria": "Přehrávač podcastu"}</script>
+<script type="application/json" id="i18n-ui">{"title": "Buďte zdrojem: jak připravit data AEC firem pro vyhledávání s AI | Martin Motlík", "article_title": "Buďte zdrojem: jak připravit data AEC firem pro vyhledávání s AI", "role": "Digitální stratég pro AEC & Web Lead", "narrating": "Podcast Insights (EN)", "listen": "Podcast (EN)", "pause": "Pozastavit", "seek": "Přetočit v podcastu", "speed": "Rychlost přehrávání", "close": "Zavřít přehrávač", "player": "Přehrávač podcastu", "copy": "Kopírovat", "copied": "Zkopírováno ✓", "copy_failed": "Kopírování selhalo", "copy_robots": "Kopírovat robots.txt", "link_copied": "Odkaz zkopírován ✓", "link_copied_aria": "Odkaz zkopírován", "copy_link": "Kopírovat odkaz", "share_on": "Sdílet na síti {net} (otevře se v novém okně)", "share_email": "Sdílet e-mailem (otevře se e-mailová aplikace)", "toc_aria": "Na této stránce", "crumbs_aria": "Drobečková navigace", "menu_aria": "Otevřít menu", "cover_alt": "Martin Motlík pracuje venku na notebooku, obklopený ikonami asistentů AI a vyhledávačů", "code_copied": "Kód zkopírován", "play_episode": "Přehrát díl", "resume": "Pokračovat", "now_playing": "Přehrává se", "paused": "Pozastaveno", "chapter_of": "Kapitola {n} z {total}", "mini_aria": "Přehrávač podcastu"}</script>
 
 <nav class="nav" id="main-nav">
   <div class="nav-inner">
@@ -777,15 +753,15 @@ article p.all-link a{text-decoration:none}
                reports a duration. The Listen button and the player occupy the same
                slot: opening the player replaces the button. -->
           <div class="vo-root" id="vo" hidden>
-            <button class="listen" id="vo-listen" type="button">
-              <span class="pl" aria-hidden="true"><i></i></span>
+            <button class="listen pod-btn" id="vo-listen" type="button">
+              <span class="pod-btn-ic" aria-hidden="true"><span class="i-play"></span></span>
               <span id="vo-listen-label" data-ui="listen">Podcast (EN)</span>
             </button>
             <div class="vo" id="vo-player" role="group" aria-label="Přehrávač podcastu" data-i18n-attr="aria-label:player" hidden>
-              <button class="vo-play" id="vo-play" type="button" data-pod-toggle aria-label="Přehrát díl" data-i18n-attr="aria-label:play_episode"><span class="i-play" aria-hidden="true"></span><span class="i-pause" aria-hidden="true"><i></i><i></i></span></button>
-              <button class="wave" id="vo-wave" type="button" aria-label="Přetočit v podcastu" data-i18n-attr="aria-label:seek" data-pod-wave="48"></button>
-              <span class="vo-time" id="vo-time">0:00</span>
-              <button class="vo-rate" id="vo-rate" type="button" aria-label="Rychlost přehrávání" data-i18n-attr="aria-label:speed" data-pod-rate>1&times;</button>
+              <button class="pod-round" id="vo-play" type="button" data-pod-toggle aria-label="Přehrát díl" data-i18n-attr="aria-label:play_episode"><span class="i-play" aria-hidden="true"></span><span class="i-pause" aria-hidden="true"><i></i><i></i></span></button>
+              <div class="pod-wave" id="vo-wave" aria-label="Přetočit v podcastu" data-i18n-attr="aria-label:seek" data-pod-wave="48"></div>
+              <span class="pod-time" id="vo-time">0:00</span>
+              <button class="pod-rate" id="vo-rate" type="button" aria-label="Rychlost přehrávání" data-i18n-attr="aria-label:speed" data-pod-rate>1&times;</button>
             </div>
           </div>
 
@@ -869,7 +845,7 @@ article p.all-link a{text-decoration:none}
 
       <p data-k="intro.p1" class="lead">Otevřete dnes Google a zadejte skutečný inženýrský dotaz – jeden z těch dlouhých, s návrhovou normou a materiálem. Ještě než uvidíte jediný odkaz, Google vám už napsal odpověď a pod ni připojil několik zdrojů. Tento krátký seznam je novou první stránkou výsledků vyhledávání. Pro AEC firmu se vyplatí ověřit, které zdroje se zobrazují u dotazů, jež kladou její zákazníci.</p>
 
-      <div class="h2-row"><h2 data-k="ai-search.h21" id="ai-search">Google už je vyhledávač s AI</h2><button class="ch-chip" type="button" data-pod-seek="66" data-pod-chip><span class="cc-ic" aria-hidden="true"></span><span><span class="cc-l" data-i18n="chip_at">V podcastu</span> <span class="cc-t">1:06</span></span></button></div>
+      <div class="h2-row"><h2 data-k="ai-search.h21" id="ai-search">Google už je vyhledávač s AI</h2><button class="ch-chip" type="button" data-pod-seek="66" data-pod-chip><span class="i-play" aria-hidden="true"></span><span><span data-i18n="chip_at">Poslechnout od</span> <span class="cc-t">1:06</span></span></button></div>
       <p data-k="ai-search.p2">Když lidé slyší „vyhledávání s AI“, vybaví se jim ChatGPT. Tím ale přehlížejí mnohem větší posun. Na konferenci Google I/O v květnu 2026 Google oznámil, že Přehledy od AI (AI Overviews) překročily 2,5 miliardy uživatelů měsíčně a konverzační Režim AI (AI Mode) přes miliardu, a že obě funkce sloučí do jednoho prostředí pro vyhledávání s AI.<a class="cite" id="cite-1" href="#src-1" aria-label="Zdroj 1">1</a> Vaši zákazníci nemusejí přecházet k chatbotu. Vyhledávač, který používají dvacet let, se jím stal sám.</p>
       <p data-k="ai-search.p3">Inženýrské dotazy jsou přesně tím typem vyhledávání, na který dnes místo seznamu odkazů přichází odpověď: jsou dlouhé, konkrétní a plné okrajových podmínek. Který software umí navrhnout CLT strop podle NDS? Která kotva je schválená do betonu s trhlinami? Inženýr si přečte odpověď a možná jeden z jejích zdrojů. Přidejte ChatGPT, Claude, Gemini a Perplexity a vzorec je všude stejný.</p>
       <p data-k="ai-search.p4">Dvacet let byla dobrá produktová stránka s ostrými fotografiemi cílovou rovinkou. Dnes je to surovina. Jestli ji inženýr vůbec uvidí, závisí na tom, zda ji systém AI dokáže přečíst, důvěřovat jí a citovat ji. Vedle pozic ve vyhledávání proto dnes sleduji i to, zda je stránka v odpovědích AI citována jako zdroj.</p>
@@ -879,7 +855,7 @@ article p.all-link a{text-decoration:none}
         <span></span>
       </blockquote>
 
-      <div class="h2-row"><h2 data-k="localization.h21" id="localization">Co mě lokalizace naučila o viditelnosti v AI</h2><button class="ch-chip" type="button" data-pod-seek="249" data-pod-chip><span class="cc-ic" aria-hidden="true"></span><span><span class="cc-l" data-i18n="chip_at">V podcastu</span> <span class="cc-t">4:09</span></span></button></div>
+      <div class="h2-row"><h2 data-k="localization.h21" id="localization">Co mě lokalizace naučila o viditelnosti v AI</h2><button class="ch-chip" type="button" data-pod-seek="249" data-pod-chip><span class="i-play" aria-hidden="true"></span><span><span data-i18n="chip_at">Poslechnout od</span> <span class="cc-t">4:09</span></span></button></div>
       <p data-k="localization.p2">Od roku 2021 pracuji na webech a obsahu pro inženýrský software a přizpůsobuji je inženýrům ve Spojených státech, Kanadě a Evropě. Velkou část této práce tvoří lokalizace. Ta mě naučila to nejdůležitější pro vyhledávání s AI dávno předtím, než vůbec vzniklo.</p>
       <p data-k="localization.p3">Přeložit stránku je snadné. Lokalizovat ji znamená zeptat se, jak tutéž věc hledá inženýr na jiném trhu: s jakou návrhovou normou pracuje, jaké pojmy používá, jaký pravopis očekává. Přeložená stránka může být naprosto správná, a přesto zůstat neviditelná pro lidi, pro které vznikla – protože odpovídá na otázku, kterou si nikdy nepoloží.</p>
 
@@ -892,7 +868,7 @@ article p.all-link a{text-decoration:none}
       <h3 data-k="localization.h39">Jedna stránka, více regionů</h3>
       <p data-k="localization.p10">Lokalizace podle IP adresy je součástí mé každodenní práce. Jedna stránka, jedna URL, a návštěvníci z Francie, Itálie, Německa nebo Spojených států vidí obsah přizpůsobený svému trhu, například místní kontakty, jazyk nebo návrhové normy, se kterými pracují. Pro lidi to funguje velmi dobře. U strojů je potřeba pozornost, protože crawler vidí jen variantu, kterou server vrátí jeho vlastní IP adrese. Googlebot ve výchozím nastavení prochází weby <a href="https://developers.google.com/search/docs/specialty/international/locale-adaptive-pages" target="_blank" rel="noopener">z amerických IP adres</a> a crawlery AI působí rovněž převážně z USA.<a class="cite" id="cite-3" href="#src-3" aria-label="Zdroj 3">3</a> Pokud s tím nepočítáte, francouzská, italská a německá verze vašeho obsahu se do odpovědi AI nemusí dostat vůbec. Řešením je nechat lokalizaci podle IP utvářet zážitek návštěvníka a zároveň dát každé regionální verzi důležitého faktu vlastní URL, propojenou pomocí hreflang. Návštěvníci dostanou správnou variantu automaticky a crawlery přesto najdou všechny.</p>
 
-      <div class="h2-row"><h2 data-k="load-path.h21" id="load-path">Jak se fakt dostane do odpovědi AI</h2><button class="ch-chip" type="button" data-pod-seek="429" data-pod-chip><span class="cc-ic" aria-hidden="true"></span><span><span class="cc-l" data-i18n="chip_at">V podcastu</span> <span class="cc-t">7:09</span></span></button></div>
+      <div class="h2-row"><h2 data-k="load-path.h21" id="load-path">Jak se fakt dostane do odpovědi AI</h2><button class="ch-chip" type="button" data-pod-seek="429" data-pod-chip><span class="i-play" aria-hidden="true"></span><span><span data-i18n="chip_at">Poslechnout od</span> <span class="cc-t">7:09</span></span></button></div>
       <p data-k="load-path.p2">Lokalizace změnila i to, jak obsah hodnotím. Systém AI neprochází váš web tak jako člověk. Vytahuje z něj fakta a rozhoduje, kterým tvrzením důvěřuje natolik, aby je zopakoval. Sto vágních stránek prohraje s jedinou, která přesně uvádí, jaké návrhové normy podporujete, v jakých jednotkách a pro jaké trhy. Když proto posuzuji web, nepočítám stránky. Sleduji jednotlivá fakta, například podporovanou návrhovou normu, únosnost nebo adresu pobočky, a ověřuji, zda každé z nich přežije cestu ze serveru až do odpovědi AI. Představuji si to jako cestu zatížení. Každý prvek na ní musí fakt přenést:</p>
       <div class="lp">
         <div data-k="load-path.div3" class="lp-end"><span class="lp-ico" aria-hidden="true">&lt;/&gt;</span>Vaše stránka</div>
@@ -907,7 +883,7 @@ article p.all-link a{text-decoration:none}
       </div>
       <p data-k="load-path.p10">Jako každá cesta zatížení selže v nejslabším prvku – a první dva selhávají častěji, než by člověk čekal. Podle dat z procházení webu od <a href="https://vercel.com/blog/the-rise-of-the-ai-crawler" target="_blank" rel="noopener">Vercelu a MERJ</a> hlavní crawlery AI JavaScript vůbec nespouštějí.<a class="cite" id="cite-2" href="#src-2" aria-label="Zdroj 2">2</a> Google ano, a proto může stránka dobře rankovat v Googlu a objevovat se v Přehledech od AI, a přitom být pro ChatGPT, Claude a Perplexity prázdná. Obsah, který se zobrazí až po spuštění skriptu – v konfigurátoru, webové aplikaci nebo interaktivní tabulce –, pro ně jednoduše neexistuje. Text v PDF a obrázcích se k nim dostává v lepším případě nespolehlivě.</p>
 
-      <div class="h2-row"><h2 data-k="rules.h21" id="rules">Moje pravidla pro data připravená na AI</h2><button class="ch-chip" type="button" data-pod-seek="500" data-pod-chip><span class="cc-ic" aria-hidden="true"></span><span><span class="cc-l" data-i18n="chip_at">V podcastu</span> <span class="cc-t">8:20</span></span></button></div>
+      <div class="h2-row"><h2 data-k="rules.h21" id="rules">Moje pravidla pro data připravená na AI</h2><button class="ch-chip" type="button" data-pod-seek="500" data-pod-chip><span class="i-play" aria-hidden="true"></span><span><span data-i18n="chip_at">Poslechnout od</span> <span class="cc-t">8:20</span></span></button></div>
       <ol class="steps">
         <li data-k="rules.li2"><span class="lead-in">HTML je jediný zdroj pravdy.</span> PDF, obrázky a videa jsou jeho kopie, nikdy jediné místo, kde fakt existuje.</li>
         <li data-k="rules.li3"><span class="lead-in">Jeden fakt, jedna kanonická stránka.</span> Tam ho uveďte jasně a všude jinde stejně.</li>
@@ -917,7 +893,7 @@ article p.all-link a{text-decoration:none}
         <li data-k="rules.li7"><span class="lead-in">Nezačínejte souborem llms.txt.</span> Patří na weby s dokumentací a API, kde ho asistenti pro programování skutečně čtou. Na marketingovém webu je to v nejlepším případě levný experiment a podle Googlu ho jeho vyhledávání ignoruje. Nejdřív zajistěte, aby web šlo procházet.</li>
       </ol>
 
-      <div class="h2-row"><h2 data-k="try.h21" id="try">Vyzkoušejte ještě tento týden</h2><button class="ch-chip" type="button" data-pod-seek="681" data-pod-chip><span class="cc-ic" aria-hidden="true"></span><span><span class="cc-l" data-i18n="chip_at">V podcastu</span> <span class="cc-t">11:21</span></span></button></div>
+      <div class="h2-row"><h2 data-k="try.h21" id="try">Vyzkoušejte ještě tento týden</h2><button class="ch-chip" type="button" data-pod-seek="681" data-pod-chip><span class="i-play" aria-hidden="true"></span><span><span data-i18n="chip_at">Poslechnout od</span> <span class="cc-t">11:21</span></span></button></div>
       <p data-k="try.p2">Abyste zjistili, kde stojíte, nepotřebujete agenturu. Tři kontroly vám zaberou méně než půl hodiny:</p>
       <ol class="steps">
         <li data-k="try.li3"><span class="lead-in">Stáhněte si klíčovou stránku tak, jak to dělá crawler.</span> Bez prohlížeče, bez JavaScriptu. Vyhledejte větu, na které záleží, například název produktu nebo podporovanou návrhovou normu:
@@ -957,7 +933,7 @@ article p.all-link a{text-decoration:none}
       <p data-k="kit.p10">Dvě věci kontroluji pokaždé: <code>Disallow: /</code> pod <code>User-agent: *</code> patří jen na testovací (staging) prostředí, nikdy na ostrý web, protože zavře dveře všem crawlerům najednou. A každá subdoména potřebuje vlastní soubor: <code>docs.example.com</code> nepřebírá pravidla vaší hlavní domény a pravidlo v CDN nebo firewallu může roboty AI zablokovat bez ohledu na to, co říká robots.txt.</p>
 
 
-      <div class="h2-row"><h2 data-k="start.h21" id="start">Kde bych začal</h2><button class="ch-chip" type="button" data-pod-seek="754" data-pod-chip><span class="cc-ic" aria-hidden="true"></span><span><span class="cc-l" data-i18n="chip_at">V podcastu</span> <span class="cc-t">12:34</span></span></button></div>
+      <div class="h2-row"><h2 data-k="start.h21" id="start">Kde bych začal</h2><button class="ch-chip" type="button" data-pod-seek="754" data-pod-chip><span class="i-play" aria-hidden="true"></span><span><span data-i18n="chip_at">Poslechnout od</span> <span class="cc-t">12:34</span></span></button></div>
       <p data-k="start.p2">Začněte jednou produktovou stránkou nebo stránkou služby, na které vaší firmě záleží. Ověřte, zda jasně uvádí, co nabízíte, jaké normy nebo schválení platí a pro jaké trhy je nabídka určena. Pak zkontrolujte, zda jsou tato fakta dostupná v HTML stránky a zda odpovídají vaší dokumentaci. Tím získáte konkrétní výchozí bod pro zlepšení zbytku webu.</p>
       <p data-k="start.p3">Většina AEC firem už potřebné podklady má: produktové stránky, technické listy, reference projektů, dokumentaci. Dodavatelé softwaru potřebují čitelnou stránku pro každou funkci a každou podporovanou normu. Výrobci stavebních produktů potřebují mít únosnosti, požární odolnosti a schválení v textu, ne jen v PDF. Projekční kanceláře potřebují stránky projektů, které místo fotogalerie uvádějí konstrukční systém, materiál, normu a svou roli. Nic z toho není nový obsah. Je to obsah, který už máte – jen čitelný.</p>
 
@@ -971,17 +947,17 @@ article p.all-link a{text-decoration:none}
         <div class="ep-top">
           <picture><source type="image/avif" srcset="/assets/podcast/cover-ep01-264.avif"><img class="ep-cover" src="/assets/podcast/cover-ep01-264.jpg" width="132" height="132" alt="" loading="lazy" decoding="async"></picture>
           <div class="ep-intro">
-            <div class="ep-k"><span data-i18n="pod_kicker">Podcast Insights</span> · <span data-i18n="pod_episode">Díl</span> 1 · 14:08</div>
+            <div class="ep-k"><span data-i18n="pod_kicker">Podcast Insights</span> · EP 01 · 14:08</div>
             <h2 class="ep-t" id="episode-h" data-i18n="pod_title">Poslechněte si rozhovor</h2>
             <p class="ep-d" data-i18n="pod_desc">Martin a spolumoderátorka Sarah rozebírají tento článek na praktickém případu, v angličtině.</p>
             <div class="ep-acts">
-              <button class="ep-play" type="button" data-pod-toggle="card"><span class="ep-ic"><span class="i-play" aria-hidden="true"></span><span class="i-pause" aria-hidden="true"><i></i><i></i></span></span><span data-pod-label data-i18n="pod_play">Přehrát díl</span></button>
-              <a class="ep-all" href="/cs/insights/podcast/" data-i18n="pod_all">Všechny díly →</a>
+              <button class="pod-btn" type="button" data-pod-toggle="card"><span class="pod-btn-ic"><span class="i-play" aria-hidden="true"></span><span class="i-pause" aria-hidden="true"><i></i><i></i></span></span><span data-pod-label data-i18n="pod_play">Přehrát díl</span></button>
+              <a class="pod-btn2" href="/cs/insights/podcast/" data-i18n="pod_all">Všechny díly →</a>
             </div>
           </div>
         </div>
         <div class="ep-bar" aria-hidden="true"><div data-pod-progress></div></div>
-        <div class="ep-chs">
+        <div class="ep-chs" id="chapters">
           <h3 class="ep-h" data-i18n="pod_chapters">Kapitoly</h3>
           <ol class="ep-ch" lang="en">
             <li><button type="button" data-pod-seek="0" data-pod-chapter="0"><span class="ts">0:00</span><span class="ct">Cold open: Sarah&#x27;s story</span><span class="dot" aria-hidden="true"></span></button></li>
@@ -996,8 +972,8 @@ article p.all-link a{text-decoration:none}
             <li><button type="button" data-pod-seek="754" data-pod-chapter="9"><span class="ts">12:34</span><span class="ct">Close</span><span class="dot" aria-hidden="true"></span></button></li>
           </ol>
         </div>
-        <div class="ep-tr">
-          <button class="ep-tr-h" type="button" aria-expanded="false" aria-controls="ep-tr-body" data-pod-transcript><span data-i18n="pod_transcript">Přepis (anglicky)</span><span class="ep-tr-s"><span data-i18n="pod_synced">Synchronizováno se zvukem</span><svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span></button>
+        <div class="ep-tr" id="transcript">
+          <button class="ep-tr-h" type="button" aria-expanded="false" aria-controls="ep-tr-body" data-pod-transcript><span data-i18n="pod_transcript">Přepis</span><span class="ep-tr-s"><span data-i18n="pod_synced">Synchronizováno se zvukem</span><svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span></button>
           <div class="ep-tr-body" id="ep-tr-body"><div class="ep-tr-in" lang="en">
               <button type="button" class="ep-line" data-pod-seek="0" data-pod-line="0"><span class="who who-guest">Sarah</span><span class="tx">So, a confession. A few weeks ago I opened ChatGPT and typed: &quot;Which structural engineering firms in Portland have real experience with mass timber?&quot;</span><span class="ts">0:00</span></button>
               <button type="button" class="ep-line" data-pod-seek="10" data-pod-line="1"><span class="who who-host">Martin</span><span class="tx">And?</span><span class="ts">0:10</span></button>
@@ -1174,9 +1150,9 @@ article p.all-link a{text-decoration:none}
 <div class="pod-mini" id="pod-mini" role="region" aria-label="Přehrávač podcastu" data-i18n-attr="aria-label:mini_aria" aria-hidden="true">
   <picture><source type="image/avif" srcset="/assets/podcast/cover-ep01-96.avif"><img class="pm-cover" src="/assets/podcast/cover-ep01-96.jpg" width="40" height="40" alt="" loading="lazy" decoding="async"></picture>
   <div class="pm-txt"><div class="pm-st" data-pod-status></div><div class="pm-ti" data-pod-chapter-title lang="en"></div></div>
-  <span class="pm-time" data-pod-time>0:00</span>
-  <button class="pm-rate" type="button" data-pod-rate aria-label="Rychlost přehrávání" data-i18n-attr="aria-label:speed">1×</button>
-  <button class="pm-play" type="button" data-pod-toggle aria-label="Přehrát díl" data-i18n-attr="aria-label:play_episode"><span class="i-play" aria-hidden="true"></span><span class="i-pause" aria-hidden="true"><i></i><i></i></span></button>
+  <span class="pod-time" data-pod-time>0:00</span>
+  <button class="pod-rate" type="button" data-pod-rate aria-label="Rychlost přehrávání" data-i18n-attr="aria-label:speed">1×</button>
+  <button class="pod-round" type="button" data-pod-toggle aria-label="Přehrát díl" data-i18n-attr="aria-label:play_episode"><span class="i-play" aria-hidden="true"></span><span class="i-pause" aria-hidden="true"><i></i><i></i></span></button>
   <button class="pm-x" type="button" data-pod-close aria-label="Zavřít přehrávač" data-i18n-attr="aria-label:close">×</button>
   <div class="pm-bar" aria-hidden="true"><div data-pod-progress></div></div>
 </div>
