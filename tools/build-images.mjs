@@ -213,6 +213,61 @@ for (const rel of [
   CROPS[rel] = { slug: `${slugFor(rel)}-thumb`, ratio: THUMB_RATIO, widths: THUMB_WIDTHS };
 }
 
+/**
+ * Round avatars (byline, author card, podcast CTA, the Insights list). A
+ * portrait crop in a circle put the head too high and cut it off, so these
+ * are square crops framed for a circle: the head centred, the eyes at about
+ * 43 % of the height, ~8 % room above the hair, shoulders below. The source
+ * is a cut-out with a transparent background; the space around it (also the
+ * padding where the frame extends past the photo) is filled with the tint the
+ * podcast design uses behind portraits. Box sizes 32-64 px, up to 3x.
+ * Frame = the square in source pixels: x, y of its top-left corner, side.
+ */
+const AVATARS = {
+  'portrait/martin-portrait-white.webp': {
+    slug: 'avatar', frame: { x: -183, y: -57, side: 1900 }, background: '#E6EDFD', widths: [96, 160, 256],
+  },
+};
+
+async function buildAvatars(manifest) {
+  for (const [rel, cfg] of Object.entries(AVATARS)) {
+    const abs = path.join(SRC, rel);
+    if (!existsSync(abs)) {
+      console.warn(`  ! chybí originál pro avatar: ${rel}`);
+      continue;
+    }
+    const { width, height } = await sharp(abs).metadata();
+    const { x, y, side } = cfg.frame;
+    const pad = {
+      left: Math.max(0, -x), top: Math.max(0, -y),
+      right: Math.max(0, x + side - width), bottom: Math.max(0, y + side - height),
+    };
+    // Extend first (transparent), then cut the square: two passes, because
+    // within one pipeline sharp extracts before it extends.
+    const extended = await sharp(abs, { limitInputPixels: 500e6 })
+      .extend({ ...pad, background: { r: 0, g: 0, b: 0, alpha: 0 } })
+      .png()
+      .toBuffer();
+    const square = await sharp(extended, { limitInputPixels: 500e6 })
+      .extract({ left: x + pad.left, top: y + pad.top, width: side, height: side })
+      .flatten({ background: cfg.background })
+      .png()
+      .toBuffer();
+    const entry = { slug: cfg.slug, source: rel, roles: ['avatar'], aspect: 1, widths: [] };
+    for (const w of cfg.widths) {
+      const pipeline = sharp(square).resize(w, w, { kernel: 'lanczos3' }).sharpen({ sigma: 0.5 }).withMetadata({ icc: 'srgb' });
+      const jpgPath = path.join(OUT, `${cfg.slug}-${w}.jpg`);
+      const avifPath = path.join(OUT, `${cfg.slug}-${w}.avif`);
+      if (FORCE || !existsSync(jpgPath)) await pipeline.clone().jpeg(JPEG).toFile(jpgPath);
+      if (FORCE || !existsSync(avifPath)) await pipeline.clone().avif(AVIF).toFile(avifPath);
+      const [js, as] = await Promise.all([stat(jpgPath), stat(avifPath)]);
+      entry.widths.push({ w, h: w, jpg: js.size, avif: as.size, bpp: +((js.size * 8) / (w * w)).toFixed(2) });
+    }
+    manifest[cfg.slug] = entry;
+    console.log(`${rel} (avatar) … ${entry.widths.map((v) => v.w).join(', ')} px`);
+  }
+}
+
 async function buildCrops(manifest) {
   for (const [rel, cfg] of Object.entries(CROPS)) {
     const { slug, ratio, widths: cropWidths } = cfg;
@@ -302,6 +357,7 @@ async function main() {
   }
 
   await buildCrops(manifest);
+  await buildAvatars(manifest);
   await buildOgImage();
   await writeFile(MANIFEST, JSON.stringify(manifest, null, 2) + '\n');
 

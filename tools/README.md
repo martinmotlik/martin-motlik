@@ -70,6 +70,17 @@ Current crops, each matching its box:
 The lightbox deliberately keeps the **uncropped** images — it shows the whole
 frame, not the card's crop.
 
+### Round avatars
+
+The portrait in circles (article byline and author card, the Insights list,
+the podcast page) is `avatar-96/160/256`, built by `AVATARS` in
+`build-images.mjs` from the cut-out `Sources/originals/portrait/martin-portrait-white.webp`
+(transparent background). It is a square framed for a circle — head centred,
+eyes at about 43 % of the height, room above the hair — on the light blue
+`#E6EDFD`. Never put the 3:4 `portrait-card` into a circle: the crop puts the
+head at the top edge. To reframe, change `frame` (a square in source pixels)
+and run `npm run images:force`.
+
 **Check for this whenever you add an image**: load the page and compare the
 file's real pixel size against `box × devicePixelRatio`. Anything above ~1.0
 means the browser is inventing pixels and the image needs a crop, not a bigger

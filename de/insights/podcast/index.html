@@ -358,7 +358,7 @@ img{display:block;max-width:100%}
 .cta-dark::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 90% at 100% 0%,rgba(26,86,219,.4),transparent 70%),radial-gradient(45% 80% at 0% 100%,rgba(88,72,150,.42),transparent 70%)}
 .cd-who{position:relative;display:flex;align-items:center;gap:18px}
 .cd-ph{width:56px;height:56px;flex:none;border-radius:50%;overflow:hidden;background:var(--tint);box-shadow:0 0 0 3px rgba(255,255,255,.14)}
-.cd-ph img{width:66px;max-width:none;height:auto;margin:-4px 0 0 -5px}
+.cd-ph img{width:100%;height:100%;object-fit:cover}
 .cd-k{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#C7CCD2}
 .cd-t{margin:6px 0 0;font-size:24px;line-height:1.2;font-weight:700;letter-spacing:-.02em}
 .cd-d{margin:4px 0 0;font-size:14px;line-height:1.5;color:rgba(255,255,255,.75)}
@@ -522,7 +522,7 @@ img{display:block;max-width:100%}
   <section class="wrap next" aria-labelledby="next-h">
     <div class="cta-dark">
       <div class="cd-who">
-        <span class="cd-ph"><picture><source type="image/avif" srcset="/assets/podcast/martin-portrait-420.avif"><img src="/assets/podcast/martin-portrait-420.png" width="420" height="560" alt="" loading="lazy" decoding="async"></picture></span>
+        <span class="cd-ph"><picture><source type="image/avif" sizes="56px" srcset="/assets/img/avatar-96.avif 96w, /assets/img/avatar-160.avif 160w, /assets/img/avatar-256.avif 256w"><img src="/assets/img/avatar-96.jpg" sizes="56px" srcset="/assets/img/avatar-96.jpg 96w, /assets/img/avatar-160.jpg 160w, /assets/img/avatar-256.jpg 256w" alt="" width="256" height="256" loading="lazy" decoding="async"></picture></span>
         <div><div class="cd-k" data-i18n="cta_k">Nächster Schritt</div><h2 class="cd-t" id="next-h" data-i18n="cta_t">Eine Frage für eine Folge?</h2><p class="cd-d" data-i18n="cta_d">Schicken Sie mir die Frage, die Ihre Kunden immer wieder stellen.</p></div>
       </div>
       <a class="cd-btn" href="https://www.linkedin.com/in/martin-motl%C3%ADk-3b1b47233" target="_blank" rel="noopener" data-i18n="cta_btn">Schreiben Sie mir auf LinkedIn →</a>
