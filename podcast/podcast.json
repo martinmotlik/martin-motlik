@@ -1,6 +1,8 @@
 {
  "_about": "Source of truth for the podcast. tools/build-podcast.py turns it into podcast/feed.xml, the chapter files, the episode list on /insights/podcast/ and the podcast section of each article. The feed URL must never change once the show is listed in Apple Podcasts and Spotify.",
  "show": {
+  "_feed_public": "false = the podcast is only on the website: no feed.xml, no RSS links. true = feed.xml is published for Apple Podcasts, Spotify & co. Rebuild after changing it.",
+  "feed_public": false,
   "title": "Insights by Martin Motlík",
   "author": "Martin Motlík",
   "owner": {"name": "Martin Motlík", "email": "motlik.martin@gmail.com"},

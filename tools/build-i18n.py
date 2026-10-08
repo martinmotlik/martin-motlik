@@ -528,12 +528,9 @@ def main():
     spec = importlib.util.spec_from_file_location('build_podcast', os.path.join(ROOT, 'tools', 'build-podcast.py'))
     podcast = importlib.util.module_from_spec(spec); spec.loader.exec_module(podcast)
     pod = podcast.build()
-    pod_stale = [f for f, c in pod.items() if not os.path.exists(f) or open(f, encoding='utf-8').read() != c]
+    pod_stale = podcast.stale_files(pod)
     if '--check' not in sys.argv:
-        for f in pod_stale:
-            os.makedirs(os.path.dirname(f), exist_ok=True)
-            open(f, 'w', encoding='utf-8').write(pod[f])
-            print('wrote', os.path.relpath(f, ROOT))
+        podcast.write(pod, pod_stale)
     files = build()
     files[os.path.join(ROOT, 'sitemap.xml')] = sitemap()
     if '--check' in sys.argv:
