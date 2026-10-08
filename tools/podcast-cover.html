@@ -4,69 +4,102 @@
 <meta charset="UTF-8">
 <meta name="robots" content="noindex">
 <title>Podcast cover generator</title>
-<!-- Draws the cover of "Insights by Martin Motlík" (3000 × 3000 px, Apple
-     Podcasts accepts 1400–3000). Open it in a browser and use "Download";
-     the result goes to assets/podcast/cover-3000.jpg. Inter comes from
-     Google Fonts, as on the site, so the cover matches the site's type. -->
+<!-- Draws the podcast cover, design "O · Ripple", tone InsightsLight (handoff:
+     design_handoff_insights_podcast/PodcastCover.dc.html), on a 360 × 360
+     artboard scaled to the export size. Used for the files platforms and
+     social previews need (3000 px PNG master, JPG renditions); the animated
+     cover on /insights/podcast/ is the same design in HTML/CSS.
+     Open it in a browser; the buttons download the images. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=block" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=block" rel="stylesheet">
 <style>
-  body{margin:0;padding:24px;background:#f4f6f9;font:14px Inter,system-ui,sans-serif;color:#1c2b33}
-  canvas{width:600px;height:600px;display:block;border-radius:12px;box-shadow:0 1px 2px rgba(0,0,0,.08)}
-  .row{display:flex;gap:24px;align-items:flex-start}
-  .small canvas{width:120px;height:120px}
-  .tiny canvas{width:56px;height:56px;border-radius:6px}
-  a{display:inline-block;margin-top:16px;color:#1a56db;font-weight:600}
+  body{margin:0;padding:24px;background:#f5f6fa;font:14px Inter,system-ui,sans-serif;color:#1c2a33}
+  .row{display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start}
+  canvas{display:block;width:360px;height:360px;border-radius:22px;box-shadow:0 1px 2px rgba(28,42,51,.06),0 18px 44px -22px rgba(28,42,51,.3)}
+  .small canvas{width:72px;height:72px;border-radius:6px}
+  button{font:inherit;font-weight:600;margin:12px 8px 0 0;padding:8px 14px;border-radius:999px;border:0;background:#1a56db;color:#fff;cursor:pointer}
 </style>
 </head>
 <body>
 <div class="row">
-  <canvas id="cover" width="3000" height="3000"></canvas>
-  <div>
-    <p>As the apps show it:</p>
-    <div class="small"><canvas id="s" width="3000" height="3000"></canvas></div>
-    <div class="tiny" style="margin-top:12px"><canvas id="t" width="3000" height="3000"></canvas></div>
-    <a id="dl" download="cover-3000.jpg" href="#">Download JPG</a>
-  </div>
+  <div><canvas id="show" width="1080" height="1080"></canvas><button data-tag="PODCAST">Download PODCAST (3000 PNG)</button></div>
+  <div><canvas id="ep" width="1080" height="1080"></canvas><button data-tag="EP 01">Download EP 01 (3000 PNG)</button></div>
+  <div class="small"><p>At app size:</p><canvas id="s1" width="216" height="216"></canvas></div>
 </div>
 <script>
-const LOGO = ["M76.3592 57.857C75.4265 57.6937 74.717 57.1169 74.4236 56.2697C74.1135 55.3753 74.4325 54.4439 75.1177 53.76L100.357 28.5696L106.163 22.819C106.749 22.2385 107.518 21.8876 108.351 22.0458C109.412 22.2474 110.272 23.2579 110.273 24.4024L110.284 53.3836C110.036 55.8334 108.092 57.8366 105.589 57.8378L76.3579 57.8557L76.3592 57.857Z", "M55.7679 56.6561C55.3584 57.3999 54.6387 57.8401 53.8081 57.8401L24.8525 57.8439C22.1667 57.8439 20.0269 55.7208 20.0257 53.021L20.0078 24.8589C20.0078 24.3256 20.0563 23.9033 20.2451 23.4554C20.5322 22.7766 21.1077 22.2714 21.715 22.0991C22.4882 21.8809 23.3494 22.0162 23.9083 22.5725L26.8888 25.5415L37.5364 36.1291L55.389 53.9511C56.0984 54.6592 56.2349 55.8101 55.7679 56.6573V56.6561Z", "M81.9803 89.5551L77.6052 94.0131L72.5704 99.1296C71.921 99.7905 71.0329 100.038 70.1079 99.6961C69.4317 99.4447 68.7031 98.6702 68.7031 97.7605V68.6849C68.7031 66.6332 70.6731 64.4782 72.7542 64.4795L101.492 64.4973C102.35 64.4973 103.057 65.2718 103.31 65.8728C103.654 66.6919 103.501 67.6514 102.884 68.283L99.6377 71.6055L87.366 84.0776L81.9803 89.5551Z", "M75.0723 104.606C75.2968 103.972 75.6018 103.617 76.0228 103.191L91.9641 87.0534L97.522 81.4304L106.326 72.5896C106.984 71.9274 107.856 71.6263 108.81 71.9848C109.414 72.2119 110.276 72.9736 110.276 73.8553L110.265 103.667C110.265 105.591 108.492 107.416 106.552 107.416H77.0487C75.6069 107.416 74.641 105.825 75.0723 104.606Z", "M55.1655 106.234C54.7789 106.922 54.0121 107.436 53.1828 107.435L23.8354 107.424C22.326 107.424 21.0182 106.404 20.4313 105.133C20.2182 104.67 20.0166 104.24 20.0166 103.721L20 74.1515C20 73.2175 20.5461 72.3984 21.2734 72.0603C22.1104 71.6724 23.1222 71.7872 23.792 72.4596L31.4552 80.1687L36.2118 84.9572L46.608 95.4096L54.7522 103.652C55.436 104.344 55.6504 105.368 55.1643 106.233L55.1655 106.234Z", "M54.5289 95.8494L49.9484 91.2025L37.276 78.3426L28.5462 69.5094C28.0384 68.9952 27.5497 68.5754 27.1605 67.9847C26.7076 67.2969 26.6221 66.4689 27.0202 65.6829C27.3111 65.11 27.958 64.4874 28.7937 64.4874L57.7723 64.4746C59.8942 64.7719 61.5184 66.5288 61.669 68.6737L61.6511 97.7875C61.6511 98.7075 60.8856 99.4832 60.2234 99.7116C59.269 100.041 58.4269 99.7499 57.7736 99.0953L54.5289 95.8481V95.8494Z"];
-const S = 3000, M = 300;                      // size, outer margin
-function draw(ctx){
-  // Background: the logo's navy with the soft glows of the Insights hero
-  ctx.fillStyle = '#0A1628'; ctx.fillRect(0, 0, S, S);
-  const glow = (x, y, r, c) => { const g = ctx.createRadialGradient(x, y, 0, x, y, r); g.addColorStop(0, c); g.addColorStop(1, 'rgba(10,22,40,0)'); ctx.fillStyle = g; ctx.fillRect(0, 0, S, S); };
-  glow(2600, 350, 2000, 'rgba(26,86,219,0.55)');
-  glow(250, 2850, 1700, 'rgba(168,85,247,0.22)');
-  glow(1900, 3100, 1500, 'rgba(16,185,129,0.12)');
+const A = 360;                                     // design artboard
+const INK = '#1C2A33', TEXT2 = '#4B5563', ACCENT = '#1A56DB';
+const load = src => new Promise((ok, err) => { const i = new Image(); i.onload = () => ok(i); i.onerror = err; i.src = src; });
 
-  // Logo mark (the white shapes of the site logo), top left
-  const k = 440 / 90;                          // the shapes span ~20–110 of a 130 box
-  ctx.save(); ctx.translate(M - 20 * k, M - 22 * k); ctx.scale(k, k); ctx.fillStyle = '#FFFFFF';
-  LOGO.forEach(d => ctx.fill(new Path2D(d))); ctx.restore();
-
-  // "PODCAST" pill, top right
-  ctx.font = '700 118px Inter'; ctx.letterSpacing = '14px';
-  const label = 'PODCAST', w = ctx.measureText(label).width, ph = 230, pw = w + 2 * 110;
-  const px = S - M - pw, py = M + (440 - ph) / 2;
-  ctx.fillStyle = '#1A56DB'; ctx.beginPath(); ctx.roundRect(px, py, pw, ph, ph / 2); ctx.fill();
-  ctx.fillStyle = '#FFFFFF'; ctx.textBaseline = 'middle'; ctx.fillText(label, px + 110, py + ph / 2 + 6);
-
-  // Title block, bottom left
-  ctx.textBaseline = 'alphabetic';
-  ctx.fillStyle = '#1A56DB'; ctx.fillRect(M, 1780, 300, 30);
-  ctx.font = '800 600px Inter'; ctx.letterSpacing = '-20px'; ctx.fillStyle = '#FFFFFF';
-  ctx.fillText('Insights', M - 22, 2330);
-  ctx.font = '600 205px Inter'; ctx.letterSpacing = '-3px'; ctx.fillStyle = 'rgba(255,255,255,0.80)';
-  ctx.fillText('by Martin Motlík', M, 2640);
+// CSS linear-gradient(<deg>) on a box, as a canvas gradient
+function cssLinear(ctx, deg, x, y, w, h, stops) {
+  const r = deg * Math.PI / 180, dx = Math.sin(r), dy = -Math.cos(r);
+  const len = Math.abs(w * dx) + Math.abs(h * dy), cx = x + w / 2, cy = y + h / 2;
+  const g = ctx.createLinearGradient(cx - dx * len / 2, cy - dy * len / 2, cx + dx * len / 2, cy + dy * len / 2);
+  stops.forEach(([o, c]) => g.addColorStop(o, c));
+  return g;
 }
-document.fonts.load('800 600px Inter').then(() => Promise.all(['600 205px Inter', '700 118px Inter'].map(f => document.fonts.load(f)))).then(() => {
-  ['cover', 's', 't'].forEach(id => draw(document.getElementById(id).getContext('2d')));
-  const c = document.getElementById('cover');
-  document.getElementById('dl').href = c.toDataURL('image/jpeg', 0.92);
+
+function draw(canvas, tag, img) {
+  const ctx = canvas.getContext('2d'), k = canvas.width / A;
+  ctx.save(); ctx.scale(k, k);
+  // Background: radial-gradient(60% 55% at 0% 0%, #FBF7FF, transparent 70%), linear-gradient(165deg, #FFF, #E6EBFC)
+  ctx.fillStyle = cssLinear(ctx, 165, 0, 0, A, A, [[0, '#FFFFFF'], [1, '#E6EBFC']]); ctx.fillRect(0, 0, A, A);
+  ctx.save(); const rx = .6 * A, ry = .55 * A; ctx.scale(1, ry / rx);
+  const rg = ctx.createRadialGradient(0, 0, 0, 0, 0, rx); rg.addColorStop(0, 'rgba(251,247,255,1)'); rg.addColorStop(.7, 'rgba(251,247,255,0)');
+  ctx.fillStyle = rg; ctx.fillRect(0, 0, A, A * rx / ry); ctx.restore();
+  // Rings around the disc (centre 250, 262)
+  [[189.5, 1, .14], [159.5, 1, .26], [129.25, 1.5, .45]].forEach(([r, w, a]) => {
+    ctx.beginPath(); ctx.arc(250, 262, r, 0, Math.PI * 2); ctx.lineWidth = w; ctx.strokeStyle = `rgba(26,86,219,${a})`; ctx.stroke();
+  });
+  // Disc
+  ctx.beginPath(); ctx.arc(250, 262, 100, 0, Math.PI * 2);
+  ctx.fillStyle = cssLinear(ctx, 160, 150, 162, 200, 200, [[0, '#4A82EC'], [.58, '#1A56DB'], [1, '#1E429F']]); ctx.fill();
+  // Portrait, 210 × 280 box at (145, 92), "contain, centre top"; pop-out mask:
+  // inside the disc, plus everything above the disc's centre line
+  const s = Math.min(210 / img.width, 280 / img.height), w = img.width * s, h = img.height * s;
+  ctx.save(); ctx.beginPath(); ctx.rect(145, 92, 210, 170); ctx.arc(250, 262, 100, 0, Math.PI * 2); ctx.clip();
+  ctx.drawImage(img, 145 + (210 - w) / 2, 92, w, h); ctx.restore();
+  // Logo 30 × 29 at (24, 24)
+  ctx.drawImage(LOGO, 24, 24, 30, 29);
+  // Title block at (24, 76)
+  ctx.fillStyle = INK; ctx.font = '700 42px Inter'; ctx.letterSpacing = '-2.1px'; ctx.textBaseline = 'alphabetic';
+  ctx.fillText('Insights', 24, 111.3);
+  ctx.fillStyle = TEXT2; ctx.font = '500 15px Inter'; ctx.letterSpacing = '0px';
+  ctx.fillText('with Martin Motlík', 24, 138.4);
+  // Tag, bottom left (24, bottom 26): 11/700/.1em, padding 5/10, pill
+  ctx.font = '700 11px Inter'; ctx.letterSpacing = '1.1px';
+  const tw = ctx.measureText(tag).width, th = 23.3, ty = A - 26 - th;
+  ctx.fillStyle = ACCENT; ctx.beginPath(); ctx.roundRect(24, ty, tw + 20, th, th / 2); ctx.fill();
+  ctx.fillStyle = '#FFFFFF'; ctx.textBaseline = 'middle'; ctx.fillText(tag, 34, ty + th / 2 + .5);
+  ctx.restore();
+}
+
+let LOGO, PORTRAIT;
+async function render(tag, size) {
+  const c = document.createElement('canvas'); c.width = c.height = size; draw(c, tag, PORTRAIT); return c;
+}
+// Exports: as a download, or (dev server only) straight to a folder
+window.exportCover = async (tag, size, type = 'image/png', quality, saveAs) => {
+  const c = await render(tag, size);
+  const blob = await new Promise(r => c.toBlob(r, type, quality));
+  if (saveAs) { const r = await fetch('/__save/' + encodeURIComponent(saveAs), { method: 'POST', body: blob }); return r.text(); }
+  return blob;
+};
+(async () => {
+  await Promise.all(['700 42px Inter', '500 15px Inter', '700 11px Inter'].map(f => document.fonts.load(f)));
+  [LOGO, PORTRAIT] = await Promise.all([load('/assets/podcast/mm-logo-dark.svg'), load('/assets/podcast/martin-portrait-1000.avif')]);
+  draw(document.getElementById('show'), 'PODCAST', PORTRAIT);
+  draw(document.getElementById('ep'), 'EP 01', PORTRAIT);
+  draw(document.getElementById('s1'), 'EP 01', PORTRAIT);
+  document.querySelectorAll('button[data-tag]').forEach(b => b.onclick = async () => {
+    const blob = await exportCover(b.dataset.tag, 3000);
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+    a.download = b.dataset.tag === 'PODCAST' ? 'cover-3000.png' : 'cover-' + b.dataset.tag.toLowerCase().replace(' ', '') + '-3000.png'; a.click();
+  });
   document.body.dataset.ready = '1';
-});
+})();
 </script>
 </body>
 </html>

@@ -44,8 +44,8 @@ Practical AI integration for AEC marketing and operations teams. Deliverables in
 
 ## Podcast
 
-- [Insights by Martin Motlík](https://martinmotlik.com/insights/podcast/): a podcast in English that works through each Insights article with a practical case. Episodes are published on this website, one per article.
-- [Episode 1: Be the source: getting AEC data ready for AI search](https://martinmotlik.com/insights/ai-visibility-for-aec/#podcast): 14-minute conversation between Martin Motlík and co-host Sarah about a structural engineering firm in Portland that ranks well on Google yet is missing from AI answers, and what to change on its website. Chapters and a full transcript are on the article page; captions: https://martinmotlik.com/assets/podcast/ep001-be-the-source.vtt
+- [Insights with Martin Motlík](https://martinmotlik.com/insights/podcast/): a podcast in English that works through each Insights article with a practical case. Episodes are published on this website, one per article; Martin's voice is an AI clone of his own voice and the co-host Sarah is fictional and AI-voiced, scripted from the article and reviewed by Martin.
+- [Episode 1: Be the source: getting AEC data ready for AI search](https://martinmotlik.com/insights/ai-visibility-for-aec/#episode): 14-minute conversation between Martin Motlík and co-host Sarah about a structural engineering firm in Portland that ranks well on Google yet is missing from AI answers, and what to change on its website. Chapters and a full transcript are on the article page; captions: https://martinmotlik.com/assets/podcast/ep001-be-the-source.vtt
 
 ## Services Page
 

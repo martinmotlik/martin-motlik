@@ -408,9 +408,10 @@ def build_article(lang):
 
     s = translate_body(s, data, lang, path)
 
-    # Strings for scripts (player state, copy feedback); </ cannot end the block.
+    # Strings for scripts (player state, copy feedback), first in <body> so that
+    # assets/podcast/podcast.js finds them too; </ cannot end the block.
     blob = json.dumps(ui, ensure_ascii=False).replace('</', '<\\/')
-    s = sub_once(s, r'\n<script>\n// — Language ', f'\n<script type="application/json" id="i18n-ui">{blob}</script>\n<script>\n// — Language ')
+    s = sub_once(s, r'(<body[^>]*>)', lambda m: m.group(1) + f'\n<script type="application/json" id="i18n-ui">{blob}</script>')
     return s
 
 

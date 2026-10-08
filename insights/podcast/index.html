@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
     <!-- ── Title & Description ── -->
-    <title>Insights by Martin Motlík — Podcast on AI in AEC</title>
+    <title>Insights with Martin Motlík — Podcast on AI in AEC</title>
     <meta name="description" content="Podcast by Martin Motlík on AI in AEC, engineering-software marketing and web ecosystems. Each episode works through one Insights article with a practical case.">
     <meta name="author" content="Martin Motlík">
 
@@ -31,27 +31,28 @@
     <meta property="og:locale" content="en_US">
     <meta property="og:locale:alternate" content="cs_CZ">
     <meta property="og:locale:alternate" content="de_DE">
-    <meta property="og:title" content="Insights by Martin Motlík — Podcast">
+    <meta property="og:title" content="Insights with Martin Motlík — Podcast">
     <meta property="og:description" content="Podcast by Martin Motlík on AI in AEC, engineering-software marketing and web ecosystems. Each episode works through one Insights article with a practical case.">
     <meta property="og:url" content="https://martinmotlik.com/insights/podcast/">
     <meta property="og:image" content="https://martinmotlik.com/assets/podcast/cover-1200.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="1200">
-    <meta property="og:image:alt" content="Cover of the podcast Insights by Martin Motlík">
+    <meta property="og:image:alt" content="Cover of the podcast Insights with Martin Motlík">
 
     <!-- ── Twitter Card ── -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@martinmotlik">
     <meta name="twitter:creator" content="@martinmotlik">
-    <meta name="twitter:title" content="Insights by Martin Motlík — Podcast">
+    <meta name="twitter:title" content="Insights with Martin Motlík — Podcast">
     <meta name="twitter:description" content="Podcast by Martin Motlík on AI in AEC, engineering-software marketing and web ecosystems. Each episode works through one Insights article with a practical case.">
     <meta name="twitter:image" content="https://martinmotlik.com/assets/podcast/cover-1200.jpg">
-    <meta name="twitter:image:alt" content="Cover of the podcast Insights by Martin Motlík">
+    <meta name="twitter:image:alt" content="Cover of the podcast Insights with Martin Motlík">
 
     <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/podcast/podcast.css">
 
     <!-- ── Schema.org JSON-LD (the series and its episodes: tools/build-podcast.py) ── -->
     <script type="application/ld+json">
@@ -61,7 +62,7 @@
         {
           "@type": "PodcastSeries",
           "@id": "https://martinmotlik.com/insights/podcast/#series",
-          "name": "Insights by Martin Motlík",
+          "name": "Insights with Martin Motlík",
           "description": "Conversations about AI in AEC, engineering-software marketing and building web ecosystems engineers actually use. Each episode takes one Insights article from martinmotlik.com and works through it with a practical case. No hype, just implementation.",
           "url": "https://martinmotlik.com/insights/podcast/",
           "image": "https://martinmotlik.com/assets/podcast/cover-3000.jpg",
@@ -95,16 +96,17 @@
         },
         {
           "@type": "PodcastEpisode",
-          "@id": "https://martinmotlik.com/insights/ai-visibility-for-aec/#podcast",
-          "url": "https://martinmotlik.com/insights/ai-visibility-for-aec/#podcast",
+          "@id": "https://martinmotlik.com/insights/ai-visibility-for-aec/#episode",
+          "url": "https://martinmotlik.com/insights/ai-visibility-for-aec/#episode",
           "name": "Be the source: getting AEC data ready for AI search",
           "episodeNumber": 1,
           "datePublished": "2026-10-08",
           "description": "Sarah runs marketing at a structural engineering firm in Portland. Her firm ranks on page one, yet when she asked ChatGPT which local firms have real mass-timber experience, it named five others. Martin takes her situation apart: why page one is no longer the finish line, how project galleries and PDFs hide the facts engineers search for, what localizing a timber page for U.S. and Canadian design codes taught him, and how a fact travels the “load path” into an AI answer. Martin's voice is an AI clone of his own voice; Sarah is a fictional co-host voiced by AI. Produced with ElevenLabs.",
           "inLanguage": "en-US",
+          "image": "https://martinmotlik.com/assets/podcast/cover-ep01-3000.jpg",
           "associatedMedia": {
             "@type": "AudioObject",
-            "name": "Insights by Martin Motlík — Episode 1: Be the source: getting AEC data ready for AI search",
+            "name": "Insights with Martin Motlík — Episode 1: Be the source: getting AEC data ready for AI search",
             "contentUrl": "https://martinmotlik.com/assets/podcast/ep001-be-the-source.mp3",
             "encodingFormat": "audio/mpeg",
             "duration": "PT14M8S",
@@ -113,7 +115,7 @@
           "partOfSeries": {
             "@type": "PodcastSeries",
             "@id": "https://martinmotlik.com/insights/podcast/#series",
-            "name": "Insights by Martin Motlík",
+            "name": "Insights with Martin Motlík",
             "url": "https://martinmotlik.com/insights/podcast/"
           },
           "author": {
@@ -228,123 +230,183 @@
             .footer-info { font-size: 11px; line-height: 1.8; }
             .footer-sep { display: none; }
         }
-        /* ── INSIGHTS (light) ─────────────────────────────────────────────────────
-   Palette from the Insights Light design. The nav and footer above/below keep
-   the site's own tokens so they stay identical to every other page. */
+        /* ── PODCAST PAGE ─────────────────────────────────────────────────────────
+   Design: design_handoff_insights_podcast, screen 2. The player parts shared
+   with the articles (icons, mini player) are in assets/podcast/podcast.css.
+   The nav and footer above keep the site's own tokens. */
 :root{
-  --ink:#1C2B33; --body-ink:#27272A;
-  --m1:#4B5563; --m2:#65676B; --m3:#71717A;
-  /* Same blue as the rest of the site; the two tints below are derived from it. */
-  --blue:var(--accent); --blue-hi:#356FEF; --blue-bg:#E6EDFD;
-  --s1:#F4F6F9; --s2:#F0F2F5; --s3:#E9EEF5;
-  --hair:rgba(28,43,51,.06);
-  --lift:0 1px 2px rgba(28,43,51,.06),0 24px 60px -24px rgba(28,43,51,.18);
-  --lift-hi:0 1px 2px rgba(28,43,51,.06),0 36px 80px -28px rgba(28,43,51,.26);
-  --card:0 1px 2px rgba(28,43,51,.06);
-  --card-hi:0 30px 60px -28px rgba(28,43,51,.25);
-  --ease:cubic-bezier(.32,.72,0,1);
+  --ink:#1C2A33; --t2:#4B5563; --t3:#65676B;
+  --blue:#1A56DB; --blue-hi:#1E429F; --blue-soft:#8DAAEE; --tint:#E6EDFD; --surface:#F5F6FA;
+  --border:#E6E9EE; --ease:cubic-bezier(.32,.72,0,1);
 }
-/* The picture element is only a format switch, not a layout box — tools/README.md. */
-picture{display:contents}
+picture{display:contents}   /* a format switch, not a layout box — tools/README.md */
 img{display:block;max-width:100%}
 .ins{color:var(--ink);font-size:14px;line-height:1.65}
 .ins a{color:var(--blue);text-decoration:none}
 .ins a:hover{color:var(--ink)}
-/* Whole-card links are surfaces, not inline links: their text keeps the ink colour. */
-.ins a.featured,.ins a.card,.ins a.featured:hover,.ins a.card:hover{color:var(--ink)}
 .ins :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:6px}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-/* Soft colour wash behind the white hero. */
-.glow{position:absolute;inset:0;pointer-events:none;background:
-  radial-gradient(55% 50% at 88% 8%,rgba(26,86,219,.13),transparent 70%),
-  radial-gradient(45% 45% at 8% 25%,rgba(168,85,247,.09),transparent 70%),
-  radial-gradient(50% 40% at 55% 100%,rgba(16,185,129,.07),transparent 70%)}
-        /* ── HERO ── */
-.hero{position:relative;background:#fff;overflow:hidden}
-.hero-in{position:relative;padding-top:88px;padding-bottom:56px}
-.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-bg)}
-.dot{width:6px;height:6px;border-radius:50%;background:var(--blue);display:inline-block;flex:none}
-.hero h1{margin:22px 0 0;font-size:clamp(40px,6vw,68px);line-height:1.02;letter-spacing:-.035em;font-weight:700;max-width:780px;text-wrap:balance;color:var(--ink)}
-.hero .dek{margin:20px 0 0;max-width:560px;font-size:17px;line-height:1.6;color:var(--m1);text-wrap:pretty}
+.sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 
-/* ── FEATURED ── */
-.featured{margin-top:56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));border-radius:28px;overflow:hidden;background:#fff;box-shadow:var(--lift);color:var(--ink);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
-.featured:hover{transform:translateY(-4px);box-shadow:var(--lift-hi);color:var(--ink)}
-.featured .shot{position:relative;min-height:320px;background:var(--s3)}
-.featured .shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
-.featured .flag{position:absolute;top:16px;left:16px;padding:5px 10px;border-radius:999px;background:#fff;color:var(--ink);font-size:11px;font-weight:600;box-shadow:var(--card)}
-.featured .txt{padding:36px;display:flex;flex-direction:column;justify-content:space-between;gap:28px}
-.meta-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:12px;color:var(--m2)}
-.cat{white-space:nowrap;flex:none;padding:3px 9px;border-radius:999px;background:var(--blue-bg);color:var(--blue);font-weight:600;font-size:10px;letter-spacing:.06em;text-transform:uppercase}
-.featured h2{margin:16px 0 0;font-size:30px;line-height:1.12;letter-spacing:-.025em;font-weight:700;text-wrap:balance}
-.featured .ex{margin:14px 0 0;font-size:15px;line-height:1.6;color:var(--m1);text-wrap:pretty}
-.featured .foot{display:flex;align-items:center;justify-content:space-between;gap:16px}
-.featured .by{display:flex;align-items:center;gap:10px;font-size:13px}
-.featured .by img{width:32px;height:32px;border-radius:50%;object-fit:cover;object-position:center 20%}
-.featured .go{width:36px;height:36px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:700;flex:none}
-@media (max-width:620px){.featured .shot{min-height:220px}.featured .txt{padding:26px 22px}.featured h2{font-size:24px}}
+/* ── Hero ── */
+.hero{position:relative;overflow:hidden;background:#fff}
+.wash{position:absolute;inset:0;pointer-events:none;background:radial-gradient(40% 70% at 0% 0%,#FBF7FF,transparent 70%),radial-gradient(45% 80% at 100% 0%,#E6EBFC,transparent 70%)}
+.hero-in{position:relative;padding-top:56px;padding-bottom:72px;display:flex;flex-wrap:wrap;align-items:center;gap:48px 72px}
+.hero-txt{flex:1 1 440px;min-width:0}
+.crumbs{display:flex;gap:8px;flex-wrap:wrap;font-size:12px;color:var(--t3)}
+.crumbs a{color:var(--t3)}.crumbs a:hover{color:var(--ink)}
+.badge{margin-top:20px;display:inline-flex;align-items:center;gap:8px;padding:5px 11px;border-radius:999px;background:var(--tint);color:var(--blue);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.badge .dot{width:6px;height:6px;flex:none;border-radius:50%;background:var(--blue)}
+.hero h1{margin:16px 0 0;font-size:clamp(42px,5.6vw,64px);line-height:1;letter-spacing:-.045em;font-weight:700;color:var(--ink);text-wrap:balance}
+.dek{margin:18px 0 0;max-width:520px;font-size:17px;line-height:1.6;color:var(--t2);text-wrap:pretty}
+.lang-note{margin:10px 0 0;font-size:13px;color:var(--t3)}
+.acts{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.btn-play{font:inherit;height:46px;padding:0 20px 0 6px;border-radius:999px;border:0;cursor:pointer;display:flex;align-items:center;gap:10px;background:var(--blue);color:#fff;font-size:14px;font-weight:600;white-space:nowrap;box-shadow:0 12px 28px -14px rgba(26,86,219,.85);transition:background .3s,transform .4s var(--ease)}
+.btn-play:hover{background:var(--blue-hi)}
+.btn-play:active{transform:scale(.97)}
+.bp-ic{width:34px;height:34px;flex:none;border-radius:50%;background:#fff;color:var(--blue);display:flex;align-items:center;justify-content:center}
+.btn-out{font:inherit;height:46px;padding:0 18px;display:flex;align-items:center;gap:8px;border-radius:999px;border:0;cursor:pointer;background:#fff;color:var(--ink);font-size:13px;font-weight:600;white-space:nowrap;box-shadow:0 1px 2px rgba(28,42,51,.08),inset 0 0 0 1px var(--border);transition:background .3s,color .3s}
+.btn-out:hover,.btn-out[aria-expanded="true"]{background:var(--tint);color:var(--blue)}
+/* E-mail opt-in, unfolded by "Get new episodes" */
+.notify{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .6s var(--ease),opacity .4s ease}
+.notify.is-open{grid-template-rows:1fr;opacity:1}
+.notify-in{min-height:0;overflow:hidden;padding:0 3px 3px;margin:0 -3px}
+.notify-f{margin-top:14px;max-width:460px;padding:6px;border-radius:999px;background:#fff;box-shadow:0 1px 2px rgba(28,42,51,.08),inset 0 0 0 1px var(--border);display:flex;gap:6px;transition:box-shadow .3s}
+.notify-f:focus-within{box-shadow:0 1px 2px rgba(28,42,51,.08),inset 0 0 0 2px var(--blue)}
+.notify-f input{flex:1;min-width:0;font:inherit;font-size:16px;padding:0 14px;border:0;outline:none;background:transparent;color:var(--ink)}
+.notify-f input[aria-invalid="true"]{color:#B91C1C}
+.notify-f button{font:inherit;height:38px;padding:0 16px;border-radius:999px;border:0;cursor:pointer;background:var(--blue);color:#fff;font-size:13px;font-weight:600;white-space:nowrap;transition:background .3s}
+.notify-f button:hover{background:var(--blue-hi)}
+.notify-f button.ok{background:#15803D;cursor:default}
+.notify-help{margin:8px 0 0;padding-left:16px;font-size:12px;line-height:1.5;color:var(--t3)}
+.notify-help.err{color:#B91C1C}
 
-/* ── LIST ── */
-.list{background:var(--s1);padding:72px 0 96px}
-.list-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}
-.list-head h2{margin:0;font-size:36px;letter-spacing:-.03em;font-weight:700;color:var(--ink)}
-.chips{display:flex;gap:8px;flex-wrap:wrap}
-.chip-btn{font:inherit;font-size:13px;font-weight:500;padding:8px 14px;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;border-radius:999px;cursor:pointer;border:1px solid #fff;background:#fff;color:#3F3F46;box-shadow:var(--card);transition:background .3s,color .3s,border-color .3s}
-.chip-btn .c{opacity:.5}
-.chip-btn[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
-.grid{margin-top:36px;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:20px}
-.card{display:flex;flex-direction:column;background:#fff;border-radius:24px;overflow:hidden;box-shadow:var(--card);color:var(--ink);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
-.card:hover{transform:translateY(-4px);box-shadow:var(--card-hi);color:var(--ink)}
-.card .shot{aspect-ratio:16/10;position:relative;background:var(--s3)}
-.card .shot img{width:100%;height:100%;object-fit:cover}
-.card .cat-pill{position:absolute;top:12px;left:12px;white-space:nowrap;padding:4px 10px;border-radius:999px;background:#fff;font-size:11px;font-weight:600;color:var(--ink)}
-.card .txt{padding:22px 22px 20px;display:flex;flex-direction:column;gap:10px;flex:1}
-.card h3{margin:0;font-size:18px;line-height:1.3;letter-spacing:-.015em;font-weight:700;text-wrap:balance}
-.card p{margin:0;font-size:14px;line-height:1.6;color:#52525B;text-wrap:pretty}
-.card .foot{margin-top:auto;padding-top:12px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:12px;color:var(--m3)}
-.card .foot b{color:var(--ink);font-weight:600}
+/* ── Animated cover "O · Ripple" (InsightsLight), drawn on a 360 artboard and scaled by --k.
+      Hover (fine pointers): tilt, pulses, rings, disc + portrait together, text parallax, tag. */
+.hero-art{flex:0 1 340px;display:flex;justify-content:center}
+.cv{--k:.9444;--mx:0;--my:0;position:relative;flex:none;width:calc(360px * var(--k));height:calc(360px * var(--k));padding:0;border:0;border-radius:20px;overflow:hidden;background:#E6EBFC;cursor:pointer;box-shadow:0 27px 54px -27px rgba(28,43,51,.45);transform:perspective(900px) rotateX(calc(var(--my) * -7deg)) rotateY(calc(var(--mx) * 9deg));transition:transform .6s var(--ease),box-shadow .6s var(--ease);will-change:transform;-webkit-tap-highlight-color:transparent}
+.cv.on{transform:perspective(900px) rotateX(calc(var(--my) * -7deg)) rotateY(calc(var(--mx) * 9deg)) scale(1.025)}
+.cv-art{position:absolute;left:0;top:0;width:360px;height:360px;transform:scale(var(--k));transform-origin:0 0;text-align:left;font-family:Inter,system-ui,sans-serif;pointer-events:none}
+.cv-art>*{position:absolute}
+.cv-bg{inset:0;background:radial-gradient(60% 55% at 0% 0%,#FBF7FF,transparent 70%),linear-gradient(165deg,#FFFFFF 0%,#E6EBFC 100%)}
+.cv-pulse{left:150px;top:162px;width:200px;height:200px;border-radius:50%;border:2px solid rgba(26,86,219,.7);opacity:0}
+.cv.on .cv-pulse{animation:cv-pulse 1.8s cubic-bezier(.2,.6,.3,1) infinite}
+.cv.on .cv-pulse+.cv-pulse{animation-delay:.9s}
+@keyframes cv-pulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.9);opacity:0}}
+.cv-r{border-radius:50%;transition:transform .8s var(--ease),border-color .6s ease}
+.cv-r1{left:120px;top:132px;width:260px;height:260px;border:1.5px solid rgba(26,86,219,.45)}
+.cv-r2{left:90px;top:102px;width:320px;height:320px;border:1px solid rgba(26,86,219,.26);transition-duration:.9s,.6s;transition-delay:.06s,0s}
+.cv-r3{left:60px;top:72px;width:380px;height:380px;border:1px solid rgba(26,86,219,.14);transition-duration:1s,.6s;transition-delay:.12s,0s}
+.cv.on .cv-r1{transform:scale(1.06);border-color:rgba(26,86,219,.75)}
+.cv.on .cv-r2{transform:scale(1.13);border-color:rgba(26,86,219,.45)}
+.cv.on .cv-r3{transform:scale(1.22);border-color:rgba(26,86,219,.28)}
+/* Disc and portrait move as one, or the mask edge would slip. */
+.cv-g{inset:0;transform-origin:250px 262px;transition:transform .8s var(--ease)}
+.cv.on .cv-g{transform:translate(calc(var(--mx) * 6px),calc(var(--my) * 4px - 2px)) scale(1.035)}
+.cv-disc{position:absolute;left:150px;top:162px;width:200px;height:200px;border-radius:50%;background:linear-gradient(160deg,#4A82EC,#1A56DB 58%,#1E429F)}
+/* Pop-out mask: inside the disc, plus everything above its centre line. */
+.cv-me{position:absolute;left:145px;top:92px;width:210px;height:280px;max-width:none;object-fit:contain;object-position:center top;-webkit-mask-image:radial-gradient(circle 100px at 105px 170px,#000 99.4%,transparent 100%),linear-gradient(180deg,#000 170px,transparent 170px);mask-image:radial-gradient(circle 100px at 105px 170px,#000 99.4%,transparent 100%),linear-gradient(180deg,#000 170px,transparent 170px);-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+.cv-logo{left:24px;top:24px;width:30px;height:29px}
+.cv-txt{left:24px;top:76px;width:170px;color:var(--ink);transition:transform .8s var(--ease)}
+.cv.on .cv-txt{transform:translate(calc(var(--mx) * -4px),calc(var(--my) * -3px))}
+.cv-t1{display:block;font-size:42px;line-height:.95;font-weight:700;letter-spacing:-.05em}
+.cv-t2{display:block;margin-top:8px;font-size:15px;line-height:1.3;font-weight:500;color:var(--t2)}
+.cv-tag{left:24px;bottom:26px;display:flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;background:var(--blue);color:#fff;font-size:11px;line-height:1.2;font-weight:700;letter-spacing:.1em;white-space:nowrap;box-shadow:0 0 0 0 rgba(26,86,219,.55);transition:background .45s ease,color .45s ease,box-shadow .6s var(--ease),transform .6s var(--ease)}
+.cv.on .cv-tag{background:#fff;color:var(--blue);box-shadow:0 0 0 4px rgba(26,86,219,.55);transform:translateY(-2px)}
+.cv-tag .t-on{display:none;align-items:center;gap:6px}
+.cv-tag .t-on::before{content:"";width:0;height:0;border-left:7px solid currentColor;border-top:4.5px solid transparent;border-bottom:4.5px solid transparent}
+.cv.on .t-off{display:none}
+.cv.on .t-on{display:flex}
 
-/* ── CTA ── */
-.cta{padding:88px 24px;text-align:center}
-.cta h2{margin:0;font-size:36px;letter-spacing:-.03em;font-weight:700;color:var(--ink);text-wrap:balance}
-.cta p{margin:14px auto 0;max-width:480px;font-size:15px;line-height:1.6;color:#52525B}
-.cta .btns{margin:28px auto 0;display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-.btn{font-size:14px;font-weight:600;padding:13px 22px;border-radius:999px;display:inline-block;transition:background .3s,color .3s}
-.btn-blue{background:var(--blue);color:#fff}
-.btn-blue:hover{background:var(--blue-hi);color:#fff}
-.btn-soft{background:var(--s2);color:var(--ink)}
-.btn-soft:hover{background:#E4E8ED;color:var(--ink)}
+/* ── Episodes ── */
+.eps{background:var(--surface);padding:64px 0 88px}
+.eps-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px}
+.eps-head h2{margin:0;font-size:32px;line-height:1.2;letter-spacing:-.03em;font-weight:700;color:var(--ink)}
+.eps-count{font-size:13px;color:var(--t3)}
+.cat{white-space:nowrap;padding:3px 9px;border-radius:999px;background:var(--tint);color:var(--blue);font-weight:600}
+/* Latest episode: image | text with its own player */
+.latest{margin-top:24px;border-radius:24px;background:#fff;overflow:hidden;display:flex;flex-wrap:wrap;transition:box-shadow .5s var(--ease)}
+.latest.is-started{box-shadow:0 0 0 2px var(--blue)}
+.latest-img{position:relative;flex:1 1 380px;min-height:280px;background:var(--tint)}
+.latest-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%}
+.latest-flag{position:absolute;left:16px;top:16px;padding:5px 11px;border-radius:999px;background:#fff;color:var(--blue);font-size:11px;line-height:1.4;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.latest-txt{flex:1 1 400px;min-width:0;padding:32px;display:flex;flex-direction:column;gap:14px}
+.latest-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:12px;color:var(--t3)}
+.latest h3{margin:0;font-size:26px;line-height:1.15;letter-spacing:-.025em;font-weight:700;color:var(--ink);text-wrap:balance}
+.latest-txt p{margin:0;font-size:14px;line-height:1.6;color:var(--t2);text-wrap:pretty}
+.latest-player{margin-top:4px;display:flex;align-items:center;gap:14px}
+.lp-play{flex:none;width:48px;height:48px;border-radius:50%;border:0;cursor:pointer;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;transition:background .3s,transform .4s var(--ease)}
+.lp-play:hover{background:var(--blue-hi);transform:scale(1.05)}
+.lp-play:active{transform:scale(.94)}
+.lp-play .i-play{border-width:8px 0 8px 13px;margin-left:4px}
+.lp-play .i-pause i{width:4px;height:15px;border-radius:2px}
+.wave{flex:1;min-width:0;height:30px;display:flex;align-items:center;gap:2px;cursor:pointer}
+.wave i{flex:1;min-width:1px;border-radius:1px;background:rgba(28,42,51,.13);transition:height .35s var(--ease),background .4s,transform .35s var(--ease)}
+.wave i.done{background:var(--blue)}
+.wave i.at{background:var(--blue-soft)}
+.lp-time{flex:none;font-size:12px;color:var(--t3);font-variant-numeric:tabular-nums;white-space:nowrap}
+.latest-ch{min-height:18px;font-size:12px;line-height:1.5;color:var(--t3)}
+.latest-foot{margin-top:auto;padding-top:8px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;font-size:13px;color:var(--t3)}
+.latest-foot a{font-weight:600}
+/* Older episodes */
+.more-eps{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
+.more-ep{padding:16px;border-radius:20px;background:#fff;display:flex;flex-wrap:wrap;gap:20px;align-items:center;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.more-ep:hover{transform:translateY(-2px);box-shadow:0 20px 40px -26px rgba(28,42,51,.3)}
+.me-cover{width:72px;height:72px;flex:none;border-radius:6px}
+.me-txt{flex:1 1 300px;min-width:0}
+.me-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:12px;color:var(--t3)}
+.me-meta b{color:var(--ink)}
+.more-ep h3{margin:6px 0 0;font-size:18px;line-height:1.25;letter-spacing:-.015em;font-weight:700;color:var(--ink)}
+.more-ep>a{font-size:13px;font-weight:600;white-space:nowrap}
+.ins a.me-play{flex:none;width:44px;height:44px;border-radius:50%;background:var(--surface);color:var(--ink);display:grid;place-items:center;transition:background .3s}
+.ins a.me-play:hover{background:var(--tint)}
+.me-play .i-play{border-width:7px 0 7px 12px}
+/* How it works */
+.how{list-style:none;margin:48px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px}
+.how li{padding:20px 22px;border-radius:18px;background:#fff;display:flex;gap:14px}
+.how .n{flex:none;font-size:26px;line-height:1;font-weight:300;letter-spacing:-.04em;color:var(--blue)}
+.how h3{margin:0;font-size:15px;line-height:1.4;font-weight:700;color:var(--ink)}
+.how p{margin:4px 0 0;font-size:13px;line-height:1.55;color:var(--t2)}
+
+/* ── Next step ── */
+.next{padding-top:64px;padding-bottom:88px}
+.cta-dark{position:relative;overflow:hidden;padding:36px;border-radius:24px;background:var(--ink);color:#fff;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
+.cta-dark::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 90% at 100% 0%,rgba(26,86,219,.4),transparent 70%),radial-gradient(45% 80% at 0% 100%,rgba(88,72,150,.42),transparent 70%)}
+.cd-who{position:relative;display:flex;align-items:center;gap:18px}
+.cd-ph{width:56px;height:56px;flex:none;border-radius:50%;overflow:hidden;background:var(--tint);box-shadow:0 0 0 3px rgba(255,255,255,.14)}
+.cd-ph img{width:66px;max-width:none;height:auto;margin:-4px 0 0 -5px}
+.cd-k{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#C7CCD2}
+.cd-t{margin:6px 0 0;font-size:24px;line-height:1.2;font-weight:700;letter-spacing:-.02em}
+.cd-d{margin:4px 0 0;font-size:14px;line-height:1.5;color:rgba(255,255,255,.75)}
+.ins a.cd-btn{position:relative;height:44px;padding:0 20px;display:flex;align-items:center;border-radius:999px;background:#fff;color:var(--ink);font-size:14px;font-weight:600;white-space:nowrap;transition:color .3s}
+.ins a.cd-btn:hover{color:var(--blue)}
+.ins .cta-dark :focus-visible{outline-color:var(--blue-soft)}
+
 @media (max-width:620px){
-  .hero-in{padding-top:48px}
-  .hero h1{font-size:clamp(32px,9vw,44px)}
-  .list{padding:56px 0 72px}
-  .list-head h2,.cta h2{font-size:28px}
-  .cta{padding:64px 24px}
+  .hero-in{padding-top:40px;padding-bottom:56px;gap:40px}
+  .hero-txt{flex-basis:100%}
+  .hero-art{flex-basis:100%}
+  .cv{--k:.7778}
+  .eps{padding:48px 0 64px}
+  .eps-head h2{font-size:28px}
+  .latest-img{min-height:220px}
+  .latest-txt{padding:24px 20px}
+  .latest h3{font-size:22px}
+  .latest-player{gap:12px}
+  .wave{gap:1.5px}
+  .wave i:nth-child(2n){display:none}       /* 36 bars where 72 cannot fit */
+  .next{padding-top:48px;padding-bottom:64px}
+  .cta-dark{padding:28px 24px}
+  .cd-who{align-items:flex-start}
+  .cd-t{font-size:21px}
 }
-@media (prefers-reduced-motion:reduce){.card,.featured,.chip-btn,.btn{transition:none}}
-/* ── SHOW PAGE (podcast) ── */
-.show{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:56px;align-items:center}
-.crumbs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px;font-size:13px;color:var(--m2)}
-.crumbs a{color:var(--m2)}.crumbs a:hover{color:var(--ink)}
-.show-cover{width:320px;height:320px;border-radius:24px;box-shadow:var(--lift)}
-.lang-note{margin:12px 0 0;font-size:13px;color:var(--m2)}
-.subs{margin-top:28px;display:flex;gap:10px;flex-wrap:wrap}
-.ins a.btn-blue,.ins a.btn-blue:hover{color:#fff}   /* buttons keep white text over the generic link colour */
-.web-only{margin:24px 0 0;max-width:560px;font-size:15px;line-height:1.6;color:var(--m1)}
-.feed-url{margin:16px 0 0;font-size:13px;line-height:1.6;color:var(--m2);overflow-wrap:anywhere}
-.feed-url code{font:12.5px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;padding:3px 8px;border-radius:6px;background:var(--s2);color:var(--ink)}
-.eps{list-style:none;margin:36px 0 0;padding:0;display:grid;gap:16px}
-.ep{display:block;padding:28px;border-radius:16px;background:#fff;box-shadow:var(--card);color:var(--ink);transition:box-shadow .3s var(--ease)}
-.ins a.ep,.ins a.ep:hover{color:var(--ink)}
-.ep:hover{box-shadow:var(--card-hi)}
-.ep-meta{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--blue)}
-.ep h3{margin:10px 0 0;font-size:22px;line-height:1.25;letter-spacing:-.015em;font-weight:700;text-wrap:balance}
-.ep p{margin:10px 0 0;max-width:720px;font-size:15px;line-height:1.6;color:#52525B;text-wrap:pretty}
-.ep-go{display:inline-block;margin-top:16px;font-size:14px;font-weight:600;color:var(--blue)}
-/* The cover sits in its own box: picture is display:contents site-wide, so <source> would take a grid cell. */
-@media (max-width:820px){.show{grid-template-columns:1fr;gap:32px}.show-art{order:-1}.show-cover{width:200px;height:200px}}
-@media (max-width:620px){.ep{padding:22px}.ep h3{font-size:19px}}
-@media (prefers-reduced-motion:reduce){.ep{transition:none}}
+@media (prefers-reduced-motion:reduce){
+  /* The cover keeps only the tag change; nothing moves. */
+  .cv,.cv.on,.cv.on .cv-g,.cv.on .cv-txt,.cv.on .cv-r1,.cv.on .cv-r2,.cv.on .cv-r3,.cv.on .cv-tag{transform:none}
+  .cv.on .cv-pulse{animation:none}
+  .notify,.btn-play,.lp-play,.more-ep,.latest,.wave i{transition:none}
+  .btn-play:active,.lp-play:hover,.lp-play:active,.more-ep:hover{transform:none}
+}
         /* With eight menu items, the full menu no longer fits next to the logo and
            the language switch below ~960 px, so tablets in portrait get the mobile
            menu as well. */
@@ -401,43 +463,99 @@ img{display:block;max-width:100%}
 
 <main class="ins">
   <section class="hero">
-    <div class="glow" aria-hidden="true"></div>
-    <div class="wrap hero-in show">
-      <div>
+    <div class="wash" aria-hidden="true"></div>
+    <div class="wrap hero-in">
+      <div class="hero-txt">
         <nav class="crumbs" aria-label="Breadcrumb" data-i18n-attr="aria-label:crumbs_aria"><a href="/insights/" data-i18n="nav_insights">Insights</a><span>/</span><span data-i18n="crumb_podcast">Podcast</span></nav>
         <div class="badge"><span class="dot"></span><span data-i18n="badge">Podcast</span></div>
-        <h1>Insights by Martin Motlík</h1>
+        <h1>Insights with Martin Motlík</h1>
         <p class="dek" data-i18n="dek">Conversations about AI in AEC, engineering-software marketing and building web ecosystems engineers actually use. Each episode takes one Insights article and works through it with a practical case.</p>
         <p class="lang-note" data-i18n="lang_note">Episodes are in English.</p>
-<!-- subscribe:start · generated by tools/build-podcast.py -->
-        <p class="web-only" data-i18n="web_only">New episodes are published here, together with each new article.</p>
-<!-- subscribe:end -->
+        <div class="acts">
+          <button class="btn-play" type="button" data-pod-toggle="latest"><span class="bp-ic"><span class="i-play" aria-hidden="true"></span><span class="i-pause" aria-hidden="true"><i></i><i></i></span></span><span data-pod-label data-i18n="play_latest">Play latest episode</span></button>
+<!-- notify-btn:start · generated by tools/build-podcast.py (show.subscribe_endpoint) -->
+<!-- notify-btn:end -->
+        </div>
+<!-- notify-form:start · generated by tools/build-podcast.py (show.subscribe_endpoint) -->
+<!-- notify-form:end -->
       </div>
-      <div class="show-art"><picture>
-        <source type="image/avif" srcset="/assets/podcast/cover-600.avif">
-        <img class="show-cover" src="/assets/podcast/cover-600.jpg" width="600" height="600" alt="Cover of the podcast Insights by Martin Motlík" fetchpriority="high" decoding="async">
-      </picture></div>
+      <div class="hero-art">
+        <!-- The cover, as an image: tools/podcast-cover.html. Here it is live and plays the latest episode. -->
+        <button class="cv" type="button" data-pod-toggle aria-label="Play episode" data-i18n-attr="aria-label:play_episode">
+          <span class="cv-art" aria-hidden="true">
+            <span class="cv-bg"></span>
+            <span class="cv-pulse"></span><span class="cv-pulse"></span>
+            <span class="cv-r cv-r3"></span><span class="cv-r cv-r2"></span><span class="cv-r cv-r1"></span>
+            <span class="cv-g">
+              <span class="cv-disc"></span>
+              <picture><source type="image/avif" srcset="/assets/podcast/martin-portrait-420.avif"><img class="cv-me" src="/assets/podcast/martin-portrait-420.png" width="420" height="560" alt="" fetchpriority="high" decoding="async"></picture>
+            </span>
+            <img class="cv-logo" src="/assets/podcast/mm-logo-dark.svg" width="30" height="29" alt="">
+            <span class="cv-txt"><span class="cv-t1">Insights</span><span class="cv-t2">with Martin Motlík</span></span>
+            <span class="cv-tag"><span class="t-off">PODCAST</span><span class="t-on" data-i18n="listen_now">LISTEN NOW</span></span>
+          </span>
+        </button>
+      </div>
     </div>
   </section>
 
-  <section class="list" aria-labelledby="episodes-h">
+  <section class="eps" aria-labelledby="episodes-h">
     <div class="wrap">
-      <div class="list-head"><h2 id="episodes-h" data-i18n="episodes_title">Episodes</h2></div>
 <!-- episodes:start · generated by tools/build-podcast.py from podcast/podcast.json -->
-      <ol class="eps">
-        <li>
-          <a class="ep" href="/insights/ai-visibility-for-aec/#podcast">
-            <div class="ep-meta"><span data-i18n="ep_label">Episode</span> 1 · <time datetime="2026-10-08">Oct 8, 2026</time> · 14 <span data-i18n="ep_min">min</span></div>
-            <h3 lang="en">Be the source: getting AEC data ready for AI search</h3>
-            <p>Sarah runs marketing at a structural engineering firm in Portland. Her firm ranks on page one, yet when she asked ChatGPT which local firms have real mass-timber experience, it named five others. Martin takes her situation apart: why page one is no longer the finish line, how project galleries and PDFs hide the facts engineers search for, what localizing a timber page for U.S. and Canadian design codes taught him, and how a fact travels the “load path” into an AI answer.</p>
-            <span class="ep-go" data-i18n="ep_go">Listen and read the article →</span>
-          </a>
-        </li>
-      </ol>
+      <div class="eps-head"><h2 id="episodes-h" data-i18n="episodes_title">Episodes</h2><span class="eps-count">1 <span data-i18n="ep_count_one">episode</span></span></div>
+      <article class="latest" data-pod-started aria-labelledby="latest-h">
+        <div class="latest-img">
+          <picture>
+            <source type="image/avif" sizes="(min-width: 900px) 480px, 100vw" srcset="/assets/img/ai-search-hero-600.avif 600w, /assets/img/ai-search-hero-900.avif 900w, /assets/img/ai-search-hero-1280.avif 1280w">
+            <img src="/assets/img/ai-search-hero-900.jpg" sizes="(min-width: 900px) 480px, 100vw" srcset="/assets/img/ai-search-hero-600.jpg 600w, /assets/img/ai-search-hero-900.jpg 900w, /assets/img/ai-search-hero-1280.jpg 1280w" width="1672" height="941" alt="" loading="lazy" decoding="async">
+          </picture>
+          <span class="latest-flag"><span data-i18n="latest">Latest</span> · EP 01</span>
+        </div>
+        <div class="latest-txt">
+          <div class="latest-meta"><span class="cat">AI in AEC</span><time datetime="2026-10-08">Oct 8, 2026</time><span>·</span><span>14 <span data-i18n="ep_min">min</span></span></div>
+          <h3 id="latest-h" lang="en">Be the source: getting AEC data ready for AI search</h3>
+          <p>Sarah runs marketing at a structural engineering firm in Portland. Her firm ranks on page one, yet ChatGPT named five others. Martin takes her situation apart, from project galleries and PDFs to the load path of a fact.</p>
+          <div class="latest-player">
+            <button class="lp-play" type="button" data-pod-toggle aria-label="Play episode" data-i18n-attr="aria-label:play_episode"><span class="i-play" aria-hidden="true"></span><span class="i-pause" aria-hidden="true"><i></i><i></i></span></button>
+            <div class="wave" data-pod-wave aria-hidden="true"></div>
+            <span class="lp-time"><span data-pod-time>0:00</span> / 14:08</span>
+          </div>
+          <div class="latest-ch" data-pod-chapter-line lang="en"></div>
+          <div class="latest-foot"><a href="/insights/ai-visibility-for-aec/#episode" data-i18n="read_article">Read the article →</a><span>10 <span data-i18n="chapters_word">chapters</span> · <span data-i18n="transcript_word">Transcript</span></span></div>
+        </div>
+      </article>
 <!-- episodes:end -->
+      <h2 class="sr" data-i18n="how_title">How the podcast works</h2>
+      <ol class="how">
+        <li><span class="n" aria-hidden="true">01</span><div><h3 data-i18n="how1_t">Article first</h3><p data-i18n="how1_d">Every episode starts from a published Insights article.</p></div></li>
+        <li><span class="n" aria-hidden="true">02</span><div><h3 data-i18n="how2_t">A real case</h3><p data-i18n="how2_d">The topic is discussed around one concrete situation.</p></div></li>
+        <li><span class="n" aria-hidden="true">03</span><div><h3 data-i18n="how3_t">Chapters &amp; transcript</h3><p data-i18n="how3_d">Jump to any part, or read along in the article.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="wrap next" aria-labelledby="next-h">
+    <div class="cta-dark">
+      <div class="cd-who">
+        <span class="cd-ph"><picture><source type="image/avif" srcset="/assets/podcast/martin-portrait-420.avif"><img src="/assets/podcast/martin-portrait-420.png" width="420" height="560" alt="" loading="lazy" decoding="async"></picture></span>
+        <div><div class="cd-k" data-i18n="cta_k">Next step</div><h2 class="cd-t" id="next-h" data-i18n="cta_t">Have a question for an episode?</h2><p class="cd-d" data-i18n="cta_d">Send me the question your customers keep asking.</p></div>
+      </div>
+      <a class="cd-btn" href="https://www.linkedin.com/in/martin-motl%C3%ADk-3b1b47233" target="_blank" rel="noopener" data-i18n="cta_btn">Message me on LinkedIn →</a>
     </div>
   </section>
 </main>
+
+<!-- pod-mini:start · generated by tools/build-podcast.py -->
+<div class="pod-mini" id="pod-mini" role="region" aria-label="Podcast player" data-i18n-attr="aria-label:mini_aria" aria-hidden="true">
+  <picture><source type="image/avif" srcset="/assets/podcast/cover-ep01-96.avif"><img class="pm-cover" src="/assets/podcast/cover-ep01-96.jpg" width="40" height="40" alt="" loading="lazy" decoding="async"></picture>
+  <div class="pm-txt"><div class="pm-st" data-pod-status></div><div class="pm-ti" data-pod-chapter-title lang="en"></div></div>
+  <span class="pm-time" data-pod-time>0:00</span>
+  <button class="pm-rate" type="button" data-pod-rate aria-label="Playback speed" data-i18n-attr="aria-label:speed">1×</button>
+  <button class="pm-play" type="button" data-pod-toggle aria-label="Play episode" data-i18n-attr="aria-label:play_episode"><span class="i-play" aria-hidden="true"></span><span class="i-pause" aria-hidden="true"><i></i><i></i></span></button>
+  <button class="pm-x" type="button" data-pod-close aria-label="Close the player" data-i18n-attr="aria-label:close">×</button>
+  <div class="pm-bar" aria-hidden="true"><div data-pod-progress></div></div>
+</div>
+<!-- pod-mini:end -->
 
 <footer class="footer">
   <div class="footer-inner">
@@ -465,6 +583,10 @@ img{display:block;max-width:100%}
   </div>
 </footer>
 
+<!-- pod-data:start · generated by tools/build-podcast.py -->
+<script type="application/json" id="pod-data">{"id": "ep001-be-the-source", "number": 1, "audio": "/assets/podcast/ep001-be-the-source.mp3", "duration": 848, "chapters": [[0, "Cold open: Sarah's story"], [66, "\"But our SEO works\""], [156, "The gallery problem"], [249, "The timber page"], [348, "The Vancouver twist"], [429, "Load path, part one"], [500, "The PDF argument"], [583, "Load path, part two"], [681, "What do I tell my boss?"], [754, "Close"]], "lines": [0, 10, 11, 21, 25, 29, 41, 54, 57, 63, 66, 75, 100, 103, 120, 123, 144, 146, 156, 160, 172, 179, 180, 182, 199, 202, 213, 216, 224, 227, 249, 250, 266, 270, 300, 304, 329, 336, 348, 357, 377, 380, 396, 399, 419, 422, 427, 429, 444, 446, 460, 468, 487, 490, 500, 510, 513, 515, 537, 543, 573, 579, 583, 587, 603, 614, 635, 636, 652, 655, 664, 669, 681, 687, 706, 708, 717, 721, 748, 751, 754, 758, 777, 779, 795, 796, 809, 825, 829, 836, 846, 847]}</script>
+<!-- pod-data:end -->
+<script src="/assets/podcast/podcast.js"></script>
 <script>
 // — Nav hamburger —
 const navHamburger = document.getElementById('nav-hamburger');
@@ -475,6 +597,66 @@ if (navHamburger && navDrawer) {
     if (!navHamburger.contains(e.target) && !navDrawer.contains(e.target)) navDrawer.classList.remove('open');
   });
 }
+
+// — Cover: follows the pointer (tilt, rings, pulses, tag), on devices with a
+//   real hover only. Reduced motion keeps just the tag change (CSS). —
+(function(){
+  var cv = document.querySelector('.cv');
+  if (!cv || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  cv.addEventListener('pointermove', function(e){
+    var r = cv.getBoundingClientRect();
+    cv.style.setProperty('--mx', ((e.clientX - r.left) / r.width - .5).toFixed(3));
+    cv.style.setProperty('--my', ((e.clientY - r.top) / r.height - .5).toFixed(3));
+    cv.classList.add('on');
+  });
+  cv.addEventListener('pointerleave', function(){
+    cv.classList.remove('on'); cv.style.setProperty('--mx', 0); cv.style.setProperty('--my', 0);
+  });
+})();
+
+// — "Get new episodes": the e-mail opt-in (exists once podcast.json has
+//   show.subscribe_endpoint). Posts to the form service as JSON. —
+(function(){
+  var toggle = document.querySelector('[data-notify-toggle]'), box = document.getElementById('notify');
+  var form = document.querySelector('[data-notify]');
+  if (!toggle || !box || !form) return;
+  var input = form.querySelector('input[type="email"]'), submit = form.querySelector('[data-notify-submit]');
+  var msg = box.querySelector('[data-notify-msg]'), help = msg.textContent, label = submit.textContent;
+  var EN = { notify_ok: 'Subscribed ✓', notify_sending: 'Sending…', notify_invalid: 'Please enter a valid email.',
+             notify_failed: 'That did not go through. Please try again.' };
+  var ui = {};
+  try { ui = JSON.parse(document.getElementById('i18n-ui').textContent); } catch(e) {}
+  function t(k){ return ui[k] || EN[k]; }
+  function note(text, err){ msg.textContent = text; msg.classList.toggle('err', !!err); }
+
+  if ('inert' in box) box.inert = true;
+  toggle.addEventListener('click', function(){
+    var open = toggle.getAttribute('aria-expanded') !== 'true';
+    toggle.setAttribute('aria-expanded', open);
+    box.classList.toggle('is-open', open);
+    if ('inert' in box) box.inert = !open;
+    if (open) setTimeout(function(){ input.focus({ preventScroll: true }); }, 250);
+  });
+  input.addEventListener('input', function(){
+    if (input.getAttribute('aria-invalid')) { input.removeAttribute('aria-invalid'); note(help); }
+  });
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (submit.classList.contains('ok') || submit.disabled) return;
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(input.value.trim())) {
+      input.setAttribute('aria-invalid', 'true'); note(t('notify_invalid'), true); input.focus(); return;
+    }
+    submit.disabled = true; submit.textContent = t('notify_sending');
+    fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
+      .then(function(r){
+        if (!r.ok) throw new Error(r.status);
+        submit.disabled = false; submit.classList.add('ok'); submit.textContent = t('notify_ok');
+        input.readOnly = true; note(help);
+        if (window.gtag) gtag('event', 'podcast_subscribe');
+      })
+      .catch(function(){ submit.disabled = false; submit.textContent = label; note(t('notify_failed'), true); });
+  });
+})();
 </script>
 
 </body>

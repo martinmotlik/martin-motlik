@@ -6,14 +6,7 @@
   "role": "Digitální stratég pro AEC & Web Lead",
   "narrating": "Podcast Insights (EN)",
   "listen": "Podcast (EN)",
-  "listen_aria": "Poslechnout podcast k článku (anglicky)",
-  "state_playing": "Přehrává se",
-  "state_paused": "Pozastaveno",
-  "state_listen": "Poslech",
-  "narrated": "podcast Insights, anglicky",
-  "play": "Přehrát",
   "pause": "Pozastavit",
-  "play_pause": "Přehrát nebo pozastavit podcast",
   "seek": "Přetočit v podcastu",
   "speed": "Rychlost přehrávání",
   "close": "Zavřít přehrávač",
@@ -32,7 +25,14 @@
   "menu_aria": "Otevřít menu",
   "cover_alt": "Martin Motlík pracuje venku na notebooku, obklopený ikonami asistentů AI a vyhledávačů",
   "code_copied": "Kód zkopírován",
-  "mini_state": "Poslech · podcast Insights (EN)"
+  "play_episode": "Přehrát díl",
+  "resume": "Pokračovat",
+  "chip_at": "V podcastu",
+  "chip_playing": "Hraje",
+  "now_playing": "Přehrává se",
+  "paused": "Pozastaveno",
+  "chapter_of": "Kapitola {n} z {total}",
+  "mini_aria": "Přehrávač podcastu"
  },
  "chrome": {
   "nav_references": "Reference",
@@ -59,10 +59,15 @@
   "pod_title": "Poslechněte si rozhovor",
   "pod_desc": "Martin a spolumoderátorka Sarah rozebírají tento článek na praktickém případu, v angličtině.",
   "pod_play": "Přehrát díl",
-  "pod_all": "Všechny díly",
-  "pod_rss": "RSS feed",
+  "pod_all": "Všechny díly →",
   "pod_chapters": "Kapitoly",
-  "pod_transcript": "Přepis (anglicky)"
+  "pod_transcript": "Přepis (anglicky)",
+  "pod_synced": "Synchronizováno se zvukem",
+  "pod_note": "Díl vznikl z tohoto článku s hlasy generovanými AI. Scénář zkontroloval Martin.",
+  "also_podcast": "Také jako podcast",
+  "also_listen": "Poslechnout",
+  "ep_min": "min",
+  "chip_at": "V podcastu"
  },
  "k": {
   "hero.span1": "AI v AEC",
@@ -175,5 +180,8 @@
   "crumb_home": "Domů",
   "crumb_article": "Buďte zdrojem",
   "share_intro": "Tohle by vás mohlo zajímat:"
- }
+ },
+ "keep": [
+  "min"
+ ]
 }

@@ -58,6 +58,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/podcast/podcast.css">
     <!-- Preload only AVIF: `type` filters out formats the browser cannot decode, so a
          second JPEG link would make modern browsers fetch both copies of the LCP image. -->
     <link rel="preload" as="image" type="image/avif"
@@ -115,7 +116,7 @@
           "wordCount": 1741,
           "audio": {
             "@type": "AudioObject",
-            "name": "Insights by Martin Motlík — Episode 1: Be the source: getting AEC data ready for AI search",
+            "name": "Insights with Martin Motlík — Episode 1: Be the source: getting AEC data ready for AI search",
             "contentUrl": "https://martinmotlik.com/assets/podcast/ep001-be-the-source.mp3",
             "encodingFormat": "audio/mpeg",
             "duration": "PT14M8S",
@@ -207,16 +208,17 @@
         },
         {
           "@type": "PodcastEpisode",
-          "@id": "https://martinmotlik.com/insights/ai-visibility-for-aec/#podcast",
-          "url": "https://martinmotlik.com/insights/ai-visibility-for-aec/#podcast",
+          "@id": "https://martinmotlik.com/insights/ai-visibility-for-aec/#episode",
+          "url": "https://martinmotlik.com/insights/ai-visibility-for-aec/#episode",
           "name": "Be the source: getting AEC data ready for AI search",
           "episodeNumber": 1,
           "datePublished": "2026-10-08",
           "description": "Sarah runs marketing at a structural engineering firm in Portland. Her firm ranks on page one, yet when she asked ChatGPT which local firms have real mass-timber experience, it named five others. Martin takes her situation apart: why page one is no longer the finish line, how project galleries and PDFs hide the facts engineers search for, what localizing a timber page for U.S. and Canadian design codes taught him, and how a fact travels the “load path” into an AI answer. Martin's voice is an AI clone of his own voice; Sarah is a fictional co-host voiced by AI. Produced with ElevenLabs.",
           "inLanguage": "en-US",
+          "image": "https://martinmotlik.com/assets/podcast/cover-ep01-3000.jpg",
           "associatedMedia": {
             "@type": "AudioObject",
-            "name": "Insights by Martin Motlík — Episode 1: Be the source: getting AEC data ready for AI search",
+            "name": "Insights with Martin Motlík — Episode 1: Be the source: getting AEC data ready for AI search",
             "contentUrl": "https://martinmotlik.com/assets/podcast/ep001-be-the-source.mp3",
             "encodingFormat": "audio/mpeg",
             "duration": "PT14M8S",
@@ -225,7 +227,7 @@
           "partOfSeries": {
             "@type": "PodcastSeries",
             "@id": "https://martinmotlik.com/insights/podcast/#series",
-            "name": "Insights by Martin Motlík",
+            "name": "Insights with Martin Motlík",
             "url": "https://martinmotlik.com/insights/podcast/"
           },
           "author": {
@@ -407,9 +409,9 @@ img{display:block;max-width:100%}
 .vo-play{width:40px;height:40px;flex:none;border-radius:50%;border:0;cursor:pointer;background:var(--blue);display:grid;place-items:center;transition:background .3s ease,transform .4s var(--ease)}
 .vo-play:hover{background:var(--blue-hi);transform:scale(1.05)}
 .vo-play:active{transform:scale(.94)}
-.ic-play{width:0;height:0;border-left:11px solid #fff;border-top:7px solid transparent;border-bottom:7px solid transparent;margin-left:3px}
-.ic-pause{display:flex;gap:3px}
-.ic-pause i{width:3px;height:13px;border-radius:2px;background:#fff}
+.vo-play{color:#fff}
+.vo-play .i-play{border-width:7px 0 7px 11px}
+.vo-play .i-pause i{height:13px;border-radius:2px}
 .wave{flex:1 1 120px;min-width:60px;height:22px;display:flex;align-items:center;gap:2px;cursor:pointer;border:0;background:none;padding:0}
 .wave i{flex:1;min-width:1px;border-radius:1px;background:rgba(28,43,51,.12);transition:height .35s var(--ease),background .4s ease}
 .wave i.done{background:var(--blue)}
@@ -420,18 +422,8 @@ img{display:block;max-width:100%}
 .vo-x{flex:none;font:inherit;width:26px;height:26px;border-radius:50%;border:0;background:transparent;color:var(--m2);cursor:pointer;font-size:15px;line-height:1}
 .vo-x:hover{color:var(--ink)}
 
-.mini{position:fixed;left:50%;bottom:20px;transform:translate(-50%,140%) scale(.96);opacity:0;pointer-events:none;transition:transform .7s var(--ease),opacity .45s var(--ease);z-index:102;width:min(560px,calc(100% - 32px));padding:10px 12px 10px 10px;border-radius:999px;background:rgba(255,255,255,.82);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border:1px solid rgba(28,43,51,.06);box-shadow:0 8px 28px -12px rgba(28,43,51,.28);color:var(--ink);display:flex;align-items:center;gap:12px;overflow:hidden}
-.mini.show{transform:translate(-50%,0) scale(1);opacity:1;pointer-events:auto}
-.mini .vo-play{width:44px;height:44px}
-.mini .txt{flex:1;min-width:0}
-.mini .st{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.mini .ti{margin-top:2px;font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.mini .vo-rate{background:var(--s2);color:var(--ink);height:30px;padding:0 10px}
-.mini .vo-time{font-size:11px}
-.mini .bar{position:absolute;left:0;right:0;bottom:0;height:2px;background:rgba(28,43,51,.08)}
-.mini .bar div{height:100%;width:0;background:var(--blue)}
 @media (prefers-reduced-motion:reduce){
-  .listen,.mini,.vo-play,.wave i{transition:none}
+  .listen,.vo-play,.wave i{transition:none}
 }
 
 /* ── BODY ── */
@@ -603,8 +595,6 @@ article a.cl-btn2{padding:0 18px;background:rgba(255,255,255,.12);color:#fff}
 .byline .wave{flex:1;min-width:40px;height:44px;padding:12px 0}
 .vo-time{font-family:inherit;font-variant-numeric:tabular-nums}
 .byline .vo-rate{font-family:inherit;font-variant-numeric:tabular-nums;height:auto;padding:3px 8px;background:var(--s2);color:var(--ink)}
-.mini .vo-rate{font-family:inherit;font-variant-numeric:tabular-nums}
-body.vo-active{padding-bottom:96px}       /* room for the mini player above the footer */
 .byline .wave i{transform-origin:50% 50%}
 
 /* ── 10 · ARTICLE TEMPLATE ─────────────────────────────────────────────────
@@ -699,45 +689,14 @@ article p.all-link a{text-decoration:none}
 /* Touch targets: small controls get a 44 × 44 px hit area around them. */
 .vo-rate,.vo-x,.byline .vo-play{position:relative}
 .vo-rate::after,.vo-x::after,.byline .vo-play::after,.cb-copy::after{content:"";position:absolute;left:50%;top:50%;width:44px;height:44px;min-width:100%;transform:translate(-50%,-50%)}
-.mini .vo-x{width:36px;height:36px}
 
 @media (prefers-reduced-motion:reduce){
   .chev,.sh-btn,.sh-item,.cb-copy,.listen{transition:none}
 }
 
 /* ── 11 · PODCAST ────────────────────────────────────────────────────────────
-   The episode that belongs to this article, generated by tools/build-podcast.py
-   from podcast/podcast.json: cover, play, chapters and the transcript. */
-.pod{margin:var(--sp-7) 0 0;padding:var(--sp-5);border:1px solid var(--line);border-radius:var(--r-panel);background:#fff}
-.pod-top{display:flex;gap:var(--sp-5);align-items:flex-start}
-.pod-cover{width:128px;height:128px;flex:none;border-radius:12px;object-fit:cover}
-.pod-intro{min-width:0}
-.pod-k{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
-article h2.pod-t{margin:var(--sp-2) 0 0;font-size:1.375rem;line-height:1.25}
-article p.pod-d{margin:var(--sp-2) 0 0;font-size:.9375rem;line-height:1.55;color:var(--m1)}
-.pod-acts{margin-top:var(--sp-4);display:flex;flex-wrap:wrap;align-items:center;gap:var(--sp-2) var(--sp-5)}
-.pod-play{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 20px 0 16px;border:0;border-radius:999px;background:var(--blue);color:#fff;font:inherit;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
-.pod-play:hover{background:#1646B8}
-.pod-play:active{background:#123A99}
-.pod-play .ic-play{margin-left:2px}
-article a.pod-link{font-size:14px;font-weight:600;text-decoration:none}
-article h3.pod-h{margin:var(--sp-6) 0 var(--sp-2);font-size:11px;line-height:1.4;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--m2)}
-article ol.pod-ch{list-style:none;margin:0 calc(var(--sp-2) * -1);padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(16rem,1fr));gap:0 var(--sp-4)}
-article ol.pod-ch>li{padding:0}
-.pod-ch button{display:flex;align-items:baseline;gap:var(--sp-3);width:100%;min-height:44px;padding:var(--sp-2);border:0;border-radius:8px;background:none;font:inherit;font-size:.9375rem;line-height:1.4;text-align:left;color:var(--art);cursor:pointer;transition:background .2s}
-.pod-ch button:hover{background:var(--s1);color:var(--ink)}
-.pod .ts{flex:none;min-width:2.6em;font-variant-numeric:tabular-nums;font-size:.8125rem;font-weight:600;color:var(--blue)}
-.pod-tr{margin-top:var(--sp-5);border-top:1px solid var(--rule)}
-.pod-tr summary{display:flex;align-items:center;gap:var(--sp-2);min-height:52px;font-weight:600;color:var(--ink);cursor:pointer;list-style:none}
-.pod-tr summary::-webkit-details-marker{display:none}
-article .pod-tr-body h3{margin:var(--sp-5) 0 var(--sp-2);font-size:1rem;line-height:1.4}
-article .pod-tr-body p{margin:0 0 var(--sp-3);font-size:.9375rem;line-height:1.6}
-.pod-tr-body b{color:var(--ink)}
-.pod-tr-body button.ts{min-width:0;margin:0 2px;padding:0 4px;border:0;border-radius:4px;background:none;font-family:inherit;cursor:pointer}
-.pod-tr-body button.ts:hover{background:var(--blue-bg)}
-article p.pod-note{margin-top:var(--sp-5);font-size:.8125rem;color:var(--m2)}
-@media (max-width:620px){.pod{padding:var(--sp-4)}.pod-top{gap:var(--sp-4)}.pod-cover{width:72px;height:72px;border-radius:8px}}
-@media (prefers-reduced-motion:reduce){.pod-play,.pod-ch button{transition:none}}
+   Episode card, chapter chips, "Also a podcast" and the mini player:
+   assets/podcast/podcast.css (shared with /insights/podcast/). */
         /* With eight menu items, the full menu no longer fits next to the logo and
            the language switch below ~960 px, so tablets in portrait get the mobile
            menu as well. */
@@ -749,6 +708,7 @@ article p.pod-note{margin-top:var(--sp-5);font-size:.8125rem;color:var(--m2)}
     </style>
 </head>
 <body>
+<script type="application/json" id="i18n-ui">{"title": "Werden Sie zur Quelle: AEC-Daten fit für die KI-Suche machen | Martin Motlík", "article_title": "Werden Sie zur Quelle: AEC-Daten fit für die KI-Suche machen", "role": "AEC-Digitalstratege & Web Lead", "narrating": "Insights-Podcast (EN)", "listen": "Podcast (EN)", "pause": "Pausieren", "seek": "Im Podcast springen", "speed": "Wiedergabegeschwindigkeit", "close": "Player schließen", "player": "Podcast-Player", "copy": "Kopieren", "copied": "Kopiert ✓", "copy_failed": "Kopieren fehlgeschlagen", "copy_robots": "robots.txt kopieren", "link_copied": "Link kopiert ✓", "link_copied_aria": "Link kopiert", "copy_link": "Link kopieren", "share_on": "Auf {net} teilen (öffnet ein neues Fenster)", "share_email": "Per E-Mail teilen (öffnet Ihre E-Mail-App)", "toc_aria": "Auf dieser Seite", "crumbs_aria": "Brotkrümelnavigation", "menu_aria": "Menü öffnen", "cover_alt": "Martin Motlík arbeitet im Freien am Laptop, umgeben von den Symbolen von KI-Assistenten und Suchmaschinen", "code_copied": "Code kopiert", "play_episode": "Folge abspielen", "resume": "Fortsetzen", "chip_at": "Im Podcast", "chip_playing": "Läuft", "now_playing": "Läuft gerade", "paused": "Pausiert", "chapter_of": "Kapitel {n} von {total}", "mini_aria": "Podcast-Player"}</script>
 
 <nav class="nav" id="main-nav">
   <div class="nav-inner">
@@ -813,19 +773,19 @@ article p.pod-note{margin-top:var(--sp-5);font-size:.8125rem;color:var(--m2)}
           </span>
           <div><div class="who">Martin Motl&iacute;k</div><div id="vo-role" data-ui="role">AEC-Digitalstratege &amp; Web Lead</div></div>
 
-          <!-- Podcast player. Hidden until the audio at data-src reports a duration.
-               The Listen button and the player occupy the same slot: opening the
-               player replaces the button. -->
-          <div class="vo-root" id="vo" data-src="/assets/podcast/ep001-be-the-source.mp3" hidden>
+          <!-- Podcast player (assets/podcast/podcast.js). Hidden until the audio
+               reports a duration. The Listen button and the player occupy the same
+               slot: opening the player replaces the button. -->
+          <div class="vo-root" id="vo" hidden>
             <button class="listen" id="vo-listen" type="button">
               <span class="pl" aria-hidden="true"><i></i></span>
               <span id="vo-listen-label" data-ui="listen">Podcast (EN)</span>
             </button>
             <div class="vo" id="vo-player" role="group" aria-label="Podcast-Player" data-i18n-attr="aria-label:player" hidden>
-              <button class="vo-play" id="vo-play" type="button" aria-label="Pause"><span class="ic-play"></span></button>
-              <button class="wave" id="vo-wave" type="button" aria-label="Im Podcast springen" data-i18n-attr="aria-label:seek"></button>
+              <button class="vo-play" id="vo-play" type="button" data-pod-toggle aria-label="Folge abspielen" data-i18n-attr="aria-label:play_episode"><span class="i-play" aria-hidden="true"></span><span class="i-pause" aria-hidden="true"><i></i><i></i></span></button>
+              <button class="wave" id="vo-wave" type="button" aria-label="Im Podcast springen" data-i18n-attr="aria-label:seek" data-pod-wave="48"></button>
               <span class="vo-time" id="vo-time">0:00</span>
-              <button class="vo-rate" id="vo-rate" type="button" aria-label="Wiedergabegeschwindigkeit" data-i18n-attr="aria-label:speed">1&times;</button>
+              <button class="vo-rate" id="vo-rate" type="button" aria-label="Wiedergabegeschwindigkeit" data-i18n-attr="aria-label:speed" data-pod-rate>1&times;</button>
             </div>
           </div>
 
@@ -865,6 +825,12 @@ article p.pod-note{margin-top:var(--sp-5);font-size:.8125rem;color:var(--m2)}
         <a data-k="toc.a6" href="#kit">Vorlage zum Kopieren</a>
         <a data-k="toc.a7" href="#start">Wo ich anfangen würde</a>
       </nav>
+<!-- toc-pod:start · generated by tools/build-podcast.py -->
+      <a class="toc-pod" href="#episode">
+        <picture><source type="image/avif" srcset="/assets/podcast/cover-ep01-96.avif"><img class="tp-cover" src="/assets/podcast/cover-ep01-96.jpg" width="40" height="40" alt="" loading="lazy" decoding="async"></picture>
+        <span class="tp-txt"><span class="tp-t" data-i18n="also_podcast">Auch als Podcast</span><span class="tp-s">14 <span data-i18n="ep_min">Min.</span> · <span data-i18n="also_listen">Anhören</span></span></span>
+      </a>
+<!-- toc-pod:end -->
       <div class="share" role="group" aria-labelledby="share-h-side">
         <div class="lbl" id="share-h-side" data-i18n="share_label">Teilen</div>
         <div class="share-main">
@@ -903,7 +869,7 @@ article p.pod-note{margin-top:var(--sp-5);font-size:.8125rem;color:var(--m2)}
 
       <p data-k="intro.p1" class="lead">Öffnen Sie heute Google und geben Sie eine echte Ingenieursfrage ein – eine dieser langen, mit Bemessungsnorm und Werkstoff. Noch bevor Sie einen einzigen Link sehen, hat Google Ihnen bereits eine Antwort geschrieben, mit einer Handvoll Quellen darunter. Diese kurze Liste ist die neue erste Seite der Suchergebnisse. Für ein AEC-Unternehmen lohnt es sich zu prüfen, welche Quellen bei den Fragen seiner Kunden erscheinen.</p>
 
-      <h2 data-k="ai-search.h21" id="ai-search">Google ist bereits eine KI-Suchmaschine</h2>
+      <div class="h2-row"><h2 data-k="ai-search.h21" id="ai-search">Google ist bereits eine KI-Suchmaschine</h2><button class="ch-chip" type="button" data-pod-seek="66" data-pod-chip><span class="cc-ic" aria-hidden="true"></span><span><span class="cc-l" data-i18n="chip_at">Im Podcast</span> <span class="cc-t">1:06</span></span></button></div>
       <p data-k="ai-search.p2">Bei „KI-Suche“ denken die meisten an ChatGPT. Damit übersehen sie die größere Verschiebung. Auf der Google I/O im Mai 2026 meldete Google, dass die Übersicht mit KI (AI Overviews) mehr als 2,5 Milliarden monatliche Nutzer erreicht hat und der dialogorientierte KI-Modus (AI Mode) mehr als eine Milliarde, und kündigte an, beide zu einer einzigen KI-Sucherfahrung zusammenzuführen.<a class="cite" id="cite-1" href="#src-1" aria-label="Quelle 1">1</a> Ihre Kunden müssen nicht zu einem Chatbot wechseln. Die Suchmaschine, die sie seit zwanzig Jahren nutzen, ist selbst einer geworden.</p>
       <p data-k="ai-search.p3">Ingenieursfragen sind genau die Art von Suche, die heute eine Antwort statt einer Trefferliste bekommt: lang, konkret und voller Randbedingungen. Welche Software kann eine BSP-Decke nach NDS bemessen? Welcher Dübel ist für gerissenen Beton zugelassen? Der Ingenieur liest die Antwort und vielleicht eine ihrer Quellen. Nehmen Sie ChatGPT, Claude, Gemini und Perplexity hinzu – das Muster ist überall dasselbe.</p>
       <p data-k="ai-search.p4">Zwanzig Jahre lang war eine gute Produktseite mit gestochen scharfen Fotos das Ziel. Heute ist sie Rohmaterial. Ob ein Ingenieur sie je zu sehen bekommt, hängt davon ab, ob ein KI-System sie lesen, ihr vertrauen und sie zitieren kann. Neben den Suchrankings achte ich heute auch darauf, ob eine Seite in KI-Antworten als Quelle zitiert wird.</p>
@@ -913,7 +879,7 @@ article p.pod-note{margin-top:var(--sp-5);font-size:.8125rem;color:var(--m2)}
         <span></span>
       </blockquote>
 
-      <h2 data-k="localization.h21" id="localization">Was mich Lokalisierung über KI-Sichtbarkeit gelehrt hat</h2>
+      <div class="h2-row"><h2 data-k="localization.h21" id="localization">Was mich Lokalisierung über KI-Sichtbarkeit gelehrt hat</h2><button class="ch-chip" type="button" data-pod-seek="249" data-pod-chip><span class="cc-ic" aria-hidden="true"></span><span><span class="cc-l" data-i18n="chip_at">Im Podcast</span> <span class="cc-t">4:09</span></span></button></div>
       <p data-k="localization.p2">Seit 2021 arbeite ich an Websites und Inhalten für Ingenieursoftware und passe sie für Ingenieure in den USA, in Kanada und in Europa an. Ein großer Teil dieser Arbeit ist Lokalisierung – und sie hat mich die wichtigste Lektion für die KI-Suche gelehrt, lange bevor es KI-Suche überhaupt gab.</p>
       <p data-k="localization.p3">Eine Seite zu übersetzen ist einfach. Sie zu lokalisieren heißt zu fragen, wie ein Ingenieur in einem anderen Markt nach derselben Sache sucht: mit welcher Bemessungsnorm er arbeitet, welche Begriffe er verwendet, welche Schreibweise er erwartet. Eine übersetzte Seite kann völlig korrekt sein und trotzdem für die Menschen unsichtbar bleiben, für die sie geschrieben wurde – weil sie eine Frage beantwortet, die diese nie stellen.</p>
 
@@ -926,7 +892,7 @@ article p.pod-note{margin-top:var(--sp-5);font-size:.8125rem;color:var(--m2)}
       <h3 data-k="localization.h39">Eine Seite, mehrere Regionen</h3>
       <p data-k="localization.p10">Lokalisierung nach IP-Adresse gehört zu meinem Arbeitsalltag. Eine Seite, eine URL – und Besucher aus Frankreich, Italien, Deutschland oder den USA sehen jeweils Inhalte, die auf ihren Markt zugeschnitten sind, etwa lokale Ansprechpartner, die Sprache oder die Bemessungsnormen, mit denen sie arbeiten. Für Menschen funktioniert das sehr gut. Bei Maschinen ist Sorgfalt gefragt, denn ein Crawler sieht nur die Variante, die an seine eigene IP-Adresse ausgeliefert wird. Standardmäßig crawlt der Googlebot <a href="https://developers.google.com/search/docs/specialty/international/locale-adaptive-pages" target="_blank" rel="noopener">von US-Adressen aus</a>, und auch KI-Crawler arbeiten größtenteils aus den USA.<a class="cite" id="cite-3" href="#src-3" aria-label="Quelle 3">3</a> Wenn Sie das nicht einplanen, erreichen die französische, italienische und deutsche Version Ihrer Inhalte womöglich nie eine KI-Antwort. Die Lösung: Die IP-Lokalisierung gestaltet das Nutzererlebnis, und zugleich hat jede regionale Version eines wichtigen Fakts eine eigene URL, verknüpft per hreflang. Besucher bekommen automatisch die richtige Variante, und Crawler finden trotzdem alle.</p>
 
-      <h2 data-k="load-path.h21" id="load-path">Wie ein Fakt in eine KI-Antwort gelangt</h2>
+      <div class="h2-row"><h2 data-k="load-path.h21" id="load-path">Wie ein Fakt in eine KI-Antwort gelangt</h2><button class="ch-chip" type="button" data-pod-seek="429" data-pod-chip><span class="cc-ic" aria-hidden="true"></span><span><span class="cc-l" data-i18n="chip_at">Im Podcast</span> <span class="cc-t">7:09</span></span></button></div>
       <p data-k="load-path.p2">Die Lokalisierung hat auch verändert, wie ich Inhalte bewerte. Ein KI-System durchstöbert Ihre Website nicht wie ein Mensch. Es extrahiert Fakten und entscheidet, welchen Aussagen es genug vertraut, um sie zu wiederholen. Hundert vage Seiten verlieren gegen eine einzige, die genau sagt, welche Bemessungsnormen Sie unterstützen, in welchen Einheiten und für welche Märkte. Wenn ich eine Website prüfe, zähle ich deshalb keine Seiten. Ich verfolge einzelne Fakten – etwa eine unterstützte Bemessungsnorm, eine Tragfähigkeit oder einen Bürostandort – und prüfe, ob jeder davon den Weg vom Server bis in eine KI-Antwort übersteht. Ich stelle mir das als Lastpfad vor. Jedes Bauteil auf dem Weg muss den Fakt tragen:</p>
       <div class="lp">
         <div data-k="load-path.div3" class="lp-end"><span class="lp-ico" aria-hidden="true">&lt;/&gt;</span>Ihre Seite</div>
@@ -941,7 +907,7 @@ article p.pod-note{margin-top:var(--sp-5);font-size:.8125rem;color:var(--m2)}
       </div>
       <p data-k="load-path.p10">Wie jeder Lastpfad versagt er am schwächsten Bauteil, und die ersten beiden versagen häufiger, als man erwartet. Laut Crawl-Daten von <a href="https://vercel.com/blog/the-rise-of-the-ai-crawler" target="_blank" rel="noopener">Vercel und MERJ</a> führen die großen KI-Crawler überhaupt kein JavaScript aus.<a class="cite" id="cite-2" href="#src-2" aria-label="Quelle 2">2</a> Google schon – deshalb kann eine Seite bei Google ranken und in der Übersicht mit KI erscheinen und für ChatGPT, Claude und Perplexity trotzdem leer sein. Inhalte, die erst erscheinen, nachdem ein Skript gelaufen ist – in einem Konfigurator, einer Web-App oder einer interaktiven Tabelle –, existieren für sie schlicht nicht. Text in PDFs und Bildern erreicht sie bestenfalls unzuverlässig.</p>
 
-      <h2 data-k="rules.h21" id="rules">Meine Regeln für KI-taugliche Daten</h2>
+      <div class="h2-row"><h2 data-k="rules.h21" id="rules">Meine Regeln für KI-taugliche Daten</h2><button class="ch-chip" type="button" data-pod-seek="500" data-pod-chip><span class="cc-ic" aria-hidden="true"></span><span><span class="cc-l" data-i18n="chip_at">Im Podcast</span> <span class="cc-t">8:20</span></span></button></div>
       <ol class="steps">
         <li data-k="rules.li2"><span class="lead-in">HTML ist die maßgebliche Quelle.</span> PDFs, Bilder und Videos sind Kopien davon, nie der einzige Ort, an dem ein Fakt steht.</li>
         <li data-k="rules.li3"><span class="lead-in">Ein Fakt, eine kanonische Seite.</span> Dort klar formuliert, überall sonst identisch.</li>
@@ -951,7 +917,7 @@ article p.pod-note{margin-top:var(--sp-5);font-size:.8125rem;color:var(--m2)}
         <li data-k="rules.li7"><span class="lead-in">Fangen Sie nicht mit llms.txt an.</span> Die Datei gehört auf Dokumentations- und API-Websites, wo Coding-Assistenten sie tatsächlich lesen. Auf einer Marketing-Website ist sie bestenfalls ein günstiges Experiment, und laut Google ignoriert die Google-Suche sie. Sorgen Sie zuerst für Crawlbarkeit.</li>
       </ol>
 
-      <h2 data-k="try.h21" id="try">Testen Sie es noch diese Woche</h2>
+      <div class="h2-row"><h2 data-k="try.h21" id="try">Testen Sie es noch diese Woche</h2><button class="ch-chip" type="button" data-pod-seek="681" data-pod-chip><span class="cc-ic" aria-hidden="true"></span><span><span class="cc-l" data-i18n="chip_at">Im Podcast</span> <span class="cc-t">11:21</span></span></button></div>
       <p data-k="try.p2">Um zu sehen, wo Sie stehen, brauchen Sie keine Agentur. Drei Prüfungen dauern weniger als eine halbe Stunde:</p>
       <ol class="steps">
         <li data-k="try.li3"><span class="lead-in">Rufen Sie eine wichtige Seite so ab wie ein Crawler.</span> Kein Browser, kein JavaScript. Suchen Sie nach einem Satz, auf den es ankommt, etwa einem Produktnamen oder einer unterstützten Bemessungsnorm:
@@ -991,7 +957,7 @@ article p.pod-note{margin-top:var(--sp-5);font-size:.8125rem;color:var(--m2)}
       <p data-k="kit.p10">Zwei Dinge prüfe ich jedes Mal: <code>Disallow: /</code> unter <code>User-agent: *</code> gehört nur auf eine Staging-Umgebung, nie auf eine Live-Website, denn es sperrt alle Crawler auf einmal aus. Und jede Subdomain braucht ihre eigene Datei: <code>docs.example.com</code> übernimmt die Regeln Ihrer Hauptdomain nicht, und eine CDN- oder Firewall-Regel kann KI-Bots blockieren, ganz gleich, was in der robots.txt steht.</p>
 
 
-      <h2 data-k="start.h21" id="start">Wo ich anfangen würde</h2>
+      <div class="h2-row"><h2 data-k="start.h21" id="start">Wo ich anfangen würde</h2><button class="ch-chip" type="button" data-pod-seek="754" data-pod-chip><span class="cc-ic" aria-hidden="true"></span><span><span class="cc-l" data-i18n="chip_at">Im Podcast</span> <span class="cc-t">12:34</span></span></button></div>
       <p data-k="start.p2">Beginnen Sie mit einer Produkt- oder Leistungsseite, die für Ihr Geschäft wichtig ist. Prüfen Sie, ob sie klar sagt, was Sie anbieten, welche Normen oder Zulassungen gelten und welche Märkte Sie bedienen. Prüfen Sie dann, ob diese Fakten im HTML der Seite zugänglich sind und mit Ihrer Dokumentation übereinstimmen. Damit haben Sie einen konkreten Ausgangspunkt, um den Rest der Website zu verbessern.</p>
       <p data-k="start.p3">Die meisten AEC-Unternehmen haben das Material längst: Produktseiten, Datenblätter, Projektreferenzen, Dokumentation. Softwarehersteller brauchen eine lesbare Seite für jede Funktion und jede unterstützte Norm. Bauproduktehersteller brauchen ihre Tragfähigkeiten, Feuerwiderstandsklassen und Zulassungen als Text, nicht nur in PDFs. Ingenieurbüros brauchen Projektseiten, die Tragsystem, Werkstoff, Norm und ihre eigene Rolle nennen, statt nur eine Fotogalerie zu zeigen. Nichts davon ist neuer Inhalt. Es ist der Inhalt, den Sie schon haben – nur lesbar gemacht.</p>
 
@@ -1001,140 +967,133 @@ article p.pod-note{margin-top:var(--sp-5);font-size:.8125rem;color:var(--m2)}
       </div>
 
 <!-- podcast:start · generated by tools/build-podcast.py from podcast/podcast.json -->
-      <section class="pod" id="podcast" aria-labelledby="podcast-h">
-        <div class="pod-top">
-          <picture><source type="image/avif" srcset="/assets/podcast/cover-600.avif"><img class="pod-cover" src="/assets/podcast/cover-600.jpg" width="600" height="600" alt="" loading="lazy" decoding="async"></picture>
-          <div class="pod-intro">
-            <div class="pod-k"><span data-i18n="pod_kicker">Insights-Podcast</span> · <span data-i18n="pod_episode">Folge</span> 1 · 14:08</div>
-            <h2 class="pod-t" id="podcast-h" data-i18n="pod_title">Hören Sie das Gespräch</h2>
-            <p class="pod-d" data-i18n="pod_desc">Martin und Co-Moderatorin Sarah gehen diesen Artikel an einem Praxisfall durch, auf Englisch.</p>
-            <div class="pod-acts">
-              <button class="pod-play" type="button" data-pod-seek="0"><span class="ic-play" aria-hidden="true"></span><span data-i18n="pod_play">Folge abspielen</span></button>
-              <a class="pod-link" href="/de/insights/podcast/" data-i18n="pod_all">Alle Folgen</a>
+      <section class="ep-card" id="episode" aria-labelledby="episode-h">
+        <div class="ep-top">
+          <picture><source type="image/avif" srcset="/assets/podcast/cover-ep01-264.avif"><img class="ep-cover" src="/assets/podcast/cover-ep01-264.jpg" width="132" height="132" alt="" loading="lazy" decoding="async"></picture>
+          <div class="ep-intro">
+            <div class="ep-k"><span data-i18n="pod_kicker">Insights-Podcast</span> · <span data-i18n="pod_episode">Folge</span> 1 · 14:08</div>
+            <h2 class="ep-t" id="episode-h" data-i18n="pod_title">Hören Sie das Gespräch</h2>
+            <p class="ep-d" data-i18n="pod_desc">Martin und Co-Moderatorin Sarah gehen diesen Artikel an einem Praxisfall durch, auf Englisch.</p>
+            <div class="ep-acts">
+              <button class="ep-play" type="button" data-pod-toggle="card"><span class="ep-ic"><span class="i-play" aria-hidden="true"></span><span class="i-pause" aria-hidden="true"><i></i><i></i></span></span><span data-pod-label data-i18n="pod_play">Folge abspielen</span></button>
+              <a class="ep-all" href="/de/insights/podcast/" data-i18n="pod_all">Alle Folgen →</a>
             </div>
           </div>
         </div>
-        <h3 class="pod-h" data-i18n="pod_chapters">Kapitel</h3>
-        <ol class="pod-ch" lang="en">
-          <li><button type="button" data-pod-seek="0"><span class="ts">0:00</span><span class="ct">Cold open: Sarah&#x27;s story</span></button></li>
-          <li><button type="button" data-pod-seek="66"><span class="ts">1:06</span><span class="ct">&quot;But our SEO works&quot;</span></button></li>
-          <li><button type="button" data-pod-seek="156"><span class="ts">2:36</span><span class="ct">The gallery problem</span></button></li>
-          <li><button type="button" data-pod-seek="249"><span class="ts">4:09</span><span class="ct">The timber page</span></button></li>
-          <li><button type="button" data-pod-seek="348"><span class="ts">5:48</span><span class="ct">The Vancouver twist</span></button></li>
-          <li><button type="button" data-pod-seek="429"><span class="ts">7:09</span><span class="ct">Load path, part one</span></button></li>
-          <li><button type="button" data-pod-seek="500"><span class="ts">8:20</span><span class="ct">The PDF argument</span></button></li>
-          <li><button type="button" data-pod-seek="583"><span class="ts">9:43</span><span class="ct">Load path, part two</span></button></li>
-          <li><button type="button" data-pod-seek="681"><span class="ts">11:21</span><span class="ct">What do I tell my boss?</span></button></li>
-          <li><button type="button" data-pod-seek="754"><span class="ts">12:34</span><span class="ct">Close</span></button></li>
-        </ol>
-        <details class="pod-tr">
-          <summary><span data-i18n="pod_transcript">Transkript (Englisch)</span><svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary>
-          <div class="pod-tr-body" lang="en">
-            <h3>Cold open: Sarah&#x27;s story</h3>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="0" aria-label="0:00">0:00</button> So, a confession. A few weeks ago I opened ChatGPT and typed: &quot;Which structural engineering firms in Portland have real experience with mass timber?&quot;</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="10" aria-label="0:10">0:10</button> And?</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="11" aria-label="0:11">0:11</button> Five firms. Nicely written answer, sources underneath. We weren&#x27;t one of them. And we&#x27;ve designed, what, a dozen CLT buildings in the last few years.</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="21" aria-label="0:21">0:21</button> Let me guess. At least one of those five has done less than you.</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="25" aria-label="0:25">0:25</button> One of them has done two. I checked.</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="29" aria-label="0:29">0:29</button> Welcome to Insights. I&#x27;m Martin Motlík. I work on websites and content for engineering software, for engineers in the U.S., Canada and Europe. And today I&#x27;m joined by Sarah.</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="41" aria-label="0:41">0:41</button> Hi, Martin. So, quick context for everyone: I run marketing at a structural engineering firm in Portland. We&#x27;ve done SEO properly for years. Good rankings, clean meta titles, keywords, the whole thing.</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="54" aria-label="0:54">0:54</button> And the AI still picked someone else.</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="57" aria-label="0:57">0:57</button> Right. So that&#x27;s what I want to understand today. Not the theory. How you would look at my situation.</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="63" aria-label="1:03">1:03</button> Deal. Let&#x27;s take it apart.</p>
-            <h3>&quot;But our SEO works&quot;</h3>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="66" aria-label="1:06">1:06</button> Okay, the obvious question first. We rank on page one for &quot;structural engineer Portland.&quot; Why isn&#x27;t that enough anymore?</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="75" aria-label="1:15">1:15</button> Because page one isn&#x27;t the finish line anymore. Think about what happened when you searched. You didn&#x27;t get a list. You got an answer. And that&#x27;s not only ChatGPT. Google itself is an AI search engine now. At Google I/O in May 2026, Google said AI Overviews had passed two and a half billion monthly users, and AI Mode more than a billion. And they&#x27;re merging the two.</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="100" aria-label="1:40">1:40</button> So my clients don&#x27;t even have to switch to a chatbot.</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="103" aria-label="1:43">1:43</button> Exactly. The search engine they&#x27;ve used for twenty years quietly became one. And your clients ask the long, specific kind of question. A material, a code, a building type, a city. That&#x27;s exactly the kind of search that now gets an answer instead of a list.</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="120" aria-label="2:00">2:00</button> So... was all our SEO work wasted?</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="123" aria-label="2:03">2:03</button> No, and I want to be clear about that. SEO is still the foundation. If a page can&#x27;t be crawled and indexed, it won&#x27;t end up in an AI answer either. What changed is the goal. Alongside rankings, I now look at whether a page gets cited as a source. And a meta description won&#x27;t get you cited. It was written for a person scanning a list.</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="144" aria-label="2:24">2:24</button> And the AI doesn&#x27;t scan.</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="146" aria-label="2:26">2:26</button> No. It reads your page, pulls out individual facts, and decides which ones it trusts enough to repeat. Keywords help it find you. They don&#x27;t make it trust you.</p>
-            <h3>The gallery problem</h3>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="156" aria-label="2:36">2:36</button> So how would you start with us? If I hired you tomorrow.</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="160" aria-label="2:40">2:40</button> I&#x27;d ask you a slightly annoying question. Where on your website does it say, in plain text, that you&#x27;ve designed a dozen CLT buildings? To which code? In which cities?</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="172" aria-label="2:52">2:52</button> Um... it&#x27;s in the projects section. We have a gallery. Really beautiful photography.</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="179" aria-label="2:59">2:59</button> With captions?</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="180" aria-label="3:00">3:00</button> A project name. Sometimes the architect.</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="182" aria-label="3:02">3:02</button> That&#x27;s the most common thing I see with engineering firms. A gallery convinces a person. But a machine can&#x27;t look at a photo of a timber roof and conclude, &quot;this firm designs CLT to NDS.&quot; For an AI system, that expertise basically doesn&#x27;t exist.</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="199" aria-label="3:19">3:19</button> So the competitor with two projects...</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="202" aria-label="3:22">3:22</button> ...probably wrote two plain pages. The project, the structural system, the material, the design code, and what their role was. That&#x27;s enough to be quotable.</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="213" aria-label="3:33">3:33</button> Okay, that honestly stings a little.</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="216" aria-label="3:36">3:36</button> It&#x27;s very fixable. And it&#x27;s the same lesson I learned from localization, long before anyone talked about AI search.</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="224" aria-label="3:44">3:44</button> Tell me about that. That&#x27;s your daily work, right?</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="227" aria-label="3:47">3:47</button> Since 2021, yeah. Websites and content for engineering software, adapted for the U.S., Canada and Europe. And what localization teaches you is this: translating a page is easy. Localizing it means asking how an engineer in that market actually searches. Which code they use, which terms, which spelling.</p>
-            <h3>The timber page</h3>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="249" aria-label="4:09">4:09</button> Do you have an example?</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="250" aria-label="4:10">4:10</button> One that&#x27;s actually very close to your world. A timber design page I optimized for engineers in the U.S. and Canada, for a software vendor. The original content came from Europe. Accurate, thorough... and it spoke Eurocode.</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="266" aria-label="4:26">4:26</button> Nobody in Portland thinks in Eurocode.</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="270" aria-label="4:30">4:30</button> Not in Portland, not in Vancouver. They design to NDS in the U.S. and CSA O86 in Canada, and that&#x27;s how they phrase their questions. So I rebuilt the page around the engineer&#x27;s question, not around the product. The North American codes are named right in the text. U.S. English, U.S. terms, &quot;design standards&quot; as the umbrella. Nobody, human or machine, has to translate from one standards world to the other.</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="300" aria-label="5:00">5:00</button> And the images? Because that&#x27;s my gallery problem, right?</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="304" aria-label="5:04">5:04</button> Same thing exactly. A screenshot of a model checked to Eurocode, with European labels, tells an engineer this was made for someone else. So we localized the screenshots too. And every image got text: a title, alt text, a description and a caption that name the standard. The image convinces the engineer. The text around it is what a machine can quote.</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="329" aria-label="5:29">5:29</button> So for me, every project photo gets a caption that says the system, the code, and what we actually did.</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="336" aria-label="5:36">5:36</button> That&#x27;s it. Write in the language of the question. If your pages never say &quot;NDS,&quot; you won&#x27;t be named when someone asks about NDS. No matter how many buildings you&#x27;ve done.</p>
-            <h3>The Vancouver twist</h3>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="348" aria-label="5:48">5:48</button> Here&#x27;s a twist, though. We also have an office in Vancouver. And our site shows Canadian visitors different content, based on their location.</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="357" aria-label="5:57">5:57</button> Ah. That&#x27;s something I work with every day, actually. One page, one URL, and visitors from France, Italy, Germany or the U.S. each see content for their market. Local contacts, language, the design standards they use. For people, it works really well.</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="377" aria-label="6:17">6:17</button> I&#x27;m sensing a &quot;but.&quot;</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="380" aria-label="6:20">6:20</button> But a crawler only sees the version served to its own IP address. Googlebot crawls from U.S. addresses by default, and AI crawlers largely do too. So your Vancouver content, all the CSA O86 projects...</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="396" aria-label="6:36">6:36</button> ...might never reach an AI answer.</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="399" aria-label="6:39">6:39</button> Unless you plan for it. The fix is simple in principle. Keep the IP localization for the experience. But give every regional version of an important fact its own URL, linked with hreflang. Visitors still land on the right version automatically, and crawlers can find all of them.</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="419" aria-label="6:59">6:59</button> That would never have shown up in our SEO reports.</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="422" aria-label="7:02">7:02</button> Usually not. Which is why I stopped counting pages when I review a website.</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="427" aria-label="7:07">7:07</button> What do you count instead?</p>
-            <h3>Load path, part one</h3>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="429" aria-label="7:09">7:09</button> I follow single facts. Like yours: &quot;we design CLT buildings to NDS.&quot; And I check whether that one fact survives the trip from your server into an AI answer. I think of it as a load path.</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="444" aria-label="7:24">7:24</button> Of course you do.</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="446" aria-label="7:26">7:26</button> Occupational hazard. But it works. There are five members, and the fact has to make it through every one. The first is: is it reachable? Do your robots rules and your firewall actually let AI crawlers in?</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="460" aria-label="7:40">7:40</button> Okay, now I&#x27;m nervous. Our IT guy told me last year he blocked &quot;the AI bots.&quot; Because of the training thing.</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="468" aria-label="7:48">7:48</button> That&#x27;s really common, and it&#x27;s worth checking exactly what he blocked. Training bots and search bots are separate. You can opt out of model training and still let ChatGPT search and Claude search read your site. And if he blocked everything at the CDN level, your robots rules don&#x27;t even matter.</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="487" aria-label="8:07">8:07</button> So that alone could explain it.</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="490" aria-label="8:10">8:10</button> It could. Second member: is the fact readable? Is it in the HTML, or is it locked in a PDF, an image, or something a script renders?</p>
-            <h3>The PDF argument</h3>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="500" aria-label="8:20">8:20</button> Well... our statement of qualifications is a PDF. It&#x27;s gorgeous. And honestly, clients download it. I&#x27;m not getting rid of it.</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="510" aria-label="8:30">8:30</button> And you shouldn&#x27;t. I&#x27;m not anti-PDF.</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="513" aria-label="8:33">8:33</button> It kind of sounded like you were.</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="515" aria-label="8:35">8:35</button> Fair. Here&#x27;s the distinction. Keep the PDF. Just never let it be the only place a fact lives. My rule is that HTML is the source of truth. PDFs, images and videos are copies of it. Text inside PDFs reaches AI crawlers unreliably at best.</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="537" aria-label="8:57">8:57</button> Okay, I can live with that. What about JavaScript? Our new site is built on one of those modern frameworks.</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="543" aria-label="9:03">9:03</button> Then that&#x27;s the first thing I&#x27;d test. Many modern frameworks can render the page on the server, and then you&#x27;re fine. The only question is whether the text is in the HTML before any script runs. Because according to crawl data from Vercel and MERJ, the major AI crawlers don&#x27;t execute JavaScript at all. Google does. So a page can rank in Google, show up in AI Overviews, and still be completely empty to ChatGPT, Claude and Perplexity.</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="573" aria-label="9:33">9:33</button> Wait. So we could be invisible to them and never notice, because Google looks fine.</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="579" aria-label="9:39">9:39</button> Right. Google looks fine, so nobody thinks to check.</p>
-            <h3>Load path, part two</h3>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="583" aria-label="9:43">9:43</button> Okay, reachable, readable. What are the other three?</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="587" aria-label="9:47">9:47</button> Third: understood. The page says plainly what it&#x27;s about. The service, the design code, the units, the market. Fourth: consistent. Every page, every file, every listing states the fact the same way.</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="603" aria-label="10:03">10:03</button> Hm. We say &quot;mass timber&quot; on the homepage, &quot;CLT&quot; on the project pages, and a couple of directory listings still have our old office address.</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="614" aria-label="10:14">10:14</button> That&#x27;s the kind of thing that quietly weakens trust. My rule there is one fact, one canonical page. State it there clearly, and identically everywhere else. And if you use structured data, the markup never says more than the visible page. Markup that contradicts the page doesn&#x27;t fix confusion. It automates it.</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="635" aria-label="10:35">10:35</button> And the fifth?</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="636" aria-label="10:36">10:36</button> Corroborated. Others confirm it. Clients, architects you work with, publications, conference talks. And like any load path, it fails at its weakest member. In my experience, the first two fail far more often than people expect.</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="652" aria-label="10:52">10:52</button> Any rule for how we should actually write the pages?</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="655" aria-label="10:55">10:55</button> Answer first. Lead with the answer and make every passage stand on its own. AI systems quote passages, not whole pages.</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="664" aria-label="11:04">11:04</button> And llms.txt? Half my LinkedIn feed says I need one.</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="669" aria-label="11:09">11:09</button> On documentation and API sites, it makes sense. On a marketing site, it&#x27;s a cheap experiment at best, and Google says its Search ignores it. Fix crawlability first.</p>
-            <h3>What do I tell my boss?</h3>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="681" aria-label="11:21">11:21</button> Practical question. My boss is going to ask how we know any of this is working. What do I report?</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="687" aria-label="11:27">11:27</button> Keep reporting rankings. But add the test you already did by accident. Take ten real questions your clients ask. Put them into Google&#x27;s AI Mode, ChatGPT, Claude and Perplexity. Write down whether you&#x27;re named, how you&#x27;re described, and whom the answers cite instead.</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="706" aria-label="11:46">11:46</button> And repeat it in a few months.</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="708" aria-label="11:48">11:48</button> Yes. Same questions, same tools. That&#x27;s your baseline. And that last part, who gets cited instead, is usually the wake-up call.</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="717" aria-label="11:57">11:57</button> What else can I do this week, without an agency?</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="721" aria-label="12:01">12:01</button> Two more checks. First, fetch one key page the way a crawler does. No browser, no JavaScript. Then search the result for a sentence that matters, like &quot;CLT&quot; or &quot;NDS.&quot; If it&#x27;s not there, AI crawlers can&#x27;t see it either. The exact command is in the article. Second, read every robots file you own, including subdomains, and ask whoever runs your CDN whether AI bots are blocked.</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="748" aria-label="12:28">12:28</button> So, basically: talk to my IT guy.</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="751" aria-label="12:31">12:31</button> Talk to your IT guy. Nicely.</p>
-            <h3>Close</h3>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="754" aria-label="12:34">12:34</button> If you had to pick one thing for me to start with on Monday?</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="758" aria-label="12:38">12:38</button> One page. Your strongest mass timber project. Rewrite it so it plainly states the structural system, the material, the design code, the location and your role. Make sure that text is in the HTML. Then make sure your other pages say the same thing.</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="777" aria-label="12:57">12:57</button> That&#x27;s... surprisingly doable.</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="779" aria-label="12:59">12:59</button> That&#x27;s the good news. Most AEC companies already own the material. Project pages, datasheets, references, documentation. It&#x27;s not new content. It&#x27;s the content you have, made readable.</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="795" aria-label="13:15">13:15</button> And the bigger picture?</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="796" aria-label="13:16">13:16</button> Make the technical facts your clients need easy to find, understand and verify. Be explicit about what you do, which standards apply, which markets you serve, and where your limits are.</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="809" aria-label="13:29">13:29</button> So, my list. Captions on every project. A friendly talk with my IT guy. The PDF stays, but the facts go into HTML. And one name for what we do, not &quot;mass timber&quot; here and &quot;CLT&quot; there.</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="825" aria-label="13:45">13:45</button> That&#x27;s the whole episode in one sentence.</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="829" aria-label="13:49">13:49</button> The full article, with the checklist and a copy-paste robots file, is on martinmotlik.com, under Insights.</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="836" aria-label="13:56">13:56</button> And if you&#x27;re working on something similar, regional content, technical documentation, AI visibility, message me on LinkedIn. I&#x27;m always happy to compare notes.</p>
-            <p><b>Sarah</b> <button class="ts" type="button" data-pod-seek="846" aria-label="14:06">14:06</button> Thanks for listening.</p>
-            <p><b>Martin</b> <button class="ts" type="button" data-pod-seek="847" aria-label="14:07">14:07</button> See you in the next one.</p>
-            <p class="pod-note">Martin&#x27;s voice is an AI clone of his own voice; Sarah is a fictional co-host voiced by AI. Produced with ElevenLabs.</p>
-          </div>
-        </details>
+        <div class="ep-bar" aria-hidden="true"><div data-pod-progress></div></div>
+        <div class="ep-chs">
+          <h3 class="ep-h" data-i18n="pod_chapters">Kapitel</h3>
+          <ol class="ep-ch" lang="en">
+            <li><button type="button" data-pod-seek="0" data-pod-chapter="0"><span class="ts">0:00</span><span class="ct">Cold open: Sarah&#x27;s story</span><span class="dot" aria-hidden="true"></span></button></li>
+            <li><button type="button" data-pod-seek="66" data-pod-chapter="1"><span class="ts">1:06</span><span class="ct">&quot;But our SEO works&quot;</span><span class="dot" aria-hidden="true"></span></button></li>
+            <li><button type="button" data-pod-seek="156" data-pod-chapter="2"><span class="ts">2:36</span><span class="ct">The gallery problem</span><span class="dot" aria-hidden="true"></span></button></li>
+            <li><button type="button" data-pod-seek="249" data-pod-chapter="3"><span class="ts">4:09</span><span class="ct">The timber page</span><span class="dot" aria-hidden="true"></span></button></li>
+            <li><button type="button" data-pod-seek="348" data-pod-chapter="4"><span class="ts">5:48</span><span class="ct">The Vancouver twist</span><span class="dot" aria-hidden="true"></span></button></li>
+            <li><button type="button" data-pod-seek="429" data-pod-chapter="5"><span class="ts">7:09</span><span class="ct">Load path, part one</span><span class="dot" aria-hidden="true"></span></button></li>
+            <li><button type="button" data-pod-seek="500" data-pod-chapter="6"><span class="ts">8:20</span><span class="ct">The PDF argument</span><span class="dot" aria-hidden="true"></span></button></li>
+            <li><button type="button" data-pod-seek="583" data-pod-chapter="7"><span class="ts">9:43</span><span class="ct">Load path, part two</span><span class="dot" aria-hidden="true"></span></button></li>
+            <li><button type="button" data-pod-seek="681" data-pod-chapter="8"><span class="ts">11:21</span><span class="ct">What do I tell my boss?</span><span class="dot" aria-hidden="true"></span></button></li>
+            <li><button type="button" data-pod-seek="754" data-pod-chapter="9"><span class="ts">12:34</span><span class="ct">Close</span><span class="dot" aria-hidden="true"></span></button></li>
+          </ol>
+        </div>
+        <div class="ep-tr">
+          <button class="ep-tr-h" type="button" aria-expanded="false" aria-controls="ep-tr-body" data-pod-transcript><span data-i18n="pod_transcript">Transkript (Englisch)</span><span class="ep-tr-s"><span data-i18n="pod_synced">Synchron zum Audio</span><svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span></button>
+          <div class="ep-tr-body" id="ep-tr-body"><div class="ep-tr-in" lang="en">
+              <button type="button" class="ep-line" data-pod-seek="0" data-pod-line="0"><span class="who who-guest">Sarah</span><span class="tx">So, a confession. A few weeks ago I opened ChatGPT and typed: &quot;Which structural engineering firms in Portland have real experience with mass timber?&quot;</span><span class="ts">0:00</span></button>
+              <button type="button" class="ep-line" data-pod-seek="10" data-pod-line="1"><span class="who who-host">Martin</span><span class="tx">And?</span><span class="ts">0:10</span></button>
+              <button type="button" class="ep-line" data-pod-seek="11" data-pod-line="2"><span class="who who-guest">Sarah</span><span class="tx">Five firms. Nicely written answer, sources underneath. We weren&#x27;t one of them. And we&#x27;ve designed, what, a dozen CLT buildings in the last few years.</span><span class="ts">0:11</span></button>
+              <button type="button" class="ep-line" data-pod-seek="21" data-pod-line="3"><span class="who who-host">Martin</span><span class="tx">Let me guess. At least one of those five has done less than you.</span><span class="ts">0:21</span></button>
+              <button type="button" class="ep-line" data-pod-seek="25" data-pod-line="4"><span class="who who-guest">Sarah</span><span class="tx">One of them has done two. I checked.</span><span class="ts">0:25</span></button>
+              <button type="button" class="ep-line" data-pod-seek="29" data-pod-line="5"><span class="who who-host">Martin</span><span class="tx">Welcome to Insights. I&#x27;m Martin Motlík. I work on websites and content for engineering software, for engineers in the U.S., Canada and Europe. And today I&#x27;m joined by Sarah.</span><span class="ts">0:29</span></button>
+              <button type="button" class="ep-line" data-pod-seek="41" data-pod-line="6"><span class="who who-guest">Sarah</span><span class="tx">Hi, Martin. So, quick context for everyone: I run marketing at a structural engineering firm in Portland. We&#x27;ve done SEO properly for years. Good rankings, clean meta titles, keywords, the whole thing.</span><span class="ts">0:41</span></button>
+              <button type="button" class="ep-line" data-pod-seek="54" data-pod-line="7"><span class="who who-host">Martin</span><span class="tx">And the AI still picked someone else.</span><span class="ts">0:54</span></button>
+              <button type="button" class="ep-line" data-pod-seek="57" data-pod-line="8"><span class="who who-guest">Sarah</span><span class="tx">Right. So that&#x27;s what I want to understand today. Not the theory. How you would look at my situation.</span><span class="ts">0:57</span></button>
+              <button type="button" class="ep-line" data-pod-seek="63" data-pod-line="9"><span class="who who-host">Martin</span><span class="tx">Deal. Let&#x27;s take it apart.</span><span class="ts">1:03</span></button>
+              <button type="button" class="ep-line" data-pod-seek="66" data-pod-line="10"><span class="who who-guest">Sarah</span><span class="tx">Okay, the obvious question first. We rank on page one for &quot;structural engineer Portland.&quot; Why isn&#x27;t that enough anymore?</span><span class="ts">1:06</span></button>
+              <button type="button" class="ep-line" data-pod-seek="75" data-pod-line="11"><span class="who who-host">Martin</span><span class="tx">Because page one isn&#x27;t the finish line anymore. Think about what happened when you searched. You didn&#x27;t get a list. You got an answer. And that&#x27;s not only ChatGPT. Google itself is an AI search engine now. At Google I/O in May 2026, Google said AI Overviews had passed two and a half billion monthly users, and AI Mode more than a billion. And they&#x27;re merging the two.</span><span class="ts">1:15</span></button>
+              <button type="button" class="ep-line" data-pod-seek="100" data-pod-line="12"><span class="who who-guest">Sarah</span><span class="tx">So my clients don&#x27;t even have to switch to a chatbot.</span><span class="ts">1:40</span></button>
+              <button type="button" class="ep-line" data-pod-seek="103" data-pod-line="13"><span class="who who-host">Martin</span><span class="tx">Exactly. The search engine they&#x27;ve used for twenty years quietly became one. And your clients ask the long, specific kind of question. A material, a code, a building type, a city. That&#x27;s exactly the kind of search that now gets an answer instead of a list.</span><span class="ts">1:43</span></button>
+              <button type="button" class="ep-line" data-pod-seek="120" data-pod-line="14"><span class="who who-guest">Sarah</span><span class="tx">So... was all our SEO work wasted?</span><span class="ts">2:00</span></button>
+              <button type="button" class="ep-line" data-pod-seek="123" data-pod-line="15"><span class="who who-host">Martin</span><span class="tx">No, and I want to be clear about that. SEO is still the foundation. If a page can&#x27;t be crawled and indexed, it won&#x27;t end up in an AI answer either. What changed is the goal. Alongside rankings, I now look at whether a page gets cited as a source. And a meta description won&#x27;t get you cited. It was written for a person scanning a list.</span><span class="ts">2:03</span></button>
+              <button type="button" class="ep-line" data-pod-seek="144" data-pod-line="16"><span class="who who-guest">Sarah</span><span class="tx">And the AI doesn&#x27;t scan.</span><span class="ts">2:24</span></button>
+              <button type="button" class="ep-line" data-pod-seek="146" data-pod-line="17"><span class="who who-host">Martin</span><span class="tx">No. It reads your page, pulls out individual facts, and decides which ones it trusts enough to repeat. Keywords help it find you. They don&#x27;t make it trust you.</span><span class="ts">2:26</span></button>
+              <button type="button" class="ep-line" data-pod-seek="156" data-pod-line="18"><span class="who who-guest">Sarah</span><span class="tx">So how would you start with us? If I hired you tomorrow.</span><span class="ts">2:36</span></button>
+              <button type="button" class="ep-line" data-pod-seek="160" data-pod-line="19"><span class="who who-host">Martin</span><span class="tx">I&#x27;d ask you a slightly annoying question. Where on your website does it say, in plain text, that you&#x27;ve designed a dozen CLT buildings? To which code? In which cities?</span><span class="ts">2:40</span></button>
+              <button type="button" class="ep-line" data-pod-seek="172" data-pod-line="20"><span class="who who-guest">Sarah</span><span class="tx">Um... it&#x27;s in the projects section. We have a gallery. Really beautiful photography.</span><span class="ts">2:52</span></button>
+              <button type="button" class="ep-line" data-pod-seek="179" data-pod-line="21"><span class="who who-host">Martin</span><span class="tx">With captions?</span><span class="ts">2:59</span></button>
+              <button type="button" class="ep-line" data-pod-seek="180" data-pod-line="22"><span class="who who-guest">Sarah</span><span class="tx">A project name. Sometimes the architect.</span><span class="ts">3:00</span></button>
+              <button type="button" class="ep-line" data-pod-seek="182" data-pod-line="23"><span class="who who-host">Martin</span><span class="tx">That&#x27;s the most common thing I see with engineering firms. A gallery convinces a person. But a machine can&#x27;t look at a photo of a timber roof and conclude, &quot;this firm designs CLT to NDS.&quot; For an AI system, that expertise basically doesn&#x27;t exist.</span><span class="ts">3:02</span></button>
+              <button type="button" class="ep-line" data-pod-seek="199" data-pod-line="24"><span class="who who-guest">Sarah</span><span class="tx">So the competitor with two projects...</span><span class="ts">3:19</span></button>
+              <button type="button" class="ep-line" data-pod-seek="202" data-pod-line="25"><span class="who who-host">Martin</span><span class="tx">...probably wrote two plain pages. The project, the structural system, the material, the design code, and what their role was. That&#x27;s enough to be quotable.</span><span class="ts">3:22</span></button>
+              <button type="button" class="ep-line" data-pod-seek="213" data-pod-line="26"><span class="who who-guest">Sarah</span><span class="tx">Okay, that honestly stings a little.</span><span class="ts">3:33</span></button>
+              <button type="button" class="ep-line" data-pod-seek="216" data-pod-line="27"><span class="who who-host">Martin</span><span class="tx">It&#x27;s very fixable. And it&#x27;s the same lesson I learned from localization, long before anyone talked about AI search.</span><span class="ts">3:36</span></button>
+              <button type="button" class="ep-line" data-pod-seek="224" data-pod-line="28"><span class="who who-guest">Sarah</span><span class="tx">Tell me about that. That&#x27;s your daily work, right?</span><span class="ts">3:44</span></button>
+              <button type="button" class="ep-line" data-pod-seek="227" data-pod-line="29"><span class="who who-host">Martin</span><span class="tx">Since 2021, yeah. Websites and content for engineering software, adapted for the U.S., Canada and Europe. And what localization teaches you is this: translating a page is easy. Localizing it means asking how an engineer in that market actually searches. Which code they use, which terms, which spelling.</span><span class="ts">3:47</span></button>
+              <button type="button" class="ep-line" data-pod-seek="249" data-pod-line="30"><span class="who who-guest">Sarah</span><span class="tx">Do you have an example?</span><span class="ts">4:09</span></button>
+              <button type="button" class="ep-line" data-pod-seek="250" data-pod-line="31"><span class="who who-host">Martin</span><span class="tx">One that&#x27;s actually very close to your world. A timber design page I optimized for engineers in the U.S. and Canada, for a software vendor. The original content came from Europe. Accurate, thorough... and it spoke Eurocode.</span><span class="ts">4:10</span></button>
+              <button type="button" class="ep-line" data-pod-seek="266" data-pod-line="32"><span class="who who-guest">Sarah</span><span class="tx">Nobody in Portland thinks in Eurocode.</span><span class="ts">4:26</span></button>
+              <button type="button" class="ep-line" data-pod-seek="270" data-pod-line="33"><span class="who who-host">Martin</span><span class="tx">Not in Portland, not in Vancouver. They design to NDS in the U.S. and CSA O86 in Canada, and that&#x27;s how they phrase their questions. So I rebuilt the page around the engineer&#x27;s question, not around the product. The North American codes are named right in the text. U.S. English, U.S. terms, &quot;design standards&quot; as the umbrella. Nobody, human or machine, has to translate from one standards world to the other.</span><span class="ts">4:30</span></button>
+              <button type="button" class="ep-line" data-pod-seek="300" data-pod-line="34"><span class="who who-guest">Sarah</span><span class="tx">And the images? Because that&#x27;s my gallery problem, right?</span><span class="ts">5:00</span></button>
+              <button type="button" class="ep-line" data-pod-seek="304" data-pod-line="35"><span class="who who-host">Martin</span><span class="tx">Same thing exactly. A screenshot of a model checked to Eurocode, with European labels, tells an engineer this was made for someone else. So we localized the screenshots too. And every image got text: a title, alt text, a description and a caption that name the standard. The image convinces the engineer. The text around it is what a machine can quote.</span><span class="ts">5:04</span></button>
+              <button type="button" class="ep-line" data-pod-seek="329" data-pod-line="36"><span class="who who-guest">Sarah</span><span class="tx">So for me, every project photo gets a caption that says the system, the code, and what we actually did.</span><span class="ts">5:29</span></button>
+              <button type="button" class="ep-line" data-pod-seek="336" data-pod-line="37"><span class="who who-host">Martin</span><span class="tx">That&#x27;s it. Write in the language of the question. If your pages never say &quot;NDS,&quot; you won&#x27;t be named when someone asks about NDS. No matter how many buildings you&#x27;ve done.</span><span class="ts">5:36</span></button>
+              <button type="button" class="ep-line" data-pod-seek="348" data-pod-line="38"><span class="who who-guest">Sarah</span><span class="tx">Here&#x27;s a twist, though. We also have an office in Vancouver. And our site shows Canadian visitors different content, based on their location.</span><span class="ts">5:48</span></button>
+              <button type="button" class="ep-line" data-pod-seek="357" data-pod-line="39"><span class="who who-host">Martin</span><span class="tx">Ah. That&#x27;s something I work with every day, actually. One page, one URL, and visitors from France, Italy, Germany or the U.S. each see content for their market. Local contacts, language, the design standards they use. For people, it works really well.</span><span class="ts">5:57</span></button>
+              <button type="button" class="ep-line" data-pod-seek="377" data-pod-line="40"><span class="who who-guest">Sarah</span><span class="tx">I&#x27;m sensing a &quot;but.&quot;</span><span class="ts">6:17</span></button>
+              <button type="button" class="ep-line" data-pod-seek="380" data-pod-line="41"><span class="who who-host">Martin</span><span class="tx">But a crawler only sees the version served to its own IP address. Googlebot crawls from U.S. addresses by default, and AI crawlers largely do too. So your Vancouver content, all the CSA O86 projects...</span><span class="ts">6:20</span></button>
+              <button type="button" class="ep-line" data-pod-seek="396" data-pod-line="42"><span class="who who-guest">Sarah</span><span class="tx">...might never reach an AI answer.</span><span class="ts">6:36</span></button>
+              <button type="button" class="ep-line" data-pod-seek="399" data-pod-line="43"><span class="who who-host">Martin</span><span class="tx">Unless you plan for it. The fix is simple in principle. Keep the IP localization for the experience. But give every regional version of an important fact its own URL, linked with hreflang. Visitors still land on the right version automatically, and crawlers can find all of them.</span><span class="ts">6:39</span></button>
+              <button type="button" class="ep-line" data-pod-seek="419" data-pod-line="44"><span class="who who-guest">Sarah</span><span class="tx">That would never have shown up in our SEO reports.</span><span class="ts">6:59</span></button>
+              <button type="button" class="ep-line" data-pod-seek="422" data-pod-line="45"><span class="who who-host">Martin</span><span class="tx">Usually not. Which is why I stopped counting pages when I review a website.</span><span class="ts">7:02</span></button>
+              <button type="button" class="ep-line" data-pod-seek="427" data-pod-line="46"><span class="who who-guest">Sarah</span><span class="tx">What do you count instead?</span><span class="ts">7:07</span></button>
+              <button type="button" class="ep-line" data-pod-seek="429" data-pod-line="47"><span class="who who-host">Martin</span><span class="tx">I follow single facts. Like yours: &quot;we design CLT buildings to NDS.&quot; And I check whether that one fact survives the trip from your server into an AI answer. I think of it as a load path.</span><span class="ts">7:09</span></button>
+              <button type="button" class="ep-line" data-pod-seek="444" data-pod-line="48"><span class="who who-guest">Sarah</span><span class="tx">Of course you do.</span><span class="ts">7:24</span></button>
+              <button type="button" class="ep-line" data-pod-seek="446" data-pod-line="49"><span class="who who-host">Martin</span><span class="tx">Occupational hazard. But it works. There are five members, and the fact has to make it through every one. The first is: is it reachable? Do your robots rules and your firewall actually let AI crawlers in?</span><span class="ts">7:26</span></button>
+              <button type="button" class="ep-line" data-pod-seek="460" data-pod-line="50"><span class="who who-guest">Sarah</span><span class="tx">Okay, now I&#x27;m nervous. Our IT guy told me last year he blocked &quot;the AI bots.&quot; Because of the training thing.</span><span class="ts">7:40</span></button>
+              <button type="button" class="ep-line" data-pod-seek="468" data-pod-line="51"><span class="who who-host">Martin</span><span class="tx">That&#x27;s really common, and it&#x27;s worth checking exactly what he blocked. Training bots and search bots are separate. You can opt out of model training and still let ChatGPT search and Claude search read your site. And if he blocked everything at the CDN level, your robots rules don&#x27;t even matter.</span><span class="ts">7:48</span></button>
+              <button type="button" class="ep-line" data-pod-seek="487" data-pod-line="52"><span class="who who-guest">Sarah</span><span class="tx">So that alone could explain it.</span><span class="ts">8:07</span></button>
+              <button type="button" class="ep-line" data-pod-seek="490" data-pod-line="53"><span class="who who-host">Martin</span><span class="tx">It could. Second member: is the fact readable? Is it in the HTML, or is it locked in a PDF, an image, or something a script renders?</span><span class="ts">8:10</span></button>
+              <button type="button" class="ep-line" data-pod-seek="500" data-pod-line="54"><span class="who who-guest">Sarah</span><span class="tx">Well... our statement of qualifications is a PDF. It&#x27;s gorgeous. And honestly, clients download it. I&#x27;m not getting rid of it.</span><span class="ts">8:20</span></button>
+              <button type="button" class="ep-line" data-pod-seek="510" data-pod-line="55"><span class="who who-host">Martin</span><span class="tx">And you shouldn&#x27;t. I&#x27;m not anti-PDF.</span><span class="ts">8:30</span></button>
+              <button type="button" class="ep-line" data-pod-seek="513" data-pod-line="56"><span class="who who-guest">Sarah</span><span class="tx">It kind of sounded like you were.</span><span class="ts">8:33</span></button>
+              <button type="button" class="ep-line" data-pod-seek="515" data-pod-line="57"><span class="who who-host">Martin</span><span class="tx">Fair. Here&#x27;s the distinction. Keep the PDF. Just never let it be the only place a fact lives. My rule is that HTML is the source of truth. PDFs, images and videos are copies of it. Text inside PDFs reaches AI crawlers unreliably at best.</span><span class="ts">8:35</span></button>
+              <button type="button" class="ep-line" data-pod-seek="537" data-pod-line="58"><span class="who who-guest">Sarah</span><span class="tx">Okay, I can live with that. What about JavaScript? Our new site is built on one of those modern frameworks.</span><span class="ts">8:57</span></button>
+              <button type="button" class="ep-line" data-pod-seek="543" data-pod-line="59"><span class="who who-host">Martin</span><span class="tx">Then that&#x27;s the first thing I&#x27;d test. Many modern frameworks can render the page on the server, and then you&#x27;re fine. The only question is whether the text is in the HTML before any script runs. Because according to crawl data from Vercel and MERJ, the major AI crawlers don&#x27;t execute JavaScript at all. Google does. So a page can rank in Google, show up in AI Overviews, and still be completely empty to ChatGPT, Claude and Perplexity.</span><span class="ts">9:03</span></button>
+              <button type="button" class="ep-line" data-pod-seek="573" data-pod-line="60"><span class="who who-guest">Sarah</span><span class="tx">Wait. So we could be invisible to them and never notice, because Google looks fine.</span><span class="ts">9:33</span></button>
+              <button type="button" class="ep-line" data-pod-seek="579" data-pod-line="61"><span class="who who-host">Martin</span><span class="tx">Right. Google looks fine, so nobody thinks to check.</span><span class="ts">9:39</span></button>
+              <button type="button" class="ep-line" data-pod-seek="583" data-pod-line="62"><span class="who who-guest">Sarah</span><span class="tx">Okay, reachable, readable. What are the other three?</span><span class="ts">9:43</span></button>
+              <button type="button" class="ep-line" data-pod-seek="587" data-pod-line="63"><span class="who who-host">Martin</span><span class="tx">Third: understood. The page says plainly what it&#x27;s about. The service, the design code, the units, the market. Fourth: consistent. Every page, every file, every listing states the fact the same way.</span><span class="ts">9:47</span></button>
+              <button type="button" class="ep-line" data-pod-seek="603" data-pod-line="64"><span class="who who-guest">Sarah</span><span class="tx">Hm. We say &quot;mass timber&quot; on the homepage, &quot;CLT&quot; on the project pages, and a couple of directory listings still have our old office address.</span><span class="ts">10:03</span></button>
+              <button type="button" class="ep-line" data-pod-seek="614" data-pod-line="65"><span class="who who-host">Martin</span><span class="tx">That&#x27;s the kind of thing that quietly weakens trust. My rule there is one fact, one canonical page. State it there clearly, and identically everywhere else. And if you use structured data, the markup never says more than the visible page. Markup that contradicts the page doesn&#x27;t fix confusion. It automates it.</span><span class="ts">10:14</span></button>
+              <button type="button" class="ep-line" data-pod-seek="635" data-pod-line="66"><span class="who who-guest">Sarah</span><span class="tx">And the fifth?</span><span class="ts">10:35</span></button>
+              <button type="button" class="ep-line" data-pod-seek="636" data-pod-line="67"><span class="who who-host">Martin</span><span class="tx">Corroborated. Others confirm it. Clients, architects you work with, publications, conference talks. And like any load path, it fails at its weakest member. In my experience, the first two fail far more often than people expect.</span><span class="ts">10:36</span></button>
+              <button type="button" class="ep-line" data-pod-seek="652" data-pod-line="68"><span class="who who-guest">Sarah</span><span class="tx">Any rule for how we should actually write the pages?</span><span class="ts">10:52</span></button>
+              <button type="button" class="ep-line" data-pod-seek="655" data-pod-line="69"><span class="who who-host">Martin</span><span class="tx">Answer first. Lead with the answer and make every passage stand on its own. AI systems quote passages, not whole pages.</span><span class="ts">10:55</span></button>
+              <button type="button" class="ep-line" data-pod-seek="664" data-pod-line="70"><span class="who who-guest">Sarah</span><span class="tx">And llms.txt? Half my LinkedIn feed says I need one.</span><span class="ts">11:04</span></button>
+              <button type="button" class="ep-line" data-pod-seek="669" data-pod-line="71"><span class="who who-host">Martin</span><span class="tx">On documentation and API sites, it makes sense. On a marketing site, it&#x27;s a cheap experiment at best, and Google says its Search ignores it. Fix crawlability first.</span><span class="ts">11:09</span></button>
+              <button type="button" class="ep-line" data-pod-seek="681" data-pod-line="72"><span class="who who-guest">Sarah</span><span class="tx">Practical question. My boss is going to ask how we know any of this is working. What do I report?</span><span class="ts">11:21</span></button>
+              <button type="button" class="ep-line" data-pod-seek="687" data-pod-line="73"><span class="who who-host">Martin</span><span class="tx">Keep reporting rankings. But add the test you already did by accident. Take ten real questions your clients ask. Put them into Google&#x27;s AI Mode, ChatGPT, Claude and Perplexity. Write down whether you&#x27;re named, how you&#x27;re described, and whom the answers cite instead.</span><span class="ts">11:27</span></button>
+              <button type="button" class="ep-line" data-pod-seek="706" data-pod-line="74"><span class="who who-guest">Sarah</span><span class="tx">And repeat it in a few months.</span><span class="ts">11:46</span></button>
+              <button type="button" class="ep-line" data-pod-seek="708" data-pod-line="75"><span class="who who-host">Martin</span><span class="tx">Yes. Same questions, same tools. That&#x27;s your baseline. And that last part, who gets cited instead, is usually the wake-up call.</span><span class="ts">11:48</span></button>
+              <button type="button" class="ep-line" data-pod-seek="717" data-pod-line="76"><span class="who who-guest">Sarah</span><span class="tx">What else can I do this week, without an agency?</span><span class="ts">11:57</span></button>
+              <button type="button" class="ep-line" data-pod-seek="721" data-pod-line="77"><span class="who who-host">Martin</span><span class="tx">Two more checks. First, fetch one key page the way a crawler does. No browser, no JavaScript. Then search the result for a sentence that matters, like &quot;CLT&quot; or &quot;NDS.&quot; If it&#x27;s not there, AI crawlers can&#x27;t see it either. The exact command is in the article. Second, read every robots file you own, including subdomains, and ask whoever runs your CDN whether AI bots are blocked.</span><span class="ts">12:01</span></button>
+              <button type="button" class="ep-line" data-pod-seek="748" data-pod-line="78"><span class="who who-guest">Sarah</span><span class="tx">So, basically: talk to my IT guy.</span><span class="ts">12:28</span></button>
+              <button type="button" class="ep-line" data-pod-seek="751" data-pod-line="79"><span class="who who-host">Martin</span><span class="tx">Talk to your IT guy. Nicely.</span><span class="ts">12:31</span></button>
+              <button type="button" class="ep-line" data-pod-seek="754" data-pod-line="80"><span class="who who-guest">Sarah</span><span class="tx">If you had to pick one thing for me to start with on Monday?</span><span class="ts">12:34</span></button>
+              <button type="button" class="ep-line" data-pod-seek="758" data-pod-line="81"><span class="who who-host">Martin</span><span class="tx">One page. Your strongest mass timber project. Rewrite it so it plainly states the structural system, the material, the design code, the location and your role. Make sure that text is in the HTML. Then make sure your other pages say the same thing.</span><span class="ts">12:38</span></button>
+              <button type="button" class="ep-line" data-pod-seek="777" data-pod-line="82"><span class="who who-guest">Sarah</span><span class="tx">That&#x27;s... surprisingly doable.</span><span class="ts">12:57</span></button>
+              <button type="button" class="ep-line" data-pod-seek="779" data-pod-line="83"><span class="who who-host">Martin</span><span class="tx">That&#x27;s the good news. Most AEC companies already own the material. Project pages, datasheets, references, documentation. It&#x27;s not new content. It&#x27;s the content you have, made readable.</span><span class="ts">12:59</span></button>
+              <button type="button" class="ep-line" data-pod-seek="795" data-pod-line="84"><span class="who who-guest">Sarah</span><span class="tx">And the bigger picture?</span><span class="ts">13:15</span></button>
+              <button type="button" class="ep-line" data-pod-seek="796" data-pod-line="85"><span class="who who-host">Martin</span><span class="tx">Make the technical facts your clients need easy to find, understand and verify. Be explicit about what you do, which standards apply, which markets you serve, and where your limits are.</span><span class="ts">13:16</span></button>
+              <button type="button" class="ep-line" data-pod-seek="809" data-pod-line="86"><span class="who who-guest">Sarah</span><span class="tx">So, my list. Captions on every project. A friendly talk with my IT guy. The PDF stays, but the facts go into HTML. And one name for what we do, not &quot;mass timber&quot; here and &quot;CLT&quot; there.</span><span class="ts">13:29</span></button>
+              <button type="button" class="ep-line" data-pod-seek="825" data-pod-line="87"><span class="who who-host">Martin</span><span class="tx">That&#x27;s the whole episode in one sentence.</span><span class="ts">13:45</span></button>
+              <button type="button" class="ep-line" data-pod-seek="829" data-pod-line="88"><span class="who who-guest">Sarah</span><span class="tx">The full article, with the checklist and a copy-paste robots file, is on martinmotlik.com, under Insights.</span><span class="ts">13:49</span></button>
+              <button type="button" class="ep-line" data-pod-seek="836" data-pod-line="89"><span class="who who-host">Martin</span><span class="tx">And if you&#x27;re working on something similar, regional content, technical documentation, AI visibility, message me on LinkedIn. I&#x27;m always happy to compare notes.</span><span class="ts">13:56</span></button>
+              <button type="button" class="ep-line" data-pod-seek="846" data-pod-line="90"><span class="who who-guest">Sarah</span><span class="tx">Thanks for listening.</span><span class="ts">14:06</span></button>
+              <button type="button" class="ep-line" data-pod-seek="847" data-pod-line="91"><span class="who who-host">Martin</span><span class="tx">See you in the next one.</span><span class="ts">14:07</span></button>
+          </div></div>
+        </div>
+        <p class="ep-note" data-i18n="pod_note">Folge mit KI-Stimmen aus diesem Artikel produziert. Skript von Martin geprüft.</p>
       </section>
 <!-- podcast:end -->
 
@@ -1211,16 +1170,17 @@ article p.pod-note{margin-top:var(--sp-5);font-size:.8125rem;color:var(--m2)}
 
 <p class="sr" id="sr-live" role="status" aria-live="polite"></p>
 
-<div class="mini" id="mini">
-  <button class="vo-play" id="mini-play" type="button" aria-label="Play or pause the podcast"><span class="ic-play"></span></button>
-  <div class="txt">
-    <div class="st" id="mini-state" data-ui="mini_state">Anhören · Insights-Podcast (EN)</div>
-    <div class="ti" data-ui="article_title">Werden Sie zur Quelle: AEC-Daten fit für die KI-Suche machen</div>
-  </div>
-  <button class="vo-rate" id="mini-rate" type="button" aria-label="Wiedergabegeschwindigkeit" data-i18n-attr="aria-label:speed">1&times;</button>
-  <span class="vo-time" id="mini-time">0:00 / 0:00</span>
-  <button class="vo-x" id="mini-close" type="button" aria-label="Player schließen" data-i18n-attr="aria-label:close">&times;</button>
-  <div class="bar" aria-hidden="true"><div id="mini-bar"></div></div>
+<!-- pod-mini:start · generated by tools/build-podcast.py -->
+<div class="pod-mini" id="pod-mini" role="region" aria-label="Podcast-Player" data-i18n-attr="aria-label:mini_aria" aria-hidden="true">
+  <picture><source type="image/avif" srcset="/assets/podcast/cover-ep01-96.avif"><img class="pm-cover" src="/assets/podcast/cover-ep01-96.jpg" width="40" height="40" alt="" loading="lazy" decoding="async"></picture>
+  <div class="pm-txt"><div class="pm-st" data-pod-status></div><div class="pm-ti" data-pod-chapter-title lang="en"></div></div>
+  <span class="pm-time" data-pod-time>0:00</span>
+  <button class="pm-rate" type="button" data-pod-rate aria-label="Wiedergabegeschwindigkeit" data-i18n-attr="aria-label:speed">1×</button>
+  <button class="pm-play" type="button" data-pod-toggle aria-label="Folge abspielen" data-i18n-attr="aria-label:play_episode"><span class="i-play" aria-hidden="true"></span><span class="i-pause" aria-hidden="true"><i></i><i></i></span></button>
+  <button class="pm-x" type="button" data-pod-close aria-label="Player schließen" data-i18n-attr="aria-label:close">×</button>
+  <div class="pm-bar" aria-hidden="true"><div data-pod-progress></div></div>
+</div>
+<!-- pod-mini:end -->
 </div>
 
 <footer class="footer">
@@ -1249,7 +1209,10 @@ article p.pod-note{margin-top:var(--sp-5);font-size:.8125rem;color:var(--m2)}
   </div>
 </footer>
 
-<script type="application/json" id="i18n-ui">{"title": "Werden Sie zur Quelle: AEC-Daten fit für die KI-Suche machen | Martin Motlík", "article_title": "Werden Sie zur Quelle: AEC-Daten fit für die KI-Suche machen", "role": "AEC-Digitalstratege & Web Lead", "narrating": "Insights-Podcast (EN)", "listen": "Podcast (EN)", "listen_aria": "Podcast zum Artikel anhören (auf Englisch)", "state_playing": "Wird abgespielt", "state_paused": "Pausiert", "state_listen": "Anhören", "narrated": "Insights-Podcast, auf Englisch", "play": "Abspielen", "pause": "Pausieren", "play_pause": "Podcast abspielen oder pausieren", "seek": "Im Podcast springen", "speed": "Wiedergabegeschwindigkeit", "close": "Player schließen", "player": "Podcast-Player", "copy": "Kopieren", "copied": "Kopiert ✓", "copy_failed": "Kopieren fehlgeschlagen", "copy_robots": "robots.txt kopieren", "link_copied": "Link kopiert ✓", "link_copied_aria": "Link kopiert", "copy_link": "Link kopieren", "share_on": "Auf {net} teilen (öffnet ein neues Fenster)", "share_email": "Per E-Mail teilen (öffnet Ihre E-Mail-App)", "toc_aria": "Auf dieser Seite", "crumbs_aria": "Brotkrümelnavigation", "menu_aria": "Menü öffnen", "cover_alt": "Martin Motlík arbeitet im Freien am Laptop, umgeben von den Symbolen von KI-Assistenten und Suchmaschinen", "code_copied": "Code kopiert", "mini_state": "Anhören · Insights-Podcast (EN)"}</script>
+<!-- pod-data:start · generated by tools/build-podcast.py -->
+<script type="application/json" id="pod-data">{"id": "ep001-be-the-source", "number": 1, "audio": "/assets/podcast/ep001-be-the-source.mp3", "duration": 848, "chapters": [[0, "Cold open: Sarah's story"], [66, "\"But our SEO works\""], [156, "The gallery problem"], [249, "The timber page"], [348, "The Vancouver twist"], [429, "Load path, part one"], [500, "The PDF argument"], [583, "Load path, part two"], [681, "What do I tell my boss?"], [754, "Close"]], "lines": [0, 10, 11, 21, 25, 29, 41, 54, 57, 63, 66, 75, 100, 103, 120, 123, 144, 146, 156, 160, 172, 179, 180, 182, 199, 202, 213, 216, 224, 227, 249, 250, 266, 270, 300, 304, 329, 336, 348, 357, 377, 380, 396, 399, 419, 422, 427, 429, 444, 446, 460, 468, 487, 490, 500, 510, 513, 515, 537, 543, 573, 579, 583, 587, 603, 614, 635, 636, 652, 655, 664, 669, 681, 687, 706, 708, 717, 721, 748, 751, 754, 758, 777, 779, 795, 796, 809, 825, 829, 836, 846, 847]}</script>
+<!-- pod-data:end -->
+<script src="/assets/podcast/podcast.js"></script>
 <script>
 // — Language ────────────────────────────────────────────────────────────────
 //   Every language has its own URL (/insights/…, /cs/insights/…, /de/insights/…)
@@ -1258,9 +1221,7 @@ article p.pod-note{margin-top:var(--sp-5);font-size:.8125rem;color:var(--m2)}
 //   English below, CS/DE from the #i18n-ui block the build adds to their pages.
 var I18N = (function(){
   var EN = {
-    narrating: 'Insights podcast', listen: 'Podcast',
-    state_playing: 'Now playing', state_paused: 'Paused', state_listen: 'Listen', narrated: 'Insights podcast',
-    play: 'Play', pause: 'Pause',
+    narrating: 'Insights podcast', listen: 'Podcast', resume: 'Resume',
     copy: 'Copy', copied: 'Copied ✓', copy_failed: 'Copy failed',
     link_copied: 'Link copied ✓', link_copied_aria: 'Link copied', copy_link: 'Copy link', code_copied: 'Code copied'
   };
@@ -1448,40 +1409,23 @@ function copyText(text){
   }
 })();
 
-// — Podcast player ───────────────────────────────────────────────────────
-//   Hidden until the file at data-src reports a duration, so a visitor is never
-//   offered a player with nothing behind it. The Listen button and the player
-//   share one slot in the byline: opening the player replaces the button.
+// — Podcast in the byline ───────────────────────────────────────────────
+//   The episode plays through assets/podcast/podcast.js: one player for the
+//   page (chapter chips, episode card, mini player). This is only the byline:
+//   hidden until the audio reports a duration; the Listen pill turns into the
+//   inline player on the first play, wherever on the page it starts.
 (function(){
-  var root = document.getElementById('vo');
-  if (!root || !root.dataset.src) return;
-
-  var audio = new Audio();
-  audio.preload = 'metadata';
+  var root = document.getElementById('vo'), P = window.Podcast;
+  if (!root || !P) return;
+  var audio = P.audio;
 
   var $ = function(id){ return document.getElementById(id); };
   var listen = $('vo-listen'), lLabel = $('vo-listen-label'), player = $('vo-player');
   var play = $('vo-play'), wave = $('vo-wave'), time = $('vo-time'), rateB = $('vo-rate');
   var role = $('vo-role'), meta = $('vo-meta');
-  var mini = $('mini'), mPlay = $('mini-play'), mState = $('mini-state'), mTime = $('mini-time'),
-      mRate = $('mini-rate'), mClose = $('mini-close'), mBar = $('mini-bar');
+  var bars = [].slice.call(wave.children);           // drawn by podcast.js
 
-  var N = 48, RATES = [1, 1.25, 1.5, 2, 0.75];
-  var started = false, rateIdx = 0, bars = [];
-
-  function fmt(s){ s = isFinite(s) ? s : 0; return Math.floor(s/60) + ':' + String(Math.floor(s%60)).padStart(2,'0'); }
-
-  for (var i = 0; i < N; i++){
-    var h = 0.3 + 0.7 * Math.abs(Math.sin(i*1.7)*0.6 + Math.sin(i*0.43)*0.4);
-    var el = document.createElement('i');
-    el.style.height = Math.round(h * 100) + '%';
-    wave.appendChild(el); bars.push(el);
-  }
-  wave.addEventListener('click', function(e){
-    var r = wave.getBoundingClientRect();
-    if (audio.duration) audio.currentTime = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)) * audio.duration;
-    started = true; render();
-  });
+  function fmt(s){ s = isFinite(s) ? Math.max(0, s) : 0; return Math.floor(s/60) + ':' + String(Math.floor(s%60)).padStart(2,'0'); }
 
   function swap(){ listen.hidden = true; meta.hidden = true; player.hidden = false; role.textContent = I18N.t('narrating'); }
   function close(){ player.hidden = true; listen.hidden = false; meta.hidden = false; role.textContent = I18N.t('role'); }
@@ -1497,7 +1441,7 @@ function copyText(text){
   var EASE = 'cubic-bezier(.32,.72,0,1)', opening = false;
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
   function open(){
-    if (opening || !player.hidden) return;
+    if (opening || !player.hidden || root.hidden) return;
     if (reduce.matches || !player.animate) {
       swap();
       if (player.animate) player.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 200, easing: 'ease-out' });
@@ -1539,78 +1483,41 @@ function copyText(text){
       });
       bars.forEach(function(el, i){
         el.animate([{ transform: 'scaleY(.12)' }, { transform: 'scaleY(1)' }],
-                   { duration: 480, delay: 200 + i*6, easing: EASE, fill: 'backwards' });
+                   { duration: 480, delay: 200 + i*4, easing: EASE, fill: 'backwards' });
       });
       role.animate([{ opacity: 0, transform: 'translateY(3px)' }, { opacity: 1, transform: 'none' }],
                    { duration: 360, delay: 120, easing: EASE, fill: 'backwards' });
     };
   }
 
+  // Pill: "Podcast · 14:08", or "Resume · 4:12" when the visitor left off
+  // earlier; the player shows the time left.
   function render(){
-    var d = audio.duration || 0, t = audio.currentTime || 0;
-    var playing = !audio.paused && !audio.ended;
-    var idx = d ? Math.floor((t/d) * N) : -1;
-    bars.forEach(function(el, i){
-      el.classList.toggle('done', i < idx);
-      el.classList.toggle('at', started && i === idx);
-    });
-    lLabel.textContent = I18N.t('listen') + ' · ' + fmt(d);
-    time.textContent   = started ? '-' + fmt(d - t) : fmt(d);
-    mState.textContent = I18N.t(playing ? 'state_playing' : started ? 'state_paused' : 'state_listen') + ' · ' + I18N.t('narrated');
-    mTime.textContent  = fmt(t) + ' / ' + fmt(d);
-    mBar.style.width   = (d ? (t/d)*100 : 0) + '%';
-    var icon = playing ? '<span class="ic-pause"><i></i><i></i></span>' : '<span class="ic-play"></span>';
-    play.innerHTML = icon; mPlay.innerHTML = icon;
-    var lbl = I18N.t(playing ? 'pause' : 'play');
-    play.setAttribute('aria-label', lbl); mPlay.setAttribute('aria-label', lbl);
-    document.body.classList.toggle('vo-active', started);
-    mini.classList.toggle('show', started && window.scrollY > 520);
-  }
-
-  function toggle(){
-    if (!audio.paused) { audio.pause(); return; }
-    started = true;
-    audio.playbackRate = RATES[rateIdx];
-    audio.play().catch(function(){ render(); });
-  }
-  function cycleRate(){
-    rateIdx = (rateIdx + 1) % RATES.length;
-    audio.playbackRate = RATES[rateIdx];
-    rateB.textContent = mRate.textContent = RATES[rateIdx] + '×';
+    var d = audio.duration || P.episode.duration, t = P.now();
+    lLabel.textContent = P.isStarted() && t > 0 ? I18N.t('resume') + ' · ' + fmt(t) : I18N.t('listen') + ' · ' + fmt(d);
+    time.textContent = P.isStarted() ? '-' + fmt(d - t) : fmt(d);
   }
 
   listen.addEventListener('click', function(){
     if (opening || !player.hidden) return;      // a quick double-click must not start and then pause
-    toggle(); open(); setTimeout(function(){ play.focus({ preventScroll: true }); }, 160);
+    P.play();
+    setTimeout(function(){ play.focus({ preventScroll: true }); }, 160);
   });
-  play.addEventListener('click', toggle);
-  mPlay.addEventListener('click', toggle);
-  rateB.addEventListener('click', cycleRate);
-  mRate.addEventListener('click', cycleRate);
-  mClose.addEventListener('click', function(){
-    audio.pause(); audio.currentTime = 0; started = false; close(); render(); listen.focus({ preventScroll: true });
+  // Playback started anywhere (chip, chapter, episode card) opens the byline
+  // player; closing the mini player stops the episode and folds it back.
+  P.on(function(type){
+    if (type === 'start') open();
+    if (type === 'stop') {
+      var refocus = document.activeElement && document.activeElement.closest('#pod-mini');
+      close(); render();
+      if (refocus) listen.focus({ preventScroll: true });
+    }
   });
 
-  ['play','pause','ended','timeupdate','ratechange'].forEach(function(ev){ audio.addEventListener(ev, render); });
-  window.addEventListener('scroll', function(){ mini.classList.toggle('show', started && window.scrollY > 520); }, { passive: true });
-
-  // Chapters and transcript timestamps in the podcast section (data-pod-seek)
-  // play from that point; before the metadata is in, the seek waits for it.
-  var pendingSeek = null;
-  document.addEventListener('click', function(e){
-    var b = e.target.closest('[data-pod-seek]');
-    if (!b || root.hidden) return;
-    var t = +b.dataset.podSeek;
-    if (audio.readyState >= 1) audio.currentTime = t; else pendingSeek = t;
-    if (audio.paused) toggle(); else { started = true; render(); }
-    if (player.hidden) open();
-  });
-  audio.addEventListener('loadedmetadata', function(){
-    if (pendingSeek !== null) { audio.currentTime = pendingSeek; pendingSeek = null; }
-    root.hidden = false; render();
-  });
+  ['play','pause','ended','timeupdate'].forEach(function(ev){ audio.addEventListener(ev, render); });
+  function ready(){ root.hidden = false; render(); }
+  if (audio.readyState >= 1) ready(); else audio.addEventListener('loadedmetadata', ready);
   audio.addEventListener('error', function(){ root.hidden = true; });
-  audio.src = root.dataset.src;
 })();
 
 // — Copy buttons on code blocks and terminal commands. They copy the code's own

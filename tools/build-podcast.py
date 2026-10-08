@@ -1,19 +1,23 @@
 #!/usr/bin/env python3
-"""Build the podcast "Insights by Martin Motlík" from podcast/podcast.json.
+"""Build the podcast "Insights with Martin Motlík" from podcast/podcast.json.
 
     python3 tools/build-podcast.py            # write everything below
     python3 tools/build-podcast.py --check    # fail if anything is out of date
 
-Writes:
-    podcast/feed.xml                         RSS for Apple Podcasts, Spotify & co.
-    assets/podcast/<slug>.chapters.json      Podcasting 2.0 chapters
-    insights/podcast/index.html              episode list + JSON-LD (between markers)
-    <article>/index.html                     podcast section, player source, JSON-LD
-
 tools/build-i18n.py runs this first, so one command builds the whole site.
-Audio is self-hosted on GitHub Pages (byte-range requests work, which Apple
-requires). Each episode needs: the MP3, a WebVTT file and the transcript in
-Markdown (chapters as "### Title [m:ss]", lines as "**Name** [m:ss]: text").
+
+Writes (generated blocks sit between <!-- name:start --> / <!-- name:end --> markers):
+    podcast/feed.xml                       RSS for Apple & co. — only while show.feed_public is true
+    assets/podcast/<slug>.chapters.json    Podcasting 2.0 chapters
+    <article>/index.html                   episode card (podcast), chapter chips on H2s,
+                                           "Also a podcast" (toc-pod), mini player (pod-mini),
+                                           player data (pod-data), JSON-LD
+    insights/podcast/index.html            latest episode + list (episodes), e-mail opt-in
+                                           (notify-btn, notify-form), pod-mini, pod-data, JSON-LD
+
+The player itself is assets/podcast/podcast.js. Each episode needs an MP3, a
+WebVTT file and the transcript in Markdown (chapters "### Title [m:ss]", lines
+"**Name** [m:ss]: text"); covers come from tools/podcast-cover.html.
 """
 import email.utils, html, json, os, re, sys, uuid
 from datetime import datetime
@@ -25,7 +29,9 @@ SITE = SHOW['site']
 # false: the podcast lives only on the website (no feed.xml, no RSS links), so
 # no directory can pick it up. true: the feed is published for Apple & co.
 PUBLIC = bool(SHOW.get('feed_public'))
+ENDPOINT = SHOW.get('subscribe_endpoint') or ''
 RSS_LINK = f'    <link rel="alternate" type="application/rss+xml" title="{SHOW["title"]} (podcast)" href="{SITE}{SHOW["feed"]}">\n'
+SPEAKER_CLASS = {'Martin': 'who-host'}            # everyone else gets the co-host colour
 
 
 def esc(s):
@@ -33,23 +39,34 @@ def esc(s):
 
 
 def clock(sec):
-    sec = int(sec)                     # whole seconds, as the player shows them
+    sec = int(sec)                                 # whole seconds, as the player shows them
     h, m, s = sec // 3600, sec // 60 % 60, sec % 60
     return f'{h}:{m:02d}:{s:02d}' if h else f'{m}:{s:02d}'
 
 
 def iso_duration(sec):
-    sec = int(round(sec))
+    sec = int(sec)
     return f'PT{sec // 60}M{sec % 60}S'
 
 
 def seconds(ts):
-    parts = [int(p) for p in ts.split(':')]
-    return sum(p * 60 ** i for i, p in enumerate(reversed(parts)))
+    return sum(int(p) * 60 ** i for i, p in enumerate(reversed(ts.split(':'))))
+
+
+def ep_tag(ep):
+    return 'EP ' + str(ep['number']).zfill(2)
+
+
+def picture(base, size, px, cls='', lazy=True):
+    """<picture> for the covers rendered by tools/podcast-cover.html (base-<px>.avif/.jpg)."""
+    c = f' class="{cls}"' if cls else ''
+    load = ' loading="lazy"' if lazy else ''
+    return (f'<picture><source type="image/avif" srcset="{base}-{px}.avif">'
+            f'<img{c} src="{base}-{px}.jpg" width="{size}" height="{size}" alt=""{load} decoding="async"></picture>')
 
 
 def parse_transcript(path):
-    """→ [(chapter_title, start_seconds, [(speaker, seconds, text), ...]), ...]"""
+    """→ [(chapter_title, start, [(speaker, start, text), ...]), ...]"""
     chapters = []
     for line in open(os.path.join(ROOT, path), encoding='utf-8'):
         line = line.rstrip('\n')
@@ -66,15 +83,22 @@ def parse_transcript(path):
 
 
 def episode_files(ep):
-    """Checks the files an episode needs and returns (bytes, chapters)."""
+    """Checks the files an episode needs; returns (bytes, chapters)."""
     audio = os.path.join(ROOT, ep['audio'].lstrip('/'))
     assert os.path.exists(audio), f'missing {ep["audio"]}'
+    for px in (96, 144, 264):
+        for ext in ('avif', 'jpg'):
+            assert os.path.exists(os.path.join(ROOT, f'{ep["cover"]}-{px}.{ext}'.lstrip('/'))), f'missing cover {ep["cover"]}-{px}.{ext}'
     vtt = open(os.path.join(ROOT, ep['captions'].lstrip('/')), encoding='utf-8').read()
     assert vtt.startswith('WEBVTT'), f'{ep["captions"]} is not WebVTT'
     last = re.findall(r'--> (\d\d):(\d\d):(\d\d)\.(\d+)', vtt)[-1]
     end = int(last[0]) * 3600 + int(last[1]) * 60 + int(last[2])
     assert abs(end - ep['duration']) <= 3, f'{ep["slug"]}: duration {ep["duration"]} s, captions end at {end} s'
-    return os.path.getsize(audio), parse_transcript(ep['transcript'])
+    chapters = parse_transcript(ep['transcript'])
+    starts = {t for _, t, _ in chapters}
+    for h2, t in ep.get('h2', {}).items():
+        assert t in starts, f'{ep["slug"]}: H2 "{h2}" points to {t} s, which is no chapter start'
+    return os.path.getsize(audio), chapters
 
 
 # ── RSS ──────────────────────────────────────────────────────────────────────
@@ -84,7 +108,7 @@ def feed(eps):
     # Podcasting 2.0 GUID: UUIDv5 of the feed URL without the scheme.
     guid = uuid.uuid5(uuid.UUID('ead4c236-bf58-58c6-a2c6-a6b28d128cb6'), feed_url.split('://', 1)[1])
     cats = ''.join(
-        f'\n    <itunes:category text="{esc(c[0])}">' + (f'<itunes:category text="{esc(c[1])}"/>' if len(c) > 1 else '') + '</itunes:category>'
+        f'\n  <itunes:category text="{esc(c[0])}">' + (f'<itunes:category text="{esc(c[1])}"/>' if len(c) > 1 else '') + '</itunes:category>'
         for c in SHOW['categories'])
     items = []
     for ep, size, chapters in sorted(eps, key=lambda e: e[0]['number'], reverse=True):
@@ -101,6 +125,7 @@ def feed(eps):
     <pubDate>{pub}</pubDate>
     <description><![CDATA[{notes}]]></description>
     <enclosure url="{SITE + ep["audio"]}" length="{size}" type="audio/mpeg"/>
+    <itunes:image href="{SITE + ep["cover"]}-3000.jpg"/>
     <itunes:duration>{ep["duration"]}</itunes:duration>
     <itunes:episode>{ep["number"]}</itunes:episode>
     <itunes:episodeType>full</itunes:episodeType>
@@ -144,51 +169,101 @@ def chapters_json(chapters):
                       ensure_ascii=False, indent=1) + '\n'
 
 
-# ── Article: podcast section, player source, JSON-LD ─────────────────────────
+# ── Shared blocks ────────────────────────────────────────────────────────────
 
+ICON = '<span class="i-play" aria-hidden="true"></span><span class="i-pause" aria-hidden="true"><i></i><i></i></span>'
 CHEV = '<svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>'
 
 
-def article_section(ep, chapters):
-    w = SHOW['cover_web']
-    rss = f'              <a class="pod-link" href="{SITE + SHOW["feed"]}" data-i18n="pod_rss">RSS feed</a>\n' if PUBLIC else ''
-    chap = ''.join(f'\n          <li><button type="button" data-pod-seek="{t}"><span class="ts">{clock(t)}</span><span class="ct">{esc(title)}</span></button></li>'
-                   for title, t, _ in chapters)
-    body = ''
-    for title, _, lines in chapters:
-        body += f'\n            <h3>{esc(title)}</h3>'
-        for who, t, text in lines:
-            body += f'\n            <p><b>{esc(who)}</b> <button class="ts" type="button" data-pod-seek="{t}" aria-label="{clock(t)}">{clock(t)}</button> {esc(text)}</p>'
+def lines_of(chapters):
+    return [line for _, _, lines in chapters for line in lines]
+
+
+def pod_data(ep, chapters):
+    data = {'id': ep['slug'], 'number': ep['number'], 'audio': ep['audio'], 'duration': ep['duration'],
+            'chapters': [[t, title] for title, t, _ in chapters], 'lines': [t for _, t, _ in lines_of(chapters)]}
+    blob = json.dumps(data, ensure_ascii=False).replace('</', '<\\/')
+    return f'<!-- pod-data:start · generated by tools/build-podcast.py -->\n<script type="application/json" id="pod-data">{blob}</script>\n<!-- pod-data:end -->'
+
+
+def mini(ep):
+    return f'''<!-- pod-mini:start · generated by tools/build-podcast.py -->
+<div class="pod-mini" id="pod-mini" role="region" aria-label="Podcast player" data-i18n-attr="aria-label:mini_aria" aria-hidden="true">
+  {picture(ep["cover"], 40, 96, "pm-cover")}
+  <div class="pm-txt"><div class="pm-st" data-pod-status></div><div class="pm-ti" data-pod-chapter-title lang="en"></div></div>
+  <span class="pm-time" data-pod-time>0:00</span>
+  <button class="pm-rate" type="button" data-pod-rate aria-label="Playback speed" data-i18n-attr="aria-label:speed">1×</button>
+  <button class="pm-play" type="button" data-pod-toggle aria-label="Play episode" data-i18n-attr="aria-label:play_episode">{ICON}</button>
+  <button class="pm-x" type="button" data-pod-close aria-label="Close the player" data-i18n-attr="aria-label:close">×</button>
+  <div class="pm-bar" aria-hidden="true"><div data-pod-progress></div></div>
+</div>
+<!-- pod-mini:end -->'''
+
+
+# ── Article ──────────────────────────────────────────────────────────────────
+
+def episode_card(ep, chapters):
+    chap = ''.join(
+        f'\n            <li><button type="button" data-pod-seek="{t}" data-pod-chapter="{i}"><span class="ts">{clock(t)}</span><span class="ct">{esc(title)}</span><span class="dot" aria-hidden="true"></span></button></li>'
+        for i, (title, t, _) in enumerate(chapters))
+    rows = ''.join(
+        f'\n              <button type="button" class="ep-line" data-pod-seek="{t}" data-pod-line="{i}"><span class="who {SPEAKER_CLASS.get(who, "who-guest")}">{esc(who)}</span><span class="tx">{esc(text)}</span><span class="ts">{clock(t)}</span></button>'
+        for i, (who, t, text) in enumerate(lines_of(chapters)))
     return f'''<!-- podcast:start · generated by tools/build-podcast.py from podcast/podcast.json -->
-      <section class="pod" id="podcast" aria-labelledby="podcast-h">
-        <div class="pod-top">
-          <picture><source type="image/avif" srcset="{w}.avif"><img class="pod-cover" src="{w}.jpg" width="600" height="600" alt="" loading="lazy" decoding="async"></picture>
-          <div class="pod-intro">
-            <div class="pod-k"><span data-i18n="pod_kicker">Insights podcast</span> · <span data-i18n="pod_episode">Episode</span> {ep["number"]} · {clock(ep["duration"])}</div>
-            <h2 class="pod-t" id="podcast-h" data-i18n="pod_title">Listen to the conversation</h2>
-            <p class="pod-d" data-i18n="pod_desc">Martin and his co-host Sarah work through this article with a practical case, in English.</p>
-            <div class="pod-acts">
-              <button class="pod-play" type="button" data-pod-seek="0"><span class="ic-play" aria-hidden="true"></span><span data-i18n="pod_play">Play episode</span></button>
-              <a class="pod-link" href="{SHOW["page"]}" data-i18n="pod_all">All episodes</a>
-{rss}            </div>
+      <section class="ep-card" id="episode" aria-labelledby="episode-h">
+        <div class="ep-top">
+          {picture(ep["cover"], 132, 264, "ep-cover")}
+          <div class="ep-intro">
+            <div class="ep-k"><span data-i18n="pod_kicker">Insights Podcast</span> · <span data-i18n="pod_episode">Episode</span> {ep["number"]} · {clock(ep["duration"])}</div>
+            <h2 class="ep-t" id="episode-h" data-i18n="pod_title">Listen to the conversation</h2>
+            <p class="ep-d" data-i18n="pod_desc">Martin and his co-host Sarah work through this article with a practical case, in English.</p>
+            <div class="ep-acts">
+              <button class="ep-play" type="button" data-pod-toggle="card"><span class="ep-ic">{ICON}</span><span data-pod-label data-i18n="pod_play">Play episode</span></button>
+              <a class="ep-all" href="{SHOW["page"]}" data-i18n="pod_all">All episodes →</a>
+            </div>
           </div>
         </div>
-        <h3 class="pod-h" data-i18n="pod_chapters">Chapters</h3>
-        <ol class="pod-ch" lang="en">{chap}
-        </ol>
-        <details class="pod-tr">
-          <summary><span data-i18n="pod_transcript">Transcript</span>{CHEV}</summary>
-          <div class="pod-tr-body" lang="en">{body}
-            <p class="pod-note">{esc(ep["disclosure"])}</p>
-          </div>
-        </details>
+        <div class="ep-bar" aria-hidden="true"><div data-pod-progress></div></div>
+        <div class="ep-chs">
+          <h3 class="ep-h" data-i18n="pod_chapters">Chapters</h3>
+          <ol class="ep-ch" lang="en">{chap}
+          </ol>
+        </div>
+        <div class="ep-tr">
+          <button class="ep-tr-h" type="button" aria-expanded="false" aria-controls="ep-tr-body" data-pod-transcript><span data-i18n="pod_transcript">Transcript</span><span class="ep-tr-s"><span data-i18n="pod_synced">Synced with audio</span>{CHEV}</span></button>
+          <div class="ep-tr-body" id="ep-tr-body"><div class="ep-tr-in" lang="en">{rows}
+          </div></div>
+        </div>
+        <p class="ep-note" data-i18n="pod_note">{esc(ep["note"])}</p>
       </section>
 <!-- podcast:end -->'''
 
 
-def replace_between(s, start, end, new, path):
+def toc_card(ep):
+    return f'''<!-- toc-pod:start · generated by tools/build-podcast.py -->
+      <a class="toc-pod" href="#episode">
+        {picture(ep["cover"], 40, 96, "tp-cover")}
+        <span class="tp-txt"><span class="tp-t" data-i18n="also_podcast">Also a podcast</span><span class="tp-s">{round(ep["duration"] / 60)} <span data-i18n="ep_min">min</span> · <span data-i18n="also_listen">Listen</span></span></span>
+      </a>
+<!-- toc-pod:end -->'''
+
+
+def chips(s, ep, path):
+    """Wrap each mapped H2 in .h2-row with its chapter chip (idempotent)."""
+    s = re.sub(r'<div class="h2-row">(<h2\b[^>]*>.*?</h2>)<button class="ch-chip".*?</button></div>', r'\1', s, flags=re.S)
+    for h2, t in ep.get('h2', {}).items():
+        m = re.search(r'<h2\b[^>]*\bid="%s"[^>]*>.*?</h2>' % re.escape(h2), s, re.S)
+        assert m, f'{path}: no <h2 id="{h2}">'
+        chip = (f'<button class="ch-chip" type="button" data-pod-seek="{t}" data-pod-chip>'
+                f'<span class="cc-ic" aria-hidden="true"></span><span><span class="cc-l" data-i18n="chip_at">Discussed at</span> <span class="cc-t">{clock(t)}</span></span></button>')
+        s = s[:m.start()] + '<div class="h2-row">' + m.group(0) + chip + '</div>' + s[m.end():]
+    return s
+
+
+def replace_between(s, name, new, path):
+    start, end = f'<!-- {name}:start', f'<!-- {name}:end -->'
     a = s.find(start)
-    assert a >= 0, f'{path}: marker {start!r} missing'
+    assert a >= 0, f'{path}: marker <!-- {name}:start --> missing'
     b = s.index(end, a) + len(end)
     return s[:a] + new + s[b:]
 
@@ -213,9 +288,16 @@ def series_ref():
     return ref
 
 
+def episode_node(ep):
+    url = SITE + ep['article']
+    return {'@type': 'PodcastEpisode', '@id': url + '#episode', 'url': url + '#episode', 'name': ep['title'],
+            'episodeNumber': ep['number'], 'datePublished': ep['published'][:10],
+            'description': ep['summary'] + ' ' + ep['disclosure'], 'inLanguage': 'en-US',
+            'image': f'{SITE}{ep["cover"]}-3000.jpg', 'associatedMedia': audio_object(ep), 'partOfSeries': series_ref(),
+            'author': {'@id': SITE + '/#martin-motlik'}, 'about': {'@id': url + '#article'}}
+
+
 def rss_autodiscovery(s):
-    """<link rel="alternate" type="application/rss+xml"> after the hreflang block
-    when the feed is public; none otherwise."""
     s = s.replace(RSS_LINK, '')
     if PUBLIC:
         m = re.search(r'<link rel="alternate" hreflang="x-default" href="[^"]+">\n', s)
@@ -223,22 +305,15 @@ def rss_autodiscovery(s):
     return s
 
 
-def episode_node(ep):
-    url = SITE + ep['article']
-    return {'@type': 'PodcastEpisode', '@id': url + '#podcast', 'url': url + '#podcast', 'name': ep['title'],
-            'episodeNumber': ep['number'], 'datePublished': ep['published'][:10],
-            'description': ep['summary'] + ' ' + ep['disclosure'], 'inLanguage': 'en-US',
-            'associatedMedia': audio_object(ep), 'partOfSeries': series_ref(),
-            'author': {'@id': SITE + '/#martin-motlik'}, 'about': {'@id': url + '#article'}}
-
-
 def build_article(ep, chapters, current):
     path = os.path.join(ROOT, ep['article'].strip('/'), 'index.html')
     s = current.get(path) or open(path, encoding='utf-8').read()
-    s = replace_between(s, '<!-- podcast:start', '<!-- podcast:end -->', article_section(ep, chapters), path)
+    s = replace_between(s, 'podcast', episode_card(ep, chapters), path)
+    s = replace_between(s, 'toc-pod', toc_card(ep), path)
+    s = replace_between(s, 'pod-mini', mini(ep), path)
+    s = replace_between(s, 'pod-data', pod_data(ep, chapters), path)
+    s = chips(s, ep, path)
     s = rss_autodiscovery(s)
-    s, n = re.subn(r'(<div class="vo-root" id="vo" data-src=")[^"]*(")', lambda m: m.group(1) + ep['audio'] + m.group(2), s)
-    assert n == 1, f'{path}: player (#vo data-src) not found'
 
     def ld(g):
         graph = g['@graph']
@@ -248,38 +323,96 @@ def build_article(ep, chapters, current):
     return path, rewrite_ld(s, ld)
 
 
-# ── Show page: episode list and JSON-LD ──────────────────────────────────────
+# ── Show page ────────────────────────────────────────────────────────────────
+
+HERO = '/assets/img/ai-search-hero'                # article hero renditions, per episode later if needed
+
+
+def latest_card(ep, chapters):
+    d = datetime.fromisoformat(ep['published'])
+    return f'''      <article class="latest" data-pod-started aria-labelledby="latest-h">
+        <div class="latest-img">
+          <picture>
+            <source type="image/avif" sizes="(min-width: 900px) 480px, 100vw" srcset="{HERO}-600.avif 600w, {HERO}-900.avif 900w, {HERO}-1280.avif 1280w">
+            <img src="{HERO}-900.jpg" sizes="(min-width: 900px) 480px, 100vw" srcset="{HERO}-600.jpg 600w, {HERO}-900.jpg 900w, {HERO}-1280.jpg 1280w" width="1672" height="941" alt="" loading="lazy" decoding="async">
+          </picture>
+          <span class="latest-flag"><span data-i18n="latest">Latest</span> · {ep_tag(ep)}</span>
+        </div>
+        <div class="latest-txt">
+          <div class="latest-meta"><span class="cat">{esc(ep["category"])}</span><time datetime="{d.date()}">{d.strftime("%b")} {d.day}, {d.year}</time><span>·</span><span>{round(ep["duration"] / 60)} <span data-i18n="ep_min">min</span></span></div>
+          <h3 id="latest-h" lang="en">{esc(ep["title"])}</h3>
+          <p>{esc(ep["teaser"])}</p>
+          <div class="latest-player">
+            <button class="lp-play" type="button" data-pod-toggle aria-label="Play episode" data-i18n-attr="aria-label:play_episode">{ICON}</button>
+            <div class="wave" data-pod-wave aria-hidden="true"></div>
+            <span class="lp-time"><span data-pod-time>0:00</span> / {clock(ep["duration"])}</span>
+          </div>
+          <div class="latest-ch" data-pod-chapter-line lang="en"></div>
+          <div class="latest-foot"><a href="{ep["article"]}#episode" data-i18n="read_article">Read the article →</a><span>{len(chapters)} <span data-i18n="chapters_word">chapters</span> · <span data-i18n="transcript_word">Transcript</span></span></div>
+        </div>
+      </article>'''
+
+
+def more_row(ep):
+    d = datetime.fromisoformat(ep['published'])
+    return f'''        <li class="more-ep">
+          {picture(ep["cover"], 72, 144, "me-cover")}
+          <div class="me-txt">
+            <div class="me-meta"><b>{ep_tag(ep)}</b><span class="cat">{esc(ep["category"])}</span><span><time datetime="{d.date()}">{d.strftime("%b")} {d.day}, {d.year}</time> · {round(ep["duration"] / 60)} <span data-i18n="ep_min">min</span></span></div>
+            <h3 lang="en">{esc(ep["title"])}</h3>
+          </div>
+          <a href="{ep["article"]}#episode" data-i18n="read_article">Read the article →</a>
+          <a class="me-play" href="{ep["article"]}#episode" tabindex="-1" aria-hidden="true"><span class="i-play"></span></a>
+        </li>'''
+
 
 def episode_list(eps):
-    out = ['<!-- episodes:start · generated by tools/build-podcast.py from podcast/podcast.json -->', '      <ol class="eps">']
-    for ep, size, chapters in sorted(eps, key=lambda e: e[0]['number'], reverse=True):
-        d = datetime.fromisoformat(ep['published'])
-        out.append(f'''        <li>
-          <a class="ep" href="{ep["article"]}#podcast">
-            <div class="ep-meta"><span data-i18n="ep_label">Episode</span> {ep["number"]} · <time datetime="{d.date()}">{d.strftime("%b")} {d.day}, {d.year}</time> · {round(ep["duration"] / 60)} <span data-i18n="ep_min">min</span></div>
-            <h3 lang="en">{esc(ep["title"])}</h3>
-            <p>{esc(ep["summary"])}</p>
-            <span class="ep-go" data-i18n="ep_go">Listen and read the article →</span>
-          </a>
-        </li>''')
-    out += ['      </ol>', '<!-- episodes:end -->']
+    eps = sorted(eps, key=lambda e: e[0]['number'], reverse=True)
+    latest, rest = eps[0], eps[1:]
+    n = len(eps)
+    out = ['<!-- episodes:start · generated by tools/build-podcast.py from podcast/podcast.json -->',
+           f'      <div class="eps-head"><h2 id="episodes-h" data-i18n="episodes_title">Episodes</h2><span class="eps-count">{n} <span data-i18n="{"ep_count_one" if n == 1 else "ep_count_many"}">{"episode" if n == 1 else "episodes"}</span></span></div>',
+           latest_card(latest[0], latest[2])]
+    if rest:
+        out += ['      <ol class="more-eps">'] + [more_row(e[0]) for e in rest] + ['      </ol>']
+    out.append('<!-- episodes:end -->')
     return '\n'.join(out)
 
 
-def subscribe_block():
-    if PUBLIC:
-        body = (f'        <div class="subs">\n          <a class="btn btn-blue" href="{SITE + SHOW["feed"]}" data-i18n="rss">Subscribe via RSS</a>\n        </div>\n'
-                f'        <p class="feed-url"><span data-i18n="feed_label">Feed URL for your podcast app:</span> <code>{SITE + SHOW["feed"]}</code></p>')
-    else:
-        body = '        <p class="web-only" data-i18n="web_only">New episodes are published here, together with each new article.</p>'
-    return '<!-- subscribe:start · generated by tools/build-podcast.py -->\n' + body + '\n<!-- subscribe:end -->'
+BELL = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.7 21a2 2 0 0 1-3.4 0"></path></svg>'
+
+
+def notify_button():
+    body = (f'          <button class="btn-out" type="button" data-notify-toggle aria-expanded="false" aria-controls="notify">{BELL}<span data-i18n="get_new">Get new episodes</span></button>\n'
+            if ENDPOINT else '')
+    return '<!-- notify-btn:start · generated by tools/build-podcast.py (show.subscribe_endpoint) -->\n' + body + '<!-- notify-btn:end -->'
+
+
+def notify_form():
+    body = ''
+    if ENDPOINT:
+        body = f'''        <div class="notify" id="notify"><div class="notify-in">
+          <form class="notify-f" action="{esc(ENDPOINT)}" method="POST" data-notify novalidate>
+            <label class="sr" for="notify-email" data-i18n="email_label">Email address</label>
+            <input id="notify-email" name="email" type="email" autocomplete="email" placeholder="you@company.com" aria-describedby="notify-msg" required>
+            <input type="hidden" name="_subject" value="New podcast subscriber: {esc(SHOW["title"])}">
+            <button type="submit" data-notify-submit data-i18n="notify_me">Notify me</button>
+          </form>
+          <p class="notify-help" id="notify-msg" data-notify-msg data-i18n="notify_help" aria-live="polite">One email per new episode. No newsletter, unsubscribe anytime.</p>
+        </div></div>
+'''
+    return '<!-- notify-form:start · generated by tools/build-podcast.py (show.subscribe_endpoint) -->\n' + body + '<!-- notify-form:end -->'
 
 
 def build_show_page(eps, current):
     path = os.path.join(ROOT, SHOW['page'].strip('/'), 'index.html')
     s = current.get(path) or open(path, encoding='utf-8').read()
-    s = replace_between(s, '<!-- episodes:start', '<!-- episodes:end -->', episode_list(eps), path)
-    s = replace_between(s, '<!-- subscribe:start', '<!-- subscribe:end -->', subscribe_block(), path)
+    latest = sorted(eps, key=lambda e: e[0]['number'])[-1]
+    s = replace_between(s, 'episodes', episode_list(eps), path)
+    s = replace_between(s, 'notify-btn', notify_button(), path)
+    s = replace_between(s, 'notify-form', notify_form(), path)
+    s = replace_between(s, 'pod-mini', mini(latest[0]), path)
+    s = replace_between(s, 'pod-data', pod_data(latest[0], latest[2]), path)
     s = rss_autodiscovery(s)
 
     def ld(g):
@@ -306,8 +439,7 @@ def build():
         files[p] = s
     p, s = build_show_page(eps, files)
     files[p] = s
-    # The Insights list links the feed for autodiscovery too
-    lp = os.path.join(ROOT, 'insights', 'index.html')
+    lp = os.path.join(ROOT, 'insights', 'index.html')          # the Insights list links the feed too
     files[lp] = rss_autodiscovery(files.get(lp) or open(lp, encoding='utf-8').read())
     return files
 
