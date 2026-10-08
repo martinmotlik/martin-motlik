@@ -39,6 +39,7 @@ PAGES = [
     {'path': '/references/mass-timber-2026/', 'kind': 'page'},
     {'path': '/references/rfem6-brochure/', 'kind': 'page'},
     {'path': '/insights/', 'kind': 'list'},
+    {'path': '/insights/podcast/', 'kind': 'page'},
     {'path': ARTICLE, 'kind': 'article'},
 ]
 
@@ -284,7 +285,7 @@ def translate_by_text(s, text, attrs):
 def english_runs(s):
     """Visible text runs and translatable attribute values of a page body."""
     runs = set()
-    for skip, chunk in body_parts(s):
+    for skip, chunk in body_parts(strip_english(s)):
         if skip:
             continue
         for t in re.findall(r'>([^<>]+)<', chunk):
@@ -318,7 +319,7 @@ def localize_ld(node, lang, data):
         return
     if not isinstance(node, dict):
         return
-    entity = node.get('@type') in ('Person', 'Organization', 'WebSite')
+    entity = node.get('@type') in ('Person', 'Organization', 'WebSite', 'PodcastSeries', 'PodcastEpisode')
     touched = False
     for k, v in list(node.items()):
         if isinstance(v, str) and k in ('url', 'item', 'mainEntityOfPage', '@id') and not entity and '#' not in v:
@@ -379,8 +380,9 @@ def build_article(lang):
                  ''.join(f'\n    <meta property="article:tag" content="{esc(t)}">' for t in tags))
 
     def ld(g):
-        art, person, crumbs = g['@graph']
-        assert art['@type'] == 'TechArticle' and crumbs['@type'] == 'BreadcrumbList'
+        art = next(n for n in g['@graph'] if n.get('@type') == 'TechArticle')
+        crumbs = next(n for n in g['@graph'] if n.get('@type') == 'BreadcrumbList')
+        # The PodcastEpisode node (tools/build-podcast.py) stays as it is: the episode is English.
         art.pop('workTranslation', None)
         art.update({
             '@id': page + '#article', 'headline': title, 'description': meta['description'],
@@ -391,7 +393,6 @@ def build_article(lang):
             'wordCount': word_count(data),
             'translationOfWork': {'@id': SITE + path + '#article'},
         })
-        art['audio']['name'] = meta['audio_name']          # the narration itself stays English
         art['citation'][0]['name'], art['citation'][0]['description'] = meta['citation1']
         items = crumbs['itemListElement']
         items[0]['name'] = meta['crumb_home']
@@ -450,8 +451,14 @@ ENGLISH_MARKERS = ('Be the source', 'Field notes from', 'All articles', 'On this
                    'Where I would start', 'Get new insights first', '8 min read', 'Oct 6, 2026')
 
 
+def strip_english(s):
+    """Content marked lang="en" (podcast titles, chapters, transcript) is English
+    on purpose: the episodes are in English. The checks skip it."""
+    return re.sub(r'<(?!html\b)(\w+)\b[^>]*\slang="en"[^>]*>.*?</\1>', ' ', s, flags=re.S)
+
+
 def visible_text(s):
-    s = re.sub(r'<(script|style)\b.*?</\1>|<!--.*?-->', ' ', s, flags=re.S)
+    s = strip_english(re.sub(r'<(script|style)\b.*?</\1>|<!--.*?-->', ' ', s, flags=re.S))
     return html.unescape(re.sub(r'<[^>]+>', ' ', s))
 
 
@@ -490,8 +497,9 @@ SITEMAP = {  # path: (lastmod, changefreq, priority)
     '/references/nascc-2026/': ('2026-10-07', 'monthly', '0.8'),
     '/references/mass-timber-2026/': ('2026-10-07', 'monthly', '0.8'),
     '/references/rfem6-brochure/': ('2026-10-07', 'monthly', '0.8'),
-    '/insights/': ('2026-10-07', 'weekly', '0.9'),
-    ARTICLE: ('2026-10-07', 'monthly', '0.8'),
+    '/insights/': ('2026-10-08', 'weekly', '0.9'),
+    '/insights/podcast/': ('2026-10-08', 'weekly', '0.8'),
+    ARTICLE: ('2026-10-08', 'monthly', '0.8'),
 }
 
 
@@ -514,10 +522,22 @@ def sitemap():
 
 
 def main():
+    # The podcast first: it writes the episode list and article sections that
+    # the language versions are built from.
+    import importlib.util
+    spec = importlib.util.spec_from_file_location('build_podcast', os.path.join(ROOT, 'tools', 'build-podcast.py'))
+    podcast = importlib.util.module_from_spec(spec); spec.loader.exec_module(podcast)
+    pod = podcast.build()
+    pod_stale = [f for f, c in pod.items() if not os.path.exists(f) or open(f, encoding='utf-8').read() != c]
+    if '--check' not in sys.argv:
+        for f in pod_stale:
+            os.makedirs(os.path.dirname(f), exist_ok=True)
+            open(f, 'w', encoding='utf-8').write(pod[f])
+            print('wrote', os.path.relpath(f, ROOT))
     files = build()
     files[os.path.join(ROOT, 'sitemap.xml')] = sitemap()
     if '--check' in sys.argv:
-        stale = [f for f, s in files.items() if not os.path.exists(f) or open(f, encoding='utf-8').read() != s]
+        stale = pod_stale + [f for f, s in files.items() if not os.path.exists(f) or open(f, encoding='utf-8').read() != s]
         for f in stale:
             print('out of date:', os.path.relpath(f, ROOT))
         sys.exit(1 if stale else 0)

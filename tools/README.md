@@ -173,3 +173,13 @@ Adding a page: add it to `PAGES`, `URLS` (if its slug is translated) and
 `og:locale:alternate` lines in its `<head>`, make its language switcher links
 like the other pages, add `i18n/cs.json` and `de.json`, run the build until it
 passes, and list the URLs in `llms.txt`.
+
+## Podcast (`build-podcast.py`)
+
+`build-i18n.py` runs it first, so the one command above also builds the
+podcast: the RSS feed, chapters, the show page's episode list and each
+article's podcast section, all from `podcast/podcast.json`. How to add an
+episode, the audio spec and the hosting notes are in `assets/podcast/README.md`.
+`tools/podcast-cover.html` draws the 3000 px cover in the browser (Inter from
+Google Fonts, like the site) and offers it as a download.
+

@@ -1,0 +1,369 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:10.560
+<v Sarah>So, a confession. A few weeks ago I opened ChatGPT and typed: "Which structural engineering firms in Portland have real experience with mass timber?"
+
+2
+00:00:10.560 --> 00:00:11.360
+<v Martin>And?
+
+3
+00:00:11.360 --> 00:00:21.520
+<v Sarah>Five firms. Nicely written answer, sources underneath. We weren't one of them. And we've designed, what, a dozen CLT buildings in the last few years.
+
+4
+00:00:21.520 --> 00:00:25.680
+<v Martin>Let me guess. At least one of those five has done less than you.
+
+5
+00:00:25.680 --> 00:00:29.440
+<v Sarah>One of them has done two. I checked.
+
+6
+00:00:29.440 --> 00:00:41.360
+<v Martin>Welcome to Insights. I'm Martin Motlík. I work on websites and content for engineering software, for engineers in the U.S., Canada and Europe. And today I'm joined by Sarah.
+
+7
+00:00:41.360 --> 00:00:54.720
+<v Sarah>Hi, Martin. So, quick context for everyone: I run marketing at a structural engineering firm in Portland. We've done SEO properly for years. Good rankings, clean meta titles, keywords, the whole thing.
+
+8
+00:00:54.720 --> 00:00:57.280
+<v Martin>And the AI still picked someone else.
+
+9
+00:00:57.280 --> 00:01:03.680
+<v Sarah>Right. So that's what I want to understand today. Not the theory. How you would look at my situation.
+
+10
+00:01:03.680 --> 00:01:05.520
+<v Martin>Deal. Let's take it apart.
+
+11
+00:01:06.040 --> 00:01:15.000
+<v Sarah>Okay, the obvious question first. We rank on page one for "structural engineer Portland." Why isn't that enough anymore?
+
+12
+00:01:15.000 --> 00:01:40.560
+<v Martin>Because page one isn't the finish line anymore. Think about what happened when you searched. You didn't get a list. You got an answer. And that's not only ChatGPT. Google itself is an AI search engine now. At Google I/O in May 2026, Google said AI Overviews had passed two and a half billion monthly users, and AI Mode more than a billion. And they're merging the two.
+
+13
+00:01:40.560 --> 00:01:43.880
+<v Sarah>So my clients don't even have to switch to a chatbot.
+
+14
+00:01:43.880 --> 00:02:00.280
+<v Martin>Exactly. The search engine they've used for twenty years quietly became one. And your clients ask the long, specific kind of question. A material, a code, a building type, a city. That's exactly the kind of search that now gets an answer instead of a list.
+
+15
+00:02:00.280 --> 00:02:03.800
+<v Sarah>So... was all our SEO work wasted?
+
+16
+00:02:03.800 --> 00:02:24.120
+<v Martin>No, and I want to be clear about that. SEO is still the foundation. If a page can't be crawled and indexed, it won't end up in an AI answer either. What changed is the goal. Alongside rankings, I now look at whether a page gets cited as a source. And a meta description won't get you cited. It was written for a person scanning a list.
+
+17
+00:02:24.120 --> 00:02:26.280
+<v Sarah>And the AI doesn't scan.
+
+18
+00:02:26.280 --> 00:02:36.200
+<v Martin>No. It reads your page, pulls out individual facts, and decides which ones it trusts enough to repeat. Keywords help it find you. They don't make it trust you.
+
+19
+00:02:36.720 --> 00:02:40.560
+<v Sarah>So how would you start with us? If I hired you tomorrow.
+
+20
+00:02:40.560 --> 00:02:52.320
+<v Martin>I'd ask you a slightly annoying question. Where on your website does it say, in plain text, that you've designed a dozen CLT buildings? To which code? In which cities?
+
+21
+00:02:52.320 --> 00:02:59.040
+<v Sarah>Um... it's in the projects section. We have a gallery. Really beautiful photography.
+
+22
+00:02:59.040 --> 00:03:00.160
+<v Martin>With captions?
+
+23
+00:03:00.160 --> 00:03:02.960
+<v Sarah>A project name. Sometimes the architect.
+
+24
+00:03:02.960 --> 00:03:19.840
+<v Martin>That's the most common thing I see with engineering firms. A gallery convinces a person. But a machine can't look at a photo of a timber roof and conclude, "this firm designs CLT to NDS." For an AI system, that expertise basically doesn't exist.
+
+25
+00:03:19.840 --> 00:03:22.880
+<v Sarah>So the competitor with two projects...
+
+26
+00:03:22.880 --> 00:03:33.280
+<v Martin>...probably wrote two plain pages. The project, the structural system, the material, the design code, and what their role was. That's enough to be quotable.
+
+27
+00:03:33.280 --> 00:03:36.640
+<v Sarah>Okay, that honestly stings a little.
+
+28
+00:03:36.640 --> 00:03:44.320
+<v Martin>It's very fixable. And it's the same lesson I learned from localization, long before anyone talked about AI search.
+
+29
+00:03:44.320 --> 00:03:47.200
+<v Sarah>Tell me about that. That's your daily work, right?
+
+30
+00:03:47.200 --> 00:04:08.800
+<v Martin>Since 2021, yeah. Websites and content for engineering software, adapted for the U.S., Canada and Europe. And what localization teaches you is this: translating a page is easy. Localizing it means asking how an engineer in that market actually searches. Which code they use, which terms, which spelling.
+
+31
+00:04:09.320 --> 00:04:10.920
+<v Sarah>Do you have an example?
+
+32
+00:04:10.920 --> 00:04:26.520
+<v Martin>One that's actually very close to your world. A timber design page I optimized for engineers in the U.S. and Canada, for a software vendor. The original content came from Europe. Accurate, thorough... and it spoke Eurocode.
+
+33
+00:04:26.520 --> 00:04:30.200
+<v Sarah>Nobody in Portland thinks in Eurocode.
+
+34
+00:04:30.200 --> 00:05:00.040
+<v Martin>Not in Portland, not in Vancouver. They design to NDS in the U.S. and CSA O86 in Canada, and that's how they phrase their questions. So I rebuilt the page around the engineer's question, not around the product. The North American codes are named right in the text. U.S. English, U.S. terms, "design standards" as the umbrella. Nobody, human or machine, has to translate from one standards world to the other.
+
+35
+00:05:00.040 --> 00:05:04.200
+<v Sarah>And the images? Because that's my gallery problem, right?
+
+36
+00:05:04.200 --> 00:05:29.480
+<v Martin>Same thing exactly. A screenshot of a model checked to Eurocode, with European labels, tells an engineer this was made for someone else. So we localized the screenshots too. And every image got text: a title, alt text, a description and a caption that name the standard. The image convinces the engineer. The text around it is what a machine can quote.
+
+37
+00:05:29.480 --> 00:05:36.440
+<v Sarah>So for me, every project photo gets a caption that says the system, the code, and what we actually did.
+
+38
+00:05:36.440 --> 00:05:48.200
+<v Martin>That's it. Write in the language of the question. If your pages never say "NDS," you won't be named when someone asks about NDS. No matter how many buildings you've done.
+
+39
+00:05:48.800 --> 00:05:58.000
+<v Sarah>Here's a twist, though. We also have an office in Vancouver. And our site shows Canadian visitors different content, based on their location.
+
+40
+00:05:58.000 --> 00:06:17.520
+<v Martin>Ah. That's something I work with every day, actually. One page, one URL, and visitors from France, Italy, Germany or the U.S. each see content for their market. Local contacts, language, the design standards they use. For people, it works really well.
+
+41
+00:06:17.520 --> 00:06:20.080
+<v Sarah>I'm sensing a "but."
+
+42
+00:06:20.080 --> 00:06:36.720
+<v Martin>But a crawler only sees the version served to its own IP address. Googlebot crawls from U.S. addresses by default, and AI crawlers largely do too. So your Vancouver content, all the CSA O86 projects...
+
+43
+00:06:36.720 --> 00:06:39.360
+<v Sarah>...might never reach an AI answer.
+
+44
+00:06:39.360 --> 00:06:59.440
+<v Martin>Unless you plan for it. The fix is simple in principle. Keep the IP localization for the experience. But give every regional version of an important fact its own URL, linked with hreflang. Visitors still land on the right version automatically, and crawlers can find all of them.
+
+45
+00:06:59.440 --> 00:07:02.480
+<v Sarah>That would never have shown up in our SEO reports.
+
+46
+00:07:02.480 --> 00:07:07.200
+<v Martin>Usually not. Which is why I stopped counting pages when I review a website.
+
+47
+00:07:07.200 --> 00:07:08.720
+<v Sarah>What do you count instead?
+
+48
+00:07:09.320 --> 00:07:24.120
+<v Martin>I follow single facts. Like yours: "we design CLT buildings to NDS." And I check whether that one fact survives the trip from your server into an AI answer. I think of it as a load path.
+
+49
+00:07:24.120 --> 00:07:26.360
+<v Sarah>Of course you do.
+
+50
+00:07:26.360 --> 00:07:40.680
+<v Martin>Occupational hazard. But it works. There are five members, and the fact has to make it through every one. The first is: is it reachable? Do your robots rules and your firewall actually let AI crawlers in?
+
+51
+00:07:40.680 --> 00:07:48.840
+<v Sarah>Okay, now I'm nervous. Our IT guy told me last year he blocked "the AI bots." Because of the training thing.
+
+52
+00:07:48.840 --> 00:08:07.800
+<v Martin>That's really common, and it's worth checking exactly what he blocked. Training bots and search bots are separate. You can opt out of model training and still let ChatGPT search and Claude search read your site. And if he blocked everything at the CDN level, your robots rules don't even matter.
+
+53
+00:08:07.800 --> 00:08:10.040
+<v Sarah>So that alone could explain it.
+
+54
+00:08:10.040 --> 00:08:20.360
+<v Martin>It could. Second member: is the fact readable? Is it in the HTML, or is it locked in a PDF, an image, or something a script renders?
+
+55
+00:08:20.880 --> 00:08:30.160
+<v Sarah>Well... our statement of qualifications is a PDF. It's gorgeous. And honestly, clients download it. I'm not getting rid of it.
+
+56
+00:08:30.160 --> 00:08:33.440
+<v Martin>And you shouldn't. I'm not anti-PDF.
+
+57
+00:08:33.440 --> 00:08:35.600
+<v Sarah>It kind of sounded like you were.
+
+58
+00:08:35.600 --> 00:08:57.120
+<v Martin>Fair. Here's the distinction. Keep the PDF. Just never let it be the only place a fact lives. My rule is that HTML is the source of truth. PDFs, images and videos are copies of it. Text inside PDFs reaches AI crawlers unreliably at best.
+
+59
+00:08:57.120 --> 00:09:03.840
+<v Sarah>Okay, I can live with that. What about JavaScript? Our new site is built on one of those modern frameworks.
+
+60
+00:09:03.840 --> 00:09:33.133
+<v Martin>Then that's the first thing I'd test. Many modern frameworks can render the page on the server, and then you're fine. The only question is whether the text is in the HTML before any script runs. Because according to crawl data from Vercel and MERJ, the major AI crawlers don't execute JavaScript at all. Google does. So a page can rank in Google, show up in AI Overviews, and still be completely empty to ChatGPT, Claude and Perplexity.
+
+61
+00:09:33.133 --> 00:09:39.440
+<v Sarah>Wait. So we could be invisible to them and never notice, because Google looks fine.
+
+62
+00:09:39.440 --> 00:09:42.640
+<v Martin>Right. Google looks fine, so nobody thinks to check.
+
+63
+00:09:43.160 --> 00:09:47.400
+<v Sarah>Okay, reachable, readable. What are the other three?
+
+64
+00:09:47.400 --> 00:10:03.960
+<v Martin>Third: understood. The page says plainly what it's about. The service, the design code, the units, the market. Fourth: consistent. Every page, every file, every listing states the fact the same way.
+
+65
+00:10:03.960 --> 00:10:14.600
+<v Sarah>Hm. We say "mass timber" on the homepage, "CLT" on the project pages, and a couple of directory listings still have our old office address.
+
+66
+00:10:14.600 --> 00:10:35.480
+<v Martin>That's the kind of thing that quietly weakens trust. My rule there is one fact, one canonical page. State it there clearly, and identically everywhere else. And if you use structured data, the markup never says more than the visible page. Markup that contradicts the page doesn't fix confusion. It automates it.
+
+67
+00:10:35.480 --> 00:10:36.600
+<v Sarah>And the fifth?
+
+68
+00:10:36.600 --> 00:10:52.200
+<v Martin>Corroborated. Others confirm it. Clients, architects you work with, publications, conference talks. And like any load path, it fails at its weakest member. In my experience, the first two fail far more often than people expect.
+
+69
+00:10:52.200 --> 00:10:55.480
+<v Sarah>Any rule for how we should actually write the pages?
+
+70
+00:10:55.480 --> 00:11:04.200
+<v Martin>Answer first. Lead with the answer and make every passage stand on its own. AI systems quote passages, not whole pages.
+
+71
+00:11:04.200 --> 00:11:09.080
+<v Sarah>And llms.txt? Half my LinkedIn feed says I need one.
+
+72
+00:11:09.080 --> 00:11:20.920
+<v Martin>On documentation and API sites, it makes sense. On a marketing site, it's a cheap experiment at best, and Google says its Search ignores it. Fix crawlability first.
+
+73
+00:11:21.440 --> 00:11:28.000
+<v Sarah>Practical question. My boss is going to ask how we know any of this is working. What do I report?
+
+74
+00:11:28.000 --> 00:11:46.760
+<v Martin>Keep reporting rankings. But add the test you already did by accident. Take ten real questions your clients ask. Put them into Google's AI Mode, ChatGPT, Claude and Perplexity. Write down whether you're named, how you're described, and whom the answers cite instead.
+
+75
+00:11:46.760 --> 00:11:48.800
+<v Sarah>And repeat it in a few months.
+
+76
+00:11:48.800 --> 00:11:57.840
+<v Martin>Yes. Same questions, same tools. That's your baseline. And that last part, who gets cited instead, is usually the wake-up call.
+
+77
+00:11:57.840 --> 00:12:01.040
+<v Sarah>What else can I do this week, without an agency?
+
+78
+00:12:01.040 --> 00:12:28.200
+<v Martin>Two more checks. First, fetch one key page the way a crawler does. No browser, no JavaScript. Then search the result for a sentence that matters, like "CLT" or "NDS." If it's not there, AI crawlers can't see it either. The exact command is in the article. Second, read every robots file you own, including subdomains, and ask whoever runs your CDN whether AI bots are blocked.
+
+79
+00:12:28.200 --> 00:12:31.080
+<v Sarah>So, basically: talk to my IT guy.
+
+80
+00:12:31.080 --> 00:12:34.240
+<v Martin>Talk to your IT guy. Nicely.
+
+81
+00:12:34.760 --> 00:12:38.200
+<v Sarah>If you had to pick one thing for me to start with on Monday?
+
+82
+00:12:38.200 --> 00:12:57.080
+<v Martin>One page. Your strongest mass timber project. Rewrite it so it plainly states the structural system, the material, the design code, the location and your role. Make sure that text is in the HTML. Then make sure your other pages say the same thing.
+
+83
+00:12:57.080 --> 00:12:59.800
+<v Sarah>That's... surprisingly doable.
+
+84
+00:12:59.800 --> 00:13:15.352
+<v Martin>That's the good news. Most AEC companies already own the material. Project pages, datasheets, references, documentation. It's not new content. It's the content you have, made readable.
+
+85
+00:13:15.352 --> 00:13:16.872
+<v Sarah>And the bigger picture?
+
+86
+00:13:16.872 --> 00:13:29.992
+<v Martin>Make the technical facts your clients need easy to find, understand and verify. Be explicit about what you do, which standards apply, which markets you serve, and where your limits are.
+
+87
+00:13:29.992 --> 00:13:45.192
+<v Sarah>So, my list. Captions on every project. A friendly talk with my IT guy. The PDF stays, but the facts go into HTML. And one name for what we do, not "mass timber" here and "CLT" there.
+
+88
+00:13:45.192 --> 00:13:49.072
+<v Martin>That's the whole episode in one sentence.
+
+89
+00:13:49.072 --> 00:13:56.032
+<v Sarah>The full article, with the checklist and a copy-paste robots file, is on martinmotlik.com, under Insights.
+
+90
+00:13:56.032 --> 00:14:06.032
+<v Martin>And if you're working on something similar, regional content, technical documentation, AI visibility, message me on LinkedIn. I'm always happy to compare notes.
+
+91
+00:14:06.032 --> 00:14:07.072
+<v Sarah>Thanks for listening.
+
+92
+00:14:07.072 --> 00:14:08.832
+<v Martin>See you in the next one.

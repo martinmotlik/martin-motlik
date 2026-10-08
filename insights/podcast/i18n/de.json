@@ -1,0 +1,54 @@
+{
+ "lang": "de",
+ "ui": {
+  "title": "Insights by Martin Motlík – Podcast über KI im AEC",
+  "menu_aria": "Menü öffnen",
+  "crumbs_aria": "Brotkrümelnavigation"
+ },
+ "chrome": {
+  "nav_references": "Referenzen",
+  "nav_services": "Leistungen",
+  "nav_insights": "Insights",
+  "nav_about": "Über mich",
+  "nav_bim": "Tätigkeitsfelder",
+  "nav_dlubal": "Dlubal",
+  "nav_ai": "KI im AEC",
+  "crumb_podcast": "Podcast",
+  "badge": "Podcast",
+  "dek": "Gespräche über KI im AEC, Marketing für Ingenieursoftware und den Aufbau von Web-Ökosystemen, die Ingenieure wirklich nutzen. Jede Folge nimmt sich einen Insights-Artikel vor und geht ihn an einem Praxisfall durch.",
+  "lang_note": "Die Folgen sind auf Englisch.",
+  "rss": "Per RSS abonnieren",
+  "feed_label": "Feed-URL für Ihre Podcast-App:",
+  "episodes_title": "Folgen",
+  "ep_label": "Folge",
+  "ep_go": "Anhören und Artikel lesen →",
+  "ep_min": "Min."
+ },
+ "text": {
+  "Oct 8, 2026": "8. Oktober 2026",
+  "Sarah runs marketing at a structural engineering firm in Portland. Her firm ranks on page one, yet when she asked ChatGPT which local firms have real mass-timber experience, it named five others. Martin takes her situation apart: why page one is no longer the finish line, how project galleries and PDFs hide the facts engineers search for, what localizing a timber page for U.S. and Canadian design codes taught him, and how a fact travels the “load path” into an AI answer.": "Sarah leitet das Marketing eines Tragwerksplanungsbüros in Portland. Ihr Büro steht bei Google auf Seite eins – doch als sie ChatGPT fragte, welche Büros vor Ort echte Erfahrung mit Massivholz haben, nannte es fünf andere. Martin nimmt ihre Situation auseinander: warum Seite eins nicht mehr das Ziel ist, wie Projektgalerien und PDFs die Fakten verstecken, nach denen Ingenieure suchen, was ihn die Lokalisierung einer Holzbau-Seite für US- und kanadische Normen gelehrt hat und wie ein Fakt über den „Lastpfad“ in eine KI-Antwort gelangt."
+ },
+ "attrs": {
+  "Cover of the podcast Insights by Martin Motlík": "Cover des Podcasts Insights by Martin Motlík"
+ },
+ "keep": [
+  "Insights by Martin Motlík",
+  "Be the source: getting AEC data ready for AI search",
+  "https://martinmotlik.com/podcast/feed.xml",
+  "Podcast",
+  "DIČ: CZ0103073146",
+  "motlik.martin@gmail.com"
+ ],
+ "meta": {
+  "description": "Podcast von Martin Motlík über KI im AEC, Marketing für Ingenieursoftware und Web-Ökosysteme. Jede Folge geht einen Insights-Artikel an einem Praxisfall durch.",
+  "og_title": "Insights by Martin Motlík – Podcast",
+  "og_description": "Podcast von Martin Motlík über KI im AEC, Marketing für Ingenieursoftware und Web-Ökosysteme. Jede Folge geht einen Insights-Artikel an einem Praxisfall durch.",
+  "twitter_title": "Insights by Martin Motlík – Podcast",
+  "twitter_description": "Podcast von Martin Motlík über KI im AEC, Marketing für Ingenieursoftware und Web-Ökosysteme.",
+  "image_alt": "Cover des Podcasts Insights by Martin Motlík",
+  "in_language": "de-DE"
+ },
+ "ld": {
+  "@graph.1.itemListElement.0.name": "Startseite"
+ }
+}

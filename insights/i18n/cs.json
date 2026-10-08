@@ -30,7 +30,9 @@
   "cta_title": "Čtěte nové články jako první.",
   "cta_text": "Zhruba dvakrát měsíčně publikuji o AI v AEC, marketingu inženýrského softwaru a webových ekosystémech. Nové texty vycházejí nejdříve na LinkedInu.",
   "cta_linkedin": "Sledovat na LinkedInu",
-  "cta_email": "Napsat e-mail"
+  "cta_email": "Napsat e-mail",
+  "podcast_link": "Také jako podcast",
+  "podcast_tag": "Podcast"
  },
  "meta": {
   "description": "Praktické texty o zavádění AI, marketingu inženýrského softwaru a webových ekosystémech, které inženýři opravdu používají. Poznatky z přesunu AEC do prohlížeče.",

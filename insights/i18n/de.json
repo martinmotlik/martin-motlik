@@ -30,7 +30,9 @@
   "cta_title": "Neue Beiträge als Erste lesen.",
   "cta_text": "Ich veröffentliche etwa zweimal im Monat zu KI im AEC, Marketing für Ingenieursoftware und Web-Ökosystemen. Neue Texte erscheinen zuerst auf LinkedIn.",
   "cta_linkedin": "Auf LinkedIn folgen",
-  "cta_email": "E-Mail schreiben"
+  "cta_email": "E-Mail schreiben",
+  "podcast_link": "Auch als Podcast",
+  "podcast_tag": "Podcast"
  },
  "meta": {
   "description": "Praxisnahe Texte über KI-Einführung, Marketing für Ingenieursoftware und Web-Ökosysteme, die Ingenieure wirklich nutzen. Notizen vom Umzug des AEC in den Browser.",

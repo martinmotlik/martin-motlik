@@ -42,6 +42,11 @@ Practical AI integration for AEC marketing and operations teams. Deliverables in
 - [Buďte zdrojem: jak připravit data AEC firem pro vyhledávání s AI](https://martinmotlik.com/cs/insights/data-aec-pro-vyhledavani-s-ai/): Czech version of "Be the source".
 - [Werden Sie zur Quelle: AEC-Daten fit für die KI-Suche machen](https://martinmotlik.com/de/insights/aec-daten-fuer-ki-suche/): German version of "Be the source".
 
+## Podcast
+
+- [Insights by Martin Motlík](https://martinmotlik.com/insights/podcast/): a podcast in English that works through each Insights article with a practical case. RSS feed: https://martinmotlik.com/podcast/feed.xml
+- [Episode 1: Be the source: getting AEC data ready for AI search](https://martinmotlik.com/insights/ai-visibility-for-aec/#podcast): 14-minute conversation between Martin Motlík and co-host Sarah about a structural engineering firm in Portland that ranks well on Google yet is missing from AI answers, and what to change on its website. Chapters and a full transcript are on the article page; captions: https://martinmotlik.com/assets/podcast/ep001-be-the-source.vtt
+
 ## Services Page
 
 Martin Motlík's services are documented in detail at:
@@ -133,4 +138,5 @@ text in the HTML and hreflang links between them. English is the default.
 | Mass Timber 2026 | https://martinmotlik.com/references/mass-timber-2026/ | https://martinmotlik.com/cs/reference/mass-timber-2026/ | https://martinmotlik.com/de/referenzen/mass-timber-2026/ |
 | RFEM 6 Brochure | https://martinmotlik.com/references/rfem6-brochure/ | https://martinmotlik.com/cs/reference/rfem6-brozura/ | https://martinmotlik.com/de/referenzen/rfem6-broschuere/ |
 | Insights | https://martinmotlik.com/insights/ | https://martinmotlik.com/cs/insights/ | https://martinmotlik.com/de/insights/ |
+| Podcast | https://martinmotlik.com/insights/podcast/ | https://martinmotlik.com/cs/insights/podcast/ | https://martinmotlik.com/de/insights/podcast/ |
 | Be the source | https://martinmotlik.com/insights/ai-visibility-for-aec/ | https://martinmotlik.com/cs/insights/data-aec-pro-vyhledavani-s-ai/ | https://martinmotlik.com/de/insights/aec-daten-fuer-ki-suche/ |

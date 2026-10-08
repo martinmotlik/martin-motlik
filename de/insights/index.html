@@ -26,6 +26,8 @@
     <link rel="alternate" hreflang="de" href="https://martinmotlik.com/de/insights/">
     <link rel="alternate" hreflang="x-default" href="https://martinmotlik.com/insights/">
 
+    <link rel="alternate" type="application/rss+xml" title="Insights by Martin Motlík (podcast)" href="https://martinmotlik.com/podcast/feed.xml">
+
     <!-- ── Open Graph ── -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Martin Motlík">
@@ -328,6 +330,9 @@ img{display:block;max-width:100%}
 .btn-blue:hover{background:var(--blue-hi);color:#fff}
 .btn-soft{background:var(--s2);color:var(--ink)}
 .btn-soft:hover{background:#E4E8ED;color:var(--ink)}
+/* Buttons are links: keep their own text colour over the generic .ins a colour. */
+.ins a.btn-blue,.ins a.btn-blue:hover{color:#fff}
+.ins a.btn-soft,.ins a.btn-soft:hover{color:var(--ink)}
 @media (max-width:620px){
   .hero-in{padding-top:48px}
   .hero h1{font-size:clamp(32px,9vw,44px)}
@@ -336,6 +341,9 @@ img{display:block;max-width:100%}
   .cta{padding:64px 24px}
 }
 @media (prefers-reduced-motion:reduce){.card,.featured,.chip-btn,.btn{transition:none}}
+/* Podcast: link to the show and a tag on articles that have an episode */
+.pod-cta{margin-top:22px;display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600}
+.pod-tag{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;color:var(--blue);white-space:nowrap}
         /* With eight menu items, the full menu no longer fits next to the logo and
            the language switch below ~960 px, so tablets in portrait get the mobile
            menu as well. */
@@ -397,6 +405,7 @@ img{display:block;max-width:100%}
       <div class="badge"><span class="dot"></span><span data-i18n="hero_badge">Insights</span></div>
       <h1 data-i18n="hero_title">Notizen aus der Praxis: AEC zieht in den Browser</h1>
       <p class="dek" data-i18n="hero_dek">Praxisnahe Texte über KI-Einführung, Marketing für Ingenieursoftware und den Aufbau von Web-Ökosystemen, die Ingenieure wirklich nutzen. Kein Hype, nur Umsetzung.</p>
+      <a class="pod-cta" href="/de/insights/podcast/"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg><span data-i18n="podcast_link">Auch als Podcast</span> →</a>
 
       <a class="featured" href="/de/insights/aec-daten-fuer-ki-suche/">
         <div class="shot">
@@ -421,6 +430,7 @@ img{display:block;max-width:100%}
             <div class="meta-row">
               <span class="cat" data-i18n="cat_ai">KI im AEC</span>
               <span><time datetime="2026-10-06" data-i18n="date_a1">6. Oktober 2026</time> &middot; <span data-i18n="read_8">8 Min. Lesezeit</span></span>
+              <span class="pod-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg><span data-i18n="podcast_tag">Podcast</span> 14 min</span>
             </div>
             <h2 data-i18n="a1_title">Werden Sie zur Quelle: AEC-Daten fit für die KI-Suche machen</h2>
             <p class="ex" data-i18n="a1_ex">Die Arbeit an Websites für Ingenieursoftware in verschiedenen Märkten hat geprägt, wie ich an KI-Sichtbarkeit herangehe. Dieser Beitrag bündelt Erfahrungen aus der Lokalisierung und die praktischen Prüfungen, mit denen ich technische Inhalte leichter auffindbar, verständlich und überprüfbar mache.</p>
@@ -472,6 +482,7 @@ img{display:block;max-width:100%}
             <p data-i18n="a1_ex">Die Arbeit an Websites für Ingenieursoftware in verschiedenen Märkten hat geprägt, wie ich an KI-Sichtbarkeit herangehe. Dieser Beitrag bündelt Erfahrungen aus der Lokalisierung und die praktischen Prüfungen, mit denen ich technische Inhalte leichter auffindbar, verständlich und überprüfbar mache.</p>
             <div class="foot">
               <span><time datetime="2026-10-06" data-i18n="date_a1">6. Oktober 2026</time> &middot; <span data-i18n="read_8">8 Min. Lesezeit</span></span>
+              <span class="pod-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg><span data-i18n="podcast_tag">Podcast</span> 14 min</span>
               <b data-i18n="read_more">Lesen →</b>
             </div>
           </div>

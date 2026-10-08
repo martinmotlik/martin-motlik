@@ -1,0 +1,34 @@
+{
+ "_about": "Source of truth for the podcast. tools/build-podcast.py turns it into podcast/feed.xml, the chapter files, the episode list on /insights/podcast/ and the podcast section of each article. The feed URL must never change once the show is listed in Apple Podcasts and Spotify.",
+ "show": {
+  "title": "Insights by Martin Motlík",
+  "author": "Martin Motlík",
+  "owner": {"name": "Martin Motlík", "email": "motlik.martin@gmail.com"},
+  "description": "Conversations about AI in AEC, engineering-software marketing and building web ecosystems engineers actually use. Each episode takes one Insights article from martinmotlik.com and works through it with a practical case. No hype, just implementation.",
+  "language": "en-us",
+  "categories": [["Technology"], ["Business", "Marketing"]],
+  "explicit": false,
+  "type": "episodic",
+  "copyright": "© 2026 Martin Motlík",
+  "site": "https://martinmotlik.com",
+  "page": "/insights/podcast/",
+  "feed": "/podcast/feed.xml",
+  "cover": "/assets/podcast/cover-3000.jpg",
+  "cover_web": "/assets/podcast/cover-600"
+ },
+ "episodes": [
+  {
+   "number": 1,
+   "slug": "ep001-be-the-source",
+   "title": "Be the source: getting AEC data ready for AI search",
+   "article": "/insights/ai-visibility-for-aec/",
+   "published": "2026-10-08T09:00:00+02:00",
+   "audio": "/assets/podcast/ep001-be-the-source.mp3",
+   "duration": 848,
+   "captions": "/assets/podcast/ep001-be-the-source.vtt",
+   "transcript": "podcast/episodes/ep001-be-the-source.md",
+   "summary": "Sarah runs marketing at a structural engineering firm in Portland. Her firm ranks on page one, yet when she asked ChatGPT which local firms have real mass-timber experience, it named five others. Martin takes her situation apart: why page one is no longer the finish line, how project galleries and PDFs hide the facts engineers search for, what localizing a timber page for U.S. and Canadian design codes taught him, and how a fact travels the “load path” into an AI answer.",
+   "disclosure": "Martin's voice is an AI clone of his own voice; Sarah is a fictional co-host voiced by AI. Produced with ElevenLabs."
+  }
+ ]
+}

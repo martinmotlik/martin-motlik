@@ -4,20 +4,20 @@
   "title": "Werden Sie zur Quelle: AEC-Daten fit für die KI-Suche machen | Martin Motlík",
   "article_title": "Werden Sie zur Quelle: AEC-Daten fit für die KI-Suche machen",
   "role": "AEC-Digitalstratege & Web Lead",
-  "narrating": "Liest auf Englisch vor",
-  "listen": "Anhören (EN)",
-  "listen_aria": "Artikel anhören, auf Englisch gesprochen",
+  "narrating": "Insights-Podcast (EN)",
+  "listen": "Podcast (EN)",
+  "listen_aria": "Podcast zum Artikel anhören (auf Englisch)",
   "state_playing": "Wird abgespielt",
   "state_paused": "Pausiert",
   "state_listen": "Anhören",
-  "narrated": "auf Englisch, gesprochen von Martin",
+  "narrated": "Insights-Podcast, auf Englisch",
   "play": "Abspielen",
   "pause": "Pausieren",
-  "play_pause": "Voice-over abspielen oder pausieren",
-  "seek": "Im Voice-over springen",
+  "play_pause": "Podcast abspielen oder pausieren",
+  "seek": "Im Podcast springen",
   "speed": "Wiedergabegeschwindigkeit",
   "close": "Player schließen",
-  "player": "Voice-over-Player",
+  "player": "Podcast-Player",
   "copy": "Kopieren",
   "copied": "Kopiert ✓",
   "copy_failed": "Kopieren fehlgeschlagen",
@@ -32,7 +32,7 @@
   "menu_aria": "Menü öffnen",
   "cover_alt": "Martin Motlík arbeitet im Freien am Laptop, umgeben von den Symbolen von KI-Assistenten und Suchmaschinen",
   "code_copied": "Code kopiert",
-  "mini_state": "Anhören · auf Englisch, gesprochen von Martin"
+  "mini_state": "Anhören · Insights-Podcast (EN)"
  },
  "chrome": {
   "nav_references": "Referenzen",
@@ -53,7 +53,16 @@
   "toc_mobile": "Inhalt des Beitrags",
   "share_more_opts": "Weitere Optionen",
   "share_email_lbl": "E-Mail",
-  "share_native": "Andere Apps…"
+  "share_native": "Andere Apps…",
+  "pod_kicker": "Insights-Podcast",
+  "pod_episode": "Folge",
+  "pod_title": "Hören Sie das Gespräch",
+  "pod_desc": "Martin und Co-Moderatorin Sarah gehen diesen Artikel an einem Praxisfall durch, auf Englisch.",
+  "pod_play": "Folge abspielen",
+  "pod_all": "Alle Folgen",
+  "pod_rss": "RSS-Feed",
+  "pod_chapters": "Kapitel",
+  "pod_transcript": "Transkript (Englisch)"
  },
  "k": {
   "hero.span1": "KI im AEC",
@@ -159,7 +168,6 @@
    "Generative Engine Optimization",
    "Architektur, Ingenieurwesen und Bauwesen (AEC)"
   ],
-  "audio_name": "Werden Sie zur Quelle – gesprochen von Martin Motlík (auf Englisch)",
   "citation1": [
    "Nutzung von Übersicht mit KI und KI-Modus",
    "Google I/O, Mai 2026"

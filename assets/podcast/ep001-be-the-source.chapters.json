@@ -1,0 +1,45 @@
+{
+ "version": "1.2.0",
+ "chapters": [
+  {
+   "startTime": 0,
+   "title": "Cold open: Sarah's story"
+  },
+  {
+   "startTime": 66,
+   "title": "\"But our SEO works\""
+  },
+  {
+   "startTime": 156,
+   "title": "The gallery problem"
+  },
+  {
+   "startTime": 249,
+   "title": "The timber page"
+  },
+  {
+   "startTime": 348,
+   "title": "The Vancouver twist"
+  },
+  {
+   "startTime": 429,
+   "title": "Load path, part one"
+  },
+  {
+   "startTime": 500,
+   "title": "The PDF argument"
+  },
+  {
+   "startTime": 583,
+   "title": "Load path, part two"
+  },
+  {
+   "startTime": 681,
+   "title": "What do I tell my boss?"
+  },
+  {
+   "startTime": 754,
+   "title": "Close"
+  }
+ ]
+}

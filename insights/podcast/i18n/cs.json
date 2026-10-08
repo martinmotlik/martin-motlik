@@ -1,0 +1,56 @@
+{
+ "lang": "cs",
+ "ui": {
+  "title": "Insights by Martin Motlík – podcast o AI v AEC",
+  "menu_aria": "Otevřít menu",
+  "crumbs_aria": "Drobečková navigace"
+ },
+ "chrome": {
+  "nav_references": "Reference",
+  "nav_services": "Služby",
+  "nav_insights": "Insights",
+  "nav_about": "O mně",
+  "nav_bim": "Oblasti činnosti",
+  "nav_dlubal": "Dlubal",
+  "nav_ai": "AI v AEC",
+  "crumb_podcast": "Podcast",
+  "badge": "Podcast",
+  "dek": "Rozhovory o AI v AEC, marketingu inženýrského softwaru a budování webových ekosystémů, které inženýři opravdu používají. Každý díl rozebírá jeden článek z Insights na praktickém případu.",
+  "lang_note": "Díly jsou v angličtině.",
+  "rss": "Odebírat přes RSS",
+  "feed_label": "Adresa feedu pro vaši podcastovou aplikaci:",
+  "episodes_title": "Díly",
+  "ep_label": "Díl",
+  "ep_go": "Poslechnout a přečíst článek →",
+  "ep_min": "min"
+ },
+ "text": {
+  "Oct 8, 2026": "8. října 2026",
+  "Sarah runs marketing at a structural engineering firm in Portland. Her firm ranks on page one, yet when she asked ChatGPT which local firms have real mass-timber experience, it named five others. Martin takes her situation apart: why page one is no longer the finish line, how project galleries and PDFs hide the facts engineers search for, what localizing a timber page for U.S. and Canadian design codes taught him, and how a fact travels the “load path” into an AI answer.": "Sarah vede marketing statické kanceláře v Portlandu. Její firma je na první stránce Googlu, a přesto když se ChatGPT zeptala, které místní firmy mají skutečné zkušenosti s masivním dřevem, jmenoval pět jiných. Martin její situaci rozebírá: proč první stránka už není cíl, jak galerie projektů a PDF skrývají fakta, která inženýři hledají, co ho naučila lokalizace stránky o dřevostavbách pro americké a kanadské normy a jak fakt putuje po „cestě zatížení“ až do odpovědi AI."
+ },
+ "attrs": {
+  "Cover of the podcast Insights by Martin Motlík": "Obal podcastu Insights by Martin Motlík"
+ },
+ "keep": [
+  "Insights by Martin Motlík",
+  "Be the source: getting AEC data ready for AI search",
+  "https://martinmotlik.com/podcast/feed.xml",
+  "Podcast",
+  "DIČ: CZ0103073146",
+  "motlik.martin@gmail.com",
+  "min"
+ ],
+ "meta": {
+  "description": "Podcast Martina Motlíka o AI v AEC, marketingu inženýrského softwaru a webových ekosystémech. Každý díl rozebírá jeden článek z Insights na praktickém případu.",
+  "og_title": "Insights by Martin Motlík – podcast",
+  "og_description": "Podcast Martina Motlíka o AI v AEC, marketingu inženýrského softwaru a webových ekosystémech. Každý díl rozebírá jeden článek z Insights na praktickém případu.",
+  "twitter_title": "Insights by Martin Motlík – podcast",
+  "twitter_description": "Podcast Martina Motlíka o AI v AEC, marketingu inženýrského softwaru a webových ekosystémech.",
+  "image_alt": "Obal podcastu Insights by Martin Motlík",
+  "in_language": "cs-CZ"
+ },
+ "ld": {
+  "@graph.1.itemListElement.0.name": "Domů",
+  "@graph.1.itemListElement.2.name": "Podcast"
+ }
+}
