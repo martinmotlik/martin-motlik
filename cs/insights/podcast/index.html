@@ -370,10 +370,11 @@ img{display:block;max-width:100%}
 .cv.on .cv-r1{transform:scale(1.06);border-color:rgba(26,86,219,.75)}
 .cv.on .cv-r2{transform:scale(1.13);border-color:rgba(26,86,219,.45)}
 .cv.on .cv-r3{transform:scale(1.22);border-color:rgba(26,86,219,.28)}
-/* Disc and portrait move as one, or the mask edge would slip. */
+/* Disc and portrait move as one, or the mask edge would slip. The disc is 1px
+   inside the 100px mask, so the photo covers its edge (no blue fringe). */
 .cv-g{inset:0;transform-origin:250px 262px;transition:transform .8s var(--ease)}
 .cv.on .cv-g{transform:translate(calc(var(--mx) * 6px),calc(var(--my) * 4px - 2px)) scale(1.035)}
-.cv-disc{position:absolute;left:150px;top:162px;width:200px;height:200px;border-radius:50%;background:linear-gradient(160deg,#4A82EC,#1A56DB 58%,#1E429F)}
+.cv-disc{position:absolute;left:151px;top:163px;width:198px;height:198px;border-radius:50%;background:linear-gradient(160deg,#4A82EC,#1A56DB 58%,#1E429F)}
 /* Pop-out mask: inside the disc, plus everything above its centre line. */
 .cv-me{position:absolute;left:145px;top:92px;width:210px;height:280px;max-width:none;object-fit:contain;object-position:center top;-webkit-mask-image:radial-gradient(circle 100px at 105px 170px,#000 99.4%,transparent 100%),linear-gradient(180deg,#000 170px,transparent 170px);mask-image:radial-gradient(circle 100px at 105px 170px,#000 99.4%,transparent 100%),linear-gradient(180deg,#000 170px,transparent 170px);-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
 .cv-logo{left:24px;top:24px;width:30px;height:29px}

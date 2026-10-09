@@ -53,9 +53,10 @@ function draw(canvas, tag, img) {
   [[189.5, 1, .14], [159.5, 1, .26], [129.25, 1.5, .45]].forEach(([r, w, a]) => {
     ctx.beginPath(); ctx.arc(250, 262, r, 0, Math.PI * 2); ctx.lineWidth = w; ctx.strokeStyle = `rgba(26,86,219,${a})`; ctx.stroke();
   });
-  // Disc
-  ctx.beginPath(); ctx.arc(250, 262, 100, 0, Math.PI * 2);
-  ctx.fillStyle = cssLinear(ctx, 160, 150, 162, 200, 200, [[0, '#4A82EC'], [.58, '#1A56DB'], [1, '#1E429F']]); ctx.fill();
+  // Disc: 198 px at (151, 163), 1 px inside the portrait's 100 px mask, so the
+  // photo covers the disc edge and no blue anti-aliasing fringe shows
+  ctx.beginPath(); ctx.arc(250, 262, 99, 0, Math.PI * 2);
+  ctx.fillStyle = cssLinear(ctx, 160, 151, 163, 198, 198, [[0, '#4A82EC'], [.58, '#1A56DB'], [1, '#1E429F']]); ctx.fill();
   // Portrait, 210 × 280 box at (145, 92), "contain, centre top"; pop-out mask:
   // inside the disc, plus everything above the disc's centre line
   const s = Math.min(210 / img.width, 280 / img.height), w = img.width * s, h = img.height * s;
