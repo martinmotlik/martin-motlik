@@ -36,7 +36,7 @@
     <meta property="og:title" content="Insights with Martin Motlík — Podcast">
     <meta property="og:description" content="Martin Motlík's podcast on AI in AEC, engineering-software marketing and web ecosystems. Each episode turns one Insights article into a practical case.">
     <meta property="og:url" content="https://martinmotlik.com/insights/podcast/">
-    <meta property="og:image" content="https://martinmotlik.com/assets/podcast/cover-1200.jpg">
+    <meta property="og:image" content="https://martinmotlik.com/assets/podcast/cover-v2-1200.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="1200">
     <meta property="og:image:alt" content="Cover of the podcast Insights with Martin Motlík">
@@ -47,7 +47,7 @@
     <meta name="twitter:creator" content="@martinmotlik">
     <meta name="twitter:title" content="Insights with Martin Motlík — Podcast">
     <meta name="twitter:description" content="Martin Motlík's podcast on AI in AEC, engineering-software marketing and web ecosystems. Each episode turns one Insights article into a practical case.">
-    <meta name="twitter:image" content="https://martinmotlik.com/assets/podcast/cover-1200.jpg">
+    <meta name="twitter:image" content="https://martinmotlik.com/assets/podcast/cover-v2-1200.jpg">
     <meta name="twitter:image:alt" content="Cover of the podcast Insights with Martin Motlík">
 
     <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
@@ -68,7 +68,7 @@
           "name": "Insights with Martin Motlík",
           "description": "A podcast that takes the ideas from Martin Motlík's Insights articles into conversation. With a background in construction and a career in digital strategy, Martin explores how the web, communication and AI are changing the AEC industry. Together with Sarah, his virtual AI co-host, he discusses what these changes mean in practice, one article and one practical case per episode. Both voices are made with AI: Martin's is an AI clone of his own voice, and Sarah is a fictional co-host.",
           "url": "https://martinmotlik.com/insights/podcast/",
-          "image": "https://martinmotlik.com/assets/podcast/cover-3000.jpg",
+          "image": "https://martinmotlik.com/assets/podcast/cover-v2-3000.jpg",
           "inLanguage": "en-US",
           "author": {
             "@id": "https://martinmotlik.com/#martin-motlik"
@@ -160,7 +160,7 @@
           },
           "primaryImageOfPage": {
             "@type": "ImageObject",
-            "url": "https://martinmotlik.com/assets/podcast/cover-1200.jpg",
+            "url": "https://martinmotlik.com/assets/podcast/cover-v2-1200.jpg",
             "width": 1200,
             "height": 1200
           },
@@ -177,7 +177,7 @@
           "datePublished": "2026-10-08",
           "description": "Sarah runs marketing at a structural engineering firm in Portland. Her firm ranks on page one, yet when she asked ChatGPT which local firms have real mass-timber experience, it named five others. Martin takes her situation apart: why page one is no longer the finish line, how project galleries and PDFs hide the facts engineers search for, what localizing a timber page for U.S. and Canadian design codes taught him, and how a fact travels the “load path” into an AI answer. Martin's voice is an AI clone of his own voice; Sarah is a fictional co-host voiced by AI. Produced with ElevenLabs.",
           "inLanguage": "en-US",
-          "image": "https://martinmotlik.com/assets/podcast/cover-ep01-3000.jpg",
+          "image": "https://martinmotlik.com/assets/podcast/cover-ep01-v2-3000.jpg",
           "isAccessibleForFree": true,
           "associatedMedia": {
             "@type": "AudioObject",
@@ -377,13 +377,16 @@ img{display:block;max-width:100%}
 .cv.on .cv-r1{transform:scale(1.06);border-color:rgba(26,86,219,.75)}
 .cv.on .cv-r2{transform:scale(1.13);border-color:rgba(26,86,219,.45)}
 .cv.on .cv-r3{transform:scale(1.22);border-color:rgba(26,86,219,.28)}
-/* Disc and portrait move as one, or the mask edge would slip. The disc is 1px
-   inside the 100px mask, so the photo covers its edge (no blue fringe). */
+/* Disc and portrait move as one (.cv-g). Two layers of the same pixels
+   (handoff, revised 2026-10-09): the disc is one 200px circle holding the blue
+   and the photo (one clip edge, so the shoulders follow the circle and no blue
+   fringe shows); the head above it is the photo again, fading out between 95
+   and 115px of its box over identical pixels, so there is no seam. */
 .cv-g{inset:0;transform-origin:250px 262px;transition:transform .8s var(--ease)}
 .cv.on .cv-g{transform:translate(calc(var(--mx) * 6px),calc(var(--my) * 4px - 2px)) scale(1.035)}
-.cv-disc{position:absolute;left:151px;top:163px;width:198px;height:198px;border-radius:50%;background:linear-gradient(160deg,#4A82EC,#1A56DB 58%,#1E429F)}
-/* Pop-out mask: inside the disc, plus everything above its centre line. */
-.cv-me{position:absolute;left:145px;top:92px;width:210px;height:280px;max-width:none;object-fit:contain;object-position:center top;-webkit-mask-image:radial-gradient(circle 100px at 105px 170px,#000 99.4%,transparent 100%),linear-gradient(180deg,#000 170px,transparent 170px);mask-image:radial-gradient(circle 100px at 105px 170px,#000 99.4%,transparent 100%),linear-gradient(180deg,#000 170px,transparent 170px);-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+.cv-disc{position:absolute;left:150px;top:162px;width:200px;height:200px;border-radius:50%;overflow:hidden;background:linear-gradient(160deg,#4A82EC,#1A56DB 58%,#1E429F)}
+.cv-disc img{position:absolute;left:-5px;top:-70px;width:210px;height:280px;max-width:none;object-fit:contain;object-position:center top}
+.cv-me{position:absolute;left:145px;top:92px;width:210px;height:280px;max-width:none;object-fit:contain;object-position:center top;-webkit-mask-image:linear-gradient(180deg,#000 95px,transparent 115px);mask-image:linear-gradient(180deg,#000 95px,transparent 115px)}
 .cv-logo{left:24px;top:24px;width:30px;height:29px}
 .cv-txt{left:24px;top:76px;width:170px;color:var(--ink);transition:transform .8s var(--ease)}
 .cv.on .cv-txt{transform:translate(calc(var(--mx) * -4px),calc(var(--my) * -3px))}
@@ -562,7 +565,7 @@ img{display:block;max-width:100%}
             <span class="cv-pulse"></span><span class="cv-pulse"></span>
             <span class="cv-r cv-r3"></span><span class="cv-r cv-r2"></span><span class="cv-r cv-r1"></span>
             <span class="cv-g">
-              <span class="cv-disc"></span>
+              <span class="cv-disc"><picture><source type="image/avif" srcset="/assets/podcast/martin-portrait-420.avif"><img src="/assets/podcast/martin-portrait-420.png" width="420" height="560" alt="" fetchpriority="high" decoding="async"></picture></span>
               <picture><source type="image/avif" srcset="/assets/podcast/martin-portrait-420.avif"><img class="cv-me" src="/assets/podcast/martin-portrait-420.png" width="420" height="560" alt="Martin Motlík" fetchpriority="high" decoding="async"></picture>
             </span>
             <img class="cv-logo" src="/assets/podcast/mm-logo-dark.svg" width="30" height="29" alt="Martin Motlík">
@@ -626,7 +629,7 @@ img{display:block;max-width:100%}
 
 <!-- pod-mini:start · generated by tools/build-podcast.py -->
 <div class="pod-mini" id="pod-mini" role="region" aria-label="Podcast player" data-i18n-attr="aria-label:mini_aria" aria-hidden="true">
-  <picture><source type="image/avif" srcset="/assets/podcast/cover-ep01-96.avif"><img class="pm-cover" src="/assets/podcast/cover-ep01-96.jpg" width="40" height="40" alt="" loading="lazy" decoding="async"></picture>
+  <picture><source type="image/avif" srcset="/assets/podcast/cover-ep01-v2-96.avif"><img class="pm-cover" src="/assets/podcast/cover-ep01-v2-96.jpg" width="40" height="40" alt="" loading="lazy" decoding="async"></picture>
   <div class="pm-txt"><div class="pm-st" data-pod-status></div><div class="pm-ti" data-pod-chapter-title lang="en"></div></div>
   <span class="pod-time" data-pod-time>0:00</span>
   <button class="pod-rate" type="button" data-pod-rate aria-label="Playback speed" data-i18n-attr="aria-label:speed">1×</button>

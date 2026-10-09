@@ -53,15 +53,24 @@ function draw(canvas, tag, img) {
   [[189.5, 1, .14], [159.5, 1, .26], [129.25, 1.5, .45]].forEach(([r, w, a]) => {
     ctx.beginPath(); ctx.arc(250, 262, r, 0, Math.PI * 2); ctx.lineWidth = w; ctx.strokeStyle = `rgba(26,86,219,${a})`; ctx.stroke();
   });
-  // Disc: 198 px at (151, 163), 1 px inside the portrait's 100 px mask, so the
-  // photo covers the disc edge and no blue anti-aliasing fringe shows
-  ctx.beginPath(); ctx.arc(250, 262, 99, 0, Math.PI * 2);
-  ctx.fillStyle = cssLinear(ctx, 160, 151, 163, 198, 198, [[0, '#4A82EC'], [.58, '#1A56DB'], [1, '#1E429F']]); ctx.fill();
-  // Portrait, 210 × 280 box at (145, 92), "contain, centre top"; pop-out mask:
-  // inside the disc, plus everything above the disc's centre line
-  const s = Math.min(210 / img.width, 280 / img.height), w = img.width * s, h = img.height * s;
-  ctx.save(); ctx.beginPath(); ctx.rect(145, 92, 210, 170); ctx.arc(250, 262, 100, 0, Math.PI * 2); ctx.clip();
-  ctx.drawImage(img, 145 + (210 - w) / 2, 92, w, h); ctx.restore();
+  // Portrait, 210 × 280 box at (145, 92), "contain, centre top". Two layers of
+  // the same pixels (handoff, cover "O · Ripple", revised 2026-10-09):
+  // 1. Disc + lower portrait as ONE circle (200 px at (150, 162)): the photo and
+  //    the blue share one clip edge, so the shoulders follow the circle exactly
+  //    and no blue fringe shows.
+  const s = Math.min(210 / img.width, 280 / img.height), w = img.width * s, h = img.height * s, px = 145 + (210 - w) / 2;
+  ctx.save(); ctx.beginPath(); ctx.arc(250, 262, 100, 0, Math.PI * 2); ctx.clip();
+  ctx.fillStyle = cssLinear(ctx, 160, 150, 162, 200, 200, [[0, '#4A82EC'], [.58, '#1A56DB'], [1, '#1E429F']]); ctx.fillRect(150, 162, 200, 200);
+  ctx.drawImage(img, px, 92, w, h); ctx.restore();
+  // 2. Pop-out head: the portrait again, opaque down to 95 px of its box and
+  //    fading out by 115 px (mask linear-gradient(180deg, #000 95px, transparent 115px));
+  //    the fade sits over identical pixels, so there is no seam.
+  const layer = document.createElement('canvas'); layer.width = canvas.width; layer.height = canvas.height;
+  const lc = layer.getContext('2d'); lc.scale(canvas.width / A, canvas.width / A);
+  lc.drawImage(img, px, 92, w, h);
+  const fade = lc.createLinearGradient(0, 92 + 95, 0, 92 + 115); fade.addColorStop(0, '#000'); fade.addColorStop(1, 'rgba(0,0,0,0)');
+  lc.globalCompositeOperation = 'destination-in'; lc.fillStyle = fade; lc.fillRect(0, 0, A, A);
+  ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.drawImage(layer, 0, 0); ctx.restore();
   // Logo 30 × 29 at (24, 24)
   ctx.drawImage(LOGO, 24, 24, 30, 29);
   // Title block at (24, 76)

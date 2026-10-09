@@ -444,6 +444,8 @@ def build_show_page(eps, current):
     s = replace_between(s, 'pod-mini', mini(latest[0]), path)
     s = replace_between(s, 'pod-data', pod_data(latest[0], latest[2]), path)
     s = rss_autodiscovery(s)
+    # Sharing image (Open Graph, X) follows podcast.json, so a new cover version reaches it too.
+    s = re.sub(r'(<meta (?:property="og:image"|name="twitter:image") content=")[^"]*(")', lambda m: m.group(1) + SITE + SHOW['share_image'] + m.group(2), s)
 
     title = html.unescape(re.search(r'<title>(.*?)</title>', s).group(1))
     description = html.unescape(re.search(r'<meta name="description" content="([^"]*)"', s).group(1))
@@ -470,7 +472,7 @@ def build_show_page(eps, current):
         webpage = {'@type': 'CollectionPage', '@id': page, 'url': page, 'name': title, 'description': description,
                    'inLanguage': 'en-US', 'isPartOf': {'@id': SITE + '/#website'},
                    'about': {'@id': page + '#series'}, 'mainEntity': {'@id': page + '#series'},
-                   'primaryImageOfPage': {'@type': 'ImageObject', 'url': SITE + '/assets/podcast/cover-1200.jpg', 'width': 1200, 'height': 1200},
+                   'primaryImageOfPage': {'@type': 'ImageObject', 'url': SITE + SHOW['share_image'], 'width': 1200, 'height': 1200},
                    'author': {'@id': SITE + '/#martin-motlik'}}
         keep = [n for n in graph if n.get('@type') not in ('PodcastEpisode', 'CollectionPage')]
         graph[:] = keep + [webpage] + [episode_node(ep) for ep, _, _ in eps]
