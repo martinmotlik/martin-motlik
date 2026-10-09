@@ -4,10 +4,14 @@ One episode per Insights article, in English, self-hosted on GitHub Pages.
 Design: the handoff "Insights Podcast" (article integration, podcast page,
 cover "O · Ripple", tone InsightsLight).
 
-**For now the podcast is on the website only** (`"feed_public": false` in
-`podcast/podcast.json`): no `feed.xml` and no RSS links, so no podcast
-directory can pick it up. Episodes play on the article pages and on the
-podcast page; visitors follow the show by e-mail ("Get new episodes").
+**The feed is public** (`"feed_public": true` in `podcast/podcast.json`)
+since 9 October 2026 and is being submitted to Apple Podcasts and Spotify.
+The owner e-mail in the feed is `motlik.martin@icloud.com`. Setting
+`feed_public` back to false removes `feed.xml` and every RSS link.
+
+Still to do: a spoken AI note at the end of episode 1 (Apple Podcasts
+guideline 1.11 asks for the disclosure in the audio too, not only in the
+metadata).
 
 ### "Get new episodes" (e-mail)
 

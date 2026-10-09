@@ -2,14 +2,14 @@
  "_about": "Source of truth for the podcast. tools/build-podcast.py turns it into podcast/feed.xml, the chapter files, the episode list on /insights/podcast/ and the podcast section of each article. The feed URL must never change once the show is listed in Apple Podcasts and Spotify.",
  "show": {
   "_feed_public": "false = the podcast is only on the website: no feed.xml, no RSS links. true = feed.xml is published for Apple Podcasts, Spotify & co. Rebuild after changing it.",
-  "feed_public": false,
+  "feed_public": true,
   "title": "Insights with Martin Motlík",
   "author": "Martin Motlík",
   "owner": {
    "name": "Martin Motlík",
-   "email": "motlik.martin@gmail.com"
+   "email": "motlik.martin@icloud.com"
   },
-  "description": "A podcast that takes the ideas from Martin Motlík's Insights articles into conversation. With a background in construction and a career in digital strategy, Martin explores how the web, communication and AI are changing the AEC industry. Together with Sarah, his virtual AI co-host, he discusses what these changes mean in practice, one article and one practical case per episode.",
+  "description": "A podcast that takes the ideas from Martin Motlík's Insights articles into conversation. With a background in construction and a career in digital strategy, Martin explores how the web, communication and AI are changing the AEC industry. Together with Sarah, his virtual AI co-host, he discusses what these changes mean in practice, one article and one practical case per episode. Both voices are made with AI: Martin's is an AI clone of his own voice, and Sarah is a fictional co-host.",
   "_topics": "What the show is about: JSON-LD \"about\" and \"keywords\" on the podcast page.",
   "topics": [
    "AI in AEC",
