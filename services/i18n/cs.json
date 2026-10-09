@@ -1,7 +1,9 @@
 {
  "lang": "cs",
  "ui": {
-  "title": "Služby – Martin Motlík | Digitální stratég pro AEC"
+  "title": "Služby – Martin Motlík | Digitální stratég pro AEC",
+  "menu_aria": "Otevřít menu",
+  "menu_close": "Zavřít menu"
  },
  "chrome": {
   "nav_references": "Reference",
@@ -56,7 +58,9 @@
   "t4_d3_term": "Bezpečné poradenství v oblasti AI",
   "t4_d3_desc": "Poskytuji odborné poradenství k bezpečnému zavádění umělé inteligence. Analyzuji vaše současné procesy a pomohu vám vytvořit praktickou AI strategii, která dává smysl vašemu technickému týmu.",
   "cta_title": "Pojďme k detailům.",
-  "cta_desc": "Máte konkrétní projekt? Ozvěte se a probereme vaše přesné technické požadavky. Rád vám ukážu relevantní ukázky ze své dosavadní práce."
+  "cta_desc": "Máte konkrétní projekt? Ozvěte se a probereme vaše přesné technické požadavky. Rád vám ukážu relevantní ukázky ze své dosavadní práce.",
+  "menu_label": "Menu",
+  "menu_language": "Jazyk"
  },
  "text": {
   "References": "Reference",

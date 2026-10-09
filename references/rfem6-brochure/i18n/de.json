@@ -1,7 +1,9 @@
 {
  "lang": "de",
  "ui": {
-  "title": "Martin Motlík | Broschürendesign RFEM 6 | Dlubal Software"
+  "title": "Martin Motlík | Broschürendesign RFEM 6 | Dlubal Software",
+  "menu_aria": "Menü öffnen",
+  "menu_close": "Menü schließen"
  },
  "chrome": {
   "nav_insights": "Insights",
@@ -18,7 +20,9 @@
   "val_type": "Printbroschüre",
   "val_pages": "12 Seiten",
   "btn_pdf": "PDF herunterladen",
-  "nav_sub": "Messestand-Design · Portland, OR"
+  "nav_sub": "Messestand-Design · Portland, OR",
+  "menu_label": "Menü",
+  "menu_language": "Sprache"
  },
  "text": {
   "References": "Referenzen",

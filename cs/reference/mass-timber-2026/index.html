@@ -720,9 +720,11 @@
       .nav-hamburger { padding: 0; width: 44px; height: 44px; align-items: center; justify-content: center; margin-right: -11px; }
     }
     </style>
+  <link rel="stylesheet" href="/assets/menu.css">
+  <script src="/assets/menu.js" defer></script>
 </head>
 <body>
-<script type="application/json" id="i18n-ui">{"title": "Martin Motlík | Mass Timber Conference 2026 | Portland", "resume_rotation": "Spustit otáčení", "pause_rotation": "Pozastavit otáčení"}</script>
+<script type="application/json" id="i18n-ui">{"title": "Martin Motlík | Mass Timber Conference 2026 | Portland", "resume_rotation": "Spustit otáčení", "pause_rotation": "Pozastavit otáčení", "menu_aria": "Otevřít menu", "menu_close": "Zavřít menu"}</script>
 
 <!-- NAV -->
 <nav class="nav" id="main-nav">
@@ -746,24 +748,28 @@
         <a class="lang-btn active" href="/cs/reference/mass-timber-2026/" hreflang="cs" lang="cs" data-lang="cs" aria-label="Čeština" aria-current="page">CS</a>
         <a class="lang-btn" href="/de/referenzen/mass-timber-2026/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch">DE</a>
       </div>
-      <button class="nav-hamburger" id="nav-hamburger" aria-label="Otevřít menu">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="nav-hamburger" id="nav-hamburger" type="button" aria-label="Otevřít menu" data-close-label="Zavřít menu" data-i18n-attr="aria-label:menu_aria;data-close-label:menu_close"><span></span><span></span></button>
     </div>
   </div>
 </nav>
 <div class="nav-drawer" id="nav-drawer">
-  <a href="/cs/reference/" class="active">Reference</a>
-  <a href="/cs/sluzby/">Služby</a>
-  <a href="/cs/insights/" data-i18n="nav_insights">Insights</a>
-  <a href="/cs/#about">O mně</a>
-  <a href="/cs/#bim">Oblasti činnosti</a>
-  <a href="/cs/#dlubal">Dlubal</a>
-  <a href="/cs/#ai-in-aec">AI v AEC</a>
-  <div class="nav-drawer-lang">
-    <a class="lang-btn" href="/references/mass-timber-2026/" hreflang="en" lang="en" data-lang="en" aria-label="English">EN</a>
-    <a class="lang-btn active" href="/cs/reference/mass-timber-2026/" hreflang="cs" lang="cs" data-lang="cs" aria-label="Čeština" aria-current="page">CS</a>
-    <a class="lang-btn" href="/de/referenzen/mass-timber-2026/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch">DE</a>
+  <p class="nd-k" id="nd-title" data-i18n="menu_label">Menu</p>
+  <nav class="nd-links" aria-labelledby="nd-title">
+    <a href="/cs/reference/" class="active">Reference</a>
+    <a href="/cs/sluzby/">Služby</a>
+    <a href="/cs/insights/" data-i18n="nav_insights">Insights</a>
+    <a href="/cs/#about">O mně</a>
+    <a href="/cs/#bim">Oblasti činnosti</a>
+    <a href="/cs/#dlubal">Dlubal</a>
+    <a href="/cs/#ai-in-aec">AI v AEC</a>
+  </nav>
+  <div class="nd-foot">
+    <span class="nd-lang-l" id="nd-lang" data-i18n="menu_language">Jazyk</span>
+    <div class="nav-drawer-lang" role="group" aria-labelledby="nd-lang">
+        <a class="lang-btn" href="/references/mass-timber-2026/" hreflang="en" lang="en" data-lang="en" aria-label="English">EN</a>
+        <a class="lang-btn active" href="/cs/reference/mass-timber-2026/" hreflang="cs" lang="cs" data-lang="cs" aria-label="Čeština" aria-current="page">CS</a>
+        <a class="lang-btn" href="/de/referenzen/mass-timber-2026/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch">DE</a>
+    </div>
   </div>
 </div>
 
@@ -1014,15 +1020,7 @@
 <script>
     // ── Mobile nav ────────────────────────────────────────
     
-// — Nav hamburger —
-const navHamburger = document.getElementById('nav-hamburger');
-const navDrawer    = document.getElementById('nav-drawer');
-if (navHamburger && navDrawer) {
-  navHamburger.addEventListener('click', () => navDrawer.classList.toggle('open'));
-  document.addEventListener('click', e => {
-    if (!navHamburger.contains(e.target) && !navDrawer.contains(e.target)) navDrawer.classList.remove('open');
-  });
-}
+// Mobile menu: /assets/menu.js
 
 
     // Each entry is a slug plus the widths build-images.mjs produced for it;

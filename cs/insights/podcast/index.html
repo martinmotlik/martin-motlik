@@ -511,9 +511,11 @@ img{display:block;max-width:100%}
           .nav-hamburger { display: flex; }
         }
     </style>
+  <link rel="stylesheet" href="/assets/menu.css">
+  <script src="/assets/menu.js" defer></script>
 </head>
 <body>
-<script type="application/json" id="i18n-ui">{"listen_on": "Poslouchejte na {net}", "menu_aria": "Otevřít menu", "crumbs_aria": "Drobečková navigace", "play_episode": "Přehrát díl", "pause": "Pozastavit", "resume": "Pokračovat", "now_playing": "Přehrává se", "paused": "Pozastaveno", "chapter_of": "Kapitola {n} z {total}", "starts_with": "{total} kapitol · Začíná: {title}", "speed": "Rychlost přehrávání", "close": "Zavřít přehrávač", "mini_aria": "Přehrávač podcastu", "title": "Insights with Martin Motlík – podcast o AI v AEC", "play_latest": "Přehrát nejnovější díl", "notify_ok": "Přihlášeno ✓", "notify_sending": "Odesílám…", "notify_invalid": "Zadejte platnou e-mailovou adresu.", "notify_failed": "Odeslání se nepovedlo. Zkuste to prosím znovu.", "seek": "Přetočit v podcastu", "how_title": "Jak podcast funguje"}</script>
+<script type="application/json" id="i18n-ui">{"listen_on": "Poslouchejte na {net}", "menu_aria": "Otevřít menu", "crumbs_aria": "Drobečková navigace", "play_episode": "Přehrát díl", "pause": "Pozastavit", "resume": "Pokračovat", "now_playing": "Přehrává se", "paused": "Pozastaveno", "chapter_of": "Kapitola {n} z {total}", "starts_with": "{total} kapitol · Začíná: {title}", "speed": "Rychlost přehrávání", "close": "Zavřít přehrávač", "mini_aria": "Přehrávač podcastu", "title": "Insights with Martin Motlík – podcast o AI v AEC", "play_latest": "Přehrát nejnovější díl", "notify_ok": "Přihlášeno ✓", "notify_sending": "Odesílám…", "notify_invalid": "Zadejte platnou e-mailovou adresu.", "notify_failed": "Odeslání se nepovedlo. Zkuste to prosím znovu.", "seek": "Přetočit v podcastu", "how_title": "Jak podcast funguje", "menu_close": "Zavřít menu"}</script>
 
 <nav class="nav" id="main-nav">
   <div class="nav-inner">
@@ -536,24 +538,28 @@ img{display:block;max-width:100%}
         <a class="lang-btn active" href="/cs/insights/podcast/" hreflang="cs" lang="cs" data-lang="cs" aria-label="Čeština" aria-current="page">CS</a>
         <a class="lang-btn" href="/de/insights/podcast/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch">DE</a>
       </div>
-      <button class="nav-hamburger" id="nav-hamburger" aria-label="Otevřít menu" data-i18n-attr="aria-label:menu_aria">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="nav-hamburger" id="nav-hamburger" type="button" aria-label="Otevřít menu" data-close-label="Zavřít menu" data-i18n-attr="aria-label:menu_aria;data-close-label:menu_close"><span></span><span></span></button>
     </div>
   </div>
 </nav>
 <div class="nav-drawer" id="nav-drawer">
-  <a href="/cs/reference/" data-i18n="nav_references">Reference</a>
-  <a href="/cs/sluzby/" data-i18n="nav_services">Služby</a>
-  <a href="/cs/insights/" class="active" data-i18n="nav_insights">Insights</a>
-  <a href="/cs/#about" data-i18n="nav_about">O mně</a>
-  <a href="/cs/#bim" data-i18n="nav_bim">Oblasti činnosti</a>
-  <a href="/cs/#dlubal" data-i18n="nav_dlubal">Dlubal</a>
-  <a href="/cs/#ai-in-aec" data-i18n="nav_ai">AI v AEC</a>
-  <div class="nav-drawer-lang">
-    <a class="lang-btn" href="/insights/podcast/" hreflang="en" lang="en" data-lang="en" aria-label="English">EN</a>
-    <a class="lang-btn active" href="/cs/insights/podcast/" hreflang="cs" lang="cs" data-lang="cs" aria-label="Čeština" aria-current="page">CS</a>
-    <a class="lang-btn" href="/de/insights/podcast/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch">DE</a>
+  <p class="nd-k" id="nd-title" data-i18n="menu_label">Menu</p>
+  <nav class="nd-links" aria-labelledby="nd-title">
+    <a href="/cs/reference/" data-i18n="nav_references">Reference</a>
+    <a href="/cs/sluzby/" data-i18n="nav_services">Služby</a>
+    <a href="/cs/insights/" class="active" data-i18n="nav_insights">Insights</a>
+    <a href="/cs/#about" data-i18n="nav_about">O mně</a>
+    <a href="/cs/#bim" data-i18n="nav_bim">Oblasti činnosti</a>
+    <a href="/cs/#dlubal" data-i18n="nav_dlubal">Dlubal</a>
+    <a href="/cs/#ai-in-aec" data-i18n="nav_ai">AI v AEC</a>
+  </nav>
+  <div class="nd-foot">
+    <span class="nd-lang-l" id="nd-lang" data-i18n="menu_language">Jazyk</span>
+    <div class="nav-drawer-lang" role="group" aria-labelledby="nd-lang">
+        <a class="lang-btn" href="/insights/podcast/" hreflang="en" lang="en" data-lang="en" aria-label="English">EN</a>
+        <a class="lang-btn active" href="/cs/insights/podcast/" hreflang="cs" lang="cs" data-lang="cs" aria-label="Čeština" aria-current="page">CS</a>
+        <a class="lang-btn" href="/de/insights/podcast/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch">DE</a>
+    </div>
   </div>
 </div>
 
@@ -691,15 +697,7 @@ img{display:block;max-width:100%}
 <!-- pod-data:end -->
 <script src="/assets/podcast/podcast.js"></script>
 <script>
-// — Nav hamburger —
-const navHamburger = document.getElementById('nav-hamburger');
-const navDrawer    = document.getElementById('nav-drawer');
-if (navHamburger && navDrawer) {
-  navHamburger.addEventListener('click', () => navDrawer.classList.toggle('open'));
-  document.addEventListener('click', e => {
-    if (!navHamburger.contains(e.target) && !navDrawer.contains(e.target)) navDrawer.classList.remove('open');
-  });
-}
+// Mobile menu: /assets/menu.js
 
 // — Cover: follows the pointer (tilt, rings, pulses, tag), on devices with a
 //   real hover only. Reduced motion keeps just the tag change (CSS). —

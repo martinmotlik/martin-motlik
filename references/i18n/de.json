@@ -2,7 +2,9 @@
  "lang": "de",
  "ui": {
   "title": "Martin Motlík | AEC-Marketing-Portfolio | Referenzen",
-  "photo": "Foto"
+  "photo": "Foto",
+  "menu_aria": "Menü öffnen",
+  "menu_close": "Menü schließen"
  },
  "chrome": {
   "nav_insights": "Insights",
@@ -17,7 +19,9 @@
   "cta_visit": "Website besuchen →",
   "ifc_subtitle": "Online-Validator für IFC-Dateien",
   "pill_booth": "Messestand-Design",
-  "pill_print": "Print"
+  "pill_print": "Print",
+  "menu_label": "Menü",
+  "menu_language": "Sprache"
  },
  "text": {
   "References": "Referenzen",

@@ -3,7 +3,9 @@
  "ui": {
   "title": "Martin Motlík | Mass Timber Conference 2026 | Portland",
   "resume_rotation": "Spustit otáčení",
-  "pause_rotation": "Pozastavit otáčení"
+  "pause_rotation": "Pozastavit otáčení",
+  "menu_aria": "Otevřít menu",
+  "menu_close": "Zavřít menu"
  },
  "chrome": {
   "nav_insights": "Insights",
@@ -23,7 +25,9 @@
   "ed_text": "International Mass Timber Conference je největší světové setkání odborníků na masivní dřevo a pokrývá celý dodavatelský řetězec oboru – od návrhu a inženýringu po výrobu a výstavbu. Program se zaměřuje na křížem lepené dřevo (CLT), lepené lamelové dřevo, hřebíkované lamelové dřevo a další konstrukční výrobky ze dřeva a sdružuje architekty, statiky, developery a výrobce ze Severní Ameriky i odjinud.",
   "gallery_caption": "Fotografie a 3D vizualizace z International Mass Timber Conference 2026 v Oregon Convention Center, Portland, OR, duben 2026.",
   "glb_desc": "Interaktivní 3D model výstavního stánku Dlubal Software navrženého pro International Mass Timber Conference 2026 v Portlandu.",
-  "nav_sub": "Výstavní stánek · Atlanta, GA"
+  "nav_sub": "Výstavní stánek · Atlanta, GA",
+  "menu_label": "Menu",
+  "menu_language": "Jazyk"
  },
  "text": {
   "References": "Reference",

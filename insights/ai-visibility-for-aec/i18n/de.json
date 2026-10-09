@@ -31,7 +31,8 @@
   "now_playing": "Läuft gerade",
   "paused": "Pausiert",
   "chapter_of": "Kapitel {n} von {total}",
-  "mini_aria": "Podcast-Player"
+  "mini_aria": "Podcast-Player",
+  "menu_close": "Menü schließen"
  },
  "chrome": {
   "nav_references": "Referenzen",
@@ -65,7 +66,9 @@
   "also_podcast": "Auch als Podcast",
   "also_listen": "Anhören",
   "ep_min": "Min.",
-  "chip_at": "Anhören ab"
+  "chip_at": "Anhören ab",
+  "menu_label": "Menü",
+  "menu_language": "Sprache"
  },
  "k": {
   "hero.span1": "KI im AEC",

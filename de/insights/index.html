@@ -358,6 +358,8 @@ img{display:block;max-width:100%}
           .nav-hamburger { display: flex; }
         }
     </style>
+  <link rel="stylesheet" href="/assets/menu.css">
+  <script src="/assets/menu.js" defer></script>
 </head>
 <body>
 
@@ -382,24 +384,28 @@ img{display:block;max-width:100%}
         <a class="lang-btn" href="/cs/insights/" hreflang="cs" lang="cs" data-lang="cs" aria-label="Čeština">CS</a>
         <a class="lang-btn active" href="/de/insights/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch" aria-current="page">DE</a>
       </div>
-      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menü öffnen" data-i18n-attr="aria-label:menu_aria">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="nav-hamburger" id="nav-hamburger" type="button" aria-label="Menü öffnen" data-close-label="Menü schließen" data-i18n-attr="aria-label:menu_aria;data-close-label:menu_close"><span></span><span></span></button>
     </div>
   </div>
 </nav>
 <div class="nav-drawer" id="nav-drawer">
-  <a href="/de/referenzen/" data-i18n="nav_references">Referenzen</a>
-  <a href="/de/leistungen/" data-i18n="nav_services">Leistungen</a>
-  <a href="/de/insights/" class="active" aria-current="page" data-i18n="nav_insights">Insights</a>
-  <a href="/de/#about" data-i18n="nav_about">Über mich</a>
-  <a href="/de/#bim" data-i18n="nav_bim">Tätigkeitsfelder</a>
-  <a href="/de/#dlubal" data-i18n="nav_dlubal">Dlubal</a>
-  <a href="/de/#ai-in-aec" data-i18n="nav_ai">KI im AEC</a>
-  <div class="nav-drawer-lang">
-    <a class="lang-btn" href="/insights/" hreflang="en" lang="en" data-lang="en" aria-label="English">EN</a>
-    <a class="lang-btn" href="/cs/insights/" hreflang="cs" lang="cs" data-lang="cs" aria-label="Čeština">CS</a>
-    <a class="lang-btn active" href="/de/insights/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch" aria-current="page">DE</a>
+  <p class="nd-k" id="nd-title" data-i18n="menu_label">Menü</p>
+  <nav class="nd-links" aria-labelledby="nd-title">
+    <a href="/de/referenzen/" data-i18n="nav_references">Referenzen</a>
+    <a href="/de/leistungen/" data-i18n="nav_services">Leistungen</a>
+    <a href="/de/insights/" class="active" aria-current="page" data-i18n="nav_insights">Insights</a>
+    <a href="/de/#about" data-i18n="nav_about">Über mich</a>
+    <a href="/de/#bim" data-i18n="nav_bim">Tätigkeitsfelder</a>
+    <a href="/de/#dlubal" data-i18n="nav_dlubal">Dlubal</a>
+    <a href="/de/#ai-in-aec" data-i18n="nav_ai">KI im AEC</a>
+  </nav>
+  <div class="nd-foot">
+    <span class="nd-lang-l" id="nd-lang" data-i18n="menu_language">Sprache</span>
+    <div class="nav-drawer-lang" role="group" aria-labelledby="nd-lang">
+        <a class="lang-btn" href="/insights/" hreflang="en" lang="en" data-lang="en" aria-label="English">EN</a>
+        <a class="lang-btn" href="/cs/insights/" hreflang="cs" lang="cs" data-lang="cs" aria-label="Čeština">CS</a>
+        <a class="lang-btn active" href="/de/insights/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch" aria-current="page">DE</a>
+    </div>
   </div>
 </div>
 
@@ -533,15 +539,7 @@ img{display:block;max-width:100%}
 </footer>
 
 <script>
-// — Nav hamburger —
-const navHamburger = document.getElementById('nav-hamburger');
-const navDrawer    = document.getElementById('nav-drawer');
-if (navHamburger && navDrawer) {
-  navHamburger.addEventListener('click', () => navDrawer.classList.toggle('open'));
-  document.addEventListener('click', e => {
-    if (!navHamburger.contains(e.target) && !navDrawer.contains(e.target)) navDrawer.classList.remove('open');
-  });
-}
+// Mobile menu: /assets/menu.js
 
 // — Category filter. The cards are already in the HTML; this only hides them,
 //   so the full list stays readable to crawlers that do not run scripts. —

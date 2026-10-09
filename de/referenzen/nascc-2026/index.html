@@ -785,9 +785,11 @@
       .nav-hamburger { padding: 0; width: 44px; height: 44px; align-items: center; justify-content: center; margin-right: -11px; }
     }
     </style>
+  <link rel="stylesheet" href="/assets/menu.css">
+  <script src="/assets/menu.js" defer></script>
 </head>
 <body>
-<script type="application/json" id="i18n-ui">{"title": "Martin Motlík | Messestand NASCC 2026 | Atlanta", "resume_rotation": "Rotation fortsetzen", "pause_rotation": "Rotation anhalten"}</script>
+<script type="application/json" id="i18n-ui">{"title": "Martin Motlík | Messestand NASCC 2026 | Atlanta", "resume_rotation": "Rotation fortsetzen", "pause_rotation": "Rotation anhalten", "menu_aria": "Menü öffnen", "menu_close": "Menü schließen"}</script>
 
 <!-- NAV -->
 <nav class="nav" id="main-nav">
@@ -811,24 +813,28 @@
         <a class="lang-btn" href="/cs/reference/nascc-2026/" hreflang="cs" lang="cs" data-lang="cs" aria-label="Čeština">CS</a>
         <a class="lang-btn active" href="/de/referenzen/nascc-2026/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch" aria-current="page">DE</a>
       </div>
-      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menü öffnen">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="nav-hamburger" id="nav-hamburger" type="button" aria-label="Menü öffnen" data-close-label="Menü schließen" data-i18n-attr="aria-label:menu_aria;data-close-label:menu_close"><span></span><span></span></button>
     </div>
   </div>
 </nav>
 <div class="nav-drawer" id="nav-drawer">
-  <a href="/de/referenzen/" class="active">Referenzen</a>
-  <a href="/de/leistungen/">Leistungen</a>
-  <a href="/de/insights/" data-i18n="nav_insights">Insights</a>
-  <a href="/de/#about">Über mich</a>
-  <a href="/de/#bim">Tätigkeitsfelder</a>
-  <a href="/de/#dlubal">Dlubal</a>
-  <a href="/de/#ai-in-aec">KI im AEC</a>
-  <div class="nav-drawer-lang">
-    <a class="lang-btn" href="/references/nascc-2026/" hreflang="en" lang="en" data-lang="en" aria-label="English">EN</a>
-    <a class="lang-btn" href="/cs/reference/nascc-2026/" hreflang="cs" lang="cs" data-lang="cs" aria-label="Čeština">CS</a>
-    <a class="lang-btn active" href="/de/referenzen/nascc-2026/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch" aria-current="page">DE</a>
+  <p class="nd-k" id="nd-title" data-i18n="menu_label">Menü</p>
+  <nav class="nd-links" aria-labelledby="nd-title">
+    <a href="/de/referenzen/" class="active">Referenzen</a>
+    <a href="/de/leistungen/">Leistungen</a>
+    <a href="/de/insights/" data-i18n="nav_insights">Insights</a>
+    <a href="/de/#about">Über mich</a>
+    <a href="/de/#bim">Tätigkeitsfelder</a>
+    <a href="/de/#dlubal">Dlubal</a>
+    <a href="/de/#ai-in-aec">KI im AEC</a>
+  </nav>
+  <div class="nd-foot">
+    <span class="nd-lang-l" id="nd-lang" data-i18n="menu_language">Sprache</span>
+    <div class="nav-drawer-lang" role="group" aria-labelledby="nd-lang">
+        <a class="lang-btn" href="/references/nascc-2026/" hreflang="en" lang="en" data-lang="en" aria-label="English">EN</a>
+        <a class="lang-btn" href="/cs/reference/nascc-2026/" hreflang="cs" lang="cs" data-lang="cs" aria-label="Čeština">CS</a>
+        <a class="lang-btn active" href="/de/referenzen/nascc-2026/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch" aria-current="page">DE</a>
+    </div>
   </div>
 </div>
 
@@ -1084,16 +1090,7 @@
 </div>
 
 <script>
-    // ── Mobile nav ────────────────────────────────────────
-    const hamburger = document.getElementById('nav-hamburger');
-    const navDrawer = document.getElementById('nav-drawer');
-    if (hamburger && navDrawer) {
-        hamburger.addEventListener('click', () => navDrawer.classList.toggle('open'));
-        document.addEventListener('click', (e) => {
-            if (!hamburger.contains(e.target) && !navDrawer.contains(e.target)) navDrawer.classList.remove('open');
-        });
-
-    }
+    // Mobile menu: /assets/menu.js
 
     // ── Lightbox ──────────────────────────────────────────
     // Each entry is a slug plus the widths build-images.mjs produced for it;

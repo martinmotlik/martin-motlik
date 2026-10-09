@@ -686,9 +686,11 @@
       .step-btn { flex: 1 1 0; min-width: 0; padding: 0; }
     }
   </style>
+  <link rel="stylesheet" href="/assets/menu.css">
+  <script src="/assets/menu.js" defer></script>
 </head>
 <body>
-<script type="application/json" id="i18n-ui">{"title": "Služby – Martin Motlík | Digitální stratég pro AEC"}</script>
+<script type="application/json" id="i18n-ui">{"title": "Služby – Martin Motlík | Digitální stratég pro AEC", "menu_aria": "Otevřít menu", "menu_close": "Zavřít menu"}</script>
 
 <nav class="nav" id="main-nav">
   <div class="nav-inner">
@@ -721,25 +723,29 @@
         <a class="lang-btn active" href="/cs/sluzby/" hreflang="cs" lang="cs" data-lang="cs" aria-label="Čeština" aria-current="page">CS</a>
         <a class="lang-btn" href="/de/leistungen/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch">DE</a>
       </div>
-      <button class="nav-hamburger" id="nav-hamburger" aria-label="Otevřít menu">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="nav-hamburger" id="nav-hamburger" type="button" aria-label="Otevřít menu" data-close-label="Zavřít menu" data-i18n-attr="aria-label:menu_aria;data-close-label:menu_close"><span></span><span></span></button>
     </div>
   </div>
 </nav>
 
 <div class="nav-drawer" id="nav-drawer">
-  <a href="/cs/reference/" data-i18n="nav_references">Reference</a>
-  <a href="/cs/sluzby/" class="active" data-i18n="nav_services">Služby</a>
-  <a href="/cs/insights/" data-i18n="nav_insights">Insights</a>
-  <a href="/cs/#about" data-i18n="nav_about">O mně</a>
-  <a href="/cs/#bim" data-i18n="nav_bim">Oblasti činnosti</a>
-  <a href="/cs/#dlubal" data-i18n="nav_dlubal">Dlubal</a>
-  <a href="/cs/#ai-in-aec" data-i18n="nav_ai">AI v AEC</a>
-  <div class="nav-drawer-lang">
-    <a class="lang-btn" href="/services/" hreflang="en" lang="en" data-lang="en" aria-label="English">EN</a>
-    <a class="lang-btn active" href="/cs/sluzby/" hreflang="cs" lang="cs" data-lang="cs" aria-label="Čeština" aria-current="page">CS</a>
-    <a class="lang-btn" href="/de/leistungen/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch">DE</a>
+  <p class="nd-k" id="nd-title" data-i18n="menu_label">Menu</p>
+  <nav class="nd-links" aria-labelledby="nd-title">
+    <a href="/cs/reference/" data-i18n="nav_references">Reference</a>
+    <a href="/cs/sluzby/" class="active" data-i18n="nav_services">Služby</a>
+    <a href="/cs/insights/" data-i18n="nav_insights">Insights</a>
+    <a href="/cs/#about" data-i18n="nav_about">O mně</a>
+    <a href="/cs/#bim" data-i18n="nav_bim">Oblasti činnosti</a>
+    <a href="/cs/#dlubal" data-i18n="nav_dlubal">Dlubal</a>
+    <a href="/cs/#ai-in-aec" data-i18n="nav_ai">AI v AEC</a>
+  </nav>
+  <div class="nd-foot">
+    <span class="nd-lang-l" id="nd-lang" data-i18n="menu_language">Jazyk</span>
+    <div class="nav-drawer-lang" role="group" aria-labelledby="nd-lang">
+        <a class="lang-btn" href="/services/" hreflang="en" lang="en" data-lang="en" aria-label="English">EN</a>
+        <a class="lang-btn active" href="/cs/sluzby/" hreflang="cs" lang="cs" data-lang="cs" aria-label="Čeština" aria-current="page">CS</a>
+        <a class="lang-btn" href="/de/leistungen/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch">DE</a>
+    </div>
   </div>
 </div>
 
@@ -971,18 +977,7 @@ function switchStep(btn, id) {
     nav.classList.toggle('scrolled', window.scrollY > 60);
   }, { passive: true });
 
-  // Hamburger
-  const hamburger = document.getElementById('nav-hamburger');
-  const drawer    = document.getElementById('nav-drawer');
-  hamburger.addEventListener('click', () => drawer.classList.toggle('open'));
-  drawer.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => drawer.classList.remove('open'));
-  });
-  document.addEventListener('click', e => {
-    if (!nav.contains(e.target) && !drawer.contains(e.target)) {
-      drawer.classList.remove('open');
-    }
-  });
+  // Mobile menu: /assets/menu.js
 </script>
 
 

@@ -300,7 +300,7 @@ def english_runs(s):
 # Names and codes that are the same in every language.
 KEEP_EVERYWHERE = {
     'EN', 'CS', 'DE', 'English', 'Čeština', 'Deutsch', 'Martin Motlík', 'Insights', 'Dlubal', 'Dlubal Software',
-    'LinkedIn', 'X', 'Facebook', 'AI', 'BIM', 'SEO', 'SaaS', 'Design', 'Adobe', 'Dev',
+    'LinkedIn', 'X', 'Facebook', 'AI', 'BIM', 'SEO', 'SaaS', 'Design', 'Adobe', 'Dev', 'Menu',
 }
 
 

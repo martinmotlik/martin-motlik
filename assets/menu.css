@@ -1,0 +1,55 @@
+/* Mobile menu, shared by every page (design "Mobile Menu 1a"; behaviour in
+ * /assets/menu.js). A full-screen white sheet under the header: large links
+ * with an arrow, the current page marked (light background, blue dot and
+ * arrow), the language switch at the bottom. The two-line button turns into
+ * an X. Selectors use the ids, so they win over each page's older .nav-drawer
+ * rules; this file loads after the page's own styles. */
+
+/* ── Button: 44 px, two lines that cross when open */
+#nav-hamburger{position:relative;flex:none;width:44px;height:44px;padding:0;border:0;border-radius:50%;background:transparent;cursor:pointer;margin-right:-11px;-webkit-tap-highlight-color:transparent;transition:background .3s}
+#nav-hamburger:hover{background:rgba(28,42,51,.06)}
+#nav-hamburger span{position:absolute;left:13px;top:21px;display:block;width:18px;height:2px;margin:0;border-radius:2px;transition:transform .5s cubic-bezier(.32,.72,0,1),background .3s}
+#nav-hamburger span:first-child{transform:translateY(-4px)}
+#nav-hamburger span:last-child{transform:translateY(4px)}
+#nav-hamburger:focus-visible{outline:2px solid #1A56DB;outline-offset:2px}
+.menu-open #nav-hamburger{background:#F5F6FA}
+.menu-open #nav-hamburger span{background:#1C2A33}
+.menu-open #nav-hamburger span:first-child{transform:rotate(45deg)}
+.menu-open #nav-hamburger span:last-child{transform:rotate(-45deg)}
+
+/* ── Header while the menu is open: white, dark ink (also over the home page's dark hero) */
+.menu-open .nav{background:#fff!important;border-bottom-color:#EEF1F6!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;box-shadow:none!important}
+.menu-open .nav .nav-logo{color:#1C2A33!important}
+html.menu-open,html.menu-open body{overflow:hidden}
+/* Things that float above the page step aside */
+.menu-open #pod-mini,.menu-open .progress{opacity:0!important;visibility:hidden!important}
+
+/* ── The sheet */
+#nav-drawer{position:fixed;inset:0;z-index:99;display:flex;flex-direction:column;margin:0;padding:calc(var(--nav-h,60px) + 20px) calc(var(--nd-x,var(--gutter,24px)) - 12px) calc(24px + env(safe-area-inset-bottom,0px));border:0;background:#fff;box-shadow:none;overflow-y:auto;overscroll-behavior:contain;font-family:Inter,system-ui,sans-serif;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-12px);transition:opacity .35s ease,transform .6s cubic-bezier(.32,.72,0,1),visibility 0s linear .6s}
+#nav-drawer.open{opacity:1;visibility:visible;pointer-events:auto;transform:none;transition:opacity .35s ease,transform .6s cubic-bezier(.32,.72,0,1),visibility 0s}
+
+#nav-drawer .nd-k{margin:0;padding:0 12px 10px;font-size:11px;line-height:1.4;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#65676B}
+#nav-drawer .nd-links{display:flex;flex-direction:column;gap:2px}
+/* Text, then the dot (current page), then the arrow at the far right: flex order on the pseudo-elements */
+#nav-drawer .nd-links a{display:flex;align-items:center;gap:10px;min-height:52px;margin:0;padding:0 12px;border:0;border-radius:14px;background:transparent;color:#1C2A33;font-size:20px;line-height:1.2;font-weight:600;letter-spacing:-.015em;text-decoration:none;transition:background .25s}
+#nav-drawer .nd-links a::after{content:"→";order:2;margin-left:auto;font-size:16px;font-weight:500;color:#B8C0CC;transition:color .25s}
+#nav-drawer .nd-links a:hover{background:#F5F6FA;color:#1C2A33}
+#nav-drawer .nd-links a:hover::after{color:#1A56DB}
+#nav-drawer .nd-links a.active{background:#F5F6FA;color:#1C2A33}
+#nav-drawer .nd-links a.active::before{content:"";order:1;flex:none;width:6px;height:6px;border-radius:50%;background:#1A56DB}
+#nav-drawer .nd-links a.active::after{color:#1A56DB}
+#nav-drawer a:focus-visible{outline:2px solid #1A56DB;outline-offset:2px}
+
+/* ── Language */
+#nav-drawer .nd-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 12px 0;border-top:1px solid #EEF1F6}
+#nav-drawer .nd-lang-l{font-size:13px;color:#65676B}
+#nav-drawer .nav-drawer-lang{display:flex;gap:2px;margin:0;padding:3px;border:0;border-radius:999px;background:#F5F6FA}
+#nav-drawer .nav-drawer-lang .lang-btn{position:relative;display:flex;align-items:center;justify-content:center;min-width:48px;height:38px;margin:0;padding:0 10px;border:0;border-radius:999px;background:transparent;color:#65676B;font-size:13px;font-weight:600;letter-spacing:0;line-height:1;text-decoration:none;box-shadow:none;transition:background .25s,color .25s}
+#nav-drawer .nav-drawer-lang .lang-btn::before{content:"";position:absolute;inset:-3px 0}   /* 44 px tall target */
+#nav-drawer .nav-drawer-lang .lang-btn:hover{color:#1C2A33}
+#nav-drawer .nav-drawer-lang .lang-btn.active{background:#fff;color:#1C2A33;box-shadow:0 1px 2px rgba(28,42,51,.12)}
+
+@media (prefers-reduced-motion:reduce){
+  #nav-drawer,#nav-drawer.open{transform:none;transition:opacity .2s,visibility 0s}
+  #nav-hamburger span,#nav-drawer .nd-links a{transition:none}
+}

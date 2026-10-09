@@ -1,7 +1,9 @@
 {
  "lang": "de",
  "ui": {
-  "title": "Martin Motlík | AEC-Digitalstratege & Web Lead"
+  "title": "Martin Motlík | AEC-Digitalstratege & Web Lead",
+  "menu_aria": "Menü öffnen",
+  "menu_close": "Menü schließen"
  },
  "chrome": {
   "nav_references": "Referenzen",
@@ -59,7 +61,9 @@
   "contact_sub": "Wenn Sie etwas an der Schnittstelle von AEC, Web-Ökosystemen und KI aufbauen, helfe ich Ihnen gern, es zu skalieren. Ich unterstütze Kunden weltweit mit Digitalmarketing und Webentwicklung, unabhängig von Zeitzonen. Melden Sie sich, und wir starten das Gespräch.",
   "contact_li_label": "So erreichen Sie mich am besten",
   "contact_li_value": "Vernetzen Sie sich oder schreiben Sie mir auf LinkedIn",
-  "contact_email_label": "E-Mail"
+  "contact_email_label": "E-Mail",
+  "menu_label": "Menü",
+  "menu_language": "Sprache"
  },
  "text": {
   "References": "Referenzen",

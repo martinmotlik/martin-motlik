@@ -701,9 +701,11 @@ article p.all-link a{text-decoration:none}
           .nav-hamburger { display: flex; }
         }
     </style>
+  <link rel="stylesheet" href="/assets/menu.css">
+  <script src="/assets/menu.js" defer></script>
 </head>
 <body>
-<script type="application/json" id="i18n-ui">{"listen_on": "Anhören auf {net}", "title": "Werden Sie zur Quelle: AEC-Daten fit für die KI-Suche", "article_title": "Werden Sie zur Quelle: AEC-Daten fit für die KI-Suche machen", "role": "AEC-Digitalstratege & Web Lead", "narrating": "Insights-Podcast (EN)", "listen": "Podcast (EN)", "pause": "Pausieren", "seek": "Im Podcast springen", "speed": "Wiedergabegeschwindigkeit", "close": "Player schließen", "player": "Podcast-Player", "copy": "Kopieren", "copied": "Kopiert ✓", "copy_failed": "Kopieren fehlgeschlagen", "copy_robots": "robots.txt kopieren", "link_copied": "Link kopiert ✓", "link_copied_aria": "Link kopiert", "copy_link": "Link kopieren", "share_on": "Auf {net} teilen (öffnet ein neues Fenster)", "share_email": "Per E-Mail teilen (öffnet Ihre E-Mail-App)", "toc_aria": "Auf dieser Seite", "crumbs_aria": "Brotkrümelnavigation", "menu_aria": "Menü öffnen", "cover_alt": "Martin Motlík arbeitet im Freien am Laptop, umgeben von den Symbolen von KI-Assistenten und Suchmaschinen", "code_copied": "Code kopiert", "play_episode": "Folge abspielen", "resume": "Fortsetzen", "now_playing": "Läuft gerade", "paused": "Pausiert", "chapter_of": "Kapitel {n} von {total}", "mini_aria": "Podcast-Player"}</script>
+<script type="application/json" id="i18n-ui">{"listen_on": "Anhören auf {net}", "title": "Werden Sie zur Quelle: AEC-Daten fit für die KI-Suche", "article_title": "Werden Sie zur Quelle: AEC-Daten fit für die KI-Suche machen", "role": "AEC-Digitalstratege & Web Lead", "narrating": "Insights-Podcast (EN)", "listen": "Podcast (EN)", "pause": "Pausieren", "seek": "Im Podcast springen", "speed": "Wiedergabegeschwindigkeit", "close": "Player schließen", "player": "Podcast-Player", "copy": "Kopieren", "copied": "Kopiert ✓", "copy_failed": "Kopieren fehlgeschlagen", "copy_robots": "robots.txt kopieren", "link_copied": "Link kopiert ✓", "link_copied_aria": "Link kopiert", "copy_link": "Link kopieren", "share_on": "Auf {net} teilen (öffnet ein neues Fenster)", "share_email": "Per E-Mail teilen (öffnet Ihre E-Mail-App)", "toc_aria": "Auf dieser Seite", "crumbs_aria": "Brotkrümelnavigation", "menu_aria": "Menü öffnen", "cover_alt": "Martin Motlík arbeitet im Freien am Laptop, umgeben von den Symbolen von KI-Assistenten und Suchmaschinen", "code_copied": "Code kopiert", "play_episode": "Folge abspielen", "resume": "Fortsetzen", "now_playing": "Läuft gerade", "paused": "Pausiert", "chapter_of": "Kapitel {n} von {total}", "mini_aria": "Podcast-Player", "menu_close": "Menü schließen"}</script>
 
 <nav class="nav" id="main-nav">
   <div class="nav-inner">
@@ -726,24 +728,28 @@ article p.all-link a{text-decoration:none}
         <a class="lang-btn" href="/cs/insights/data-aec-pro-vyhledavani-s-ai/" hreflang="cs" lang="cs" data-lang="cs" aria-label="Čeština">CS</a>
         <a class="lang-btn active" href="/de/insights/aec-daten-fuer-ki-suche/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch" aria-current="page">DE</a>
       </div>
-      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menü öffnen" data-i18n-attr="aria-label:menu_aria">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="nav-hamburger" id="nav-hamburger" type="button" aria-label="Menü öffnen" data-close-label="Menü schließen" data-i18n-attr="aria-label:menu_aria;data-close-label:menu_close"><span></span><span></span></button>
     </div>
   </div>
 </nav>
 <div class="nav-drawer" id="nav-drawer">
-  <a href="/de/referenzen/" data-i18n="nav_references">Referenzen</a>
-  <a href="/de/leistungen/" data-i18n="nav_services">Leistungen</a>
-  <a href="/de/insights/" class="active" data-i18n="nav_insights">Insights</a>
-  <a href="/de/#about" data-i18n="nav_about">Über mich</a>
-  <a href="/de/#bim" data-i18n="nav_bim">Tätigkeitsfelder</a>
-  <a href="/de/#dlubal" data-i18n="nav_dlubal">Dlubal</a>
-  <a href="/de/#ai-in-aec" data-i18n="nav_ai">KI im AEC</a>
-  <div class="nav-drawer-lang">
-    <a class="lang-btn" href="/insights/ai-visibility-for-aec/" hreflang="en" lang="en" data-lang="en" aria-label="English">EN</a>
-    <a class="lang-btn" href="/cs/insights/data-aec-pro-vyhledavani-s-ai/" hreflang="cs" lang="cs" data-lang="cs" aria-label="Čeština">CS</a>
-    <a class="lang-btn active" href="/de/insights/aec-daten-fuer-ki-suche/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch" aria-current="page">DE</a>
+  <p class="nd-k" id="nd-title" data-i18n="menu_label">Menü</p>
+  <nav class="nd-links" aria-labelledby="nd-title">
+    <a href="/de/referenzen/" data-i18n="nav_references">Referenzen</a>
+    <a href="/de/leistungen/" data-i18n="nav_services">Leistungen</a>
+    <a href="/de/insights/" class="active" data-i18n="nav_insights">Insights</a>
+    <a href="/de/#about" data-i18n="nav_about">Über mich</a>
+    <a href="/de/#bim" data-i18n="nav_bim">Tätigkeitsfelder</a>
+    <a href="/de/#dlubal" data-i18n="nav_dlubal">Dlubal</a>
+    <a href="/de/#ai-in-aec" data-i18n="nav_ai">KI im AEC</a>
+  </nav>
+  <div class="nd-foot">
+    <span class="nd-lang-l" id="nd-lang" data-i18n="menu_language">Sprache</span>
+    <div class="nav-drawer-lang" role="group" aria-labelledby="nd-lang">
+        <a class="lang-btn" href="/insights/ai-visibility-for-aec/" hreflang="en" lang="en" data-lang="en" aria-label="English">EN</a>
+        <a class="lang-btn" href="/cs/insights/data-aec-pro-vyhledavani-s-ai/" hreflang="cs" lang="cs" data-lang="cs" aria-label="Čeština">CS</a>
+        <a class="lang-btn active" href="/de/insights/aec-daten-fuer-ki-suche/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch" aria-current="page">DE</a>
+    </div>
   </div>
 </div>
 
@@ -1232,15 +1238,7 @@ var I18N = (function(){
   return { t: t, lang: function(){ return lang; } };
 })();
 
-// — Nav hamburger —
-const navHamburger = document.getElementById('nav-hamburger');
-const navDrawer    = document.getElementById('nav-drawer');
-if (navHamburger && navDrawer) {
-  navHamburger.addEventListener('click', () => navDrawer.classList.toggle('open'));
-  document.addEventListener('click', e => {
-    if (!navHamburger.contains(e.target) && !navDrawer.contains(e.target)) navDrawer.classList.remove('open');
-  });
-}
+// Mobile menu: /assets/menu.js
 
 // — Screen-reader announcements (copy feedback). Cleared first, so the same
 //   message is read again on a second copy. —

@@ -1,7 +1,9 @@
 {
  "lang": "de",
  "ui": {
-  "title": "Leistungen – Martin Motlík | AEC-Digitalstratege"
+  "title": "Leistungen – Martin Motlík | AEC-Digitalstratege",
+  "menu_aria": "Menü öffnen",
+  "menu_close": "Menü schließen"
  },
  "chrome": {
   "nav_references": "Referenzen",
@@ -56,7 +58,9 @@
   "t4_d3_term": "Sichere KI-Beratung",
   "t4_d3_desc": "Ich berate fundiert zur sicheren Einführung künstlicher Intelligenz. Ich analysiere Ihre aktuellen Abläufe und helfe Ihnen, praxistaugliche KI-Strategien zu entwickeln, die für Ihr technisches Team wirklich sinnvoll sind.",
   "cta_title": "Lassen Sie uns konkret werden.",
-  "cta_desc": "Sie haben ein konkretes Projekt? Melden Sie sich, um Ihre genauen technischen Anforderungen zu besprechen. Gerne zeige ich Ihnen passende Beispiele meiner bisherigen Arbeit."
+  "cta_desc": "Sie haben ein konkretes Projekt? Melden Sie sich, um Ihre genauen technischen Anforderungen zu besprechen. Gerne zeige ich Ihnen passende Beispiele meiner bisherigen Arbeit.",
+  "menu_label": "Menü",
+  "menu_language": "Sprache"
  },
  "text": {
   "References": "Referenzen",

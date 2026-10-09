@@ -3,7 +3,9 @@
  "ui": {
   "title": "Martin Motlík | Návrh stánku NASCC 2026 | Atlanta",
   "resume_rotation": "Spustit otáčení",
-  "pause_rotation": "Pozastavit otáčení"
+  "pause_rotation": "Pozastavit otáčení",
+  "menu_aria": "Otevřít menu",
+  "menu_close": "Zavřít menu"
  },
  "chrome": {
   "nav_insights": "Insights",
@@ -23,7 +25,9 @@
   "ed_text": "NASCC: The Steel Conference je přední vzdělávací a networkingová akce pro všechny, kdo se podílejí na navrhování a výstavbě ocelových budov a mostů. Konference nabízí téměř 300 odborných přednášek, výstavní halu s více než 280 produkty a službami a setkání s více než 6 500 kolegy – předními projektanty, výrobci ocelových konstrukcí i výzkumníky, kteří posouvají inovace v oboru oceli.",
   "gallery_caption": "Fotografie z NASCC 2026 v Georgia World Congress Center, Atlanta, GA – 22.–24. dubna 2026.",
   "glb_desc": "Interaktivní 3D model výstavního stánku Dlubal Software navrženého pro konferenci NASCC: The Steel Conference 2026 v Atlantě ve státě Georgia.",
-  "nav_sub": "Výstavní stánek · Portland, OR"
+  "nav_sub": "Výstavní stánek · Portland, OR",
+  "menu_label": "Menu",
+  "menu_language": "Jazyk"
  },
  "text": {
   "References": "Reference",

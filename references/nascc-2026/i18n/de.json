@@ -3,7 +3,9 @@
  "ui": {
   "title": "Martin Motlík | Messestand NASCC 2026 | Atlanta",
   "resume_rotation": "Rotation fortsetzen",
-  "pause_rotation": "Rotation anhalten"
+  "pause_rotation": "Rotation anhalten",
+  "menu_aria": "Menü öffnen",
+  "menu_close": "Menü schließen"
  },
  "chrome": {
   "nav_insights": "Insights",
@@ -23,7 +25,9 @@
   "ed_text": "NASCC: The Steel Conference ist die führende Fach- und Netzwerkveranstaltung für alle, die an Planung und Bau von Stahlgebäuden und Brücken beteiligt sind. Die Konferenz bietet fast 300 Fachvorträge, eine Ausstellungshalle mit mehr als 280 Produkten und Dienstleistungen sowie Austausch mit über 6.500 Kolleginnen und Kollegen – darunter führende Planer, Stahlbauer und Forschende an der Spitze der Stahlinnovation.",
   "gallery_caption": "Fotos von der NASCC 2026 im Georgia World Congress Center, Atlanta, GA – 22.–24. April 2026.",
   "glb_desc": "Interaktives 3D-Modell des Messestands von Dlubal Software für die NASCC: The Steel Conference 2026 in Atlanta, Georgia.",
-  "nav_sub": "Messestand-Design · Portland, OR"
+  "nav_sub": "Messestand-Design · Portland, OR",
+  "menu_label": "Menü",
+  "menu_language": "Sprache"
  },
  "text": {
   "References": "Referenzen",

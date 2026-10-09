@@ -1,7 +1,9 @@
 {
  "lang": "cs",
  "ui": {
-  "title": "Martin Motlík | Digitální stratég pro AEC & Web Lead"
+  "title": "Martin Motlík | Digitální stratég pro AEC & Web Lead",
+  "menu_aria": "Otevřít menu",
+  "menu_close": "Zavřít menu"
  },
  "chrome": {
   "nav_references": "Reference",
@@ -59,7 +61,9 @@
   "contact_sub": "Pokud budujete něco na pomezí AEC, webových ekosystémů a AI, rád vám pomohu to rozvinout. Klientům po celém světě poskytuji služby v oblasti digitálního marketingu a vývoje webů, bez ohledu na časové pásmo. Ozvěte se a začněme.",
   "contact_li_label": "Nejrychleji mě zastihnete",
   "contact_li_value": "Spojte se se mnou nebo mi napište na LinkedInu",
-  "contact_email_label": "E-mail"
+  "contact_email_label": "E-mail",
+  "menu_label": "Menu",
+  "menu_language": "Jazyk"
  },
  "text": {
   "References": "Reference",

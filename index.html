@@ -885,6 +885,8 @@
     }
   </style>
   <link rel="alternate" type="text/plain" href="https://martinmotlik.com/llms.txt" title="LLMs.txt">
+  <link rel="stylesheet" href="/assets/menu.css">
+  <script src="/assets/menu.js" defer></script>
 </head>
 <body>
 
@@ -918,26 +920,30 @@
         <a class="lang-btn" href="/cs/" hreflang="cs" lang="cs" data-lang="cs" aria-label="Čeština">CS</a>
         <a class="lang-btn" href="/de/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch">DE</a>
       </div>
-      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="nav-hamburger" id="nav-hamburger" type="button" aria-label="Open menu" data-close-label="Close menu" data-i18n-attr="aria-label:menu_aria;data-close-label:menu_close"><span></span><span></span></button>
     </div>
   </div>
 </nav>
 
 <!-- Mobile drawer -->
 <div class="nav-drawer" id="nav-drawer">
-  <a href="/references/" data-i18n="nav_references">References</a>
-  <a href="/services/">Services</a>
-  <a href="/insights/" data-i18n="nav_insights">Insights</a>
-  <a href="#about" data-i18n="nav_about">About me</a>
-  <a href="#bim" data-i18n="nav_bim">Areas of Practice</a>
-  <a href="#dlubal" data-i18n="nav_dlubal">Dlubal</a>
-  <a href="#ai-in-aec" data-i18n="nav_ai">AI in AEC</a>
-  <div class="nav-drawer-lang">
-    <a class="lang-btn active" href="/" hreflang="en" lang="en" data-lang="en" aria-label="English" aria-current="page">EN</a>
-    <a class="lang-btn" href="/cs/" hreflang="cs" lang="cs" data-lang="cs" aria-label="Čeština">CS</a>
-    <a class="lang-btn" href="/de/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch">DE</a>
+  <p class="nd-k" id="nd-title" data-i18n="menu_label">Menu</p>
+  <nav class="nd-links" aria-labelledby="nd-title">
+    <a href="/references/" data-i18n="nav_references">References</a>
+    <a href="/services/">Services</a>
+    <a href="/insights/" data-i18n="nav_insights">Insights</a>
+    <a href="#about" data-i18n="nav_about">About me</a>
+    <a href="#bim" data-i18n="nav_bim">Areas of Practice</a>
+    <a href="#dlubal" data-i18n="nav_dlubal">Dlubal</a>
+    <a href="#ai-in-aec" data-i18n="nav_ai">AI in AEC</a>
+  </nav>
+  <div class="nd-foot">
+    <span class="nd-lang-l" id="nd-lang" data-i18n="menu_language">Language</span>
+    <div class="nav-drawer-lang" role="group" aria-labelledby="nd-lang">
+        <a class="lang-btn active" href="/" hreflang="en" lang="en" data-lang="en" aria-label="English" aria-current="page">EN</a>
+        <a class="lang-btn" href="/cs/" hreflang="cs" lang="cs" data-lang="cs" aria-label="Čeština">CS</a>
+        <a class="lang-btn" href="/de/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch">DE</a>
+    </div>
   </div>
 </div>
 
@@ -1494,14 +1500,7 @@ window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 60);
 }, { passive: true });
 
-// — Mobile hamburger —
-const hamburger = document.getElementById('nav-hamburger');
-const drawer    = document.getElementById('nav-drawer');
-hamburger.addEventListener('click', () => drawer.classList.toggle('open'));
-drawer.querySelectorAll('a').forEach(link => link.addEventListener('click', () => drawer.classList.remove('open')));
-document.addEventListener('click', e => {
-  if (!nav.contains(e.target) && !drawer.contains(e.target)) drawer.classList.remove('open');
-});
+// Mobile menu: /assets/menu.js
 </script>
 
 

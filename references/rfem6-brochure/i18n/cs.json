@@ -1,7 +1,9 @@
 {
  "lang": "cs",
  "ui": {
-  "title": "Martin Motlík | Návrh brožury RFEM 6 | Dlubal Software"
+  "title": "Martin Motlík | Návrh brožury RFEM 6 | Dlubal Software",
+  "menu_aria": "Otevřít menu",
+  "menu_close": "Zavřít menu"
  },
  "chrome": {
   "nav_insights": "Insights",
@@ -18,7 +20,9 @@
   "val_type": "Tištěná brožura",
   "val_pages": "12 stran",
   "btn_pdf": "Stáhnout PDF",
-  "nav_sub": "Výstavní stánek · Portland, OR"
+  "nav_sub": "Výstavní stánek · Portland, OR",
+  "menu_label": "Menu",
+  "menu_language": "Jazyk"
  },
  "text": {
   "References": "Reference",

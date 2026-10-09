@@ -31,7 +31,8 @@
   "now_playing": "Přehrává se",
   "paused": "Pozastaveno",
   "chapter_of": "Kapitola {n} z {total}",
-  "mini_aria": "Přehrávač podcastu"
+  "mini_aria": "Přehrávač podcastu",
+  "menu_close": "Zavřít menu"
  },
  "chrome": {
   "nav_references": "Reference",
@@ -65,7 +66,9 @@
   "also_podcast": "Také jako podcast",
   "also_listen": "Poslechnout",
   "ep_min": "min",
-  "chip_at": "Poslechnout od"
+  "chip_at": "Poslechnout od",
+  "menu_label": "Menu",
+  "menu_language": "Jazyk"
  },
  "k": {
   "hero.span1": "AI v AEC",

@@ -5,7 +5,8 @@
   "menu_aria": "Otevřít menu",
   "a1_alt": "Martin Motlík pracuje venku na notebooku, obklopený ikonami asistentů AI a vyhledávačů",
   "a1_alt_short": "Martin Motlík pracuje na notebooku, obklopený ikonami asistentů AI",
-  "chips_aria": "Filtrovat podle kategorie"
+  "chips_aria": "Filtrovat podle kategorie",
+  "menu_close": "Zavřít menu"
  },
  "chrome": {
   "nav_references": "Reference",
@@ -32,7 +33,9 @@
   "cta_linkedin": "Sledovat na LinkedInu",
   "cta_email": "Napsat e-mail",
   "podcast_link": "Také jako podcast",
-  "podcast_tag": "Podcast"
+  "podcast_tag": "Podcast",
+  "menu_label": "Menu",
+  "menu_language": "Jazyk"
  },
  "meta": {
   "description": "Praktické texty o zavádění AI, marketingu inženýrského softwaru a webových ekosystémech, které inženýři opravdu používají. Poznatky z přesunu AEC do prohlížeče.",

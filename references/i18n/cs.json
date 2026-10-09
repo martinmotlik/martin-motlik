@@ -2,7 +2,9 @@
  "lang": "cs",
  "ui": {
   "title": "Martin Motlík | Portfolio AEC marketingu | Reference",
-  "photo": "Fotografie"
+  "photo": "Fotografie",
+  "menu_aria": "Otevřít menu",
+  "menu_close": "Zavřít menu"
  },
  "chrome": {
   "nav_insights": "Insights",
@@ -17,7 +19,9 @@
   "cta_visit": "Navštívit web →",
   "ifc_subtitle": "Online validátor IFC souborů",
   "pill_booth": "Výstavní stánek",
-  "pill_print": "Tisk"
+  "pill_print": "Tisk",
+  "menu_label": "Menu",
+  "menu_language": "Jazyk"
  },
  "text": {
   "References": "Reference",
