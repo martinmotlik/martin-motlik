@@ -7,6 +7,7 @@
  *   .i-play / .i-pause   the play and pause symbols, one size
  *   .pod-btn             primary pill: white circle with the symbol + label
  *   .pod-btn2            secondary pill (All episodes, Get new episodes)
+ *   .pod-plat, .ep-plat  round icon links to Apple Podcasts and Spotify
  *   .pod-round           round play / pause (.is-lg larger, .is-soft grey)
  *   .pod-wave            waveform slider with a playhead
  *   .pod-time, .pod-rate time and speed
@@ -87,12 +88,26 @@ article .h2-row>h2{margin:0}
 .tp-t{display:block;font-size:13px;line-height:1.4;font-weight:700}
 .tp-s{display:block;margin-top:1px;font-size:13px;line-height:1.4;font-weight:600;color:#1A56DB}
 
+/* ── Listen on Apple Podcasts / Spotify: icon buttons with a tooltip (podcast page hero) */
+.pod-plats{display:flex;gap:6px;align-items:center}
+.pod-plat{position:relative;width:46px;height:46px;flex:none;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(28,42,51,.08),inset 0 0 0 1px #E6E9EE;display:flex;align-items:center;justify-content:center;transition:transform .4s cubic-bezier(.32,.72,0,1)}
+.pod-plat:hover{transform:translateY(-2px)}
+.pod-plat::after{content:attr(data-tip);position:absolute;left:50%;top:calc(100% + 8px);z-index:2;transform:translate(-50%,-4px);opacity:0;pointer-events:none;padding:5px 10px;border-radius:8px;background:#1C2A33;color:#fff;font-size:11px;line-height:1.4;font-weight:600;white-space:nowrap;transition:opacity .25s ease,transform .4s cubic-bezier(.32,.72,0,1)}
+.pod-plat:first-child::after{left:0;transform:translateY(-4px)}
+.pod-plat:hover::after,.pod-plat:focus-visible::after{opacity:1;transform:translate(-50%,0)}
+.pod-plat:first-child:hover::after,.pod-plat:first-child:focus-visible::after{transform:none}
+
 /* ── Article: episode card (#episode) */
 .ep-card{margin:40px 0 0;border:1px solid #E6E9EE;border-radius:24px;background:#fff;overflow:hidden;scroll-margin-top:84px}
 .ep-top{padding:24px;display:flex;flex-wrap:wrap;gap:22px;align-items:center}
 .ep-card .ep-cover{width:132px;height:132px;flex:none;border-radius:8px}
 .ep-intro{flex:1 1 280px;min-width:0}
 .ep-k{font-size:11px;line-height:1.4;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#1A56DB}
+.ep-k-row{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.ep-k-row .ep-k{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ep-plats{flex:none;display:flex;gap:4px;margin:-6px -6px -6px 0}
+.ep-plat{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .3s}
+.ep-plat:hover{background:#F5F6FA}
 .ep-card .ep-t{margin:8px 0 0;font-size:22px;line-height:1.2;letter-spacing:-.02em;font-weight:700;color:#1C2A33}
 .ep-card .ep-d{margin:6px 0 0;font-size:14px;line-height:1.55;color:#4B5563}
 .ep-acts{margin-top:16px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
@@ -142,6 +157,6 @@ article .h2-row>h2{margin:0}
 
 @media (prefers-reduced-motion:reduce){
   .pod-mini,.pod-mini.show{transform:translate(-50%,0);transition:opacity .2s,visibility 0s}
-  .pod-btn,.pod-round,.pod-wave i,.ep-tr-body,.ep-tr-h .chev,.ep-bar div{transition:none}
-  .pod-btn:active,.pod-round:active{transform:none}
+  .pod-btn,.pod-round,.pod-wave i,.ep-tr-body,.ep-tr-h .chev,.ep-bar div,.pod-plat,.pod-plat::after{transition:none}
+  .pod-btn:active,.pod-round:active,.pod-plat:hover{transform:none}
 }

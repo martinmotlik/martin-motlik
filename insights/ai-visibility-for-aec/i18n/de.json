@@ -1,6 +1,7 @@
 {
  "lang": "de",
  "ui": {
+  "listen_on": "Anhören auf {net}",
   "title": "Werden Sie zur Quelle: AEC-Daten fit für die KI-Suche",
   "article_title": "Werden Sie zur Quelle: AEC-Daten fit für die KI-Suche machen",
   "role": "AEC-Digitalstratege & Web Lead",

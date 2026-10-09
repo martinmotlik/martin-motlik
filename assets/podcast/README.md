@@ -8,8 +8,11 @@ cover "O · Ripple", tone InsightsLight).
 since 9 October 2026. The show is listed on
 [Apple Podcasts](https://podcasts.apple.com/podcast/id6821022648) (ID 6821022648)
 and [Spotify](https://open.spotify.com/show/5qOblzcDjhTWfzlXcHRuRv); both links
-live in `show.platforms` in `podcast/podcast.json`, which makes the buttons in
-the podcast page hero and `sameAs` in the `PodcastSeries` JSON-LD.
+live in `show.platforms` in `podcast/podcast.json`, which makes the icon
+buttons (handoff "Icon buttons": 46 px with a tooltip in the podcast page
+hero, 32 px next to the kicker of each article's episode card) and `sameAs`
+in the `PodcastSeries` JSON-LD. A new platform needs its icon in `PLAT_ICON`
+in `tools/build-podcast.py`.
 The owner e-mail in the feed is `motlik.martin@icloud.com`. Setting
 `feed_public` back to false removes `feed.xml` and every RSS link.
 
