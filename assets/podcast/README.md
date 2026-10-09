@@ -13,9 +13,10 @@ the podcast page hero and `sameAs` in the `PodcastSeries` JSON-LD.
 The owner e-mail in the feed is `motlik.martin@icloud.com`. Setting
 `feed_public` back to false removes `feed.xml` and every RSS link.
 
-Still to do: a spoken AI note at the end of episode 1 (Apple Podcasts
-guideline 1.11 asks for the disclosure in the audio too, not only in the
-metadata).
+AI voices are disclosed in text only: in the show description and in each
+episode's `disclosure` (feed, article, JSON-LD). There is no spoken note in
+the audio; if Apple ever asks for one (guideline 1.11), add it at the end of
+the episode so the chapter times stay put.
 
 ### "Get new episodes" (e-mail)
 
