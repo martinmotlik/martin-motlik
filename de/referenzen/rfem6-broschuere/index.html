@@ -561,6 +561,17 @@
           .lang-group { display: none; }
           .nav-hamburger { display: flex; }
         }
+    
+    /* ── Mobile gutter, the same on every page of the site (as on the Insights
+       pages): 24 px, 16 px up to 360 px. Last in the stylesheet, so it wins. ── */
+    :root { --gutter: 24px; }
+    @media (max-width: 360px) { :root { --gutter: 16px; } }
+    @media (max-width: 767px) {
+      .nav-inner, .footer-inner, .wrap, .intro, .event-details, .gallery-nav, .gallery-header, .model-section, .pdf-section, .project-nav-inner, .filmstrip { padding-left: var(--gutter); padding-right: var(--gutter); }
+      .filmstrip { scroll-padding-left: var(--gutter); }
+      /* 44 x 44 px touch target; the 22 px icon keeps its place at the gutter */
+      .nav-hamburger { padding: 0; width: 44px; height: 44px; align-items: center; justify-content: center; margin-right: -11px; }
+    }
     </style>
 </head>
 <body>
