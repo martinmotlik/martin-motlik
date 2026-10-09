@@ -497,7 +497,7 @@ def build():
 
 
 # sitemap.xml: every page in every language, each with all its alternates.
-SITEMAP = {  # path: (lastmod, changefreq, priority)
+SITEMAP = {  # path: (lastmod, changefreq, priority); None = page is noindex, left out
     '/': ('2026-10-07', 'monthly', '1.0'),
     '/services/': ('2026-10-07', 'monthly', '0.9'),
     '/references/': ('2026-10-07', 'monthly', '0.9'),
@@ -507,7 +507,7 @@ SITEMAP = {  # path: (lastmod, changefreq, priority)
     '/insights/': ('2026-10-08', 'weekly', '0.9'),
     '/insights/podcast/': ('2026-10-09', 'weekly', '0.8'),
     ARTICLE: ('2026-10-09', 'monthly', '0.8'),
-    '/privacy/': ('2026-10-09', 'yearly', '0.3'),
+    '/privacy/': None,                      # noindex: not in the sitemap
 }
 
 
@@ -518,6 +518,8 @@ def sitemap():
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
            '        xmlns:xhtml="http://www.w3.org/1999/xhtml">', '']
     for p in PAGES:
+        if SITEMAP[p['path']] is None:
+            continue
         lastmod, freq, prio = SITEMAP[p['path']]
         alts = [(l, SITE + url(p['path'], l)) for l in ('en',) + LANGS] + [('x-default', SITE + p['path'])]
         for lang in ('en',) + LANGS:
