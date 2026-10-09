@@ -5,7 +5,11 @@ Design: the handoff "Insights Podcast" (article integration, podcast page,
 cover "O · Ripple", tone InsightsLight).
 
 **The feed is public** (`"feed_public": true` in `podcast/podcast.json`)
-since 9 October 2026 and is being submitted to Apple Podcasts and Spotify.
+since 9 October 2026. The show is listed on
+[Apple Podcasts](https://podcasts.apple.com/podcast/id6821022648) (ID 6821022648)
+and [Spotify](https://open.spotify.com/show/5qOblzcDjhTWfzlXcHRuRv); both links
+live in `show.platforms` in `podcast/podcast.json`, which makes the buttons in
+the podcast page hero and `sameAs` in the `PodcastSeries` JSON-LD.
 The owner e-mail in the feed is `motlik.martin@icloud.com`. Setting
 `feed_public` back to false removes `feed.xml` and every RSS link.
 
@@ -23,7 +27,7 @@ it the page shows only "Play latest episode". The form posts `email` with
 episodes are announced by hand to the collected addresses. Mention the
 sign-up in the privacy information.
 
-### Going to Apple Podcasts, Spotify & co. later
+### Listing on Apple Podcasts, Spotify & co.
 
 1. Set `"feed_public": true` in `podcast/podcast.json` and run
    `python3 tools/build-i18n.py`. That publishes `podcast/feed.xml` and adds
@@ -31,8 +35,8 @@ sign-up in the privacy information.
 2. Submit `https://martinmotlik.com/podcast/feed.xml` in Apple Podcasts
    Connect and Spotify for Creators (your accounts; they verify ownership via
    the e-mail in the feed).
-3. Once approved, add the Apple and Spotify links to the podcast page hero,
-   next to "Get new episodes".
+3. Once approved, put the Apple and Spotify show links in `show.platforms`
+   and rebuild (done for both).
 
 | What | Where |
 |---|---|
