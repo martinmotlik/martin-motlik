@@ -64,7 +64,9 @@
   "about_p1": "Insights je pro ty, kdo vysvětlují inženýrství trhu: marketingové a produktové týmy výrobců inženýrského softwaru, stavebních výrobků i projekčních kanceláří. Pokud chcete, aby vaši odbornost našli, pochopili a citovali inženýři i vyhledávání s AI, jsou tyto rozhovory pro vás.",
   "about_p2": "Každý díl vychází z jednoho článku Insights a trvá zhruba 15 minut. Probírám ho se Sarah, mou virtuální AI spolumoderátorkou, na jednom praktickém případu, aby se z myšlenek staly konkrétní kroky. Každý díl má kapitoly a úplný přepis synchronizovaný se zvukem a články jsou k dispozici v angličtině, češtině a němčině.",
   "menu_label": "Menu",
-  "menu_language": "Jazyk"
+  "menu_language": "Jazyk",
+  "footer_privacy": "Ochrana osobních údajů",
+  "footer_cookies": "Nastavení cookies"
  },
  "text": {
   "Oct 8, 2026": "8. října 2026",

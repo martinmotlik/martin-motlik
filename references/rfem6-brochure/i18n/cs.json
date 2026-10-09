@@ -22,7 +22,9 @@
   "btn_pdf": "Stáhnout PDF",
   "nav_sub": "Výstavní stánek · Portland, OR",
   "menu_label": "Menu",
-  "menu_language": "Jazyk"
+  "menu_language": "Jazyk",
+  "footer_privacy": "Ochrana osobních údajů",
+  "footer_cookies": "Nastavení cookies"
  },
  "text": {
   "References": "Reference",

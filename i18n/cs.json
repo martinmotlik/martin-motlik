@@ -63,7 +63,9 @@
   "contact_li_value": "Spojte se se mnou nebo mi napište na LinkedInu",
   "contact_email_label": "E-mail",
   "menu_label": "Menu",
-  "menu_language": "Jazyk"
+  "menu_language": "Jazyk",
+  "footer_privacy": "Ochrana osobních údajů",
+  "footer_cookies": "Nastavení cookies"
  },
  "text": {
   "References": "Reference",

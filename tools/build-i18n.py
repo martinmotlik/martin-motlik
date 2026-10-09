@@ -40,6 +40,7 @@ PAGES = [
     {'path': '/references/rfem6-brochure/', 'kind': 'page'},
     {'path': '/insights/', 'kind': 'list'},
     {'path': '/insights/podcast/', 'kind': 'page'},
+    {'path': '/privacy/', 'kind': 'page'},
     {'path': ARTICLE, 'kind': 'article'},
 ]
 
@@ -54,6 +55,7 @@ URLS = {
     '/references/nascc-2026/': {'cs': '/cs/reference/nascc-2026/', 'de': '/de/referenzen/nascc-2026/'},
     '/references/mass-timber-2026/': {'cs': '/cs/reference/mass-timber-2026/', 'de': '/de/referenzen/mass-timber-2026/'},
     '/references/rfem6-brochure/': {'cs': '/cs/reference/rfem6-brozura/', 'de': '/de/referenzen/rfem6-broschuere/'},
+    '/privacy/': {'cs': '/cs/ochrana-osobnich-udaju/', 'de': '/de/datenschutz/'},
     ARTICLE: {'cs': '/cs/insights/data-aec-pro-vyhledavani-s-ai/',
               'de': '/de/insights/aec-daten-fuer-ki-suche/'},
 }
@@ -505,6 +507,7 @@ SITEMAP = {  # path: (lastmod, changefreq, priority)
     '/insights/': ('2026-10-08', 'weekly', '0.9'),
     '/insights/podcast/': ('2026-10-09', 'weekly', '0.8'),
     ARTICLE: ('2026-10-09', 'monthly', '0.8'),
+    '/privacy/': ('2026-10-09', 'yearly', '0.3'),
 }
 
 

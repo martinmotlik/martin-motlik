@@ -3,13 +3,19 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LL09W3RK8L"></script>
+    <!-- Google Analytics 4, only after consent (/assets/consent.js): Consent Mode defaults to
+         denied, and gtag.js loads only when a valid "yes" is stored (12 months, version 1). -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-LL09W3RK8L');
+      (function () {
+        var ok = false;
+        try { var c = JSON.parse(localStorage.getItem('mm-consent')); ok = !!(c && c.v === 1 && c.analytics && Date.now() - c.ts < 31536e6); } catch (e) {}
+        gtag('consent', 'default', { analytics_storage: ok ? 'granted' : 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+        if (!ok) return;
+        window.mmGa = true; gtag('js', new Date()); gtag('config', 'G-LL09W3RK8L');
+        var s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=G-LL09W3RK8L'; document.head.appendChild(s);
+      })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -594,6 +600,8 @@
     </style>
   <link rel="stylesheet" href="/assets/menu.css">
   <script src="/assets/menu.js" defer></script>
+  <link rel="stylesheet" href="/assets/consent.css">
+  <script src="/assets/consent.js" defer></script>
 </head>
 <body>
 <script type="application/json" id="i18n-ui">{"title": "Martin Motlík | AEC-Marketing-Portfolio | Referenzen", "photo": "Foto", "menu_aria": "Menü öffnen", "menu_close": "Menü schließen"}</script>
@@ -863,6 +871,7 @@
       DI&#268;: CZ0103073146
       <span class="footer-sep">&middot;</span>
       <a href="mailto:motlik.martin@gmail.com">motlik.martin@gmail.com</a>
+      <span class="footer-legal"><a href="/de/datenschutz/" data-i18n="footer_privacy">Datenschutz</a><button type="button" data-consent-open data-i18n="footer_cookies">Cookie-Einstellungen</button></span>
     </div>
   </div>
 </footer>

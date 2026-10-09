@@ -27,7 +27,9 @@
   "glb_desc": "Interaktivní 3D model výstavního stánku Dlubal Software navrženého pro International Mass Timber Conference 2026 v Portlandu.",
   "nav_sub": "Výstavní stánek · Atlanta, GA",
   "menu_label": "Menu",
-  "menu_language": "Jazyk"
+  "menu_language": "Jazyk",
+  "footer_privacy": "Ochrana osobních údajů",
+  "footer_cookies": "Nastavení cookies"
  },
  "text": {
   "References": "Reference",

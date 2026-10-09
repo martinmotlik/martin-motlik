@@ -21,7 +21,9 @@
   "pill_booth": "Messestand-Design",
   "pill_print": "Print",
   "menu_label": "Menü",
-  "menu_language": "Sprache"
+  "menu_language": "Sprache",
+  "footer_privacy": "Datenschutz",
+  "footer_cookies": "Cookie-Einstellungen"
  },
  "text": {
   "References": "Referenzen",

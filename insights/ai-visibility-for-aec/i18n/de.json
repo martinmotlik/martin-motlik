@@ -68,7 +68,9 @@
   "ep_min": "Min.",
   "chip_at": "Anhören ab",
   "menu_label": "Menü",
-  "menu_language": "Sprache"
+  "menu_language": "Sprache",
+  "footer_privacy": "Datenschutz",
+  "footer_cookies": "Cookie-Einstellungen"
  },
  "k": {
   "hero.span1": "KI im AEC",

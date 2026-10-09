@@ -35,7 +35,9 @@
   "podcast_link": "Auch als Podcast",
   "podcast_tag": "Podcast",
   "menu_label": "Menü",
-  "menu_language": "Sprache"
+  "menu_language": "Sprache",
+  "footer_privacy": "Datenschutz",
+  "footer_cookies": "Cookie-Einstellungen"
  },
  "meta": {
   "description": "Praxisnahe Texte über KI-Einführung, Marketing für Ingenieursoftware und Web-Ökosysteme, die Ingenieure wirklich nutzen. Notizen vom Umzug des AEC in den Browser.",

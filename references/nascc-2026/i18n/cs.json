@@ -27,7 +27,9 @@
   "glb_desc": "Interaktivní 3D model výstavního stánku Dlubal Software navrženého pro konferenci NASCC: The Steel Conference 2026 v Atlantě ve státě Georgia.",
   "nav_sub": "Výstavní stánek · Portland, OR",
   "menu_label": "Menu",
-  "menu_language": "Jazyk"
+  "menu_language": "Jazyk",
+  "footer_privacy": "Ochrana osobních údajů",
+  "footer_cookies": "Nastavení cookies"
  },
  "text": {
   "References": "Reference",

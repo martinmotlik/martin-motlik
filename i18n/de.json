@@ -63,7 +63,9 @@
   "contact_li_value": "Vernetzen Sie sich oder schreiben Sie mir auf LinkedIn",
   "contact_email_label": "E-Mail",
   "menu_label": "Menü",
-  "menu_language": "Sprache"
+  "menu_language": "Sprache",
+  "footer_privacy": "Datenschutz",
+  "footer_cookies": "Cookie-Einstellungen"
  },
  "text": {
   "References": "Referenzen",

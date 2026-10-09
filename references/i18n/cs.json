@@ -21,7 +21,9 @@
   "pill_booth": "Výstavní stánek",
   "pill_print": "Tisk",
   "menu_label": "Menu",
-  "menu_language": "Jazyk"
+  "menu_language": "Jazyk",
+  "footer_privacy": "Ochrana osobních údajů",
+  "footer_cookies": "Nastavení cookies"
  },
  "text": {
   "References": "Reference",

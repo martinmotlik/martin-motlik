@@ -35,7 +35,9 @@
   "podcast_link": "Také jako podcast",
   "podcast_tag": "Podcast",
   "menu_label": "Menu",
-  "menu_language": "Jazyk"
+  "menu_language": "Jazyk",
+  "footer_privacy": "Ochrana osobních údajů",
+  "footer_cookies": "Nastavení cookies"
  },
  "meta": {
   "description": "Praktické texty o zavádění AI, marketingu inženýrského softwaru a webových ekosystémech, které inženýři opravdu používají. Poznatky z přesunu AEC do prohlížeče.",

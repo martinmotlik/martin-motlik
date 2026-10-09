@@ -60,7 +60,9 @@
   "cta_title": "Pojďme k detailům.",
   "cta_desc": "Máte konkrétní projekt? Ozvěte se a probereme vaše přesné technické požadavky. Rád vám ukážu relevantní ukázky ze své dosavadní práce.",
   "menu_label": "Menu",
-  "menu_language": "Jazyk"
+  "menu_language": "Jazyk",
+  "footer_privacy": "Ochrana osobních údajů",
+  "footer_cookies": "Nastavení cookies"
  },
  "text": {
   "References": "Reference",

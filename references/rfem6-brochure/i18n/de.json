@@ -22,7 +22,9 @@
   "btn_pdf": "PDF herunterladen",
   "nav_sub": "Messestand-Design · Portland, OR",
   "menu_label": "Menü",
-  "menu_language": "Sprache"
+  "menu_language": "Sprache",
+  "footer_privacy": "Datenschutz",
+  "footer_cookies": "Cookie-Einstellungen"
  },
  "text": {
   "References": "Referenzen",

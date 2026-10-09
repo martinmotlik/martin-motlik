@@ -60,7 +60,9 @@
   "cta_title": "Lassen Sie uns konkret werden.",
   "cta_desc": "Sie haben ein konkretes Projekt? Melden Sie sich, um Ihre genauen technischen Anforderungen zu besprechen. Gerne zeige ich Ihnen passende Beispiele meiner bisherigen Arbeit.",
   "menu_label": "Menü",
-  "menu_language": "Sprache"
+  "menu_language": "Sprache",
+  "footer_privacy": "Datenschutz",
+  "footer_cookies": "Cookie-Einstellungen"
  },
  "text": {
   "References": "Referenzen",

@@ -1,0 +1,96 @@
+/* Cookie consent, shared by every page (behaviour and copy: /assets/consent.js).
+ * Design: "Cookie Consent" (Claude Design), spec sheet values. Layer 1 is a
+ * quiet banner (not modal), layer 2 a dialog; one optional category,
+ * Reject and Accept always the same size and weight.
+ * Layers: banner 98 (under the mobile menu, 99-100) · dialog 120. */
+
+/* ── Layer 1: banner */
+.cc-banner{position:fixed;left:24px;bottom:24px;z-index:98;width:min(360px,calc(100vw - 48px));padding:16px 16px 10px;border-radius:20px;background:#fff;box-shadow:inset 0 0 0 1px #EEF0F4,0 1px 2px rgba(28,42,51,.04),0 18px 44px -26px rgba(28,42,51,.28);display:flex;flex-direction:column;font-family:Inter,system-ui,sans-serif;color:#1C2A33;-webkit-font-smoothing:antialiased;opacity:0;transform:translateY(12px);transition:opacity .5s cubic-bezier(.32,.72,0,1),transform .5s cubic-bezier(.32,.72,0,1)}
+.cc-banner.is-in{opacity:1;transform:none}
+.cc-banner.is-out{opacity:0;transform:translateY(12px);transition-duration:.3s}
+.cc-banner p{margin:0;font-size:13px;line-height:1.5;color:#4B5563;text-wrap:pretty}
+.cc-banner p strong{font-weight:600;color:#1C2A33}
+.cc-choice{margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.cc-links{margin:2px -8px -6px;display:flex;flex-wrap:wrap;gap:2px}
+
+/* ── Buttons and links */
+.cc-btn{font:inherit;height:36px;margin:0;padding:0 8px;border:0;border-radius:999px;cursor:pointer;font-size:13px;line-height:1.1;font-weight:600;text-align:center;transition:background .3s cubic-bezier(.32,.72,0,1),color .3s}
+.cc-btn-tint{background:#E6EDFD;color:#1A56DB}
+.cc-btn-tint:hover{background:#1A56DB;color:#fff}
+.cc-btn-soft{height:40px;background:#F5F6FA;color:#1C2A33}
+.cc-btn-soft:hover{background:#E6EDFD;color:#1A56DB}
+.cc-btn-primary{grid-column:1/-1;height:40px;background:#1A56DB;color:#fff}
+.cc-btn-primary:hover{background:#1E429F;color:#fff}
+.cc-link{font:inherit;min-height:40px;margin:0;padding:0 8px;display:flex;align-items:center;border:0;border-radius:6px;background:none;cursor:pointer;font-size:12px;font-weight:500;line-height:1.2;color:#1A56DB;text-decoration:none}
+a.cc-link:hover,.cc-link:hover{color:#1E429F}
+.cc-banner :focus-visible,.cc-dialog :focus-visible,.footer-legal :focus-visible{outline:2px solid #1A56DB;outline-offset:3px}
+
+/* ── Layer 2: dialog */
+.cc-wrap{position:fixed;inset:0;z-index:120;display:flex;align-items:center;justify-content:center;padding:24px;font-family:Inter,system-ui,sans-serif;color:#1C2A33;-webkit-font-smoothing:antialiased}
+.cc-backdrop{position:absolute;inset:0;background:rgba(28,42,51,.08);opacity:0;transition:opacity .3s ease}
+.cc-dialog{position:relative;width:min(480px,100%);max-height:calc(100vh - 48px);overflow-y:auto;overscroll-behavior:contain;padding:24px;border-radius:20px;background:#fff;box-shadow:inset 0 0 0 1px #EEF0F4,0 1px 2px rgba(28,42,51,.04),0 18px 44px -26px rgba(28,42,51,.28);display:flex;flex-direction:column;opacity:0;transform:translateY(12px);transition:opacity .5s cubic-bezier(.32,.72,0,1),transform .5s cubic-bezier(.32,.72,0,1)}
+.cc-wrap.is-in .cc-backdrop{opacity:1}
+.cc-wrap.is-in .cc-dialog{opacity:1;transform:none}
+.cc-wrap.is-out .cc-backdrop,.cc-wrap.is-out .cc-dialog{opacity:0;transition-duration:.3s}
+.cc-wrap.is-out .cc-dialog{transform:translateY(12px)}
+.cc-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.cc-wrap .cc-title{margin:0;font-size:17px;line-height:1.3;font-weight:600;letter-spacing:-.01em;color:#1C2A33}
+.cc-x{flex:none;width:44px;height:44px;margin:-10px -10px 0 0;padding:0;border:0;border-radius:999px;background:transparent;cursor:pointer;color:#65676B;font:inherit;font-size:18px;line-height:1;transition:background .3s,color .3s}
+.cc-x:hover{background:#F5F6FA;color:#1C2A33}
+.cc-cats{margin-top:20px;border-radius:16px;box-shadow:inset 0 0 0 1px #EEF0F4}
+.cc-cat{padding:18px 18px 18px 20px;display:flex;gap:16px;align-items:flex-start}
+.cc-cat+.cc-cat{border-top:1px solid #EEF0F4}
+.cc-cat-txt{flex:1;min-width:0}
+.cc-wrap .cc-cat-name{margin:0;font-size:14px;line-height:1.4;font-weight:600;color:#1C2A33}
+.cc-wrap .cc-cat-desc{margin:4px 0 0;font-size:13px;line-height:1.55;color:#4B5563;text-wrap:pretty}
+.cc-wrap .cc-cat-meta{margin:8px 0 0;font-size:12px;line-height:1.5;color:#65676B;text-wrap:pretty}
+.cc-always{flex:none;display:flex;align-items:center;gap:8px;min-height:44px;margin-top:-6px}
+.cc-always-l{font-size:12px;font-weight:600;color:#65676B;white-space:nowrap}
+.cc-actions{margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.cc-policy{align-self:center;margin-bottom:-12px}
+
+/* ── Switch: 48 x 28 track, 22 px knob, 48 x 44 hit area */
+.cc-switch{flex:none;width:48px;height:44px;margin:-6px 0 0;padding:0;border:0;border-radius:999px;background:transparent;cursor:pointer;display:flex;align-items:center}
+.cc-track{position:relative;display:block;width:48px;height:28px;border-radius:999px;background:#fff;box-shadow:inset 0 0 0 1.5px #8A949E;transition:background .3s cubic-bezier(.32,.72,0,1),box-shadow .3s}
+.cc-knob{position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#65676B;box-shadow:0 1px 2px rgba(28,42,51,.2);transition:transform .4s cubic-bezier(.32,.72,0,1),background .3s}
+.cc-switch[aria-checked="true"] .cc-track{background:#1A56DB;box-shadow:none}
+.cc-switch[aria-checked="true"] .cc-knob{background:#fff;transform:translateX(20px)}
+.cc-switch[aria-checked="false"]:hover .cc-track{background:#E6EDFD;box-shadow:inset 0 0 0 1.5px #1A56DB}
+.cc-switch[aria-checked="false"]:hover .cc-knob{background:#1A56DB}
+.cc-switch[aria-checked="true"]:hover .cc-track{background:#1E429F}
+.cc-locked .cc-track{background:#A4BCF0;box-shadow:none;cursor:not-allowed}
+.cc-locked .cc-knob{background:#fff;transform:translateX(20px)}
+
+/* ── Footer: Privacy policy · Cookie settings */
+.footer-legal{display:inline-flex;align-items:center;gap:20px;margin-left:10px;padding-left:20px;border-left:1px solid #E6E9EE;vertical-align:middle}
+.footer-legal a,.footer-legal button{font:inherit;margin:-14px -6px;padding:14px 6px;border:0;background:none;color:#65676B;cursor:pointer;text-decoration:none;line-height:inherit}
+.footer-legal a:hover,.footer-legal button:hover{color:#1C2A33}
+
+/* While the banner is up, the podcast mini player waits */
+html.cc-pending #pod-mini{display:none!important}
+
+@media (max-width:767px){
+  .cc-banner{left:var(--gutter,24px);right:var(--gutter,24px);width:auto;bottom:max(24px,calc(env(safe-area-inset-bottom,0px) + 12px))}
+  .cc-banner .cc-btn{height:44px}
+  .cc-wrap{align-items:flex-end;padding:0}
+  .cc-dialog{width:100%;max-height:92vh;padding:20px 20px calc(20px + env(safe-area-inset-bottom,0px));border-radius:20px 20px 0 0;box-shadow:0 -12px 32px -18px rgba(28,42,51,.28)}
+  .cc-head{align-items:center;gap:12px}
+  .cc-x{margin:0 -10px 0 0;background:#F5F6FA;font-size:16px}
+  .cc-cats{margin-top:12px;border-radius:0;box-shadow:none}
+  .cc-cat{padding:14px 0;gap:12px}
+  .cc-cat+.cc-cat{border-top:0}
+  .cc-cat:first-child{border-bottom:1px solid #EEF0F4}
+  .cc-wrap .cc-cat-desc{line-height:1.5}
+  .cc-wrap .cc-cat-meta{margin-top:6px;line-height:1.45}
+  .cc-always{flex-direction:column-reverse;align-items:flex-end;gap:4px;min-height:0;margin-top:0}
+  .cc-always-l{font-size:11px}
+  .cc-switch{margin-top:-8px}
+  .cc-actions{margin-top:12px}
+  .cc-btn-soft,.cc-btn-primary{height:44px}
+  .footer-legal{display:flex;gap:4px;margin:10px -10px -12px;padding:4px 0 0;border-left:0;border-top:1px solid #EEF0F4}
+  .footer-legal a,.footer-legal button{min-height:44px;margin:0;padding:0 10px;display:flex;align-items:center}
+}
+@media (prefers-reduced-motion:reduce){
+  .cc-banner,.cc-dialog,.cc-wrap.is-out .cc-dialog,.cc-banner.is-out{transform:none!important}
+  .cc-knob,.cc-track{transition:none}
+}

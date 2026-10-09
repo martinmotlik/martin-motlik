@@ -68,7 +68,9 @@
   "ep_min": "min",
   "chip_at": "Poslechnout od",
   "menu_label": "Menu",
-  "menu_language": "Jazyk"
+  "menu_language": "Jazyk",
+  "footer_privacy": "Ochrana osobních údajů",
+  "footer_cookies": "Nastavení cookies"
  },
  "k": {
   "hero.span1": "AI v AEC",
