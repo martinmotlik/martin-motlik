@@ -20,7 +20,8 @@
   "notify_sending": "Odesílám…",
   "notify_invalid": "Zadejte platnou e-mailovou adresu.",
   "notify_failed": "Odeslání se nepovedlo. Zkuste to prosím znovu.",
-  "seek": "Přetočit v podcastu"
+  "seek": "Přetočit v podcastu",
+  "how_title": "Jak podcast funguje"
  },
  "chrome": {
   "nav_references": "Reference",
@@ -42,7 +43,6 @@
   "ep_count_one": "díl",
   "ep_count_many": "dílů",
   "read_article": "Přečíst článek →",
-  "how_title": "Jak podcast funguje",
   "how1_t": "Nejdřív článek",
   "how1_d": "Každý díl vychází z publikovaného článku Insights.",
   "how2_t": "Skutečný případ",
@@ -58,7 +58,10 @@
   "notify_me": "Upozornit mě",
   "notify_help": "Jeden e-mail ke každému novému dílu. Žádný newsletter, odhlásit se můžete kdykoli.",
   "pod_chapters": "Kapitoly",
-  "pod_transcript": "Přepis"
+  "pod_transcript": "Přepis",
+  "about_title": "O podcastu",
+  "about_p1": "Insights je pro ty, kdo vysvětlují inženýrství trhu: marketingové a produktové týmy výrobců inženýrského softwaru, stavebních výrobků i projekčních kanceláří. Pokud chcete, aby vaši odbornost našli, pochopili a citovali inženýři i vyhledávání s AI, jsou tyto rozhovory pro vás.",
+  "about_p2": "Každý díl vychází z jednoho článku Insights a trvá zhruba 15 minut. Probírám ho se Sarah, mou virtuální AI spolumoderátorkou, na jednom praktickém případu, aby se z myšlenek staly konkrétní kroky. Každý díl má kapitoly a úplný přepis synchronizovaný se zvukem a články jsou k dispozici v angličtině, češtině a němčině."
  },
  "text": {
   "Oct 8, 2026": "8. října 2026",
@@ -76,9 +79,9 @@
   "motlik.martin@gmail.com"
  ],
  "meta": {
-  "description": "Podcast Martina Motlíka o AI v AEC, marketingu inženýrského softwaru a webových ekosystémech. Každý díl rozebírá jeden článek z Insights na praktickém případu.",
+  "description": "Podcast Martina Motlíka o AI v AEC, marketingu inženýrského softwaru a webových ekosystémech. Každý díl rozebírá jeden článek Insights na praxi.",
   "og_title": "Insights with Martin Motlík – podcast",
-  "og_description": "Podcast Martina Motlíka o AI v AEC, marketingu inženýrského softwaru a webových ekosystémech. Každý díl rozebírá jeden článek z Insights na praktickém případu.",
+  "og_description": "Podcast Martina Motlíka o AI v AEC, marketingu inženýrského softwaru a webových ekosystémech. Každý díl rozebírá jeden článek Insights na praxi.",
   "twitter_title": "Insights with Martin Motlík – podcast",
   "twitter_description": "Podcast Martina Motlíka o AI v AEC, marketingu inženýrského softwaru a webových ekosystémech.",
   "image_alt": "Obal podcastu Insights with Martin Motlík",
@@ -87,5 +90,8 @@
  "ld": {
   "@graph.1.itemListElement.0.name": "Domů",
   "@graph.1.itemListElement.2.name": "Podcast"
+ },
+ "attrs": {
+  "Martin Motlík working on a laptop outdoors, surrounded by the icons of AI assistants and search engines": "Martin Motlík pracuje venku na notebooku, obklopený ikonami asistentů AI a vyhledávačů"
  }
 }

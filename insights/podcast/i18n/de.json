@@ -20,7 +20,8 @@
   "notify_sending": "Wird gesendet…",
   "notify_invalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
   "notify_failed": "Das hat nicht geklappt. Bitte versuchen Sie es erneut.",
-  "seek": "Im Podcast springen"
+  "seek": "Im Podcast springen",
+  "how_title": "So funktioniert der Podcast"
  },
  "chrome": {
   "nav_references": "Referenzen",
@@ -42,7 +43,6 @@
   "ep_count_one": "Folge",
   "ep_count_many": "Folgen",
   "read_article": "Artikel lesen →",
-  "how_title": "So funktioniert der Podcast",
   "how1_t": "Zuerst der Artikel",
   "how1_d": "Jede Folge beginnt mit einem veröffentlichten Insights-Artikel.",
   "how2_t": "Ein echter Fall",
@@ -58,7 +58,10 @@
   "notify_me": "Benachrichtigen",
   "notify_help": "Eine E-Mail pro neuer Folge. Kein Newsletter, jederzeit abbestellbar.",
   "pod_chapters": "Kapitel",
-  "pod_transcript": "Transkript"
+  "pod_transcript": "Transkript",
+  "about_title": "Über den Podcast",
+  "about_p1": "Insights richtet sich an alle, die dem Markt Ingenieurwissen erklären: Marketing- und Produktteams bei Anbietern von Ingenieursoftware, Bauprodukteherstellern und Ingenieurbüros. Wenn Ihre Expertise gefunden, verstanden und zitiert werden soll, von Ingenieuren und von der KI-Suche, sind diese Gespräche für Sie.",
+  "about_p2": "Jede Folge folgt einem Insights-Artikel und dauert etwa 15 Minuten. Ich bespreche ihn mit Sarah, meiner virtuellen KI-Co-Moderatorin, anhand eines Praxisfalls, damit aus Ideen konkrete Schritte werden. Jede Folge hat Kapitel und ein vollständiges, mit dem Audio synchronisiertes Transkript, und die Artikel gibt es auf Englisch, Tschechisch und Deutsch."
  },
  "text": {
   "Oct 8, 2026": "8. Oktober 2026",
@@ -75,9 +78,9 @@
   "motlik.martin@gmail.com"
  ],
  "meta": {
-  "description": "Podcast von Martin Motlík über KI im AEC, Marketing für Ingenieursoftware und Web-Ökosysteme. Jede Folge geht einen Insights-Artikel an einem Praxisfall durch.",
+  "description": "Podcast von Martin Motlík über KI im AEC, Marketing für Ingenieursoftware und Web-Ökosysteme. Jede Folge: ein Insights-Artikel, ein Praxisfall.",
   "og_title": "Insights with Martin Motlík – Podcast",
-  "og_description": "Podcast von Martin Motlík über KI im AEC, Marketing für Ingenieursoftware und Web-Ökosysteme. Jede Folge geht einen Insights-Artikel an einem Praxisfall durch.",
+  "og_description": "Podcast von Martin Motlík über KI im AEC, Marketing für Ingenieursoftware und Web-Ökosysteme. Jede Folge: ein Insights-Artikel, ein Praxisfall.",
   "twitter_title": "Insights with Martin Motlík – Podcast",
   "twitter_description": "Podcast von Martin Motlík über KI im AEC, Marketing für Ingenieursoftware und Web-Ökosysteme.",
   "image_alt": "Cover des Podcasts Insights with Martin Motlík",
@@ -85,5 +88,8 @@
  },
  "ld": {
   "@graph.1.itemListElement.0.name": "Startseite"
+ },
+ "attrs": {
+  "Martin Motlík working on a laptop outdoors, surrounded by the icons of AI assistants and search engines": "Martin Motlík arbeitet im Freien am Laptop, umgeben von den Symbolen von KI-Assistenten und Suchmaschinen"
  }
 }

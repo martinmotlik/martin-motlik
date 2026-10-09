@@ -348,6 +348,7 @@ def build_article(ep, chapters, current):
 # ── Show page ────────────────────────────────────────────────────────────────
 
 HERO = '/assets/img/ai-search-hero'                # article hero renditions, per episode later if needed
+HERO_ALT = 'Martin Motlík working on a laptop outdoors, surrounded by the icons of AI assistants and search engines'
 
 
 def latest_card(ep, chapters):
@@ -356,7 +357,7 @@ def latest_card(ep, chapters):
         <div class="latest-img">
           <picture>
             <source type="image/avif" sizes="(min-width: 900px) 480px, 100vw" srcset="{HERO}-600.avif 600w, {HERO}-900.avif 900w, {HERO}-1280.avif 1280w">
-            <img src="{HERO}-900.jpg" sizes="(min-width: 900px) 480px, 100vw" srcset="{HERO}-600.jpg 600w, {HERO}-900.jpg 900w, {HERO}-1280.jpg 1280w" width="1672" height="941" alt="" loading="lazy" decoding="async">
+            <img src="{HERO}-900.jpg" sizes="(min-width: 900px) 480px, 100vw" srcset="{HERO}-600.jpg 600w, {HERO}-900.jpg 900w, {HERO}-1280.jpg 1280w" width="1672" height="941" alt="{HERO_ALT}" loading="lazy" decoding="async">
           </picture>
           <span class="latest-flag"><span data-i18n="latest">Latest</span> · {ep_tag(ep)}</span>
         </div>
