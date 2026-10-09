@@ -371,7 +371,7 @@ def latest_card(ep, chapters):
             <span class="pod-time"><span data-pod-time>0:00</span> / {clock(ep["duration"])}</span>
           </div>
           <div class="latest-ch" data-pod-chapter-line lang="en"></div>
-          <div class="latest-foot"><a class="pod-btn2" href="{ep["article"]}" data-i18n="read_article">Read the article →</a><a href="{ep["article"]}#chapters" data-i18n="pod_chapters">Chapters</a><a href="{ep["article"]}#transcript" data-i18n="pod_transcript">Transcript</a></div>
+          <div class="latest-foot"><a class="pod-btn2" href="{ep["article"]}" data-i18n="read_article">Read the article →</a><span class="latest-links"><a href="{ep["article"]}#chapters" data-i18n="pod_chapters">Chapters</a><a href="{ep["article"]}#transcript" data-i18n="pod_transcript">Transcript</a></span></div>
         </div>
       </article>'''
 

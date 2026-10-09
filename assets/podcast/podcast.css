@@ -41,6 +41,7 @@
 .pod-rate:hover{background:#E6EDFD}
 .pod-time{flex:none;font-size:13px;line-height:1.2;color:#4B5563;font-variant-numeric:tabular-nums;white-space:nowrap}
 /* Small controls get a 44 × 44 px hit area. */
+.pod-round::before,.ep-plat::before{content:"";position:absolute;left:50%;top:50%;width:44px;height:44px;min-width:100%;min-height:100%;transform:translate(-50%,-50%)}
 .pod-rate::after,.pm-x::after{content:"";position:absolute;left:50%;top:50%;width:44px;height:44px;min-width:100%;transform:translate(-50%,-50%)}
 
 /* ── Waveform: a slider (click, drag-free, arrow keys). Played bars blue, the
@@ -106,10 +107,10 @@ article .h2-row>h2{margin:0}
 .ep-k-row{display:flex;justify-content:space-between;align-items:center;gap:12px}
 .ep-k-row .ep-k{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .ep-plats{flex:none;display:flex;gap:4px;margin:-6px -6px -6px 0}
-.ep-plat{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .3s}
+.ep-plat{position:relative;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .3s}
 .ep-plat:hover{background:#F5F6FA}
 .ep-card .ep-t{margin:8px 0 0;font-size:22px;line-height:1.2;letter-spacing:-.02em;font-weight:700;color:#1C2A33}
-.ep-card .ep-d{margin:6px 0 0;font-size:14px;line-height:1.55;color:#4B5563}
+.ep-card .ep-d{margin:6px 0 0;font-size:16px;line-height:1.55;color:#4B5563}
 .ep-acts{margin-top:16px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
 .ep-bar{height:3px;background:#EEF1F6}
 .ep-bar div{height:100%;width:0;background:#1A56DB;transition:width .25s linear}
