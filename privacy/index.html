@@ -306,7 +306,7 @@ img{display:block;max-width:100%}
 .pp p{margin:12px 0 0;font-size:16px;line-height:1.7;color:#33414A;text-wrap:pretty}
 .pp p a{text-decoration:underline;text-decoration-color:rgba(26,86,219,.35);text-underline-offset:3px}
 .pp code{font:14px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;padding:2px 6px;border-radius:6px;background:#F5F6FA;color:var(--ink)}
-.pp-btn{font:inherit;margin-top:20px;height:44px;padding:0 20px;border:0;border-radius:999px;background:#1A56DB;color:#fff;font-size:14px;font-weight:600;cursor:pointer;transition:background .3s}
+.pp-btn{font:inherit;margin:16px 0 4px;height:44px;padding:0 20px;border:0;border-radius:999px;background:#1A56DB;color:#fff;font-size:14px;font-weight:600;cursor:pointer;transition:background .3s}
 .pp-btn:hover{background:#1E429F}
 @media (max-width:620px){.pp-in{padding-top:32px;padding-bottom:64px}.pp h1{font-size:34px;letter-spacing:-.03em}.pp-lead{font-size:17px}.pp h2{margin-top:40px;font-size:20px}}
         /* With eight menu items, the full menu no longer fits next to the logo and
@@ -377,37 +377,19 @@ img{display:block;max-width:100%}
     <div class="wrap pp-in">
       <nav class="crumbs" aria-label="Breadcrumb" data-i18n-attr="aria-label:crumbs_aria"><a href="/" data-i18n="crumb_home">Home</a><span>/</span><span data-i18n="pp_h1">Privacy policy</span></nav>
       <h1 data-i18n="pp_h1">Privacy policy</h1>
-      <p class="pp-lead" data-i18n="pp_lead">How this website handles personal data and cookies, explained in plain language.</p>
       <p class="pp-date" data-i18n="pp_updated">Last updated: 9 October 2026</p>
 
-      <h2 id="controller" data-i18n="pp_h_controller">Who is responsible</h2>
-      <p data-i18n="pp_controller">This website is run by Martin Motlík, a self-employed digital consultant based in the Czech Republic (company ID/IČO 21839662, VAT ID/DIČ CZ0103073146). For any question about your personal data, write to <a href="mailto:motlik.martin@gmail.com">motlik.martin@gmail.com</a>.</p>
+      <h2 id="controller" data-i18n="pp_h_controller">Controller</h2>
+      <p data-i18n="pp_controller">The controller is Martin Motlík, a self-employed person based in the Czech Republic (company ID/IČO 21839662, VAT ID/DIČ CZ0103073146). Contact: <a href="mailto:motlik.martin@gmail.com">motlik.martin@gmail.com</a>.</p>
 
-      <h2 id="visit" data-i18n="pp_h_visit">When you visit the website</h2>
-      <p data-i18n="pp_visit_1">The website is hosted on GitHub Pages (GitHub, Inc., USA). To deliver the pages and keep them secure, GitHub processes technical data such as your IP address, the page requested and your browser type, and keeps server logs for a short time. The legal basis is my legitimate interest in running a secure website (Art. 6(1)(f) GDPR).</p>
-      <p data-i18n="pp_visit_2">The Inter typeface is loaded from Google Fonts and, on the reference pages, the 3D model viewer from Google’s script library (Google Ireland Limited). Your browser connects to Google’s servers for this, which shares your IP address with Google. No cookies are set.</p>
-
-      <h2 id="analytics" data-i18n="pp_h_analytics">Analytics, only with your consent</h2>
-      <p data-i18n="pp_analytics_1">If you agree, I use Google Analytics 4 from Google Ireland Limited (Gordon House, Barrow Street, Dublin 4, Ireland) to see how many people visit the website, which pages they read and where they come from. This helps me improve the content.</p>
-      <p data-i18n="pp_analytics_2">Google Analytics sets the cookies <code>_ga</code> and <code>_ga_LL09W3RK8L</code>, stored for up to 2 years, and processes data about your device, browser, approximate location and use of the website. It does not store your IP address. Event data are kept for 2 months. Google may process data in the USA; Google LLC is certified under the EU–US Data Privacy Framework.</p>
-      <p data-i18n="pp_analytics_3">The legal basis is your consent (Art. 6(1)(a) GDPR and Section 89(3) of the Czech Electronic Communications Act). Without it, Google Analytics is not loaded at all. You can give or withdraw your consent at any time; withdrawal does not affect processing carried out before it.</p>
+      <h2 id="processing" data-i18n="pp_h_processing">What data I process and why</h2>
+      <p data-i18n="pp_visit"><strong>Visiting the website.</strong> The website is hosted on GitHub Pages (GitHub, Inc., USA), which processes your IP address and technical data about your request in order to deliver the pages and keep them secure. The Inter font is loaded from Google Fonts and, on the reference pages, a 3D viewer from Google’s library, which also passes your IP address to Google (Google Ireland Limited). Legal basis: legitimate interest in running the website (Art. 6(1)(f) GDPR). Data may be transferred to the USA under the EU–US Data Privacy Framework.</p>
+      <p data-i18n="pp_analytics"><strong>Analytics (only with your consent).</strong> Google Analytics 4 (Google Ireland Limited) measures visits and page views so that I can improve the content. It uses the cookies <code>_ga</code> and <code>_ga_LL09W3RK8L</code> (up to 2 years); event data are kept for 2 months. Data may be transferred to Google LLC in the USA under the EU–US Data Privacy Framework. Legal basis: your consent (Art. 6(1)(a) GDPR, Section 89(3) of the Czech Electronic Communications Act), which you can withdraw at any time in the cookie settings.</p>
       <button type="button" class="pp-btn" data-consent-open data-i18n="pp_settings_btn">Open cookie settings</button>
-
-      <h2 id="storage" data-i18n="pp_h_storage">Stored in your browser</h2>
-      <p data-i18n="pp_storage">Your browser keeps your cookie choice for 12 months, so the banner does not appear on every visit. When you play a podcast episode, the player remembers where you left off. Both stay on your device, are never sent to me or anyone else, and serve features you use yourself, so they do not require consent.</p>
-
-      <h2 id="contact" data-i18n="pp_h_contact">When you contact me</h2>
-      <p data-i18n="pp_contact">If you write to me by e-mail or on LinkedIn, I use your name, contact details and message only to reply and, if we work together, to prepare and perform our agreement. The legal basis is steps taken at your request before entering into a contract and my legitimate interest in answering enquiries (Art. 6(1)(b) and (f) GDPR). I keep correspondence for as long as needed to deal with it and as required by law, usually no longer than three years after our last contact. Messages sent through LinkedIn are also subject to LinkedIn’s privacy policy.</p>
-
-      <h2 id="links" data-i18n="pp_h_links">Links to other services</h2>
-      <p data-i18n="pp_links">Share buttons and links to LinkedIn, Apple Podcasts, Spotify and other websites are plain links. Nothing is sent to these services until you click; after that, their own privacy policies apply.</p>
+      <p data-i18n="pp_contact"><strong>Contact.</strong> If you write to me by e-mail or on LinkedIn, I process your name, contact details and message in order to reply and, where relevant, to prepare a contract. Legal basis: Art. 6(1)(b) and (f) GDPR. I keep the correspondence for no longer than three years after our last contact. Providing the data is voluntary, but without it I cannot reply.</p>
 
       <h2 id="rights" data-i18n="pp_h_rights">Your rights</h2>
-      <p data-i18n="pp_rights_1">You have the right to access your personal data, to have it corrected or erased, to restrict or object to its processing, and to data portability. To exercise these rights, write to <a href="mailto:motlik.martin@gmail.com">motlik.martin@gmail.com</a>.</p>
-      <p data-i18n="pp_rights_2">You can also lodge a complaint with the Czech Office for Personal Data Protection (Úřad pro ochranu osobních údajů, Pplk. Sochora 27, 170 00 Praha 7, <a href="https://uoou.gov.cz/" target="_blank" rel="noopener">uoou.gov.cz</a>) or with the supervisory authority in your country.</p>
-
-      <h2 id="changes" data-i18n="pp_h_changes">Changes</h2>
-      <p data-i18n="pp_changes">I update this policy whenever the website changes the way it handles data. The date at the top shows the current version.</p>
+      <p data-i18n="pp_rights">You have the right of access, rectification and erasure, the right to restrict processing, to data portability and to object, and the right to withdraw your consent at any time. Write to <a href="mailto:motlik.martin@gmail.com">motlik.martin@gmail.com</a>. You can also lodge a complaint with the Czech Office for Personal Data Protection (Úřad pro ochranu osobních údajů, <a href="https://uoou.gov.cz/" target="_blank" rel="noopener">uoou.gov.cz</a>).</p>
     </div>
   </article>
 </main>
