@@ -10,9 +10,10 @@
      social previews need (3000 px PNG master, JPG renditions); the animated
      cover on /insights/podcast/ is the same design in HTML/CSS.
      Open it in a browser; the buttons download the images. -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=block" rel="stylesheet">
+<!-- Inter from this site (/assets/fonts/inter.css), not from Google Fonts -->
+<link rel="preload" href="/assets/fonts/inter/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts/inter.css">
+<style>html{font-optical-sizing:none}</style>
 <style>
   body{margin:0;padding:24px;background:#f5f6fa;font:14px Inter,system-ui,sans-serif;color:#1c2a33}
   .row{display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start}

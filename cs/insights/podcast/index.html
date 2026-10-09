@@ -59,9 +59,10 @@
 
     <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Inter from this site (/assets/fonts/inter.css), not from Google Fonts -->
+    <link rel="preload" href="/assets/fonts/inter/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/assets/fonts/inter.css">
+    <style>html{font-optical-sizing:none}</style>
     <link rel="stylesheet" href="/assets/podcast/podcast.css">
 
     <!-- ── Schema.org JSON-LD (the series and its episodes: tools/build-podcast.py) ── -->

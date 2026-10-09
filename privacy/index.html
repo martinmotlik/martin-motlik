@@ -57,9 +57,10 @@
 
     <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Inter from this site (/assets/fonts/inter.css), not from Google Fonts -->
+    <link rel="preload" href="/assets/fonts/inter/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/assets/fonts/inter.css">
+    <style>html{font-optical-sizing:none}</style>
 
     <!-- ── Schema.org JSON-LD ── -->
     <script type="application/ld+json">
@@ -383,7 +384,7 @@ img{display:block;max-width:100%}
       <p data-i18n="pp_controller">The controller is Martin Motlík, a self-employed person based in the Czech Republic (company ID/IČO 21839662). Contact: <a href="mailto:motlik.martin@gmail.com">motlik.martin@gmail.com</a>.</p>
 
       <h2 id="processing" data-i18n="pp_h_processing">What data I process and why</h2>
-      <p data-i18n="pp_visit"><strong>Visiting the website.</strong> The website is hosted on GitHub Pages (GitHub, Inc., USA), which processes your IP address and technical data about your request in order to deliver the pages and keep them secure. The Inter font is loaded from Google Fonts and, on the reference pages, a 3D viewer from Google’s library, which also passes your IP address to Google (Google Ireland Limited). Legal basis: legitimate interest in running the website (Art. 6(1)(f) GDPR). Data may be transferred to the USA under the EU–US Data Privacy Framework.</p>
+      <p data-i18n="pp_visit"><strong>Visiting the website.</strong> The website is hosted on GitHub Pages (GitHub, Inc., USA), which processes your IP address and technical data about your request in order to deliver the pages and keep them secure. Legal basis: legitimate interest in running the website (Art. 6(1)(f) GDPR). Data may be transferred to the USA under the EU–US Data Privacy Framework.</p>
       <p data-i18n="pp_analytics"><strong>Analytics (only with your consent).</strong> Google Analytics 4 (Google Ireland Limited) measures visits and page views so that I can improve the content. It uses the cookies <code>_ga</code> and <code>_ga_LL09W3RK8L</code> (up to 2 years); event data are kept for 2 months. Data may be transferred to Google LLC in the USA under the EU–US Data Privacy Framework. Legal basis: your consent (Art. 6(1)(a) GDPR, Section 89(3) of the Czech Electronic Communications Act), which you can withdraw at any time in the cookie settings.</p>
       <button type="button" class="pp-btn" data-consent-open data-i18n="pp_settings_btn">Open cookie settings</button>
       <p data-i18n="pp_contact"><strong>Contact.</strong> If you write to me by e-mail or on LinkedIn, I process your name, contact details and message in order to reply and, where relevant, to prepare a contract. Legal basis: Art. 6(1)(b) and (f) GDPR. I keep the correspondence for no longer than three years after our last contact. Providing the data is voluntary, but without it I cannot reply.</p>
