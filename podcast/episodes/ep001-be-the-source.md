@@ -6,7 +6,7 @@ Based on the article: https://martinmotlik.com/insights/ai-visibility-for-aec/
 
 ## Chapters
 
-- 0:00 Cold open: Sarah's story
+- 0:00 Sarah's story
 - 1:06 "But our SEO works"
 - 2:36 The gallery problem
 - 4:09 The timber page
@@ -19,7 +19,7 @@ Based on the article: https://martinmotlik.com/insights/ai-visibility-for-aec/
 
 ## Transcript
 
-### Cold open: Sarah's story [0:00]
+### Sarah's story [0:00]
 
 **Sarah** [0:00]: So, a confession. A few weeks ago I opened ChatGPT and typed: "Which structural engineering firms in Portland have real experience with mass timber?"
 

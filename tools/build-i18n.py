@@ -505,8 +505,8 @@ SITEMAP = {  # path: (lastmod, changefreq, priority); None = page is noindex, le
     '/references/mass-timber-2026/': ('2026-10-07', 'monthly', '0.8'),
     '/references/rfem6-brochure/': ('2026-10-07', 'monthly', '0.8'),
     '/insights/': ('2026-10-08', 'weekly', '0.9'),
-    '/insights/podcast/': ('2026-10-09', 'weekly', '0.8'),
-    ARTICLE: ('2026-10-09', 'monthly', '0.8'),
+    '/insights/podcast/': ('2026-10-10', 'weekly', '0.8'),
+    ARTICLE: ('2026-10-10', 'monthly', '0.8'),
     '/privacy/': None,                      # noindex: not in the sitemap
 }
 
