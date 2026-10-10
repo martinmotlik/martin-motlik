@@ -125,7 +125,7 @@
   "try.li5": "<span class=\"lead-in\">Položte otázky, které kladou vaši zákazníci.</span> Zadejte deset skutečných dotazů do Režimu AI od Googlu, do ChatGPT, Claude a Perplexity. Zaznamenejte si, zda vás odpovědi jmenují, jak vás popisují a koho citují místo vás.",
   "kit.h21": "Šablona ke zkopírování: robots.txt, který pustí AI dovnitř",
   "kit.p2": "Pokud vás druhá kontrola nechala na pochybách, začněte tady. Tohle je základ, který používám pro běžný firemní web. Doménu a soukromé cesty nahraďte vlastními:",
-  "kit.span3": "Šablona ke zkopírování · základ",
+  "kit.span3": "Šablona ke zkopírování · základ · říjen 2026",
   "kit.span4": "# robots.txt pro https://example.com",
   "kit.span5": "# Výchozí stav: všechny crawlery včetně vyhledávání s AI a asistentů AI",
   "kit.span6": "# smějí číst vše kromě neveřejných sekcí",

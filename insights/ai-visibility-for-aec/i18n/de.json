@@ -125,7 +125,7 @@
   "try.li5": "<span class=\"lead-in\">Stellen Sie die Fragen Ihrer Kunden.</span> Geben Sie zehn echte Fragen in den KI-Modus von Google, in ChatGPT, Claude und Perplexity ein. Notieren Sie, ob Sie genannt werden, wie Sie beschrieben werden und wen die Antworten stattdessen zitieren.",
   "kit.h21": "Vorlage zum Kopieren: eine robots.txt, die KI hereinlässt",
   "kit.p2": "Wenn Sie nach der zweiten Prüfung unsicher sind, beginnen Sie hier. Das ist die Basis, die ich für eine typische Unternehmenswebsite verwende. Ersetzen Sie die Domain und die privaten Pfade durch Ihre eigenen:",
-  "kit.span3": "Vorlage zum Kopieren · Basis",
+  "kit.span3": "Vorlage zum Kopieren · Basis · Okt. 2026",
   "kit.span4": "# robots.txt für https://example.com",
   "kit.span5": "# Standard: Alle Crawler, auch KI-Suche und KI-Assistenten,",
   "kit.span6": "# dürfen alles lesen außer privaten Bereichen",
