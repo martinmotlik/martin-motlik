@@ -45,7 +45,7 @@
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:alt" content="Martin Motlík pracuje na notebooku, obklopený ikonami asistentů AI">
     <meta property="article:published_time" content="2026-10-06">
-    <meta property="article:modified_time" content="2026-10-06">
+    <meta property="article:modified_time" content="2026-10-10">
     <meta property="article:author" content="https://martinmotlik.com/#martin-motlik">
     <meta property="article:section" content="AI v AEC">
     <meta property="article:tag" content="Vyhledávání s AI">
@@ -86,7 +86,7 @@
           "description": "Jak připravit produktová data AEC firem, aby je vyhledávání s AI našlo, přečetlo a ověřilo: poznatky z lokalizace, cesta faktu do odpovědi a praktické kontroly.",
           "inLanguage": "cs-CZ",
           "datePublished": "2026-10-06",
-          "dateModified": "2026-10-06",
+          "dateModified": "2026-10-10",
           "author": {
             "@id": "https://martinmotlik.com/#martin-motlik"
           },
@@ -122,7 +122,7 @@
               "name": "Architektura, inženýring a stavebnictví (AEC)"
             }
           ],
-          "wordCount": 1607,
+          "wordCount": 1644,
           "audio": {
             "@type": "AudioObject",
             "name": "Insights with Martin Motlík — Episode 1: Be the source: getting AEC data ready for AI search",
@@ -952,19 +952,25 @@ article p.all-link a{text-decoration:none}
 </span><span class="l"><span data-k="kit.span6" class="c"># smějí číst vše kromě neveřejných sekcí</span>
 </span><span class="l"><span class="k">User-agent:</span> *
 </span><span class="l"><span class="k">Disallow:</span> /admin/
-</span><span class="l"><span class="k">Disallow:</span> /cart/
 </span><span class="l"><span class="k">Disallow:</span> /account/
+</span><span class="l"><span class="k">Disallow:</span> /search/
 </span><span class="l">
 </span><span class="l"><span data-k="kit.span7" class="c"># Volitelné: odmítnout pouze trénování modelů AI.</span>
-</span><span class="l"><span data-k="kit.span8" class="c"># Vyhledávání ChatGPT (OAI-SearchBot) a vyhledávání Claude</span>
-</span><span class="l"><span data-k="kit.span9" class="c"># (Claude-SearchBot) jsou samostatní roboti a zůstávají povoleni.</span>
-</span><span class="l"><span class="k">User-agent:</span> GPTBot
-</span><span class="l"><span class="k">User-agent:</span> ClaudeBot
-</span><span class="l"><span class="k">Disallow:</span> /
+</span><span class="l"><span data-k="kit.span8" class="c"># Roboti pro vyhledávání a asistenty zůstávají povoleni: OAI-SearchBot,</span>
+</span><span class="l"><span data-k="kit.span9" class="c"># ChatGPT-User, Claude-SearchBot, Claude-User, PerplexityBot.</span>
+</span><span class="l"><span data-k="kit.span12" class="c"># Google-Extended tu záměrně chybí: řídí i to, zda Gemini</span>
+</span><span class="l"><span data-k="kit.span13" class="c"># smí vaše stránky použít ve svých odpovědích.</span>
+</span><span class="l"><span data-k="kit.span11" class="c"># Zapnete ho tak, že odstraníte # před šesti řádky níže.</span>
+</span><span class="l"><span class="c"># User-agent: GPTBot</span>
+</span><span class="l"><span class="c"># User-agent: ClaudeBot</span>
+</span><span class="l"><span class="c"># User-agent: CCBot</span>
+</span><span class="l"><span class="c"># User-agent: Applebot-Extended</span>
+</span><span class="l"><span class="c"># User-agent: Meta-ExternalAgent</span>
+</span><span class="l"><span class="c"># Disallow: /</span>
 </span><span class="l">
 </span><span class="l"><span class="k">Sitemap:</span><span class="u"> https://example.com/sitemap.xml</span></span></code></pre>
       </figure>
-      <p data-k="kit.p10">Dvě věci kontroluji pokaždé: <code>Disallow: /</code> pod <code>User-agent: *</code> patří jen na testovací (staging) prostředí, nikdy na ostrý web, protože zavře dveře všem crawlerům najednou. A každá subdoména potřebuje vlastní soubor: <code>docs.example.com</code> nepřebírá pravidla vaší hlavní domény a pravidlo v CDN nebo firewallu může roboty AI zablokovat bez ohledu na to, co říká robots.txt.</p>
+      <p data-k="kit.p10">Tři věci kontroluji pokaždé: <code>Disallow: /</code> pod <code>User-agent: *</code> patří jen na testovací (staging) prostředí, nikdy na ostrý web, protože zavře dveře všem crawlerům najednou. Robot s vlastní skupinou <code>User-agent</code> pravidla pod <code>*</code> ignoruje, proto v ní neveřejné cesty zopakujte. A každá subdoména potřebuje vlastní soubor: <code>docs.example.com</code> nepřebírá pravidla vaší hlavní domény a pravidlo v CDN nebo firewallu může roboty AI zablokovat bez ohledu na to, co říká robots.txt.</p>
 
 
       <div class="h2-row"><h2 data-k="start.h21" id="start">Kde bych začal</h2><button class="ch-chip" type="button" data-pod-seek="754" data-pod-chip><span class="i-play" aria-hidden="true"></span><span><span data-i18n="chip_at">Poslechnout od</span> <span class="cc-t">12:34</span></span></button></div>

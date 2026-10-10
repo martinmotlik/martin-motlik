@@ -45,7 +45,7 @@
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:alt" content="Martin Motlík arbeitet am Laptop, umgeben von den Symbolen von KI-Assistenten">
     <meta property="article:published_time" content="2026-10-06">
-    <meta property="article:modified_time" content="2026-10-06">
+    <meta property="article:modified_time" content="2026-10-10">
     <meta property="article:author" content="https://martinmotlik.com/#martin-motlik">
     <meta property="article:section" content="KI im AEC">
     <meta property="article:tag" content="KI-Suche">
@@ -86,7 +86,7 @@
           "description": "Wie AEC-Unternehmen Produktdaten für die KI-Suche auffindbar, lesbar und prüfbar machen: Erfahrungen aus der Lokalisierung, ein Lastpfad für Fakten, Praxis-Checks.",
           "inLanguage": "de-DE",
           "datePublished": "2026-10-06",
-          "dateModified": "2026-10-06",
+          "dateModified": "2026-10-10",
           "author": {
             "@id": "https://martinmotlik.com/#martin-motlik"
           },
@@ -122,7 +122,7 @@
               "name": "Architektur, Ingenieurwesen und Bauwesen (AEC)"
             }
           ],
-          "wordCount": 1741,
+          "wordCount": 1778,
           "audio": {
             "@type": "AudioObject",
             "name": "Insights with Martin Motlík — Episode 1: Be the source: getting AEC data ready for AI search",
@@ -952,19 +952,25 @@ article p.all-link a{text-decoration:none}
 </span><span class="l"><span data-k="kit.span6" class="c"># dürfen alles lesen außer privaten Bereichen</span>
 </span><span class="l"><span class="k">User-agent:</span> *
 </span><span class="l"><span class="k">Disallow:</span> /admin/
-</span><span class="l"><span class="k">Disallow:</span> /cart/
 </span><span class="l"><span class="k">Disallow:</span> /account/
+</span><span class="l"><span class="k">Disallow:</span> /search/
 </span><span class="l">
 </span><span class="l"><span data-k="kit.span7" class="c"># Optional: nur dem Training von KI-Modellen widersprechen.</span>
-</span><span class="l"><span data-k="kit.span8" class="c"># Die ChatGPT-Suche (OAI-SearchBot) und die Claude-Suche</span>
-</span><span class="l"><span data-k="kit.span9" class="c"># (Claude-SearchBot) sind eigene Bots und bleiben erlaubt.</span>
-</span><span class="l"><span class="k">User-agent:</span> GPTBot
-</span><span class="l"><span class="k">User-agent:</span> ClaudeBot
-</span><span class="l"><span class="k">Disallow:</span> /
+</span><span class="l"><span data-k="kit.span8" class="c"># Such- und Assistenz-Bots bleiben erlaubt: OAI-SearchBot,</span>
+</span><span class="l"><span data-k="kit.span9" class="c"># ChatGPT-User, Claude-SearchBot, Claude-User, PerplexityBot.</span>
+</span><span class="l"><span data-k="kit.span12" class="c"># Google-Extended fehlt bewusst: Es steuert auch, ob Gemini</span>
+</span><span class="l"><span data-k="kit.span13" class="c"># Ihre Seiten in seinen Antworten verwenden darf.</span>
+</span><span class="l"><span data-k="kit.span11" class="c"># Zum Aktivieren das # vor den sechs Zeilen darunter entfernen.</span>
+</span><span class="l"><span class="c"># User-agent: GPTBot</span>
+</span><span class="l"><span class="c"># User-agent: ClaudeBot</span>
+</span><span class="l"><span class="c"># User-agent: CCBot</span>
+</span><span class="l"><span class="c"># User-agent: Applebot-Extended</span>
+</span><span class="l"><span class="c"># User-agent: Meta-ExternalAgent</span>
+</span><span class="l"><span class="c"># Disallow: /</span>
 </span><span class="l">
 </span><span class="l"><span class="k">Sitemap:</span><span class="u"> https://example.com/sitemap.xml</span></span></code></pre>
       </figure>
-      <p data-k="kit.p10">Zwei Dinge prüfe ich jedes Mal: <code>Disallow: /</code> unter <code>User-agent: *</code> gehört nur auf eine Staging-Umgebung, nie auf eine Live-Website, denn es sperrt alle Crawler auf einmal aus. Und jede Subdomain braucht ihre eigene Datei: <code>docs.example.com</code> übernimmt die Regeln Ihrer Hauptdomain nicht, und eine CDN- oder Firewall-Regel kann KI-Bots blockieren, ganz gleich, was in der robots.txt steht.</p>
+      <p data-k="kit.p10">Drei Dinge prüfe ich jedes Mal: <code>Disallow: /</code> unter <code>User-agent: *</code> gehört nur auf eine Staging-Umgebung, nie auf eine Live-Website, denn es sperrt alle Crawler auf einmal aus. Ein Bot mit eigener <code>User-agent</code>-Gruppe ignoriert die Regeln unter <code>*</code>; wiederholen Sie Ihre privaten Pfade deshalb dort. Und jede Subdomain braucht ihre eigene Datei: <code>docs.example.com</code> übernimmt die Regeln Ihrer Hauptdomain nicht, und eine CDN- oder Firewall-Regel kann KI-Bots blockieren, ganz gleich, was in der robots.txt steht.</p>
 
 
       <div class="h2-row"><h2 data-k="start.h21" id="start">Wo ich anfangen würde</h2><button class="ch-chip" type="button" data-pod-seek="754" data-pod-chip><span class="i-play" aria-hidden="true"></span><span><span data-i18n="chip_at">Anhören ab</span> <span class="cc-t">12:34</span></span></button></div>

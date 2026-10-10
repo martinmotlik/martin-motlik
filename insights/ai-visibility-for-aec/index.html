@@ -44,7 +44,7 @@
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:alt" content="Martin Motlík working on a laptop, surrounded by the icons of AI assistants">
     <meta property="article:published_time" content="2026-10-06">
-    <meta property="article:modified_time" content="2026-10-06">
+    <meta property="article:modified_time" content="2026-10-10">
     <meta property="article:author" content="https://martinmotlik.com/#martin-motlik">
     <meta property="article:section" content="AI in AEC">
     <meta property="article:tag" content="AI search">
@@ -85,7 +85,7 @@
           "description": "How AEC companies can make product data easy for AI search to find, read and verify: lessons from localization, a load path for facts and practical checks.",
           "inLanguage": "en-US",
           "datePublished": "2026-10-06",
-          "dateModified": "2026-10-06",
+          "dateModified": "2026-10-10",
           "author": {
             "@id": "https://martinmotlik.com/#martin-motlik"
           },
@@ -955,19 +955,25 @@ article p.all-link a{text-decoration:none}
 </span><span class="l"><span data-k="kit.span6" class="c"># may read everything except private areas</span>
 </span><span class="l"><span class="k">User-agent:</span> *
 </span><span class="l"><span class="k">Disallow:</span> /admin/
-</span><span class="l"><span class="k">Disallow:</span> /cart/
 </span><span class="l"><span class="k">Disallow:</span> /account/
+</span><span class="l"><span class="k">Disallow:</span> /search/
 </span><span class="l">
 </span><span class="l"><span data-k="kit.span7" class="c"># Optional: opt out of AI model training only.</span>
-</span><span class="l"><span data-k="kit.span8" class="c"># ChatGPT search (OAI-SearchBot) and Claude search</span>
-</span><span class="l"><span data-k="kit.span9" class="c"># (Claude-SearchBot) are separate bots and stay allowed.</span>
-</span><span class="l"><span class="k">User-agent:</span> GPTBot
-</span><span class="l"><span class="k">User-agent:</span> ClaudeBot
-</span><span class="l"><span class="k">Disallow:</span> /
+</span><span class="l"><span data-k="kit.span8" class="c"># Search and assistant bots stay allowed: OAI-SearchBot,</span>
+</span><span class="l"><span data-k="kit.span9" class="c"># ChatGPT-User, Claude-SearchBot, Claude-User, PerplexityBot.</span>
+</span><span class="l"><span data-k="kit.span12" class="c"># Google-Extended is left out on purpose: it also controls</span>
+</span><span class="l"><span data-k="kit.span13" class="c"># whether Gemini can use your pages in its answers.</span>
+</span><span class="l"><span data-k="kit.span11" class="c"># To turn it on, remove the # from the six lines below.</span>
+</span><span class="l"><span class="c"># User-agent: GPTBot</span>
+</span><span class="l"><span class="c"># User-agent: ClaudeBot</span>
+</span><span class="l"><span class="c"># User-agent: CCBot</span>
+</span><span class="l"><span class="c"># User-agent: Applebot-Extended</span>
+</span><span class="l"><span class="c"># User-agent: Meta-ExternalAgent</span>
+</span><span class="l"><span class="c"># Disallow: /</span>
 </span><span class="l">
 </span><span class="l"><span class="k">Sitemap:</span><span class="u"> https://example.com/sitemap.xml</span></span></code></pre>
       </figure>
-      <p data-k="kit.p10">Two things I check every time: <code>Disallow: /</code> under <code>User-agent: *</code> belongs only on staging, never on a live site, because it closes the door to every crawler at once. And every subdomain needs its own file; <code>docs.example.com</code> doesn’t inherit the rules of your main domain, and a CDN or firewall rule can block AI bots no matter what robots.txt says.</p>
+      <p data-k="kit.p10">Three things I check every time: <code>Disallow: /</code> under <code>User-agent: *</code> belongs only on staging, never on a live site, because it closes the door to every crawler at once. A bot with its own <code>User-agent</code> group ignores the rules under <code>*</code>, so repeat your private paths in that group. And every subdomain needs its own file; <code>docs.example.com</code> doesn’t inherit the rules of your main domain, and a CDN or firewall rule can block AI bots no matter what robots.txt says.</p>
 
 
       <div class="h2-row"><h2 data-k="start.h21" id="start">Where I would start</h2><button class="ch-chip" type="button" data-pod-seek="754" data-pod-chip><span class="i-play" aria-hidden="true"></span><span><span data-i18n="chip_at">Listen from</span> <span class="cc-t">12:34</span></span></button></div>
