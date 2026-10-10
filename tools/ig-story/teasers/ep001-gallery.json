@@ -1,0 +1,44 @@
+{
+ "design": "Sources/instagram/IG Story - Be the source.html",
+ "photo": "Sources/originals/images/ai-search-hero.jpg",
+ "episode": "assets/podcast/ep001-be-the-source.mp3",
+ "variant": "A · Photo",
+ "fps": 30,
+ "_about": "EP 01, Martin on project galleries (3:02.88–3:19.68). First story for the article.",
+ "output": "~/Downloads/IG Story - Be the source.mp4",
+ "from": 182.88,
+ "len": 16.8,
+ "manual_breaks": false,
+ "spans": [
+  [
+   182.92,
+   186.02,
+   "That’s the most common thing I see with engineering firms."
+  ],
+  [
+   186.3,
+   188.28,
+   "A gallery convinces a person."
+  ],
+  [
+   188.68,
+   192.4,
+   "But a machine can’t look at a photo of a timber roof and conclude,"
+  ],
+  [
+   192.46,
+   195.06,
+   "“this firm designs CLT to NDS.”"
+  ],
+  [
+   195.52,
+   196.88,
+   "For an AI system,"
+  ],
+  [
+   196.94,
+   199.55,
+   "that expertise basically doesn’t exist."
+  ]
+ ]
+}

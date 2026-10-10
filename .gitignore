@@ -1,4 +1,5 @@
 .DS_Store
-.claude/
+.claude/*
+!.claude/skills/
 Sources/
 node_modules/

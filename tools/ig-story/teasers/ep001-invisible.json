@@ -1,0 +1,54 @@
+{
+ "design": "Sources/instagram/IG Story - Be the source.html",
+ "photo": "Sources/originals/images/ai-search-hero.jpg",
+ "episode": "assets/podcast/ep001-be-the-source.mp3",
+ "variant": "A · Photo",
+ "fps": 30,
+ "_about": "EP 01, invisible to ChatGPT (9:19.35–9:42.75): Martin, Sarah, Martin. Starts on the hook, ends on the punchline before Sarah's next question.",
+ "output": "~/Downloads/IG Story - Be the source (invisible to ChatGPT).mp4",
+ "from": 559.35,
+ "len": 23.4,
+ "manual_breaks": true,
+ "spans": [
+  [
+   559.4,
+   562.97,
+   "The major AI crawlers don’t execute JavaScript at all."
+  ],
+  [
+   563.44,
+   564.25,
+   "Google does."
+  ],
+  [
+   564.5,
+   566.49,
+   "So a page can rank in Google,"
+  ],
+  [
+   566.58,
+   572.86,
+   "show up in AI Overviews, | and still be completely empty | to ChatGPT, Claude and Perplexity."
+  ],
+  [
+   573.14,
+   573.62,
+   "Wait."
+  ],
+  [
+   574.02,
+   577.11,
+   "So we could be invisible to them and never notice,"
+  ],
+  [
+   577.41,
+   579.44,
+   "because Google looks fine."
+  ],
+  [
+   579.7,
+   582.48,
+   "Right. | Google looks fine, so nobody thinks to check."
+  ]
+ ]
+}
