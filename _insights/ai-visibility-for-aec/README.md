@@ -26,7 +26,7 @@ This is the **reference package**: every later article follows its shape.
 - [x] 6 Social posts (LinkedIn posted 2026-10-10)
 - [x] 6 Instagram story teasers rendered (2026-10-10)
 - [x] 7 QA, 8 released
-- [ ] 9 Drive: text Docs uploaded; binaries staged in `Sources/exports/drive/` waiting for upload (hero, OG image, MP3, cover, VTT, chapters, 2 MP4)
+- [x] 9 Archived on Drive (2026-10-10): article, transcript and posts as Google Docs; hero, OG image, MP3, cover, VTT, chapters and both story MP4s via rclone
 
 ## Decisions
 

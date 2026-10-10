@@ -33,20 +33,44 @@ Record the folder URL, its id and the four subfolder ids in
      `podcast/episodes/`, with the listen links and the disclosure on top
    - `3 Social/Social posts · <short name> (EP NN)`: `_insights/<slug>/social.md`
    Read one back with `read_file_content` to confirm the conversion.
-3. **Binary files**: `python3 tools/insights/drive-stage.py <slug>`.
-   - With **Google Drive for desktop** installed (`~/Library/CloudStorage/GoogleDrive-*`),
-     the script copies them straight into the synced folder: done.
-   - Without it, the files are staged in `Sources/exports/drive/<folder>/`.
-     The connector cannot carry files this size (it sends the whole file
-     inside one request), so ask the user to drag them into the matching
-     subfolders (give the Drive link), or to install Google Drive for desktop
-     once. Never base64 a large file into a tool call.
-4. **Verify** with `search_files` (`parentId = '<subfolder id>'`) that every
-   expected file is there, then record each in `package.json` →
-   `drive.uploaded` as `"<subfolder>/<name>": "<url or id>"`.
+3. **Binary files** (hero, OG image, MP3, cover, VTT, chapters, story
+   MP4s): `python3 tools/insights/drive-stage.py <slug>`. It stages them in
+   `Sources/exports/drive/<folder>/`, uploads them with **rclone**
+   (`rclone copy --checksum`, so a rerun only sends what changed) and records
+   every file with its link in `package.json` → `drive.uploaded`. The
+   connector cannot carry files this size (it sends the whole file inside one
+   request); never base64 a large file into a tool call.
+4. **Verify**: the script lists what is on Drive after the upload; for the
+   Docs use `search_files` (`parentId = '<subfolder id>'`) and record them
+   in `drive.uploaded` as `"<subfolder>/<title>": "<url>"`.
 5. `python3 tools/insights/check-package.py <slug>`: the Drive group is all ✓.
 6. Put the Drive link in the package README and commit.
 
 Never overwrite or delete anything on Drive without asking. When a
 deliverable changes after archiving (e.g. a new teaser), upload the new file
 next to the old one with a clear name and tell the user.
+
+## rclone
+
+- Binary: `~/.local/bin/rclone` (official build from downloads.rclone.org,
+  checksum verified). Remote **`gdrive`**, `scope = drive`,
+  `root_folder_id` = the Insights folder, so `gdrive:` *is* Insights and
+  rclone cannot touch anything outside it. Config with the OAuth token:
+  `~/.config/rclone/rclone.conf` (mode 600, never in git, never printed).
+- Useful: `rclone lsf -R "gdrive:<folder>"`, `rclone size "gdrive:<folder>"`.
+  Add `--log-level ERROR` to hide notices.
+- If the remote is missing or the token expired: `rclone config reconnect gdrive:`
+  (or create it again with
+  `rclone config create gdrive drive scope=drive root_folder_id=1_ymTfOKEwWlDeFK7waE6PIfGGKbs88II`).
+  It opens Google sign-in in the browser: the **user** signs in and allows
+  access. The command echoes the token; delete any log that captured it.
+- **To do**: the remote uses rclone's shared Google client ID, which Google
+  retires during 2026. Before it stops, the user creates their own OAuth
+  client (Google Cloud Console → APIs & Services → Credentials → OAuth
+  client ID, type Desktop app, Drive API enabled) and we set it with
+  `rclone config update gdrive client_id=… client_secret=…` +
+  `rclone config reconnect gdrive:`. See
+  https://rclone.org/drive/#making-your-own-client-id.
+- Fallbacks when rclone is unavailable: Google Drive for desktop (the script
+  copies into `~/Library/CloudStorage/GoogleDrive-*/My Drive/…`), or the user
+  drags the staged files into the Drive folder.
