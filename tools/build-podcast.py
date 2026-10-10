@@ -31,6 +31,7 @@ SITE = SHOW['site']
 PUBLIC = bool(SHOW.get('feed_public'))
 ENDPOINT = SHOW.get('subscribe_endpoint') or ''
 PLATFORMS = SHOW.get('platforms') or []      # Apple Podcasts, Spotify: hero buttons and sameAs
+STATS = SHOW.get('stats_prefix') or ''         # OP3 prefix on feed enclosures: download counts across apps
 RSS_LINK = f'    <link rel="alternate" type="application/rss+xml" title="{SHOW["title"]} (podcast)" href="{SITE}{SHOW["feed"]}">\n'
 SPEAKER_CLASS = {'Martin': 'who-host'}            # everyone else gets the co-host colour
 
@@ -104,6 +105,12 @@ def episode_files(ep):
 
 # ── RSS ──────────────────────────────────────────────────────────────────────
 
+def enclosure_url(ep):
+    """MP3 URL for podcast apps; with a stats prefix: https://op3.dev/e/martinmotlik.com/…"""
+    url = SITE + ep['audio']
+    return STATS + url.split('://', 1)[1] if STATS else url
+
+
 def feed(eps):
     page, feed_url, cover = SITE + SHOW['page'], SITE + SHOW['feed'], SITE + SHOW['cover']
     # Podcasting 2.0 GUID: UUIDv5 of the feed URL without the scheme.
@@ -125,7 +132,7 @@ def feed(eps):
     <guid isPermaLink="false">martinmotlik.com/podcast/{ep["slug"]}</guid>
     <pubDate>{pub}</pubDate>
     <description><![CDATA[{notes}]]></description>
-    <enclosure url="{SITE + ep["audio"]}" length="{size}" type="audio/mpeg"/>
+    <enclosure url="{enclosure_url(ep)}" length="{size}" type="audio/mpeg"/>
     <itunes:image href="{SITE + ep["cover"]}-3000.jpg"/>
     <itunes:duration>{ep["duration"]}</itunes:duration>
     <itunes:episode>{ep["number"]}</itunes:episode>

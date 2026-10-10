@@ -41,6 +41,8 @@
   "share_image": "/assets/podcast/cover-v2-1200.jpg",
   "_subscribe_endpoint": "Form endpoint for \"Get new episodes\" (Formspree: https://formspree.io/f/<id>). Empty = the button and form are left out.",
   "subscribe_endpoint": "",
+  "_stats_prefix": "Analytics prefix put in front of the MP3 URL in feed.xml (OP3: free, open, no personal data; stats at https://op3.dev/show/<podcast:guid>). Apps download through it and it redirects to the file. The website player plays the file directly. Empty = plain URLs.",
+  "stats_prefix": "https://op3.dev/e/",
   "_platforms": "Where the show is listed: buttons in the podcast page hero and sameAs in the PodcastSeries JSON-LD. The Apple link has no country, so Apple opens the visitor's own store.",
   "platforms": [
    {
