@@ -64,13 +64,14 @@ next to the old one with a clear name and tell the user.
   `rclone config create gdrive drive scope=drive root_folder_id=1_ymTfOKEwWlDeFK7waE6PIfGGKbs88II`).
   It opens Google sign-in in the browser: the **user** signs in and allows
   access. The command echoes the token; delete any log that captured it.
-- **To do**: the remote uses rclone's shared Google client ID, which Google
-  retires during 2026. Before it stops, the user creates their own OAuth
-  client (Google Cloud Console → APIs & Services → Credentials → OAuth
-  client ID, type Desktop app, Drive API enabled) and we set it with
-  `rclone config update gdrive client_id=… client_secret=…` +
-  `rclone config reconnect gdrive:`. See
-  https://rclone.org/drive/#making-your-own-client-id.
+- **Own OAuth client** (since 2026-10-10): Google Cloud project
+  `martinmotlik-web-rclone`, Drive API enabled, Google Auth Platform
+  External + **In production** (Testing would expire the token every 7
+  days), Desktop client `rclone-insights`. Its ID and secret live only in
+  `rclone.conf`. Signing in shows "Google hasn't verified this app": the
+  user continues via Advanced → Go to martinmotlik.com rclone. If the
+  secret is ever lost, add a new secret to that client in the console and
+  `rclone config update gdrive client_secret=…` + `rclone config reconnect gdrive:`.
 - Fallbacks when rclone is unavailable: Google Drive for desktop (the script
   copies into `~/Library/CloudStorage/GoogleDrive-*/My Drive/…`), or the user
   drags the staged files into the Drive folder.
