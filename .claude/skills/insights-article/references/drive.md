@@ -1,0 +1,52 @@
+# Google Drive archive
+
+Every finished package goes to Google Drive, in
+**Development (Vibe Code) / martinmotlik.com web / Insights**
+(folder id `1_ymTfOKEwWlDeFK7waE6PIfGGKbs88II`). Git keeps the sources;
+Drive keeps the finished deliverables in one place to share and reuse.
+
+## Layout
+
+```
+Insights/
+  01 ai-visibility-for-aec · Be the source/
+    1 Article/     Article EN (Google Doc), hero original, OG image
+    2 Podcast/     EP NN Transcript (Google Doc), episode MP3, cover 3000 px, .vtt, chapters .json
+    3 Social/      Social posts (Google Doc)
+    4 Instagram/   story MP4(s)
+```
+
+Folder name: `<NN> <slug> · <short name>`, NN = episode number, two digits.
+Record the folder URL, its id and the four subfolder ids in
+`_insights/<slug>/package.json` → `drive` the moment you create them.
+
+## Procedure
+
+1. **Folders**: Google Drive connector, `create_file` with
+   `contentMimeType: application/vnd.google-apps.folder` and `parentId`
+   (Insights folder, then the package folder).
+2. **Text → Google Docs** through the connector: `create_file` with
+   `textContent`, `contentMimeType: text/markdown` (converted to a Doc):
+   - `1 Article/Article EN · <title>`: `python3 tools/insights/export-article.py insights/<slug>/index.html`
+     (add the CS/DE URLs and the publish date under the source line)
+   - `2 Podcast/EP NN Transcript · <short name>`: the transcript from
+     `podcast/episodes/`, with the listen links and the disclosure on top
+   - `3 Social/Social posts · <short name> (EP NN)`: `_insights/<slug>/social.md`
+   Read one back with `read_file_content` to confirm the conversion.
+3. **Binary files**: `python3 tools/insights/drive-stage.py <slug>`.
+   - With **Google Drive for desktop** installed (`~/Library/CloudStorage/GoogleDrive-*`),
+     the script copies them straight into the synced folder: done.
+   - Without it, the files are staged in `Sources/exports/drive/<folder>/`.
+     The connector cannot carry files this size (it sends the whole file
+     inside one request), so ask the user to drag them into the matching
+     subfolders (give the Drive link), or to install Google Drive for desktop
+     once. Never base64 a large file into a tool call.
+4. **Verify** with `search_files` (`parentId = '<subfolder id>'`) that every
+   expected file is there, then record each in `package.json` →
+   `drive.uploaded` as `"<subfolder>/<name>": "<url or id>"`.
+5. `python3 tools/insights/check-package.py <slug>`: the Drive group is all ✓.
+6. Put the Drive link in the package README and commit.
+
+Never overwrite or delete anything on Drive without asking. When a
+deliverable changes after archiving (e.g. a new teaser), upload the new file
+next to the old one with a clear name and tell the user.

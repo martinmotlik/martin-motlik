@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Be the Source: Getting AEC Data Ready for AI Search | Martin Motlík</title>
+<meta name="description" content="Google is now an AI search engine that cites a handful of sources per answer. A good product page is no longer enough; the data has to be readable for AI. Lessons from localizing engineering content.">
+<link rel="canonical" href="https://martinmotlik.com/insights/ai-visibility-for-aec/">
+<meta name="author" content="Martin Motlík">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Martin Motlík">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Be the source: getting AEC data ready for AI search">
+<meta property="og:description" content="Google is now an AI search engine that cites a handful of sources per answer. A good product page is no longer enough; the data has to be readable for AI. Lessons from localizing engineering content.">
+<meta property="og:url" content="https://martinmotlik.com/insights/ai-visibility-for-aec/">
+<meta property="og:image" content="https://martinmotlik.com/assets/img/insights/ai-search-hero-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Martin Motlík working on a laptop, surrounded by the icons of AI assistants">
+<meta property="article:published_time" content="2026-10-06">
+<meta property="article:author" content="https://martinmotlik.com/#person">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@martinmotlik">
+<meta name="twitter:creator" content="@martinmotlik">
+<meta name="theme-color" content="#0A1628">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://martinmotlik.com/insights/ai-visibility-for-aec/#article",
+      "headline": "Be the source: getting AEC data ready for AI search",
+      "description": "Google is now an AI search engine that cites a handful of sources per answer. A good product page is no longer enough; the data has to be readable for AI. Lessons from localizing engineering content.",
+      "inLanguage": "en-US",
+      "datePublished": "2026-10-06",
+      "dateModified": "2026-10-06",
+      "author": { "@id": "https://martinmotlik.com/#person" },
+      "publisher": { "@id": "https://martinmotlik.com/#person" },
+      "mainEntityOfPage": "https://martinmotlik.com/insights/ai-visibility-for-aec/",
+      "image": "https://martinmotlik.com/assets/img/insights/ai-search-hero-og.jpg",
+      "articleSection": "AI in AEC",
+      "keywords": ["generative engine optimization", "GEO", "AI search", "AEC marketing", "engineering software", "technical SEO", "llms.txt", "structured data"],
+      "about": [
+        { "@type": "Thing", "name": "Generative engine optimization" },
+        { "@type": "Thing", "name": "Architecture, engineering and construction industry" }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://martinmotlik.com/#person",
+      "name": "Martin Motlík",
+      "url": "https://martinmotlik.com/",
+      "jobTitle": "AEC Digital Strategist & Web Lead",
+      "sameAs": ["https://www.linkedin.com/in/martin-motl%C3%ADk-3b1b47233", "https://x.com/martinmotlik"]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://martinmotlik.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://martinmotlik.com/insights/" },
+        { "@type": "ListItem", "position": 3, "name": "Be the source" }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{--navy:#0A1628;--navy-2:#0F1E36;--green:#22C55E;--ink:#27272A;--muted:#52525B;--muted-2:#71717A;--line:#E4E4E7;--paper:#F4F4F5;--link:#1D4ED8}
+*{box-sizing:border-box}
+html{scroll-padding-top:90px}
+body{margin:0;background:#fff;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--navy);-webkit-font-smoothing:antialiased}
+a{color:var(--link);text-decoration:none}a:hover{color:var(--navy)}
+:focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:4px}
+
+.progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;pointer-events:none}
+.progress div{height:100%;width:0;background:var(--green);transition:width .1s linear}
+
+.site-header{position:sticky;top:0;z-index:50;background:rgba(10,22,40,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06);padding-top:env(safe-area-inset-top,0px)}
+.site-header .in{max-width:1080px;margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:14px}
+.brand:hover{color:#fff}
+.brand i{width:24px;height:24px;border-radius:5px;background:#fff;display:grid;place-items:center}
+.brand i b{width:12px;height:12px;background:var(--navy);transform:rotate(45deg)}
+.site-header nav{display:flex;gap:26px;font-size:13px;font-weight:500;flex-wrap:wrap}
+.site-header nav a{color:rgba(255,255,255,.75)}
+.site-header nav a:hover,.site-header nav a.on{color:#fff}
+.site-header nav a.on{display:flex;align-items:center;gap:6px}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block}
+.lang{display:flex;gap:2px;padding:3px;border-radius:7px;background:rgba(255,255,255,.08);font-size:11px;font-weight:600}
+.lang a{padding:4px 8px;border-radius:5px;color:rgba(255,255,255,.55)}
+.lang a.on{background:rgba(255,255,255,.14);color:#fff}
+@media (max-width:860px){.site-header nav{display:none}}
+
+.hero{background:var(--navy);color:#fff;padding:56px 0 0}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.crumbs{display:flex;gap:8px;font-size:13px;color:rgba(255,255,255,.55)}
+.crumbs a{color:rgba(255,255,255,.75)}.crumbs a:hover{color:#fff}
+.hero .head{max-width:820px}
+.cat{margin-top:28px;display:inline-flex;padding:5px 11px;border-radius:999px;background:rgba(99,102,241,.22);color:#C7D2FE;font-weight:600;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.hero h1{margin:18px 0 0;font-size:clamp(36px,5.2vw,58px);line-height:1.04;letter-spacing:-.035em;font-weight:800;text-wrap:balance}
+.hero .dek{margin:20px 0 0;font-size:19px;line-height:1.55;color:rgba(255,255,255,.72);text-wrap:pretty}
+.byline{margin-top:32px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:13px;color:rgba(255,255,255,.6)}
+.avatar{width:40px;height:40px;border-radius:50%;background:#1F2F4A url("https://martinmotlik.com/assets/img/portrait-card-720.jpg") center 20%/cover}
+.byline .who{color:#fff;font-weight:600;font-size:14px}
+.byline .sep{width:1px;height:28px;background:rgba(255,255,255,.15);margin:0 6px}
+.cover{margin-top:48px;aspect-ratio:16/9;border-radius:20px 20px 0 0;overflow:hidden;background:var(--navy-2)}
+.cover img{display:block;width:100%;height:100%;object-fit:cover}
+
+.body{max-width:1080px;margin:0 auto;padding:64px 24px 40px;display:flex;flex-wrap:wrap;gap:56px;align-items:flex-start}
+.toc{position:sticky;top:96px;flex:0 0 200px}
+.toc .lbl{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted-2)}
+.toc nav{margin-top:14px;display:flex;flex-direction:column;border-left:1px solid var(--line)}
+.toc nav a{padding:7px 0 7px 14px;margin-left:-1px;font-size:13px;line-height:1.4;border-left:2px solid transparent;color:var(--muted-2)}
+.toc nav a.on{border-left-color:var(--navy);color:var(--navy);font-weight:600}
+.share{margin-top:10px;display:flex;gap:8px}
+.btn{font:inherit;font-size:12px;font-weight:600;padding:8px 12px;border-radius:8px;cursor:pointer;display:inline-block}
+.btn-ghost{border:1px solid var(--line);background:#fff;color:var(--navy)}
+.btn-dark{border:0;background:var(--navy);color:#fff}.btn-dark:hover{color:#fff}
+@media (max-width:860px){.toc{position:static;flex-basis:100%}}
+
+article{flex:1 1 520px;min-width:0;max-width:700px;font-size:18px;line-height:1.75;color:var(--ink)}
+article p{text-wrap:pretty}
+article .lead{margin:0;font-size:21px;line-height:1.6;color:var(--navy);font-weight:500}
+article h2{margin:56px 0 0;font-size:30px;line-height:1.2;letter-spacing:-.025em;color:var(--navy);font-weight:700}
+article h3{margin:40px 0 0;font-size:21px;line-height:1.3;letter-spacing:-.015em;color:var(--navy);font-weight:700}
+article strong{color:var(--navy)}
+article sup{line-height:0;font-size:.62em;margin-left:1px}
+article a:has(sup){text-decoration:none}
+article a{text-decoration:underline;text-decoration-color:rgba(29,78,216,.35);text-underline-offset:3px}
+article ol,article ul{padding-left:22px;margin:20px 0 0;display:flex;flex-direction:column;gap:12px}
+article li{padding-left:6px}
+article code{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:.86em;background:var(--paper);padding:2px 6px;border-radius:5px;color:var(--navy)}
+pre{margin:16px 0 0;padding:18px 20px;border-radius:12px;background:var(--navy);color:#E4E4E7;overflow-x:auto;font:14px/1.6 ui-monospace,"SF Mono",Menlo,Consolas,monospace}
+pre code{background:none;padding:0;color:inherit;font-size:inherit}
+pre .c{color:#86EFAC}
+
+.quote{margin:44px 0;padding:0;border:0}
+.quote p{margin:0;font-size:28px;line-height:1.3;letter-spacing:-.02em;font-weight:700;color:var(--navy);text-wrap:balance}
+.quote span{display:block;margin-top:14px;width:40px;height:3px;background:var(--green)}
+
+.tbl{margin:28px 0 0;overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;font-size:15px;line-height:1.5;min-width:520px}
+.tbl th,.tbl td{text-align:left;vertical-align:top;padding:12px 14px 12px 0;border-bottom:1px solid var(--line)}
+.tbl th{font-weight:600;color:var(--navy);font-size:13px}
+.tbl td:first-child{color:var(--muted-2);width:30%}
+
+
+
+
+.cta-box{margin:32px 0 0;padding:22px 24px;border-radius:16px;border:1px solid var(--line);background:var(--paper);display:flex;gap:16px 20px;align-items:center;flex-wrap:wrap}
+.cta-box p{margin:0;flex:1 1 300px;font-size:16px;line-height:1.6;color:var(--navy)}
+article .cta-box a{flex:none;font-size:14px;font-weight:600;padding:11px 18px;border-radius:10px;background:var(--navy);color:#fff;text-decoration:none}
+article .cta-box a:hover{background:#13243F;color:#fff}
+.takeaway{margin:44px 0;padding:28px 28px 26px;border-radius:16px;background:var(--navy);color:#fff}
+.takeaway .t{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#86EFAC}
+.takeaway p{margin:12px 0 0;font-size:17px;line-height:1.6;color:rgba(255,255,255,.85)}
+
+
+.tags{margin-top:32px;display:flex;gap:8px;flex-wrap:wrap}
+.tags span{font-size:12px;font-weight:500;padding:6px 12px;border-radius:999px;background:var(--paper)}
+.author{margin-top:32px;padding:24px;border-radius:16px;border:1px solid var(--line);display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.author .ph{width:64px;height:64px;border-radius:14px;flex:none;background:#E4E4E7 url("https://martinmotlik.com/assets/img/portrait-card-720.jpg") center 20%/cover;filter:grayscale(1)}
+.author .n{font-size:16px;font-weight:700;color:var(--navy)}
+.author .d{font-size:14px;line-height:1.55;color:var(--muted);margin-top:4px}
+.author a.cta{font-size:13px;font-weight:600;padding:10px 16px;border-radius:10px;background:var(--navy);color:#fff;text-decoration:none}
+
+footer{border-top:1px solid var(--line);background:#fff;padding-bottom:env(safe-area-inset-bottom,0px)}
+footer .in{max-width:1080px;margin:0 auto;padding:28px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--muted-2)}
+footer .b{display:flex;align-items:center;gap:8px;color:var(--navy);font-weight:700;font-size:13px}
+footer .b i{width:20px;height:20px;border-radius:4px;background:var(--navy);display:grid;place-items:center}
+footer .b i b{width:9px;height:9px;background:#fff;transform:rotate(45deg)}
+footer .meta{display:flex;gap:20px;flex-wrap:wrap}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.progress div{transition:none}}
+</style>
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"><div id="bar"></div></div>
+
+<header class="site-header">
+  <div class="in">
+    <a class="brand" href="/"><i><b></b></i>Martin Motlík</a>
+    <nav aria-label="Main">
+      <a href="/references/">References</a>
+      <a href="/services/">Services</a>
+      <a href="/insights/" class="on"><span class="dot"></span>Insights</a>
+      <a href="/#about">About me</a>
+      <a href="/#ai-in-aec">AI in AEC</a>
+    </nav>
+    <div class="lang"><a class="on" href="#" aria-current="true">EN</a><a href="#">CS</a><a href="#">DE</a></div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="crumbs"><a href="/insights/">Insights</a><span>/</span><span>AI in AEC</span></div>
+      <div class="head">
+        <div class="cat">AI in AEC</div>
+        <h1>Be the source</h1>
+        <p class="dek">A good product page with sharp photos used to be the finish line. In AI search it is raw material: your customers now get one answer and a handful of sources, and the question is whether you are one of them. What I have learned localizing engineering content, and where to start.</p>
+        <div class="byline">
+          <span class="avatar" role="img" aria-label="Martin Motlík"></span>
+          <div><div class="who">Martin Motlík</div><div>AEC Digital Strategist &amp; Web Lead</div></div>
+          <span class="sep"></span>
+          <time datetime="2026-10-06">Oct 6, 2026</time><span>·</span><span>8 min read</span>
+        </div>
+      </div>
+      <div class="cover"><picture>
+        <source type="image/webp" srcset="ai-search-hero-1200.webp 1200w, ai-search-hero-1600.webp 1600w" sizes="(min-width: 1128px) 1032px, calc(100vw - 48px)">
+        <img src="ai-search-hero-1600.jpg" srcset="ai-search-hero-1200.jpg 1200w, ai-search-hero-1600.jpg 1600w" sizes="(min-width: 1128px) 1032px, calc(100vw - 48px)" width="1600" height="900" alt="Martin Motlík working on a laptop outdoors, surrounded by the icons of AI assistants and search engines" fetchpriority="high" decoding="async">
+      </picture></div>
+    </div>
+  </section>
+
+  <div class="body">
+    <aside class="toc">
+      <div class="lbl">On this page</div>
+      <nav id="toc" aria-label="On this page">
+        <a href="#ai-search">Google is already AI search</a>
+        <a href="#localization">What localization taught me</a>
+        <a href="#load-path">How a fact reaches an answer</a>
+        <a href="#rules">My rules for AI-ready data</a>
+        <a href="#try">Try it this week</a>
+        <a href="#kit">Copy-paste kit</a>
+        <a href="#wait">Why I wouldn’t wait</a>
+      </nav>
+      <div class="lbl" style="margin-top:28px">Share</div>
+      <div class="share">
+        <button class="btn btn-ghost" id="copy" type="button">Copy link</button>
+        <a class="btn btn-dark" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmartinmotlik.com%2Finsights%2Fai-visibility-for-aec%2F" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </aside>
+
+    <article>
+      <p class="lead">Open Google today and type a real engineering question, the long kind with a design code and a material in it. Before you see a single link, Google has already written you an answer, with a handful of sources underneath. That short list is the new first page of search results. Most AEC companies have no idea whether they are on it.</p>
+
+      <h2 id="ai-search">Google is already an AI search engine</h2>
+      <p>When people hear “AI search,” they think of ChatGPT. That misses the bigger shift. At Google I/O in May 2026, Google reported that AI Overviews had passed 2.5 billion monthly users and its conversational AI Mode more than one billion, and announced that the two are merging into a single AI search experience. Your customers don’t need to switch to a chatbot. The search engine they have used for twenty years has become one.</p>
+      <p>Engineering questions are exactly the kind of search that now gets an answer instead of a list: long, specific and full of constraints. Which software can design a CLT floor to NDS? Which anchor is approved for cracked concrete? The engineer reads the answer, and perhaps one of its sources. Add ChatGPT, Claude, Gemini and Perplexity, and the pattern is the same everywhere.</p>
+      <p>For twenty years, a good product page with sharp photos was the finish line. Today it is raw material. Whether an engineer ever sees it depends on whether an AI system can read it, trust it and quote it. The goal is no longer to rank on page one. It is to be one of the sources.</p>
+
+      <blockquote class="quote">
+        <p>“The product page is no longer the destination. It is the dataset.”</p>
+        <span></span>
+      </blockquote>
+
+      <h2 id="localization">What localization taught me about AI visibility</h2>
+      <p>Since 2021 I have worked on websites and content for engineering software, adapting it for engineers in the United States, Canada and Europe. A large part of that work is localization, and it taught me the lesson that matters most for AI search long before AI search existed.</p>
+      <p>Translating a page is easy. Localizing it means asking how an engineer in another market looks for the same thing: which design code they work with, which terms they use, which spelling they expect. A translated page can be perfectly correct and still invisible to the people it was written for, because it answers a question they never ask.</p>
+
+      <h3>Example: a timber page for North America</h3>
+      <p>The project that made this click for me was a timber design solution page I optimized for structural engineers in the United States and Canada, on behalf of an engineering software vendor. The original content came from a European product context. It was accurate and thorough, and it spoke the language of Eurocode. But a timber engineer in Portland or Vancouver doesn’t think in Eurocode. They design to NDS in the U.S. and CSA O86 in Canada, and that is how they phrase their questions, whether they type them into Google or ask an assistant.</p>
+      <p>So I reworked the page around the engineer’s question rather than around the product. The North American design codes are named explicitly in the text, where an engineer would look for them. The language follows U.S. English and U.S. terminology, with “design standards” as the umbrella term instead of “Eurocode.” Nothing on the page depends on the reader, or the machine, translating from one standards world to the other.</p>
+      <p>The same applied to the images. A screenshot is part of the message: an engineer who sees a model checked to Eurocode, with European labels throughout the interface, reads it as a product made for someone else. So I localized the screenshots too. They show the North American design standards and U.S. English in the software’s interface, so engineers recognize their own working environment at a glance. And because search and AI systems still rely mainly on the text around an image, every image also gets localized text: a title, alt text, a description and a caption that name the design standard shown. The screenshot convinces the engineer. The text around it is what a machine can quote.</p>
+      <p>The lesson goes well beyond timber. A language model can’t connect your content to a question asked in a different vocabulary. If your pages only mention Eurocode, you won’t be named when someone asks about AISC 360, whatever your software actually supports. Localization used to be for people. Now it is for machines as well.</p>
+
+      <h3>One page, several regions</h3>
+      <p>Localization by IP address is part of my daily work. One page, one URL, and visitors from France, Italy, Germany or the United States each see content adapted to their market, for example local contacts, language or the design standards they work with. For people it works very well. For machines it needs care, because a crawler sees only the variant served to its own IP address. By default, Googlebot crawls <a href="https://developers.google.com/search/docs/specialty/international/locale-adaptive-pages" target="_blank" rel="noopener">from U.S. addresses</a>, and AI crawlers largely operate from the U.S. as well. Unless you plan for it, the French, Italian and German versions of your content may never reach an AI answer at all. The fix is to let IP localization shape the experience, while every regional version of an important fact also has its own URL, linked with hreflang. Visitors get the right variant automatically, and crawlers can still find all of them.</p>
+
+      <h2 id="load-path">How a fact travels into an AI answer</h2>
+      <p>Localization also changed how I measure content. An AI system doesn’t browse your site the way a person does. It extracts facts and decides which statements it trusts enough to repeat. A hundred vague pages lose to one page that states precisely which design codes you support, in which units, for which markets. So when I review a website, I don’t count pages. I follow single facts, such as a supported design code, a load capacity or an office location, and check whether each one survives the trip from the server into an AI answer. I think of it as a load path. Every member along the way has to carry the fact:</p>
+      <ol>
+        <li><strong>Reachable.</strong> robots.txt and firewall rules let AI crawlers in.</li>
+        <li><strong>Readable.</strong> The fact is in the HTML, not rendered by a script or locked in a PDF or an image.</li>
+        <li><strong>Understood.</strong> The page says plainly what it is about: product, design code, units, market.</li>
+        <li><strong>Consistent.</strong> Every page, file and listing states the fact the same way.</li>
+        <li><strong>Corroborated.</strong> Others confirm it: customers, partners, publications, conference talks.</li>
+      </ol>
+      <p>Like any load path, it fails at its weakest member, and the first two fail more often than people expect. According to crawl data from <a href="https://vercel.com/blog/the-rise-of-the-ai-crawler" target="_blank" rel="noopener">Vercel and MERJ</a>, the major AI crawlers don’t execute JavaScript at all. Google does, which is why a page can rank in Google and show up in AI Overviews, yet be empty to ChatGPT, Claude and Perplexity. Content that appears only after a script runs, in a configurator, a web app or an interactive table, simply isn’t there for them. Text inside PDFs and images reaches them unreliably at best.</p>
+
+      <h2 id="rules">My rules for AI-ready data</h2>
+      <ol>
+        <li><strong>HTML is the source of truth.</strong> PDFs, images and videos are copies of it, never the only place a fact lives.</li>
+        <li><strong>One fact, one canonical page.</strong> State it there clearly and identically everywhere else.</li>
+        <li><strong>Markup never says more than the page.</strong> I don’t put a fact into structured data unless the visible page states it. Markup that contradicts the page doesn’t fix confusion; it automates it.</li>
+        <li><strong>Write in the language of the question.</strong> The design code, the units and the spelling of the market you want to reach, in your text and in your images.</li>
+        <li><strong>Answer first.</strong> Lead with the answer and make every passage stand on its own. AI systems quote passages, not whole pages.</li>
+        <li><strong>Don’t start with llms.txt.</strong> It belongs on documentation and API sites, where coding assistants actually read it. On a marketing site it is a cheap experiment at best, and Google says its Search ignores it. Fix crawlability first.</li>
+      </ol>
+
+      <h2 id="try">Try it this week</h2>
+      <p>You don’t need an agency to see where you stand. Three checks take less than half an hour:</p>
+      <ol>
+        <li><strong>Fetch a key page the way a crawler does.</strong> No browser, no JavaScript. Search for a sentence that matters, such as a product name or a supported design code:
+<pre><code>curl -sL -A "GPTBot" https://example.com/product | grep -i "AISC 360"
+<span class="c"># no output = AI crawlers can't see it</span></code></pre></li>
+        <li><strong>Read every robots.txt you own,</strong> including app, docs and support subdomains, and ask whoever runs your CDN or firewall whether AI bots are being blocked.</li>
+        <li><strong>Ask the questions your customers ask.</strong> Put ten real ones into Google’s AI Mode, ChatGPT, Claude and Perplexity. Note whether you are named, how you are described and whom the answers cite instead.</li>
+      </ol>
+
+      <h2 id="kit">Copy-paste kit: a robots.txt that lets AI in</h2>
+      <p>If the second check left you unsure, start here. This is the baseline I use for a typical company website. Replace the domain and the private paths with your own:</p>
+<pre><code><span class="c"># robots.txt for https://example.com</span>
+<span class="c"># Default: all crawlers, including AI search and AI assistants,</span>
+<span class="c"># may read everything except private areas</span>
+User-agent: *
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /account/
+
+<span class="c"># Optional: opt out of AI model training only.</span>
+<span class="c"># ChatGPT search (OAI-SearchBot) and Claude search</span>
+<span class="c"># (Claude-SearchBot) are separate bots and stay allowed.</span>
+User-agent: GPTBot
+User-agent: ClaudeBot
+Disallow: /
+
+Sitemap: https://example.com/sitemap.xml</code></pre>
+      <p>Two things I check every time: <code>Disallow: /</code> under <code>User-agent: *</code> belongs only on staging, never on a live site, because it closes the door to every crawler at once. And every subdomain needs its own file; <code>docs.example.com</code> doesn’t inherit the rules of your main domain, and a CDN or firewall rule can block AI bots no matter what robots.txt says.</p>
+
+      <div class="cta-box">
+        <p>Every site has its own edge cases: app subdomains, documentation portals, regional versions. If you’re not sure how to set this up for yours, or what to do next, send me a message.</p>
+        <a href="https://www.linkedin.com/in/martin-motl%C3%ADk-3b1b47233" target="_blank" rel="noopener">Message me on LinkedIn</a>
+      </div>
+
+      <h2 id="wait">Why I wouldn’t wait</h2>
+      <p>An AI answer names a handful of sources, not ten. Whoever states the facts most clearly takes those places, and every answer that cites them makes them look like the reference in their field. That cuts both ways. If you are a specialist that bigger names overshadow in classic search, this is the best opening you have had in years. If you are the established name, a smaller competitor with better data can take your place in the answer, and you may not notice until the inquiries stop.</p>
+      <p>Most AEC companies already own the material: product pages, datasheets, project references, documentation. Software vendors need a readable page for every capability and supported code. Manufacturers need their load values, fire ratings and approvals in text, not only in PDFs. Engineering firms need project pages that state system, material, code and role instead of a photo gallery. None of it is new content. It is the content you have, made readable.</p>
+
+      <div class="takeaway">
+        <div class="t"><span class="dot"></span>Key takeaway</div>
+        <p>Describing your product well and adding great photos is no longer enough. That material has to reach the AI systems your customers ask, and through them, the people. The companies engineers hear about will be the ones whose facts are easiest for AI to read, check and quote. The ones that make them readable first will be hard to catch.</p>
+      </div>
+
+      <p>If you would like to know how AI sees your company today, <a href="https://www.linkedin.com/in/martin-motl%C3%ADk-3b1b47233" target="_blank" rel="noopener">connect with me on LinkedIn</a>.</p>
+
+      <div class="tags">
+        <span>AI search</span>
+        <span>Generative engine optimization</span>
+        <span>Technical SEO</span>
+        <span>AEC marketing</span>
+      </div>
+
+      <div class="author">
+        <span class="ph" role="img" aria-label="Martin Motlík"></span>
+        <div style="flex:1;min-width:220px">
+          <div class="n">Martin Motlík</div>
+          <div class="d">Independent AEC digital strategist and Head of Web Content at Dlubal Software. Writing about AI, BIM and engineering-software marketing.</div>
+        </div>
+        <a class="cta" href="/#contact">Let’s talk →</a>
+      </div>
+    </article>
+  </div>
+</main>
+
+<footer>
+  <div class="in">
+    <span class="b"><i><b></b></i>Martin Motlík</span>
+    <div class="meta"><span>© 2026</span><span>IČO: 21839662</span><span>DIČ: CZ0103073146</span><span>motlik.martin@gmail.com</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var bar=document.getElementById('bar');
+  var links=[].slice.call(document.querySelectorAll('#toc a'));
+  var heads=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
+  function onScroll(){
+    var h=document.documentElement.scrollHeight-window.innerHeight;
+    bar.style.width=(h>0?Math.min(1,window.scrollY/h)*100:0)+'%';
+    var active=0;
+    heads.forEach(function(el,i){if(el&&el.getBoundingClientRect().top<160)active=i;});
+    links.forEach(function(a,i){a.classList.toggle('on',i===active);});
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  links.forEach(function(a){a.addEventListener('click',function(e){
+    var el=document.querySelector(a.getAttribute('href'));if(!el)return;e.preventDefault();
+    window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-80,behavior:reduce?'auto':'smooth'});
+    history.replaceState(null,'',a.getAttribute('href'));
+  });});
+  var copy=document.getElementById('copy');
+  copy.addEventListener('click',function(){
+    var url=location.href.split('#')[0];
+    try{navigator.clipboard.writeText(url);}catch(e){}
+    copy.textContent='Copied ✓';setTimeout(function(){copy.textContent='Copy link';},1500);
+  });
+})();
+</script>
+</body>
+</html>

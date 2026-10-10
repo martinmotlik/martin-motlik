@@ -1,0 +1,420 @@
+[
+ {
+  "scene": "1 · Sarah's story",
+  "inputs": [
+   {
+    "speaker": "SARAH",
+    "text": "So, a confession. A few weeks ago I opened ChatGPT and typed: \"Which structural engineering firms in Portland have real experience with mass timber?\""
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "And?"
+   },
+   {
+    "speaker": "SARAH",
+    "text": "Five firms. Nicely written answer, sources underneath. We weren't one of them. And we've designed, what, a dozen CLT buildings in the last few years."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Let me guess. At least one of those five has done less than you."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "[laughs] One of them has done two. I checked."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "[warmly] Welcome to Insights. I'm Martin Motlík. I work on websites and content for engineering software, for engineers in the U.S., Canada and Europe. And today I'm joined by Sarah."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "Hi, Martin. So, quick context for everyone: I run marketing at a structural engineering firm in Portland. We've done SEO properly for years. Good rankings, clean meta titles, keywords, the whole thing."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "And the AI still picked someone else."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "Right. So that's what I want to understand today. Not the theory. How you would look at my situation."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Deal. Let's take it apart."
+   }
+  ]
+ },
+ {
+  "scene": "2 · \"But our SEO works\"",
+  "inputs": [
+   {
+    "speaker": "SARAH",
+    "text": "Okay, the obvious question first. We rank on page one for \"structural engineer Portland.\" Why isn't that enough anymore?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Because page one isn't the finish line anymore. Think about what happened when you searched. You didn't get a list. You got an answer. And that's not only ChatGPT. Google itself is an AI search engine now. At Google I/O in May 2026, Google said AI Overviews had passed two and a half billion monthly users, and AI Mode more than a billion. And they're merging the two."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "So my clients don't even have to switch to a chatbot."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Exactly. The search engine they've used for twenty years quietly became one. And your clients ask the long, specific kind of question. A material, a code, a building type, a city. That's exactly the kind of search that now gets an answer instead of a list."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "So... was all our SEO work wasted?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "No, and I want to be clear about that. SEO is still the foundation. If a page can't be crawled and indexed, it won't end up in an AI answer either. What changed is the goal. Alongside rankings, I now look at whether a page gets cited as a source. And a meta description won't get you cited. It was written for a person scanning a list."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "And the AI doesn't scan."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "No. It reads your page, pulls out individual facts, and decides which ones it trusts enough to repeat. Keywords help it find you. They don't make it trust you."
+   }
+  ]
+ },
+ {
+  "scene": "3 · The gallery problem",
+  "inputs": [
+   {
+    "speaker": "SARAH",
+    "text": "So how would you start with us? If I hired you tomorrow."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "I'd ask you a slightly annoying question. Where on your website does it say, in plain text, that you've designed a dozen CLT buildings? To which code? In which cities?"
+   },
+   {
+    "speaker": "SARAH",
+    "text": "Um... it's in the projects section. We have a gallery. Really beautiful photography."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "With captions?"
+   },
+   {
+    "speaker": "SARAH",
+    "text": "A project name. Sometimes the architect."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "That's the most common thing I see with engineering firms. A gallery convinces a person. But a machine can't look at a photo of a timber roof and conclude, \"this firm designs CLT to NDS.\" For an AI system, that expertise basically doesn't exist."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "So the competitor with two projects..."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "...probably wrote two plain pages. The project, the structural system, the material, the design code, and what their role was. That's enough to be quotable."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "Okay, that honestly stings a little."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "[gently] It's very fixable. And it's the same lesson I learned from localization, long before anyone talked about AI search."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "Tell me about that. That's your daily work, right?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Since 2021, yeah. Websites and content for engineering software, adapted for the U.S., Canada and Europe. And what localization teaches you is this: translating a page is easy. Localizing it means asking how an engineer in that market actually searches. Which code they use, which terms, which spelling."
+   }
+  ]
+ },
+ {
+  "scene": "4 · The timber page",
+  "inputs": [
+   {
+    "speaker": "SARAH",
+    "text": "Do you have an example?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "One that's actually very close to your world. A timber design page I optimized for engineers in the U.S. and Canada, for a software vendor. The original content came from Europe. Accurate, thorough... and it spoke Eurocode."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "[laughs] Nobody in Portland thinks in Eurocode."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Not in Portland, not in Vancouver. They design to NDS in the U.S. and CSA O-eighty-six in Canada, and that's how they phrase their questions. So I rebuilt the page around the engineer's question, not around the product. The North American codes are named right in the text. U.S. English, U.S. terms, \"design standards\" as the umbrella. Nobody, human or machine, has to translate from one standards world to the other."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "And the images? Because that's my gallery problem, right?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Same thing exactly. A screenshot of a model checked to Eurocode, with European labels, tells an engineer this was made for someone else. So we localized the screenshots too. And every image got text: a title, alt text, a description and a caption that name the standard. The image convinces the engineer. The text around it is what a machine can quote."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "So for me, every project photo gets a caption that says the system, the code, and what we actually did."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "That's it. Write in the language of the question. If your pages never say \"NDS,\" you won't be named when someone asks about NDS. No matter how many buildings you've done."
+   }
+  ]
+ },
+ {
+  "scene": "5 · The Vancouver twist",
+  "inputs": [
+   {
+    "speaker": "SARAH",
+    "text": "Here's a twist, though. We also have an office in Vancouver. And our site shows Canadian visitors different content, based on their location."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Ah. That's something I work with every day, actually. One page, one URL, and visitors from France, Italy, Germany or the U.S. each see content for their market. Local contacts, language, the design standards they use. For people, it works really well."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "I'm sensing a \"but.\""
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "[chuckles] But a crawler only sees the version served to its own IP address. Googlebot crawls from U.S. addresses by default, and AI crawlers largely do too. So your Vancouver content, all the CSA O-eighty-six projects..."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "...might never reach an AI answer."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Unless you plan for it. The fix is simple in principle. Keep the IP localization for the experience. But give every regional version of an important fact its own URL, linked with H-ref-lang. Visitors still land on the right version automatically, and crawlers can find all of them."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "That would never have shown up in our SEO reports."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Usually not. Which is why I stopped counting pages when I review a website."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "What do you count instead?"
+   }
+  ]
+ },
+ {
+  "scene": "6 · Load path, part one",
+  "inputs": [
+   {
+    "speaker": "MARTIN",
+    "text": "I follow single facts. Like yours: \"we design CLT buildings to NDS.\" And I check whether that one fact survives the trip from your server into an AI answer. I think of it as a load path."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "[laughs] Of course you do."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Occupational hazard. But it works. There are five members, and the fact has to make it through every one. The first is: is it reachable? Do your robots rules and your firewall actually let AI crawlers in?"
+   },
+   {
+    "speaker": "SARAH",
+    "text": "Okay, now I'm nervous. Our IT guy told me last year he blocked \"the AI bots.\" Because of the training thing."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "That's really common, and it's worth checking exactly what he blocked. Training bots and search bots are separate. You can opt out of model training and still let ChatGPT search and Claude search read your site. And if he blocked everything at the CDN level, your robots rules don't even matter."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "So that alone could explain it."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "It could. Second member: is the fact readable? Is it in the HTML, or is it locked in a PDF, an image, or something a script renders?"
+   }
+  ]
+ },
+ {
+  "scene": "7 · The PDF argument",
+  "inputs": [
+   {
+    "speaker": "SARAH",
+    "text": "Well... our statement of qualifications is a PDF. It's gorgeous. And honestly, clients download it. I'm not getting rid of it."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "And you shouldn't. I'm not anti-PDF."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "It kind of sounded like you were."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "[laughs] Fair. Here's the distinction. Keep the PDF. Just never let it be the only place a fact lives. My rule is that HTML is the source of truth. PDFs, images and videos are copies of it. Text inside PDFs reaches AI crawlers unreliably at best."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "Okay, I can live with that. What about JavaScript? Our new site is built on one of those modern frameworks."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Then that's the first thing I'd test. Many modern frameworks can render the page on the server, and then you're fine. The only question is whether the text is in the HTML before any script runs. Because according to crawl data from Vercel and Merj, the major AI crawlers don't execute JavaScript at all. Google does. So a page can rank in Google, show up in AI Overviews, and still be completely empty to ChatGPT, Claude and Perplexity."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "[surprised] Wait. So we could be invisible to them and never notice, because Google looks fine."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Right. Google looks fine, so nobody thinks to check."
+   }
+  ]
+ },
+ {
+  "scene": "8 · Load path, part two",
+  "inputs": [
+   {
+    "speaker": "SARAH",
+    "text": "Okay, reachable, readable. What are the other three?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Third: understood. The page says plainly what it's about. The service, the design code, the units, the market. Fourth: consistent. Every page, every file, every listing states the fact the same way."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "Hm. We say \"mass timber\" on the homepage, \"CLT\" on the project pages, and a couple of directory listings still have our old office address."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "That's the kind of thing that quietly weakens trust. My rule there is one fact, one canonical page. State it there clearly, and identically everywhere else. And if you use structured data, the markup never says more than the visible page. Markup that contradicts the page doesn't fix confusion. It automates it."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "And the fifth?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Corroborated. Others confirm it. Clients, architects you work with, publications, conference talks. And like any load path, it fails at its weakest member. In my experience, the first two fail far more often than people expect."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "Any rule for how we should actually write the pages?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Answer first. Lead with the answer and make every passage stand on its own. AI systems quote passages, not whole pages."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "And llms.txt? Half my LinkedIn feed says I need one."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "[chuckles] On documentation and API sites, it makes sense. On a marketing site, it's a cheap experiment at best, and Google says its Search ignores it. Fix crawlability first."
+   }
+  ]
+ },
+ {
+  "scene": "9 · What do I tell my boss?",
+  "inputs": [
+   {
+    "speaker": "SARAH",
+    "text": "Practical question. My boss is going to ask how we know any of this is working. What do I report?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Keep reporting rankings. But add the test you already did by accident. Take ten real questions your clients ask. Put them into Google's AI Mode, ChatGPT, Claude and Perplexity. Write down whether you're named, how you're described, and whom the answers cite instead."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "And repeat it in a few months."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Yes. Same questions, same tools. That's your baseline. And that last part, who gets cited instead, is usually the wake-up call."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "What else can I do this week, without an agency?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Two more checks. First, fetch one key page the way a crawler does. No browser, no JavaScript. Then search the result for a sentence that matters, like \"CLT\" or \"NDS.\" If it's not there, AI crawlers can't see it either. The exact command is in the article. Second, read every robots file you own, including subdomains, and ask whoever runs your CDN whether AI bots are blocked."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "So, basically: talk to my IT guy."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "[laughs] Talk to your IT guy. Nicely."
+   }
+  ]
+ },
+ {
+  "scene": "10 · Close",
+  "inputs": [
+   {
+    "speaker": "SARAH",
+    "text": "If you had to pick one thing for me to start with on Monday?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "One page. Your strongest mass timber project. Rewrite it so it plainly states the structural system, the material, the design code, the location and your role. Make sure that text is in the HTML. Then make sure your other pages say the same thing."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "That's... surprisingly doable."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "That's the good news. Most AEC companies already own the material. Project pages, datasheets, references, documentation. It's not new content. It's the content you have, made readable."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "And the bigger picture?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Make the technical facts your clients need easy to find, understand and verify. Be explicit about what you do, which standards apply, which markets you serve, and where your limits are."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "So, my list. Captions on every project. A friendly talk with my IT guy. The PDF stays, but the facts go into HTML. And one name for what we do, not \"mass timber\" here and \"CLT\" there."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "[chuckles] That's the whole episode in one sentence."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "The full article, with the checklist and a copy-paste robots file, is on martinmotlik dot com, under Insights."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "And if you're working on something similar, regional content, technical documentation, AI visibility, message me on LinkedIn. I'm always happy to compare notes."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "Thanks for listening."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "[warmly] See you in the next one."
+   }
+  ]
+ }
+]

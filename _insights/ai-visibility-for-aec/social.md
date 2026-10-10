@@ -8,7 +8,7 @@
 | Core line | "A page can be perfectly correct and still invisible." |
 | Status | Drafts ready · LinkedIn posted 2026-10-10 |
 
-Rules for this series are in `.claude/skills/insights-social-posts/SKILL.md`.
+Rules for this series are in `.claude/skills/insights-social-posts/SKILL.md`; the whole package is described in `.claude/skills/insights-article/SKILL.md`.
 
 ---
 

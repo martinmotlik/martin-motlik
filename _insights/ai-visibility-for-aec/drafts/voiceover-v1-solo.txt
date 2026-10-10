@@ -1,0 +1,65 @@
+BE THE SOURCE — VOICE-OVER TEXT FOR ELEVENLABS
+Voice: Martin Motlík (clone) · Language: English (US) · Model: Eleven Multilingual v2 or v3
+How to use: generate one SEGMENT at a time and stitch them in order. Blank lines inside a segment are paragraph breaks; keep them, they create natural pauses. Everything below the first marker is spoken text. Hyphenated letters (N-D-S) are deliberate so the voice spells acronyms.
+
+===== SEGMENT 1 of 5 =====
+
+Something changed in the way engineers find things, and most companies didn't notice — because the numbers took a while to show it.
+
+I work with websites for engineering software every day, and I watch the same pattern on every one of them. The question an engineer types is getting longer and more specific. And the answer they get back isn't a list anymore. It's one paragraph, written by a machine, with a handful of sources under it. Whether your company is one of those sources is now the whole game. Let me show you what I mean.
+
+Here's the thing people get wrong. They hear "AI search" and think of chatbots. But Google itself is an AI search engine now. At Google I-O this May, they said A-I Overviews had passed two and a half billion monthly users, A-I Mode more than a billion — and they're merging the two into one experience. Nobody has to switch to a chatbot. The search engine everyone's used for twenty years just became one.
+
+So try it. Type a real engineering question into Google. Not two keywords — a full question, with a design code and a material in it. "Which software can design a C-L-T floor to N-D-S?" Before you see a single link, Google has written you an answer. And under that answer, three, maybe five sources.
+
+That short list is the new first page of search results. And honestly? Most companies have no idea whether they're on it.
+
+For twenty years, a good product page with sharp photos was the finish line. Today it's raw material. Whether an engineer ever sees it depends on whether an AI can read it, trust it, and quote it. The product page isn't the destination anymore. It's the dataset.
+
+===== SEGMENT 2 of 5 =====
+
+Now, I didn't learn this from AI. I learned it from localization.
+
+Since twenty twenty-one I've been working on websites and content for engineering software — for engineers in the U.S., Canada, and Europe. A large part of that is localization. And translating a page is easy. Localizing it means asking a completely different question: how does an engineer in that market actually look for this? Which design code do they work with? Which words? Which spelling?
+
+Let me give you the project where this really clicked for me. I was optimizing a timber design page for structural engineers in the U.S. and Canada. The original content came from a European context — accurate, thorough, and it spoke the language of Eurocode. But a timber engineer in Portland doesn't think in Eurocode. Neither does one in Vancouver. They design to N-D-S and C-S-A O eighty-six. That's how they phrase their questions — in Google, in any assistant.
+
+So I reworked the page around the engineer's question instead of the product. The North American codes are named explicitly, right where an engineer would look for them. U.S. English, U.S. terminology. "Design standards" as the umbrella term — not "Eurocode."
+
+And I didn't stop at the text. I localized the screenshots too. A screenshot is part of the message. If you see a model checked to Eurocode, with European labels all over the interface, you read it as a product made for someone else. So the screenshots show your standards, in your language. And because search and AI still rely mostly on the text around an image, every image also gets a localized title, alt text, and description that name the standard shown. The screenshot convinces the engineer. The text around it is what a machine can quote.
+
+The lesson goes way beyond timber. A language model can't connect your content to a question asked in a different vocabulary. If your pages only mention Eurocode, you won't be named when someone asks about A-I-S-C three-sixty — no matter what your software actually supports. Localization used to be for people. Now it's for machines as well.
+
+One more thing from my daily work, because it's a trap I see constantly. I work with I-P-based localization almost every day — one page, one U-R-L, and a visitor from France, Italy, Germany, or the U.S. each sees content adapted to their market. For people, that works beautifully. For machines, you have to be careful. A crawler only sees the version served to its own I-P address. By default, Googlebot crawls from U.S. addresses — and most AI crawlers do too. So unless you plan for it, your French, Italian, and German content may never reach an AI answer at all. The fix is simple to say: keep I-P localization for the experience, but give every regional version its own U-R-L, connected with H-ref-lang. People get the right version automatically. Crawlers can still find all of them.
+
+===== SEGMENT 3 of 5 =====
+
+Localization also changed how I measure content. An AI doesn't browse your site the way a person does. It pulls out facts and decides which statements it trusts enough to repeat. A hundred vague pages lose to one page that says precisely which codes you support, in which units, for which markets.
+
+So when I look at a website now, I don't count pages. I follow single facts. A supported design code. A load capacity. An office location. And I check whether each one survives the trip from your server into an AI answer.
+
+I think of it as a load path. Every member has to carry the fact. Reachable — do your robots dot T-X-T and your firewall let AI crawlers in? Readable — is the fact actually in the H-T-M-L, not rendered by a script, not buried in a PDF? Understood — does the page say plainly what it's about? Consistent — does every page and file state it the same way? And corroborated — do customers, partners, publications confirm it?
+
+Like any load path, it fails at the weakest member. And the first two fail more often than you'd think. The major AI crawlers don't execute JavaScript. At all. Google does — which is why a page can rank in Google, show up in A-I Overviews, and still be completely empty to ChatGPT or Claude. Anything that only appears after a script runs — a configurator, a web app, an interactive table — simply isn't there for them.
+
+===== SEGMENT 4 of 5 =====
+
+You don't need an agency to find out where you stand. Three checks, half an hour.
+
+One: fetch a key page the way a crawler does. No browser, no JavaScript. Search the result for a sentence that matters — a product name, a supported code. If it's not there, AI can't see it.
+
+Two: read every robots dot T-X-T you own. Including the app, docs, and support subdomains. And ask whoever runs your C-D-N or firewall whether AI bots are being blocked. There's a copy-paste baseline in the article below.
+
+Three: ask the questions your customers ask. Ten real ones — Google's A-I Mode, ChatGPT, Claude, Perplexity. Are you named? How are you described? And who gets cited instead of you?
+
+===== SEGMENT 5 of 5 =====
+
+Here's why I'd do this now, not next quarter. An AI answer names a handful of sources, not ten. Whoever states the facts most clearly takes those places — and every answer that cites them makes them look like the reference in the field.
+
+That cuts both ways. If you're a specialist that bigger names overshadow in classic search, this is the best opening you've had in years. If you're the established name, a smaller competitor with better data can take your place in the answer — and you may not notice until the inquiries stop.
+
+And most companies already own the material. Product pages, datasheets, project references, documentation. None of this is about creating new content. It's about taking the content you have and making it readable.
+
+Describing your product well and adding great photos isn't enough anymore. That material has to reach the AI systems your customers ask — and through them, the people. The companies engineers hear about will be the ones whose facts are easiest for AI to read, check, and quote. The ones who get there first will be hard to catch.
+
+So — be the source. And if you want to talk about how AI sees your company today, you know where to find me. I'm on LinkedIn.

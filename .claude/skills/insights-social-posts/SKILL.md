@@ -1,17 +1,18 @@
 ---
 name: insights-social-posts
-description: Write the social post series (LinkedIn, Facebook, X, Threads, Instagram story, WhatsApp status) that promotes a new Insights article and its podcast episode, and save it to _social/<article-slug>.md. Use whenever a new article or episode is published or prepared, when the user asks for posts, a caption, a CTA or a "propagace článku/podcastu", or for a reply to a comment under one of these posts.
+description: Write the social post series (LinkedIn, Facebook, X, Threads, Instagram story, WhatsApp status) that promotes a new Insights article and its podcast episode, and save it to _insights/<article-slug>/social.md. Use whenever a new article or episode is published or prepared, when the user asks for posts, a caption, a CTA or a "propagace článku/podcastu", or for a reply to a comment under one of these posts.
 ---
 
 # Insights article + podcast → social post series
 
 **Rule:** every new Insights article and every new podcast episode ships with
 a full series of post drafts for all of Martin's channels. The work on an
-article or episode is not finished until `_social/<article-slug>.md` exists
-and is committed. `_social/` starts with an underscore, so GitHub Pages
-(Jekyll) does not publish it; keep it that way.
+article or episode is not finished until `_insights/<article-slug>/social.md`
+exists and is committed. `_insights/` starts with an underscore, so GitHub
+Pages (Jekyll) does not publish it; keep it that way. This series is one part
+of the article package (skill `insights-article`).
 
-Reference series: `_social/ai-visibility-for-aec.md`. Copy its structure.
+Reference series: `_insights/ai-visibility-for-aec/social.md`. Copy its structure.
 
 ## Before writing
 
@@ -61,7 +62,9 @@ user wants to start a discussion.
 
 ## Done
 
-- `_social/<article-slug>.md` with a header table (article URL, podcast URL
+- `_insights/<article-slug>/social.md` with a header table (article URL, podcast URL
   and episode, dates, core line, status) and one fenced block per post, ready
   to copy.
 - Commit it with the article or episode.
+- After approval it goes to Drive as a Google Doc (`3 Social/`, see the
+  `insights-article` skill, `references/drive.md`).

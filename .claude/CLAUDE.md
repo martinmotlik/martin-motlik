@@ -2,12 +2,19 @@
 
 ## Publishing rule: Insights articles and podcast episodes
 
-Every new Insights article and every new podcast episode ships with a series
-of social post drafts for all channels (LinkedIn, Facebook, X, Threads,
-Instagram story, WhatsApp status) in `_social/<article-slug>.md`. The work is
-not finished until that file exists and is committed. Follow the
-`insights-social-posts` skill; `_social/ai-visibility-for-aec.md` is the
-reference.
+Every new Insights article ships as one complete package: the article in
+EN/CS/DE, the podcast episode (script, audio integration, transcript, feed),
+the social post series, an Instagram story teaser and the Google Drive
+archive. Follow the `insights-article` skill
+(`.claude/skills/insights-article/SKILL.md`); it links the
+`insights-social-posts` and `podcast-ig-story` skills for their parts.
 
-`_social/` is not published by GitHub Pages (underscore folder). Every other
-`.md` file in the repo is served publicly.
+- The package lives in `_insights/<article-slug>/` (brief, podcast script and
+  scenes, social posts, manifest `package.json`, status README).
+  `_insights/ai-visibility-for-aec/` is the reference.
+- `python3 tools/insights/check-package.py <slug>` says what is done and
+  what is missing. The work is not finished until it passes, including Drive.
+- Deploy (push `main`) only after an explicit "nasaď na produkci".
+
+`_insights/` is not published by GitHub Pages (underscore folder). Every
+other `.md` file in the repo is served publicly.

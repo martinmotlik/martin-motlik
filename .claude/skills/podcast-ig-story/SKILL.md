@@ -44,6 +44,9 @@ config per teaser in `tools/ig-story/teasers/`, one command makes the video.
    without asking) and send it with SendUserFile. Tell the user the clip's
    episode times, the transcript of the clip and where the link sticker goes.
    Add the config to `teasers/` and commit it with any tool changes.
+9. **Package**: list the config in `_insights/<slug>/package.json` →
+   `teasers`, note the chosen clip in the package README, and archive the MP4
+   on Drive (`4 Instagram/`, skill `insights-article` → `references/drive.md`).
 
 ## Pitfalls already solved (don't reintroduce)
 

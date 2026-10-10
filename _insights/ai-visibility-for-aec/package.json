@@ -1,0 +1,40 @@
+{
+ "_about": "Manifest of one Insights package. Read by tools/insights/check-package.py and drive-stage.py; rules in .claude/skills/insights-article/SKILL.md.",
+ "slug": "ai-visibility-for-aec",
+ "number": 1,
+ "title": "Be the source: getting AEC data ready for AI search",
+ "short_name": "Be the source",
+ "category": "AI in AEC",
+ "core_line": "A page can be perfectly correct and still invisible.",
+ "urls": {
+  "en": "/insights/ai-visibility-for-aec/",
+  "cs": "/cs/insights/data-aec-pro-vyhledavani-s-ai/",
+  "de": "/de/insights/aec-daten-fuer-ki-suche/"
+ },
+ "hero": "ai-search-hero",
+ "episode": "ep001-be-the-source",
+ "teasers": [
+  "tools/ig-story/teasers/ep001-invisible.json",
+  "tools/ig-story/teasers/ep001-gallery.json"
+ ],
+ "published": {
+  "article": "2026-10-06",
+  "episode": "2026-10-08"
+ },
+ "drive": {
+  "folder": "01 ai-visibility-for-aec · Be the source",
+  "url": "https://drive.google.com/drive/folders/19VAYMZVpaG8SEhaAP3_eUFDcN-1L6b6U",
+  "id": "19VAYMZVpaG8SEhaAP3_eUFDcN-1L6b6U",
+  "subfolders": {
+   "1 Article": "1NF2v9KaJZTz-nyw1vffqm9qhCoNaaI_R",
+   "2 Podcast": "1TvEErXKURoHTEj8SRntxk78FiEaNxDFT",
+   "3 Social": "11-wonM1BiuYDHYi7gEeF_J6zBsuakiIm",
+   "4 Instagram": "16KC1Yocp4BZigfMthKo6UqiJXQlCjhhT"
+  },
+  "uploaded": {
+   "1 Article/Article EN · Be the source: getting AEC data ready for AI search": "https://docs.google.com/document/d/1DsQo3cRR3N8S98CQo7ZcyyqGVqoXLTqErJd5GZxhJmI/edit",
+   "2 Podcast/EP 01 Transcript · Be the source": "https://docs.google.com/document/d/1K-tvNcymBZ2dGnRVNBJ0RoWStssslDUg88k9xaE61-8/edit",
+   "3 Social/Social posts · Be the source (EP 01)": "https://docs.google.com/document/d/1qQ5jp01wOXPfLsNDXDr7lSbN8ejKLpj4MongyPbgh_g/edit"
+  }
+ }
+}
