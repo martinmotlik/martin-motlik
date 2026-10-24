@@ -8,8 +8,8 @@
  "core_line": "",
  "urls": {
   "en": "/insights/mcp-power-outlet-for-ai/",
-  "cs": "",
-  "de": ""
+  "cs": "/cs/insights/mcp-zasuvka-pro-ai-v-aec/",
+  "de": "/de/insights/mcp-steckdose-fuer-ki-im-aec/"
  },
  "hero": "mcp-article-01-hero",
  "episode": "",
@@ -17,6 +17,15 @@
  "published": {
   "article": "",
   "episode": ""
+ },
+ "site": {
+  "_about": "On the site: tools/build-i18n.py builds the CS/DE versions, sitemap entry and list card from this block and \"urls\".",
+  "lastmod": "2026-10-24",
+  "english_markers": [
+   "A power outlet for AI",
+   "Oct 22, 2026",
+   "14 min read"
+  ]
  },
  "forbidden": [
   "Motlar",

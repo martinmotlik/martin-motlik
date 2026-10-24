@@ -6,7 +6,8 @@
   "a1_alt": "Martin Motlík arbeitet im Freien am Laptop, umgeben von den Symbolen von KI-Assistenten und Suchmaschinen",
   "a1_alt_short": "Martin Motlík arbeitet am Laptop, umgeben von den Symbolen von KI-Assistenten",
   "chips_aria": "Nach Kategorie filtern",
-  "menu_close": "Menü schließen"
+  "menu_close": "Menü schließen",
+  "a2_alt": "Die Antwort von ChatGPT, die die Revisionen R02 und R03 eines Wohngebäudes vergleicht, mit dem Link „Open in 3D viewer“ schwebt über einem webbasierten 3D-Viewer. Eine dünne türkisfarbene Linie führt vom Link zu drei roten Türen im dritten Wohngeschoss; die seit R02 behobenen Elemente sind türkis, der Rest des Modells ist durchscheinend hellgrau."
  },
  "chrome": {
   "nav_references": "Referenzen",
@@ -28,6 +29,8 @@
   "read_more": "Lesen →",
   "a1_title": "Werden Sie zur Quelle: AEC-Daten fit für die KI-Suche machen",
   "a1_ex": "Die Arbeit an Websites für Ingenieursoftware in verschiedenen Märkten hat geprägt, wie ich an KI-Sichtbarkeit herangehe. Dieser Beitrag bündelt Erfahrungen aus der Lokalisierung und die praktischen Prüfungen, mit denen ich technische Inhalte leichter auffindbar, verständlich und überprüfbar mache.",
+  "a2_title": "Eine Steckdose für KI: Was MCP für AEC bedeutet",
+  "a2_ex": "Model Context Protocol ist ein offener Standard, der KI-Assistenten mit der Software verbindet, die Ingenieure bereits nutzen. Was MCP ist, wofür es im AEC-Bereich taugt und warum die Anbindung an die KI-Plattformen, die Ihr Team schon verwendet, meist sinnvoller ist als ein weiterer Chatbot.",
   "list_title": "Alle Beiträge",
   "filter_all": "Alle",
   "cta_title": "Neue Beiträge als Erste lesen.",

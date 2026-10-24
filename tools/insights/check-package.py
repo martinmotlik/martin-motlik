@@ -66,7 +66,9 @@ check('Site', 'llms.txt entry', SITE + en in read('llms.txt'))
 hero = pkg.get('hero', '')
 check('Site', f'hero renditions assets/img/{hero}-*', hero and os.path.exists(rel(f'assets/img/{hero}-og-1200.jpg')) and any(
     f.startswith(hero + '-') and f.endswith('.avif') for f in os.listdir(rel('assets/img'))))
-check('Site', f'hero original Sources/originals/images/{hero}.jpg', hero and os.path.exists(rel(f'Sources/originals/images/{hero}.jpg')), 'gitignored, local only')
+orig_dir = rel('Sources/originals/images')
+check('Site', f'hero original Sources/originals/images/{hero}.*', hero and os.path.isdir(orig_dir) and any(
+    os.path.splitext(f)[0] == hero for f in os.listdir(orig_dir)), 'gitignored, local only')
 
 # 3 · podcast
 pod = json.loads(read('podcast/podcast.json') or '{}')

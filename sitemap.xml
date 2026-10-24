@@ -300,4 +300,37 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://martinmotlik.com/insights/ai-visibility-for-aec/"/>
   </url>
 
+  <url>
+    <loc>https://martinmotlik.com/insights/mcp-power-outlet-for-ai/</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://martinmotlik.com/insights/mcp-power-outlet-for-ai/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://martinmotlik.com/cs/insights/mcp-zasuvka-pro-ai-v-aec/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://martinmotlik.com/de/insights/mcp-steckdose-fuer-ki-im-aec/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://martinmotlik.com/insights/mcp-power-outlet-for-ai/"/>
+  </url>
+
+  <url>
+    <loc>https://martinmotlik.com/cs/insights/mcp-zasuvka-pro-ai-v-aec/</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://martinmotlik.com/insights/mcp-power-outlet-for-ai/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://martinmotlik.com/cs/insights/mcp-zasuvka-pro-ai-v-aec/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://martinmotlik.com/de/insights/mcp-steckdose-fuer-ki-im-aec/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://martinmotlik.com/insights/mcp-power-outlet-for-ai/"/>
+  </url>
+
+  <url>
+    <loc>https://martinmotlik.com/de/insights/mcp-steckdose-fuer-ki-im-aec/</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://martinmotlik.com/insights/mcp-power-outlet-for-ai/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://martinmotlik.com/cs/insights/mcp-zasuvka-pro-ai-v-aec/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://martinmotlik.com/de/insights/mcp-steckdose-fuer-ki-im-aec/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://martinmotlik.com/insights/mcp-power-outlet-for-ai/"/>
+  </url>
+
 </urlset>

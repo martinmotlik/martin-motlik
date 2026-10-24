@@ -5,7 +5,7 @@ Check anytime: `python3 tools/insights/check-package.py mcp-power-outlet-for-ai`
 
 | | |
 |---|---|
-| Article | EN `/insights/mcp-power-outlet-for-ai/` · CS `…` · DE `…` |
+| Article | EN `/insights/mcp-power-outlet-for-ai/` · CS `/cs/insights/mcp-zasuvka-pro-ai-v-aec/` · DE `/de/insights/mcp-steckdose-fuer-ki-im-aec/` |
 | Podcast | EP 02 · `podcast/episodes/ep002-….md` |
 | Social | `social.md` |
 | Instagram | `tools/ig-story/teasers/ep002-….json` |
@@ -18,7 +18,7 @@ Check anytime: `python3 tools/insights/check-package.py mcp-power-outlet-for-ai`
 - [ ] 1 Brief approved
 - [ ] 2 Article text approved · text after feedback received 2026-10-24, no [TK] left, remarks in `REVIEW_NOTES.md`
 - [ ] 2 Page built and approved (desktop + phone) · 2026-10-24 built from `article.md` on the GEO template with all figures (`review/`)
-- [ ] 3 CS + DE translations, `--check` passes
+- [x] 3 CS + DE translations, `--check` passes (2026-10-24; text in `article.{cs,de}.md` + `i18n-{cs,de}.extras.json` → `i18n-from-md.py`)
 - [ ] 4 Podcast script approved
 - [ ] 4 Audio delivered (MP3 + transcript .md + .vtt)
 - [ ] 5 Episode integrated and previewed
@@ -38,6 +38,8 @@ Check anytime: `python3 tools/insights/check-package.py mcp-power-outlet-for-ai`
 - 2026-10-24 · The IDS requirement ID "KOM-14" in images 01, 06, 07 and the alt text of 07 stays (user's decision).
 
 - 2026-10-24 · Approved (user): title variant A, "A power outlet for AI: what MCP means for AEC" as H1 and, in Title Case, as `<title>`; meta description A; dek A. The doc keeps its longer working title.
+
+- 2026-10-24 · Approved (user): slugs `/cs/insights/mcp-zasuvka-pro-ai-v-aec/` and `/de/insights/mcp-steckdose-fuer-ki-im-aec/`. Translated titles: „Zásuvka pro AI: co znamená MCP pro AEC“, „Eine Steckdose für KI: Was MCP für AEC bedeutet“.
 
 ## Open
 

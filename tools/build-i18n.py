@@ -235,7 +235,7 @@ def rewrite_ld(s, fn):
 
 
 # Article blocks that are not the text itself (hero, contents, tags, author…).
-NOT_TEXT = ('hero', 'toc', 'closing', 'tags', 'sources-h', 'author')
+NOT_TEXT = ('hero', 'toc', 'closing', 'tags', 'sources-h', 'author', 'code')
 
 
 def word_count(data):

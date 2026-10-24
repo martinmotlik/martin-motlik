@@ -23,14 +23,18 @@
     <meta name="author" content="Martin Motlík">
     <link rel="canonical" href="https://martinmotlik.com/insights/mcp-power-outlet-for-ai/">
 
-    <!-- Language versions (tools/build-i18n.py). CS and DE are added with the translations. -->
+    <!-- Language versions (tools/build-i18n.py). Every version lists all of them. -->
     <link rel="alternate" hreflang="en" href="https://martinmotlik.com/insights/mcp-power-outlet-for-ai/">
+    <link rel="alternate" hreflang="cs" href="https://martinmotlik.com/cs/insights/mcp-zasuvka-pro-ai-v-aec/">
+    <link rel="alternate" hreflang="de" href="https://martinmotlik.com/de/insights/mcp-steckdose-fuer-ki-im-aec/">
     <link rel="alternate" hreflang="x-default" href="https://martinmotlik.com/insights/mcp-power-outlet-for-ai/">
     <link rel="alternate" type="application/rss+xml" title="Insights with Martin Motlík (podcast)" href="https://martinmotlik.com/podcast/feed.xml">
 
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Martin Motlík">
     <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="cs_CZ">
+    <meta property="og:locale:alternate" content="de_DE">
     <meta property="og:title" content="A power outlet for AI: what MCP means for AEC">
     <meta property="og:description" content="Your AI assistant can’t open your model. MCP, an open standard backed by OpenAI, Google and Microsoft, connects it to the AEC tools you already trust.">
     <meta property="og:url" content="https://martinmotlik.com/insights/mcp-power-outlet-for-ai/">
@@ -249,6 +253,14 @@
                 "@type": "Organization",
                 "name": "SketchUp"
               }
+            }
+          ],
+          "workTranslation": [
+            {
+              "@id": "https://martinmotlik.com/cs/insights/mcp-zasuvka-pro-ai-v-aec/#article"
+            },
+            {
+              "@id": "https://martinmotlik.com/de/insights/mcp-steckdose-fuer-ki-im-aec/#article"
             }
           ]
         },
@@ -829,8 +841,8 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
     <div style="display:flex;align-items:center;gap:12px;">
       <div class="lang-group">
         <a class="lang-btn active" href="/insights/mcp-power-outlet-for-ai/" hreflang="en" lang="en" data-lang="en" aria-label="English" aria-current="page">EN</a>
-        <a class="lang-btn" href="/cs/insights/" hreflang="cs" lang="cs" data-lang="cs" aria-label="Čeština">CS</a>
-        <a class="lang-btn" href="/de/insights/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch">DE</a>
+        <a class="lang-btn" href="/cs/insights/mcp-zasuvka-pro-ai-v-aec/" hreflang="cs" lang="cs" data-lang="cs" aria-label="Čeština">CS</a>
+        <a class="lang-btn" href="/de/insights/mcp-steckdose-fuer-ki-im-aec/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch">DE</a>
       </div>
       <button class="nav-hamburger" id="nav-hamburger" type="button" aria-label="Open menu" data-close-label="Close menu" data-i18n-attr="aria-label:menu_aria;data-close-label:menu_close"><span></span><span></span></button>
     </div>
@@ -851,8 +863,8 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
     <span class="nd-lang-l" id="nd-lang" data-i18n="menu_language">Language</span>
     <div class="nav-drawer-lang" role="group" aria-labelledby="nd-lang">
         <a class="lang-btn active" href="/insights/mcp-power-outlet-for-ai/" hreflang="en" lang="en" data-lang="en" aria-label="English" aria-current="page">EN</a>
-        <a class="lang-btn" href="/cs/insights/" hreflang="cs" lang="cs" data-lang="cs" aria-label="Čeština">CS</a>
-        <a class="lang-btn" href="/de/insights/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch">DE</a>
+        <a class="lang-btn" href="/cs/insights/mcp-zasuvka-pro-ai-v-aec/" hreflang="cs" lang="cs" data-lang="cs" aria-label="Čeština">CS</a>
+        <a class="lang-btn" href="/de/insights/mcp-steckdose-fuer-ki-im-aec/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch">DE</a>
     </div>
   </div>
 </div>
@@ -994,7 +1006,7 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
       <p data-k="what-mcp-is.p3">Picture the temporary power spider box on a jobsite. It doesn’t care whether you plug in a saw, a grinder, or a work light, because every tool has the same plug. Before MCP, connecting an AI to an application meant custom wiring for every pair: five AI apps and twenty programs meant up to a hundred one-off integrations. With MCP, each program builds one server and each AI app builds one client. Twenty-five pieces instead of a hundred, though each connection still needs the right setup and permissions.</p>
 
       <figure class="fig" id="fig-1">
-        <a class="fig-zoom" href="/assets/img/mcp-article-02-architecture-3840.jpg" aria-label="Enlarge figure 1">
+        <a class="fig-zoom" href="/assets/img/mcp-article-02-architecture-3840.jpg" aria-label="Enlarge figure 1" data-i18n-attr="aria-label:zoom_fig:1">
           <picture>
             <source type="image/avif" sizes="(min-width: 1004px) 700px, (min-width: 861px) calc(100vw - 304px), min(700px, calc(100vw - 48px))"
                     srcset="/assets/img/mcp-article-02-architecture-400.avif 400w,
@@ -1009,7 +1021,7 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
                          /assets/img/mcp-article-02-architecture-1050.jpg 1050w,
                          /assets/img/mcp-article-02-architecture-1400.jpg 1400w,
                          /assets/img/mcp-article-02-architecture-1920.jpg 1920w"
-                 alt="Diagram in three columns. Left, four AI applications: Claude, ChatGPT, Gemini and Copilot. Middle, a highlighted MCP block with Tools, Resources and Prompts. Right, four kinds of AEC software: structural analysis such as RFEM 6, BIM authoring such as Revit, model review with IFC and IDS checks, and project documents. Two-way arrows join every application and every tool to MCP."
+                 data-i18n-attr="alt:fig1_alt" alt="Diagram in three columns. Left, four AI applications: Claude, ChatGPT, Gemini and Copilot. Middle, a highlighted MCP block with Tools, Resources and Prompts. Right, four kinds of AEC software: structural analysis such as RFEM 6, BIM authoring such as Revit, model review with IFC and IDS checks, and project documents. Two-way arrows join every application and every tool to MCP."
                  width="1050" height="591"
                  loading="lazy" decoding="async">
           </picture>
@@ -1086,7 +1098,7 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
       <p data-k="access.p4"><strong>Checking.</strong> The AI runs checks: an IDS validation, a clash report, a comparison between revisions. IDS is a buildingSMART standard for expressing selected information requirements in a machine-checkable form. You specify which elements need which data, and a checker tests the model against those rules. It checks the information, not whether the building is correctly designed. The findings inform decisions, so a person reviews them.</p>
 
       <figure class="fig" id="img-05">
-        <a class="fig-zoom" href="/assets/img/mcp-article-05-permission-3840.jpg" aria-label="Enlarge image">
+        <a class="fig-zoom" href="/assets/img/mcp-article-05-permission-3840.jpg" aria-label="Enlarge image" data-i18n-attr="aria-label:zoom_img">
           <picture>
             <source type="image/avif" sizes="(min-width: 1004px) 700px, (min-width: 861px) calc(100vw - 304px), min(700px, calc(100vw - 48px))"
                     srcset="/assets/img/mcp-article-05-permission-400.avif 400w,
@@ -1101,7 +1113,7 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
                          /assets/img/mcp-article-05-permission-1050.jpg 1050w,
                          /assets/img/mcp-article-05-permission-1400.jpg 1400w,
                          /assets/img/mcp-article-05-permission-1920.jpg 1920w"
-                 alt="Google Antigravity, running Gemini, asks &quot;Allow using this MCP tool?&quot; before it calls run_ids_check of the ifc-review server. Above the question are the arguments the AI wants to send; below it the choices: allow this time, always allow in this conversation, always allow, or no."
+                 data-i18n-attr="alt:img05_alt" alt="Google Antigravity, running Gemini, asks &quot;Allow using this MCP tool?&quot; before it calls run_ids_check of the ifc-review server. Above the question are the arguments the AI wants to send; below it the choices: allow this time, always allow in this conversation, always allow, or no."
                  width="1050" height="591"
                  loading="lazy" decoding="async">
           </picture>
@@ -1119,7 +1131,7 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
       <p data-k="what-i-built.p2">To test how high the barrier really is, I built a read-only MCP server for the model-review prototype I’m developing. The prototype already checks IFC models against IDS requirements and compares model versions. The validation itself isn’t new; the prototype’s checker already did it. What the server adds is a way to ask follow-up questions, connect the steps, and jump straight to the affected elements.</p>
 
       <figure class="fig" id="fig-2">
-        <a class="fig-zoom" href="/assets/img/mcp-article-03-code-3840.jpg" aria-label="Enlarge figure 2">
+        <a class="fig-zoom" href="/assets/img/mcp-article-03-code-3840.jpg" aria-label="Enlarge figure 2" data-i18n-attr="aria-label:zoom_fig:2">
           <picture>
             <source type="image/avif" sizes="(min-width: 1004px) 700px, (min-width: 861px) calc(100vw - 304px), min(700px, calc(100vw - 48px))"
                     srcset="/assets/img/mcp-article-03-code-400.avif 400w,
@@ -1134,7 +1146,7 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
                          /assets/img/mcp-article-03-code-1050.jpg 1050w,
                          /assets/img/mcp-article-03-code-1400.jpg 1400w,
                          /assets/img/mcp-article-03-code-1920.jpg 1920w"
-                 alt="Source code of the get_properties tool from packages/mcp-server/src/server.ts: its name, the plain-English description the AI reads to decide when to use it, an input schema that takes the element&#x27;s GlobalId, the read-only annotations and an output schema for a structured result. The name, description and output schema lines are tinted."
+                 data-i18n-attr="alt:fig2_alt" alt="Source code of the get_properties tool from packages/mcp-server/src/server.ts: its name, the plain-English description the AI reads to decide when to use it, an input schema that takes the element&#x27;s GlobalId, the read-only annotations and an output schema for a structured result. The name, description and output schema lines are tinted."
                  width="1050" height="591"
                  loading="lazy" decoding="async">
           </picture>
@@ -1146,8 +1158,8 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
       <details class="code-src">
         <summary><span data-i18n="code_as_text">Show the code as text</span><svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary>
 <figure class="codeblock">
-        <figcaption class="cb-bar"><span class="cb-meta"><span class="cb-name">server.ts</span><span class="cb-sub">packages/mcp-server/src · lines 137–159</span></span><button class="cb-copy" type="button" data-copy-code=".cb-body code" aria-label="Copy the code" data-i18n-attr="aria-label:copy_code" data-ui="copy">Copy</button></figcaption>
-<pre class="cb-body scroll-x" tabindex="0" style="counter-reset:ln 136"><code><span class="l">server.registerTool(
+        <figcaption class="cb-bar"><span class="cb-meta"><span class="cb-name">server.ts</span><span data-k="code.span1" class="cb-sub">packages/mcp-server/src · lines 137–159</span></span><button class="cb-copy" type="button" data-copy-code=".cb-body code" aria-label="Copy the code" data-i18n-attr="aria-label:copy_code" data-ui="copy">Copy</button></figcaption>
+<pre class="cb-body scroll-x" tabindex="0" lang="en" style="counter-reset:ln 136"><code><span class="l">server.registerTool(
 </span><span class="l">  <span class="u">&quot;get_properties&quot;</span>,
 </span><span class="l">  {
 </span><span class="l">    <span class="k">title</span>: <span class="u">&quot;Element properties&quot;</span>,
@@ -1185,7 +1197,7 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
       </ul>
 
       <figure class="fig" id="fig-3">
-        <a class="fig-zoom" href="/assets/img/mcp-article-04-tools-3840.jpg" aria-label="Enlarge figure 3">
+        <a class="fig-zoom" href="/assets/img/mcp-article-04-tools-3840.jpg" aria-label="Enlarge figure 3" data-i18n-attr="aria-label:zoom_fig:3">
           <picture>
             <source type="image/avif" sizes="(min-width: 1004px) 700px, (min-width: 861px) calc(100vw - 304px), min(700px, calc(100vw - 48px))"
                     srcset="/assets/img/mcp-article-04-tools-400.avif 400w,
@@ -1200,7 +1212,7 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
                          /assets/img/mcp-article-04-tools-1050.jpg 1050w,
                          /assets/img/mcp-article-04-tools-1400.jpg 1400w,
                          /assets/img/mcp-article-04-tools-1920.jpg 1920w"
-                 alt="ChatGPT&#x27;s settings, Plugins, MCPs tab: the ifc-review server switched on in the list of servers, next to the app&#x27;s own ones."
+                 data-i18n-attr="alt:fig3_alt" alt="ChatGPT&#x27;s settings, Plugins, MCPs tab: the ifc-review server switched on in the list of servers, next to the app&#x27;s own ones."
                  width="1050" height="591"
                  loading="lazy" decoding="async">
           </picture>
@@ -1214,7 +1226,7 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
       <p data-k="what-i-built.p13">For the test, I then prepared a second revision with some of the gaps filled in, and asked the question every team asks after a revision: what got fixed, and what’s still missing? The AI called the comparison and validation tools, and the results were matched by element ID. Ten of the thirteen elements were fixed. Three doors on Residential Level 3 still had no fire rating. Then the AI handed me a link that opened the model with exactly those three doors highlighted.</p>
 
       <figure class="fig" id="fig-4">
-        <a class="fig-zoom" href="/assets/img/mcp-article-06-main-3840.jpg" aria-label="Enlarge figure 4">
+        <a class="fig-zoom" href="/assets/img/mcp-article-06-main-3840.jpg" aria-label="Enlarge figure 4" data-i18n-attr="aria-label:zoom_fig:4">
           <picture>
             <source type="image/avif" sizes="(min-width: 1004px) 700px, (min-width: 861px) calc(100vw - 304px), min(700px, calc(100vw - 48px))"
                     srcset="/assets/img/mcp-article-06-main-400.avif 400w,
@@ -1229,7 +1241,7 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
                          /assets/img/mcp-article-06-main-1050.jpg 1050w,
                          /assets/img/mcp-article-06-main-1400.jpg 1400w,
                          /assets/img/mcp-article-06-main-1920.jpg 1920w"
-                 alt="Left, ChatGPT&#x27;s answer comparing revisions R02 and R03 of a residential building: 10 of 13 elements fixed, three doors still missing a fire rating, and an &quot;Open in 3D viewer&quot; link. A teal line runs from the link to the 3D viewer on the right, where the three doors on Residential Level 3 are red, the elements fixed since R02 are teal and the Checks panel lists the one requirement that still fails."
+                 data-i18n-attr="alt:fig4_alt" alt="Left, ChatGPT&#x27;s answer comparing revisions R02 and R03 of a residential building: 10 of 13 elements fixed, three doors still missing a fire rating, and an &quot;Open in 3D viewer&quot; link. A teal line runs from the link to the 3D viewer on the right, where the three doors on Residential Level 3 are red, the elements fixed since R02 are teal and the Checks panel lists the one requirement that still fails."
                  width="1050" height="591"
                  loading="lazy" decoding="async">
           </picture>
@@ -1239,7 +1251,7 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
       </figure>
 
       <figure class="fig" id="fig-5">
-        <a class="fig-zoom" href="/assets/img/mcp-article-07-under-the-hood-3840.jpg" aria-label="Enlarge figure 5">
+        <a class="fig-zoom" href="/assets/img/mcp-article-07-under-the-hood-3840.jpg" aria-label="Enlarge figure 5" data-i18n-attr="aria-label:zoom_fig:5">
           <picture>
             <source type="image/avif" sizes="(min-width: 1004px) 700px, (min-width: 861px) calc(100vw - 304px), min(700px, calc(100vw - 48px))"
                     srcset="/assets/img/mcp-article-07-under-the-hood-400.avif 400w,
@@ -1254,7 +1266,7 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
                          /assets/img/mcp-article-07-under-the-hood-1050.jpg 1050w,
                          /assets/img/mcp-article-07-under-the-hood-1400.jpg 1400w,
                          /assets/img/mcp-article-07-under-the-hood-1920.jpg 1920w"
-                 alt="ChatGPT with its ifc-review calls unfolded: Model summary, then Check against IDS opened to show the summary and the structured JSON result the server returned, followed by ChatGPT&#x27;s answer that 13 of 14 requirements pass and three doors fail KOM-14."
+                 data-i18n-attr="alt:fig5_alt" alt="ChatGPT with its ifc-review calls unfolded: Model summary, then Check against IDS opened to show the summary and the structured JSON result the server returned, followed by ChatGPT&#x27;s answer that 13 of 14 requirements pass and three doors fail KOM-14."
                  width="1050" height="591"
                  loading="lazy" decoding="async">
           </picture>
@@ -1266,7 +1278,7 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
       <p data-k="what-i-built.p16">I ran the whole demo in two different AI apps: ChatGPT, and Gemini in Google Antigravity. In that test, both reached the same findings with the same server and the same tools. That doesn’t mean every AI app connects the same way; each product has its own setup and limits. But the server didn’t need to know which AI was asking. That is the point of a standard.</p>
 
       <figure class="fig" id="fig-6">
-        <a class="fig-zoom" href="/assets/img/mcp-article-08-two-ais-3840.jpg" aria-label="Enlarge figure 6">
+        <a class="fig-zoom" href="/assets/img/mcp-article-08-two-ais-3840.jpg" aria-label="Enlarge figure 6" data-i18n-attr="aria-label:zoom_fig:6">
           <picture>
             <source type="image/avif" sizes="(min-width: 1004px) 700px, (min-width: 861px) calc(100vw - 304px), min(700px, calc(100vw - 48px))"
                     srcset="/assets/img/mcp-article-08-two-ais-400.avif 400w,
@@ -1281,7 +1293,7 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
                          /assets/img/mcp-article-08-two-ais-1050.jpg 1050w,
                          /assets/img/mcp-article-08-two-ais-1400.jpg 1400w,
                          /assets/img/mcp-article-08-two-ais-1920.jpg 1920w"
-                 alt="Side by side, ChatGPT (left) and Gemini in Google Antigravity (right) answer the same question about revisions R02 and R03 through the same ifc-review MCP server: 10 of 13 elements fixed, three doors still failing."
+                 data-i18n-attr="alt:fig6_alt" alt="Side by side, ChatGPT (left) and Gemini in Google Antigravity (right) answer the same question about revisions R02 and R03 through the same ifc-review MCP server: 10 of 13 elements fixed, three doors still failing."
                  width="1050" height="591"
                  loading="lazy" decoding="async">
           </picture>
@@ -1305,7 +1317,7 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
       <p data-k="industry.p2">In under two years, MCP went from an experiment to a feature that major AEC vendors ship with their products.</p>
 
       <figure class="fig" id="img-11">
-        <a class="fig-zoom" href="/assets/img/mcp-article-11-timeline-3840.jpg" aria-label="Enlarge image">
+        <a class="fig-zoom" href="/assets/img/mcp-article-11-timeline-3840.jpg" aria-label="Enlarge image" data-i18n-attr="aria-label:zoom_img">
           <picture>
             <source type="image/avif" sizes="(min-width: 1004px) 700px, (min-width: 861px) calc(100vw - 304px), min(700px, calc(100vw - 48px))"
                     srcset="/assets/img/mcp-article-11-timeline-400.avif 400w,
@@ -1320,7 +1332,7 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
                          /assets/img/mcp-article-11-timeline-1050.jpg 1050w,
                          /assets/img/mcp-article-11-timeline-1400.jpg 1400w,
                          /assets/img/mcp-article-11-timeline-1920.jpg 1920w"
-                 alt="Timeline from November 2024 to July 2026: MCP released by Anthropic (November 2024); MCP donated to the Agentic AI Foundation under the Linux Foundation (December 2025); RFEM 6.13 ships an MCP server (January 2026); SketchUp MCP connector (April 2026); Bluebeam Max brings Claude to Revu (May 2026); Revit MCP server tech preview (June 2026); MCP specification 2026-07-28 (July 2026). Protocol milestones are dark, AEC products teal."
+                 data-i18n-attr="alt:img11_alt" alt="Timeline from November 2024 to July 2026: MCP released by Anthropic (November 2024); MCP donated to the Agentic AI Foundation under the Linux Foundation (December 2025); RFEM 6.13 ships an MCP server (January 2026); SketchUp MCP connector (April 2026); Bluebeam Max brings Claude to Revu (May 2026); Revit MCP server tech preview (June 2026); MCP specification 2026-07-28 (July 2026). Protocol milestones are dark, AEC products teal."
                  width="1050" height="591"
                  loading="lazy" decoding="async">
           </picture>
@@ -1388,22 +1400,22 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
 
       <section class="sources" aria-labelledby="sources-h">
         <h2 data-k="sources-h.h21" class="src-h" id="sources-h">Sources</h2>
-        <ol class="src-list">
-          <li id="src-1"><a href="https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation" target="_blank" rel="noopener"><span class="src-n">[1]</span><span data-k="sources-h.span2" class="src-t">Anthropic: <strong>Donating the Model Context Protocol and establishing the Agentic AI Foundation</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
-          <li id="src-2"><a href="https://github.com/modelcontextprotocol/specification/releases/tag/2026-07-28" target="_blank" rel="noopener"><span class="src-n">[2]</span><span data-k="sources-h.span3" class="src-t">Model Context Protocol: <strong>2026-07-28 specification release</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
-          <li id="src-3"><a href="https://www.theregister.com/a/5276722" target="_blank" rel="noopener"><span class="src-n">[3]</span><span data-k="sources-h.span4" class="src-t">The Register: <strong>Model Context Protocol prepares to break with its stateful past</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
-          <li id="src-4"><a href="https://www.dlubal.com/en/support-and-learning/support/knowledge-base/002032" target="_blank" rel="noopener"><span class="src-n">[4]</span><span data-k="sources-h.span5" class="src-t">Dlubal Software: <strong>Integration of RFEM 6 into AI applications via MCP server</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
-          <li id="src-5"><a href="https://apidocs.dlubal.com/installation_mcp.html" target="_blank" rel="noopener"><span class="src-n">[5]</span><span data-k="sources-h.span6" class="src-t">Dlubal API documentation: <strong>MCP server</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
-          <li id="src-6"><a href="https://www.autodesk.com/blogs/aec/2026/06/17/revit-public-mcp-server/" target="_blank" rel="noopener"><span class="src-n">[6]</span><span data-k="sources-h.span7" class="src-t">Autodesk: <strong>Introducing the Revit Public MCP Server</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
-          <li id="src-7"><a href="https://blog.cadalyst.com/architecture-infrastructure-construction-solutions/mcp-a-new-standard-for-connecting-ai-to-aec-software" target="_blank" rel="noopener"><span class="src-n">[7]</span><span data-k="sources-h.span8" class="src-t">Cadalyst: <strong>MCP, a new standard for connecting AI to AEC software</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
-          <li id="src-8"><a href="https://www.microsoft.com/microsoft-365/roadmap?id=501585" target="_blank" rel="noopener"><span class="src-n">[8]</span><span data-k="sources-h.span9" class="src-t">Microsoft 365 Roadmap: <strong>Custom MCP connectors in Microsoft 365 Copilot</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
-          <li id="src-9"><a href="https://support.google.com/g/answer/17106276" target="_blank" rel="noopener"><span class="src-n">[9]</span><span data-k="sources-h.span10" class="src-t">Google: <strong>Set up a custom MCP server connection in Gemini Enterprise</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
-          <li id="src-10"><a href="https://glama.ai/mcp/servers/kd8f7alqr6" target="_blank" rel="noopener"><span class="src-n">[10]</span><span data-k="sources-h.span11" class="src-t">ifcopenshell-mcp: <strong>open-source MCP server for IFC models</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
-          <li id="src-11"><a href="https://revizto.com/legal/revizto-mcp-server" target="_blank" rel="noopener"><span class="src-n">[11]</span><span data-k="sources-h.span12" class="src-t"><strong>Revizto MCP Server</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
-          <li id="src-12"><a href="https://modelcontextprotocol.io/specification/2026-07-28/changelog" target="_blank" rel="noopener"><span class="src-n">[12]</span><span data-k="sources-h.span13" class="src-t">Model Context Protocol: <strong>Key changes in the 2026-07-28 specification</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
-          <li id="src-13"><a href="https://forums.autodesk.com/t5/revit-mep-forum/revit-mcp-server-tech-preview-launch/td-p/14262011" target="_blank" rel="noopener"><span class="src-n">[13]</span><span data-k="sources-h.span14" class="src-t">Autodesk Community: <strong>Revit MCP server tech preview launch (Trusted-Write and Experimental)</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
-          <li id="src-14"><a href="https://support.bluebeam.com/revu/how-to/mcp-claude.html" target="_blank" rel="noopener"><span class="src-n">[14]</span><span data-k="sources-h.span15" class="src-t">Bluebeam: <strong>Use MCP with Claude in Revu</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
-          <li id="src-15"><a href="https://help.sketchup.com/en/sketchup-claude-connector" target="_blank" rel="noopener"><span class="src-n">[15]</span><span data-k="sources-h.span16" class="src-t">SketchUp: <strong>SketchUp connector for Claude</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
+        <ol class="src-list" lang="en">
+          <li id="src-1"><a href="https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation" target="_blank" rel="noopener"><span class="src-n">[1]</span><span class="src-t">Anthropic: <strong>Donating the Model Context Protocol and establishing the Agentic AI Foundation</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
+          <li id="src-2"><a href="https://github.com/modelcontextprotocol/specification/releases/tag/2026-07-28" target="_blank" rel="noopener"><span class="src-n">[2]</span><span class="src-t">Model Context Protocol: <strong>2026-07-28 specification release</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
+          <li id="src-3"><a href="https://www.theregister.com/a/5276722" target="_blank" rel="noopener"><span class="src-n">[3]</span><span class="src-t">The Register: <strong>Model Context Protocol prepares to break with its stateful past</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
+          <li id="src-4"><a href="https://www.dlubal.com/en/support-and-learning/support/knowledge-base/002032" target="_blank" rel="noopener"><span class="src-n">[4]</span><span class="src-t">Dlubal Software: <strong>Integration of RFEM 6 into AI applications via MCP server</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
+          <li id="src-5"><a href="https://apidocs.dlubal.com/installation_mcp.html" target="_blank" rel="noopener"><span class="src-n">[5]</span><span class="src-t">Dlubal API documentation: <strong>MCP server</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
+          <li id="src-6"><a href="https://www.autodesk.com/blogs/aec/2026/06/17/revit-public-mcp-server/" target="_blank" rel="noopener"><span class="src-n">[6]</span><span class="src-t">Autodesk: <strong>Introducing the Revit Public MCP Server</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
+          <li id="src-7"><a href="https://blog.cadalyst.com/architecture-infrastructure-construction-solutions/mcp-a-new-standard-for-connecting-ai-to-aec-software" target="_blank" rel="noopener"><span class="src-n">[7]</span><span class="src-t">Cadalyst: <strong>MCP, a new standard for connecting AI to AEC software</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
+          <li id="src-8"><a href="https://www.microsoft.com/microsoft-365/roadmap?id=501585" target="_blank" rel="noopener"><span class="src-n">[8]</span><span class="src-t">Microsoft 365 Roadmap: <strong>Custom MCP connectors in Microsoft 365 Copilot</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
+          <li id="src-9"><a href="https://support.google.com/g/answer/17106276" target="_blank" rel="noopener"><span class="src-n">[9]</span><span class="src-t">Google: <strong>Set up a custom MCP server connection in Gemini Enterprise</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
+          <li id="src-10"><a href="https://glama.ai/mcp/servers/kd8f7alqr6" target="_blank" rel="noopener"><span class="src-n">[10]</span><span class="src-t">ifcopenshell-mcp: <strong>open-source MCP server for IFC models</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
+          <li id="src-11"><a href="https://revizto.com/legal/revizto-mcp-server" target="_blank" rel="noopener"><span class="src-n">[11]</span><span class="src-t"><strong>Revizto MCP Server</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
+          <li id="src-12"><a href="https://modelcontextprotocol.io/specification/2026-07-28/changelog" target="_blank" rel="noopener"><span class="src-n">[12]</span><span class="src-t">Model Context Protocol: <strong>Key changes in the 2026-07-28 specification</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
+          <li id="src-13"><a href="https://forums.autodesk.com/t5/revit-mep-forum/revit-mcp-server-tech-preview-launch/td-p/14262011" target="_blank" rel="noopener"><span class="src-n">[13]</span><span class="src-t">Autodesk Community: <strong>Revit MCP server tech preview launch (Trusted-Write and Experimental)</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
+          <li id="src-14"><a href="https://support.bluebeam.com/revu/how-to/mcp-claude.html" target="_blank" rel="noopener"><span class="src-n">[14]</span><span class="src-t">Bluebeam: <strong>Use MCP with Claude in Revu</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
+          <li id="src-15"><a href="https://help.sketchup.com/en/sketchup-claude-connector" target="_blank" rel="noopener"><span class="src-n">[15]</span><span class="src-t">SketchUp: <strong>SketchUp connector for Claude</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
         </ol>
       </section>
 
@@ -1497,7 +1509,7 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
 
 <!-- Figures open here, full size (script below); without JS their links open the file. -->
 <dialog class="zoom" id="zoom" aria-label="Enlarged image" data-i18n-attr="aria-label:zoom_aria">
-  <button class="zoom-x" type="button" data-zoom-close aria-label="Close" data-i18n-attr="aria-label:close">×</button>
+  <button class="zoom-x" type="button" data-zoom-close aria-label="Close" data-i18n-attr="aria-label:zoom_close">×</button>
   <picture><source id="zoom-avif" type="image/avif" sizes="100vw"><img id="zoom-img" alt="" sizes="100vw" decoding="async"></picture>
   <div class="zoom-foot"><span id="zoom-cap"></span><a id="zoom-full" href="#" target="_blank" rel="noopener" data-i18n="zoom_full">Open full resolution ↗</a></div>
 </dialog>

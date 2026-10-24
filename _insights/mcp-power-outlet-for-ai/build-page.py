@@ -13,6 +13,7 @@ ROOT, ASSETS_MD = sys.argv[1], sys.argv[2]
 GEO = open(f'{ROOT}/insights/ai-visibility-for-aec/index.html', encoding='utf-8').read()
 SITE = 'https://martinmotlik.com'
 PATH = '/insights/mcp-power-outlet-for-ai/'
+CS, DE = '/cs/insights/mcp-zasuvka-pro-ai-v-aec/', '/de/insights/mcp-steckdose-fuer-ki-im-aec/'   # approved 2026-10-24
 URL = SITE + PATH
 H1 = 'A power outlet for AI: what MCP means for AEC'        # approved 2026-10-24 (variant A, ≤ 60 characters)
 TITLE = 'A Power Outlet for AI: What MCP Means for AEC'
@@ -65,10 +66,13 @@ def figure(img, key, numbered=True):
         fig_no += 1
         label = f'<span class="fig-n">Figure {fig_no}</span> '
         fid = f' id="fig-{fig_no}"'
-        aria = f'Enlarge figure {fig_no}'
+        aria = f'Enlarge figure {fig_no}" data-i18n-attr="aria-label:zoom_fig:{fig_no}'
+        altkey = f'fig{fig_no}_alt'
     else:
-        label, fid, aria = '', f' id="img-{img.split("-")[0]}"', 'Enlarge image'
-    pic = picture(f'mcp-article-{img}', COL, esc(alt), 1920, indent=10)
+        label, fid, aria = '', f' id="img-{img.split("-")[0]}"', 'Enlarge image" data-i18n-attr="aria-label:zoom_img'
+        altkey = f'img{img.split("-")[0]}_alt'
+    # Alt text and the enlarge label are translated (ui keys in i18n/{cs,de}.json).
+    pic = picture(f'mcp-article-{img}', COL, esc(alt), 1920, indent=10).replace('alt="', f'data-i18n-attr="alt:{altkey}" alt="', 1)
     return (f'      <figure class="fig"{fid}>\n'
             f'        <a class="fig-zoom" href="/assets/img/mcp-article-{img}-3840.jpg" aria-label="{aria}">\n'
             f'{pic}\n          {ZOOM_IC}\n        </a>\n'
@@ -116,8 +120,8 @@ CHEV = ('<svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none
 code_details = f'''      <details class="code-src">
         <summary><span data-i18n="code_as_text">Show the code as text</span>{CHEV}</summary>
 <figure class="codeblock">
-        <figcaption class="cb-bar"><span class="cb-meta"><span class="cb-name">server.ts</span><span class="cb-sub">packages/mcp-server/src · lines 137–159</span></span><button class="cb-copy" type="button" data-copy-code=".cb-body code" aria-label="Copy the code" data-i18n-attr="aria-label:copy_code" data-ui="copy">Copy</button></figcaption>
-<pre class="cb-body scroll-x" tabindex="0" style="counter-reset:ln 136"><code>{code_html}</code></pre>
+        <figcaption class="cb-bar"><span class="cb-meta"><span class="cb-name">server.ts</span><span data-k="code.span1" class="cb-sub">packages/mcp-server/src · lines 137–159</span></span><button class="cb-copy" type="button" data-copy-code=".cb-body code" aria-label="Copy the code" data-i18n-attr="aria-label:copy_code" data-ui="copy">Copy</button></figcaption>
+<pre class="cb-body scroll-x" tabindex="0" lang="en" style="counter-reset:ln 136"><code>{code_html}</code></pre>
       </figure>
       </details>'''
 
@@ -252,7 +256,8 @@ ld = {'@context': 'https://schema.org', '@graph': [
                {'@type': 'Thing', 'name': 'Architecture, engineering and construction industry'}],
      'wordCount': WORDS,
      'citation': [dict({'@type': 'CreativeWork', 'name': t, 'url': u}, **({'publisher': {'@type': 'Organization', 'name': p}} if p else {}))
-                  for p, t, u in SOURCES]},
+                  for p, t, u in SOURCES],
+     'workTranslation': [{'@id': SITE + CS + '#article'}, {'@id': SITE + DE + '#article'}]},
     person,
     {'@type': 'BreadcrumbList', 'itemListElement': [
         {'@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE + '/'},
@@ -268,14 +273,18 @@ head = head_top + f'''    <title>{esc(TITLE)}</title>
     <meta name="author" content="Martin Motlík">
     <link rel="canonical" href="{URL}">
 
-    <!-- Language versions (tools/build-i18n.py). CS and DE are added with the translations. -->
+    <!-- Language versions (tools/build-i18n.py). Every version lists all of them. -->
     <link rel="alternate" hreflang="en" href="{URL}">
+    <link rel="alternate" hreflang="cs" href="{SITE}{CS}">
+    <link rel="alternate" hreflang="de" href="{SITE}{DE}">
     <link rel="alternate" hreflang="x-default" href="{URL}">
     <link rel="alternate" type="application/rss+xml" title="Insights with Martin Motlík (podcast)" href="https://martinmotlik.com/podcast/feed.xml">
 
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Martin Motlík">
     <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="cs_CZ">
+    <meta property="og:locale:alternate" content="de_DE">
     <meta property="og:title" content="{esc(H1)}">
     <meta property="og:description" content="{esc(DESC)}">
     <meta property="og:url" content="{URL}">
@@ -362,9 +371,8 @@ css = css.replace(anchor, NEW_CSS + anchor, 1)
 # ── body ─────────────────────────────────────────────────────────────────────
 nav = GEO[GEO.index('<body>'):GEO.index('<main class="ins">')]
 nav = nav.replace('href="/insights/ai-visibility-for-aec/"', f'href="{PATH}"')
-# CS/DE do not exist yet: the switcher leads to the translated Insights lists.
-nav = nav.replace('href="/cs/insights/data-aec-pro-vyhledavani-s-ai/"', 'href="/cs/insights/"')
-nav = nav.replace('href="/de/insights/aec-daten-fuer-ki-suche/"', 'href="/de/insights/"')
+nav = nav.replace('href="/cs/insights/data-aec-pro-vyhledavani-s-ai/"', f'href="{CS}"')
+nav = nav.replace('href="/de/insights/aec-daten-fuer-ki-suche/"', f'href="{DE}"')
 
 byline = GEO[GEO.index('        <div class="byline" id="byline">'):GEO.index('          <span data-k="hero.span5" id="vo-meta">')]
 cover = picture('mcp-article-01-hero', '(min-width: 1128px) 1032px, calc(100vw - 48px)', esc(hero_alt), 2560, eager=True, indent=8)
@@ -405,11 +413,11 @@ more = f'''      <section class="more" aria-labelledby="more-h">
 tags = '\n'.join(f'        <span data-k="tags.span{i + 1}">{esc(t)}</span>' for i, t in enumerate(TAGS))
 src_items = '\n'.join(
     f'          <li id="src-{i}"><a href="{esc(u)}" target="_blank" rel="noopener"><span class="src-n">[{i}]</span>'
-    f'<span data-k="sources-h.span{i + 1}" class="src-t">{esc(p) + ": " if p else ""}<strong>{fmt(t)}</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>'
+    f'<span class="src-t">{esc(p) + ": " if p else ""}<strong>{fmt(t)}</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>'
     for i, (p, t, u) in enumerate(SOURCES, 1))
 sources = f'''      <section class="sources" aria-labelledby="sources-h">
         <h2 data-k="sources-h.h21" class="src-h" id="sources-h">Sources</h2>
-        <ol class="src-list">
+        <ol class="src-list" lang="en">
 {src_items}
         </ol>
       </section>
@@ -474,7 +482,7 @@ main = f'''<main class="ins">
 
 <!-- Figures open here, full size (script below); without JS their links open the file. -->
 <dialog class="zoom" id="zoom" aria-label="Enlarged image" data-i18n-attr="aria-label:zoom_aria">
-  <button class="zoom-x" type="button" data-zoom-close aria-label="Close" data-i18n-attr="aria-label:close">×</button>
+  <button class="zoom-x" type="button" data-zoom-close aria-label="Close" data-i18n-attr="aria-label:zoom_close">×</button>
   <picture><source id="zoom-avif" type="image/avif" sizes="100vw"><img id="zoom-img" alt="" sizes="100vw" decoding="async"></picture>
   <div class="zoom-foot"><span id="zoom-cap"></span><a id="zoom-full" href="#" target="_blank" rel="noopener" data-i18n="zoom_full">Open full resolution ↗</a></div>
 </dialog>

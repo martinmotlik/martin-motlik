@@ -6,7 +6,8 @@
   "a1_alt": "Martin Motlík pracuje venku na notebooku, obklopený ikonami asistentů AI a vyhledávačů",
   "a1_alt_short": "Martin Motlík pracuje na notebooku, obklopený ikonami asistentů AI",
   "chips_aria": "Filtrovat podle kategorie",
-  "menu_close": "Zavřít menu"
+  "menu_close": "Zavřít menu",
+  "a2_alt": "Odpověď ChatGPT porovnávající revize R02 a R03 bytového domu s odkazem „Open in 3D viewer“ se vznáší nad webovým 3D prohlížečem. Tenká tyrkysová čára vede od odkazu ke třem červeným dveřím ve třetím obytném podlaží; prvky opravené od R02 jsou tyrkysové a zbytek modelu je průhledně světle šedý."
  },
  "chrome": {
   "nav_references": "Reference",
@@ -28,6 +29,8 @@
   "read_more": "Číst →",
   "a1_title": "Buďte zdrojem: jak připravit data AEC firem pro vyhledávání s AI",
   "a1_ex": "Práce na webech inženýrského softwaru pro různé trhy formovala můj přístup k viditelnosti v AI. Tento článek shrnuje poznatky z lokalizace a praktické kontroly, se kterými dělám technický obsah snáze dohledatelný, srozumitelný a ověřitelný.",
+  "a2_title": "Zásuvka pro AI: co znamená MCP pro AEC",
+  "a2_ex": "Model Context Protocol je otevřený standard, který propojuje AI asistenty se softwarem, se kterým inženýři už pracují. Co je MCP, k čemu se hodí v AEC a proč napojení na AI platformy, které váš tým už používá, obvykle dává větší smysl než stavět další chatbot.",
   "list_title": "Všechny články",
   "filter_all": "Vše",
   "cta_title": "Čtěte nové články jako první.",

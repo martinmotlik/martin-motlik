@@ -66,15 +66,37 @@ Resolved by the revision: the demo in the text now matches the screenshots
 6. **Image 05** has a black band along the right and bottom edges in the
    source file (the window edge of the capture). Worth re-rendering.
 
+## Translations (CS, DE; 2026-10-24)
+
+Source: `article.cs.md`, `article.de.md` (the article block for block) and
+`i18n-{cs,de}.extras.json` (hero, contents, captions, alt texts, metadata).
+`i18n-from-md.py <lang>` writes `insights/mcp-power-outlet-for-ai/i18n/<lang>.json`;
+then `tools/build-i18n.py`. Czech non-breaking spaces are added by the script.
+
+Choices worth a native read:
+
+- **Units localized** in the example question: "cubic yards of concrete" →
+  „metrů krychlových“ / „Kubikmeter“ (as article #1 argues: write in the
+  language of the reader's market). "L/360" stays as it is.
+- **Terms:** girder → průvlak / Unterzug; demand-to-capacity ratio → využití
+  únosnosti / Ausnutzung; fire rating → požární odolnost /
+  Feuerwiderstandsklasse; fire safety design → požárně bezpečnostní řešení /
+  Brandschutzkonzept; BIM Execution Plan → BIM Execution Plan (CS, as used) /
+  BIM-Abwicklungsplan; serviceability load combinations → kombinace mezního
+  stavu použitelnosti / Grenzzustand der Gebrauchstauglichkeit.
+- **Prague** stays „v Praze“ / „in Prag“ (the article names the city).
+- **MCP roles** "Tools, Resources, Prompts": CS translates them (Nástroje,
+  Zdroje, Prompty), DE keeps the protocol's English names; the diagram
+  (image 02) shows them in English.
+- **Podcast line:** both say the episode is in English, as the translation
+  rules require.
+- **Screenshots** stay English (real application interfaces); captions and
+  alt texts are translated. Sources stay English (titles of English pages).
+
 ## Waiting
 
-- **CS/DE:** the language switcher on this page leads to the CS/DE Insights
-  lists until the translations exist; `hreflang` lists only EN.
 - **Listed (2026-10-24):** featured and first card on `/insights/`, entry in
-  `llms.txt`, "Keep reading" card in article #1. The title, excerpt and alt
-  text are marked `lang="en"`, so the CS and DE lists and article #1 show them
-  in English until the translations exist; date and read time are translated.
-  `sitemap.xml` follows with the translations (the build adds an article once
-  its CS/DE URLs exist).
+  `llms.txt` (with the CS/DE lines and the language table), "Keep reading"
+  card in article #1, `sitemap.xml` in all three languages.
 - **Podcast:** the page has empty podcast markers; `build-podcast.py` fills
   them once EP 02 is in `podcast/podcast.json`.

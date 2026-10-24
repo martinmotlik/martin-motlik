@@ -32,7 +32,8 @@
   "paused": "Pausiert",
   "chapter_of": "Kapitel {n} von {total}",
   "mini_aria": "Podcast-Player",
-  "menu_close": "Menü schließen"
+  "menu_close": "Menü schließen",
+  "more_a2_alt": "Die Antwort von ChatGPT, die die Revisionen R02 und R03 eines Wohngebäudes vergleicht, mit dem Link „Open in 3D viewer“ schwebt über einem webbasierten 3D-Viewer. Eine dünne türkisfarbene Linie führt vom Link zu drei roten Türen im dritten Wohngeschoss; die seit R02 behobenen Elemente sind türkis, der Rest des Modells ist durchscheinend hellgrau."
  },
  "chrome": {
   "nav_references": "Referenzen",
@@ -52,6 +53,7 @@
   "more_all": "Alle Beiträge →",
   "cat_ai": "KI im AEC",
   "more_a2_date": "22. Oktober 2026",
+  "more_a2_title": "Eine Steckdose für KI: Was MCP für AEC bedeutet",
   "read_14": "14 Min. Lesezeit",
   "toc_mobile": "Inhalt des Beitrags",
   "share_more_opts": "Weitere Optionen",
