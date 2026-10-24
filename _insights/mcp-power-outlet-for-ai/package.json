@@ -1,0 +1,34 @@
+{
+ "_about": "Manifest of one Insights package. Read by tools/insights/check-package.py and drive-stage.py; rules in .claude/skills/insights-article/SKILL.md.",
+ "slug": "mcp-power-outlet-for-ai",
+ "number": 2,
+ "title": "A power outlet for AI: what MCP is and why AEC professionals will need it",
+ "short_name": "",
+ "category": "",
+ "core_line": "",
+ "urls": {
+  "en": "/insights/mcp-power-outlet-for-ai/",
+  "cs": "",
+  "de": ""
+ },
+ "hero": "",
+ "episode": "",
+ "teasers": [],
+ "published": {
+  "article": "",
+  "episode": ""
+ },
+ "forbidden": [
+  "Motlar",
+  "Komořanská",
+  "Komoranska",
+  "Dlubal CALC"
+ ],
+ "drive": {
+  "folder": "02 mcp-power-outlet-for-ai · ",
+  "url": "",
+  "id": "",
+  "subfolders": {},
+  "uploaded": {}
+ }
+}
