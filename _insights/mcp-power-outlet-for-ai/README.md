@@ -1,4 +1,4 @@
-# A power outlet for AI: what MCP is and why AEC professionals will need it
+# A power outlet for AI: what MCP means for AEC
 
 Insights package `mcp-power-outlet-for-ai` · EP 02 · rules: `.claude/skills/insights-article/SKILL.md`
 Check anytime: `python3 tools/insights/check-package.py mcp-power-outlet-for-ai`
@@ -36,6 +36,8 @@ Check anytime: `python3 tools/insights/check-package.py mcp-power-outlet-for-ai`
 - 2026-10-24 · Hero is a composed product image, not Martin in the scene (exception to the hero rule). No `-notext` variant exists; the hero has no text overlay, so the OG crop comes from it directly.
 - 2026-10-24 · Not on the page: "Motlar", "Komořanská", "Dlubal CALC" (`package.json` → `forbidden`, checked by `check-package.py`). Images 09, 10 and the interaction video are not in the article.
 - 2026-10-24 · The IDS requirement ID "KOM-14" in images 01, 06, 07 and the alt text of 07 stays (user's decision).
+
+- 2026-10-24 · Approved (user): title variant A, "A power outlet for AI: what MCP means for AEC" as H1 and, in Title Case, as `<title>`; meta description A; dek A. The doc keeps its longer working title.
 
 ## Open
 

@@ -14,8 +14,8 @@ GEO = open(f'{ROOT}/insights/ai-visibility-for-aec/index.html', encoding='utf-8'
 SITE = 'https://martinmotlik.com'
 PATH = '/insights/mcp-power-outlet-for-ai/'
 URL = SITE + PATH
-H1 = 'A power outlet for AI: what MCP is and why AEC professionals will need it'
-TITLE = 'A Power Outlet for AI: What MCP Is and Why AEC Professionals Will Need It'
+H1 = 'A power outlet for AI: what MCP means for AEC'        # approved 2026-10-24 (variant A, ≤ 60 characters)
+TITLE = 'A Power Outlet for AI: What MCP Means for AEC'
 DESC = ('Your AI assistant can’t open your model. MCP, an open standard backed by OpenAI, Google and '
         'Microsoft, connects it to the AEC tools you already trust.')
 DEK = ('Model Context Protocol is an open standard that connects AI assistants to the software engineers '

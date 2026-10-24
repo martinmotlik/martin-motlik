@@ -9,40 +9,17 @@ the GEO article for comparison; the code block open; the lightbox).
 **Text check:** all 92 text blocks, the 10 links in the text and the 15
 sources on the page match `article.md` word for word (compared after removing
 Markdown syntax and normalizing quotes). Changes are typographic only:
-straight quotes and apostrophes became ’ “ ”, as on the rest of the site, and
-the H1 is in sentence case like article #1 (the doc has Title Case). No
-`[TK]` is left.
+straight quotes and apostrophes became ’ “ ”, as on the rest of the site.
+The H1 is the approved shorter title (below), not the doc's title. No `[TK]`
+is left.
+
+## Approved (2026-10-24)
+
+- **Title:** variant A. H1 "A power outlet for AI: what MCP means for AEC"; `<title>` "A Power Outlet for AI: What MCP Means for AEC" (45 characters). The doc's longer title stays in the doc.
+- **Meta description:** "Your AI assistant can’t open your model. MCP, an open standard backed by OpenAI, Google and Microsoft, connects it to the AEC tools you already trust." (150 characters)
+- **Dek:** "Model Context Protocol is an open standard that connects AI assistants to the software engineers already use. What it is, what it’s good for in AEC, and why connecting to the AI platforms your team already uses usually makes more sense than building another chatbot."
 
 ## For approval
-
-### `<title>` (≤ 60 characters)
-
-The title has 73 characters. The site rule is that `<title>` repeats the H1
-word for word in Title Case, so a shorter `<title>` means a shorter H1.
-
-| | `<title>` | H1 (sentence case) | Chars |
-|---|---|---|---|
-| A | A Power Outlet for AI: What MCP Means for AEC | A power outlet for AI: what MCP means for AEC | 45 |
-| B | What Is MCP? A Power Outlet for AI in AEC Software | What is MCP? A power outlet for AI in AEC software | 50 |
-
-Until you choose, the page uses the full title.
-
-### Meta description (≤ 155 characters)
-
-| | Text | Chars |
-|---|---|---|
-| A | Your AI assistant can’t open your model. MCP, an open standard backed by OpenAI, Google and Microsoft, connects it to the AEC tools you already trust. | 150 |
-| B | What Model Context Protocol is, what it’s good for in AEC, and why the AI platforms your team already uses usually make more sense than another chatbot. | 152 |
-
-The page uses A.
-
-### Dek (perex under the H1; the doc has none)
-
-- **A** (on the page): Model Context Protocol is an open standard that connects AI assistants to the software engineers already use. What it is, what it’s good for in AEC, and why connecting to the AI platforms your team already uses usually makes more sense than building another chatbot.
-- **B:** Your AI assistant can draft the RFI response but can’t open your model. MCP changes that: one standard socket between the AI you already use and the engineering software you already trust.
-
-Dek A follows the softer wording of the revised intro ("usually makes more
-sense than").
 
 ### Closing box ("Next step"; the doc has none)
 

@@ -2,7 +2,7 @@
  "_about": "Manifest of one Insights package. Read by tools/insights/check-package.py and drive-stage.py; rules in .claude/skills/insights-article/SKILL.md.",
  "slug": "mcp-power-outlet-for-ai",
  "number": 2,
- "title": "A power outlet for AI: what MCP is and why AEC professionals will need it",
+ "title": "A power outlet for AI: what MCP means for AEC",
  "short_name": "A power outlet for AI",
  "category": "AI in AEC",
  "core_line": "",
