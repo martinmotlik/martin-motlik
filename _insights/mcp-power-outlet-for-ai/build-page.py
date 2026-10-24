@@ -353,19 +353,7 @@ article ul{margin:0 0 1.375rem}
 .takeaway ol.steps>li::before{background:#fff}
 mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-weight:500;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 
-/* 15 · Keep reading: the other articles as compact cards */
-.more{margin:var(--sp-7) 0 0;padding-top:20px;border-top:1px solid var(--rule)}
-.ins article a.more-card{margin-top:12px;display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr);gap:20px;align-items:center;padding:12px;border-radius:var(--r-panel);background:#fff;box-shadow:var(--card);color:var(--ink);text-decoration:none;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
-.ins article a.more-card:hover{transform:translateY(-2px);box-shadow:var(--card-hi);color:var(--ink)}
-.mc-shot{display:block;aspect-ratio:16/10;border-radius:14px;overflow:hidden;background:var(--s3)}
-.mc-shot img{width:100%;height:100%;object-fit:cover}
-.mc-txt,.mc-t,.mc-m{display:block}
-.mc-cat{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
-.mc-t{margin-top:6px;font-size:18px;line-height:1.3;letter-spacing:-.015em;font-weight:700;text-wrap:balance}
-.mc-m{margin-top:8px;font-size:13px;color:var(--m2)}
-.more p.all-link{margin-top:var(--sp-4)}
-@media (max-width:620px){.ins article a.more-card{grid-template-columns:112px minmax(0,1fr);gap:14px}.mc-t{font-size:16px}}
-@media (prefers-reduced-motion:reduce){.fig-ic,.code-src summary,.more-card{transition:none}}
+@media (prefers-reduced-motion:reduce){.fig-ic,.code-src summary{transition:none}}
 
 '''
 anchor = '/* ── 11 · PODCAST'
@@ -394,12 +382,12 @@ share_side = share(GEO[GEO.index('      <div class="share" role="group" aria-lab
 share_row = share(GEO[GEO.index('      <div class="share-row">'):GEO.index('      <div class="tags">')])
 closing = GEO[GEO.index('      <section class="closing"'):GEO.index('      <div class="share-row">')]
 closing = re.sub(r'(<p data-k="closing.p3" class="cl-d">).*?(</p>)', lambda m: m.group(1) + esc(CLOSING) + m.group(2), closing)
-author = GEO[GEO.index('      <div class="author">'):GEO.index('      <!-- "Keep reading"')]
+author = GEO[GEO.index('      <div class="author">'):GEO.index('      <!-- Keep reading: the other articles.')]
 
 geo_card = picture('ai-search-hero', '(min-width: 621px) 200px, 112px', 'Martin Motl&iacute;k working on a laptop, surrounded by the icons of AI assistants', 900, indent=10)
 geo_card = geo_card.replace('alt="', 'data-i18n-attr="alt:more_a1_alt" alt="', 1)
 more = f'''      <section class="more" aria-labelledby="more-h">
-        <h2 class="src-h" id="more-h" data-i18n="more_h">Keep reading</h2>
+        <h2 class="src-h" id="more-h" data-i18n="more_title">Keep reading</h2>
         <a class="more-card" href="/insights/ai-visibility-for-aec/">
           <span class="mc-shot">
 {geo_card}

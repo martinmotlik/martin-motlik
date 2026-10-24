@@ -695,9 +695,22 @@ details[open]>summary .chev{transform:rotate(180deg)}
   .share-row .sh-more summary .chev{margin-left:0}
 }
 
-/* Quiet link back to the list (replaces "Keep reading" while there is one article) */
+/* Link back to the list, under "Keep reading" */
 article p.all-link{margin:var(--sp-6) 0 0;font-size:.9375rem;font-weight:600}
 article p.all-link a{text-decoration:none}
+/* Keep reading: the other articles as compact cards */
+.more{margin:var(--sp-7) 0 0;padding-top:20px;border-top:1px solid var(--rule)}
+.ins article a.more-card{margin-top:12px;display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr);gap:20px;align-items:center;padding:12px;border-radius:var(--r-panel);background:#fff;box-shadow:var(--card);color:var(--ink);text-decoration:none;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.ins article a.more-card:hover{transform:translateY(-2px);box-shadow:var(--card-hi);color:var(--ink)}
+.mc-shot{display:block;aspect-ratio:16/10;border-radius:14px;overflow:hidden;background:var(--s3)}
+.mc-shot img{width:100%;height:100%;object-fit:cover}
+.mc-txt,.mc-t,.mc-m{display:block}
+.mc-cat{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.mc-t{margin-top:6px;font-size:18px;line-height:1.3;letter-spacing:-.015em;font-weight:700;text-wrap:balance}
+.mc-m{margin-top:8px;font-size:13px;color:var(--m2)}
+.more p.all-link{margin-top:var(--sp-4)}
+@media (max-width:620px){.ins article a.more-card{grid-template-columns:112px minmax(0,1fr);gap:14px}.mc-t{font-size:16px}}
+@media (prefers-reduced-motion:reduce){.more-card{transition:none}}
 
 /* Horizontal scrolling only inside code; a fade marks hidden content. The mask
    would also clip an outside focus ring, so scrollers draw theirs inside. */
@@ -777,19 +790,7 @@ article ul{margin:0 0 1.375rem}
 .takeaway ol.steps>li::before{background:#fff}
 mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-weight:500;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 
-/* 15 · Keep reading: the other articles as compact cards */
-.more{margin:var(--sp-7) 0 0;padding-top:20px;border-top:1px solid var(--rule)}
-.ins article a.more-card{margin-top:12px;display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr);gap:20px;align-items:center;padding:12px;border-radius:var(--r-panel);background:#fff;box-shadow:var(--card);color:var(--ink);text-decoration:none;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
-.ins article a.more-card:hover{transform:translateY(-2px);box-shadow:var(--card-hi);color:var(--ink)}
-.mc-shot{display:block;aspect-ratio:16/10;border-radius:14px;overflow:hidden;background:var(--s3)}
-.mc-shot img{width:100%;height:100%;object-fit:cover}
-.mc-txt,.mc-t,.mc-m{display:block}
-.mc-cat{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
-.mc-t{margin-top:6px;font-size:18px;line-height:1.3;letter-spacing:-.015em;font-weight:700;text-wrap:balance}
-.mc-m{margin-top:8px;font-size:13px;color:var(--m2)}
-.more p.all-link{margin-top:var(--sp-4)}
-@media (max-width:620px){.ins article a.more-card{grid-template-columns:112px minmax(0,1fr);gap:14px}.mc-t{font-size:16px}}
-@media (prefers-reduced-motion:reduce){.fig-ic,.code-src summary,.more-card{transition:none}}
+@media (prefers-reduced-motion:reduce){.fig-ic,.code-src summary{transition:none}}
 
 /* ── 11 · PODCAST ────────────────────────────────────────────────────────────
    Episode card, chapter chips, "Also a podcast" and the mini player:
@@ -1461,7 +1462,7 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
       </div>
 
       <section class="more" aria-labelledby="more-h">
-        <h2 class="src-h" id="more-h" data-i18n="more_h">Keep reading</h2>
+        <h2 class="src-h" id="more-h" data-i18n="more_title">Keep reading</h2>
         <a class="more-card" href="/insights/ai-visibility-for-aec/">
           <span class="mc-shot">
           <picture>

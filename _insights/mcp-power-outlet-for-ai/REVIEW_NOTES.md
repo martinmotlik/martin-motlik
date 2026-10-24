@@ -70,8 +70,11 @@ Resolved by the revision: the demo in the text now matches the screenshots
 
 - **CS/DE:** the language switcher on this page leads to the CS/DE Insights
   lists until the translations exist; `hreflang` lists only EN.
-- **Article #1:** its "Keep reading" card for this article, the card on
-  `/insights/`, `llms.txt` and `sitemap.xml` come with the CS/DE strings the
-  build checks.
+- **Listed (2026-10-24):** featured and first card on `/insights/`, entry in
+  `llms.txt`, "Keep reading" card in article #1. The title, excerpt and alt
+  text are marked `lang="en"`, so the CS and DE lists and article #1 show them
+  in English until the translations exist; date and read time are translated.
+  `sitemap.xml` follows with the translations (the build adds an article once
+  its CS/DE URLs exist).
 - **Podcast:** the page has empty podcast markers; `build-podcast.py` fills
   them once EP 02 is in `podcast/podcast.json`.
