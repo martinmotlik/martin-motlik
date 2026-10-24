@@ -117,7 +117,7 @@
               "name": "Architecture, engineering and construction industry"
             }
           ],
-          "wordCount": 2645,
+          "wordCount": 3121,
           "citation": [
             {
               "@type": "CreativeWork",
@@ -213,6 +213,42 @@
               "@type": "CreativeWork",
               "name": "Revizto MCP Server",
               "url": "https://revizto.com/legal/revizto-mcp-server"
+            },
+            {
+              "@type": "CreativeWork",
+              "name": "Key changes in the 2026-07-28 specification",
+              "url": "https://modelcontextprotocol.io/specification/2026-07-28/changelog",
+              "publisher": {
+                "@type": "Organization",
+                "name": "Model Context Protocol"
+              }
+            },
+            {
+              "@type": "CreativeWork",
+              "name": "Revit MCP server tech preview launch (Trusted-Write and Experimental)",
+              "url": "https://forums.autodesk.com/t5/revit-mep-forum/revit-mcp-server-tech-preview-launch/td-p/14262011",
+              "publisher": {
+                "@type": "Organization",
+                "name": "Autodesk Community"
+              }
+            },
+            {
+              "@type": "CreativeWork",
+              "name": "Use MCP with Claude in Revu",
+              "url": "https://support.bluebeam.com/revu/how-to/mcp-claude.html",
+              "publisher": {
+                "@type": "Organization",
+                "name": "Bluebeam"
+              }
+            },
+            {
+              "@type": "CreativeWork",
+              "name": "SketchUp connector for Claude",
+              "url": "https://help.sketchup.com/en/sketchup-claude-connector",
+              "publisher": {
+                "@type": "Organization",
+                "name": "SketchUp"
+              }
             }
           ]
         },
@@ -830,7 +866,7 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
       <div class="head">
         <div data-k="hero.div2" class="cat">AI in AEC</div>
         <h1 data-k="hero.h13">A power outlet for AI: what MCP is and why AEC professionals will need it</h1>
-        <p data-k="hero.p4" class="dek">Model Context Protocol is an open standard that connects AI assistants to the software engineers already use. What it is, what it’s good for in AEC, and why plugging into the big AI platforms beats building another chatbot.</p>
+        <p data-k="hero.p4" class="dek">Model Context Protocol is an open standard that connects AI assistants to the software engineers already use. What it is, what it’s good for in AEC, and why connecting to the AI platforms your team already uses usually makes more sense than building another chatbot.</p>
 
         <div class="byline" id="byline">
           <span class="avatar">
@@ -857,7 +893,7 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
             </div>
           </div>
 
-          <span data-k="hero.span5" id="vo-meta"><time datetime="2026-10-22">Oct 22, 2026</time> &middot; <span data-i18n="read_12">12 min read</span></span>
+          <span data-k="hero.span5" id="vo-meta"><time datetime="2026-10-22">Oct 22, 2026</time> &middot; <span data-i18n="read_14">14 min read</span></span>
         </div>
       </div>
 
@@ -894,7 +930,7 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
         <a data-k="toc.a2" href="#what-mcp-is">What MCP is</a>
         <a data-k="toc.a3" href="#why-aec">Why AEC needs it</a>
         <a data-k="toc.a4" href="#why-plug-in">Why plug into the AI giants</a>
-        <a data-k="toc.a5" href="#trust">Three levels of trust</a>
+        <a data-k="toc.a5" href="#access">Three kinds of access</a>
         <a data-k="toc.a6" href="#what-i-built">What I built</a>
         <a data-k="toc.a7" href="#industry">Where the industry stands</a>
         <a data-k="toc.a8" href="#wont-fix">What MCP won’t fix</a>
@@ -933,7 +969,7 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
           <a data-k="toc.a2" href="#what-mcp-is">What MCP is</a>
           <a data-k="toc.a3" href="#why-aec">Why AEC needs it</a>
           <a data-k="toc.a4" href="#why-plug-in">Why plug into the AI giants</a>
-          <a data-k="toc.a5" href="#trust">Three levels of trust</a>
+          <a data-k="toc.a5" href="#access">Three kinds of access</a>
           <a data-k="toc.a6" href="#what-i-built">What I built</a>
           <a data-k="toc.a7" href="#industry">Where the industry stands</a>
           <a data-k="toc.a8" href="#wont-fix">What MCP won’t fix</a>
@@ -948,13 +984,13 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
 
       <p data-k="cant-open.p3">That gap is closing. Model Context Protocol, or MCP, is an open standard that lets AI applications connect to the software and data engineers already use. Think of it as a power outlet for AI: one standard socket, and every tool plugged into it becomes something the AI can actually work with.</p>
 
-      <p data-k="cant-open.p4">I come at this from two sides. My work with Dlubal Software puts me in an environment where MCP is already part of the product, and I’m building a model-review prototype of my own on top of IFC. This article explains what MCP is, what it’s good for in AEC, and why connecting our tools to the big AI platforms beats building yet another chatbot.</p>
+      <p data-k="cant-open.p4">I come at this from two sides. My work with Dlubal Software puts me in an environment where MCP is already part of the product, and I’m building a model-review prototype of my own on top of IFC. This article explains what MCP is, what it’s good for in AEC, and why connecting our tools to the AI platforms engineers already use usually makes more sense than building yet another chatbot.</p>
 
       <div class="h2-row"><h2 data-k="what-mcp-is.h21" id="what-mcp-is">What MCP is: an outlet, not a brain</h2></div>
 
       <p data-k="what-mcp-is.p2">MCP doesn’t make AI smarter. It gives AI a standard way to reach things outside itself: your models, your analysis engines, your project data.</p>
 
-      <p data-k="what-mcp-is.p3">Picture the temporary power spider box on a jobsite. It doesn’t care whether you plug in a saw, a grinder, or a work light, because every tool has the same plug. Before MCP, connecting an AI to an application meant custom wiring for every pair: five AI apps and twenty programs meant up to a hundred one-off integrations. With MCP, each program builds one server and each AI app builds one client. Twenty-five pieces instead of a hundred.</p>
+      <p data-k="what-mcp-is.p3">Picture the temporary power spider box on a jobsite. It doesn’t care whether you plug in a saw, a grinder, or a work light, because every tool has the same plug. Before MCP, connecting an AI to an application meant custom wiring for every pair: five AI apps and twenty programs meant up to a hundred one-off integrations. With MCP, each program builds one server and each AI app builds one client. Twenty-five pieces instead of a hundred, though each connection still needs the right setup and permissions.</p>
 
       <figure class="fig" id="fig-1">
         <a class="fig-zoom" href="/assets/img/mcp-article-02-architecture-3840.jpg" aria-label="Enlarge figure 1">
@@ -1001,7 +1037,7 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
         <li data-k="what-mcp-is.li14"><strong>Prompts</strong> are prepared workflows: “review the changes between version A and B.”</li>
       </ul>
 
-      <p data-k="what-mcp-is.p15">The key detail is discovery. When you ask a question, the AI reads the server’s own descriptions and decides which tool fits. Nobody hard-codes which button to press.</p>
+      <p data-k="what-mcp-is.p15">The key detail is discovery. Each tool comes with a description and a structured definition of its inputs. When you ask a question, the AI uses those to choose a tool and supply the information it needs. Nobody hard-codes which button to press, but the application decides which tools are available.</p>
 
       <p data-k="what-mcp-is.p16">A server can run locally, right next to your desktop application. The model file stays on your machine; only the answers the tools return are sent to the AI. Or it can run remotely over HTTPS with a proper sign-in, which suits cloud platforms. If IFC is how a model describes a building, MCP is how an AI asks that model questions.</p>
 
@@ -1009,44 +1045,44 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
 
       <p data-k="why-aec.p2">MCP turns AI from a confident guesser into a coordinator that hands each task to a tool engineers already trust. That distinction matters more in our industry than almost anywhere else.</p>
 
-      <p data-k="why-aec.p3">A general-purpose language model predicts plausible text. Ask it to check a beam and you get a well-formatted, confident answer that may simply be wrong, because it never ran the numbers. With MCP, the AI delegates: the calculation goes to the analysis engine, the question about the model goes to the model, and the AI does what it’s genuinely good at. It understands the question, runs the steps in the right order, and explains the result in plain language.</p>
+      <p data-k="why-aec.p3">A general-purpose language model predicts plausible text. Ask it to check a beam and you get a well-formatted, confident answer that may simply be wrong, because it never ran the numbers. With MCP, the AI delegates: the calculation goes to the analysis engine, the question about the model goes to the model, and the AI does what it’s genuinely good at. It understands the question, runs the steps in the right order, and explains the result in plain language. It can still choose the wrong filter or misread a result, so the connection alone doesn’t make an answer reliable. It makes it checkable.</p>
 
-      <p data-k="why-aec.p4">MCP isn’t the only way to feed AI project information, so it helps to see where it fits. Copying and pasting a results table into chat works, but it’s a manual snapshot that goes stale the moment the model changes. Retrieval-augmented generation (RAG) lets AI search documents such as a design standard or a product manual, but it can only read text. It can’t query a live model or run a calculation.</p>
+      <p data-k="why-aec.p4">MCP isn’t the only way to get project information into an AI, so it helps to see where it fits. Copying and pasting a results table into chat works, but it’s a manual snapshot that goes stale the moment the model changes. Retrieval-augmented generation (RAG) lets AI search documents, such as a design standard, a BIM Execution Plan, or a product manual, and quote what it finds.</p>
 
-      <p data-k="why-aec.p5">Custom integrations, like a vendor’s built-in assistant, do reach live data. Each one, however, wires one AI to one application and has to be rebuilt for every new combination. MCP gives any AI app that supports it live access to the tools and data of any program that supports it. Its only real limit is the server itself: the AI can do exactly what the tools allow, nothing more.</p>
+      <p data-k="why-aec.p5">These aren’t competing technologies. MCP is the connection; a document search is one kind of tool you can connect. It can sit behind an MCP server just as well as a tool that queries a live model or runs a check. The useful difference is what each tool can do. A document search answers “what does the standard say?” A model tool answers “what does my model say, and does it pass?” Most serious AEC workflows will use both.</p>
 
-      <p data-k="why-aec.p6">RAG answers “what does the standard say?” MCP answers “what does my model say, and does it pass?” Most serious AEC workflows will use both.</p>
+      <p data-k="why-aec.p6">Custom integrations, like a vendor’s built-in assistant, also reach live data, but each one wires one AI to one application. MCP makes the same tools reusable by any AI app that supports it, within the limits of each app’s setup. The AI can do exactly what the tools allow, nothing more.</p>
 
       <p data-k="why-aec.p7">What does that look like on a real project? These requests are already possible with servers that exist today:</p>
 
       <ul>
         <li data-k="why-aec.li8"><strong>Model queries:</strong> “Find every fire-rated door on level 2 without a hardware set and select them.” Autodesk’s official Revit server can search the model and select the results.</li>
-        <li data-k="why-aec.li9"><strong>Quantities:</strong> “How many cubic yards of concrete are in the slabs, story by story?” Open-source servers read this straight from an IFC file.</li>
+        <li data-k="why-aec.li9"><strong>Quantities:</strong> “How many cubic yards of concrete are in the slabs, story by story?” Open-source servers read this straight from an IFC file, as long as the model holds reliable quantities.</li>
         <li data-k="why-aec.li10"><strong>Coordination:</strong> “Which issues from last week’s coordination meeting are still open?” Coordination platforms such as Revizto now offer MCP servers, and community servers reach issues and RFIs in Autodesk Construction Cloud.</li>
         <li data-k="why-aec.li11"><strong>Analysis results:</strong> “What’s the maximum deflection of the floor beams under service load combinations, and is it within L/360?” The answer comes from the analysis program, not from the AI’s memory.</li>
       </ul>
 
       <div class="h2-row"><h2 data-k="why-plug-in.h21" id="why-plug-in">Why plug into the AI giants instead of building our own chatbot</h2></div>
 
-      <p data-k="why-plug-in.p2">Let the AI companies do language; let AEC software do engineering. Every few months someone in our industry announces a proprietary assistant. MCP points to a smarter division of labor, for five reasons.</p>
+      <p data-k="why-plug-in.p2">Let the AI companies do language; let AEC software do engineering. Every few months someone in our industry announces a proprietary assistant. Building your own chatbot doesn’t mean building your own language model, though. Most custom assistants run on the same commercial models behind their own interface. The real question is where the engineering tools live, and MCP keeps them reusable whichever interface your team ends up using. Here’s why starting with the AI platforms your team already uses usually makes sense.</p>
 
       <ol class="steps">
-        <li data-k="why-plug-in.li3"><span class="lead-in">You get the most capable AI models, and they keep improving.</span> No engineering firm or AEC vendor can match the research budgets of Anthropic, Google, OpenAI, or Microsoft. A good MCP server gets better every time the model behind the host does, without a single line of new code.</li>
-        <li data-k="why-plug-in.li4"><span class="lead-in">Engineers already work there.</span> Many firms already pay for Microsoft 365 Copilot, ChatGPT, Claude, or Gemini. A new standalone chatbot is another login nobody opens after week two. An MCP server shows up inside the assistant people use every day.</li>
-        <li data-k="why-plug-in.li5"><span class="lead-in">Build once, plug in anywhere.</span> The same server works in Claude, ChatGPT, Gemini, Copilot, and AI assistants a firm builds for itself. If your firm switches AI providers next year, nothing gets rewired. Even direct competitors such as OpenAI, Google, and Microsoft back the standard.</li>
+        <li data-k="why-plug-in.li3"><span class="lead-in">You get the most capable AI models, and they keep improving.</span> No engineering firm or AEC vendor can match the research budgets of Anthropic, Google, OpenAI, or Microsoft. As the models improve, they tend to get better at choosing tools and explaining results. That isn’t automatic for every workflow, so retest what matters when the model changes.</li>
+        <li data-k="why-plug-in.li4"><span class="lead-in">Engineers already work there.</span> Many firms already pay for Microsoft 365 Copilot, ChatGPT, Claude, or Gemini. A new standalone chatbot is another login nobody opens after week two. If that assistant supports the connection you need, an MCP server shows up where people already work.</li>
+        <li data-k="why-plug-in.li5"><span class="lead-in">Build once, plug in anywhere.</span> The same server can be reused in Claude, ChatGPT, Gemini, Copilot, and AI assistants a firm builds for itself. Each app still needs its own connection setup, and not every product supports every feature. But if your firm switches AI providers, the engineering tools don’t have to be rebuilt. Even direct competitors such as OpenAI, Google, and Microsoft back the standard.</li>
         <li data-k="why-plug-in.li6"><span class="lead-in">Tools start working together.</span> One conversation can query the model, run an analysis, fill a spreadsheet, and file the result in your document system. That kind of cross-tool workflow used to require a custom script for every step.</li>
         <li data-k="why-plug-in.li7"><span class="lead-in">Your expertise stays yours.</span> The vendor keeps the validated solver, the design-standard checks, and the data model. The AI platform supplies the conversation layer on top. Domain knowledge stays the competitive advantage, which is exactly where it belongs.</li>
       </ol>
 
       <p data-k="why-plug-in.p8">There is a sixth, quieter benefit. The big hosts bring enterprise plumbing that a small AEC tool would never build on its own: admin approval of connectors, permission prompts before a tool runs, and sign-in through standard protocols. In Microsoft 365 Copilot and Gemini Enterprise, for example, an IT admin can register a custom MCP server once for the whole organization.</p>
 
-      <div class="h2-row"><h2 data-k="trust.h21" id="trust">Three levels of trust</h2></div>
+      <div class="h2-row"><h2 data-k="access.h21" id="access">Three kinds of access</h2></div>
 
-      <p data-k="trust.p2">The right question isn’t whether to let AI into your model, but how far. Your firm decides that, not the AI, and MCP makes the boundary explicit because every server declares exactly which tools exist.</p>
+      <p data-k="access.p2">The right question isn’t whether to let AI into your model, but what it may do there. Your firm decides that, not the AI. MCP makes the boundary visible because every server declares exactly which tools exist. What matters is what those tools can do and the permissions behind them, not the label on the server.</p>
 
-      <p data-k="trust.p3"><strong>Level one is reading.</strong> The AI queries models and data: it lists the load-bearing walls or pulls the properties of a single element. The risk is low, especially when the server is read-only and runs locally.</p>
+      <p data-k="access.p3"><strong>Reading.</strong> The AI queries models and data: it lists the fire-rated doors on a level or pulls the properties of a single element. Read-only access limits changes to the model. It doesn’t make the information less sensitive, and it doesn’t prevent a misleading answer.</p>
 
-      <p data-k="trust.p4"><strong>Level two is checking and computing.</strong> The AI checks the model against an IDS file or analyzes design options. IDS is a buildingSMART format that turns the data requirements in your BIM Execution Plan into a file a computer can check. The risk is moderate because the results feed into decisions, so an engineer reviews every result and every tool call is logged.</p>
+      <p data-k="access.p4"><strong>Checking.</strong> The AI runs checks: an IDS validation, a clash report, a comparison between revisions. IDS is a buildingSMART standard for expressing selected information requirements in a machine-checkable form. You specify which elements need which data, and a checker tests the model against those rules. It checks the information, not whether the building is correctly designed. The findings inform decisions, so a person reviews them.</p>
 
       <figure class="fig" id="img-05">
         <a class="fig-zoom" href="/assets/img/mcp-article-05-permission-3840.jpg" aria-label="Enlarge image">
@@ -1070,16 +1106,16 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
           </picture>
           <span class="fig-ic" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"></path><path d="M9 21H3v-6"></path><path d="M21 3l-7 7"></path><path d="M3 21l7-7"></path></svg></span>
         </a>
-        <figcaption data-k="trust.figcaption5">Before a tool runs, the user approves it: once, always, or not at all.</figcaption>
+        <figcaption data-k="access.figcaption5">Before a tool runs, the user approves it: once, always, or not at all.</figcaption>
       </figure>
 
-      <p data-k="trust.p6"><strong>Level three is writing.</strong> The AI changes the model itself, for example changing member sizes from a W14x48 to a W14x61 or adding load combinations. Few production servers allow this yet, and for good reason. It calls for a separate server, approval of each change, and version control, so any step can be rolled back.</p>
+      <p data-k="access.p6"><strong>Writing.</strong> The AI changes the model itself: it fills in parameters, moves elements, or creates new ones. That needs controlled permissions, a review of each change, and a way to undo it.</p>
 
-      <p data-k="trust.p7">Autodesk took the same view: its Revit MCP server launched in technical preview as read-only, with write tools planned as a separate server so the two kinds of access stay apart. For most firms, level 1 is the right place to start. It already saves hours, and nothing in the model can break.</p>
+      <p data-k="access.p7">Autodesk’s Revit servers show how vendors are drawing these lines. The first <a href="https://www.autodesk.com/blogs/aec/2026/06/17/revit-public-mcp-server/" target="_blank" rel="noopener">Revit MCP server</a>, released in June as a technical preview, was read-only. In September, Autodesk <a href="https://forums.autodesk.com/t5/revit-mep-forum/revit-mcp-server-tech-preview-launch/td-p/14262011" target="_blank" rel="noopener">added</a> a Trusted-Write server, which lets you review every change an agent makes, and an Experimental server with broader editing tools, which it describes as use at your own risk. Both are technical previews for Revit 2027. For most firms, reading is the right place to start, on a test model the firm has approved.</p>
 
-      <div class="h2-row"><h2 data-k="what-i-built.h21" id="what-i-built">What I built: <mark class="tk">[TK: two evenings]</mark> and six tools</h2></div>
+      <div class="h2-row"><h2 data-k="what-i-built.h21" id="what-i-built">What I built and the six tools</h2></div>
 
-      <p data-k="what-i-built.p2">To test how high the barrier really is, I built a read-only MCP server for the model-review prototype I’m developing. The prototype already checks IFC models against IDS requirements and compares model versions. The server simply hands those abilities to AI.</p>
+      <p data-k="what-i-built.p2">To test how high the barrier really is, I built a read-only MCP server for the model-review prototype I’m developing. The prototype already checks IFC models against IDS requirements and compares model versions. The validation itself isn’t new; the prototype’s checker already did it. What the server adds is a way to ask follow-up questions, connect the steps, and jump straight to the affected elements.</p>
 
       <figure class="fig" id="fig-2">
         <a class="fig-zoom" href="/assets/img/mcp-article-03-code-3840.jpg" aria-label="Enlarge figure 2">
@@ -1172,7 +1208,9 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
         <figcaption data-k="what-i-built.figcaption11"><span class="fig-n">Figure 3</span> Connected once, ifc-review is one more MCP server in ChatGPT&#x27;s settings.</figcaption>
       </figure>
 
-      <p data-k="what-i-built.p12">Then I asked the question every project team asks after a design revision: “Which load-bearing walls changed in version B, and do they still meet the IDS requirements?” The AI called <code>compare_versions</code>, then <code>run_ids_check</code>, matched the two results by element ID, and answered: <mark class="tk">[TK: final answer from the demo, e.g. two walls went from 8 in. to 6 in. and one of them lost its fire-resistance rating]</mark>. Then it handed me a link that opened the model with exactly those walls highlighted. Autodesk’s official Revit server works on the same principle: its Select Elements and Zoom to Elements tools hand the AI’s findings straight back to the model on screen.</p>
+      <p data-k="what-i-built.p12">Then I ran the test on a real model: a concept model of a residential building in Prague, with a street-level garage, three residential levels and an attic, checked against an IDS file with 14 information requirements. I asked which requirements fail and which elements are affected. Two requirements failed, on 13 elements: two roof windows without a thermal value and eleven doors without a fire rating. The door names said the fire rating would be set in the fire safety design. That explains why the value is missing. It doesn’t provide one, and whether the value is required at this stage is a decision for the project team.</p>
+
+      <p data-k="what-i-built.p13">For the test, I then prepared a second revision with some of the gaps filled in, and asked the question every team asks after a revision: what got fixed, and what’s still missing? The AI called the comparison and validation tools, and the results were matched by element ID. Ten of the thirteen elements were fixed. Three doors on Residential Level 3 still had no fire rating. Then the AI handed me a link that opened the model with exactly those three doors highlighted.</p>
 
       <figure class="fig" id="fig-4">
         <a class="fig-zoom" href="/assets/img/mcp-article-06-main-3840.jpg" aria-label="Enlarge figure 4">
@@ -1196,7 +1234,7 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
           </picture>
           <span class="fig-ic" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"></path><path d="M9 21H3v-6"></path><path d="M21 3l-7 7"></path><path d="M3 21l7-7"></path></svg></span>
         </a>
-        <figcaption data-k="what-i-built.figcaption13"><span class="fig-n">Figure 4</span> ChatGPT compares two revisions through MCP and links to the three doors that still miss a fire rating. Building services are hidden in the view for legibility.</figcaption>
+        <figcaption data-k="what-i-built.figcaption14"><span class="fig-n">Figure 4</span> ChatGPT compares two revisions through MCP and links to the three doors that still miss a fire rating. Building services are hidden in the view for legibility.</figcaption>
       </figure>
 
       <figure class="fig" id="fig-5">
@@ -1221,10 +1259,10 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
           </picture>
           <span class="fig-ic" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"></path><path d="M9 21H3v-6"></path><path d="M21 3l-7 7"></path><path d="M3 21l7-7"></path></svg></span>
         </a>
-        <figcaption data-k="what-i-built.figcaption14"><span class="fig-n">Figure 5</span> One tool call as ChatGPT shows it, matched against the server&#x27;s own trace.</figcaption>
+        <figcaption data-k="what-i-built.figcaption15"><span class="fig-n">Figure 5</span> One tool call as ChatGPT shows it, matched against the server&#x27;s own trace.</figcaption>
       </figure>
 
-      <p data-k="what-i-built.p15">I ran the whole demo in two different AI apps: ChatGPT, and Gemini in Google Antigravity. Same server, same question, same tools, same answer. The server doesn’t care which AI is asking. That is the whole point of a standard.</p>
+      <p data-k="what-i-built.p16">I ran the whole demo in two different AI apps: ChatGPT, and Gemini in Google Antigravity. In that test, both reached the same findings with the same server and the same tools. That doesn’t mean every AI app connects the same way; each product has its own setup and limits. But the server didn’t need to know which AI was asking. That is the point of a standard.</p>
 
       <figure class="fig" id="fig-6">
         <a class="fig-zoom" href="/assets/img/mcp-article-08-two-ais-3840.jpg" aria-label="Enlarge figure 6">
@@ -1248,18 +1286,18 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
           </picture>
           <span class="fig-ic" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"></path><path d="M9 21H3v-6"></path><path d="M21 3l-7 7"></path><path d="M3 21l7-7"></path></svg></span>
         </a>
-        <figcaption data-k="what-i-built.figcaption16"><span class="fig-n">Figure 6</span> Two AI applications from two companies, one server: the answer does not depend on the chat app.</figcaption>
+        <figcaption data-k="what-i-built.figcaption17"><span class="fig-n">Figure 6</span> Two AI applications from two companies, one server: the answer does not depend on the chat app.</figcaption>
       </figure>
 
-      <p data-k="what-i-built.p17">Writing the code was the easy part. Three things mattered more:</p>
+      <p data-k="what-i-built.p18">Writing the code was the easy part. Three things mattered more:</p>
 
       <ul>
-        <li data-k="what-i-built.li18"><strong>Tool descriptions are the user interface.</strong> The AI picks tools by reading them, so they deserve the same care as button labels.</li>
-        <li data-k="what-i-built.li19"><strong>Summaries beat data dumps.</strong> Return counts and the top results, with details on request. Sending the AI an entire model overloads its working memory and makes answers worse.</li>
-        <li data-k="what-i-built.li20"><strong>Units and IDs, always.</strong> Every number carries its unit and every element its GUID. Ambiguity is where AI starts guessing again.</li>
+        <li data-k="what-i-built.li19"><strong>Tool descriptions are the user interface.</strong> The AI picks tools by reading them, so they deserve the same care as button labels.</li>
+        <li data-k="what-i-built.li20"><strong>Summaries beat data dumps.</strong> Return counts and the top results, with details on request. Sending the AI an entire model overloads its working memory and makes answers worse.</li>
+        <li data-k="what-i-built.li21"><strong>Units and IDs, always.</strong> Every number carries its unit and every element its GUID. Ambiguity is where AI starts guessing again.</li>
       </ul>
 
-      <p data-k="what-i-built.p21"><mark class="tk">[TK: one honest sentence from the build log about what went wrong or surprised you.]</mark></p>
+      <p data-k="what-i-built.p22">None of this replaces the checker. It makes the checker easier to question.</p>
 
       <div class="h2-row"><h2 data-k="industry.h21" id="industry">Where the industry stands</h2></div>
 
@@ -1290,22 +1328,31 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
         <figcaption data-k="industry.figcaption3">Twenty months from an open protocol to MCP servers in structural, BIM and document tools.</figcaption>
       </figure>
 
-      <p data-k="industry.p4">Anthropic released the standard in November 2024. In January 2026, Dlubal Software added an MCP server to the standard installation of RFEM 6; the details are in Dlubal’s <a href="https://www.dlubal.com/en/support-and-learning/support/knowledge-base/002032" target="_blank" rel="noopener">knowledge base article</a> and <a href="https://apidocs.dlubal.com/installation_mcp.html" target="_blank" rel="noopener">API documentation</a>. In April, Trimble released an MCP connector for SketchUp. In May, Bluebeam brought Claude into Revu through MCP with its <a href="https://blog.cadalyst.com/architecture-infrastructure-construction-solutions/mcp-a-new-standard-for-connecting-ai-to-aec-software" target="_blank" rel="noopener">Bluebeam Max</a> tier. In June, Autodesk released a read-only <a href="https://www.autodesk.com/blogs/aec/2026/06/17/revit-public-mcp-server/" target="_blank" rel="noopener">Revit MCP server</a> as a technical preview add-on for Revit 2027. And in July, the <a href="https://github.com/modelcontextprotocol/specification/releases/tag/2026-07-28" target="_blank" rel="noopener">2026-07-28 specification</a> made servers easier to run at company scale and added proper handling for long-running jobs.</p>
+      <p data-k="industry.p4">Anthropic released the standard in November 2024. Since then, AEC vendors have started shipping MCP connections, each with its own scope and conditions:</p>
 
-      <p data-k="industry.p5">Vendors also make different design choices. Some servers expose a few narrow, purpose-built tools. Others let the AI write scripts against the program’s API, much like a Dynamo or Grasshopper script, except the AI writes it. Anything the API can do, the AI can then do. Narrow tools give everyone safe defaults; scripting gives power users full reach, at the price of reviewing the code the AI writes. My own server sits firmly at the narrow end.</p>
+      <ul>
+        <li data-k="industry.li5"><strong>Revit (Autodesk):</strong> a read-only <a href="https://www.autodesk.com/blogs/aec/2026/06/17/revit-public-mcp-server/" target="_blank" rel="noopener">MCP server</a> since June, joined in September by <a href="https://forums.autodesk.com/t5/revit-mep-forum/revit-mcp-server-tech-preview-launch/td-p/14262011" target="_blank" rel="noopener">Trusted-Write and Experimental servers</a>. All are technical previews for Revit 2027.</li>
+        <li data-k="industry.li6"><strong>Revu (Bluebeam):</strong> <a href="https://support.bluebeam.com/revu/how-to/mcp-claude.html" target="_blank" rel="noopener">connects to Claude through MCP</a>. It requires a Bluebeam Max plan, Revu 21.9 or later, and the Claude desktop app.</li>
+        <li data-k="industry.li7"><strong>SketchUp (Trimble):</strong> a <a href="https://help.sketchup.com/en/sketchup-claude-connector" target="_blank" rel="noopener">Claude connector</a> that creates new SketchUp models from a conversation. It can’t edit existing files, and Claude is currently the only supported AI provider.</li>
+        <li data-k="industry.li8"><strong>RFEM 6 (Dlubal Software):</strong> an MCP server in the standard installation since January 2026, working through the Dlubal API. Details are in Dlubal’s <a href="https://www.dlubal.com/en/support-and-learning/support/knowledge-base/002032" target="_blank" rel="noopener">knowledge base article</a> and <a href="https://apidocs.dlubal.com/installation_mcp.html" target="_blank" rel="noopener">API documentation</a>.</li>
+      </ul>
 
-      <p data-k="industry.p6">The July 2026 specification matters for structural work in particular. A finite element analysis isn’t a two-second lookup, and the specification now gives long-running jobs a proper home: the AI starts the run, checks on it, and collects the results when it finishes.</p>
+      <p data-k="industry.p9">These products change quickly, so check the current conditions before you plan around them, and don’t assume any of them connects to every AI app out of the box.</p>
+
+      <p data-k="industry.p10">Vendors also make different design choices. Some servers expose a few narrow, purpose-built tools. Others let the AI write scripts against the program’s API, much like a Dynamo or Grasshopper script, except the AI writes it. The reach depends on what the server exposes and the permissions behind it. Narrow tools give everyone safe defaults; scripting gives power users more reach, at the price of reviewing and testing the code the AI writes. My own server sits firmly at the narrow end.</p>
+
+      <p data-k="industry.p11">Long-running jobs, such as a large analysis or a heavy model check, have their own pattern in MCP: Tasks. They started as an experimental feature, and the <a href="https://modelcontextprotocol.io/specification/2026-07-28/changelog" target="_blank" rel="noopener">July 2026 specification</a> moved them into an official extension. They only help when both the AI app and the server implement them.</p>
 
       <div class="h2-row"><h2 data-k="wont-fix.h21" id="wont-fix">What MCP won’t fix</h2></div>
 
       <p data-k="wont-fix.p2">MCP removes the friction between engineering judgment and its execution. It does not replace the judgment, and it brings a few new risks of its own.</p>
 
       <ul>
-        <li data-k="wont-fix.li3"><strong>Responsibility stays put.</strong> The AI doesn’t stamp drawings. The engineer of record reviews the result and signs, exactly as before.</li>
+        <li data-k="wont-fix.li3"><strong>Responsibility stays put.</strong> Using AI doesn’t remove the engineer’s responsibility to review the result. The AI doesn’t stamp drawings, and how liability is allocated is a question for your contracts and legal advice.</li>
         <li data-k="wont-fix.li4"><strong>Garbage in, garbage out, faster.</strong> MCP automates a messy process just as faithfully as a clean one. Inconsistent parameters and missing classification codes (UniFormat, OmniClass) will surface sooner, not disappear.</li>
         <li data-k="wont-fix.li5"><strong>AI-written code needs review.</strong> When a server runs scripts the model writes, the model can write a wrong one. Review the code, test on a copy, and keep analysis results under version control.</li>
-        <li data-k="wont-fix.li6"><strong>Know where the data goes.</strong> A local server keeps the model on your machine, but the AI host still sees whatever the tools return. Check your AI provider’s data-retention and training terms before connecting live projects.</li>
-        <li data-k="wont-fix.li7"><strong>Model data can carry instructions.</strong> A property value or a document comment that reads like a command can mislead an AI that takes it at face value. Giving the AI only the access it needs, read-only by default, is the practical defense.</li>
+        <li data-k="wont-fix.li6"><strong>Know where the data goes.</strong> A local server keeps the model on your machine, but the AI host still sees whatever the tools return, and read-only access doesn’t change that. Check your AI provider’s data-retention and training terms before connecting live projects.</li>
+        <li data-k="wont-fix.li7"><strong>Model data can carry instructions.</strong> A property value or a document comment can contain text that tries to steer the AI. Read-only access limits changes to the model; it doesn’t prevent misleading answers or data exposure. Start with a trusted server, restricted access, and a test model your firm has approved.</li>
         <li data-k="wont-fix.li8"><strong>It isn’t free.</strong> Budget for AI subscriptions, API access or add-on licenses on the software side, and workstations that can keep up.</li>
       </ul>
 
@@ -1323,17 +1370,17 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
         </ol>
       </div>
 
-      <p data-k="monday.p8">Then run a pilot. Pick a task your team repeats every week, such as checking a model revision against the project’s information requirements. Do it once by hand and once through an AI with MCP, and compare the time and what each version caught. That comparison will tell you more than any vendor demo.</p>
+      <p data-k="monday.p8">Then run a pilot. Choose one recurring task and a test model your firm has approved, such as checking a model revision against the project’s information requirements. Compare your current workflow, including any checker you already use, with the AI-assisted version. Count the review time, missed issues, and false alarms as well as the time saved, and repeat it on another revision before deciding. That comparison will tell you more than any vendor demo.</p>
 
       <div class="h2-row"><h2 data-k="bridge.h21" id="bridge">A bridge, not a replacement</h2></div>
 
       <p data-k="bridge.p2">MCP won’t design a building. What it does is let AI reach the tools that already do the engineering, so the hours between a question and its answer shrink.</p>
 
-      <p data-k="bridge.p3">Picture the next step. One outlet finds the girders that changed in the latest model revision. A second outlet sends them to the analysis program for a rerun, provided the BIM model and the analysis model are linked, which is still one of the hardest parts of the job. The AI connects the two and puts the result in front of the engineer who decides. Every piece of that workflow exists today; what’s missing is mostly the habit of plugging things in.</p>
+      <p data-k="bridge.p3">Picture the next step. One outlet finds the elements that changed in the latest model revision. A second sends them on to the next tool, an analysis program or a coordination platform, provided the models and their element IDs are linked, which is still one of the hardest parts of the job. The AI connects the steps and puts the result in front of the person who decides. The pieces exist today; every step still needs someone who checks the result.</p>
 
       <p data-k="bridge.p4">The AEC software we rely on is excellent at engineering. The AI platforms are excellent at language and reasoning. MCP is the outlet between them, and it’s worth learning how it works before your competitors do.</p>
 
-      <p data-k="bridge.p5"><mark class="tk">[TK: one line pointing to the companion episode of the podcast.]</mark></p>
+      <p data-k="bridge.p5">Prefer to listen? This article has a companion episode of the Insights podcast, built around the same test.</p>
 
 <!-- podcast:start · generated by tools/build-podcast.py from podcast/podcast.json -->
 <!-- podcast:end -->
@@ -1352,6 +1399,10 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
           <li id="src-9"><a href="https://support.google.com/g/answer/17106276" target="_blank" rel="noopener"><span class="src-n">[9]</span><span data-k="sources-h.span10" class="src-t">Google: <strong>Set up a custom MCP server connection in Gemini Enterprise</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
           <li id="src-10"><a href="https://glama.ai/mcp/servers/kd8f7alqr6" target="_blank" rel="noopener"><span class="src-n">[10]</span><span data-k="sources-h.span11" class="src-t">ifcopenshell-mcp: <strong>open-source MCP server for IFC models</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
           <li id="src-11"><a href="https://revizto.com/legal/revizto-mcp-server" target="_blank" rel="noopener"><span class="src-n">[11]</span><span data-k="sources-h.span12" class="src-t"><strong>Revizto MCP Server</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
+          <li id="src-12"><a href="https://modelcontextprotocol.io/specification/2026-07-28/changelog" target="_blank" rel="noopener"><span class="src-n">[12]</span><span data-k="sources-h.span13" class="src-t">Model Context Protocol: <strong>Key changes in the 2026-07-28 specification</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
+          <li id="src-13"><a href="https://forums.autodesk.com/t5/revit-mep-forum/revit-mcp-server-tech-preview-launch/td-p/14262011" target="_blank" rel="noopener"><span class="src-n">[13]</span><span data-k="sources-h.span14" class="src-t">Autodesk Community: <strong>Revit MCP server tech preview launch (Trusted-Write and Experimental)</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
+          <li id="src-14"><a href="https://support.bluebeam.com/revu/how-to/mcp-claude.html" target="_blank" rel="noopener"><span class="src-n">[14]</span><span data-k="sources-h.span15" class="src-t">Bluebeam: <strong>Use MCP with Claude in Revu</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
+          <li id="src-15"><a href="https://help.sketchup.com/en/sketchup-claude-connector" target="_blank" rel="noopener"><span class="src-n">[15]</span><span data-k="sources-h.span16" class="src-t">SketchUp: <strong>SketchUp connector for Claude</strong></span><span class="src-arr" aria-hidden="true">↗</span></a></li>
         </ol>
       </section>
 

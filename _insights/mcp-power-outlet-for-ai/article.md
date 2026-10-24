@@ -8,13 +8,13 @@ Your AI assistant can draft the RFI response, summarize a spec section, and clea
 
 That gap is closing. Model Context Protocol, or MCP, is an open standard that lets AI applications connect to the software and data engineers already use. Think of it as a power outlet for AI: one standard socket, and every tool plugged into it becomes something the AI can actually work with.
 
-I come at this from two sides. My work with Dlubal Software puts me in an environment where MCP is already part of the product, and I'm building a model-review prototype of my own on top of IFC. This article explains what MCP is, what it's good for in AEC, and why connecting our tools to the big AI platforms beats building yet another chatbot.
+I come at this from two sides. My work with Dlubal Software puts me in an environment where MCP is already part of the product, and I'm building a model-review prototype of my own on top of IFC. This article explains what MCP is, what it's good for in AEC, and why connecting our tools to the AI platforms engineers already use usually makes more sense than building yet another chatbot.
 
 ## What MCP is: an outlet, not a brain
 
 MCP doesn't make AI smarter. It gives AI a standard way to reach things outside itself: your models, your analysis engines, your project data.
 
-Picture the temporary power spider box on a jobsite. It doesn't care whether you plug in a saw, a grinder, or a work light, because every tool has the same plug. Before MCP, connecting an AI to an application meant custom wiring for every pair: five AI apps and twenty programs meant up to a hundred one-off integrations. With MCP, each program builds one server and each AI app builds one client. Twenty-five pieces instead of a hundred.
+Picture the temporary power spider box on a jobsite. It doesn't care whether you plug in a saw, a grinder, or a work light, because every tool has the same plug. Before MCP, connecting an AI to an application meant custom wiring for every pair: five AI apps and twenty programs meant up to a hundred one-off integrations. With MCP, each program builds one server and each AI app builds one client. Twenty-five pieces instead of a hundred, though each connection still needs the right setup and permissions.
 
 &#91;embedded content: Figure 1 · MCP architecture: hosts, the outlet, servers\]
 
@@ -34,7 +34,7 @@ Anthropic released MCP as an open standard in November 2024. In December 2025, i
 - **Resources** are data the AI can read: a model summary, a list of load cases.
 - **Prompts** are prepared workflows: "review the changes between version A and B."
 
-The key detail is discovery. When you ask a question, the AI reads the server's own descriptions and decides which tool fits. Nobody hard-codes which button to press.
+The key detail is discovery. Each tool comes with a description and a structured definition of its inputs. When you ask a question, the AI uses those to choose a tool and supply the information it needs. Nobody hard-codes which button to press, but the application decides which tools are available.
 
 A server can run locally, right next to your desktop application. The model file stays on your machine; only the answers the tools return are sent to the AI. Or it can run remotely over HTTPS with a proper sign-in, which suits cloud platforms. If IFC is how a model describes a building, MCP is how an AI asks that model questions.
 
@@ -42,48 +42,48 @@ A server can run locally, right next to your desktop application. The model file
 
 MCP turns AI from a confident guesser into a coordinator that hands each task to a tool engineers already trust. That distinction matters more in our industry than almost anywhere else.
 
-A general-purpose language model predicts plausible text. Ask it to check a beam and you get a well-formatted, confident answer that may simply be wrong, because it never ran the numbers. With MCP, the AI delegates: the calculation goes to the analysis engine, the question about the model goes to the model, and the AI does what it's genuinely good at. It understands the question, runs the steps in the right order, and explains the result in plain language.
+A general-purpose language model predicts plausible text. Ask it to check a beam and you get a well-formatted, confident answer that may simply be wrong, because it never ran the numbers. With MCP, the AI delegates: the calculation goes to the analysis engine, the question about the model goes to the model, and the AI does what it's genuinely good at. It understands the question, runs the steps in the right order, and explains the result in plain language. It can still choose the wrong filter or misread a result, so the connection alone doesn't make an answer reliable. It makes it checkable.
 
-MCP isn't the only way to feed AI project information, so it helps to see where it fits. Copying and pasting a results table into chat works, but it's a manual snapshot that goes stale the moment the model changes. Retrieval-augmented generation (RAG) lets AI search documents such as a design standard or a product manual, but it can only read text. It can't query a live model or run a calculation.
+MCP isn't the only way to get project information into an AI, so it helps to see where it fits. Copying and pasting a results table into chat works, but it's a manual snapshot that goes stale the moment the model changes. Retrieval-augmented generation (RAG) lets AI search documents, such as a design standard, a BIM Execution Plan, or a product manual, and quote what it finds.
 
-Custom integrations, like a vendor's built-in assistant, do reach live data. Each one, however, wires one AI to one application and has to be rebuilt for every new combination. MCP gives any AI app that supports it live access to the tools and data of any program that supports it. Its only real limit is the server itself: the AI can do exactly what the tools allow, nothing more.
+These aren't competing technologies. MCP is the connection; a document search is one kind of tool you can connect. It can sit behind an MCP server just as well as a tool that queries a live model or runs a check. The useful difference is what each tool can do. A document search answers "what does the standard say?" A model tool answers "what does my model say, and does it pass?" Most serious AEC workflows will use both.
 
-RAG answers "what does the standard say?" MCP answers "what does my model say, and does it pass?" Most serious AEC workflows will use both.
+Custom integrations, like a vendor's built-in assistant, also reach live data, but each one wires one AI to one application. MCP makes the same tools reusable by any AI app that supports it, within the limits of each app's setup. The AI can do exactly what the tools allow, nothing more.
 
 What does that look like on a real project? These requests are already possible with servers that exist today:
 
 - **Model queries:** "Find every fire-rated door on level 2 without a hardware set and select them." Autodesk's official Revit server can search the model and select the results.
-- **Quantities:** "How many cubic yards of concrete are in the slabs, story by story?" Open-source servers read this straight from an IFC file.
+- **Quantities:** "How many cubic yards of concrete are in the slabs, story by story?" Open-source servers read this straight from an IFC file, as long as the model holds reliable quantities.
 - **Coordination:** "Which issues from last week's coordination meeting are still open?" Coordination platforms such as Revizto now offer MCP servers, and community servers reach issues and RFIs in Autodesk Construction Cloud.
 - **Analysis results:** "What's the maximum deflection of the floor beams under service load combinations, and is it within L/360?" The answer comes from the analysis program, not from the AI's memory.
 
 ## Why plug into the AI giants instead of building our own chatbot
 
-Let the AI companies do language; let AEC software do engineering. Every few months someone in our industry announces a proprietary assistant. MCP points to a smarter division of labor, for five reasons.
+Let the AI companies do language; let AEC software do engineering. Every few months someone in our industry announces a proprietary assistant. Building your own chatbot doesn't mean building your own language model, though. Most custom assistants run on the same commercial models behind their own interface. The real question is where the engineering tools live, and MCP keeps them reusable whichever interface your team ends up using. Here's why starting with the AI platforms your team already uses usually makes sense.
 
-1. **You get the most capable AI models, and they keep improving.** No engineering firm or AEC vendor can match the research budgets of Anthropic, Google, OpenAI, or Microsoft. A good MCP server gets better every time the model behind the host does, without a single line of new code.
-2. **Engineers already work there.** Many firms already pay for Microsoft 365 Copilot, ChatGPT, Claude, or Gemini. A new standalone chatbot is another login nobody opens after week two. An MCP server shows up inside the assistant people use every day.
-3. **Build once, plug in anywhere.** The same server works in Claude, ChatGPT, Gemini, Copilot, and AI assistants a firm builds for itself. If your firm switches AI providers next year, nothing gets rewired. Even direct competitors such as OpenAI, Google, and Microsoft back the standard.
+1. **You get the most capable AI models, and they keep improving.** No engineering firm or AEC vendor can match the research budgets of Anthropic, Google, OpenAI, or Microsoft. As the models improve, they tend to get better at choosing tools and explaining results. That isn't automatic for every workflow, so retest what matters when the model changes.
+2. **Engineers already work there.** Many firms already pay for Microsoft 365 Copilot, ChatGPT, Claude, or Gemini. A new standalone chatbot is another login nobody opens after week two. If that assistant supports the connection you need, an MCP server shows up where people already work.
+3. **Build once, plug in anywhere.** The same server can be reused in Claude, ChatGPT, Gemini, Copilot, and AI assistants a firm builds for itself. Each app still needs its own connection setup, and not every product supports every feature. But if your firm switches AI providers, the engineering tools don't have to be rebuilt. Even direct competitors such as OpenAI, Google, and Microsoft back the standard.
 4. **Tools start working together.** One conversation can query the model, run an analysis, fill a spreadsheet, and file the result in your document system. That kind of cross-tool workflow used to require a custom script for every step.
 5. **Your expertise stays yours.** The vendor keeps the validated solver, the design-standard checks, and the data model. The AI platform supplies the conversation layer on top. Domain knowledge stays the competitive advantage, which is exactly where it belongs.
 
 There is a sixth, quieter benefit. The big hosts bring enterprise plumbing that a small AEC tool would never build on its own: admin approval of connectors, permission prompts before a tool runs, and sign-in through standard protocols. In Microsoft 365 Copilot and Gemini Enterprise, for example, an IT admin can register a custom MCP server once for the whole organization.
 
-## Three levels of trust
+## Three kinds of access
 
-The right question isn't whether to let AI into your model, but how far. Your firm decides that, not the AI, and MCP makes the boundary explicit because every server declares exactly which tools exist.
+The right question isn't whether to let AI into your model, but what it may do there. Your firm decides that, not the AI. MCP makes the boundary visible because every server declares exactly which tools exist. What matters is what those tools can do and the permissions behind them, not the label on the server.
 
-**Level one is reading.** The AI queries models and data: it lists the load-bearing walls or pulls the properties of a single element. The risk is low, especially when the server is read-only and runs locally.
+**Reading.** The AI queries models and data: it lists the fire-rated doors on a level or pulls the properties of a single element. Read-only access limits changes to the model. It doesn't make the information less sensitive, and it doesn't prevent a misleading answer.
 
-**Level two is checking and computing.** The AI checks the model against an IDS file or analyzes design options. IDS is a buildingSMART format that turns the data requirements in your BIM Execution Plan into a file a computer can check. The risk is moderate because the results feed into decisions, so an engineer reviews every result and every tool call is logged.
+**Checking.** The AI runs checks: an IDS validation, a clash report, a comparison between revisions. IDS is a buildingSMART standard for expressing selected information requirements in a machine-checkable form. You specify which elements need which data, and a checker tests the model against those rules. It checks the information, not whether the building is correctly designed. The findings inform decisions, so a person reviews them.
 
-**Level three is writing.** The AI changes the model itself, for example changing member sizes from a W14x48 to a W14x61 or adding load combinations. Few production servers allow this yet, and for good reason. It calls for a separate server, approval of each change, and version control, so any step can be rolled back.
+**Writing.** The AI changes the model itself: it fills in parameters, moves elements, or creates new ones. That needs controlled permissions, a review of each change, and a way to undo it.
 
-Autodesk took the same view: its Revit MCP server launched in technical preview as read-only, with write tools planned as a separate server so the two kinds of access stay apart. For most firms, level 1 is the right place to start. It already saves hours, and nothing in the model can break.
+Autodesk's Revit servers show how vendors are drawing these lines. The first [Revit MCP server](https://www.autodesk.com/blogs/aec/2026/06/17/revit-public-mcp-server/), released in June as a technical preview, was read-only. In September, Autodesk [added](https://forums.autodesk.com/t5/revit-mep-forum/revit-mcp-server-tech-preview-launch/td-p/14262011) a Trusted-Write server, which lets you review every change an agent makes, and an Experimental server with broader editing tools, which it describes as use at your own risk. Both are technical previews for Revit 2027. For most firms, reading is the right place to start, on a test model the firm has approved.
 
-## What I built: \[TK: two evenings\] and six tools
+## What I built and the six tools
 
-To test how high the barrier really is, I built a read-only MCP server for the model-review prototype I'm developing. The prototype already checks IFC models against IDS requirements and compares model versions. The server simply hands those abilities to AI.
+To test how high the barrier really is, I built a read-only MCP server for the model-review prototype I'm developing. The prototype already checks IFC models against IDS requirements and compares model versions. The validation itself isn't new; the prototype's checker already did it. What the server adds is a way to ask follow-up questions, connect the steps, and jump straight to the affected elements.
 
 *\[Figure 2: Code card. One complete MCP tool in about ten lines of Python.\]*
 
@@ -98,13 +98,15 @@ The server is called `ifc-review` and exposes six tools, all read-only:
 
 *\[Figure 3: The tool list as ChatGPT shows it, with the descriptions the AI reads.\]*
 
-Then I asked the question every project team asks after a design revision: "Which load-bearing walls changed in version B, and do they still meet the IDS requirements?" The AI called `compare_versions`, then `run_ids_check`, matched the two results by element ID, and answered: \[TK: final answer from the demo, e.g. two walls went from 8 in. to 6 in. and one of them lost its fire-resistance rating\]. Then it handed me a link that opened the model with exactly those walls highlighted. Autodesk's official Revit server works on the same principle: its Select Elements and Zoom to Elements tools hand the AI's findings straight back to the model on screen.
+Then I ran the test on a real model: a concept model of a residential building in Prague, with a street-level garage, three residential levels and an attic, checked against an IDS file with 14 information requirements. I asked which requirements fail and which elements are affected. Two requirements failed, on 13 elements: two roof windows without a thermal value and eleven doors without a fire rating. The door names said the fire rating would be set in the fire safety design. That explains why the value is missing. It doesn't provide one, and whether the value is required at this stage is a decision for the project team.
 
-*\[Figure 4: Main figure. The answer in chat on the left, the highlighted walls in the model on the right.\]*
+For the test, I then prepared a second revision with some of the gaps filled in, and asked the question every team asks after a revision: what got fixed, and what's still missing? The AI called the comparison and validation tools, and the results were matched by element ID. Ten of the thirteen elements were fixed. Three doors on Residential Level 3 still had no fire rating. Then the AI handed me a link that opened the model with exactly those three doors highlighted.
+
+*\[Figure 4: Main figure. The answer in chat on the left, the same three doors highlighted in the model on the right.\]*
 
 *\[Figure 5: The tool call expanded: what the AI sent to the server and what came back.\]*
 
-I ran the whole demo in two different AI apps: ChatGPT, and Gemini in Google Antigravity. Same server, same question, same tools, same answer. The server doesn't care which AI is asking. That is the whole point of a standard.
+I ran the whole demo in two different AI apps: ChatGPT, and Gemini in Google Antigravity. In that test, both reached the same findings with the same server and the same tools. That doesn't mean every AI app connects the same way; each product has its own setup and limits. But the server didn't need to know which AI was asking. That is the point of a standard.
 
 *\[Figure 6: ChatGPT and Gemini in Antigravity side by side, one server.\]*
 
@@ -114,27 +116,34 @@ Writing the code was the easy part. Three things mattered more:
 - **Summaries beat data dumps.** Return counts and the top results, with details on request. Sending the AI an entire model overloads its working memory and makes answers worse.
 - **Units and IDs, always.** Every number carries its unit and every element its GUID. Ambiguity is where AI starts guessing again.
 
-&#91;TK: one honest sentence from the build log about what went wrong or surprised you.\]
+None of this replaces the checker. It makes the checker easier to question.
 
 ## Where the industry stands
 
 In under two years, MCP went from an experiment to a feature that major AEC vendors ship with their products.
 
-Anthropic released the standard in November 2024. In January 2026, Dlubal Software added an MCP server to the standard installation of RFEM 6; the details are in Dlubal's [knowledge base article](https://www.dlubal.com/en/support-and-learning/support/knowledge-base/002032) and [API documentation](https://apidocs.dlubal.com/installation_mcp.html). In April, Trimble released an MCP connector for SketchUp. In May, Bluebeam brought Claude into Revu through MCP with its [Bluebeam Max](https://blog.cadalyst.com/architecture-infrastructure-construction-solutions/mcp-a-new-standard-for-connecting-ai-to-aec-software) tier. In June, Autodesk released a read-only [Revit MCP server](https://www.autodesk.com/blogs/aec/2026/06/17/revit-public-mcp-server/) as a technical preview add-on for Revit 2027. And in July, the [2026-07-28 specification](https://github.com/modelcontextprotocol/specification/releases/tag/2026-07-28) made servers easier to run at company scale and added proper handling for long-running jobs.
+Anthropic released the standard in November 2024. Since then, AEC vendors have started shipping MCP connections, each with its own scope and conditions:
 
-Vendors also make different design choices. Some servers expose a few narrow, purpose-built tools. Others let the AI write scripts against the program's API, much like a Dynamo or Grasshopper script, except the AI writes it. Anything the API can do, the AI can then do. Narrow tools give everyone safe defaults; scripting gives power users full reach, at the price of reviewing the code the AI writes. My own server sits firmly at the narrow end.
+- **Revit (Autodesk):** a read-only [MCP server](https://www.autodesk.com/blogs/aec/2026/06/17/revit-public-mcp-server/) since June, joined in September by [Trusted-Write and Experimental servers](https://forums.autodesk.com/t5/revit-mep-forum/revit-mcp-server-tech-preview-launch/td-p/14262011). All are technical previews for Revit 2027.
+- **Revu (Bluebeam):** [connects to Claude through MCP](https://support.bluebeam.com/revu/how-to/mcp-claude.html). It requires a Bluebeam Max plan, Revu 21.9 or later, and the Claude desktop app.
+- **SketchUp (Trimble):** a [Claude connector](https://help.sketchup.com/en/sketchup-claude-connector) that creates new SketchUp models from a conversation. It can't edit existing files, and Claude is currently the only supported AI provider.
+- **RFEM 6 (Dlubal Software):** an MCP server in the standard installation since January 2026, working through the Dlubal API. Details are in Dlubal's [knowledge base article](https://www.dlubal.com/en/support-and-learning/support/knowledge-base/002032) and [API documentation](https://apidocs.dlubal.com/installation_mcp.html).
 
-The July 2026 specification matters for structural work in particular. A finite element analysis isn't a two-second lookup, and the specification now gives long-running jobs a proper home: the AI starts the run, checks on it, and collects the results when it finishes.
+These products change quickly, so check the current conditions before you plan around them, and don't assume any of them connects to every AI app out of the box.
+
+Vendors also make different design choices. Some servers expose a few narrow, purpose-built tools. Others let the AI write scripts against the program's API, much like a Dynamo or Grasshopper script, except the AI writes it. The reach depends on what the server exposes and the permissions behind it. Narrow tools give everyone safe defaults; scripting gives power users more reach, at the price of reviewing and testing the code the AI writes. My own server sits firmly at the narrow end.
+
+Long-running jobs, such as a large analysis or a heavy model check, have their own pattern in MCP: Tasks. They started as an experimental feature, and the [July 2026 specification](https://modelcontextprotocol.io/specification/2026-07-28/changelog) moved them into an official extension. They only help when both the AI app and the server implement them.
 
 ## What MCP won't fix
 
 MCP removes the friction between engineering judgment and its execution. It does not replace the judgment, and it brings a few new risks of its own.
 
-- **Responsibility stays put.** The AI doesn't stamp drawings. The engineer of record reviews the result and signs, exactly as before.
+- **Responsibility stays put.** Using AI doesn't remove the engineer's responsibility to review the result. The AI doesn't stamp drawings, and how liability is allocated is a question for your contracts and legal advice.
 - **Garbage in, garbage out, faster.** MCP automates a messy process just as faithfully as a clean one. Inconsistent parameters and missing classification codes (UniFormat, OmniClass) will surface sooner, not disappear.
 - **AI-written code needs review.** When a server runs scripts the model writes, the model can write a wrong one. Review the code, test on a copy, and keep analysis results under version control.
-- **Know where the data goes.** A local server keeps the model on your machine, but the AI host still sees whatever the tools return. Check your AI provider's data-retention and training terms before connecting live projects.
-- **Model data can carry instructions.** A property value or a document comment that reads like a command can mislead an AI that takes it at face value. Giving the AI only the access it needs, read-only by default, is the practical defense.
+- **Know where the data goes.** A local server keeps the model on your machine, but the AI host still sees whatever the tools return, and read-only access doesn't change that. Check your AI provider's data-retention and training terms before connecting live projects.
+- **Model data can carry instructions.** A property value or a document comment can contain text that tries to steer the AI. Read-only access limits changes to the model; it doesn't prevent misleading answers or data exposure. Start with a trusted server, restricted access, and a test model your firm has approved.
 - **It isn't free.** Budget for AI subscriptions, API access or add-on licenses on the software side, and workstations that can keep up.
 
 ## How to start on Monday
@@ -147,17 +156,17 @@ Start small: one project, one read-only task, one person who's curious. Before t
 4. Which AI applications have you tested it with?
 5. How is it licensed and billed?
 
-Then run a pilot. Pick a task your team repeats every week, such as checking a model revision against the project's information requirements. Do it once by hand and once through an AI with MCP, and compare the time and what each version caught. That comparison will tell you more than any vendor demo.
+Then run a pilot. Choose one recurring task and a test model your firm has approved, such as checking a model revision against the project's information requirements. Compare your current workflow, including any checker you already use, with the AI-assisted version. Count the review time, missed issues, and false alarms as well as the time saved, and repeat it on another revision before deciding. That comparison will tell you more than any vendor demo.
 
 ## A bridge, not a replacement
 
 MCP won't design a building. What it does is let AI reach the tools that already do the engineering, so the hours between a question and its answer shrink.
 
-Picture the next step. One outlet finds the girders that changed in the latest model revision. A second outlet sends them to the analysis program for a rerun, provided the BIM model and the analysis model are linked, which is still one of the hardest parts of the job. The AI connects the two and puts the result in front of the engineer who decides. Every piece of that workflow exists today; what's missing is mostly the habit of plugging things in.
+Picture the next step. One outlet finds the elements that changed in the latest model revision. A second sends them on to the next tool, an analysis program or a coordination platform, provided the models and their element IDs are linked, which is still one of the hardest parts of the job. The AI connects the steps and puts the result in front of the person who decides. The pieces exist today; every step still needs someone who checks the result.
 
 The AEC software we rely on is excellent at engineering. The AI platforms are excellent at language and reasoning. MCP is the outlet between them, and it's worth learning how it works before your competitors do.
 
-&#91;TK: one line pointing to the companion episode of the podcast.\]
+Prefer to listen? This article has a companion episode of the Insights podcast, built around the same test.
 
 ## Sources
 
@@ -172,3 +181,7 @@ The AEC software we rely on is excellent at engineering. The AI platforms are ex
 - [Google: Set up a custom MCP server connection in Gemini Enterprise](https://support.google.com/g/answer/17106276)
 - [ifcopenshell-mcp: open-source MCP server for IFC models](https://glama.ai/mcp/servers/kd8f7alqr6)
 - [Revizto MCP Server](https://revizto.com/legal/revizto-mcp-server)
+- [Model Context Protocol: Key changes in the 2026-07-28 specification](https://modelcontextprotocol.io/specification/2026-07-28/changelog)
+- [Autodesk Community: Revit MCP server tech preview launch (Trusted-Write and Experimental)](https://forums.autodesk.com/t5/revit-mep-forum/revit-mcp-server-tech-preview-launch/td-p/14262011)
+- [Bluebeam: Use MCP with Claude in Revu](https://support.bluebeam.com/revu/how-to/mcp-claude.html)
+- [SketchUp: SketchUp connector for Claude](https://help.sketchup.com/en/sketchup-claude-connector)

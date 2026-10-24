@@ -19,8 +19,8 @@ TITLE = 'A Power Outlet for AI: What MCP Is and Why AEC Professionals Will Need 
 DESC = ('Your AI assistant can’t open your model. MCP, an open standard backed by OpenAI, Google and '
         'Microsoft, connects it to the AEC tools you already trust.')
 DEK = ('Model Context Protocol is an open standard that connects AI assistants to the software engineers '
-       'already use. What it is, what it’s good for in AEC, and why plugging into the big AI platforms '
-       'beats building another chatbot.')
+       'already use. What it is, what it’s good for in AEC, and why connecting to the AI platforms your team '
+       'already uses usually makes more sense than building another chatbot.')
 CLOSING = 'If you’re connecting AEC software to AI assistants or planning an MCP pilot, I’d be happy to compare notes.'
 SHORT = 'A power outlet for AI'
 CATEGORY = 'AI in AEC'
@@ -131,8 +131,8 @@ IDS = {
     'What MCP is: an outlet, not a brain': ('what-mcp-is', 'What MCP is'),
     'Why AEC needs it: guessing vs. computing': ('why-aec', 'Why AEC needs it'),
     'Why plug into the AI giants instead of building our own chatbot': ('why-plug-in', 'Why plug into the AI giants'),
-    'Three levels of trust': ('trust', 'Three levels of trust'),
-    'What I built: \\[TK: two evenings\\] and six tools': ('what-i-built', 'What I built'),
+    'Three kinds of access': ('access', 'Three kinds of access'),
+    'What I built and the six tools': ('what-i-built', 'What I built'),
     'Where the industry stands': ('industry', 'Where the industry stands'),
     "What MCP won't fix": ('wont-fix', 'What MCP won’t fix'),
     'How to start on Monday': ('monday', 'How to start on Monday'),
@@ -214,8 +214,8 @@ for b in blocks:
     assert len(lines) == 1, b[:80]
     lead = ' class="lead"' if sid == 'cant-open' and n == 1 else ''
     body.append(f'      <p data-k="{key("p")}"{lead}>{inline(b)}</p>')
-    # Unnumbered images: after the paragraph on level two, after the first paragraph of the industry section.
-    if sid == 'trust' and b.startswith('**Level two'):
+    # Unnumbered images: after the paragraph on checking, after the first paragraph of the industry section.
+    if sid == 'access' and b.startswith('**Checking.**'):
         body.append(figure('05-permission', key('figcaption'), numbered=False))
     if sid == 'industry' and not after_first:
         after_first = True
