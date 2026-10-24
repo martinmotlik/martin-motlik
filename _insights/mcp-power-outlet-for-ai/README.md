@@ -35,10 +35,10 @@ Check anytime: `python3 tools/insights/check-package.py mcp-power-outlet-for-ai`
 - 2026-10-24 · Approved template additions: in-text figure with numbered caption; click to enlarge (link + native `<dialog>`, 3840 px AVIF/WebP, PNG only in Sources/Drive); no wider-than-column figure; code of figure 2 as a `<details>` with the existing code block; the five vendor questions in a `.takeaway`-style card; 16:9 placeholders with the image ID; `[TK …]` highlighted and blocking release; "Keep reading" back on both articles.
 - 2026-10-24 · Hero is a composed product image, not Martin in the scene (exception to the hero rule). No `-notext` variant exists; the hero has no text overlay, so the OG crop comes from it directly.
 - 2026-10-24 · Not on the page: "Motlar", "Komořanská", "Dlubal CALC" (`package.json` → `forbidden`, checked by `check-package.py`). Images 09, 10 and the interaction video are not in the article.
+- 2026-10-24 · The IDS requirement ID "KOM-14" in images 01, 06, 07 and the alt text of 07 stays (user's decision).
 
 ## Open
 
-- **KOM-14**: the IDS requirement ID is visible in images 01, 06, 07 and in the alt text of 07. Not a forbidden word, but "KOM" may point to the source building. Keep, or re-render with a neutral ID?
 - Title is 73 characters; the rule is ≤ 60 for the H1 and `<title>`. Two `<title>` variants go to `REVIEW_NOTES.md`.
 
 ## Published
