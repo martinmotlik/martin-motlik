@@ -11,13 +11,13 @@ Check anytime: `python3 tools/insights/check-package.py mcp-power-outlet-for-ai`
 | Instagram | `tools/ig-story/teasers/ep002-….json` |
 | Drive | (folder link once archived) |
 | Branch | `feature/insights-mcp-article` (from `main`) |
-| Inputs | text: `article.md` (pending) · images: `BIM Platform/.claude/worktrees/mcp/article-assets/final/` + `assets.md` (11 figures, PNG 3840 × 2160, WebP 1920 × 1080)
+| Inputs | text: `article.md` (final, from the Claude doc https://claude.ai/artifact/9aafTETYL8eBzdCmNUBJhu, 2026-10-24) · images: `BIM Platform/.claude/worktrees/mcp/article-assets/final/` + `assets.md` (11 figures, PNG 3840 × 2160, WebP 1920 × 1080)
 
 ## Status
 
 - [ ] 1 Brief approved
-- [ ] 2 Article text approved
-- [ ] 2 Page built and approved (desktop + phone) · 2026-10-24 built on the GEO template with all figures, text still [TK] (`REVIEW_NOTES.md`, `review/`)
+- [ ] 2 Article text approved · final text received 2026-10-24, four [TK] left, remarks in `REVIEW_NOTES.md`
+- [ ] 2 Page built and approved (desktop + phone) · 2026-10-24 built from `article.md` on the GEO template with all figures (`review/`)
 - [ ] 3 CS + DE translations, `--check` passes
 - [ ] 4 Podcast script approved
 - [ ] 4 Audio delivered (MP3 + transcript .md + .vtt)
