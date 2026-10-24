@@ -33,6 +33,9 @@ const FORCE = process.argv.includes('--force');
  *   portrait about photo, 360x480
  *   gallery  reference-page thumbnail 403x269, also opened in the lightbox
  *            at up to 92vw, so the ladder runs to 2560
+ *   figure   article figure in the 700px text column (1400 at 2x), opened
+ *            in the lightbox at full size: screenshots with small text, so the
+ *            ladder runs to the 3840 source
  */
 const ROLES = {
   // 2880 is above every source here, which lets the native-width rule below
@@ -44,6 +47,7 @@ const ROLES = {
   // 900 sits just above the 806px a 403px thumbnail needs on a 2x screen;
   // without it the browser jumps to 1280 and fetches ~2x the bytes.
   gallery:  [400, 600, 900, 1280, 1920, 2560],
+  figure:   [400, 700, 1050, 1400, 1920, 2560, 3840],
 };
 
 /** source path (relative to Sources/originals) -> role */
@@ -56,6 +60,16 @@ const IMAGES = {
   // Insights: article cover, shown full-width on the article page and as a
   // 16:10 card on the list page, so it needs the gallery ladder's range.
   'images/ai-search-hero.jpg':                 'gallery',
+  // "A power outlet for AI" (MCP): hero and figures 1-6, the trust and timeline images.
+  'images/mcp-article-01-hero.png':            'gallery',
+  'images/mcp-article-02-architecture.png':    'figure',
+  'images/mcp-article-03-code.png':            'figure',
+  'images/mcp-article-04-tools.png':           'figure',
+  'images/mcp-article-05-permission.png':      'figure',
+  'images/mcp-article-06-main.png':            'figure',
+  'images/mcp-article-07-under-the-hood.png':  'figure',
+  'images/mcp-article-08-two-ais.png':         'figure',
+  'images/mcp-article-11-timeline.png':        'figure',
   'references/ifc-verify/cover.png':           'card',
   'references/nascc-card/vizualizace1.png':    'card',
   'references/mass-timber-card/render-card.png': 'card',
@@ -188,6 +202,7 @@ const CROPS = {
   // Open Graph / Twitter card: the 1.91:1 frame LinkedIn and X crop to anyway,
   // declared as 1200x630 in the article's meta tags.
   'images/ai-search-hero.jpg': { slug: 'ai-search-hero-og', ratio: 1200 / 630, widths: [1200] },
+  'images/mcp-article-01-hero.png': { slug: 'mcp-article-01-hero-og', ratio: 1200 / 630, widths: [1200] },
 };
 
 // Reference-page filmstrip thumbnails sit in 3:2 boxes, but the sources are

@@ -275,6 +275,548 @@
       }
     ]
   },
+  "mcp-article-01-hero": {
+    "slug": "mcp-article-01-hero",
+    "source": "images/mcp-article-01-hero.png",
+    "sourceWidth": 3840,
+    "sourceHeight": 2160,
+    "aspect": 1.777778,
+    "roles": [
+      "gallery"
+    ],
+    "widths": [
+      {
+        "w": 400,
+        "h": 225,
+        "jpg": 12689,
+        "avif": 7221,
+        "bpp": 1.13
+      },
+      {
+        "w": 600,
+        "h": 338,
+        "jpg": 23670,
+        "avif": 13050,
+        "bpp": 0.93
+      },
+      {
+        "w": 900,
+        "h": 506,
+        "jpg": 45428,
+        "avif": 24225,
+        "bpp": 0.8
+      },
+      {
+        "w": 1280,
+        "h": 720,
+        "jpg": 80414,
+        "avif": 39785,
+        "bpp": 0.7
+      },
+      {
+        "w": 1920,
+        "h": 1080,
+        "jpg": 145314,
+        "avif": 67590,
+        "bpp": 0.56
+      },
+      {
+        "w": 2560,
+        "h": 1440,
+        "jpg": 205367,
+        "avif": 96194,
+        "bpp": 0.45
+      }
+    ]
+  },
+  "mcp-article-02-architecture": {
+    "slug": "mcp-article-02-architecture",
+    "source": "images/mcp-article-02-architecture.png",
+    "sourceWidth": 3840,
+    "sourceHeight": 2160,
+    "aspect": 1.777778,
+    "roles": [
+      "figure"
+    ],
+    "widths": [
+      {
+        "w": 400,
+        "h": 225,
+        "jpg": 7857,
+        "avif": 4121,
+        "bpp": 0.7
+      },
+      {
+        "w": 700,
+        "h": 394,
+        "jpg": 16088,
+        "avif": 7469,
+        "bpp": 0.47
+      },
+      {
+        "w": 1050,
+        "h": 591,
+        "jpg": 26658,
+        "avif": 11149,
+        "bpp": 0.34
+      },
+      {
+        "w": 1400,
+        "h": 788,
+        "jpg": 38324,
+        "avif": 14954,
+        "bpp": 0.28
+      },
+      {
+        "w": 1920,
+        "h": 1080,
+        "jpg": 58514,
+        "avif": 19374,
+        "bpp": 0.23
+      },
+      {
+        "w": 2560,
+        "h": 1440,
+        "jpg": 81265,
+        "avif": 27948,
+        "bpp": 0.18
+      },
+      {
+        "w": 3840,
+        "h": 2160,
+        "jpg": 137177,
+        "avif": 37865,
+        "bpp": 0.13
+      }
+    ]
+  },
+  "mcp-article-03-code": {
+    "slug": "mcp-article-03-code",
+    "source": "images/mcp-article-03-code.png",
+    "sourceWidth": 3840,
+    "sourceHeight": 2160,
+    "aspect": 1.777778,
+    "roles": [
+      "figure"
+    ],
+    "widths": [
+      {
+        "w": 400,
+        "h": 225,
+        "jpg": 10618,
+        "avif": 6604,
+        "bpp": 0.94
+      },
+      {
+        "w": 700,
+        "h": 394,
+        "jpg": 25868,
+        "avif": 13937,
+        "bpp": 0.75
+      },
+      {
+        "w": 1050,
+        "h": 591,
+        "jpg": 46200,
+        "avif": 21541,
+        "bpp": 0.6
+      },
+      {
+        "w": 1400,
+        "h": 788,
+        "jpg": 68014,
+        "avif": 30051,
+        "bpp": 0.49
+      },
+      {
+        "w": 1920,
+        "h": 1080,
+        "jpg": 102582,
+        "avif": 39749,
+        "bpp": 0.4
+      },
+      {
+        "w": 2560,
+        "h": 1440,
+        "jpg": 137356,
+        "avif": 59573,
+        "bpp": 0.3
+      },
+      {
+        "w": 3840,
+        "h": 2160,
+        "jpg": 234650,
+        "avif": 99027,
+        "bpp": 0.23
+      }
+    ]
+  },
+  "mcp-article-04-tools": {
+    "slug": "mcp-article-04-tools",
+    "source": "images/mcp-article-04-tools.png",
+    "sourceWidth": 3840,
+    "sourceHeight": 2160,
+    "aspect": 1.777778,
+    "roles": [
+      "figure"
+    ],
+    "widths": [
+      {
+        "w": 400,
+        "h": 225,
+        "jpg": 6449,
+        "avif": 4042,
+        "bpp": 0.57
+      },
+      {
+        "w": 700,
+        "h": 394,
+        "jpg": 15503,
+        "avif": 8164,
+        "bpp": 0.45
+      },
+      {
+        "w": 1050,
+        "h": 591,
+        "jpg": 28706,
+        "avif": 13733,
+        "bpp": 0.37
+      },
+      {
+        "w": 1400,
+        "h": 788,
+        "jpg": 42216,
+        "avif": 18522,
+        "bpp": 0.31
+      },
+      {
+        "w": 1920,
+        "h": 1080,
+        "jpg": 61452,
+        "avif": 27812,
+        "bpp": 0.24
+      },
+      {
+        "w": 2560,
+        "h": 1440,
+        "jpg": 86983,
+        "avif": 37281,
+        "bpp": 0.19
+      },
+      {
+        "w": 3840,
+        "h": 2160,
+        "jpg": 139365,
+        "avif": 53681,
+        "bpp": 0.13
+      }
+    ]
+  },
+  "mcp-article-05-permission": {
+    "slug": "mcp-article-05-permission",
+    "source": "images/mcp-article-05-permission.png",
+    "sourceWidth": 3840,
+    "sourceHeight": 2160,
+    "aspect": 1.777778,
+    "roles": [
+      "figure"
+    ],
+    "widths": [
+      {
+        "w": 400,
+        "h": 225,
+        "jpg": 7887,
+        "avif": 4153,
+        "bpp": 0.7
+      },
+      {
+        "w": 700,
+        "h": 394,
+        "jpg": 17659,
+        "avif": 8172,
+        "bpp": 0.51
+      },
+      {
+        "w": 1050,
+        "h": 591,
+        "jpg": 28433,
+        "avif": 12652,
+        "bpp": 0.37
+      },
+      {
+        "w": 1400,
+        "h": 788,
+        "jpg": 40969,
+        "avif": 16996,
+        "bpp": 0.3
+      },
+      {
+        "w": 1920,
+        "h": 1080,
+        "jpg": 55392,
+        "avif": 21283,
+        "bpp": 0.21
+      },
+      {
+        "w": 2560,
+        "h": 1440,
+        "jpg": 76237,
+        "avif": 28041,
+        "bpp": 0.17
+      },
+      {
+        "w": 3840,
+        "h": 2160,
+        "jpg": 124188,
+        "avif": 36953,
+        "bpp": 0.12
+      }
+    ]
+  },
+  "mcp-article-06-main": {
+    "slug": "mcp-article-06-main",
+    "source": "images/mcp-article-06-main.png",
+    "sourceWidth": 3840,
+    "sourceHeight": 2160,
+    "aspect": 1.777778,
+    "roles": [
+      "figure"
+    ],
+    "widths": [
+      {
+        "w": 400,
+        "h": 225,
+        "jpg": 11278,
+        "avif": 6519,
+        "bpp": 1
+      },
+      {
+        "w": 700,
+        "h": 394,
+        "jpg": 26585,
+        "avif": 14295,
+        "bpp": 0.77
+      },
+      {
+        "w": 1050,
+        "h": 591,
+        "jpg": 52527,
+        "avif": 27250,
+        "bpp": 0.68
+      },
+      {
+        "w": 1400,
+        "h": 788,
+        "jpg": 80134,
+        "avif": 40599,
+        "bpp": 0.58
+      },
+      {
+        "w": 1920,
+        "h": 1080,
+        "jpg": 131822,
+        "avif": 61979,
+        "bpp": 0.51
+      },
+      {
+        "w": 2560,
+        "h": 1440,
+        "jpg": 184959,
+        "avif": 87138,
+        "bpp": 0.4
+      },
+      {
+        "w": 3840,
+        "h": 2160,
+        "jpg": 314882,
+        "avif": 136245,
+        "bpp": 0.3
+      }
+    ]
+  },
+  "mcp-article-07-under-the-hood": {
+    "slug": "mcp-article-07-under-the-hood",
+    "source": "images/mcp-article-07-under-the-hood.png",
+    "sourceWidth": 3840,
+    "sourceHeight": 2160,
+    "aspect": 1.777778,
+    "roles": [
+      "figure"
+    ],
+    "widths": [
+      {
+        "w": 400,
+        "h": 225,
+        "jpg": 7560,
+        "avif": 4919,
+        "bpp": 0.67
+      },
+      {
+        "w": 700,
+        "h": 394,
+        "jpg": 18874,
+        "avif": 11198,
+        "bpp": 0.55
+      },
+      {
+        "w": 1050,
+        "h": 591,
+        "jpg": 37711,
+        "avif": 19522,
+        "bpp": 0.49
+      },
+      {
+        "w": 1400,
+        "h": 788,
+        "jpg": 54091,
+        "avif": 27909,
+        "bpp": 0.39
+      },
+      {
+        "w": 1920,
+        "h": 1080,
+        "jpg": 82546,
+        "avif": 40465,
+        "bpp": 0.32
+      },
+      {
+        "w": 2560,
+        "h": 1440,
+        "jpg": 110961,
+        "avif": 54233,
+        "bpp": 0.24
+      },
+      {
+        "w": 3840,
+        "h": 2160,
+        "jpg": 173156,
+        "avif": 77498,
+        "bpp": 0.17
+      }
+    ]
+  },
+  "mcp-article-08-two-ais": {
+    "slug": "mcp-article-08-two-ais",
+    "source": "images/mcp-article-08-two-ais.png",
+    "sourceWidth": 3840,
+    "sourceHeight": 2160,
+    "aspect": 1.777778,
+    "roles": [
+      "figure"
+    ],
+    "widths": [
+      {
+        "w": 400,
+        "h": 225,
+        "jpg": 12382,
+        "avif": 7647,
+        "bpp": 1.1
+      },
+      {
+        "w": 700,
+        "h": 394,
+        "jpg": 35419,
+        "avif": 20754,
+        "bpp": 1.03
+      },
+      {
+        "w": 1050,
+        "h": 591,
+        "jpg": 65247,
+        "avif": 36196,
+        "bpp": 0.84
+      },
+      {
+        "w": 1400,
+        "h": 788,
+        "jpg": 102384,
+        "avif": 53637,
+        "bpp": 0.74
+      },
+      {
+        "w": 1920,
+        "h": 1080,
+        "jpg": 156500,
+        "avif": 78551,
+        "bpp": 0.6
+      },
+      {
+        "w": 2560,
+        "h": 1440,
+        "jpg": 218675,
+        "avif": 107868,
+        "bpp": 0.47
+      },
+      {
+        "w": 3840,
+        "h": 2160,
+        "jpg": 348419,
+        "avif": 165945,
+        "bpp": 0.34
+      }
+    ]
+  },
+  "mcp-article-11-timeline": {
+    "slug": "mcp-article-11-timeline",
+    "source": "images/mcp-article-11-timeline.png",
+    "sourceWidth": 3840,
+    "sourceHeight": 2160,
+    "aspect": 1.777778,
+    "roles": [
+      "figure"
+    ],
+    "widths": [
+      {
+        "w": 400,
+        "h": 225,
+        "jpg": 6010,
+        "avif": 4390,
+        "bpp": 0.53
+      },
+      {
+        "w": 700,
+        "h": 394,
+        "jpg": 13612,
+        "avif": 8449,
+        "bpp": 0.39
+      },
+      {
+        "w": 1050,
+        "h": 591,
+        "jpg": 24458,
+        "avif": 13732,
+        "bpp": 0.32
+      },
+      {
+        "w": 1400,
+        "h": 788,
+        "jpg": 34437,
+        "avif": 18868,
+        "bpp": 0.25
+      },
+      {
+        "w": 1920,
+        "h": 1080,
+        "jpg": 48012,
+        "avif": 24581,
+        "bpp": 0.19
+      },
+      {
+        "w": 2560,
+        "h": 1440,
+        "jpg": 72330,
+        "avif": 34069,
+        "bpp": 0.16
+      },
+      {
+        "w": 3840,
+        "h": 2160,
+        "jpg": 127990,
+        "avif": 52850,
+        "bpp": 0.12
+      }
+    ]
+  },
   "ifc-verify-cover": {
     "slug": "ifc-verify-cover",
     "source": "references/ifc-verify/cover.png",
@@ -1347,6 +1889,23 @@
         "jpg": 76448,
         "avif": 34400,
         "bpp": 0.81
+      }
+    ]
+  },
+  "mcp-article-01-hero-og": {
+    "slug": "mcp-article-01-hero-og",
+    "source": "images/mcp-article-01-hero.png",
+    "roles": [
+      "crop"
+    ],
+    "aspect": 1.9047619047619047,
+    "widths": [
+      {
+        "w": 1200,
+        "h": 630,
+        "jpg": 70708,
+        "avif": 36780,
+        "bpp": 0.75
       }
     ]
   },

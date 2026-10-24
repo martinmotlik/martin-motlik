@@ -17,7 +17,7 @@ Check anytime: `python3 tools/insights/check-package.py mcp-power-outlet-for-ai`
 
 - [ ] 1 Brief approved
 - [ ] 2 Article text approved
-- [ ] 2 Page built and approved (desktop + phone)
+- [ ] 2 Page built and approved (desktop + phone) · 2026-10-24 built on the GEO template with all figures, text still [TK] (`REVIEW_NOTES.md`, `review/`)
 - [ ] 3 CS + DE translations, `--check` passes
 - [ ] 4 Podcast script approved
 - [ ] 4 Audio delivered (MP3 + transcript .md + .vtt)

@@ -4,3 +4,6 @@
 !.claude/CLAUDE.md
 Sources/
 node_modules/
+
+# Review screenshots of Insights pages (Playwright, regenerated anytime)
+_insights/*/review/
