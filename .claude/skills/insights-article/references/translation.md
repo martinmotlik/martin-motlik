@@ -6,13 +6,16 @@ The CS and DE pages are generated: never edit `cs/…` or `de/…` by hand.
 
 ## Slugs
 
-- Add the article to `PAGES` and its slugs to `URLS` in `tools/build-i18n.py`.
+- Put the slugs in `_insights/<slug>/package.json` → `urls`, and add the
+  `site` block (`lastmod`, `english_markers`: the short title, the date and
+  the read time as the English page shows them). `tools/build-i18n.py` builds
+  every package that has a `site` block.
 - Slugs are translated, ASCII, kebab-case, short, with the article's search
   phrase in that language (`/cs/insights/data-aec-pro-vyhledavani-s-ai/`,
   `/de/insights/aec-daten-fuer-ki-suche/`; ü → ue). Agree them in the brief.
   They never change after publishing.
-- Add the path to `SITEMAP` with today's date; bump `lastmod` whenever the
-  page's content changes.
+- `site.lastmod` is the sitemap date: today's, bumped whenever the page's
+  content changes.
 
 ## The JSON
 

@@ -93,22 +93,17 @@ and replace content, keeping the structure:
   factual summary + "Key points: …" + "Topics: …", the CS and DE title lines,
   the link list and the language table. Keep it in step with the visible
   copy.
-- `tools/build-i18n.py`: `PAGES`, `URLS` (slugs), `SITEMAP` (lastmod).
+- `_insights/<slug>/package.json`: `urls` (slugs) and the `site` block
+  (`lastmod`, `english_markers`); `tools/build-i18n.py` reads them.
 - Once two articles exist, add "Keep reading" to both.
 
-## Before article #2: generalize the build
+## The build is article-agnostic
 
-The build was written for one article. Before adding the second one, make it
-article-agnostic (its own branch, verify that article #1's output is
-byte-identical except for intended changes):
-
-- `tools/build-i18n.py`: the `ARTICLE` constant and `build_article()`
-  (one article, `citation[0]`); the literal share title
-  "Be the source: getting AEC data ready for AI search" (and the ≥12 URL /
-  ≥6 title assertions); `word_count()` with fixed section ids; the
-  `article:tag` regex `{4}`; `build_list()` updating only `blogPost[0]`;
-  `ENGLISH_MARKERS` with "8 min read" / "Oct 6, 2026".
-- `tools/build-podcast.py`: `HERO = '/assets/img/ai-search-hero'` for the
-  latest-episode card → take each episode's article hero.
-- Read article data (path, slugs, hero, share title, sections) from one
-  registry per article instead of constants.
+Done on 2026-10-24, before article #2 (output of article #1 byte-identical).
+`tools/build-i18n.py` reads every article from its package manifest
+(`_insights/<slug>/package.json` with a `site` block): paths and slugs,
+sitemap date, English markers. The share title comes from the page's
+`og:title`, the word count from every `data-k` block except the page
+furniture (`NOT_TEXT`), translated source names from `meta.citationN`.
+`tools/build-podcast.py` takes the latest-episode image from the episode's
+`hero` and `hero_alt` in `podcast/podcast.json`.

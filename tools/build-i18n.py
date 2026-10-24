@@ -30,7 +30,27 @@ SITE = 'https://martinmotlik.com'
 LANGS = ('cs', 'de')
 LOCALES = {'en': 'en_US', 'cs': 'cs_CZ', 'de': 'de_DE'}
 
-ARTICLE = '/insights/ai-visibility-for-aec/'
+
+
+def load_articles():
+    """Insights articles on the site, read from their package manifests
+    (_insights/<slug>/package.json): every package with a "site" block, by
+    number. The manifest holds the URLs in every language; "site" holds the
+    sitemap lastmod and the English phrases no translation may keep."""
+    found = []
+    base = os.path.join(ROOT, '_insights')
+    for slug in sorted(os.listdir(base)):
+        f = os.path.join(base, slug, 'package.json')
+        if os.path.exists(f):
+            with open(f, encoding='utf-8') as fh:
+                pkg = json.load(fh)
+            if pkg.get('site'):
+                assert all(pkg['urls'].get(l) for l in ('en',) + LANGS), f'{f}: urls en/cs/de needed for the site'
+                found.append(pkg)
+    return sorted(found, key=lambda p: p['number'])
+
+
+ARTICLES = load_articles()
 PAGES = [
     {'path': '/', 'kind': 'page'},
     {'path': '/services/', 'kind': 'page'},
@@ -41,8 +61,7 @@ PAGES = [
     {'path': '/insights/', 'kind': 'list'},
     {'path': '/insights/podcast/', 'kind': 'page'},
     {'path': '/privacy/', 'kind': 'page'},
-    {'path': ARTICLE, 'kind': 'article'},
-]
+] + [{'path': a['urls']['en'], 'kind': 'article'} for a in ARTICLES]
 
 # Translated slugs: a URL is in the language of the reader. /insights/ stays
 # (the section's name in every language), as do event names (nascc-2026).
@@ -56,9 +75,8 @@ URLS = {
     '/references/mass-timber-2026/': {'cs': '/cs/reference/mass-timber-2026/', 'de': '/de/referenzen/mass-timber-2026/'},
     '/references/rfem6-brochure/': {'cs': '/cs/reference/rfem6-brozura/', 'de': '/de/referenzen/rfem6-broschuere/'},
     '/privacy/': {'cs': '/cs/ochrana-osobnich-udaju/', 'de': '/de/datenschutz/'},
-    ARTICLE: {'cs': '/cs/insights/data-aec-pro-vyhledavani-s-ai/',
-              'de': '/de/insights/aec-daten-fuer-ki-suche/'},
 }
+URLS.update({a['urls']['en']: {l: a['urls'][l] for l in LANGS} for a in ARTICLES})
 
 
 def url(path, lang):
@@ -216,9 +234,12 @@ def rewrite_ld(s, fn):
     return s[:m.start(2)] + dump + s[m.end(2):]
 
 
+# Article blocks that are not the text itself (hero, contents, tags, author…).
+NOT_TEXT = ('hero', 'toc', 'closing', 'tags', 'sources-h', 'author')
+
+
 def word_count(data):
-    text = ' '.join(v for k, v in data['k'].items()
-                    if k.split('.')[0] in ('intro', 'ai-search', 'localization', 'load-path', 'rules', 'try', 'kit', 'start'))
+    text = ' '.join(v for k, v in data['k'].items() if k.split('.')[0] not in NOT_TEXT)
     text = re.sub(r'<code[^>]*>.*?</code>', ' ', text, flags=re.S)
     text = html.unescape(re.sub(r'<[^>]+>', ' ', text))
     return len(re.findall(r'\w[\w\-’\']*', text))
@@ -369,9 +390,9 @@ def build_page(path, lang):
     return s
 
 
-def build_article(lang):
-    path = ARTICLE
+def build_article(path, lang):
     s = open(src_file(path), encoding='utf-8').read()
+    en_title = html.unescape(re.search(r'<meta property="og:title" content="([^"]*)">', s).group(1))
     data = load_json(path, lang)
     ui, meta = data['ui'], data['meta']
     page = SITE + url(path, lang)
@@ -399,7 +420,10 @@ def build_article(lang):
             'wordCount': word_count(data),
             'translationOfWork': {'@id': SITE + path + '#article'},
         })
-        art['citation'][0]['name'], art['citation'][0]['description'] = meta['citation1']
+        # citationN in the JSON: name and description of the Nth source; others stay as published.
+        for i, c in enumerate(art['citation'], 1):
+            if f'citation{i}' in meta:
+                c['name'], c['description'] = meta[f'citation{i}']
         items = crumbs['itemListElement']
         items[0]['name'] = meta['crumb_home']
         items[1]['item'] = SITE + url('/insights/', lang)
@@ -407,7 +431,7 @@ def build_article(lang):
     s = rewrite_ld(s, ld)
 
     # Share links carry this version's URL and title.
-    en_url, en_title = quote(SITE + path, safe=''), quote('Be the source: getting AEC data ready for AI search', safe='')
+    en_url, en_title = quote(SITE + path, safe=''), quote(en_title, safe='')
     assert s.count(en_url) >= 12 and s.count(en_title) >= 6
     s = s.replace(en_url, quote(page, safe='')).replace(en_title, quote(title, safe=''))
     s = s.replace(quote('I thought this was worth your time:', safe=''), quote(meta['share_intro'], safe=''))
@@ -425,7 +449,6 @@ def build_list(lang):
     path = '/insights/'
     s = open(src_file(path), encoding='utf-8').read()
     data = load_json(path, lang)
-    art = load_json(ARTICLE, lang)
     chrome, meta = data['chrome'], data['meta']
     page = SITE + url(path, lang)
 
@@ -440,12 +463,15 @@ def build_list(lang):
             '@id': page + '#blog', 'description': meta['twitter_description'], 'url': page,
             'inLanguage': meta['in_language'], 'translationOfWork': {'@id': SITE + path + '#blog'},
         })
-        post = blog['blogPost'][0]
-        post.update({
-            '@id': SITE + url(ARTICLE, lang) + '#article', 'headline': art['ui']['article_title'],
-            'description': art['meta']['description'], 'url': SITE + url(ARTICLE, lang),
-            'articleSection': art['meta']['section'], 'inLanguage': art['meta']['in_language'],
-        })
+        posts = {p['@id']: p for p in blog['blogPost']}
+        for a in ARTICLES:
+            en, art = a['urls']['en'], load_json(a['urls']['en'], lang)
+            post = posts[SITE + en + '#article']
+            post.update({
+                '@id': SITE + url(en, lang) + '#article', 'headline': art['ui']['article_title'],
+                'description': art['meta']['description'], 'url': SITE + url(en, lang),
+                'articleSection': art['meta']['section'], 'inLanguage': art['meta']['in_language'],
+            })
         crumbs['itemListElement'][0]['name'] = meta['crumb_home']
     s = rewrite_ld(s, ld)
 
@@ -453,9 +479,10 @@ def build_list(lang):
 
 
 # Phrases that only exist in the English pages; none may survive in visible text.
-ENGLISH_MARKERS = ('Be the source', 'Field notes from', 'All articles', 'On this page', 'Keep reading',
+# Each article adds its own ("site.english_markers": short title, date, read time).
+ENGLISH_MARKERS = ('Field notes from', 'All articles', 'On this page', 'Keep reading',
                    'More options', 'Copy link', 'In this article', 'Working on a similar challenge',
-                   'Where I would start', 'Get new insights first', '8 min read', 'Oct 6, 2026')
+                   'Get new insights first') + tuple(m for a in ARTICLES for m in a['site']['english_markers'])
 
 
 def strip_english(s):
@@ -488,7 +515,8 @@ def build():
     for p in PAGES:
         check_hreflang(p['path'])
         for lang in LANGS:
-            s = {'article': build_article, 'list': build_list}[p['kind']](lang) if p['kind'] != 'page' else build_page(p['path'], lang)
+            s = (build_article(p['path'], lang) if p['kind'] == 'article' else
+                 build_list(lang) if p['kind'] == 'list' else build_page(p['path'], lang))
             s = sub_once(s, r'<!DOCTYPE html>', generated_notice(p['path'], lang))
             leftovers = [t for t in ENGLISH_MARKERS if t in visible_text(s)]
             assert not leftovers, f'{p["path"]} {lang}: English left in the page: {leftovers}'
@@ -506,9 +534,9 @@ SITEMAP = {  # path: (lastmod, changefreq, priority); None = page is noindex, le
     '/references/rfem6-brochure/': ('2026-10-07', 'monthly', '0.8'),
     '/insights/': ('2026-10-08', 'weekly', '0.9'),
     '/insights/podcast/': ('2026-10-10', 'weekly', '0.8'),
-    ARTICLE: ('2026-10-10', 'monthly', '0.8'),
     '/privacy/': None,                      # noindex: not in the sitemap
 }
+SITEMAP.update({a['urls']['en']: (a['site']['lastmod'], 'monthly', '0.8') for a in ARTICLES})
 
 
 def sitemap():

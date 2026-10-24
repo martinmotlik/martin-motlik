@@ -180,7 +180,8 @@ from the same table. Never point a translation's canonical at the English
 page: Google would drop the translation.
 
 Adding a page: add it to `PAGES`, `URLS` (if its slug is translated) and
-`SITEMAP` in the script, put the matching `hreflang` block and the
+`SITEMAP` in the script (an Insights article instead gets a `site` block in
+its `_insights/<slug>/package.json`, which the script reads), put the matching `hreflang` block and the
 `og:locale:alternate` lines in its `<head>`, make its language switcher links
 like the other pages, add `i18n/cs.json` and `de.json`, run the build until it
 passes, and list the URLs in `llms.txt`.

@@ -49,17 +49,17 @@ if page:
     check('Article', 'TechArticle JSON-LD with citations', '"TechArticle"' in page and '"citation"' in page)
     check('Article', 'sources list', 'class="src-list"' in page or 'class="sources"' in page)
     check('Article', 'podcast markers', '<!-- podcast:start' in page and '<!-- toc-pod:start' in page)
+    check('Article', 'no [TK …] left in the text', '[TK' not in page)
+    banned = pkg.get('forbidden', [])
+    hits = sorted({w for w in banned for t in [page] + [read(u + 'index.html') for u in urls.values()] if w.lower() in t.lower()})
+    check('Article', 'no forbidden words on the pages (package.json "forbidden")', not hits, ', '.join(hits))
 for lang in ('cs', 'de'):
     check('Translations', f'insights/{slug}/i18n/{lang}.json', os.path.exists(rel(f'insights/{slug}/i18n/{lang}.json')))
     if urls.get(lang):
         check('Translations', f'generated {urls[lang]}', os.path.exists(rel(urls[lang] + 'index.html')))
-build = read('tools/build-i18n.py')
-art = re.search(r"^ARTICLE = '([^']+)'", build, re.M)
-known = lambda block: (f"'{en}'" in block) or (art and art.group(1) == en and 'ARTICLE' in block)
-urls_block = re.search(r'^URLS = \{.*?^\}', build, re.S | re.M)
-sitemap_block = re.search(r'^SITEMAP = \{.*?^\}', build, re.S | re.M)
-check('Site', 'slugs in build-i18n.py URLS', urls_block and known(urls_block.group(0)))
-check('Site', 'SITEMAP entry in build-i18n.py', sitemap_block and known(sitemap_block.group(0)))
+site = pkg.get('site') or {}
+check('Site', 'registered for the build (package.json "site": lastmod, english_markers)', site.get('lastmod') and site.get('english_markers'),
+      'tools/build-i18n.py builds every package with a "site" block')
 check('Site', 'sitemap.xml lists it', SITE + en in read('sitemap.xml'))
 check('Site', 'card on /insights/', f'href="{en}"' in read('insights/index.html'))
 check('Site', 'llms.txt entry', SITE + en in read('llms.txt'))

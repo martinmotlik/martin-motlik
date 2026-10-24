@@ -90,7 +90,8 @@ Follow "Adding an episode" in `assets/podcast/README.md`. In short:
 5. **`podcast/podcast.json`**: the episode object (`number`, `slug`, `title`
    = article title, `article`, `category`, `published` ISO with offset and
    not in the future at release, `audio`, `duration` in whole seconds,
-   `captions`, `transcript`, `cover`, `teaser`, `summary`, `h2` = article H2
+   `captions`, `transcript`, `cover`, `hero` + `hero_alt` = the article's
+   hero image name and English alt text, `teaser`, `summary`, `h2` = article H2
    id → chapter start in seconds, `note`, `disclosure`). Copy `note` and
    `disclosure` from EP 01.
 6. **Article**: the podcast markers and labels as in article #1; the

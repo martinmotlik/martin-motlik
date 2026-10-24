@@ -354,12 +354,9 @@ def build_article(ep, chapters, current):
 
 # ── Show page ────────────────────────────────────────────────────────────────
 
-HERO = '/assets/img/ai-search-hero'                # article hero renditions, per episode later if needed
-HERO_ALT = 'Martin Motlík working on a laptop outdoors, surrounded by the icons of AI assistants and search engines'
-
-
 def latest_card(ep, chapters):
     d = datetime.fromisoformat(ep['published'])
+    HERO, HERO_ALT = '/assets/img/' + ep['hero'], esc(ep['hero_alt'])   # the article's hero renditions
     return f'''      <article class="latest" data-pod-started aria-labelledby="latest-h">
         <div class="latest-img">
           <picture>

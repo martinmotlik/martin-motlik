@@ -31,7 +31,7 @@ json.dump({
     '_about': 'Manifest of one Insights package. Read by tools/insights/check-package.py and drive-stage.py; rules in .claude/skills/insights-article/SKILL.md.',
     'slug': a.slug, 'number': n, 'title': a.title, 'short_name': '', 'category': '', 'core_line': '',
     'urls': {'en': f'/insights/{a.slug}/', 'cs': '', 'de': ''},
-    'hero': '', 'episode': '', 'teasers': [], 'published': {'article': '', 'episode': ''},
+    'hero': '', 'episode': '', 'teasers': [], 'published': {'article': '', 'episode': ''}, 'forbidden': [],
     'drive': {'folder': f'{n:02d} {a.slug} · ', 'url': '', 'id': '', 'subfolders': {}, 'uploaded': {}},
 }, open(os.path.join(pkg, 'package.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 print(f'created _insights/{a.slug}/ (EP {n:02d}): README.md, brief.md, podcast/script.md, package.json')

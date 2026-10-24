@@ -21,6 +21,16 @@
   "article": "2026-10-06",
   "episode": "2026-10-08"
  },
+ "site": {
+  "_about": "On the site: tools/build-i18n.py builds the CS/DE versions, sitemap entry and list card from this block and \"urls\".",
+  "lastmod": "2026-10-10",
+  "english_markers": [
+   "Be the source",
+   "Where I would start",
+   "8 min read",
+   "Oct 6, 2026"
+  ]
+ },
  "drive": {
   "folder": "01 ai-visibility-for-aec · Be the source",
   "url": "https://drive.google.com/drive/folders/19VAYMZVpaG8SEhaAP3_eUFDcN-1L6b6U",
