@@ -29,7 +29,7 @@
     "07-under-the-hood": "<span class=\"fig-n\">Obrázek 5</span> Jedno volání nástroje, jak ho zobrazuje ChatGPT, porovnané se záznamem samotného serveru.",
     "08-two-ais": "<span class=\"fig-n\">Obrázek 6</span> Dvě AI aplikace od dvou firem, jeden server: odpověď nezávisí na chatovací aplikaci.",
     "05-permission": "Než se nástroj spustí, uživatel ho schválí: jednou, vždy, nebo vůbec.",
-    "11-timeline": "Dvacet měsíců od otevřeného protokolu k MCP serverům ve statických, BIM a dokumentových nástrojích."
+    "11-timeline": "Necelé dva roky od otevřeného protokolu k MCP serverům ve statických, BIM a dokumentových nástrojích."
   },
   "chrome": {
     "read_14": "14 min čtení",
@@ -43,14 +43,14 @@
     "title": "Zásuvka pro AI: co znamená MCP pro AEC",
     "article_title": "Zásuvka pro AI: co znamená MCP pro AEC",
     "cover_alt": "Odpověď ChatGPT porovnávající revize R02 a R03 bytového domu s odkazem „Open in 3D viewer“ se vznáší nad webovým 3D prohlížečem. Tenká tyrkysová čára vede od odkazu ke třem červeným dveřím ve třetím obytném podlaží; prvky opravené od R02 jsou tyrkysové a zbytek modelu je průhledně světle šedý.",
-    "fig1_alt": "Schéma ve třech sloupcích. Vlevo čtyři AI aplikace: Claude, ChatGPT, Gemini a Copilot. Uprostřed zvýrazněný blok MCP s částmi Tools, Resources a Prompts. Vpravo čtyři druhy softwaru pro AEC: statické výpočty, například RFEM 6, BIM modelování, například Revit, kontrola modelů s kontrolami IFC a IDS a projektové dokumenty. Obousměrné šipky spojují každou aplikaci i každý nástroj s MCP.",
+    "fig1_alt": "Schéma ve třech úrovních. Nahoře čtyři AI aplikace (hosté) s logy: Claude, ChatGPT, Gemini a Copilot. Uprostřed modrý pruh s popiskem „The outlet“, MCP, s částmi Tools, Resources a Prompts. Dole čtyři druhy softwaru pro AEC (servery): statické výpočty, například RFEM 6, BIM modelování, například Revit, kontrola modelů s kontrolami IFC a IDS a projektové dokumenty. Čára spojuje každou aplikaci i každý nástroj s MCP, nad tím poznámka „One client per app, one server per tool.“",
     "fig2_alt": "Zdrojový kód nástroje get_properties ze souboru packages/mcp-server/src/server.ts: jeho název, popis v běžné angličtině, podle kterého AI rozhoduje, kdy nástroj použít, vstupní schéma s GlobalId prvku, anotace jen pro čtení a výstupní schéma pro strukturovaný výsledek. Řádky s názvem, popisem a výstupním schématem jsou podbarvené.",
     "fig3_alt": "Nastavení ChatGPT, Plugins, karta MCPs: server ifc-review zapnutý v seznamu serverů vedle vlastních serverů aplikace.",
     "fig4_alt": "Vlevo odpověď ChatGPT porovnávající revize R02 a R03 bytového domu: 10 ze 13 prvků opraveno, troje dveře stále bez požární odolnosti a odkaz „Open in 3D viewer“. Tyrkysová čára vede od odkazu do 3D prohlížeče vpravo, kde jsou troje dveře ve 3. obytném podlaží červené, prvky opravené od R02 tyrkysové a panel Checks uvádí jediný požadavek, který stále neprochází.",
     "fig5_alt": "ChatGPT s rozbalenými voláními ifc-review: Model summary, pak otevřené Check against IDS se souhrnem a strukturovaným výsledkem JSON, který server vrátil, a nakonec odpověď ChatGPT, že 13 ze 14 požadavků prochází a troje dveře neprocházejí požadavkem KOM-14.",
     "fig6_alt": "Vedle sebe ChatGPT (vlevo) a Gemini v Google Antigravity (vpravo) odpovídají na stejnou otázku k revizím R02 a R03 přes stejný MCP server ifc-review: 10 ze 13 prvků opraveno, troje dveře stále neprocházejí.",
     "img05_alt": "Google Antigravity s modelem Gemini se ptá „Allow using this MCP tool?“, než zavolá nástroj run_ids_check serveru ifc-review. Nad otázkou jsou argumenty, které chce AI poslat, pod ní volby: povolit tentokrát, vždy povolit v této konverzaci, vždy povolit, nebo ne.",
-    "img11_alt": "Časová osa od listopadu 2024 do července 2026: Anthropic vydává MCP (listopad 2024); MCP předáno Agentic AI Foundation pod Linux Foundation (prosinec 2025); RFEM 6.13 přináší MCP server (leden 2026); MCP konektor pro SketchUp (duben 2026); Bluebeam Max přináší Claude do Revu (květen 2026); technický preview MCP serveru pro Revit (červen 2026); specifikace MCP 2026-07-28 (červenec 2026). Milníky protokolu jsou tmavé, produkty pro AEC tyrkysové.",
+    "img11_alt": "Časová osa od listopadu 2024 do října 2026, milníky protokolu tmavě, produkty pro AEC modře: Anthropic vydává MCP (listopad 2024); MCP předáno Agentic AI Foundation pod Linux Foundation (prosinec 2025); RFEM 6 přináší MCP server (leden 2026); konektor SketchUp pro Claude (duben 2026); Bluebeam přináší Claude do Revu (květen 2026); MCP server pro Revit, technický preview jen pro čtení (červen 2026); specifikace MCP 2026-07-28 (červenec 2026); servery Revit Trusted-Write a Experimental (září 2026).",
     "more_a1_alt": "Martin Motlík pracuje na notebooku, obklopený ikonami asistentů AI",
     "zoom_fig": "Zvětšit obrázek {net}",
     "zoom_img": "Zvětšit obrázek",
@@ -64,12 +64,31 @@
     "section": "AI v AEC",
     "locale": "cs_CZ",
     "in_language": "cs-CZ",
-    "tags": ["Model Context Protocol", "AI asistenti", "BIM", "IFC"],
-    "keywords": ["Model Context Protocol", "MCP", "AI asistenti", "AI agenti", "BIM", "IFC", "IDS", "software pro AEC"],
-    "about": ["Model Context Protocol", "Architektura, inženýring a stavebnictví (AEC)"],
+    "tags": [
+      "Model Context Protocol",
+      "AI asistenti",
+      "BIM",
+      "IFC"
+    ],
+    "keywords": [
+      "Model Context Protocol",
+      "MCP",
+      "AI asistenti",
+      "AI agenti",
+      "BIM",
+      "IFC",
+      "IDS",
+      "software pro AEC"
+    ],
+    "about": [
+      "Model Context Protocol",
+      "Architektura, inženýring a stavebnictví (AEC)"
+    ],
     "crumb_home": "Domů",
     "crumb_article": "Zásuvka pro AI",
     "share_intro": "Tohle by vás mohlo zajímat:"
   },
-  "keep": ["min"]
+  "keep": [
+    "min"
+  ]
 }

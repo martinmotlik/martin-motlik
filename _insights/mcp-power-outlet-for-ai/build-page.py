@@ -4,7 +4,7 @@ from the image set and the approved components. Rerun it after article.md
 changes (the [TK] places), until the page is approved; after that the page is
 edited by hand like article #1.
 
-    python3 _insights/mcp-power-outlet-for-ai/build-page.py . "<article-assets>/assets.md"
+    python3 _insights/mcp-power-outlet-for-ai/build-page.py . _insights/mcp-power-outlet-for-ai/assets.md
 """
 import html, json, re, subprocess, sys
 from urllib.parse import quote
