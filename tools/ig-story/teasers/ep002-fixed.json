@@ -1,0 +1,25 @@
+{
+ "design": "Sources/instagram/IG Story - A power outlet for AI.html",
+ "photo": "Sources/instagram/mcp-ig-story-thumb-chat.png",
+ "episode": "assets/podcast/ep002-power-outlet-for-ai.mp3",
+ "variant": "A · Photo",
+ "fps": 30,
+ "_about": "EP 02, what got fixed (6:17.00–6:41.60): Martin, Sarah, Martin. Starts on the question shown on the chat card, ends on the three highlighted doors, inside the pause before Sarah's next line. Photo: the 3D model with the chat card (Sources/instagram/mcp-ig-thumb/).",
+ "output": "~/Downloads/IG Story - A power outlet for AI (what got fixed).mp4",
+ "from": 377.0,
+ "len": 24.6,
+ "manual_breaks": true,
+ "spans": [
+  [377.1, 379.4, "What got fixed, and what’s still missing?"],
+  [379.98, 381.35, "Show me the rest in the model."],
+  [381.44, 381.9, "And?"],
+  [382.12, 385.15, "The AI called | the comparison and validation tools,"],
+  [385.23, 387.86, "and the results were matched by element ID."],
+  [388.38, 389.97, "Ten of thirteen fixed."],
+  [390.27, 394.12, "Three doors on residential level three | still without a fire rating."],
+  [394.37, 396.78, "Then it gave me a link that opened the model,"],
+  [396.98, 397.86, "and there they were."],
+  [398.14, 399.52, "Three doors highlighted,"],
+  [399.73, 401.26, "the rest of the building dimmed."]
+ ]
+}

@@ -66,6 +66,8 @@ Check anytime: `python3 tools/insights/check-package.py mcp-power-outlet-for-ai`
 
 - 2026-10-25 · New photo for the story teaser (user): the 3D model with a chat card in the site's style (question and answer from the test, dotted link to a red door), `Sources/instagram/mcp-ig-thumb/`; rendered as `IG Story - A power outlet for AI (chat).mp4`. The earlier MP4 stays on Drive.
 
+- 2026-10-25 · Second story teaser, recommended (user chose option 1 of a ranked review of the episode): `ep002-fixed`, 6:17.00–6:41.60, "What got fixed, and what's still missing?" through the three highlighted doors; matches the chat-card photo. 28.4 s. Other candidates: the weekend GitHub server (9:28.5–9:47.4), the big-tech data question (8:05.3–8:29.2), liability (11:50.6–12:07.7).
+
 ## Open
 
 - The Claude doc (source of the text) needs the closing paragraph above and the English copy edit items 1–14, so a later export of the doc matches `article.md`.

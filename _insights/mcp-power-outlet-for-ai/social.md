@@ -132,7 +132,7 @@ https://martinmotlik.com/insights/mcp-power-outlet-for-ai/
 
 ## Instagram story
 
-Video teaser from the episode: `tools/ig-story/teasers/ep002-doors.json` (skill `podcast-ig-story`), the episode's opening hook, 0:00–0:14.7.
+Video teaser from the episode: `tools/ig-story/teasers/ep002-fixed.json` (skill `podcast-ig-story`), "What got fixed, and what's still missing?" through the three highlighted doors, 6:17–6:41.6 (recommended). Alternative: `ep002-doors.json`, the episode's opening hook, 0:00–0:14.7.
 Link sticker to the article, sticker text **"Read + listen"**, in the white space under the podcast card.
 
 Static fallback, three frames:
