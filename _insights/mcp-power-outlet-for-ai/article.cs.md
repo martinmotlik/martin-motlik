@@ -8,7 +8,7 @@ Váš AI asistent umí připravit odpověď na dotaz k projektové dokumentaci, 
 
 Tahle mezera se zavírá. Model Context Protocol, zkráceně MCP, je otevřený standard, přes který se AI aplikace připojí k softwaru a datům, se kterými inženýři už pracují. Představte si ho jako zásuvku pro AI: jedna standardní zásuvka a každý nástroj, který do ní zapojíte, se stane něčím, s čím AI opravdu umí pracovat.
 
-Na MCP se dívám ze dvou stran. Díky práci pro Dlubal Software jsem v prostředí, kde je MCP už součástí produktu, a zároveň stavím vlastní prototyp pro kontrolu modelů nad formátem IFC. V tomhle článku vysvětluji, co MCP je, k čemu se hodí ve stavebnictví a proč napojit naše nástroje na AI platformy, které inženýři už používají, obvykle dává větší smysl než stavět další chatbot.
+Na MCP se dívám ze dvou stran. Díky práci pro Dlubal Software jsem v prostředí, kde je MCP už součástí produktu, a zároveň vyvíjím vlastní program pro kontrolu modelů ve formátu IFC. V tomhle článku vysvětluji, co MCP je, k čemu se hodí ve stavebnictví a proč napojit naše nástroje na AI platformy, které inženýři už používají, obvykle dává větší smysl než stavět další chatbot.
 
 ## Co je MCP: zásuvka, ne mozek
 
@@ -83,7 +83,7 @@ Servery Autodesku pro Revit ukazují, jak dodavatelé tyto hranice vymezují. Pr
 
 ## Co jsem postavil: šest nástrojů
 
-Abych zjistil, jak vysoká ta bariéra doopravdy je, postavil jsem MCP server jen pro čtení pro prototyp kontroly modelů, který vyvíjím. Prototyp už kontroluje modely IFC podle požadavků IDS a porovnává verze modelu. Samotná validace nová není; kontrolní nástroj prototypu ji uměl už předtím. Server přidává možnost klást doplňující otázky, propojit jednotlivé kroky a skočit rovnou na dotčené prvky.
+Abych zjistil, jak vysoká ta bariéra doopravdy je, postavil jsem MCP server jen pro čtení pro program na kontrolu modelů, který vyvíjím. Program už kontroluje modely IFC podle požadavků IDS a porovnává verze modelu. Samotná validace nová není; program ji uměl už předtím. Server přidává možnost klást doplňující otázky, propojit jednotlivé kroky a skočit rovnou na dotčené prvky.
 
 *\[Figure 2: Code card. One complete MCP tool in about ten lines of Python.\]*
 

@@ -1,0 +1,19 @@
+{
+ "design": "Sources/instagram/IG Story - A power outlet for AI.html",
+ "photo": "Sources/instagram/mcp-ig-story-viewer.png",
+ "episode": "assets/podcast/ep002-power-outlet-for-ai.mp3",
+ "variant": "A · Photo",
+ "fps": 30,
+ "_about": "EP 02, the doors that don't exist (0:00.00–0:14.70): Martin, Sarah. The episode's opening hook; ends on Sarah's open question, inside the pause before the intro. Design derived from the EP 01 bundle (title, date, read time, episode number and length replaced).",
+ "output": "~/Downloads/IG Story - A power outlet for AI.mp4",
+ "from": 0.0,
+ "len": 14.7,
+ "manual_breaks": true,
+ "spans": [
+  [0.03, 4.2, "Imagine asking an AI | which doors are missing a fire rating."],
+  [4.66, 6.55, "It gives you a perfect table."],
+  [6.81, 8.09, "There’s just one problem:"],
+  [8.52, 10.88, "none of those doors exist in your model."],
+  [11.21, 14.27, "Then how do you get an answer | you can actually check?"]
+ ]
+}

@@ -13,7 +13,9 @@
  },
  "hero": "mcp-article-01-hero",
  "episode": "ep002-power-outlet-for-ai",
- "teasers": [],
+ "teasers": [
+  "tools/ig-story/teasers/ep002-doors.json"
+ ],
  "published": {
   "article": "",
   "episode": "2026-10-25"
