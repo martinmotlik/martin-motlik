@@ -64,8 +64,10 @@ and replace content, keeping the structure:
    `fetchpriority="high"`.
 4. **TOC aside**: "On this page" links to every H2, the `toc-pod` markers,
    the share block.
-5. **Article**: mobile TOC, lead, sections (`.h2-row` around each H2 so the
-   build can add "Listen from m:ss"), quotes, steps, code blocks, key
+5. **Article**: mobile TOC, lead, sections (bare `<h2 id>`: never write
+   `.h2-row` by hand; `tools/build-podcast.py` wraps the H2s that get a
+   chapter in `.h2-row` with their "Listen from m:ss" chip, and a hand-written
+   row would nest and break the layout), quotes, steps, code blocks, key
    takeaway, the `podcast:start/end` markers, sources, closing, share row,
    four tags, author card, "All insights →".
 6. **After `</main>`**: `#sr-live`, `pod-mini` and `pod-data` markers,
