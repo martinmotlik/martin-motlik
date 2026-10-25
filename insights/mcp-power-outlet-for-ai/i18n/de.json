@@ -65,7 +65,7 @@
   "more_title": "Weiterlesen",
   "more_text": "Dies ist der erste Beitrag in Insights. Weitere Texte zu KI im AEC, Marketing für Ingenieursoftware und Web-Ökosystemen sind in Arbeit.",
   "more_all": "Alle Beiträge →",
-  "cat_ai": "KI im AEC",
+  "cat_ai": "KI im Bauwesen",
   "more_a2_date": "22. Oktober 2026",
   "more_a2_title": "Eine Steckdose für KI: Was MCP für das Bauwesen bedeutet",
   "read_14": "14 Min. Lesezeit",
@@ -97,8 +97,8 @@
   "more_a1_date": "6. Oktober 2026"
  },
  "k": {
-  "hero.span1": "KI im AEC",
-  "hero.div2": "KI im AEC",
+  "hero.span1": "KI im Bauwesen",
+  "hero.div2": "KI im Bauwesen",
   "hero.h13": "Eine Steckdose für KI: Was MCP für das Bauwesen bedeutet",
   "hero.p4": "Model Context Protocol ist ein offener Standard, der KI-Assistenten mit der Software verbindet, die Ingenieure bereits nutzen. Was MCP ist, wofür es im Bauwesen taugt und warum die Anbindung an die KI-Plattformen, die Ihr Team schon verwendet, meist sinnvoller ist als ein weiterer Chatbot.",
   "hero.span5": "<time datetime=\"2026-10-22\">22. Oktober 2026</time> · <span data-i18n=\"read_14\">14 Min. Lesezeit</span>",
@@ -228,7 +228,7 @@
  "meta": {
   "description": "Ihr KI-Assistent kann Ihr Modell nicht öffnen. MCP, ein offener Standard mit OpenAI, Google und Microsoft im Rücken, verbindet ihn mit Ihrer Bausoftware.",
   "image_alt": "Die Antwort von ChatGPT neben einem 3D-Viewer, in dem drei Türen ohne Feuerwiderstandsklasse rot sind",
-  "section": "KI im AEC",
+  "section": "KI im Bauwesen",
   "locale": "de_DE",
   "in_language": "de-DE",
   "tags": [

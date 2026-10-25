@@ -5,7 +5,7 @@ Check anytime: `python3 tools/insights/check-package.py mcp-power-outlet-for-ai`
 
 | | |
 |---|---|
-| Article | EN `/insights/mcp-power-outlet-for-ai/` · CS `/cs/insights/mcp-zasuvka-pro-ai-ve-stavebnictvi/` · DE `/de/insights/mcp-steckdose-fuer-ki-im-aec/` |
+| Article | EN `/insights/mcp-power-outlet-for-ai/` · CS `/cs/insights/mcp-zasuvka-pro-ai-ve-stavebnictvi/` · DE `/de/insights/mcp-steckdose-fuer-ki-im-bauwesen/` |
 | Podcast | EP 02 · `podcast/episodes/ep002-power-outlet-for-ai.md` · audio, captions, chapters and cover `assets/podcast/ep002-power-outlet-for-ai.*`, `cover-ep02-v2-*` |
 | Social | `social.md` |
 | Instagram | `tools/ig-story/teasers/ep002-….json` |
@@ -39,7 +39,7 @@ Check anytime: `python3 tools/insights/check-package.py mcp-power-outlet-for-ai`
 
 - 2026-10-24 · Approved (user): title variant A, "A power outlet for AI: what MCP means for AEC" as H1 and, in Title Case, as `<title>`; meta description A; dek A. The doc keeps its longer working title.
 
-- 2026-10-24 · Approved (user): slugs `/cs/insights/mcp-zasuvka-pro-ai-ve-stavebnictvi/` and `/de/insights/mcp-steckdose-fuer-ki-im-aec/`. Translated titles: „Zásuvka pro AI: co znamená MCP pro AEC“ (CS changed 2026-10-25, below), „Eine Steckdose für KI: Was MCP für AEC bedeutet“.
+- 2026-10-24 · Approved (user): slugs `/cs/insights/mcp-zasuvka-pro-ai-ve-stavebnictvi/` and `/de/insights/mcp-steckdose-fuer-ki-im-bauwesen/`. Translated titles: „Zásuvka pro AI: co znamená MCP pro AEC“ (CS changed 2026-10-25, below), „Eine Steckdose für KI: Was MCP für AEC bedeutet“.
 
 - 2026-10-25 · Podcast EP 02 (user): the Dlubal line at 10:53 stays as recorded; metadata fixed by the production session (title = article title, show "Insights with Martin Motlík", first chapter "The doors that don't exist" instead of "Cold open"). AI disclosure as in EP 01: text only (feed description, under the transcript, JSON-LD), nothing in the audio or at the player.
 
@@ -53,7 +53,7 @@ Check anytime: `python3 tools/insights/check-package.py mcp-power-outlet-for-ai`
 
 - 2026-10-25 · Podcast EP 02 re-exported with the closing view in the Close chapter (Sarah 13:20, Martin 13:25, the same words as the article): 14:04.6, 845 s, 20,271,689 B, 103 lines; chapter starts unchanged.
 
-- 2026-10-25 · German version without the abbreviation AEC (user): "Bauwesen", "Bausoftware"; title „Eine Steckdose für KI: Was MCP für das Bauwesen bedeutet“. Slug and the German category „KI im AEC“ unchanged until the user decides.
+- 2026-10-25 · German version without the abbreviation AEC (user): "Bauwesen", "Bausoftware"; title „Eine Steckdose für KI: Was MCP für das Bauwesen bedeutet“. Slug changed before publishing to `/de/insights/mcp-steckdose-fuer-ki-im-bauwesen/`; the German category on the Insights pages is „KI im Bauwesen“ (menu item unchanged), as in Czech.
 
 ## Open
 

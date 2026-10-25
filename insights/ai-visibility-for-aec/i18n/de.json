@@ -51,7 +51,7 @@
   "more_title": "Weiterlesen",
   "more_text": "Dies ist der erste Beitrag in Insights. Weitere Texte zu KI im AEC, Marketing für Ingenieursoftware und Web-Ökosystemen sind in Arbeit.",
   "more_all": "Alle Beiträge →",
-  "cat_ai": "KI im AEC",
+  "cat_ai": "KI im Bauwesen",
   "more_a2_date": "22. Oktober 2026",
   "more_a2_title": "Eine Steckdose für KI: Was MCP für das Bauwesen bedeutet",
   "read_14": "14 Min. Lesezeit",
@@ -79,8 +79,8 @@
   "footer_cookies": "Cookie-Einstellungen"
  },
  "k": {
-  "hero.span1": "KI im AEC",
-  "hero.div2": "KI im AEC",
+  "hero.span1": "KI im Bauwesen",
+  "hero.div2": "KI im Bauwesen",
   "hero.h13": "Werden Sie zur Quelle: AEC-Daten fit für die KI-Suche machen",
   "hero.p4": "Die Arbeit an Websites für Ingenieursoftware in verschiedenen Märkten hat geprägt, wie ich an KI-Sichtbarkeit herangehe. Dieser Beitrag bündelt Erfahrungen aus der Lokalisierung und die praktischen Prüfungen, mit denen ich technische Inhalte leichter auffindbar, verständlich und überprüfbar mache.",
   "hero.span5": "<time datetime=\"2026-10-06\">6. Oktober 2026</time> &middot; <span data-i18n=\"read_8\">8 Min. Lesezeit</span>",
@@ -162,7 +162,7 @@
  "meta": {
   "description": "Wie AEC-Unternehmen Produktdaten für die KI-Suche auffindbar, lesbar und prüfbar machen: Erfahrungen aus der Lokalisierung, ein Lastpfad für Fakten, Praxis-Checks.",
   "image_alt": "Martin Motlík arbeitet am Laptop, umgeben von den Symbolen von KI-Assistenten",
-  "section": "KI im AEC",
+  "section": "KI im Bauwesen",
   "locale": "de_DE",
   "in_language": "de-DE",
   "tags": [
