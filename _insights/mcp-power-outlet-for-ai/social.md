@@ -6,6 +6,7 @@
 | Podcast | Insights with Martin Motlík · EP 02 · https://martinmotlik.com/insights/podcast/ |
 | Published | 2026-10-25 (article and episode) |
 | Core line | "MCP doesn't make AI smarter. It makes its answers checkable." |
+| Image | MCP as a power outlet for AI between the software we use every day and the AI; plugged in, the software gains a new dimension (Martin, 2026-10-25) |
 | Status | Drafts ready, waiting for approval |
 
 Rules for this series are in `.claude/skills/insights-social-posts/SKILL.md`; the whole package is described in `.claude/skills/insights-article/SKILL.md`. Czech posts say "stavebnictví", not "AEC", and link the Czech article.
@@ -17,7 +18,7 @@ Rules for this series are in `.claude/skills/insights-social-posts/SKILL.md`; th
 ```
 Your AI assistant can draft an RFI response and summarize a spec section. Ask it which doors in your model are missing a fire rating, and it guesses. Not because it isn't smart enough, but because it can't open your model.
 
-That gap is closing. The Model Context Protocol, or MCP, is an open standard that connects AI apps to the software engineers already use.
+That gap is closing. The Model Context Protocol, or MCP, works like a power outlet for AI: one standard socket between the software we use every day and the AI. Plug that software in, and it gains a new dimension. You can ask it questions in plain language, and the AI works with its real results instead of guessing.
 
 I wanted to know how high the barrier really is. So I built a small read-only MCP server for the model-review software I'm developing and tested it on a concept model of a residential building, checked against an IDS file with 14 information requirements.
 
@@ -41,7 +42,7 @@ https://martinmotlik.com/insights/mcp-power-outlet-for-ai/
 ```
 MCP doesn't make AI smarter. It makes its answers checkable.
 
-Without a connection to your model, an AI assistant guesses. With MCP, it hands the question to a tool engineers already trust, and the answer comes back with element IDs you can check in the model.
+Think of MCP as a power outlet for AI, between the software we use every day and the AI. Plug a tool in, and it gains a new dimension: you can ask it questions in plain language. Without that connection, an AI assistant asked about your model guesses. With it, the answer comes back with element IDs you can check in the model.
 
 I tested this with a read-only MCP server for the model-review software I'm developing. My new article explains what MCP means for AEC, and there's a podcast episode where my co-host Sarah and I work through a practical case.
 
@@ -76,7 +77,7 @@ https://martinmotlik.com/insights/podcast/
 ```
 Nový článek na mém webu: co je MCP a proč se bude hodit i ve stavebnictví.
 
-AI asistent dnes zvládne shrnout kapitolu specifikace nebo učesat zápis z porady. Když se ho ale zeptáte, kterým dveřím ve vašem modelu chybí požární odolnost, hádá. Ne proto, že by nebyl dost chytrý, ale protože se do modelu nemá jak dostat. MCP (Model Context Protocol) je otevřený standard, který AI propojí se softwarem, se kterým inženýři už pracují. Funguje jako zásuvka: AI nedělá chytřejší, ale její odpovědi jde ověřit.
+AI asistent dnes zvládne shrnout kapitolu specifikace nebo učesat zápis z porady. Když se ho ale zeptáte, kterým dveřím ve vašem modelu chybí požární odolnost, hádá. Ne proto, že by nebyl dost chytrý, ale protože se do modelu nemá jak dostat. MCP (Model Context Protocol) je otevřený standard, který AI propojí se softwarem, se kterým inženýři už pracují. Funguje jako zásuvka pro AI mezi softwarem, který používáme každý den, a umělou inteligencí. Naše nástroje tím dostávají nový rozměr: můžete se jich ptát běžnou řečí. AI tím chytřejší nebude, ale její odpovědi jde ověřit.
 
 Vyzkoušel jsem to sám. K programu na kontrolu modelů IFC, který vyvíjím, jsem postavil MCP server jen pro čtení a otestoval ho s ChatGPT i Gemini. V článku popisuji, co MCP umí, co nevyřeší a jak s ním začít.
 
@@ -101,9 +102,9 @@ https://martinmotlik.com/insights/mcp-power-outlet-for-ai/
 Optional thread (replies under the post above):
 
 ```
-2/ Without a connection, an AI asked about your model guesses.
+2/ Think of MCP as a power outlet for AI, between the software we use every day and the AI.
 
-With MCP, it calls a tool: the IDS check, the version comparison, the link into the 3D viewer. The answer comes back with element IDs you can check.
+Plug a tool in and it gains a new dimension: the AI calls the IDS check or the version comparison, and the answer comes back with element IDs you can check.
 ```
 
 ```
@@ -120,11 +121,11 @@ https://martinmotlik.com/insights/mcp-power-outlet-for-ai/
 ## Threads
 
 ```
-Your AI assistant can summarize a spec. Ask it which doors in your model are missing a fire rating, and it guesses, because it can't open the model.
+Your AI assistant can summarize a spec. Ask it which doors in your model lack a fire rating, and it guesses, because it can't open the model.
 
-MCP changes that. It doesn't make AI smarter. It makes its answers checkable.
+MCP is a power outlet for AI, between the software we use every day and the AI. Plug a tool in and it gains a new dimension. Its answers become checkable.
 
-I tested it with a read-only server for the model-review software I'm developing and wrote up what I learned. There's a podcast episode too. 🎧
+I tested it with a read-only server for the model-review software I'm developing and wrote up what I learned. Podcast too. 🎧
 
 https://martinmotlik.com/insights/mcp-power-outlet-for-ai/
 ```
