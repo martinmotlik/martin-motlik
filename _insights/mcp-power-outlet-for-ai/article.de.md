@@ -8,7 +8,7 @@ Ihr KI-Assistent entwirft die Antwort auf eine Rückfrage zu den Plänen, fasst 
 
 Diese Lücke schließt sich. Das Model Context Protocol, kurz MCP, ist ein offener Standard, über den sich KI-Anwendungen mit der Software und den Daten verbinden, mit denen Ingenieure ohnehin arbeiten. Stellen Sie es sich als Steckdose für KI vor: eine genormte Steckdose, und jedes Werkzeug, das Sie einstecken, wird zu etwas, mit dem die KI tatsächlich arbeiten kann.
 
-Ich betrachte das Thema von zwei Seiten. Durch meine Arbeit für Dlubal Software bewege ich mich in einem Umfeld, in dem MCP bereits Teil des Produkts ist, und ich entwickle einen eigenen Prototyp für die Modellprüfung auf Basis von IFC. Dieser Beitrag erklärt, was MCP ist, wofür es im Bauwesen taugt und warum es meist sinnvoller ist, unsere Werkzeuge mit den KI-Plattformen zu verbinden, die Ingenieure bereits nutzen, als einen weiteren Chatbot zu bauen.
+Ich betrachte das Thema von zwei Seiten. Durch meine Arbeit für Dlubal Software bewege ich mich in einem Umfeld, in dem MCP bereits Teil des Produkts ist, und ich entwickle eine eigene Software für die Modellprüfung auf Basis von IFC. Dieser Beitrag erklärt, was MCP ist, wofür es im Bauwesen taugt und warum es meist sinnvoller ist, unsere Werkzeuge mit den KI-Plattformen zu verbinden, die Ingenieure bereits nutzen, als einen weiteren Chatbot zu bauen.
 
 ## Was MCP ist: eine Steckdose, kein Gehirn
 
@@ -83,7 +83,7 @@ Die Revit-Server von Autodesk zeigen, wie Anbieter diese Grenzen ziehen. Der ers
 
 ## Was ich gebaut habe: sechs Werkzeuge
 
-Um zu sehen, wie hoch die Hürde wirklich ist, habe ich einen schreibgeschützten MCP-Server für den Prototyp zur Modellprüfung gebaut, den ich entwickle. Der Prototyp prüft IFC-Modelle bereits gegen IDS-Anforderungen und vergleicht Modellversionen. Die Validierung selbst ist nicht neu; das Prüfwerkzeug des Prototyps konnte sie schon vorher. Neu durch den Server ist die Möglichkeit, Folgefragen zu stellen, die Schritte zu verbinden und direkt zu den betroffenen Elementen zu springen.
+Um zu sehen, wie hoch die Hürde wirklich ist, habe ich einen schreibgeschützten MCP-Server für die Software zur Modellprüfung gebaut, die ich entwickle. Die Software prüft IFC-Modelle bereits gegen IDS-Anforderungen und vergleicht Modellversionen. Die Validierung selbst ist nicht neu; die Software konnte sie schon vorher. Neu durch den Server ist die Möglichkeit, Folgefragen zu stellen, die Schritte zu verbinden und direkt zu den betroffenen Elementen zu springen.
 
 *\[Figure 2: Code card. One complete MCP tool in about ten lines of Python.\]*
 

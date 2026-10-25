@@ -58,7 +58,7 @@ Check anytime: `python3 tools/insights/check-package.py mcp-power-outlet-for-ai`
 - 2026-10-25 · English copy edit items 1–14 approved and applied (user): `article.md`, the dek on the page and the `/insights/` cards, the Figure 4 caption. CS/DE unchanged (the translations already read that way).
 
 - 2026-10-25 · Instagram story (`tools/ig-story/teasers/ep002-doors.json`): the episode's opening hook, 0:00.00–0:14.70 (Martin: the doors that don't exist; Sarah: how do you get an answer you can actually check?), 18.5 s. Design derived from the EP 01 bundle (`Sources/instagram/IG Story - A power outlet for AI.html`: title, date, read time, EP 02, length 14:04, EP 02 cover); photo is the 3D-viewer part of the hero (`Sources/instagram/mcp-ig-story-viewer.png`).
-- 2026-10-25 · Czech text (user): the IFC review tool is „program, který vyvíjím“, not „prototyp“ (intro and „Co jsem postavil“).
+- 2026-10-25 · The IFC review tool is the software I'm developing, not a prototype (user), in all three languages: EN "model-review software", CS „program, který vyvíjím“, DE „Software zur Modellprüfung“ (intro and "What I built"). The podcast transcript keeps "prototype" as recorded. The Claude doc needs the EN change.
 
 ## Open
 

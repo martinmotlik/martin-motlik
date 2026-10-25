@@ -8,7 +8,7 @@ Your AI assistant can draft the RFI response, summarize a spec section, and clea
 
 That gap is closing. The Model Context Protocol, or MCP, is an open standard that lets AI applications connect to the software and data that engineers already use. Think of it as a power outlet for AI: one standard socket, and every tool plugged into it becomes something the AI can actually work with.
 
-I come at this from two sides. My work with Dlubal Software puts me in an environment where MCP is already part of the product, and I'm building a model-review prototype of my own on top of IFC. This article explains what MCP is, what it's good for in AEC, and why connecting our tools to the AI platforms engineers already use usually makes more sense than building yet another chatbot.
+I come at this from two sides. My work with Dlubal Software puts me in an environment where MCP is already part of the product, and I'm developing my own model-review software for IFC models. This article explains what MCP is, what it's good for in AEC, and why connecting our tools to the AI platforms engineers already use usually makes more sense than building yet another chatbot.
 
 ## What MCP is: an outlet, not a brain
 
@@ -83,7 +83,7 @@ Autodesk's Revit servers show how vendors are drawing these lines. The first [Re
 
 ## What I built and the six tools
 
-To test how high the barrier really is, I built a read-only MCP server for the model-review prototype I'm developing. The prototype already checks IFC models against IDS requirements and compares model versions. The validation itself isn't new; the prototype's checker already did it. What the server adds is a way to ask follow-up questions, connect the steps, and jump straight to the affected elements.
+To test how high the barrier really is, I built a read-only MCP server for the model-review software I'm developing. It already checks IFC models against IDS requirements and compares model versions. The validation itself isn't new; the software did it before. What the server adds is a way to ask follow-up questions, connect the steps, and jump straight to the affected elements.
 
 *\[Figure 2: Code card. One complete MCP tool in about ten lines of Python.\]*
 
