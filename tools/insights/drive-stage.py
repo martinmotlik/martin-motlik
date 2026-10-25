@@ -31,7 +31,9 @@ folder = pkg['drive']['folder']
 files = []                      # (subfolder, source path)
 hero = pkg.get('hero')
 if hero:
-    files += [('1 Article', rel(f'Sources/originals/images/{hero}.jpg')), ('1 Article', rel(f'assets/img/{hero}-og-1200.jpg'))]
+    originals = sorted(glob.glob(rel(f'Sources/originals/images/{hero}.*')))   # .jpg or .png
+    files += [('1 Article', originals[0] if originals else rel(f'Sources/originals/images/{hero}.jpg')),
+              ('1 Article', rel(f'assets/img/{hero}-og-1200.jpg'))]
 pod = json.load(open(rel('podcast/podcast.json'), encoding='utf-8'))
 ep = next((e for e in pod['episodes'] if e['slug'] == pkg.get('episode')), None)
 if ep:

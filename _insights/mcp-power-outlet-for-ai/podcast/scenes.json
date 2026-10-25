@@ -1,0 +1,486 @@
+[
+ {
+  "scene": "1a · Cold open",
+  "original_scene": "1 (U01)",
+  "inputs": [
+   {
+    "speaker": "MARTIN",
+    "text": "Imagine asking an AI which doors are missing a fire rating. It gives you a perfect table. There's just one problem: none of those doors exist in your model."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "Then how do you get an answer you can actually check?"
+   }
+  ]
+ },
+ {
+  "scene": "1b · Welcome",
+  "original_scene": "1 (U01)",
+  "inputs": [
+   {
+    "speaker": "MARTIN",
+    "text": "[warmly] Welcome back to Insights. I'm Martin Motlík. I work where software meets structural engineering. Today we're looking at the Model Context Protocol, or M-C-P, through a model-review test I built myself."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Sarah is back as our fictional marketing lead at an engineering firm in Portland. Her boss has a question."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "He's forwarded another vendor email: \"Should we be doing this M-C-P thing?\" I need an answer I can take back to the team."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Let's work through it. What can it do, what still needs checking, and where would you start?"
+   }
+  ]
+ },
+ {
+  "scene": "2 · An outlet, not a brain",
+  "original_scene": "2 (U02)",
+  "inputs": [
+   {
+    "speaker": "SARAH",
+    "text": "Okay, start from zero. What is it?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "M-C-P is an open standard that lets AI apps connect to the software and data you already use. It doesn't make the AI smarter. It gives it a way to reach things outside itself. Your models, your analysis software, your project data."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "So, a plug."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Pretty much. Picture the temporary power spider box on a jobsite. It doesn't care if you plug in a saw, a grinder or a work light, because every tool has the same plug. Before M-C-P, connecting an AI to a program meant custom wiring for every single pair."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "And now?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Now software can expose its tools through an M-C-P server, and compatible AI apps can connect to it. You still need the right connection and permissions. Anthropic introduced the standard in late 2024."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "We pay for Copilot. So in that picture, Copilot is..."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "The host. The app you type into. On the other side, a small server sits next to Revit, or next to the tool that reads your I-F-C files, and tells the AI what it can do."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "Tells it how?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Each tool has a description and a structured definition of its inputs. The AI uses those to choose a tool and supply the information it needs. The application controls which tools are available."
+   }
+  ]
+ },
+ {
+  "scene": "3 · Guessing vs. checking",
+  "original_scene": "4 (U04, U05)",
+  "inputs": [
+   {
+    "speaker": "SARAH",
+    "text": "So back to the doors. What would have been different?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "The AI would have a way to query the actual model. A tool can open the I-F-C file, find the doors and return their properties. We can check those results. The AI can still choose the wrong filter or misread an answer, so the connection alone doesn't make it reliable."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "So the AI is more of a coordinator."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Exactly. Like a good BIM coordinator, actually. It doesn't author the model. It knows where to look, and it brings back the answer."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "But here's the thing. Copilot already reads our documents. Our BIM Execution Plan, our standards. Isn't that the same?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "That's a different tool, and a good one. The AI searches documents and quotes them. It answers \"what does the BIM Execution Plan say?\""
+   },
+   {
+    "speaker": "SARAH",
+    "text": "And M-C-P?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "M-C-P can connect both kinds of tools. One searches your documents; another queries the model or runs a check. The useful difference is what the tool can do. Most serious workflows will use both."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "Give me something real. What would our team actually ask?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Find the doors on level two with a missing fire-rating property, and show me where they are. Or total the concrete quantities in the slabs, floor by floor, if the model contains reliable quantities. Those are questions the connected tools can answer."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "[laughs] And the doors would have been real doors."
+   }
+  ]
+ },
+ {
+  "scene": "4 · \"Have you actually tried it?\"",
+  "original_scene": "5 (U06, U07)",
+  "inputs": [
+   {
+    "speaker": "SARAH",
+    "text": "Can I be honest? Everything I read about this is a vendor demo. Have you actually tried it yourself?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "I have. I'm building a model-review prototype, a web app for I-F-C models. It already checks models against information requirements and compares versions. So I wrote a small M-C-P server for it. Six tools, all read-only."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "Read-only meaning..."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "It can look, it can't touch. List elements, read their properties, run a check, compare two revisions, and hand me a link into the 3D viewer. That's it."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "But couldn't your model checker already do that without AI?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Yes. The checker already did the validation. What I added was a way to ask follow-up questions, connect the steps, and jump straight to the affected elements."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "And what did you test it on?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "A real model. A residential building in Prague, a concept model with a garage, three apartment floors and an attic. Plus an I-D-S file with the project's data requirements."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "I-D-S. Remind me?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "I-D-S is a buildingSMART standard for expressing selected information requirements in a machine-checkable form. You specify which elements need which data. A checker then tests the model against those rules. It checks the information, not whether the building is correctly designed."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "Oh. That's literally what our BIM coordinator does every Friday before a submittal. By hand."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Then she'll like this part. I asked: check the model against the I-D-S file. Which requirements fail, and which elements are affected? Two requirements failed. Thirteen elements, mostly doors without a fire rating."
+   }
+  ]
+ },
+ {
+  "scene": "5 · Thirteen elements, three doors",
+  "original_scene": "6 (U08)",
+  "inputs": [
+   {
+    "speaker": "SARAH",
+    "text": "Doors with no fire rating. That sounds bad."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "The door names said the fire rating would be set in the fire safety design. That explained why the value was missing. It didn't actually provide a fire rating."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "So the check found a real gap, but it didn't tell you whether the design was wrong."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Exactly. You also need to know whether that information is required at this project stage. The check flags the missing value. A person decides what it means."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "Then what?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Then I prepared a second revision for the test, with some of the gaps filled in. And I asked the question every team asks after a revision: what got fixed, and what's still missing? Show me the rest in the model."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "And?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "The AI called the comparison and validation tools, and the results were matched by element ID. Ten of thirteen fixed. Three doors on residential level three still without a fire rating. Then it gave me a link that opened the model, and there they were. Three doors highlighted, the rest of the building dimmed."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "[surprised] So the doors in the chat and the doors on screen are the same doors."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Same element IDs. That's the part I'd show any project team first."
+   }
+  ]
+ },
+ {
+  "scene": "6 · One server, two AI apps",
+  "original_scene": "7 (U09)",
+  "inputs": [
+   {
+    "speaker": "SARAH",
+    "text": "Okay, but which AI did you use? We're a Copilot shop."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "I tested the same server with ChatGPT and with Gemini in Google Antigravity. In that test, both reached the same findings. That doesn't mean every AI app connects in the same way. With Copilot, you need to check the specific product and your company's setup."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "Was building the server the hard part?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Writing the code wasn't the hard part."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "What was?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Three things. First, the tool descriptions. The AI picks tools by reading them, so they're really the user interface. They deserve the same care as button labels."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "[laughs] Copywriting. Finally something in my lane."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Honestly, yes. Second, summaries beat data dumps. Return counts and the top results, with details on request. Send an AI a whole model and you overload its working memory. The answers get worse."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "And third?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Units and IDs, always. Every number carries its unit, every element its ID. Ambiguity is exactly where the AI starts guessing again."
+   }
+  ]
+ },
+ {
+  "scene": "7 · \"Why give our data to big tech?\"",
+  "original_scene": "8 (U10)",
+  "inputs": [
+   {
+    "speaker": "SARAH",
+    "text": "Here's where I push back a bit. Why would we connect our projects to OpenAI or Google or Microsoft? Wouldn't it be safer to build our own chatbot?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Fair question. Let me separate two things: where the model lives, and where the answers go. A local server keeps the model file on your machine. Only what the tools return goes to the AI."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "Which can still be a lot."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "It can. So check your provider's terms on data retention and training before you connect live projects. And some clients and contracts don't allow commercial AI services at all. Then you don't."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "Okay. And the chatbot idea?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Building your own chatbot doesn't mean building your own language model. You can use the same commercial models behind a custom interface. The question is whether that interface solves a real problem for your team. M-C-P lets you reuse the engineering tools either way."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "And my engineers already have Copilot open all day."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Then it makes sense to start with the interface they already use, if it supports the connection you need. A custom assistant may still be useful for a specific workflow."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "So it's not either-or."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "No. Keep the engineering tools reusable, then choose the interface that works for your team."
+   }
+  ]
+ },
+ {
+  "scene": "8 · The weekend GitHub server",
+  "original_scene": "9 (U11)",
+  "inputs": [
+   {
+    "speaker": "SARAH",
+    "text": "Okay, confession number two. One of our younger engineers found a community Revit server on GitHub and hooked it up to ChatGPT over the weekend. On a live project."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Of course he did."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "Our IT guy is not amused."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Your IT guy has a point. I separate three kinds of access. First, reading: querying the model and pulling properties. That limits changes to the model, but the information can still be sensitive."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "And the second?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Checking: I-D-S checks, clash reports, comparisons between revisions. People need to review the findings because they inform decisions. Third is writing: changing parameters or moving and creating elements. That needs controlled permissions and a way to review and undo changes."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "And the GitHub server?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "You need to inspect what that particular server can do and what access it has. Autodesk now offers separate read, write and experimental server options as technical previews. The capabilities and permissions matter more than the label."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "Anything else I should tell IT?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Model data can contain text that tries to steer the AI. Read-only limits changes to the model; it doesn't prevent misleading answers or data exposure. Start with a trusted server, restricted access and a test model your firm has approved."
+   }
+  ]
+ },
+ {
+  "scene": "9 · Who's actually shipping this?",
+  "original_scene": "10 (U12)",
+  "inputs": [
+   {
+    "speaker": "SARAH",
+    "text": "Who is actually shipping this in our industry?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Autodesk has Revit servers in technical preview. Bluebeam connects Revu with Claude. Trimble has a SketchUp connector, and Dlubal provides access to its analysis applications. The capabilities, supported clients and licenses differ. But these are actual products you can evaluate."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "Do they all give the AI the same kind of access?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "No. Some expose a few defined actions. Others let the AI write scripts against an API. The reach depends on what the server exposes and the permissions behind it."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "Which would you start with?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "A small set of read-only tools for one task. Scripting can go further, but you need to review and test the code. I've linked the product details in the article, because those are changing quickly."
+   }
+  ]
+ },
+ {
+  "scene": "10 · What do I tell my boss?",
+  "original_scene": "11 (U13, U14)",
+  "inputs": [
+   {
+    "speaker": "SARAH",
+    "text": "Okay. That email from my boss. And our senior engineer asked me to ask you one thing: who's liable if the AI gets it wrong?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Using AI doesn't remove the engineer's responsibility to review the result. The AI doesn't stamp drawings. How liability is allocated is a separate question for the firm's contracts and legal advice."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "So we still need a review process. What else do I write back?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "That it won't clean up your data. It automates a messy process just as faithfully as a clean one. If your parameters are inconsistent, you'll just find out faster. And that it isn't free. AI subscriptions, and sometimes API access or add-on licenses on the software side."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "And then?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Then a few questions for every vendor. Do you ship an M-C-P server, official or community? Is it read-only, and are read and write separated? Where does project data go? The full list is in the article."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "And how do we know if it's worth it?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Choose one recurring task and a test model your firm has approved. Compare your current workflow, including any checker you already use, with the AI-assisted version. Count the review time, missed issues and false alarms as well as the time saved. Repeat it on another revision before deciding."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "That's our Friday model check."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "That's your Friday model check."
+   }
+  ]
+ },
+ {
+  "scene": "11 · Close",
+  "original_scene": "13 (U16)",
+  "inputs": [
+   {
+    "speaker": "SARAH",
+    "text": "If you had to sum it up in one sentence?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "M-C-P lets AI reach the engineering tools we already use. We still need to verify the result."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "And personally? Would you share your own models with these AI companies?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "I would. Sharing building data with AI models is how they get better at our work, and I trust the large U.S. providers with it. Your contracts still set the rules for each project. In a few years, asking an AI about a model will be as ordinary as searching Google."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "And the first question to take back to the office?"
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "Pick one question you ask about a model every week. Check whether your existing software can expose the answer, and how your team would verify it."
+   },
+   {
+    "speaker": "SARAH",
+    "text": "In the article, you can see the tool result and the same three doors highlighted in the model. It's on martinmotlik dot com, under Insights."
+   },
+   {
+    "speaker": "MARTIN",
+    "text": "[warmly] Thanks for listening. See you in the next one."
+   }
+  ]
+ }
+]

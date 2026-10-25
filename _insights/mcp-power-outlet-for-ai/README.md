@@ -22,11 +22,11 @@ Check anytime: `python3 tools/insights/check-package.py mcp-power-outlet-for-ai`
 - [x] 4 Podcast script approved (production session "AI podcast z scénáře článku")
 - [x] 4 Audio delivered (MP3 + transcript .md + .vtt): 14:04.8, 845 s, 20,275,451 B, −16.4 LUFS (final re-export 2026-10-25)
 - [x] 5 Episode integrated and previewed (2026-10-25): player, chapter chips, transcript, feed item, JSON-LD audio; publish date in podcast.json set to the release date at release
-- [ ] 6 Social posts approved
-- [ ] 6 Instagram teaser approved and rendered
+- [x] 6 Social posts approved (2026-10-25)
+- [x] 6 Instagram teaser rendered (`ep002-doors`, 2026-10-25)
 - [x] 7 QA done (`check-package.py`, `--check`, JSON-LD, previews EN/CS/DE) · 2026-10-25
 - [x] 8 Released 2026-10-25 on the user's instruction (main 83b3d8e), live checks passed
-- [ ] 9 Archived on Drive, `package.json` → `drive` filled
+- [x] 9 Archived on Drive 2026-10-25: https://drive.google.com/drive/folders/1_D980LH3I57BgoyWtJQJG7nW2qjH8CWp (3 Docs + 7 files, `package.json` → `drive`)
 
 ## Decisions
 
@@ -59,6 +59,8 @@ Check anytime: `python3 tools/insights/check-package.py mcp-power-outlet-for-ai`
 
 - 2026-10-25 · Instagram story (`tools/ig-story/teasers/ep002-doors.json`): the episode's opening hook, 0:00.00–0:14.70 (Martin: the doors that don't exist; Sarah: how do you get an answer you can actually check?), 18.5 s. Design derived from the EP 01 bundle (`Sources/instagram/IG Story - A power outlet for AI.html`: title, date, read time, EP 02, length 14:04, EP 02 cover); photo is the 3D-viewer part of the hero (`Sources/instagram/mcp-ig-story-viewer.png`).
 - 2026-10-25 · The IFC review tool is the software I'm developing, not a prototype (user), in all three languages: EN "model-review software", CS „program, který vyvíjím“, DE „Software zur Modellprüfung“ (intro and "What I built"). The podcast transcript keeps "prototype" as recorded. The Claude doc needs the EN change.
+
+- 2026-10-25 · Podcast script and scenes from the production session copied into `podcast/` (from `~/Downloads/insights-podcast-ep2-mcp.md` and `-scenes.json`, 2026-10-24), with the two closing-view lines of the final export added to scene 11.
 
 ## Open
 

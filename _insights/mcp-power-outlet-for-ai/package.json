@@ -36,10 +36,26 @@
   "Dlubal CALC"
  ],
  "drive": {
-  "folder": "02 mcp-power-outlet-for-ai · ",
-  "url": "",
-  "id": "",
-  "subfolders": {},
-  "uploaded": {}
+  "folder": "02 mcp-power-outlet-for-ai · A power outlet for AI",
+  "url": "https://drive.google.com/drive/folders/1_D980LH3I57BgoyWtJQJG7nW2qjH8CWp",
+  "id": "1_D980LH3I57BgoyWtJQJG7nW2qjH8CWp",
+  "subfolders": {
+   "1 Article": "1Y5-DqsxUoSyPiuVsx_2DX9eGe7i62-T4",
+   "2 Podcast": "1n7r8jt9jk2q5V0k1O2ZfH_bCPJKiCfjo",
+   "3 Social": "1TboQ3PDN5JQLsHjfr6j5EdnDRDQhLfya",
+   "4 Instagram": "1BKORs4sMRJ0TLfwyX4p0HemRisN41SPZ"
+  },
+  "uploaded": {
+   "1 Article/Article EN · A power outlet for AI: what MCP means for AEC": "https://docs.google.com/document/d/1qv5rtG61-_ySO3npFiu4D3wpOUbNtwx9eUV9YRgkOTQ/edit",
+   "2 Podcast/EP 02 Transcript · A power outlet for AI": "https://docs.google.com/document/d/16Lz-3CryRZumM3vu0TLwvUIFC9Ash59B2TcXJb3nXKk/edit",
+   "3 Social/Social posts · A power outlet for AI (EP 02)": "https://docs.google.com/document/d/1R_YyikG_4mNZE020gM6O9gc-n-KBD7UUVjgtfh72FYU/edit",
+   "1 Article/mcp-article-01-hero-og-1200.jpg": "https://drive.google.com/file/d/1bmwhaFhEd0kCpLhkImy1rKMn_IiyCYKC/view",
+   "1 Article/mcp-article-01-hero.png": "https://drive.google.com/file/d/11i1_ub2Hlnwe-Gbgi6_fsnRk82UKr5Ft/view",
+   "2 Podcast/ep002-power-outlet-for-ai.vtt": "https://drive.google.com/file/d/1LI1rd3OfXmdvHWWD1ktJc494AApg0ZXo/view",
+   "2 Podcast/ep002-power-outlet-for-ai.mp3": "https://drive.google.com/file/d/1HKR44KRknXRpAvpXkAE-z3iQb47-C0Dt/view",
+   "2 Podcast/cover-ep02-v2-3000.jpg": "https://drive.google.com/file/d/1XHeKv-kX95jjyqKdVYGzCQR9-ui9jEQc/view",
+   "2 Podcast/ep002-power-outlet-for-ai.chapters.json": "https://drive.google.com/file/d/10ah-zMna9idkprdbJSgIHq3pnbxaetO6/view",
+   "4 Instagram/IG Story - A power outlet for AI.mp4": "https://drive.google.com/file/d/1722BD3g7-czLcbrl-mE9A9YxLVJQ-dxR/view"
+  }
  }
 }

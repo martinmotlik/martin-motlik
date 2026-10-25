@@ -7,7 +7,7 @@
 | Published | 2026-10-25 (article and episode) |
 | Core line | "MCP doesn't make AI smarter. It makes its answers checkable." |
 | Image | MCP as a power outlet for AI between the software we use every day and the AI; plugged in, the software gains a new dimension (Martin, 2026-10-25) |
-| Status | Drafts ready, waiting for approval |
+| Status | Approved 2026-10-25 · not posted yet |
 
 Rules for this series are in `.claude/skills/insights-social-posts/SKILL.md`; the whole package is described in `.claude/skills/insights-article/SKILL.md`. Czech posts say "stavebnictví", not "AEC", and link the Czech article.
 
