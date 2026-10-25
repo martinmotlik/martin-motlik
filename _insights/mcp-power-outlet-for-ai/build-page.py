@@ -19,7 +19,7 @@ H1 = 'A power outlet for AI: what MCP means for AEC'        # approved 2026-10-2
 TITLE = 'A Power Outlet for AI: What MCP Means for AEC'
 DESC = ('Your AI assistant can’t open your model. MCP, an open standard backed by OpenAI, Google and '
         'Microsoft, connects it to the AEC tools you already trust.')
-DEK = ('Model Context Protocol is an open standard that connects AI assistants to the software engineers '
+DEK = ('The Model Context Protocol (MCP) is an open standard that connects AI assistants to the software that engineers '
        'already use. What it is, what it’s good for in AEC, and why connecting to the AI platforms your team '
        'already uses usually makes more sense than building another chatbot.')
 CLOSING = 'If you’re connecting AEC software to AI assistants or planning an MCP pilot, I’d be happy to compare notes.'

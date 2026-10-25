@@ -55,9 +55,11 @@ Check anytime: `python3 tools/insights/check-package.py mcp-power-outlet-for-ai`
 
 - 2026-10-25 · German version without the abbreviation AEC (user): "Bauwesen", "Bausoftware"; title „Eine Steckdose für KI: Was MCP für das Bauwesen bedeutet“. Slug changed before publishing to `/de/insights/mcp-steckdose-fuer-ki-im-bauwesen/`; the German category on the Insights pages is „KI im Bauwesen“ (menu item unchanged), as in Czech.
 
+- 2026-10-25 · English copy edit items 1–14 approved and applied (user): `article.md`, the dek on the page and the `/insights/` cards, the Figure 4 caption. CS/DE unchanged (the translations already read that way).
+
 ## Open
 
-- The Claude doc (source of the text) needs the closing paragraph above, so a later export of the doc matches `article.md`.
+- The Claude doc (source of the text) needs the closing paragraph above and the English copy edit items 1–14, so a later export of the doc matches `article.md`.
 
 - Title is 73 characters; the rule is ≤ 60 for the H1 and `<title>`. Two `<title>` variants go to `REVIEW_NOTES.md`.
 

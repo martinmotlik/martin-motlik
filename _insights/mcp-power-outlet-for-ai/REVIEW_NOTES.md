@@ -91,11 +91,12 @@ Choices worth a native read:
 - **Screenshots** stay English (real application interfaces); captions and
   alt texts are translated. Sources stay English (titles of English pages).
 
-## English copy edit (2026-10-25), waiting for the author's decision
+## English copy edit (2026-10-25), items 1–14 applied
 
-A U.S. copy edit of `article.md` and the page-only strings. The article text is
-the author's, so nothing below is applied yet; approved changes also go into
-the Claude doc. Facts check out (14 requirements, 2 failed, 13 elements = 2 + 11,
+A U.S. copy edit of `article.md` and the page-only strings. The author approved
+items 1–14 and they are applied in `article.md`, the dek (`build-page.py`, the
+cards on `/insights/`) and the Figure 4 caption (`assets.md`); the author adds
+them to the Claude doc. The remaining remarks below stay open. Facts check out (14 requirements, 2 failed, 13 elements = 2 + 11,
 10 fixed, 3 doors left).
 
 **Errors and misreadings (recommended)**

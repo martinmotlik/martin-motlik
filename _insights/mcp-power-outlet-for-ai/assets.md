@@ -67,7 +67,7 @@ Generováno skriptem `scripts/render.mjs` ze stejného seznamu jako obrázky (`s
 - **Title:** A question in chat, the answer in the model
 - **Alt text:** Left, ChatGPT's answer comparing revisions R02 and R03 of a residential building: 10 of 13 elements fixed, three doors still missing a fire rating, and an "Open in 3D viewer" link. A teal line runs from the link to the 3D viewer on the right, where the three doors on Residential Level 3 are red, the elements fixed since R02 are teal and the Checks panel lists the one requirement that still fails.
 - **Tags:** MCP, IDS, IFC, model review, ChatGPT, 3D viewer
-- **Description:** Figure 4. ChatGPT compares two revisions through MCP and links to the three doors that still miss a fire rating. Building services are hidden in the view for legibility.
+- **Description:** Figure 4. ChatGPT compares two revisions through MCP and links to the three doors that still lack a fire rating. Building services are hidden in the view for legibility.
 - **Copyright:** © 2026 Martin Motlík
 
 ## mcp-article-07-under-the-hood
