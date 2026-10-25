@@ -64,6 +64,8 @@ Check anytime: `python3 tools/insights/check-package.py mcp-power-outlet-for-ai`
 
 - 2026-10-25 · Factual wording fixes in EN and CS after publishing (user brief): RFEM 6 MCP server introduced in January 2026 and installed separately (not part of the standard installation); MCP clients per host instead of "one client per app, 25 pieces"; Figure 6 caption limited to this test; the three doors lack a fire-rating value in the model (text, Figure 4 caption, cover video label, Figure 4 and OG alt texts); closing view about access to project data, not model training; standalone chatbot sentence. DE, audio, transcript and podcast.json unchanged. The Figure 1 image itself still says "One client per app, one server per tool."
 
+- 2026-10-25 · New photo for the story teaser (user): the 3D model with a chat card in the site's style (question and answer from the test, dotted link to a red door), `Sources/instagram/mcp-ig-thumb/`; rendered as `IG Story - A power outlet for AI (chat).mp4`. The earlier MP4 stays on Drive.
+
 ## Open
 
 - The Claude doc (source of the text) needs the closing paragraph above and the English copy edit items 1–14, so a later export of the doc matches `article.md`.
