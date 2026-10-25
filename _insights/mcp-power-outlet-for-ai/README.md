@@ -5,7 +5,7 @@ Check anytime: `python3 tools/insights/check-package.py mcp-power-outlet-for-ai`
 
 | | |
 |---|---|
-| Article | EN `/insights/mcp-power-outlet-for-ai/` · CS `/cs/insights/mcp-zasuvka-pro-ai-v-aec/` · DE `/de/insights/mcp-steckdose-fuer-ki-im-aec/` |
+| Article | EN `/insights/mcp-power-outlet-for-ai/` · CS `/cs/insights/mcp-zasuvka-pro-ai-ve-stavebnictvi/` · DE `/de/insights/mcp-steckdose-fuer-ki-im-aec/` |
 | Podcast | EP 02 · `podcast/episodes/ep002-power-outlet-for-ai.md` · audio, captions, chapters and cover `assets/podcast/ep002-power-outlet-for-ai.*`, `cover-ep02-v2-*` |
 | Social | `social.md` |
 | Instagram | `tools/ig-story/teasers/ep002-….json` |
@@ -39,7 +39,7 @@ Check anytime: `python3 tools/insights/check-package.py mcp-power-outlet-for-ai`
 
 - 2026-10-24 · Approved (user): title variant A, "A power outlet for AI: what MCP means for AEC" as H1 and, in Title Case, as `<title>`; meta description A; dek A. The doc keeps its longer working title.
 
-- 2026-10-24 · Approved (user): slugs `/cs/insights/mcp-zasuvka-pro-ai-v-aec/` and `/de/insights/mcp-steckdose-fuer-ki-im-aec/`. Translated titles: „Zásuvka pro AI: co znamená MCP pro AEC“, „Eine Steckdose für KI: Was MCP für AEC bedeutet“.
+- 2026-10-24 · Approved (user): slugs `/cs/insights/mcp-zasuvka-pro-ai-ve-stavebnictvi/` and `/de/insights/mcp-steckdose-fuer-ki-im-aec/`. Translated titles: „Zásuvka pro AI: co znamená MCP pro AEC“ (CS changed 2026-10-25, below), „Eine Steckdose für KI: Was MCP für AEC bedeutet“.
 
 - 2026-10-25 · Podcast EP 02 (user): the Dlubal line at 10:53 stays as recorded; metadata fixed by the production session (title = article title, show "Insights with Martin Motlík", first chapter "The doors that don't exist" instead of "Cold open"). AI disclosure as in EP 01: text only (feed description, under the transcript, JSON-LD), nothing in the audio or at the player.
 
@@ -48,6 +48,8 @@ Check anytime: `python3 tools/insights/check-package.py mcp-power-outlet-for-ai`
 - 2026-10-25 · Hero image replaced by the last frame of the cover video (poster PNG 2560 × 1440, user's instruction); still named `mcp-article-01-hero`, so Open Graph, the cards on /insights/, article #1's Keep reading and the podcast page use it. Alt texts updated in EN/CS/DE.
 
 - 2026-10-25 · Closing view added (user, version D) as the last paragraph of "A bridge, not a replacement", before "Prefer to listen?": "My own view: sharing building data with AI models is how they get better at our work, and I trust the large U.S. providers with it. Your contracts still set the rules for each project. In a few years, asking an AI about a model will be as ordinary as searching Google." Added to `article.md` and translated (CS/DE) here; the user adds it to the Claude doc. Not in the podcast.
+
+- 2026-10-25 · Czech version without the abbreviation AEC (user): "stavebnictví", "stavební software"; title „Zásuvka pro AI: co znamená MCP pro stavebnictví“; slug changed before publishing to `/cs/insights/mcp-zasuvka-pro-ai-ve-stavebnictvi/`; the Czech category on the Insights pages is „AI ve stavebnictví“ (menu item and podcast description unchanged).
 
 ## Open
 

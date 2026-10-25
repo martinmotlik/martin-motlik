@@ -51,9 +51,9 @@
   "more_title": "Čtěte dál",
   "more_text": "Toto je první článek v sekci Insights. Další texty o AI v AEC, marketingu inženýrského softwaru a webových ekosystémech připravuji.",
   "more_all": "Všechny články →",
-  "cat_ai": "AI v AEC",
+  "cat_ai": "AI ve stavebnictví",
   "more_a2_date": "22. října 2026",
-  "more_a2_title": "Zásuvka pro AI: co znamená MCP pro AEC",
+  "more_a2_title": "Zásuvka pro AI: co znamená MCP pro stavebnictví",
   "read_14": "14 min čtení",
   "podcast_tag": "Podcast",
   "toc_mobile": "Obsah článku",
@@ -79,8 +79,8 @@
   "footer_cookies": "Nastavení cookies"
  },
  "k": {
-  "hero.span1": "AI v AEC",
-  "hero.div2": "AI v AEC",
+  "hero.span1": "AI ve stavebnictví",
+  "hero.div2": "AI ve stavebnictví",
   "hero.h13": "Buďte zdrojem: jak připravit data AEC firem pro vyhledávání s AI",
   "hero.p4": "Práce na webech inženýrského softwaru pro různé trhy formovala můj přístup k viditelnosti v AI. Tento článek shrnuje poznatky z lokalizace a praktické kontroly, se kterými dělám technický obsah snáze dohledatelný, srozumitelný a ověřitelný.",
   "hero.span5": "<time datetime=\"2026-10-06\">6. října 2026</time> &middot; <span data-i18n=\"read_8\">8 min čtení</span>",
@@ -162,7 +162,7 @@
  "meta": {
   "description": "Jak připravit produktová data AEC firem, aby je vyhledávání s AI našlo, přečetlo a ověřilo: poznatky z lokalizace, cesta faktu do odpovědi a praktické kontroly.",
   "image_alt": "Martin Motlík pracuje na notebooku, obklopený ikonami asistentů AI",
-  "section": "AI v AEC",
+  "section": "AI ve stavebnictví",
   "locale": "cs_CZ",
   "in_language": "cs-CZ",
   "tags": [

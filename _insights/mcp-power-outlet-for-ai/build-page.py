@@ -13,7 +13,7 @@ ROOT, ASSETS_MD = sys.argv[1], sys.argv[2]
 GEO = open(f'{ROOT}/insights/ai-visibility-for-aec/index.html', encoding='utf-8').read()
 SITE = 'https://martinmotlik.com'
 PATH = '/insights/mcp-power-outlet-for-ai/'
-CS, DE = '/cs/insights/mcp-zasuvka-pro-ai-v-aec/', '/de/insights/mcp-steckdose-fuer-ki-im-aec/'   # approved 2026-10-24
+CS, DE = '/cs/insights/mcp-zasuvka-pro-ai-ve-stavebnictvi/', '/de/insights/mcp-steckdose-fuer-ki-im-aec/'   # approved 2026-10-24
 URL = SITE + PATH
 H1 = 'A power outlet for AI: what MCP means for AEC'        # approved 2026-10-24 (variant A, ≤ 60 characters)
 TITLE = 'A Power Outlet for AI: What MCP Means for AEC'

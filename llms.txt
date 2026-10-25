@@ -42,7 +42,7 @@ Practical AI integration for AEC marketing and operations teams. Deliverables in
 - [Insights in Czech](https://martinmotlik.com/cs/insights/) and [in German](https://martinmotlik.com/de/insights/): the same articles, professionally translated, each at its own URL (linked with hreflang). The whole site is available in Czech and German; see "Language versions" below.
 - [Buďte zdrojem: jak připravit data AEC firem pro vyhledávání s AI](https://martinmotlik.com/cs/insights/data-aec-pro-vyhledavani-s-ai/): Czech version of "Be the source".
 - [Werden Sie zur Quelle: AEC-Daten fit für die KI-Suche machen](https://martinmotlik.com/de/insights/aec-daten-fuer-ki-suche/): German version of "Be the source".
-- [Zásuvka pro AI: co znamená MCP pro AEC](https://martinmotlik.com/cs/insights/mcp-zasuvka-pro-ai-v-aec/): Czech version of "A power outlet for AI".
+- [Zásuvka pro AI: co znamená MCP pro stavebnictví](https://martinmotlik.com/cs/insights/mcp-zasuvka-pro-ai-ve-stavebnictvi/): Czech version of "A power outlet for AI".
 - [Eine Steckdose für KI: Was MCP für AEC bedeutet](https://martinmotlik.com/de/insights/mcp-steckdose-fuer-ki-im-aec/): German version of "A power outlet for AI".
 
 ## Podcast
@@ -145,4 +145,4 @@ text in the HTML and hreflang links between them. English is the default.
 | Insights | https://martinmotlik.com/insights/ | https://martinmotlik.com/cs/insights/ | https://martinmotlik.com/de/insights/ |
 | Podcast | https://martinmotlik.com/insights/podcast/ | https://martinmotlik.com/cs/insights/podcast/ | https://martinmotlik.com/de/insights/podcast/ |
 | Be the source | https://martinmotlik.com/insights/ai-visibility-for-aec/ | https://martinmotlik.com/cs/insights/data-aec-pro-vyhledavani-s-ai/ | https://martinmotlik.com/de/insights/aec-daten-fuer-ki-suche/ |
-| A power outlet for AI | https://martinmotlik.com/insights/mcp-power-outlet-for-ai/ | https://martinmotlik.com/cs/insights/mcp-zasuvka-pro-ai-v-aec/ | https://martinmotlik.com/de/insights/mcp-steckdose-fuer-ki-im-aec/ |
+| A power outlet for AI | https://martinmotlik.com/insights/mcp-power-outlet-for-ai/ | https://martinmotlik.com/cs/insights/mcp-zasuvka-pro-ai-ve-stavebnictvi/ | https://martinmotlik.com/de/insights/mcp-steckdose-fuer-ki-im-aec/ |
