@@ -2,7 +2,7 @@
   "_about": "German strings outside the article body: hero, contents, figure captions, tags, closing, labels, alt texts, metadata. i18n-from-md.py merges them with article.de.md into insights/mcp-power-outlet-for-ai/i18n/de.json.",
   "k": {
     "hero.h13": "Eine Steckdose für KI: Was MCP für das Bauwesen bedeutet",
-    "hero.p4": "Model Context Protocol ist ein offener Standard, der KI-Assistenten mit der Software verbindet, die Ingenieure bereits nutzen. Was MCP ist, wofür es im Bauwesen taugt und warum die Anbindung an die KI-Plattformen, die Ihr Team schon verwendet, meist sinnvoller ist als ein weiterer Chatbot.",
+    "hero.p4": "Das Model Context Protocol (MCP) ist ein offener Standard, der KI-Assistenten mit der Software verbindet, die Ingenieure bereits nutzen. Der Beitrag erklärt, was MCP ist, wofür es im Bauwesen taugt und warum die Anbindung an die KI-Plattformen, die Ihr Team schon verwendet, meist sinnvoller ist als ein weiterer Chatbot.",
     "hero.span5": "<time datetime=\"2026-10-22\">22. Oktober 2026</time> · <span data-i18n=\"read_14\">14 Min. Lesezeit</span>",
     "toc.a1": "Die KI, die Ihr Modell nicht öffnen kann",
     "toc.a2": "Was MCP ist",
@@ -26,9 +26,9 @@
   "figs": {
     "02-architecture": "<span class=\"fig-n\">Abbildung 1</span> MCP sitzt zwischen KI-Anwendungen und Bausoftware: ein Protokoll statt einer Integration für jedes Paar.",
     "03-code": "<span class=\"fig-n\">Abbildung 2</span> Ein Werkzeug des Servers ifc-review: ein Name, eine Beschreibung, die die KI liest, und ein strukturiertes Ergebnis.",
-    "04-tools": "<span class=\"fig-n\">Abbildung 3</span> Einmal verbunden, ist ifc-review ein weiterer MCP-Server in den Einstellungen von ChatGPT.",
+    "04-tools": "<span class=\"fig-n\">Abbildung 3</span> Nach dem Verbinden erscheint ifc-review als weiterer MCP-Server in den Einstellungen von ChatGPT.",
     "06-main": "<span class=\"fig-n\">Abbildung 4</span> ChatGPT vergleicht über MCP zwei Revisionen und verlinkt die drei Türen, denen noch die Feuerwiderstandsklasse fehlt. Die Haustechnik ist in der Ansicht der Lesbarkeit halber ausgeblendet.",
-    "07-under-the-hood": "<span class=\"fig-n\">Abbildung 5</span> Ein Werkzeugaufruf, wie ChatGPT ihn anzeigt, abgeglichen mit dem Protokoll des Servers.",
+    "07-under-the-hood": "<span class=\"fig-n\">Abbildung 5</span> Ein Werkzeugaufruf, wie ChatGPT ihn anzeigt, abgeglichen mit dem Log des Servers.",
     "08-two-ais": "<span class=\"fig-n\">Abbildung 6</span> Zwei KI-Anwendungen von zwei Unternehmen, ein Server: Die Antwort hängt nicht von der Chat-App ab.",
     "05-permission": "Bevor ein Werkzeug läuft, gibt der Nutzer es frei: einmal, immer oder gar nicht.",
     "11-timeline": "Weniger als zwei Jahre von einem offenen Protokoll bis zu MCP-Servern in Statik-, BIM- und Dokumentenwerkzeugen."
@@ -44,14 +44,14 @@
   "ui": {
     "title": "Eine Steckdose für KI: Was MCP für das Bauwesen bedeutet",
     "article_title": "Eine Steckdose für KI: Was MCP für das Bauwesen bedeutet",
-    "cover_alt": "Bildschirmaufnahme: In ChatGPT wird gefragt, welche Elemente, die die IDS-Prüfung nicht bestanden haben, zwischen den Revisionen R02 und R03 eines Wohngebäudes behoben wurden. ChatGPT ruft den MCP-Server ifc-review auf, antwortet und öffnet einen webbasierten 3D-Viewer, in dem die drei Türen im 3. Wohngeschoss, denen noch die Feuerwiderstandsklasse fehlt, rot sind und die Haustechnik nach System eingefärbt ist. R03 ist eine Demo-Revision; die Wartezeit ist beschleunigt.",
+    "cover_alt": "Bildschirmaufnahme: In ChatGPT wird gefragt, welche Elemente, die die IDS-Prüfung nicht bestanden haben, zwischen den Revisionen R02 und R03 eines Wohngebäudes behoben wurden. ChatGPT ruft den MCP-Server ifc-review auf, antwortet und öffnet einen webbasierten 3D-Viewer, in dem die drei Türen im 3. Wohngeschoss, denen noch die Feuerwiderstandsklasse fehlt, rot sind und die Haustechnik nach System eingefärbt ist. R03 ist eine Demo-Revision; die Wartezeit ist im Zeitraffer dargestellt.",
     "fig1_alt": "Diagramm in drei Ebenen. Oben vier KI-Apps (Hosts) mit ihren Logos: Claude, ChatGPT, Gemini und Copilot. In der Mitte ein blauer Balken mit der Beschriftung „The outlet“, MCP, mit Tools, Resources und Prompts. Unten vier Arten von Bausoftware (Server): Statikberechnung wie RFEM 6, BIM-Modellierung wie Revit, Modellprüfung mit IFC- und IDS-Prüfungen sowie Projektdokumente. Eine Linie verbindet jede App und jedes Werkzeug mit MCP, darüber der Hinweis „One client per app, one server per tool.“",
     "fig2_alt": "Quellcode des Werkzeugs get_properties aus packages/mcp-server/src/server.ts: sein Name, die Beschreibung in einfachem Englisch, anhand derer die KI entscheidet, wann sie es nutzt, ein Eingabeschema mit der GlobalId des Elements, die Anmerkungen für den Lesezugriff und ein Ausgabeschema für ein strukturiertes Ergebnis. Die Zeilen mit Name, Beschreibung und Ausgabeschema sind farbig hinterlegt.",
     "fig3_alt": "Einstellungen von ChatGPT, Plugins, Reiter MCPs: der Server ifc-review eingeschaltet in der Liste der Server, neben den eigenen Servern der App.",
-    "fig4_alt": "Links die Antwort von ChatGPT, die die Revisionen R02 und R03 eines Wohngebäudes vergleicht: 10 von 13 Elementen behoben, drei Türen weiterhin ohne Feuerwiderstandsklasse, und ein Link „Open in 3D viewer“. Eine türkisfarbene Linie führt vom Link zum 3D-Viewer rechts, in dem die drei Türen im 3. Wohngeschoss rot sind, die seit R02 behobenen Elemente türkis, und das Checks-Panel die eine Anforderung zeigt, die weiterhin nicht erfüllt ist.",
+    "fig4_alt": "Links die Antwort von ChatGPT, die die Revisionen R02 und R03 eines Wohngebäudes vergleicht: 10 von 13 Elementen behoben, drei Türen weiterhin ohne Feuerwiderstandsklasse, und ein Link „Open in 3D viewer“. Eine türkisfarbene Linie führt vom Link zum 3D-Viewer rechts, in dem die drei Türen im 3. Wohngeschoss rot und die seit R02 behobenen Elemente türkis dargestellt sind; das Checks-Panel zeigt die eine Anforderung, die weiterhin nicht erfüllt ist.",
     "fig5_alt": "ChatGPT mit aufgeklappten ifc-review-Aufrufen: Model summary, dann Check against IDS, geöffnet mit der Zusammenfassung und dem strukturierten JSON-Ergebnis des Servers, gefolgt von der Antwort von ChatGPT, dass 13 von 14 Anforderungen erfüllt sind und drei Türen an KOM-14 scheitern.",
     "fig6_alt": "Nebeneinander beantworten ChatGPT (links) und Gemini in Google Antigravity (rechts) dieselbe Frage zu den Revisionen R02 und R03 über denselben MCP-Server ifc-review: 10 von 13 Elementen behoben, drei Türen weiterhin nicht in Ordnung.",
-    "img05_alt": "Google Antigravity mit Gemini fragt „Allow using this MCP tool?“, bevor es run_ids_check des Servers ifc-review aufruft. Über der Frage stehen die Argumente, die die KI senden will, darunter die Optionen: diesmal erlauben, in diesem Gespräch immer erlauben, immer erlauben oder nein.",
+    "img05_alt": "Google Antigravity mit Gemini fragt „Allow using this MCP tool?“, bevor es run_ids_check des Servers ifc-review aufruft. Über der Frage stehen die Argumente, die die KI senden will, unter der Frage die Optionen: diesmal erlauben, in diesem Gespräch immer erlauben, immer erlauben oder nein.",
     "img11_alt": "Zeitleiste von November 2024 bis Oktober 2026, Meilensteine des Protokolls dunkel, Produkte für das Bauwesen blau: Anthropic veröffentlicht MCP (November 2024); MCP geht an die Agentic AI Foundation unter der Linux Foundation (Dezember 2025); RFEM 6 bringt einen MCP-Server (Januar 2026); SketchUp-Konnektor für Claude (April 2026); Bluebeam bringt Claude in Revu (Mai 2026); Revit-MCP-Server, schreibgeschützte Technical Preview (Juni 2026); MCP-Spezifikation 2026-07-28 (Juli 2026); Revit-Server Trusted-Write und Experimental (September 2026).",
     "more_a1_alt": "Martin Motlík arbeitet am Laptop, umgeben von den Symbolen von KI-Assistenten",
     "zoom_fig": "Abbildung {net} vergrößern",
@@ -61,7 +61,7 @@
     "copy_code": "Code kopieren"
   },
   "meta": {
-    "description": "Ihr KI-Assistent kann Ihr Modell nicht öffnen. MCP, ein offener Standard mit OpenAI, Google und Microsoft im Rücken, verbindet ihn mit Ihrer Bausoftware.",
+    "description": "Ihr KI-Assistent kann Ihr Modell nicht öffnen. MCP, ein offener Standard, hinter dem OpenAI, Google und Microsoft stehen, verbindet ihn mit Ihrer Bausoftware.",
     "image_alt": "Die Antwort von ChatGPT neben einem 3D-Viewer, in dem drei Türen ohne Feuerwiderstandsklasse rot sind",
     "section": "KI im Bauwesen",
     "locale": "de_DE",

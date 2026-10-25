@@ -91,6 +91,58 @@ Choices worth a native read:
 - **Screenshots** stay English (real application interfaces); captions and
   alt texts are translated. Sources stay English (titles of English pages).
 
+## English copy edit (2026-10-25), waiting for the author's decision
+
+A U.S. copy edit of `article.md` and the page-only strings. The article text is
+the author's, so nothing below is applied yet; approved changes also go into
+the Claude doc. Facts check out (14 requirements, 2 failed, 13 elements = 2 + 11,
+10 fixed, 3 doors left).
+
+**Errors and misreadings (recommended)**
+
+| # | Where | Now | Fix |
+|---|---|---|---|
+| 1 | Dek (page) | "connects AI assistants to the software engineers already use" | "The Model Context Protocol (MCP) is an open standard that connects AI assistants to the software that engineers already use." |
+| 2 | Intro, ¶2 | "Model Context Protocol, or MCP, … the software and data engineers already use" | "The Model Context Protocol, or MCP, … the software and data that engineers already use" |
+| 3 | Why plug in, item 1 | "retest what matters when the model changes" | "… when the AI model changes" |
+| 4 | Won't fix, AI-written code | "When a server runs scripts the model writes, the model can write a wrong one." | "When a server runs scripts that the AI writes, some of those scripts will be wrong." |
+| 5 | Three kinds of access | "which it describes as use at your own risk" | "which Autodesk describes as \"use at your own risk.\"" |
+| 6 | What MCP is, Server | "RFEM, Revit, or an IFC review tool each get their own." | "RFEM, Revit, and an IFC review tool would each get their own." |
+| 7 | What MCP is, Prompts | "between version A and B" | "between versions A and B" |
+| 8 | Demo | "Two requirements failed, on 13 elements: … eleven doors" / "Ten of the thirteen elements" | "Two requirements failed on 13 elements: … 11 doors" / "Ten of the 13 elements" |
+| 9 | Demo | "I asked which requirements fail and which elements are affected." | "… failed … were affected." |
+| 10 | Demo | "three residential levels and an attic" | "three residential levels, and an attic" (serial comma, as elsewhere in the body) |
+| 11 | Industry, Revu | "[connects to Claude through MCP]" | "an [MCP connection to Claude]" (parallel with the other bullets) |
+| 12 | Figure 4 caption | "doors that still miss a fire rating" | "doors that still lack a fire rating" |
+| 13 | Why plug in, item 2 | "If that assistant supports the connection you need" ("that" points to the new chatbot) | "If the assistant your firm already has supports the connection you need" |
+| 14 | Monday, pilot | "Choose one recurring task and a test model your firm has approved, such as checking a model revision …" | "Choose one recurring task, such as checking a model revision against the project's information requirements, and a test model your firm has approved." |
+
+**Style (optional)**: spell out IDS once ("IDS (Information Delivery
+Specification)"); "Read-only access limits changes to the model" appears twice;
+"much like a Dynamo or Grasshopper script, except the AI writes it" → "much as a
+user would in Dynamo or Grasshopper"; "One outlet finds the elements …" (an
+outlet doesn't find anything) → "One server finds …"; "Domain knowledge stays the
+competitive advantage, which is exactly where it belongs" → "Domain knowledge
+stays where it belongs: with the vendor, as its competitive advantage"; "Anthropic
+released the standard in November 2024" repeats the earlier sentence; Figure 2
+caption needs the serial comma ("a description the AI reads, and a structured
+result"); Figure 6 caption states as a rule what the body hedges ("the answer
+does not depend on the chat app" → "the same answer in both").
+
+## Czech and German proofreading (2026-10-25), applied
+
+Independent native-level proofreading of both translations. Applied: CS 62
+changes in `article.cs.md` and the strings (meaning: the Experimental server
+sentence, „Nic z toho nenahrazuje kontrolní nástroj“, AI vs. BIM model, „trojími
+dveřmi“, „mezi verzemi“, „Jaká pravidla pro projekt platí…“; style: calques such as
+„úzké nástroje“, „kde žijí nástroje“, „seriózní postupy“; „technical preview“ →
+„zkušební verze“, BEP), DE 55 changes (meaning: „Welche Regeln für ein Projekt
+gelten…“, KI-Modell vs. Modell, „dessen Nutzung laut Autodesk…“, Brandschutzkonzept
+„wird … erst festgelegt“, „Schlechte Daten rein…“, Log instead of Protokoll; style:
+„gegen … prüfen“ → „anhand“, „stempelt“ → „unterschreibt“, U-Wert). Not applied:
+adding „CCI“ to the classification codes (new content) and removing „(AEC)“ from
+`about` (kept on purpose for search).
+
 ## Waiting
 
 - **Listed (2026-10-24):** featured and first card on `/insights/`, entry in

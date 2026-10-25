@@ -2,7 +2,7 @@
   "_about": "Czech strings outside the article body: hero, contents, figure captions, tags, closing, labels, alt texts, metadata. i18n-from-md.py merges them with article.cs.md into insights/mcp-power-outlet-for-ai/i18n/cs.json.",
   "k": {
     "hero.h13": "Zásuvka pro AI: co znamená MCP pro stavebnictví",
-    "hero.p4": "Model Context Protocol je otevřený standard, který propojuje AI asistenty se softwarem, se kterým inženýři už pracují. Co je MCP, k čemu se hodí ve stavebnictví a proč napojení na AI platformy, které váš tým už používá, obvykle dává větší smysl než stavět další chatbot.",
+    "hero.p4": "Model Context Protocol je otevřený standard, který propojuje AI asistenty se softwarem, se kterým inženýři už pracují. Vysvětluji, co MCP je, k čemu se hodí ve stavebnictví a proč obvykle dává větší smysl napojit se na AI platformy, které váš tým už používá, než stavět další chatbot.",
     "hero.span5": "<time datetime=\"2026-10-22\">22. října 2026</time> · <span data-i18n=\"read_14\">14 min čtení</span>",
     "toc.a1": "AI, která neotevře váš model",
     "toc.a2": "Co je MCP",
@@ -26,12 +26,12 @@
   "figs": {
     "02-architecture": "<span class=\"fig-n\">Obrázek 1</span> MCP stojí mezi AI aplikacemi a softwarem pro stavebnictví: jeden protokol místo jedné integrace pro každou dvojici.",
     "03-code": "<span class=\"fig-n\">Obrázek 2</span> Jeden nástroj serveru ifc-review: název, popis, který čte AI, a strukturovaný výsledek.",
-    "04-tools": "<span class=\"fig-n\">Obrázek 3</span> Jednou připojený ifc-review je v nastavení ChatGPT dalším MCP serverem.",
+    "04-tools": "<span class=\"fig-n\">Obrázek 3</span> Po připojení se ifc-review v nastavení ChatGPT zobrazí jako další MCP server.",
     "06-main": "<span class=\"fig-n\">Obrázek 4</span> ChatGPT přes MCP porovná dvě revize a odkáže na troje dveře, kterým stále chybí požární odolnost. Technické zařízení budovy je kvůli čitelnosti v pohledu skryté.",
     "07-under-the-hood": "<span class=\"fig-n\">Obrázek 5</span> Jedno volání nástroje, jak ho zobrazuje ChatGPT, porovnané se záznamem samotného serveru.",
     "08-two-ais": "<span class=\"fig-n\">Obrázek 6</span> Dvě AI aplikace od dvou firem, jeden server: odpověď nezávisí na chatovací aplikaci.",
-    "05-permission": "Než se nástroj spustí, uživatel ho schválí: jednou, vždy, nebo vůbec.",
-    "11-timeline": "Necelé dva roky od otevřeného protokolu k MCP serverům ve statických, BIM a dokumentových nástrojích."
+    "05-permission": "Než se nástroj spustí, uživatel rozhodne, zda ho povolí jednou, natrvalo, nebo vůbec.",
+    "11-timeline": "Necelé dva roky od otevřeného protokolu k MCP serverům v nástrojích pro statiku, BIM a práci s dokumenty."
   },
   "chrome": {
     "read_14": "14 min čtení",
@@ -44,15 +44,15 @@
   "ui": {
     "title": "Zásuvka pro AI: co znamená MCP pro stavebnictví",
     "article_title": "Zásuvka pro AI: co znamená MCP pro stavebnictví",
-    "cover_alt": "Záznam obrazovky: v ChatGPT zazní otázka, které prvky, jež neprošly kontrolou IDS, byly mezi revizemi R02 a R03 bytového domu opraveny. ChatGPT zavolá MCP server ifc-review, odpoví a otevře webový 3D prohlížeč, kde jsou troje dveře ve 3. obytném podlaží, kterým stále chybí požární odolnost, červené a technické rozvody barevně podle systému. R03 je demonstrační revize; čekání je zrychlené.",
-    "fig1_alt": "Schéma ve třech úrovních. Nahoře čtyři AI aplikace (hosté) s logy: Claude, ChatGPT, Gemini a Copilot. Uprostřed modrý pruh s popiskem „The outlet“, MCP, s částmi Tools, Resources a Prompts. Dole čtyři druhy stavebního softwaru (servery): statické výpočty, například RFEM 6, BIM modelování, například Revit, kontrola modelů s kontrolami IFC a IDS a projektové dokumenty. Čára spojuje každou aplikaci i každý nástroj s MCP, nad tím poznámka „One client per app, one server per tool.“",
+    "cover_alt": "Záznam obrazovky: v ChatGPT padne otázka, které prvky, jež neprošly kontrolou IDS, byly mezi revizemi R02 a R03 bytového domu opraveny. ChatGPT zavolá MCP server ifc-review, odpoví a otevře webový 3D prohlížeč, kde jsou troje dveře ve 3. obytném podlaží, kterým stále chybí požární odolnost, červené a technické rozvody jsou obarvené podle systémů. R03 je demonstrační revize; čekání je zrychlené.",
+    "fig1_alt": "Schéma ve třech úrovních. Nahoře čtyři AI aplikace (hostitelské aplikace) s logy: Claude, ChatGPT, Gemini a Copilot. Uprostřed modrý pruh s popiskem „The outlet“, MCP, s částmi Tools, Resources a Prompts. Dole čtyři druhy stavebního softwaru (servery): statické výpočty, například RFEM 6, BIM modelování, například Revit, kontrola modelů s kontrolami IFC a IDS a projektové dokumenty. Čára spojuje každou aplikaci i každý nástroj s MCP, nad tím poznámka „One client per app, one server per tool.“",
     "fig2_alt": "Zdrojový kód nástroje get_properties ze souboru packages/mcp-server/src/server.ts: jeho název, popis v běžné angličtině, podle kterého AI rozhoduje, kdy nástroj použít, vstupní schéma s GlobalId prvku, anotace jen pro čtení a výstupní schéma pro strukturovaný výsledek. Řádky s názvem, popisem a výstupním schématem jsou podbarvené.",
     "fig3_alt": "Nastavení ChatGPT, Plugins, karta MCPs: server ifc-review zapnutý v seznamu serverů vedle vlastních serverů aplikace.",
     "fig4_alt": "Vlevo odpověď ChatGPT porovnávající revize R02 a R03 bytového domu: 10 ze 13 prvků opraveno, troje dveře stále bez požární odolnosti a odkaz „Open in 3D viewer“. Tyrkysová čára vede od odkazu do 3D prohlížeče vpravo, kde jsou troje dveře ve 3. obytném podlaží červené, prvky opravené od R02 tyrkysové a panel Checks uvádí jediný požadavek, který stále neprochází.",
-    "fig5_alt": "ChatGPT s rozbalenými voláními ifc-review: Model summary, pak otevřené Check against IDS se souhrnem a strukturovaným výsledkem JSON, který server vrátil, a nakonec odpověď ChatGPT, že 13 ze 14 požadavků prochází a troje dveře neprocházejí požadavkem KOM-14.",
-    "fig6_alt": "Vedle sebe ChatGPT (vlevo) a Gemini v Google Antigravity (vpravo) odpovídají na stejnou otázku k revizím R02 a R03 přes stejný MCP server ifc-review: 10 ze 13 prvků opraveno, troje dveře stále neprocházejí.",
+    "fig5_alt": "ChatGPT s rozbalenými voláními ifc-review: Model summary, pak otevřené Check against IDS se souhrnem a strukturovaným výsledkem JSON, který server vrátil, a nakonec odpověď ChatGPT, že 13 ze 14 požadavků prochází a troje dveře nesplňují požadavek KOM-14.",
+    "fig6_alt": "Vedle sebe ChatGPT (vlevo) a Gemini v Google Antigravity (vpravo) odpovídají na stejnou otázku k revizím R02 a R03 přes stejný MCP server ifc-review: 10 ze 13 prvků opraveno, troje dveře stále neprocházejí kontrolou.",
     "img05_alt": "Google Antigravity s modelem Gemini se ptá „Allow using this MCP tool?“, než zavolá nástroj run_ids_check serveru ifc-review. Nad otázkou jsou argumenty, které chce AI poslat, pod ní volby: povolit tentokrát, vždy povolit v této konverzaci, vždy povolit, nebo ne.",
-    "img11_alt": "Časová osa od listopadu 2024 do října 2026, milníky protokolu tmavě, produkty pro stavebnictví modře: Anthropic vydává MCP (listopad 2024); MCP předáno Agentic AI Foundation pod Linux Foundation (prosinec 2025); RFEM 6 přináší MCP server (leden 2026); konektor SketchUp pro Claude (duben 2026); Bluebeam přináší Claude do Revu (květen 2026); MCP server pro Revit, technický preview jen pro čtení (červen 2026); specifikace MCP 2026-07-28 (červenec 2026); servery Revit Trusted-Write a Experimental (září 2026).",
+    "img11_alt": "Časová osa od listopadu 2024 do října 2026, milníky protokolu tmavě, produkty pro stavebnictví modře: Anthropic vydává MCP (listopad 2024); MCP předáno Agentic AI Foundation pod Linux Foundation (prosinec 2025); RFEM 6 přináší MCP server (leden 2026); konektor SketchUp pro Claude (duben 2026); Bluebeam přináší Claude do Revu (květen 2026); MCP server pro Revit, zkušební verze jen pro čtení (červen 2026); specifikace MCP 2026-07-28 (červenec 2026); servery Revit Trusted-Write a Experimental (září 2026).",
     "more_a1_alt": "Martin Motlík pracuje na notebooku, obklopený ikonami asistentů AI",
     "zoom_fig": "Zvětšit obrázek {net}",
     "zoom_img": "Zvětšit obrázek",
@@ -61,7 +61,7 @@
     "copy_code": "Kopírovat kód"
   },
   "meta": {
-    "description": "Váš AI asistent neotevře váš model. MCP, otevřený standard podporovaný firmami OpenAI, Google a Microsoft, ho propojí se stavebním softwarem, kterému věříte.",
+    "description": "Váš AI asistent neotevře váš model. MCP, otevřený standard, za kterým stojí OpenAI, Google a Microsoft, propojí asistenta se stavebním softwarem.",
     "image_alt": "Odpověď ChatGPT vedle 3D prohlížeče, kde jsou troje dveře bez požární odolnosti červené",
     "section": "AI ve stavebnictví",
     "locale": "cs_CZ",
