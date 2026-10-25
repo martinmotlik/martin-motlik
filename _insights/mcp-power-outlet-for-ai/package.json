@@ -12,11 +12,11 @@
   "de": "/de/insights/mcp-steckdose-fuer-ki-im-aec/"
  },
  "hero": "mcp-article-01-hero",
- "episode": "",
+ "episode": "ep002-power-outlet-for-ai",
  "teasers": [],
  "published": {
   "article": "",
-  "episode": ""
+  "episode": "2026-10-25"
  },
  "site": {
   "_about": "On the site: tools/build-i18n.py builds the CS/DE versions, sitemap entry and list card from this block and \"urls\".",

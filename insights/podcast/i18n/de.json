@@ -71,7 +71,9 @@
  "text": {
   "Oct 8, 2026": "8. Oktober 2026",
   "AI in AEC": "KI im AEC",
-  "Sarah runs marketing at a structural engineering firm in Portland. Her firm ranks on page one, yet ChatGPT named five others. Martin takes her situation apart, from project galleries and PDFs to the load path of a fact.": "Sarah leitet das Marketing eines Tragwerksplanungsbüros in Portland. Ihr Büro steht bei Google auf Seite eins, doch ChatGPT nannte fünf andere. Martin nimmt ihre Situation auseinander, von Projektgalerien und PDFs bis zum Lastpfad eines Fakts."
+  "Sarah runs marketing at a structural engineering firm in Portland. Her firm ranks on page one, yet ChatGPT named five others. Martin takes her situation apart, from project galleries and PDFs to the load path of a fact.": "Sarah leitet das Marketing eines Tragwerksplanungsbüros in Portland. Ihr Büro steht bei Google auf Seite eins, doch ChatGPT nannte fünf andere. Martin nimmt ihre Situation auseinander, von Projektgalerien und PDFs bis zum Lastpfad eines Fakts.",
+  "Oct 25, 2026": "25. Oktober 2026",
+  "Sarah’s boss forwarded a vendor email: “Should we be doing this MCP thing?” Martin walks her through his own IFC model-review test, from thirteen failing elements to three doors highlighted in the model, and what still needs human judgment.": "Sarahs Chef hat ihr eine Anbieter-E-Mail weitergeleitet: „Sollten wir dieses MCP-Ding machen?“ Martin führt sie durch seinen eigenen Test zur IFC-Modellprüfung, von dreizehn fehlerhaften Elementen bis zu drei im Modell hervorgehobenen Türen, und zeigt, was weiterhin menschliches Urteil braucht."
  },
  "keep": [
   "Insights with Martin Motlík",
@@ -80,7 +82,10 @@
   "PODCAST",
   "· EP 01",
   "DIČ: CZ0103073146",
-  "motlik.martin@gmail.com"
+  "motlik.martin@gmail.com",
+  "EP 01",
+  "EP 02",
+  "· EP 02"
  ],
  "meta": {
   "description": "Podcast von Martin Motlík über KI im AEC, Marketing für Ingenieursoftware und Web-Ökosysteme. Jede Folge: ein Insights-Artikel, ein Praxisfall.",
@@ -95,6 +100,7 @@
   "@graph.1.itemListElement.0.name": "Startseite"
  },
  "attrs": {
-  "Martin Motlík working on a laptop outdoors, surrounded by the icons of AI assistants and search engines": "Martin Motlík arbeitet im Freien am Laptop, umgeben von den Symbolen von KI-Assistenten und Suchmaschinen"
+  "Martin Motlík working on a laptop outdoors, surrounded by the icons of AI assistants and search engines": "Martin Motlík arbeitet im Freien am Laptop, umgeben von den Symbolen von KI-Assistenten und Suchmaschinen",
+  "ChatGPT's answer comparing revisions R02 and R03 of a residential building, with an \"Open in 3D viewer\" link, floats over a web-based 3D viewer. A thin teal line runs from the link to three red doors on the building's third residential level; the elements fixed since R02 are teal and the rest of the model is see-through light gray.": "Die Antwort von ChatGPT, die die Revisionen R02 und R03 eines Wohngebäudes vergleicht, mit dem Link „Open in 3D viewer“ schwebt über einem webbasierten 3D-Viewer. Eine dünne türkisfarbene Linie führt vom Link zu drei roten Türen im dritten Wohngeschoss; die seit R02 behobenen Elemente sind türkis, der Rest des Modells ist durchscheinend hellgrau."
  }
 }

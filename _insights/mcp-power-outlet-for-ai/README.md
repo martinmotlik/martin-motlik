@@ -6,7 +6,7 @@ Check anytime: `python3 tools/insights/check-package.py mcp-power-outlet-for-ai`
 | | |
 |---|---|
 | Article | EN `/insights/mcp-power-outlet-for-ai/` · CS `/cs/insights/mcp-zasuvka-pro-ai-v-aec/` · DE `/de/insights/mcp-steckdose-fuer-ki-im-aec/` |
-| Podcast | EP 02 · `podcast/episodes/ep002-….md` |
+| Podcast | EP 02 · `podcast/episodes/ep002-power-outlet-for-ai.md` · audio, captions, chapters and cover `assets/podcast/ep002-power-outlet-for-ai.*`, `cover-ep02-v2-*` |
 | Social | `social.md` |
 | Instagram | `tools/ig-story/teasers/ep002-….json` |
 | Drive | (folder link once archived) |
@@ -19,9 +19,9 @@ Check anytime: `python3 tools/insights/check-package.py mcp-power-outlet-for-ai`
 - [ ] 2 Article text approved · text after feedback received 2026-10-24, no [TK] left, remarks in `REVIEW_NOTES.md`
 - [ ] 2 Page built and approved (desktop + phone) · 2026-10-24 built from `article.md` on the GEO template with all figures (`review/`)
 - [x] 3 CS + DE translations, `--check` passes (2026-10-24; text in `article.{cs,de}.md` + `i18n-{cs,de}.extras.json` → `i18n-from-md.py`)
-- [ ] 4 Podcast script approved
-- [ ] 4 Audio delivered (MP3 + transcript .md + .vtt)
-- [ ] 5 Episode integrated and previewed
+- [x] 4 Podcast script approved (production session "AI podcast z scénáře článku")
+- [x] 4 Audio delivered (MP3 + transcript .md + .vtt): 13:43, 823 s, 19,761,405 B, −16.4 LUFS (2026-10-25)
+- [x] 5 Episode integrated and previewed (2026-10-25): player, chapter chips, transcript, feed item, JSON-LD audio; publish date in podcast.json set to the release date at release
 - [ ] 6 Social posts approved
 - [ ] 6 Instagram teaser approved and rendered
 - [ ] 7 QA done (`check-package.py`, previews EN/CS/DE)
@@ -40,6 +40,8 @@ Check anytime: `python3 tools/insights/check-package.py mcp-power-outlet-for-ai`
 - 2026-10-24 · Approved (user): title variant A, "A power outlet for AI: what MCP means for AEC" as H1 and, in Title Case, as `<title>`; meta description A; dek A. The doc keeps its longer working title.
 
 - 2026-10-24 · Approved (user): slugs `/cs/insights/mcp-zasuvka-pro-ai-v-aec/` and `/de/insights/mcp-steckdose-fuer-ki-im-aec/`. Translated titles: „Zásuvka pro AI: co znamená MCP pro AEC“, „Eine Steckdose für KI: Was MCP für AEC bedeutet“.
+
+- 2026-10-25 · Podcast EP 02 (user): the Dlubal line at 10:53 stays as recorded; metadata fixed by the production session (title = article title, show "Insights with Martin Motlík", first chapter "The doors that don't exist" instead of "Cold open"). AI disclosure as in EP 01: text only (feed description, under the transcript, JSON-LD), nothing in the audio or at the player.
 
 ## Open
 

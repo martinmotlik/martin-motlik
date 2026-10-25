@@ -1,0 +1,53 @@
+{
+ "version": "1.2.0",
+ "chapters": [
+  {
+   "startTime": 0,
+   "title": "The doors that don't exist"
+  },
+  {
+   "startTime": 21,
+   "title": "Welcome"
+  },
+  {
+   "startTime": 57,
+   "title": "An outlet, not a brain"
+  },
+  {
+   "startTime": 139,
+   "title": "Guessing vs. checking"
+  },
+  {
+   "startTime": 229,
+   "title": "\"Have you actually tried it?\""
+  },
+  {
+   "startTime": 336,
+   "title": "Thirteen elements, three doors"
+  },
+  {
+   "startTime": 412,
+   "title": "One server, two AI apps"
+  },
+  {
+   "startTime": 483,
+   "title": "\"Why give our data to big tech?\""
+  },
+  {
+   "startTime": 565,
+   "title": "The weekend GitHub server"
+  },
+  {
+   "startTime": 650,
+   "title": "Who's actually shipping this?"
+  },
+  {
+   "startTime": 703,
+   "title": "What do I tell my boss?"
+  },
+  {
+   "startTime": 789,
+   "title": "Close"
+  }
+ ]
+}

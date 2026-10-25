@@ -49,10 +49,8 @@ Resolved by the revision: the demo in the text now matches the screenshots
    now also names the September Revit servers (Trusted-Write and
    Experimental). The image is not wrong, just a step behind; a "Sep 2026"
    point would match the text.
-2. **"Prefer to listen?"** (last paragraph) promises a companion episode.
-   EP 02 doesn't exist yet; the page shows the player only once it does.
-   Publish the article together with the episode, or leave this line out
-   until then.
+2. **"Prefer to listen?"** (last paragraph): EP 02 is integrated
+   (2026-10-25), so the line is true. Publish article and episode together.
 3. **Figure 2:** the doc's note says "about ten lines of Python"; the image
    (and the code block under it) is TypeScript, 23 lines. Nothing in the text
    says Python.
@@ -98,5 +96,6 @@ Choices worth a native read:
 - **Listed (2026-10-24):** featured and first card on `/insights/`, entry in
   `llms.txt` (with the CS/DE lines and the language table), "Keep reading"
   card in article #1, `sitemap.xml` in all three languages.
-- **Podcast:** the page has empty podcast markers; `build-podcast.py` fills
-  them once EP 02 is in `podcast/podcast.json`.
+- **Release dates:** the article says Oct 22, 2026 and the episode
+  2026-10-25 (`podcast/podcast.json` → `published`); set both to the real
+  release date when publishing (the feed must not carry a future date).

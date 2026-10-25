@@ -83,6 +83,37 @@
    },
    "note": "Episode produced with AI voices from this article. Script reviewed by Martin.",
    "disclosure": "Martin's voice is an AI clone of his own voice; Sarah is a fictional co-host voiced by AI. Produced with ElevenLabs."
+  },
+  {
+   "number": 2,
+   "slug": "ep002-power-outlet-for-ai",
+   "title": "A power outlet for AI: what MCP means for AEC",
+   "article": "/insights/mcp-power-outlet-for-ai/",
+   "category": "AI in AEC",
+   "published": "2026-10-25T09:00:00+01:00",
+   "audio": "/assets/podcast/ep002-power-outlet-for-ai.mp3",
+   "duration": 823,
+   "captions": "/assets/podcast/ep002-power-outlet-for-ai.vtt",
+   "transcript": "podcast/episodes/ep002-power-outlet-for-ai.md",
+   "cover": "/assets/podcast/cover-ep02-v2",
+   "hero": "mcp-article-01-hero",
+   "hero_alt": "ChatGPT's answer comparing revisions R02 and R03 of a residential building, with an \"Open in 3D viewer\" link, floats over a web-based 3D viewer. A thin teal line runs from the link to three red doors on the building's third residential level; the elements fixed since R02 are teal and the rest of the model is see-through light gray.",
+   "teaser": "Sarah’s boss forwarded a vendor email: “Should we be doing this MCP thing?” Martin walks her through his own IFC model-review test, from thirteen failing elements to three doors highlighted in the model, and what still needs human judgment.",
+   "summary": "An AI answer about a building model is only useful if you can check it. Martin walks through his IFC model-review test, explains where MCP helps, and shows what still needs human judgment. See the screenshots and tool details in the companion article.",
+   "_h2": "Chapter chips next to the article's H2s: H2 id → chapter start (seconds).",
+   "h2": {
+    "cant-open": 0,
+    "what-mcp-is": 57,
+    "why-aec": 139,
+    "what-i-built": 229,
+    "why-plug-in": 483,
+    "access": 565,
+    "industry": 650,
+    "wont-fix": 703,
+    "bridge": 789
+   },
+   "note": "Episode produced with AI voices from this article. Script reviewed by Martin.",
+   "disclosure": "Martin's voice is an AI clone of his own voice; Sarah is a fictional co-host voiced by AI. Produced with ElevenLabs."
   }
  ]
 }
