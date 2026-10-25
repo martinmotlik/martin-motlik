@@ -47,7 +47,11 @@ Check anytime: `python3 tools/insights/check-package.py mcp-power-outlet-for-ai`
 
 - 2026-10-25 · Hero image replaced by the last frame of the cover video (poster PNG 2560 × 1440, user's instruction); still named `mcp-article-01-hero`, so Open Graph, the cards on /insights/, article #1's Keep reading and the podcast page use it. Alt texts updated in EN/CS/DE.
 
+- 2026-10-25 · Closing view added (user, version D) as the last paragraph of "A bridge, not a replacement", before "Prefer to listen?": "My own view: sharing building data with AI models is how they get better at our work, and I trust the large U.S. providers with it. Your contracts still set the rules for each project. In a few years, asking an AI about a model will be as ordinary as searching Google." Added to `article.md` and translated (CS/DE) here; the user adds it to the Claude doc. Not in the podcast.
+
 ## Open
+
+- The Claude doc (source of the text) needs the closing paragraph above, so a later export of the doc matches `article.md`.
 
 - Title is 73 characters; the rule is ≤ 60 for the H1 and `<title>`. Two `<title>` variants go to `REVIEW_NOTES.md`.
 

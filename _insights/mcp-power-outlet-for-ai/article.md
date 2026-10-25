@@ -166,6 +166,8 @@ Picture the next step. One outlet finds the elements that changed in the latest 
 
 The AEC software we rely on is excellent at engineering. The AI platforms are excellent at language and reasoning. MCP is the outlet between them, and it's worth learning how it works before your competitors do.
 
+My own view: sharing building data with AI models is how they get better at our work, and I trust the large U.S. providers with it. Your contracts still set the rules for each project. In a few years, asking an AI about a model will be as ordinary as searching Google.
+
 Prefer to listen? This article has a companion episode of the Insights podcast, built around the same test.
 
 ## Sources

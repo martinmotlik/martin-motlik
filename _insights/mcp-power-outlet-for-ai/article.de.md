@@ -166,6 +166,8 @@ Stellen Sie sich den nächsten Schritt vor. Eine Steckdose findet die Elemente, 
 
 Die AEC-Software, auf die wir uns verlassen, ist hervorragend im Ingenieurwesen. Die KI-Plattformen sind hervorragend in Sprache und Schlussfolgern. MCP ist die Steckdose dazwischen, und es lohnt sich, zu verstehen, wie es funktioniert, bevor Ihre Wettbewerber es tun.
 
+Meine Sicht: Wenn KI-Modelle Baudaten bekommen, werden sie besser in unserer Arbeit, und ich vertraue diese Daten den großen US-Anbietern an. Die Regeln für jedes Projekt bestimmen aber weiterhin Ihre Verträge. In ein paar Jahren wird eine Frage an die KI zum Modell so selbstverständlich sein wie eine Google-Suche.
+
 Lieber hören? Zu diesem Beitrag gibt es eine Folge des Insights-Podcasts (auf Englisch), die auf demselben Test aufbaut.
 
 ## Quellen

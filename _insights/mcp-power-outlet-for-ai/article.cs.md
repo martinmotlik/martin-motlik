@@ -166,6 +166,8 @@ Představte si další krok. Jedna zásuvka najde prvky, které se v poslední r
 
 Software pro AEC, na který spoléháme, je vynikající v inženýrství. AI platformy jsou vynikající v jazyce a uvažování. MCP je zásuvka mezi nimi a vyplatí se pochopit, jak funguje, dřív než vaše konkurence.
 
+Můj pohled: sdílení stavebních dat s modely AI je cesta, jak se zlepší v naší práci, a velkým americkým poskytovatelům je svěřuji s důvěrou. Pravidla pro každý projekt ale dál určují vaše smlouvy. Za pár let bude dotaz na model přes AI stejně běžný jako hledání na Googlu.
+
 Raději posloucháte? K tomuto článku patří díl podcastu Insights (v angličtině), postavený kolem stejného testu.
 
 ## Zdroje
