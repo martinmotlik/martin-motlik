@@ -4,7 +4,7 @@
 
 ## Die KI, die Ihr Modell nicht öffnen kann
 
-Ihr KI-Assistent entwirft die Antwort auf eine RFI, fasst einen Abschnitt der Leistungsbeschreibung zusammen und bringt das Besprechungsprotokoll in Form. Fragen Sie ihn aber, welcher Unterzug im 3. Geschoss die höchste Ausnutzung hat, und er rät. Nicht, weil er nicht klug genug wäre, sondern weil er keinen Zugang zu Ihrem Modell hat.
+Ihr KI-Assistent entwirft die Antwort auf eine Rückfrage zu den Plänen, fasst einen Abschnitt der Leistungsbeschreibung zusammen und bringt das Besprechungsprotokoll in Form. Fragen Sie ihn aber, welcher Unterzug im 3. Geschoss die höchste Ausnutzung hat, und er rät. Nicht, weil er nicht klug genug wäre, sondern weil er keinen Zugang zu Ihrem Modell hat.
 
 Diese Lücke schließt sich. Model Context Protocol, kurz MCP, ist ein offener Standard, über den sich KI-Anwendungen mit der Software und den Daten verbinden, mit denen Ingenieure ohnehin arbeiten. Stellen Sie es sich als Steckdose für KI vor: eine genormte Steckdose, und jedes Werkzeug, das Sie einstecken, wird zu etwas, mit dem die KI tatsächlich arbeiten kann.
 
@@ -54,7 +54,7 @@ Wie sieht das in einem echten Projekt aus? Diese Anfragen sind mit heute verfüg
 
 - **Modellabfragen:** „Finde alle Feuerschutztüren im 2. Geschoss ohne Beschlagsatz und wähle sie aus.“ Der offizielle Revit-Server von Autodesk kann das Modell durchsuchen und die Ergebnisse auswählen.
 - **Mengen:** „Wie viele Kubikmeter Beton stecken in den Decken, Geschoss für Geschoss?“ Open-Source-Server lesen das direkt aus einer IFC-Datei, sofern das Modell verlässliche Mengen enthält.
-- **Koordination:** „Welche Punkte aus der Koordinationsbesprechung der letzten Woche sind noch offen?“ Koordinationsplattformen wie Revizto bieten inzwischen MCP-Server an, und Community-Server erreichen Issues und RFIs in Autodesk Construction Cloud.
+- **Koordination:** „Welche Punkte aus der Koordinationsbesprechung der letzten Woche sind noch offen?“ Koordinationsplattformen wie Revizto bieten inzwischen MCP-Server an, und Community-Server erreichen offene Punkte und Rückfragen in Autodesk Construction Cloud.
 - **Berechnungsergebnisse:** „Wie groß ist die maximale Durchbiegung der Deckenträger unter den Kombinationen im Grenzzustand der Gebrauchstauglichkeit, und liegt sie innerhalb von L/360?“ Die Antwort kommt aus dem Berechnungsprogramm, nicht aus dem Gedächtnis der KI.
 
 ## Warum an die großen KI-Plattformen andocken, statt einen eigenen Chatbot zu bauen

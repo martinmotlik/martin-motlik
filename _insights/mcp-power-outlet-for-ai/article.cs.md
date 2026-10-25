@@ -4,7 +4,7 @@
 
 ## AI, která neotevře váš model
 
-Váš AI asistent umí připravit odpověď na RFI, shrnout kapitolu technické specifikace a učesat zápis z porady. Zeptejte se ho ale, který průvlak ve 3. podlaží má nejvyšší využití únosnosti, a začne hádat. Ne proto, že by na to nestačil, ale proto, že do vašeho modelu nemá přístup.
+Váš AI asistent umí připravit odpověď na dotaz k projektové dokumentaci, shrnout kapitolu technické specifikace a učesat zápis z porady. Zeptejte se ho ale, který průvlak ve 3. podlaží má nejvyšší využití únosnosti, a začne hádat. Ne proto, že by na to nestačil, ale proto, že do vašeho modelu nemá přístup.
 
 Tahle mezera se zavírá. Model Context Protocol, zkráceně MCP, je otevřený standard, přes který se aplikace AI připojí k softwaru a datům, se kterými inženýři už pracují. Představte si ho jako zásuvku pro AI: jedna standardní zásuvka a každý nástroj, který do ní zapojíte, se stane něčím, s čím AI opravdu umí pracovat.
 
@@ -54,7 +54,7 @@ Jak to vypadá na skutečném projektu? Tyhle požadavky už dnes zvládnou exis
 
 - **Dotazy na model:** „Najdi všechny požárně odolné dveře ve 2. podlaží bez sady kování a vyber je.“ Oficiální server Autodesku pro Revit umí model prohledat a výsledky vybrat.
 - **Výkazy:** „Kolik metrů krychlových betonu je v deskách, podlaží po podlaží?“ Open-source servery to čtou přímo ze souboru IFC, pokud model obsahuje spolehlivé výkazy.
-- **Koordinace:** „Které body z minulé koordinační porady jsou pořád otevřené?“ Koordinační platformy jako Revizto už nabízejí MCP servery a komunitní servery se dostanou k issues a RFI v Autodesk Construction Cloud.
+- **Koordinace:** „Které body z minulé koordinační porady jsou pořád otevřené?“ Koordinační platformy jako Revizto už nabízejí MCP servery a komunitní servery se dostanou k připomínkám a dotazům v Autodesk Construction Cloud.
 - **Výsledky výpočtu:** „Jaký je maximální průhyb stropních nosníků pro kombinace mezního stavu použitelnosti a je v limitu L/360?“ Odpověď přichází z výpočetního programu, ne z paměti AI.
 
 ## Proč se napojit na velké AI platformy, místo stavět vlastní chatbot
