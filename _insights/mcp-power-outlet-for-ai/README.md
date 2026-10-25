@@ -24,8 +24,8 @@ Check anytime: `python3 tools/insights/check-package.py mcp-power-outlet-for-ai`
 - [x] 5 Episode integrated and previewed (2026-10-25): player, chapter chips, transcript, feed item, JSON-LD audio; publish date in podcast.json set to the release date at release
 - [ ] 6 Social posts approved
 - [ ] 6 Instagram teaser approved and rendered
-- [ ] 7 QA done (`check-package.py`, previews EN/CS/DE)
-- [ ] 8 Released ("nasaď na produkci"), live checks
+- [x] 7 QA done (`check-package.py`, `--check`, JSON-LD, previews EN/CS/DE) · 2026-10-25
+- [x] 8 Released 2026-10-25 on the user's instruction (main 83b3d8e), live checks passed
 - [ ] 9 Archived on Drive, `package.json` → `drive` filled
 
 ## Decisions
@@ -64,5 +64,7 @@ Check anytime: `python3 tools/insights/check-package.py mcp-power-outlet-for-ai`
 - Title is 73 characters; the rule is ≤ 60 for the H1 and `<title>`. Two `<title>` variants go to `REVIEW_NOTES.md`.
 
 ## Published
+
+- 2026-10-25 · website: https://martinmotlik.com/insights/mcp-power-outlet-for-ai/ · https://martinmotlik.com/cs/insights/mcp-zasuvka-pro-ai-ve-stavebnictvi/ · https://martinmotlik.com/de/insights/mcp-steckdose-fuer-ki-im-bauwesen/ · podcast EP 02 in https://martinmotlik.com/podcast/feed.xml (pubDate 2026-10-25 09:00 +01:00). Release date in the article set to Oct 25, 2026.
 
 (Date · where: LinkedIn, Facebook, X, Threads, Instagram, WhatsApp.)
