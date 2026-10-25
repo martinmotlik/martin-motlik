@@ -239,10 +239,14 @@ Based on the article: https://martinmotlik.com/insights/mcp-power-outlet-for-ai/
 
 **Martin** [13:12]: MCP lets AI reach the engineering tools we already use. We still need to verify the result.
 
-**Sarah** [13:20]: And the first question to take back to the office?
+**Sarah** [13:20]: And personally? Would you share your own models with these AI companies?
 
-**Martin** [13:22]: Pick one question you ask about a model every week. Check whether your existing software can expose the answer, and how your team would verify it.
+**Martin** [13:25]: I would. Sharing building data with AI models is how they get better at our work, and I trust the large U.S. providers with it. Your contracts still set the rules for each project. In a few years, asking an AI about a model will be as ordinary as searching Google.
 
-**Sarah** [13:31]: In the article, you can see the tool result and the same three doors highlighted in the model. It's on martinmotlik.com, under Insights.
+**Sarah** [13:42]: And the first question to take back to the office?
 
-**Martin** [13:40]: Thanks for listening. See you in the next one.
+**Martin** [13:44]: Pick one question you ask about a model every week. Check whether your existing software can expose the answer, and how your team would verify it.
+
+**Sarah** [13:53]: In the article, you can see the tool result and the same three doors highlighted in the model. It's on martinmotlik.com, under Insights.
+
+**Martin** [14:01]: Thanks for listening. See you in the next one.

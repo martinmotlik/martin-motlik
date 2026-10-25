@@ -381,25 +381,33 @@ WEBVTT
 <v Martin>That's your Friday model check.
 
 96
-00:13:09.867 --> 00:13:12.587
+00:13:09.867 --> 00:13:12.666
 <v Sarah>If you had to sum it up in one sentence?
 
 97
-00:13:12.587 --> 00:13:20.267
+00:13:12.666 --> 00:13:20.587
 <v Martin>MCP lets AI reach the engineering tools we already use. We still need to verify the result.
 
 98
-00:13:20.267 --> 00:13:22.907
-<v Sarah>And the first question to take back to the office?
+00:13:20.587 --> 00:13:25.067
+<v Sarah>And personally? Would you share your own models with these AI companies?
 
 99
-00:13:22.907 --> 00:13:31.947
-<v Martin>Pick one question you ask about a model every week. Check whether your existing software can expose the answer, and how your team would verify it.
+00:13:25.067 --> 00:13:42.027
+<v Martin>I would. Sharing building data with AI models is how they get better at our work, and I trust the large U.S. providers with it. Your contracts still set the rules for each project. In a few years, asking an AI about a model will be as ordinary as searching Google.
 
 100
-00:13:31.947 --> 00:13:40.267
-<v Sarah>In the article, you can see the tool result and the same three doors highlighted in the model. It's on martinmotlik.com, under Insights.
+00:13:42.027 --> 00:13:44.667
+<v Sarah>And the first question to take back to the office?
 
 101
-00:13:40.267 --> 00:13:43.307
+00:13:44.667 --> 00:13:53.307
+<v Martin>Pick one question you ask about a model every week. Check whether your existing software can expose the answer, and how your team would verify it.
+
+102
+00:13:53.307 --> 00:14:01.467
+<v Sarah>In the article, you can see the tool result and the same three doors highlighted in the model. It's on martinmotlik.com, under Insights.
+
+103
+00:14:01.467 --> 00:14:04.587
 <v Martin>Thanks for listening. See you in the next one.

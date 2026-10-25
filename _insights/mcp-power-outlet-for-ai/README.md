@@ -20,7 +20,7 @@ Check anytime: `python3 tools/insights/check-package.py mcp-power-outlet-for-ai`
 - [ ] 2 Page built and approved (desktop + phone) · 2026-10-24 built from `article.md` on the GEO template with all figures (`review/`)
 - [x] 3 CS + DE translations, `--check` passes (2026-10-24; text in `article.{cs,de}.md` + `i18n-{cs,de}.extras.json` → `i18n-from-md.py`)
 - [x] 4 Podcast script approved (production session "AI podcast z scénáře článku")
-- [x] 4 Audio delivered (MP3 + transcript .md + .vtt): 13:43, 823 s, 19,761,405 B, −16.4 LUFS (2026-10-25)
+- [x] 4 Audio delivered (MP3 + transcript .md + .vtt): 14:04.6, 845 s, 20,271,689 B, −16.4 LUFS (re-export 2026-10-25)
 - [x] 5 Episode integrated and previewed (2026-10-25): player, chapter chips, transcript, feed item, JSON-LD audio; publish date in podcast.json set to the release date at release
 - [ ] 6 Social posts approved
 - [ ] 6 Instagram teaser approved and rendered
@@ -50,6 +50,8 @@ Check anytime: `python3 tools/insights/check-package.py mcp-power-outlet-for-ai`
 - 2026-10-25 · Closing view added (user, version D) as the last paragraph of "A bridge, not a replacement", before "Prefer to listen?": "My own view: sharing building data with AI models is how they get better at our work, and I trust the large U.S. providers with it. Your contracts still set the rules for each project. In a few years, asking an AI about a model will be as ordinary as searching Google." Added to `article.md` and translated (CS/DE) here; the user adds it to the Claude doc. Not in the podcast.
 
 - 2026-10-25 · Czech version without the abbreviation AEC (user): "stavebnictví", "stavební software"; title „Zásuvka pro AI: co znamená MCP pro stavebnictví“; slug changed before publishing to `/cs/insights/mcp-zasuvka-pro-ai-ve-stavebnictvi/`; the Czech category on the Insights pages is „AI ve stavebnictví“ (menu item and podcast description unchanged).
+
+- 2026-10-25 · Podcast EP 02 re-exported with the closing view in the Close chapter (Sarah 13:20, Martin 13:25, the same words as the article): 14:04.6, 845 s, 20,271,689 B, 103 lines; chapter starts unchanged.
 
 ## Open
 
