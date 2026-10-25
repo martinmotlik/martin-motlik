@@ -1,6 +1,6 @@
 # Zásuvka pro AI: co znamená MCP pro stavebnictví
 
-22. října 2026 · Martin Motlík
+25. října 2026 · Martin Motlík
 
 ## AI, která neotevře váš model
 

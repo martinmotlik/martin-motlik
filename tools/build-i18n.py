@@ -532,8 +532,8 @@ SITEMAP = {  # path: (lastmod, changefreq, priority); None = page is noindex, le
     '/references/nascc-2026/': ('2026-10-07', 'monthly', '0.8'),
     '/references/mass-timber-2026/': ('2026-10-07', 'monthly', '0.8'),
     '/references/rfem6-brochure/': ('2026-10-07', 'monthly', '0.8'),
-    '/insights/': ('2026-10-08', 'weekly', '0.9'),
-    '/insights/podcast/': ('2026-10-10', 'weekly', '0.8'),
+    '/insights/': ('2026-10-25', 'weekly', '0.9'),
+    '/insights/podcast/': ('2026-10-25', 'weekly', '0.8'),
     '/privacy/': None,                      # noindex: not in the sitemap
 }
 SITEMAP.update({a['urls']['en']: (a['site']['lastmod'], 'monthly', '0.8') for a in ARTICLES})

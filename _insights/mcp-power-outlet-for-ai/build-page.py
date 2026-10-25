@@ -26,7 +26,7 @@ CLOSING = 'If you’re connecting AEC software to AI assistants or planning an M
 SHORT = 'A power outlet for AI'
 CATEGORY = 'AI in AEC'
 TAGS = ['Model Context Protocol', 'AI assistants', 'BIM', 'IFC']
-DATE = '2026-10-22'          # the date of the article text; set to the release date when published
+DATE = '2026-10-25'          # the date of the article text; set to the release date when published
 esc = lambda s: html.escape(s, quote=True)
 
 
@@ -174,7 +174,7 @@ def inline(t):
 
 text, sources_md = MD.split('\n## Sources\n')
 blocks = [b.strip() for b in text.split('\n\n') if b.strip()]
-assert blocks[0].startswith('# ') and blocks[1].startswith('Oct 22, 2026')
+assert blocks[0].startswith('# ') and blocks[1].startswith('Oct 25, 2026')
 blocks = blocks[2:]
 
 SECTIONS, body = [], []
@@ -446,7 +446,7 @@ main = f'''<main class="ins">
         <h1 data-k="hero.h13">{esc(H1)}</h1>
         <p data-k="hero.p4" class="dek">{esc(DEK)}</p>
 
-{byline}          <span data-k="hero.span5" id="vo-meta"><time datetime="{DATE}">Oct 22, 2026</time> &middot; <span data-i18n="read_{READ}">{READ} min read</span></span>
+{byline}          <span data-k="hero.span5" id="vo-meta"><time datetime="{DATE}">Oct 25, 2026</time> &middot; <span data-i18n="read_{READ}">{READ} min read</span></span>
         </div>
       </div>
 

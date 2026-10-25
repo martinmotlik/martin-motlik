@@ -1,6 +1,6 @@
 # A Power Outlet for AI: What MCP Is and Why AEC Professionals Will Need It
 
-Oct 22, 2026 · @Martin
+Oct 25, 2026 · @Martin
 
 ## The AI that can't open your model
 

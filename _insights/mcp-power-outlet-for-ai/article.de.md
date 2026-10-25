@@ -1,6 +1,6 @@
 # Eine Steckdose für KI: Was MCP für das Bauwesen bedeutet
 
-22. Oktober 2026 · Martin Motlík
+25. Oktober 2026 · Martin Motlík
 
 ## Die KI, die Ihr Modell nicht öffnen kann
 
