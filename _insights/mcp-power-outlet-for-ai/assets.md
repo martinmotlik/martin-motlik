@@ -7,12 +7,12 @@ Generováno skriptem `scripts/render.mjs` ze stejného seznamu jako obrázky (`s
 ## mcp-article-01-hero
 
 - **Place in the article:** Article header and link preview
-- **Files:** `final/mcp-article-01-hero.png`, `final/mcp-article-01-hero.webp`
+- **Files:** `final/mcp-article-video-chat-poster.png` (2560 × 1440, the last frame of the cover video; replaces the earlier hero, 2026-10-25)
 - **Status:** final
 - **Title:** A Power Outlet for AI
-- **Alt text:** ChatGPT's answer comparing revisions R02 and R03 of a residential building, with an "Open in 3D viewer" link, floats over a web-based 3D viewer. A thin teal line runs from the link to three red doors on the building's third residential level; the elements fixed since R02 are teal and the rest of the model is see-through light gray.
+- **Alt text:** ChatGPT's answer comparing revisions R02 and R03 of a residential building, next to a web-based 3D viewer of revision R03: the three doors on Residential Level 3 that still lack a fire rating are red, the building services are colored by system, and the Checks panel shows 13 of 14 requirements passed.
 - **Tags:** MCP, Model Context Protocol, AI, BIM, IFC, IDS, AEC
-- **Description:** An AI chat answers a model question through MCP and links straight to the elements in a 3D viewer.
+- **Description:** ChatGPT answers a model question through MCP, and the 3D viewer shows the three doors that still lack a fire rating.
 - **Copyright:** © 2026 Martin Motlík
 
 ## mcp-article-02-architecture

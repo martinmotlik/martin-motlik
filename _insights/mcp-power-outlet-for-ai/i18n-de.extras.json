@@ -60,7 +60,7 @@
   },
   "meta": {
     "description": "Ihr KI-Assistent kann Ihr Modell nicht öffnen. MCP, ein offener Standard mit OpenAI, Google und Microsoft im Rücken, verbindet ihn mit Ihren AEC-Werkzeugen.",
-    "image_alt": "Die Antwort von ChatGPT verlinkt drei Türen in einem webbasierten 3D-Viewer eines Wohngebäudes",
+    "image_alt": "Die Antwort von ChatGPT neben einem 3D-Viewer, in dem drei Türen ohne Feuerwiderstandsklasse rot sind",
     "section": "KI im AEC",
     "locale": "de_DE",
     "in_language": "de-DE",

@@ -45,6 +45,8 @@ Check anytime: `python3 tools/insights/check-package.py mcp-power-outlet-for-ai`
 
 - 2026-10-25 · Cover of the article page is the screen-recording video (`assets/video/mcp-article-video-chat.{webm,mp4}`, poster `-poster.webp`; from the session "Obrazové přílohy článku", user's instruction). Muted loop, starts by script; with reduced motion the poster stays with controls. Its label says R03 is a demo revision and the waiting time is sped up. The hero image (`mcp-article-01-hero`) stays for Open Graph, the cards on /insights/ and the podcast page.
 
+- 2026-10-25 · Hero image replaced by the last frame of the cover video (poster PNG 2560 × 1440, user's instruction); still named `mcp-article-01-hero`, so Open Graph, the cards on /insights/, article #1's Keep reading and the podcast page use it. Alt texts updated in EN/CS/DE.
+
 ## Open
 
 - Title is 73 characters; the rule is ≤ 60 for the H1 and `<title>`. Two `<title>` variants go to `REVIEW_NOTES.md`.

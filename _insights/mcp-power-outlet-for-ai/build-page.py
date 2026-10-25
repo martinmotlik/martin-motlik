@@ -274,7 +274,7 @@ VIDEO_LABEL = ('Screen recording: in ChatGPT, a question asks which elements tha
                'server, answers and opens a web-based 3D viewer, where the three doors on Residential Level 3 '
                'that still lack a fire rating are red and the building services are colored by system. '
                'R03 is a demo revision; the waiting time is sped up.')
-og_alt = "ChatGPT's answer links to three doors in a web-based 3D viewer of a residential building"
+og_alt = "ChatGPT's answer next to a 3D viewer where three doors without a fire rating are red"
 
 head = head_top + f'''    <title>{esc(TITLE)}</title>
     <meta name="description" content="{esc(DESC)}">

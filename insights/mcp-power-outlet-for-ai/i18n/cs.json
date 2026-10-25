@@ -33,7 +33,7 @@
   "chapter_of": "Kapitola {n} z {total}",
   "mini_aria": "Přehrávač podcastu",
   "menu_close": "Zavřít menu",
-  "more_a2_alt": "Odpověď ChatGPT porovnávající revize R02 a R03 bytového domu s odkazem „Open in 3D viewer“ se vznáší nad webovým 3D prohlížečem. Tenká tyrkysová čára vede od odkazu ke třem červeným dveřím ve třetím obytném podlaží; prvky opravené od R02 jsou tyrkysové a zbytek modelu je průhledně světle šedý.",
+  "more_a2_alt": "Odpověď ChatGPT porovnávající revize R02 a R03 bytového domu vedle webového 3D prohlížeče s revizí R03: troje dveře ve 3. obytném podlaží, kterým stále chybí požární odolnost, jsou červené, technické rozvody jsou barevně podle systému a panel Checks ukazuje 13 ze 14 splněných požadavků.",
   "fig1_alt": "Schéma ve třech úrovních. Nahoře čtyři AI aplikace (hosté) s logy: Claude, ChatGPT, Gemini a Copilot. Uprostřed modrý pruh s popiskem „The outlet“, MCP, s částmi Tools, Resources a Prompts. Dole čtyři druhy softwaru pro AEC (servery): statické výpočty, například RFEM 6, BIM modelování, například Revit, kontrola modelů s kontrolami IFC a IDS a projektové dokumenty. Čára spojuje každou aplikaci i každý nástroj s MCP, nad tím poznámka „One client per app, one server per tool.“",
   "fig2_alt": "Zdrojový kód nástroje get_properties ze souboru packages/mcp-server/src/server.ts: jeho název, popis v běžné angličtině, podle kterého AI rozhoduje, kdy nástroj použít, vstupní schéma s GlobalId prvku, anotace jen pro čtení a výstupní schéma pro strukturovaný výsledek. Řádky s názvem, popisem a výstupním schématem jsou podbarvené.",
   "fig3_alt": "Nastavení ChatGPT, Plugins, karta MCPs: server ifc-review zapnutý v seznamu serverů vedle vlastních serverů aplikace.",
@@ -226,7 +226,7 @@
  },
  "meta": {
   "description": "Váš AI asistent neotevře váš model. MCP, otevřený standard podporovaný firmami OpenAI, Google a Microsoft, ho propojí s nástroji pro AEC, kterým věříte.",
-  "image_alt": "Odpověď ChatGPT odkazuje na troje dveře ve webovém 3D prohlížeči bytového domu",
+  "image_alt": "Odpověď ChatGPT vedle 3D prohlížeče, kde jsou troje dveře bez požární odolnosti červené",
   "section": "AI v AEC",
   "locale": "cs_CZ",
   "in_language": "cs-CZ",

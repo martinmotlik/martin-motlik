@@ -33,7 +33,7 @@
   "chapter_of": "Kapitola {n} z {total}",
   "mini_aria": "Přehrávač podcastu",
   "menu_close": "Zavřít menu",
-  "more_a2_alt": "Odpověď ChatGPT porovnávající revize R02 a R03 bytového domu s odkazem „Open in 3D viewer“ se vznáší nad webovým 3D prohlížečem. Tenká tyrkysová čára vede od odkazu ke třem červeným dveřím ve třetím obytném podlaží; prvky opravené od R02 jsou tyrkysové a zbytek modelu je průhledně světle šedý."
+  "more_a2_alt": "Odpověď ChatGPT porovnávající revize R02 a R03 bytového domu vedle webového 3D prohlížeče s revizí R03: troje dveře ve 3. obytném podlaží, kterým stále chybí požární odolnost, jsou červené, technické rozvody jsou barevně podle systému a panel Checks ukazuje 13 ze 14 splněných požadavků."
  },
  "chrome": {
   "nav_references": "Reference",
