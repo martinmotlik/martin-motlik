@@ -62,6 +62,8 @@ Check anytime: `python3 tools/insights/check-package.py mcp-power-outlet-for-ai`
 
 - 2026-10-25 · Podcast script and scenes from the production session copied into `podcast/` (from `~/Downloads/insights-podcast-ep2-mcp.md` and `-scenes.json`, 2026-10-24), with the two closing-view lines of the final export added to scene 11.
 
+- 2026-10-25 · Factual wording fixes in EN and CS after publishing (user brief): RFEM 6 MCP server introduced in January 2026 and installed separately (not part of the standard installation); MCP clients per host instead of "one client per app, 25 pieces"; Figure 6 caption limited to this test; the three doors lack a fire-rating value in the model (text, Figure 4 caption, cover video label, Figure 4 and OG alt texts); closing view about access to project data, not model training; standalone chatbot sentence. DE, audio, transcript and podcast.json unchanged. The Figure 1 image itself still says "One client per app, one server per tool."
+
 ## Open
 
 - The Claude doc (source of the text) needs the closing paragraph above and the English copy edit items 1–14, so a later export of the doc matches `article.md`.

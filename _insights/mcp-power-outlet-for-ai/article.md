@@ -14,11 +14,11 @@ I come at this from two sides. My work with Dlubal Software puts me in an enviro
 
 MCP doesn't make AI smarter. It gives AI a standard way to reach things outside itself: your models, your analysis engines, your project data.
 
-Picture the temporary power spider box on a jobsite. It doesn't care whether you plug in a saw, a grinder, or a work light, because every tool has the same plug. Before MCP, connecting an AI to an application meant custom wiring for every pair: five AI apps and twenty programs meant up to a hundred one-off integrations. With MCP, each program builds one server and each AI app builds one client. Twenty-five pieces instead of a hundred, though each connection still needs the right setup and permissions.
+Picture the temporary power spider box on a jobsite. It doesn't care whether you plug in a saw, a grinder, or a work light, because every tool has the same plug. Before MCP, connecting an AI to an application meant custom wiring for every pair: five AI apps and twenty programs meant up to a hundred one-off integrations. With MCP, each AI application implements support for a common protocol, and each program exposes the required tools through a server. This removes much of the custom integration work for individual pairs. Each connection still needs the right setup and permissions.
 
 &#91;embedded content: Figure 1 · MCP architecture: hosts, the outlet, servers\]
 
-Each AI application needs one client and each program one server; the standard in the middle does the rest.
+The host AI application can manage multiple MCP clients, typically one for each connected server.
 
 Anthropic released MCP as an open standard in November 2024. In December 2025, it handed the standard over to the [Agentic AI Foundation](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation) under the Linux Foundation, backed by OpenAI, Google, Microsoft, and AWS, among others. Today ChatGPT, Claude, Gemini, Microsoft Copilot, GitHub Copilot, and Cursor all support it.
 
@@ -62,7 +62,7 @@ What does that look like on a real project? These requests are already possible 
 Let the AI companies do language; let AEC software do engineering. Every few months someone in our industry announces a proprietary assistant. Building your own chatbot doesn't mean building your own language model, though. Most custom assistants run on the same commercial models behind their own interface. The real question is where the engineering tools live, and MCP keeps them reusable whichever interface your team ends up using. Here's why starting with the AI platforms your team already uses usually makes sense.
 
 1. **You get the most capable AI models, and they keep improving.** No engineering firm or AEC vendor can match the research budgets of Anthropic, Google, OpenAI, or Microsoft. As the models improve, they tend to get better at choosing tools and explaining results. That isn't automatic for every workflow, so retest what matters when the AI model changes.
-2. **Engineers already work there.** Many firms already pay for Microsoft 365 Copilot, ChatGPT, Claude, or Gemini. A new standalone chatbot is another login nobody opens after week two. If the assistant your firm already has supports the connection you need, an MCP server shows up where people already work.
+2. **Engineers already work there.** Many firms already pay for Microsoft 365 Copilot, ChatGPT, Claude, or Gemini. A new standalone chatbot adds another interface that the team has to learn and fit into its workflow. If the assistant your firm already has supports the connection you need, an MCP server shows up where people already work.
 3. **Build once, plug in anywhere.** The same server can be reused in Claude, ChatGPT, Gemini, Copilot, and AI assistants a firm builds for itself. Each app still needs its own connection setup, and not every product supports every feature. But if your firm switches AI providers, the engineering tools don't have to be rebuilt. Even direct competitors such as OpenAI, Google, and Microsoft back the standard.
 4. **Tools start working together.** One conversation can query the model, run an analysis, fill a spreadsheet, and file the result in your document system. That kind of cross-tool workflow used to require a custom script for every step.
 5. **Your expertise stays yours.** The vendor keeps the validated solver, the design-standard checks, and the data model. The AI platform supplies the conversation layer on top. Domain knowledge stays the competitive advantage, which is exactly where it belongs.
@@ -100,7 +100,7 @@ The server is called `ifc-review` and exposes six tools, all read-only:
 
 Then I ran the test on a real model: a concept model of a residential building in Prague, with a street-level garage, three residential levels, and an attic, checked against an IDS file with 14 information requirements. I asked which requirements failed and which elements were affected. Two requirements failed on 13 elements: two roof windows without a thermal value and 11 doors without a fire rating. The door names said the fire rating would be set in the fire safety design. That explains why the value is missing. It doesn't provide one, and whether the value is required at this stage is a decision for the project team.
 
-For the test, I then prepared a second revision with some of the gaps filled in, and asked the question every team asks after a revision: what got fixed, and what's still missing? The AI called the comparison and validation tools, and the results were matched by element ID. Ten of the 13 elements were fixed. Three doors on Residential Level 3 still had no fire rating. Then the AI handed me a link that opened the model with exactly those three doors highlighted.
+For the test, I then prepared a second revision with some of the gaps filled in, and asked the question every team asks after a revision: what got fixed, and what's still missing? The AI called the comparison and validation tools, and the results were matched by element ID. Ten of the 13 elements were fixed. Three doors on Residential Level 3 still lacked a fire-rating value in the required model property. Then the AI handed me a link that opened the model with exactly those three doors highlighted.
 
 *\[Figure 4: Main figure. The answer in chat on the left, the same three doors highlighted in the model on the right.\]*
 
@@ -127,7 +127,7 @@ Anthropic released the standard in November 2024. Since then, AEC vendors have s
 - **Revit (Autodesk):** a read-only [MCP server](https://www.autodesk.com/blogs/aec/2026/06/17/revit-public-mcp-server/) since June, joined in September by [Trusted-Write and Experimental servers](https://forums.autodesk.com/t5/revit-mep-forum/revit-mcp-server-tech-preview-launch/td-p/14262011). All are technical previews for Revit 2027.
 - **Revu (Bluebeam):** an [MCP connection to Claude](https://support.bluebeam.com/revu/how-to/mcp-claude.html). It requires a Bluebeam Max plan, Revu 21.9 or later, and the Claude desktop app.
 - **SketchUp (Trimble):** a [Claude connector](https://help.sketchup.com/en/sketchup-claude-connector) that creates new SketchUp models from a conversation. It can't edit existing files, and Claude is currently the only supported AI provider.
-- **RFEM 6 (Dlubal Software):** an MCP server in the standard installation since January 2026, working through the Dlubal API. Details are in Dlubal's [knowledge base article](https://www.dlubal.com/en/support-and-learning/support/knowledge-base/002032) and [API documentation](https://apidocs.dlubal.com/installation_mcp.html).
+- **RFEM 6 (Dlubal Software):** Dlubal introduced an MCP server for RFEM 6 in January 2026. It works through the Dlubal API and is installed separately under the current setup procedure. Details are in Dlubal's [knowledge base article](https://www.dlubal.com/en/support-and-learning/support/knowledge-base/002032) and [API documentation](https://apidocs.dlubal.com/installation_mcp.html).
 
 These products change quickly, so check the current conditions before you plan around them, and don't assume any of them connects to every AI app out of the box.
 
@@ -166,7 +166,7 @@ Picture the next step. One outlet finds the elements that changed in the latest 
 
 The AEC software we rely on is excellent at engineering. The AI platforms are excellent at language and reasoning. MCP is the outlet between them, and it's worth learning how it works before your competitors do.
 
-My own view: sharing building data with AI models is how they get better at our work, and I trust the large U.S. providers with it. Your contracts still set the rules for each project. In a few years, asking an AI about a model will be as ordinary as searching Google.
+My own view: access to good building data helps AI answer questions about a specific project more effectively. I trust the large U.S. providers with it. Your contracts still set the rules for each project. In a few years, asking an AI about a model will be as ordinary as searching Google.
 
 Prefer to listen? This article has a companion episode of the Insights podcast, built around the same test.
 

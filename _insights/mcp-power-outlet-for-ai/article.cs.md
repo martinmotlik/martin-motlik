@@ -14,11 +14,11 @@ Na MCP se dívám ze dvou stran. Díky práci pro Dlubal Software jsem v prostř
 
 MCP nedělá AI chytřejší. Dává jí standardní cestu k věcem mimo ni samotnou: k vašim modelům, výpočetním programům a projektovým datům.
 
-Vzpomeňte si na staveništní rozvaděč. Je mu jedno, jestli do něj zapojíte pilu, úhlovou brusku nebo světlo, protože každý nástroj má stejnou zástrčku. Před MCP znamenalo propojení AI s aplikací zvláštní kabeláž pro každou dvojici: pět AI aplikací a dvacet programů dávalo až sto jednorázových integrací. S MCP stačí každému programu jeden server a každé AI aplikaci jeden klient. Dvacet pět dílů místo sta, i když každé spojení pořád potřebuje správné nastavení a oprávnění.
+Vzpomeňte si na staveništní rozvaděč. Je mu jedno, jestli do něj zapojíte pilu, úhlovou brusku nebo světlo, protože každý nástroj má stejnou zástrčku. Před MCP znamenalo propojení AI s aplikací zvláštní kabeláž pro každou dvojici: pět AI aplikací a dvacet programů dávalo až sto jednorázových integrací. S MCP stačí na straně každé AI aplikace implementovat podporu společného protokolu a na straně každého programu zpřístupnit potřebné nástroje přes server. Odpadá tak velká část integrací na míru pro jednotlivé dvojice. Každé propojení ale stále potřebuje správné nastavení a oprávnění.
 
 &#91;embedded content: Figure 1 · MCP architecture: hosts, the outlet, servers\]
 
-Každá AI aplikace potřebuje jednoho klienta a každý program jeden server; zbytek zařídí standard uprostřed.
+Hostitelská AI aplikace může spravovat více MCP klientů, typicky jednoho pro každý připojený server.
 
 Anthropic uvolnil MCP jako otevřený standard v listopadu 2024. V prosinci 2025 ho předal nadaci [Agentic AI Foundation](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation), která spadá pod Linux Foundation a kterou mimo jiné podporují OpenAI, Google, Microsoft a AWS. Dnes s ním pracují ChatGPT, Claude, Gemini, Microsoft Copilot, GitHub Copilot i Cursor.
 
@@ -62,7 +62,7 @@ Jak to vypadá na skutečném projektu? Tyhle požadavky už dnes zvládnou exis
 Ať se AI firmy starají o jazyk a stavební software o inženýrství. Každých pár měsíců někdo v našem oboru ohlásí vlastního asistenta. Vlastní chatbot ale neznamená vlastní jazykový model. Většina asistentů na míru běží na stejných komerčních modelech, jen s vlastním rozhraním. Skutečná otázka je, kde budou inženýrské nástroje běžet, a MCP zajistí, že půjdou znovu použít, ať váš tým nakonec zvolí jakékoli rozhraní. Tady je pět důvodů, proč obvykle dává smysl začít s AI platformami, které už váš tým používá.
 
 1. **Dostanete nejschopnější AI modely a ty se dál zlepšují.** Žádná inženýrská firma ani dodavatel stavebního softwaru nemá výzkumné rozpočty jako Anthropic, Google, OpenAI nebo Microsoft. Jak se modely zlepšují, obvykle lépe vybírají nástroje a vysvětlují výsledky. U každého postupu to ale není zaručené, takže po změně AI modelu znovu otestujte, na čem vám záleží.
-2. **Inženýři už tam pracují.** Mnoho firem už platí Microsoft 365 Copilot, ChatGPT, Claude nebo Gemini. Nový samostatný chatbot je další aplikace s vlastním přihlášením, kterou po druhém týdnu nikdo neotevře. Pokud AI asistent, za kterého už platíte, podporuje potřebné spojení, objeví se MCP server tam, kde lidé už pracují.
+2. **Inženýři už tam pracují.** Mnoho firem už platí Microsoft 365 Copilot, ChatGPT, Claude nebo Gemini. Nový samostatný chatbot přidává další rozhraní, které se tým musí naučit a začlenit do své práce. Pokud AI asistent, za kterého už platíte, podporuje potřebné spojení, objeví se MCP server tam, kde lidé už pracují.
 3. **Jednou postavit, zapojit kamkoli.** Stejný server lze znovu použít v Claude, ChatGPT, Gemini, Copilotu i v AI asistentech, které si firma postaví sama. Každá aplikace pořád potřebuje vlastní nastavení spojení a ne každý produkt podporuje každou funkci. Když ale vaše firma změní dodavatele AI, inženýrské nástroje se nemusejí stavět znovu. Standard podporují i přímí konkurenti jako OpenAI, Google a Microsoft.
 4. **Nástroje začnou spolupracovat.** V jedné konverzaci se dá dotázat modelu, spustit výpočet, vyplnit tabulku a uložit výsledek do systému pro správu dokumentů. Takový postup napříč nástroji dřív vyžadoval skript na míru pro každý krok.
 5. **Vaše know-how zůstává vaše.** Dodavatel si ponechává ověřený řešič, posudky podle norem a datový model. AI platforma k tomu dodává konverzační vrstvu. Odborné znalosti zůstávají konkurenční výhodou, a tak to má být.
@@ -100,7 +100,7 @@ Server se jmenuje `ifc-review` a nabízí šest nástrojů, všechny jen pro čt
 
 Pak jsem test spustil na skutečném modelu: koncepčním modelu bytového domu v Praze s garáží v úrovni ulice, třemi obytnými podlažími a podkrovím, kontrolovaném podle souboru IDS se 14 informačními požadavky. Zeptal jsem se, které požadavky neprošly a kterých prvků se to týká. Neprošly dva požadavky a týkaly se 13 prvků: dvě střešní okna bez součinitele prostupu tepla a jedenáct dveří bez požární odolnosti. Podle názvů dveří měla být požární odolnost stanovena v požárně bezpečnostním řešení. To vysvětluje, proč hodnota chybí. Hodnotu to ale nedoplní a o tom, zda je v této fázi povinná, rozhoduje projektový tým.
 
-Pro test jsem pak připravil druhou revizi, ve které byla část chybějících údajů doplněná, a položil otázku, kterou si po revizi klade každý tým: co se opravilo a co pořád chybí? AI zavolala nástroje pro porovnání a validaci a výsledky se spárovaly podle ID prvků. Opraveno bylo deset ze třinácti prvků. Troje dveře ve 3. obytném podlaží pořád neměly požární odolnost. Pak mi AI dala odkaz, který otevřel model se zvýrazněnými právě těmi trojími dveřmi.
+Pro test jsem pak připravil druhou revizi, ve které byla část chybějících údajů doplněná, a položil otázku, kterou si po revizi klade každý tým: co se opravilo a co pořád chybí? AI zavolala nástroje pro porovnání a validaci a výsledky se spárovaly podle ID prvků. Opraveno bylo deset ze třinácti prvků. U trojích dveří ve 3. obytném podlaží stále chyběla hodnota požární odolnosti v požadované vlastnosti modelu. Pak mi AI dala odkaz, který otevřel model se zvýrazněnými právě těmi trojími dveřmi.
 
 *\[Figure 4: Main figure. The answer in chat on the left, the same three doors highlighted in the model on the right.\]*
 
@@ -127,7 +127,7 @@ Anthropic standard uvolnil v listopadu 2024. Od té doby začali dodavatelé sta
 - **Revit (Autodesk):** [MCP server](https://www.autodesk.com/blogs/aec/2026/06/17/revit-public-mcp-server/) jen pro čtení od června, ke kterému v září přibyly [servery Trusted-Write a Experimental](https://forums.autodesk.com/t5/revit-mep-forum/revit-mcp-server-tech-preview-launch/td-p/14262011). Všechny jsou zkušební verze pro Revit 2027.
 - **Revu (Bluebeam):** [připojuje se ke Claude přes MCP](https://support.bluebeam.com/revu/how-to/mcp-claude.html). Vyžaduje tarif Bluebeam Max, Revu 21.9 nebo novější a desktopovou aplikaci Claude.
 - **SketchUp (Trimble):** [konektor pro Claude](https://help.sketchup.com/en/sketchup-claude-connector), který z konverzace vytváří nové modely SketchUp. Existující soubory upravovat neumí a jediným podporovaným poskytovatelem AI je zatím Claude.
-- **RFEM 6 (Dlubal Software):** MCP server je od ledna 2026 součástí standardní instalace a pracuje přes Dlubal API. Podrobnosti najdete v [článku znalostní báze](https://www.dlubal.com/en/support-and-learning/support/knowledge-base/002032) a v [dokumentaci API](https://apidocs.dlubal.com/installation_mcp.html) Dlubalu.
+- **RFEM 6 (Dlubal Software):** Dlubal zavedl MCP server pro RFEM 6 v lednu 2026. Server pracuje přes Dlubal API a podle aktuálního instalačního postupu se instaluje samostatně. Podrobnosti najdete v [článku znalostní báze](https://www.dlubal.com/en/support-and-learning/support/knowledge-base/002032) a v [dokumentaci API](https://apidocs.dlubal.com/installation_mcp.html) Dlubalu.
 
 Tyto produkty se rychle mění, takže si před plánováním ověřte aktuální podmínky a nepředpokládejte, že se kterýkoli z nich rovnou připojí ke každé AI aplikaci.
 
@@ -166,7 +166,7 @@ Představte si další krok. Jedna zásuvka najde prvky, které se v poslední r
 
 Stavební software, na který spoléháme, vyniká v inženýrských výpočtech. AI platformy vynikají v práci s jazykem a v uvažování. MCP je zásuvka mezi nimi a vyplatí se pochopit, jak funguje, dřív než vaše konkurence.
 
-Můj pohled: sdílení stavebních dat s modely AI je cesta, jak se modely v naší práci zlepší, a velkým americkým poskytovatelům je svěřuji bez obav. Jaká pravidla pro projekt platí, ale dál určují vaše smlouvy. Za pár let bude dotaz na model přes AI stejně běžný jako hledání na Googlu.
+Můj pohled: přístup ke kvalitním stavebním datům umožňuje AI lépe odpovídat na otázky o konkrétním projektu. Velkým americkým poskytovatelům je svěřuji bez obav. Jaká pravidla pro projekt platí, ale dál určují vaše smlouvy. Za pár let bude dotaz na model přes AI stejně běžný jako hledání na Googlu.
 
 Raději posloucháte? K tomuto článku patří díl podcastu Insights (v angličtině), který vychází ze stejného testu.
 
