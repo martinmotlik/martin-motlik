@@ -67,12 +67,8 @@
     <link rel="stylesheet" href="/assets/fonts/inter.css">
     <style>html{font-optical-sizing:none}</style>
     <link rel="stylesheet" href="/assets/podcast/podcast.css">
-    <!-- Preload only AVIF: `type` filters out formats the browser cannot decode, so a
-         second JPEG link would make modern browsers fetch both copies of the LCP image. -->
-    <link rel="preload" as="image" type="image/avif"
-          href="/assets/img/mcp-article-01-hero-1280.avif"
-          imagesrcset="/assets/img/mcp-article-01-hero-900.avif 900w, /assets/img/mcp-article-01-hero-1280.avif 1280w, /assets/img/mcp-article-01-hero-1920.avif 1920w, /assets/img/mcp-article-01-hero-2560.avif 2560w"
-          imagesizes="(min-width: 1128px) 1032px, calc(100vw - 48px)">
+    <!-- The cover is a video; its poster is the first thing painted (LCP), so it loads early. -->
+    <link rel="preload" as="image" type="image/webp" href="/assets/video/mcp-article-video-chat-poster.webp">
 
     <script type="application/ld+json">
     {
@@ -816,6 +812,9 @@ article p.all-link a{text-decoration:none}
   .chev,.sh-btn,.sh-item,.cb-copy,.listen{transition:none}
 }
 
+/* Cover video: fills the 16:9 cover frame like the cover image of article #1. */
+.cover video{display:block;width:100%;height:100%;object-fit:cover}
+
 /* ── 12 · FIGURES ────────────────────────────────────────────────────────────
    An image in the text column with its caption below. The image links to its
    3840 px file; with JS it opens in a native <dialog> (Esc, click outside or
@@ -966,26 +965,11 @@ mark.tk{padding:1px 6px;border-radius:6px;background:#FEF3C7;color:#92400E;font-
       </div>
 
       <div class="cover">
-        <picture>
-          <source type="image/avif" sizes="(min-width: 1128px) 1032px, calc(100vw - 48px)"
-                  srcset="/assets/img/mcp-article-01-hero-400.avif 400w,
-                          /assets/img/mcp-article-01-hero-600.avif 600w,
-                          /assets/img/mcp-article-01-hero-900.avif 900w,
-                          /assets/img/mcp-article-01-hero-1280.avif 1280w,
-                          /assets/img/mcp-article-01-hero-1920.avif 1920w,
-                          /assets/img/mcp-article-01-hero-2560.avif 2560w">
-          <img src="/assets/img/mcp-article-01-hero-1280.jpg"
-               sizes="(min-width: 1128px) 1032px, calc(100vw - 48px)"
-               srcset="/assets/img/mcp-article-01-hero-400.jpg 400w,
-                       /assets/img/mcp-article-01-hero-600.jpg 600w,
-                       /assets/img/mcp-article-01-hero-900.jpg 900w,
-                       /assets/img/mcp-article-01-hero-1280.jpg 1280w,
-                       /assets/img/mcp-article-01-hero-1920.jpg 1920w,
-                       /assets/img/mcp-article-01-hero-2560.jpg 2560w"
-               data-i18n-attr="alt:cover_alt" alt="ChatGPT&#x27;s answer comparing revisions R02 and R03 of a residential building, with an &quot;Open in 3D viewer&quot; link, floats over a web-based 3D viewer. A thin teal line runs from the link to three red doors on the building&#x27;s third residential level; the elements fixed since R02 are teal and the rest of the model is see-through light gray."
-               width="1280" height="720"
-               fetchpriority="high" decoding="async">
-        </picture>
+        <video id="cover-video" muted loop playsinline preload="metadata" width="1920" height="1080"
+               poster="/assets/video/mcp-article-video-chat-poster.webp" aria-label="Screen recording: in ChatGPT, a question asks which elements that failed the IDS check were fixed between revisions R02 and R03 of a residential building. ChatGPT calls the ifc-review MCP server, answers and opens a web-based 3D viewer, where the three doors on Residential Level 3 that still lack a fire rating are red and the building services are colored by system. R03 is a demo revision; the waiting time is sped up." data-i18n-attr="aria-label:cover_alt">
+          <source src="/assets/video/mcp-article-video-chat.webm" type="video/webm">
+          <source src="/assets/video/mcp-article-video-chat.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
   </section>
@@ -2088,6 +2072,16 @@ function copyText(text){
   all();
 })();
 
+// — Cover video: plays muted in a loop, unless the reader prefers reduced motion;
+//   then the poster stays and the controls appear, so it can be started by hand.
+(function(){
+  var v = document.getElementById('cover-video');
+  if (!v) return;
+  var still = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (still) { v.controls = true; return; }
+  var p = v.play();
+  if (p && p.catch) p.catch(function(){ v.controls = true; });
+})();
 // — Figures: the image link opens the full-size file in the <dialog>. Plain
 //   clicks only; modified clicks (new tab) and no-JS keep the link.
 (function(){

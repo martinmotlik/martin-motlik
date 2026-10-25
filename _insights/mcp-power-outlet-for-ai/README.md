@@ -43,6 +43,8 @@ Check anytime: `python3 tools/insights/check-package.py mcp-power-outlet-for-ai`
 
 - 2026-10-25 · Podcast EP 02 (user): the Dlubal line at 10:53 stays as recorded; metadata fixed by the production session (title = article title, show "Insights with Martin Motlík", first chapter "The doors that don't exist" instead of "Cold open"). AI disclosure as in EP 01: text only (feed description, under the transcript, JSON-LD), nothing in the audio or at the player.
 
+- 2026-10-25 · Cover of the article page is the screen-recording video (`assets/video/mcp-article-video-chat.{webm,mp4}`, poster `-poster.webp`; from the session "Obrazové přílohy článku", user's instruction). Muted loop, starts by script; with reduced motion the poster stays with controls. Its label says R03 is a demo revision and the waiting time is sped up. The hero image (`mcp-article-01-hero`) stays for Open Graph, the cards on /insights/ and the podcast page.
+
 ## Open
 
 - Title is 73 characters; the rule is ≤ 60 for the H1 and `<title>`. Two `<title>` variants go to `REVIEW_NOTES.md`.

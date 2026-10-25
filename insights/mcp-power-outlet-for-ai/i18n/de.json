@@ -24,7 +24,7 @@
   "toc_aria": "Auf dieser Seite",
   "crumbs_aria": "Brotkrümelnavigation",
   "menu_aria": "Menü öffnen",
-  "cover_alt": "Die Antwort von ChatGPT, die die Revisionen R02 und R03 eines Wohngebäudes vergleicht, mit dem Link „Open in 3D viewer“ schwebt über einem webbasierten 3D-Viewer. Eine dünne türkisfarbene Linie führt vom Link zu drei roten Türen im dritten Wohngeschoss; die seit R02 behobenen Elemente sind türkis, der Rest des Modells ist durchscheinend hellgrau.",
+  "cover_alt": "Bildschirmaufnahme: In ChatGPT wird gefragt, welche Elemente, die die IDS-Prüfung nicht bestanden haben, zwischen den Revisionen R02 und R03 eines Wohngebäudes behoben wurden. ChatGPT ruft den MCP-Server ifc-review auf, antwortet und öffnet einen webbasierten 3D-Viewer, in dem die drei Türen im 3. Wohngeschoss, denen noch die Feuerwiderstandsklasse fehlt, rot sind und die Haustechnik nach System eingefärbt ist. R03 ist eine Demo-Revision; die Wartezeit ist beschleunigt.",
   "code_copied": "Code kopiert",
   "play_episode": "Folge abspielen",
   "resume": "Fortsetzen",
