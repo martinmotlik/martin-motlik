@@ -1,4 +1,4 @@
-# Eine Steckdose für KI: Was MCP für AEC bedeutet
+# Eine Steckdose für KI: Was MCP für das Bauwesen bedeutet
 
 22. Oktober 2026 · Martin Motlík
 
@@ -8,7 +8,7 @@ Ihr KI-Assistent entwirft die Antwort auf eine RFI, fasst einen Abschnitt der Le
 
 Diese Lücke schließt sich. Model Context Protocol, kurz MCP, ist ein offener Standard, über den sich KI-Anwendungen mit der Software und den Daten verbinden, mit denen Ingenieure ohnehin arbeiten. Stellen Sie es sich als Steckdose für KI vor: eine genormte Steckdose, und jedes Werkzeug, das Sie einstecken, wird zu etwas, mit dem die KI tatsächlich arbeiten kann.
 
-Ich betrachte das Thema von zwei Seiten. Durch meine Arbeit für Dlubal Software bin ich in einem Umfeld, in dem MCP bereits Teil des Produkts ist, und ich entwickle einen eigenen Prototyp für die Modellprüfung auf Basis von IFC. Dieser Beitrag erklärt, was MCP ist, wofür es im AEC-Bereich taugt und warum es meist sinnvoller ist, unsere Werkzeuge mit den KI-Plattformen zu verbinden, die Ingenieure bereits nutzen, als noch einen weiteren Chatbot zu bauen.
+Ich betrachte das Thema von zwei Seiten. Durch meine Arbeit für Dlubal Software bin ich in einem Umfeld, in dem MCP bereits Teil des Produkts ist, und ich entwickle einen eigenen Prototyp für die Modellprüfung auf Basis von IFC. Dieser Beitrag erklärt, was MCP ist, wofür es im Bauwesen taugt und warum es meist sinnvoller ist, unsere Werkzeuge mit den KI-Plattformen zu verbinden, die Ingenieure bereits nutzen, als noch einen weiteren Chatbot zu bauen.
 
 ## Was MCP ist: eine Steckdose, kein Gehirn
 
@@ -38,7 +38,7 @@ Entscheidend ist, wie die KI die Werkzeuge findet. Jedes Werkzeug bringt eine Be
 
 Ein Server kann lokal laufen, direkt neben Ihrer Desktop-Anwendung. Die Modelldatei bleibt auf Ihrem Rechner; an die KI gehen nur die Antworten, die die Werkzeuge zurückgeben. Oder er läuft entfernt über HTTPS mit einer ordentlichen Anmeldung, was zu Cloud-Plattformen passt. Wenn IFC die Art ist, wie ein Modell ein Gebäude beschreibt, dann ist MCP die Art, wie eine KI diesem Modell Fragen stellt.
 
-## Warum AEC es braucht: raten oder rechnen
+## Warum das Bauwesen es braucht: raten oder rechnen
 
 MCP macht aus der KI statt eines selbstbewussten Ratenden einen Koordinator, der jede Aufgabe an ein Werkzeug übergibt, dem Ingenieure bereits vertrauen. Dieser Unterschied zählt in unserer Branche mehr als fast überall sonst.
 
@@ -46,7 +46,7 @@ Ein universelles Sprachmodell sagt plausiblen Text voraus. Bitten Sie es, einen 
 
 MCP ist nicht der einzige Weg, Projektinformationen in eine KI zu bringen, deshalb hilft es zu sehen, wo es hingehört. Eine Ergebnistabelle in den Chat zu kopieren funktioniert, ist aber eine manuelle Momentaufnahme, die veraltet, sobald sich das Modell ändert. Retrieval-augmented Generation (RAG) lässt die KI Dokumente durchsuchen, etwa eine Norm, einen BIM-Abwicklungsplan oder ein Produkthandbuch, und zitieren, was sie findet.
 
-Das sind keine konkurrierenden Technologien. MCP ist die Verbindung; eine Dokumentensuche ist eine Art von Werkzeug, die Sie anschließen können. Sie kann genauso hinter einem MCP-Server sitzen wie ein Werkzeug, das ein laufendes Modell abfragt oder eine Prüfung startet. Der nützliche Unterschied liegt darin, was das jeweilige Werkzeug kann. Eine Dokumentensuche beantwortet „Was steht in der Norm?“. Ein Modellwerkzeug beantwortet „Was sagt mein Modell, und ist es in Ordnung?“. Die meisten ernsthaften Abläufe im AEC-Bereich werden beides nutzen.
+Das sind keine konkurrierenden Technologien. MCP ist die Verbindung; eine Dokumentensuche ist eine Art von Werkzeug, die Sie anschließen können. Sie kann genauso hinter einem MCP-Server sitzen wie ein Werkzeug, das ein laufendes Modell abfragt oder eine Prüfung startet. Der nützliche Unterschied liegt darin, was das jeweilige Werkzeug kann. Eine Dokumentensuche beantwortet „Was steht in der Norm?“. Ein Modellwerkzeug beantwortet „Was sagt mein Modell, und ist es in Ordnung?“. Die meisten ernsthaften Abläufe im Bauwesen werden beides nutzen.
 
 Individuelle Integrationen, etwa ein im Programm eingebauter Assistent, erreichen ebenfalls Live-Daten, aber jede verbindet genau eine KI mit genau einer Anwendung. MCP macht dieselben Werkzeuge in jeder KI-App wiederverwendbar, die es unterstützt, im Rahmen der Einrichtung der jeweiligen App. Die KI kann genau das, was die Werkzeuge erlauben, nicht mehr.
 
@@ -59,15 +59,15 @@ Wie sieht das in einem echten Projekt aus? Diese Anfragen sind mit heute verfüg
 
 ## Warum an die großen KI-Plattformen andocken, statt einen eigenen Chatbot zu bauen
 
-Die KI-Firmen sollen sich um Sprache kümmern, die AEC-Software um das Ingenieurwesen. Alle paar Monate kündigt jemand in unserer Branche einen eigenen Assistenten an. Ein eigener Chatbot bedeutet aber kein eigenes Sprachmodell. Die meisten maßgeschneiderten Assistenten laufen auf denselben kommerziellen Modellen, nur hinter einer eigenen Oberfläche. Die eigentliche Frage ist, wo die Ingenieurwerkzeuge leben, und MCP hält sie wiederverwendbar, ganz gleich, welche Oberfläche Ihr Team am Ende nutzt. Deshalb ist es meist sinnvoll, mit den KI-Plattformen zu beginnen, die Ihr Team bereits nutzt.
+Die KI-Firmen sollen sich um Sprache kümmern, die Bausoftware um das Ingenieurwesen. Alle paar Monate kündigt jemand in unserer Branche einen eigenen Assistenten an. Ein eigener Chatbot bedeutet aber kein eigenes Sprachmodell. Die meisten maßgeschneiderten Assistenten laufen auf denselben kommerziellen Modellen, nur hinter einer eigenen Oberfläche. Die eigentliche Frage ist, wo die Ingenieurwerkzeuge leben, und MCP hält sie wiederverwendbar, ganz gleich, welche Oberfläche Ihr Team am Ende nutzt. Deshalb ist es meist sinnvoll, mit den KI-Plattformen zu beginnen, die Ihr Team bereits nutzt.
 
-1. **Sie bekommen die leistungsfähigsten KI-Modelle, und die werden immer besser.** Kein Ingenieurbüro und kein Anbieter von AEC-Software kann mit den Forschungsbudgets von Anthropic, Google, OpenAI oder Microsoft mithalten. Mit besseren Modellen werden in der Regel auch die Werkzeugauswahl und die Erklärung der Ergebnisse besser. Das geschieht aber nicht bei jedem Ablauf von selbst, testen Sie also erneut, was Ihnen wichtig ist, wenn sich das Modell ändert.
+1. **Sie bekommen die leistungsfähigsten KI-Modelle, und die werden immer besser.** Kein Ingenieurbüro und kein Anbieter von Bausoftware kann mit den Forschungsbudgets von Anthropic, Google, OpenAI oder Microsoft mithalten. Mit besseren Modellen werden in der Regel auch die Werkzeugauswahl und die Erklärung der Ergebnisse besser. Das geschieht aber nicht bei jedem Ablauf von selbst, testen Sie also erneut, was Ihnen wichtig ist, wenn sich das Modell ändert.
 2. **Ingenieure arbeiten schon dort.** Viele Büros zahlen bereits für Microsoft 365 Copilot, ChatGPT, Claude oder Gemini. Ein neuer eigenständiger Chatbot ist ein weiteres Login, das nach der zweiten Woche niemand mehr öffnet. Wenn der Assistent die nötige Verbindung unterstützt, erscheint ein MCP-Server dort, wo die Leute ohnehin arbeiten.
 3. **Einmal bauen, überall einstecken.** Derselbe Server lässt sich in Claude, ChatGPT, Gemini, Copilot und in KI-Assistenten wiederverwenden, die ein Büro selbst baut. Jede App braucht weiterhin ihre eigene Einrichtung der Verbindung, und nicht jedes Produkt unterstützt jede Funktion. Wechselt Ihr Büro aber den KI-Anbieter, müssen die Ingenieurwerkzeuge nicht neu gebaut werden. Sogar direkte Konkurrenten wie OpenAI, Google und Microsoft unterstützen den Standard.
 4. **Werkzeuge beginnen zusammenzuarbeiten.** In einem Gespräch lässt sich das Modell abfragen, eine Berechnung starten, eine Tabelle füllen und das Ergebnis im Dokumentenmanagement ablegen. Ein solcher werkzeugübergreifender Ablauf brauchte früher für jeden Schritt ein eigenes Skript.
 5. **Ihr Fachwissen bleibt Ihres.** Der Anbieter behält den validierten Solver, die Nachweise nach Normen und das Datenmodell. Die KI-Plattform liefert die Gesprächsebene obendrauf. Fachwissen bleibt der Wettbewerbsvorteil, und genau dort gehört es hin.
 
-Es gibt einen sechsten, leiseren Vorteil. Die großen Plattformen bringen eine Unternehmensinfrastruktur mit, die ein kleines AEC-Werkzeug nie selbst bauen würde: Freigabe von Konnektoren durch Administratoren, Rückfragen vor dem Ausführen eines Werkzeugs und Anmeldung über Standardprotokolle. In Microsoft 365 Copilot und Gemini Enterprise kann ein IT-Administrator zum Beispiel einen eigenen MCP-Server einmal für die gesamte Organisation registrieren.
+Es gibt einen sechsten, leiseren Vorteil. Die großen Plattformen bringen eine Unternehmensinfrastruktur mit, die ein kleines Werkzeug für das Bauwesen nie selbst bauen würde: Freigabe von Konnektoren durch Administratoren, Rückfragen vor dem Ausführen eines Werkzeugs und Anmeldung über Standardprotokolle. In Microsoft 365 Copilot und Gemini Enterprise kann ein IT-Administrator zum Beispiel einen eigenen MCP-Server einmal für die gesamte Organisation registrieren.
 
 ## Drei Arten von Zugriff
 
@@ -120,9 +120,9 @@ Nichts davon ersetzt das Prüfwerkzeug. Es lässt sich nur leichter befragen.
 
 ## Wo die Branche steht
 
-In weniger als zwei Jahren ist MCP von einem Experiment zu einer Funktion geworden, die große AEC-Anbieter mit ihren Produkten ausliefern.
+In weniger als zwei Jahren ist MCP von einem Experiment zu einer Funktion geworden, die große Anbieter von Bausoftware mit ihren Produkten ausliefern.
 
-Anthropic hat den Standard im November 2024 veröffentlicht. Seitdem haben AEC-Anbieter begonnen, MCP-Verbindungen auszuliefern, jede mit eigenem Umfang und eigenen Bedingungen:
+Anthropic hat den Standard im November 2024 veröffentlicht. Seitdem haben Anbieter von Bausoftware begonnen, MCP-Verbindungen auszuliefern, jede mit eigenem Umfang und eigenen Bedingungen:
 
 - **Revit (Autodesk):** ein schreibgeschützter [MCP-Server](https://www.autodesk.com/blogs/aec/2026/06/17/revit-public-mcp-server/) seit Juni, zu dem im September [Trusted-Write- und Experimental-Server](https://forums.autodesk.com/t5/revit-mep-forum/revit-mcp-server-tech-preview-launch/td-p/14262011) hinzukamen. Alle sind Technical Previews für Revit 2027.
 - **Revu (Bluebeam):** [verbindet sich über MCP mit Claude](https://support.bluebeam.com/revu/how-to/mcp-claude.html). Voraussetzung sind ein Bluebeam-Max-Abonnement, Revu 21.9 oder neuer und die Desktop-App von Claude.
@@ -164,7 +164,7 @@ MCP plant kein Gebäude. Es lässt die KI aber an die Werkzeuge heran, die die I
 
 Stellen Sie sich den nächsten Schritt vor. Eine Steckdose findet die Elemente, die sich in der letzten Modellrevision geändert haben. Eine zweite schickt sie weiter an das nächste Werkzeug, ein Berechnungsprogramm oder eine Koordinationsplattform, sofern die Modelle und ihre Element-IDs verknüpft sind, was nach wie vor einer der schwierigsten Teile der Arbeit ist. Die KI verbindet die Schritte und legt das Ergebnis der Person vor, die entscheidet. Die Bausteine gibt es heute schon; jeder Schritt braucht aber weiterhin jemanden, der das Ergebnis prüft.
 
-Die AEC-Software, auf die wir uns verlassen, ist hervorragend im Ingenieurwesen. Die KI-Plattformen sind hervorragend in Sprache und Schlussfolgern. MCP ist die Steckdose dazwischen, und es lohnt sich, zu verstehen, wie es funktioniert, bevor Ihre Wettbewerber es tun.
+Die Bausoftware, auf die wir uns verlassen, ist hervorragend im Ingenieurwesen. Die KI-Plattformen sind hervorragend in Sprache und Schlussfolgern. MCP ist die Steckdose dazwischen, und es lohnt sich, zu verstehen, wie es funktioniert, bevor Ihre Wettbewerber es tun.
 
 Meine Sicht: Wenn KI-Modelle Baudaten bekommen, werden sie besser in unserer Arbeit, und ich vertraue diese Daten den großen US-Anbietern an. Die Regeln für jedes Projekt bestimmen aber weiterhin Ihre Verträge. In ein paar Jahren wird eine Frage an die KI zum Modell so selbstverständlich sein wie eine Google-Suche.
 

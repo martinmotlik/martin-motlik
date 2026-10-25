@@ -53,6 +53,8 @@ Check anytime: `python3 tools/insights/check-package.py mcp-power-outlet-for-ai`
 
 - 2026-10-25 · Podcast EP 02 re-exported with the closing view in the Close chapter (Sarah 13:20, Martin 13:25, the same words as the article): 14:04.6, 845 s, 20,271,689 B, 103 lines; chapter starts unchanged.
 
+- 2026-10-25 · German version without the abbreviation AEC (user): "Bauwesen", "Bausoftware"; title „Eine Steckdose für KI: Was MCP für das Bauwesen bedeutet“. Slug and the German category „KI im AEC“ unchanged until the user decides.
+
 ## Open
 
 - The Claude doc (source of the text) needs the closing paragraph above, so a later export of the doc matches `article.md`.
