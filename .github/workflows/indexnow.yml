@@ -1,0 +1,26 @@
+# Tells Bing (and other IndexNow engines: Yandex, Seznam, Naver) about every
+# page in sitemap.xml after each deploy, so changes reach Bing (and ChatGPT
+# search, which relies on it) within hours instead of weeks.
+# Key file: /dc55b17956f0dc7e90c6a778fd091d3c.txt at the site root.
+name: IndexNow
+on:
+  push:
+    branches: [main]
+    paths-ignore: ['_insights/**', '.claude/**', 'tools/**']
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Wait for GitHub Pages to publish
+        run: sleep 90
+      - name: Submit sitemap URLs
+        run: |
+          KEY=dc55b17956f0dc7e90c6a778fd091d3c
+          URLS=$(grep -o '<loc>[^<]*</loc>' sitemap.xml | sed 's/<\/\?loc>//g' | jq -R . | jq -s .)
+          jq -n --arg key "$KEY" --argjson urls "$URLS" \
+            '{host:"martinmotlik.com", key:$key, keyLocation:("https://martinmotlik.com/"+$key+".txt"), urlList:$urls}' > body.json
+          echo "Submitting $(jq '.urlList|length' body.json) URLs"
+          curl -sS -o /dev/null -w "IndexNow HTTP %{http_code}\n" -X POST https://api.indexnow.org/indexnow \
+            -H 'Content-Type: application/json; charset=utf-8' --data @body.json
