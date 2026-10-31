@@ -20,7 +20,7 @@
   "hero_btn_primary": "Meine Arbeit ansehen",
   "about_badge_role": "Leiter Web-Content",
   "about_role_text": "AEC-Digitalstratege & Web Lead",
-  "about_bio": "Ich bin unabhängiger Digitalspezialist und unterstütze AEC-Unternehmen beim Aufbau starker Webauftritte und Marketingstrategien. Von Tschechien aus arbeite ich international und setze mich aktiv für den Einsatz von KI in der Branche ein. In meiner aktuellen Hauptrolle verantworte ich das internationale Web-Ökosystem und das Marketing von Dlubal Software und baue die globale digitale Präsenz des Unternehmens aus.",
+  "about_bio": "Ich bin unabhängiger AEC-Digitalstratege & Web Lead und unterstütze AEC-Unternehmen beim Aufbau starker Webauftritte und Marketingstrategien. Von Tschechien aus arbeite ich international und setze mich aktiv für den Einsatz von KI in der Branche ein. In meiner aktuellen Hauptrolle verantworte ich das internationale Web-Ökosystem und das Marketing von Dlubal Software und baue die globale digitale Präsenz des Unternehmens aus.",
   "cta_linkedin": "Auf LinkedIn vernetzen",
   "cta_email": "E-Mail schreiben →",
   "what_title": "Tätigkeitsfelder",
@@ -159,7 +159,7 @@
  },
  "ld": {
   "@graph.0.jobTitle": "AEC-Digitalstratege & Web Lead",
-  "@graph.0.description": "Unabhängiger Digitalspezialist, der AEC-Unternehmen beim Aufbau starker Web-Ökosysteme und Marketingstrategien unterstützt. Leiter Web-Content bei Dlubal Software. Schwerpunkte: AEC-Marketing, Beratung zur KI-Einführung, Webentwicklung und Grafikdesign für die Märkte USA und Kanada.",
+  "@graph.0.description": "Unabhängiger AEC-Digitalstratege & Web Lead, der AEC-Unternehmen beim Aufbau starker Web-Ökosysteme und Marketingstrategien unterstützt. Leiter Web-Content bei Dlubal Software. Schwerpunkte: AEC-Marketing, Beratung zur KI-Einführung, Webentwicklung und Grafikdesign für die Märkte USA und Kanada.",
   "@graph.2.name": "Martin Motlík – AEC-Marketing & KI-Beratung",
   "@graph.2.description": "Digitale Leistungen für AEC-Unternehmen: Web-Ökosysteme, Marketingstrategie, Beratung zur KI-Einführung, Messematerialien und Grafikdesign. Mit Fokus auf die Märkte USA und Kanada.",
   "@graph.2.serviceType": [

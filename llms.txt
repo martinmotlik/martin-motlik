@@ -1,6 +1,6 @@
 # Martin Motlík — AEC Digital Strategist & Web Lead
 
-> Independent digital specialist helping AEC companies build powerful web ecosystems and marketing strategies. Based in Czechia, operating globally with a focus on the US and Canadian markets. Head of Web Content at Dlubal Software. I work at the intersection of structural engineering software, AI adoption, and technical marketing — bridging the gap between engineering precision and effective digital communication.
+> Independent AEC Digital Strategist & Web Lead helping AEC companies build powerful web ecosystems and marketing strategies. Based in Czechia, operating globally with a focus on the US and Canadian markets. Head of Web Content at Dlubal Software. I work at the intersection of structural engineering software, AI adoption, and technical marketing — bridging the gap between engineering precision and effective digital communication.
 
 ## Core Positioning
 
@@ -15,7 +15,8 @@ His thesis: AEC is moving to the browser. Web-based tools are how AI learns from
 
 ## Professional Background
 
-- **Current role:** Head of Web Content, Dlubal Software (structural analysis and design software; HQ Prague, US office Philadelphia)
+- **Title:** AEC Digital Strategist & Web Lead (Czech: Digitální stratég pro AEC & Web Lead; German: AEC-Digitalstratege & Web Lead)
+- **Current role at a client:** Head of Web Content, Dlubal Software (structural analysis and design software; headquarters in Tiefenbach, Germany, offices including Prague and Philadelphia)
 - **Freelance focus:** AEC marketing, AI adoption consulting, web development, graphic design
 - **Key markets:** United States, Canada, international English-language markets
 - **Conference presence:** NASCC: The Steel Conference 2026 (Atlanta, GA), International Mass Timber Conference 2026 (Portland, OR)

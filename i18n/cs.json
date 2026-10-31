@@ -20,7 +20,7 @@
   "hero_btn_primary": "Prohlédnout moji práci",
   "about_badge_role": "Vedoucí webového obsahu",
   "about_role_text": "Digitální stratég pro AEC & Web Lead",
-  "about_bio": "Jsem nezávislý digitální specialista a pomáhám AEC firmám budovat silné webové prezentace a marketingové strategie. Působím z Česka s celosvětovým dosahem a aktivně prosazuji zavádění AI napříč oborem. Ve své současné hlavní roli spravuji mezinárodní webový ekosystém a marketing společnosti Dlubal Software a rozvíjím její globální digitální stopu.",
+  "about_bio": "Jsem nezávislý digitální stratég pro AEC & Web Lead a pomáhám AEC firmám budovat silné webové prezentace a marketingové strategie. Působím z Česka s celosvětovým dosahem a aktivně prosazuji zavádění AI napříč oborem. Ve své současné hlavní roli spravuji mezinárodní webový ekosystém a marketing společnosti Dlubal Software a rozvíjím její globální digitální stopu.",
   "cta_linkedin": "Spojme se na LinkedInu",
   "cta_email": "Napsat e-mail →",
   "what_title": "Oblasti činnosti",
@@ -158,7 +158,7 @@
  },
  "ld": {
   "@graph.0.jobTitle": "Digitální stratég pro AEC & Web Lead",
-  "@graph.0.description": "Nezávislý digitální specialista, který pomáhá AEC firmám budovat silné webové ekosystémy a marketingové strategie. Vedoucí webového obsahu ve společnosti Dlubal Software. Zaměřuje se na marketing v AEC, poradenství k zavádění AI, vývoj webů a grafický design pro trhy USA a Kanady.",
+  "@graph.0.description": "Nezávislý digitální stratég pro AEC & Web Lead, který pomáhá AEC firmám budovat silné webové ekosystémy a marketingové strategie. Vedoucí webového obsahu ve společnosti Dlubal Software. Zaměřuje se na marketing v AEC, poradenství k zavádění AI, vývoj webů a grafický design pro trhy USA a Kanady.",
   "@graph.2.name": "Martin Motlík – marketing v AEC a poradenství v oblasti AI",
   "@graph.2.description": "Digitální služby pro AEC firmy: vývoj webových ekosystémů, marketingová strategie, poradenství k zavádění AI, veletržní materiály a grafický design. Se zaměřením na trhy USA a Kanady.",
   "@graph.2.serviceType": [
